@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "season": "2026-2027",
+  "description": "Unified player registry: NHL, AHL, junior, NCAA, Europe, other. Import only verified player identities; never fabricate rosters.",
+  "players": [],
+  "requiredFields": [
+    "id",
+    "name",
+    "position",
+    "currentLeague",
+    "currentTeam",
+    "nhlRightsTeam"
+  ],
+  "optionalFields": [
+    "birthDate",
+    "contractTeam",
+    "contractEnd",
+    "potential",
+    "source",
+    "verifiedAt"
+  ],
+  "leagues": [
+    "NHL",
+    "AHL",
+    "CHL",
+    "NCAA",
+    "Europe",
+    "Other"
+  ],
+  "status": "awaiting verified AHL and prospect imports"
+}

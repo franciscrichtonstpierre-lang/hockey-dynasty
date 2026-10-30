@@ -1,0 +1,41 @@
+name: Synchroniser les données LNH
+
+on:
+  workflow_dispatch:
+    inputs:
+      season:
+        description: "Saison au format AAAABBBB"
+        required: true
+        default: "20262027"
+  schedule:
+    - cron: "23 8 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Récupérer le dépôt
+        uses: actions/checkout@v4
+      - name: Installer Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Synchroniser effectifs et espoirs
+        env:
+          UHM_SEASON: ${{ inputs.season || '20262027' }}
+        run: node scripts/sync-nhl-data.mjs
+      - name: Publier les fichiers actualisés
+        run: |
+          git config user.name "uhm-data-bot"
+          git config user.email "uhm-data-bot@users.noreply.github.com"
+          git add data/nhl data/prospects
+          if git diff --cached --quiet; then
+            echo "Aucune modification de données."
+          else
+            git commit -m "Synchroniser les effectifs LNH et espoirs"
+            git push
+          fi

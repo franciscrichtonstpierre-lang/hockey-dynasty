@@ -51,6 +51,8 @@ jobs:
           if git diff --cached --quiet; then
             echo "Aucune modification de données."
           else
-            git commit -m "Synchroniser les effectifs LNH et espoirs"
-            git push
+            git commit -m "Synchroniser les effectifs LNH, LAH et espoirs"
+            git fetch origin main
+            git rebase origin/main
+            git push origin HEAD:main
           fi

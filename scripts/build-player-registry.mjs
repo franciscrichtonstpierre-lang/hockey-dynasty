@@ -31,7 +31,13 @@ const add = p => {
   else {
     const old = records.get(p.id);
     // Prefer the current roster record over a prospect-list record, while retaining known bio fields.
-    records.set(p.id, { ...old, ...Object.fromEntries(Object.entries(p).filter(([,v]) => v != null && v !== "")), attributes: old.attributes || p.attributes });
+    const incoming = Object.fromEntries(Object.entries(p).filter(([,v]) => v != null && v !== ""));
+    const preserveRoster = ["NHL","AHL"].includes(old.currentLeague) && !["NHL","AHL"].includes(p.currentLeague);
+    records.set(p.id, {
+      ...old, ...incoming,
+      ...(preserveRoster ? { currentLeague: old.currentLeague, currentTeam: old.currentTeam, nhlRightsTeam: old.nhlRightsTeam, position: old.position, detailedPosition: old.detailedPosition } : {}),
+      attributes: old.attributes || p.attributes
+    });
   }
 };
 

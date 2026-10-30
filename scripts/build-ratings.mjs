@@ -8,12 +8,14 @@ async function get(url){const r=await fetch(url,{headers:{"User-Agent":"Hockey-D
 const exp=encodeURIComponent("seasonId="+season+" and gameTypeId=2");
 const [skaterRes,goalieRes,faceoffRes]=await Promise.all([
  get("https://api.nhle.com/stats/rest/en/skater/summary?isAggregate=true&isGame=false&cayenneExp="+exp+"&limit=-1"),
- get("https://api.nhle.com/stats/rest/en/goalie/summary?isAggregate=true&isGame=false&cayenneExp="+exp+"&limit=-1")
+ get("https://api.nhle.com/stats/rest/en/goalie/summary?isAggregate=true&isGame=false&cayenneExp="+exp+"&limit=-1"),
+ get("https://api.nhle.com/stats/rest/en/skater/faceoffpercentages?isAggregate=true&isGame=false&cayenneExp="+exp+"&limit=-1").catch(()=>({data:[]}))
 ]);
 const skaters=skaterRes.data||[],goalies=goalieRes.data||[];
 if(skaters.length<400||goalies.length<40)throw Error("Incomplete player stats; refusing to replace ratings: "+skaters.length+" skaters / "+goalies.length+" goalies");
 const biosRes=await get("https://api.nhle.com/stats/rest/en/skater/bios?isAggregate=true&isGame=false&cayenneExp="+exp+"&limit=-1");
-const bios=new Map((biosRes.data||[]).map(p=>[String(p.playerId),p]));\nconst faceoffs=new Map((faceoffRes.data||[]).map(p=>[String(p.playerId),p]));
+const bios=new Map((biosRes.data||[]).map(p=>[String(p.playerId),p]));
+const faceoffs=new Map((faceoffRes.data||[]).map(p=>[String(p.playerId),p]));
 const goalieBiosRes=await get("https://api.nhle.com/stats/rest/en/goalie/bios?isAggregate=true&isGame=false&cayenneExp="+exp+"&limit=-1").catch(()=>({data:[]}));
 const goalieBios=new Map((goalieBiosRes.data||[]).map(p=>[String(p.playerId),p]));
 const pct=(values,v)=>{const a=values.filter(Number.isFinite).sort((x,y)=>x-y);if(!a.length)return .5;let lo=0,hi=a.length;while(lo<hi){const m=(lo+hi)>>1;if(a[m]<=v)lo=m+1;else hi=m}return lo/a.length};

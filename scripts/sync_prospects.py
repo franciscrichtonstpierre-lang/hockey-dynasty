@@ -22,9 +22,12 @@ for code in CODES:
         data = get_json(BASE + code)
         # A valid response must contain a prospect collection; an empty list is valid only
         # when the API explicitly returns the expected field.
-        prospects = data.get("prospects") if isinstance(data, dict) else None
-        if not isinstance(prospects, list):
-            raise ValueError("Réponse API inattendue: champ 'prospects' absent")
+        if not isinstance(data, dict) or not any(isinstance(data.get(k), list) for k in ("forwards", "defensemen", "goalies")):
+            raise ValueError("Réponse API inattendue: groupes de joueurs absents")
+        prospects = []
+        for group in ("forwards", "defensemen", "goalies"):
+            for player in data.get(group, []):
+                prospects.append({**player, "positionGroup": group})
         record = {
             "teamCode": code,
             "source": BASE + code,

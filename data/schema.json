@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "description": "Schéma canonique des données Hockey Dynasty. Les notes/potentiels sont des évaluations de jeu et non des statistiques officielles.",
+  "ratingScale": {
+    "min": 0,
+    "max": 99
+  },
+  "organization": {
+    "id": "NHL team code, e.g. MTL",
+    "name": "Official team name",
+    "ahlAffiliateId": "Stable AHL team ID; null until verified",
+    "source": "URL or source identifier",
+    "verifiedAt": "ISO-8601 date"
+  },
+  "player": {
+    "id": "Stable source ID",
+    "firstName": "string",
+    "lastName": "string",
+    "birthDate": "YYYY-MM-DD or null",
+    "shoots": "L | R | null",
+    "position": "C | LW | RW | D | G | null",
+    "nhlRightsTeam": "NHL team code or null",
+    "currentTeamId": "league team ID or null",
+    "league": "NHL | AHL | CHL | NCAA | EUROPE | OTHER",
+    "overall": "integer 0-99 or null",
+    "potential": "integer 0-99 or null",
+    "source": "URL or source identifier",
+    "sourceSeason": "season string",
+    "verifiedAt": "ISO-8601 date"
+  },
+  "draftPick": {
+    "id": "unique stable identifier",
+    "season": "draft year",
+    "round": "integer starting at 1",
+    "originalTeam": "NHL team code",
+    "currentOwner": "NHL team code",
+    "conditions": "string or null",
+    "source": "URL or source identifier",
+    "verifiedAt": "ISO-8601 date"
+  },
+  "dataRules": [
+    "Do not invent player records, rights, affiliations, pick ownership, or trade conditions.",
+    "Keep source facts separate from game ratings and potential.",
+    "Store source and verification date for each record.",
+    "Use stable IDs so trades and roster updates do not duplicate players."
+  ]
+}

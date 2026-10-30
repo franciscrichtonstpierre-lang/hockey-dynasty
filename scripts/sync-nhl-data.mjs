@@ -41,11 +41,32 @@ async function syncProspects(code) {
   const url = `https://api-web.nhle.com/v1/prospects/${code}`;
   try {
     const data = await fetchJson(url);
-    const list = Array.isArray(data) ? data : (data.prospects || data.players || data.data);
-    if (!Array.isArray(list) || list.length === 0) throw new Error("Empty or unrecognised prospects response");
-    const payload = Array.isArray(data)
-      ? { teamCode: code, source: url, sourceType: "NHL Web API", syncedUTC: new Date().toISOString(), count: list.length, prospects: list }
-      : { ...data, teamCode: code, source: url, sourceType: "NHL Web API", syncedUTC: new Date().toISOString(), count: list.length, prospects: list };
+    let list;
+    if (Array.isArray(data)) {
+      list = data;
+    } else if (Array.isArray(data.prospects) || Array.isArray(data.players) || Array.isArray(data.data)) {
+      list = data.prospects || data.players || data.data;
+    } else if (["forwards", "defensemen", "goalies"].some(k => Array.isArray(data[k]))) {
+      // NHL Web API may return position groups rather than a single prospects array.
+      list = ["forwards", "defensemen", "goalies"].flatMap(group =>
+        (Array.isArray(data[group]) ? data[group] : []).map(player => ({ ...player, positionGroup: group }))
+      );
+    } else {
+      throw new Error("Unrecognised prospects response schema");
+    }
+    if (!Array.isArray(list) || list.length === 0) throw new Error("Empty prospects response");
+    const payload = {
+      teamCode: code,
+      source: url,
+      sourceType: "NHL Web API",
+      syncedUTC: new Date().toISOString(),
+      count: list.length,
+      prospects: list,
+      dataNotes: [
+        "This is the public prospect list returned by the NHL API, not a guarantee of every player whose rights the organization owns.",
+        "Game ratings, potential and rights must only be filled from separately verified sources."
+      ]
+    };
     await writeValidated(path, payload, d => Array.isArray(d.prospects) && d.prospects.length > 0);
     console.log(`OK prospects ${code}: ${list.length}`);
   } catch (error) {

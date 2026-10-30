@@ -1,74 +1,32 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Hockey Dynasty</title>
-<meta name="theme-color" content="#10294a">
-<style>
-*{box-sizing:border-box}body{margin:0;background:#091629;color:white;font-family:Arial,sans-serif}header{background:#12365e;padding:22px;text-align:center}h1{margin:0;font-size:27px}small{color:#b5cce5}main{padding:15px;max-width:750px;margin:auto}.tabs{display:flex;gap:7px;flex-wrap:wrap;margin:15px 0}button{background:#225b92;color:white;border:0;border-radius:9px;padding:12px;font-weight:bold;cursor:pointer}.tabs button{flex:1}.card{background:#142b47;border:1px solid #305174;border-radius:12px;padding:15px;margin:10px 0}.name{font-weight:bold;font-size:17px}.muted{color:#afc5dd;font-size:13px;margin-top:5px}.stats{display:flex;gap:8px;margin-top:10px}.stat{background:#244c70;border-radius:7px;padding:8px;font-size:13px}h2{font-size:21px}#message{color:#9fe8b3;margin:12px 0}footer{text-align:center;color:#9fb5ce;font-size:12px;padding:20px}
-</style>
-</head>
-<body>
-<header><h1>🏒 HOCKEY DYNASTY</h1><small>Démo DG • Canadiens de Montréal</small></header>
-<main>
-<div class="tabs">
-<button onclick="show('joueurs')">Joueurs</button>
-<button onclick="show('espoirs')">Espoirs</button>
-<button onclick="show('choix')">Choix</button>
-<button onclick="show('repechage')">Repêchage</button>
-</div>
-<h2 id="heading"></h2><div id="content"></div><div id="message"></div>
-</main>
-<footer>Prototype local • Évaluations fictives de jeu • Sauvegarde sur cet appareil</footer>
-<script>
-const players=[
-['Nick Suzuki','C',89,91],['Cole Caufield','AD',87,91],
-['Juraj Slafkovský','AG',84,92],['Lane Hutson','D',87,95],
-['Ivan Demidov','AD',82,96],['Kaiden Guhle','D',82,88],
-['Samuel Montembeault','G',82,85]];
-const prospects=[
-['Michael Hage','C','NCAA',74,91],
-['Joshua Roy','AD','Développement',73,84],
-['David Reinbacher','D','Développement',75,89]];
-let picks=JSON.parse(localStorage.getItem('hd_picks')||'null')||[
-{year:2027,round:1,owner:'Montréal'},
-{year:2027,round:2,owner:'Montréal'},
-{year:2028,round:1,owner:'Montréal'},
-{year:2028,round:2,owner:'Montréal'}];
-let drafted=JSON.parse(localStorage.getItem('hd_drafted')||'[]');
-function save(){localStorage.setItem('hd_picks',JSON.stringify(picks));localStorage.setItem('hd_drafted',JSON.stringify(drafted))}
-function card(name,detail,ovr,pot){return '<div class="card"><div class="name">'+name+'</div><div class="muted">'+detail+'</div><div class="stats"><span class="stat">GÉN '+ovr+'</span><span class="stat">POT '+pot+'</span></div></div>'}
-function show(tab){
-document.getElementById('message').textContent='';
-let out='',title='';
-if(tab==='joueurs'){title='Effectif LNH — Démo';out=players.map(p=>card(p[0],p[1],p[2],p[3])).join('')}
-if(tab==='espoirs'){title='Banque d’espoirs — Démo';out=prospects.map(p=>card(p[0],p[1]+' • '+p[2],p[3],p[4])).join('')}
-if(tab==='choix'){
-title='Choix de repêchage — Démo';
-out=picks.map((p,i)=>'<div class="card"><div class="name">'+p.year+' • '+p.round+'e ronde</div><div class="muted">Détenteur : '+p.owner+'</div><p><button onclick="trade('+i+')">Échanger ce choix</button></p></div>').join('');
-}
-if(tab==='repechage'){
-title='Repêchage — Démo';
-out='<div class="card"><p>Utilise ton premier choix disponible pour sélectionner un espoir fictif.</p><button onclick="draft()">Repêcher un joueur</button></div>';
-out+=drafted.map(n=>card(n,'Joueur repêché • Démo',65,85)).join('');
-}
-document.getElementById('heading').textContent=title;
-document.getElementById('content').innerHTML=out;
-}
-function trade(i){
-if(picks[i].owner!=='Montréal'){document.getElementById('message').textContent='Ce choix ne t’appartient plus.';return}
-picks[i].owner='Anaheim';save();show('choix');
-document.getElementById('message').textContent='Choix transféré à Anaheim (simulation).';
-}
-function draft(){
-let i=picks.findIndex(p=>p.owner==='Montréal');
-if(i<0){document.getElementById('message').textContent='Aucun choix disponible.';return}
-let n='Espoir fictif #'+(drafted.length+1);
-drafted.push(n);picks.splice(i,1);save();show('repechage');
-document.getElementById('message').textContent=n+' a été repêché!';
-}
-show('joueurs');
-</script>
-</body>
-</html>
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#08192d"><title>Hockey Dynasty — Bureau DG</title><style>
+*{box-sizing:border-box}body{margin:0;background:#081625;color:#f0f7fc;font:15px system-ui,Arial}header{background:#102d4c;padding:17px;border-bottom:1px solid #30516b}h1{margin:0;font-size:24px}small,.muted{color:#acc3d6}small{font-size:12px}main{max-width:980px;margin:auto;padding:12px}nav{display:flex;gap:7px;overflow-x:auto;position:sticky;top:0;background:#081625;padding:10px 0;z-index:2}button,select{background:#225b7e;border:1px solid #3d7294;border-radius:9px;color:white;padding:10px;font:inherit}button{cursor:pointer}nav button{white-space:nowrap;font-size:13px}nav .on{background:#138576;border-color:#56d8bd}.card{background:#122a42;border:1px solid #2a506e;border-radius:13px;padding:15px;margin-bottom:12px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(135px,1fr));gap:9px}.tile{background:#1b3b55;padding:12px;border-radius:10px}.tile b{display:block;font-size:20px;margin-top:4px}.row{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}.item{padding:11px 0;border-bottom:1px solid #31506a;display:flex;align-items:center;justify-content:space-between;gap:10px}.item:last-child{border:0}.rating{background:#28536e;border-radius:8px;padding:7px;text-align:center;min-width:46px}.rating b{display:block}h2{font-size:21px}h3{margin:0 0 12px}.controls{display:flex;gap:8px;flex-wrap:wrap}.controls select{max-width:100%}.ok{background:#154b3c;padding:12px;border-radius:9px;margin-bottom:12px}.warning{color:#ffd8a2}.tag{font-size:12px;background:#264761;border-radius:6px;padding:5px}footer{text-align:center;color:#9bb4c6;font-size:11px;padding:18px}@media(min-width:700px){.cols{display:grid;grid-template-columns:1fr 1fr;gap:12px}}
+</style></head><body><header><h1>🏒 HOCKEY DYNASTY</h1><small>Bureau du DG • v0.5 • Saison de démonstration 2026–2027</small></header><main><nav id="nav"></nav><div id="message"></div><div id="app"></div></main><footer>Prototype indépendant. Notes de joueurs et résultats fictifs. Sauvegarde locale uniquement. Multijoueur non disponible.</footer><script>
+const teams=["Anaheim Ducks","Boston Bruins","Buffalo Sabres","Calgary Flames","Carolina Hurricanes","Chicago Blackhawks","Colorado Avalanche","Columbus Blue Jackets","Dallas Stars","Detroit Red Wings","Edmonton Oilers","Florida Panthers","Los Angeles Kings","Minnesota Wild","Montréal Canadiens","Nashville Predators","New Jersey Devils","New York Islanders","New York Rangers","Ottawa Senators","Philadelphia Flyers","Pittsburgh Penguins","San Jose Sharks","Seattle Kraken","St. Louis Blues","Tampa Bay Lightning","Toronto Maple Leafs","Utah Mammoth","Vancouver Canucks","Vegas Golden Knights","Washington Capitals","Winnipeg Jets"];
+const players=[["Nick Suzuki","C",89,92],["Cole Caufield","AD",87,91],["Juraj Slafkovský","AG",84,92],["Ivan Demidov","AD",82,96],["Kirby Dach","C",78,85],["Alex Newhook","AG",79,84],["Brendan Gallagher","AD",76,76],["Josh Anderson","AD",76,77],["Jake Evans","C",78,79],["Oliver Kapanen","C",75,84],["Lane Hutson","D",87,95],["Kaiden Guhle","D",82,88],["Mike Matheson","D",82,83],["Arber Xhekaj","D",76,82],["Alexandre Carrier","D",79,80],["Samuel Montembeault","G",82,85],["Jakub Dobeš","G",77,86]];
+const prospects=[["Michael Hage","C","NCAA",73,91],["David Reinbacher","D","Développement",74,89],["Joshua Roy","AD","Développement",73,84],["Owen Beck","C","Développement",73,83],["Florian Xhekaj","AG","Développement",70,82]];
+const defaults=()=>({team:14,season:2026,day:0,w:0,l:0,otl:0,gf:0,ga:0,picks:Array.from({length:21},(_,i)=>({id:"p"+i,year:2027+Math.floor(i/7),round:i%7+1,origin:14,owner:14})),trades:[],drafted:[],lines:{},history:[]});
+let S;try{S=JSON.parse(localStorage.getItem("hd_v05"))||defaults()}catch(e){S=defaults()}let tab="Accueil";const pages=["Accueil","Équipes","Effectif","Espoirs","Alignement","Échanges","Choix","Repêchage","Simulation"];
+const el=id=>document.getElementById(id),save=()=>localStorage.setItem("hd_v05",JSON.stringify(S)),esc=x=>String(x).replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll('"',"&quot;");
+const card=(title,body)=>'<div class="card"><h3>'+title+'</h3>'+body+'</div>';
+const action=(label,fn)=>'<button onclick="'+fn+'">'+label+'</button>';
+const item=(name,detail,a,b)=>'<div class="item"><div><strong>'+esc(name)+'</strong><div class="muted"><small>'+esc(detail)+'</small></div></div><div class="row"><div class="rating"><b>'+a+'</b><small>GEN</small></div><div class="rating"><b>'+b+'</b><small>POT</small></div></div></div>';
+function msg(s){el("message").innerHTML='<div class="ok">'+esc(s)+'</div>'}
+function go(t){tab=t;el("message").innerHTML="";render();window.scrollTo(0,0)}
+function render(){el("nav").innerHTML=pages.map(t=>'<button class="'+(t===tab?'on':'')+'" onclick="go(\''+t+'\')">'+t+'</button>').join("");let h="",team=teams[S.team],mine=S.picks.filter(p=>p.owner===S.team);
+if(tab==="Accueil"){h='<h2>Tableau de bord</h2><div class="grid">'+[["Organisation",team],["Saison",S.season+"–"+(S.season+1)],["Bilan",S.w+"-"+S.l+"-"+S.otl],["Points",S.w*2+S.otl],["Jours simulés",S.day],["Choix",mine.length]].map(x=>'<div class="tile"><small>'+x[0]+'</small><b>'+esc(x[1])+'</b></div>').join('')+'</div><br><div class="cols">'+card("Bureau du directeur général",'<div class="controls">'+action("Gérer l’effectif","go(\'Effectif\')")+action("Simuler 14 jours","simulate()")+action("Échanges","go(\'Échanges\')")+'</div>')+card("Version actuelle",'<p>Une première interface de gestion jouable sur Android, avec 32 organisations, des choix transférables et une simulation simplifiée.</p><p class="warning">Les données ne représentent pas encore les effectifs officiels complets de 2026–2027.</p>')+'</div>'}
+if(tab==="Équipes"){h='<h2>32 organisations LNH</h2>'+card("Ton équipe",'<select onchange="setTeam(this.value)">'+teams.map((t,i)=>'<option value="'+i+'" '+(i===S.team?'selected':'')+'>'+esc(t)+'</option>').join('')+'</select><p class="muted">Montréal est la seule organisation avec un premier échantillon de joueurs dans cette version.</p>')+'<div class="grid">'+teams.map((t,i)=>'<div class="tile" onclick="setTeam('+i+')" style="cursor:pointer"><small>'+(i+1)+'/32</small><b style="font-size:14px">'+esc(t)+'</b>'+(S.team===i?'<small>✓ Sélectionnée</small>':'')+'</div>').join('')+'</div>'}
+if(tab==="Effectif"){h='<h2>Effectif · '+esc(team)+'</h2>'+card("Joueurs LNH",S.team===14?players.map(p=>item(p[0],p[1],p[2],p[3])).join(''):'<p>Effectif à intégrer après vérification des données réelles.</p>')}
+if(tab==="Espoirs"){h='<h2>Banque d’espoirs</h2>'+card("Espoirs · "+esc(team),S.team===14?prospects.map(p=>item(p[0],p[1]+" · "+p[2],p[3],p[4])).join(''):'<p>Espoirs à intégrer avec leurs droits LNH et leurs ligues.</p>')}
+if(tab==="Alignement"){h='<h2>Gestion du premier trio</h2>'+card("Alignement · "+esc(team),S.team===14?["AG","C","AD"].map((pos,i)=>'<div class="item"><strong>'+pos+'</strong><select onchange="line('+i+',this.value)">'+players.filter(p=>p[1]!=="D"&&p[1]!=="G").map(p=>'<option '+((S.lines[i]||["Juraj Slafkovský","Nick Suzuki","Cole Caufield"][i])===p[0]?'selected':'')+'>'+esc(p[0])+'</option>').join('')+'</select></div>').join('')+'<p class="muted">Premier trio sauvegardé sur ton appareil.</p>':'<p>Les effectifs de cette équipe seront ajoutés ultérieurement.</p>')}
+if(tab==="Échanges"){h='<h2>Centre des transactions</h2>'+card("Transférer un choix",'<p>Transaction de démonstration, sans négociation avec un autre DG.</p><div class="controls"><select id="pick">'+mine.map(p=>'<option value="'+p.id+'">'+p.year+' · R'+p.round+'</option>').join('')+'</select><select id="target">'+teams.map((t,i)=>i===S.team?'':'<option value="'+i+'">'+esc(t)+'</option>').join('')+'</select>'+action("Transférer","trade()")+'</div>')+card("Historique",S.trades.length?S.trades.slice().reverse().map(x=>'<div class="item">'+esc(x)+'</div>').join(''):'<p>Aucune transaction.</p>')}
+if(tab==="Choix"){h='<h2>Choix détenus · '+esc(team)+'</h2>'+card("Inventaire",mine.length?mine.sort((a,b)=>a.year-b.year||a.round-b.round).map(p=>'<div class="item"><strong>'+p.year+' · '+p.round+'e ronde</strong><small>Origine : '+esc(teams[p.origin])+'</small></div>').join(''):'<p>Aucun choix dans cette démonstration.</p>')+card("À venir",'<p>Les vrais propriétaires des choix et les conditions d’échange seront intégrés dans la base de données.</p>')}
+if(tab==="Repêchage"){h='<h2>Repêchage amateur</h2>'+card("Sélection fictive",'<p>Consomme un choix pour repêcher un espoir fictif.</p><div class="controls"><select id="draftPick">'+mine.map(p=>'<option value="'+p.id+'">'+p.year+' · R'+p.round+'</option>').join('')+'</select>'+action("Repêcher","draft()")+'</div>')+card("Sélections",S.drafted.length?S.drafted.map(x=>'<div class="item">'+esc(x)+'</div>').join(''):'<p>Aucune sélection.</p>')}
+if(tab==="Simulation"){h='<h2>Simulation de saison</h2>'+card("Simulateur 14 jours",'<p>Résultats aléatoires de démonstration. Le moteur EHM détaillé reste à développer.</p><div class="grid">'+[["Matchs",S.w+S.l+S.otl],["Buts pour",S.gf],["Buts contre",S.ga],["Points",S.w*2+S.otl]].map(x=>'<div class="tile"><small>'+x[0]+'</small><b>'+x[1]+'</b></div>').join('')+'</div><br><div class="controls">'+action("▶ Simuler 14 jours","simulate()")+action("Nouvelle saison","newSeason()")+'</div>')+card("Derniers résultats",S.history.length?S.history.slice(-12).reverse().map(x=>'<div class="item">'+esc(x)+'</div>').join(''):'<p>Aucun match simulé.</p>')}
+el("app").innerHTML=h}
+function setTeam(i){S.team=Number(i);save();render()}function line(i,v){S.lines[i]=v;save();msg("Premier trio enregistré.")}
+function trade(){let p=S.picks.find(p=>p.id===el("pick")?.value&&p.owner===S.team),target=Number(el("target")?.value);if(!p||target===S.team)return msg("Choisis un choix et une autre équipe.");p.owner=target;S.trades.push(p.year+" R"+p.round+" : "+teams[S.team]+" → "+teams[target]);save();render();msg("Choix transféré à "+teams[target]+".")}
+function draft(){let p=S.picks.find(p=>p.id===el("draftPick")?.value&&p.owner===S.team);if(!p)return msg("Aucun choix disponible.");let name="Espoir fictif #"+(S.drafted.length+1)+" ("+p.year+" R"+p.round+")";S.drafted.push(name);S.picks=S.picks.filter(x=>x!==p);save();render();msg(name+" repêché.")}
+function simulate(){let n=0;for(let d=1;d<=14;d++)if(Math.random()<.52){n++;let a=Math.floor(Math.random()*6),b=Math.floor(Math.random()*6);if(a===b){if(Math.random()<.5)a++;else b++}S.gf+=a;S.ga+=b;if(a>b)S.w++;else if(Math.random()<.25)S.otl++;else S.l++;S.history.push("Jour "+(S.day+d)+" · "+teams[S.team]+" "+a+"–"+b+" Adversaire simulé")}S.day+=14;S.history=S.history.slice(-60);save();render();msg(n+" matchs simulés sur 14 jours.")}
+function newSeason(){if(!confirm("Remettre les statistiques de saison à zéro? Les choix et échanges seront conservés."))return;S.season++;S.day=S.w=S.l=S.otl=S.gf=S.ga=0;S.history=[];save();render();msg("Nouvelle saison commencée.")}
+render();
+</script></body></html>

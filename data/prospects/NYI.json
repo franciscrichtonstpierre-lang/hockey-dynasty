@@ -1,0 +1,70 @@
+{
+  "teamCode": "NYI",
+  "source": "https://api-web.nhle.com/v1/prospects/NYI",
+  "sourceType": "NHL Web API (endpoint public non officiellement documenté)",
+  "syncedUTC": "2026-10-30T10:20:12.358553+00:00",
+  "count": 2,
+  "prospects": [
+    {
+      "id": 8481016,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20242025/NYI/8481016.png",
+      "firstName": {
+        "default": "Ruslan"
+      },
+      "lastName": {
+        "default": "Iskhakov"
+      },
+      "sweaterNumber": 37,
+      "positionCode": "C",
+      "shootsCatches": "L",
+      "heightInInches": 68,
+      "weightInPounds": 170,
+      "heightInCentimeters": 173,
+      "weightInKilograms": 77,
+      "birthDate": "2000-07-22",
+      "birthCity": {
+        "default": "Moscow",
+        "cs": "Moskva",
+        "de": "Moskau",
+        "fi": "Moskova",
+        "fr": "Moscou",
+        "sk": "Moskva",
+        "sv": "Moskva"
+      },
+      "birthCountry": "RUS",
+      "positionGroup": "forwards"
+    },
+    {
+      "id": 8478009,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/NYI/8478009.png",
+      "firstName": {
+        "default": "Ilya",
+        "cs": "Ilja",
+        "fi": "Ilja",
+        "sk": "Ilja"
+      },
+      "lastName": {
+        "default": "Sorokin"
+      },
+      "sweaterNumber": 30,
+      "positionCode": "G",
+      "shootsCatches": "L",
+      "heightInInches": 74,
+      "weightInPounds": 195,
+      "heightInCentimeters": 188,
+      "weightInKilograms": 88,
+      "birthDate": "1995-08-04",
+      "birthCity": {
+        "default": "Mezhdurechensk",
+        "fi": "Mezhduretshensk"
+      },
+      "birthCountry": "RUS",
+      "positionGroup": "goalies"
+    }
+  ],
+  "dataNotes": [
+    "La liste API des espoirs ne garantit pas tous les joueurs dont l'organisation détient les droits.",
+    "Les notes et potentiels de jeu ne sont pas fournis par cette source.",
+    "Ne pas interpréter l'absence d'un joueur comme une preuve que ses droits ne sont pas détenus."
+  ]
+}

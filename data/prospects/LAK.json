@@ -1,0 +1,36 @@
+{
+  "teamCode": "LAK",
+  "source": "https://api-web.nhle.com/v1/prospects/LAK",
+  "sourceType": "NHL Web API (endpoint public non officiellement documenté)",
+  "syncedUTC": "2026-10-30T10:20:10.723120+00:00",
+  "count": 1,
+  "prospects": [
+    {
+      "id": 8478494,
+      "headshot": "https://assets.nhle.com/mugs/nhl/latest/8478494.png",
+      "firstName": {
+        "default": "Alexander"
+      },
+      "lastName": {
+        "default": "Dergachyov"
+      },
+      "positionCode": "C",
+      "shootsCatches": "L",
+      "heightInInches": 76,
+      "weightInPounds": 200,
+      "heightInCentimeters": 193,
+      "weightInKilograms": 91,
+      "birthDate": "1996-09-27",
+      "birthCity": {
+        "default": "Langepas"
+      },
+      "birthCountry": "RUS",
+      "positionGroup": "forwards"
+    }
+  ],
+  "dataNotes": [
+    "La liste API des espoirs ne garantit pas tous les joueurs dont l'organisation détient les droits.",
+    "Les notes et potentiels de jeu ne sont pas fournis par cette source.",
+    "Ne pas interpréter l'absence d'un joueur comme une preuve que ses droits ne sont pas détenus."
+  ]
+}

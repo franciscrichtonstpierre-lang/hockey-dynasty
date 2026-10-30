@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hockey Dynasty</title>
+<meta name="theme-color" content="#10294a">
+<style>
+*{box-sizing:border-box}body{margin:0;background:#091629;color:white;font-family:Arial,sans-serif}header{background:#12365e;padding:22px;text-align:center}h1{margin:0;font-size:27px}small{color:#b5cce5}main{padding:15px;max-width:750px;margin:auto}.tabs{display:flex;gap:7px;flex-wrap:wrap;margin:15px 0}button{background:#225b92;color:white;border:0;border-radius:9px;padding:12px;font-weight:bold;cursor:pointer}.tabs button{flex:1}.card{background:#142b47;border:1px solid #305174;border-radius:12px;padding:15px;margin:10px 0}.name{font-weight:bold;font-size:17px}.muted{color:#afc5dd;font-size:13px;margin-top:5px}.stats{display:flex;gap:8px;margin-top:10px}.stat{background:#244c70;border-radius:7px;padding:8px;font-size:13px}h2{font-size:21px}#message{color:#9fe8b3;margin:12px 0}footer{text-align:center;color:#9fb5ce;font-size:12px;padding:20px}
+</style>
+</head>
+<body>
+<header><h1>🏒 HOCKEY DYNASTY</h1><small>Démo DG • Canadiens de Montréal</small></header>
+<main>
+<div class="tabs">
+<button onclick="show('joueurs')">Joueurs</button>
+<button onclick="show('espoirs')">Espoirs</button>
+<button onclick="show('choix')">Choix</button>
+<button onclick="show('repechage')">Repêchage</button>
+</div>
+<h2 id="heading"></h2><div id="content"></div><div id="message"></div>
+</main>
+<footer>Prototype local • Évaluations fictives de jeu • Sauvegarde sur cet appareil</footer>
+<script>
+const players=[
+['Nick Suzuki','C',89,91],['Cole Caufield','AD',87,91],
+['Juraj Slafkovský','AG',84,92],['Lane Hutson','D',87,95],
+['Ivan Demidov','AD',82,96],['Kaiden Guhle','D',82,88],
+['Samuel Montembeault','G',82,85]];
+const prospects=[
+['Michael Hage','C','NCAA',74,91],
+['Joshua Roy','AD','Développement',73,84],
+['David Reinbacher','D','Développement',75,89]];
+let picks=JSON.parse(localStorage.getItem('hd_picks')||'null')||[
+{year:2027,round:1,owner:'Montréal'},
+{year:2027,round:2,owner:'Montréal'},
+{year:2028,round:1,owner:'Montréal'},
+{year:2028,round:2,owner:'Montréal'}];
+let drafted=JSON.parse(localStorage.getItem('hd_drafted')||'[]');
+function save(){localStorage.setItem('hd_picks',JSON.stringify(picks));localStorage.setItem('hd_drafted',JSON.stringify(drafted))}
+function card(name,detail,ovr,pot){return '<div class="card"><div class="name">'+name+'</div><div class="muted">'+detail+'</div><div class="stats"><span class="stat">GÉN '+ovr+'</span><span class="stat">POT '+pot+'</span></div></div>'}
+function show(tab){
+document.getElementById('message').textContent='';
+let out='',title='';
+if(tab==='joueurs'){title='Effectif LNH — Démo';out=players.map(p=>card(p[0],p[1],p[2],p[3])).join('')}
+if(tab==='espoirs'){title='Banque d’espoirs — Démo';out=prospects.map(p=>card(p[0],p[1]+' • '+p[2],p[3],p[4])).join('')}
+if(tab==='choix'){
+title='Choix de repêchage — Démo';
+out=picks.map((p,i)=>'<div class="card"><div class="name">'+p.year+' • '+p.round+'e ronde</div><div class="muted">Détenteur : '+p.owner+'</div><p><button onclick="trade('+i+')">Échanger ce choix</button></p></div>').join('');
+}
+if(tab==='repechage'){
+title='Repêchage — Démo';
+out='<div class="card"><p>Utilise ton premier choix disponible pour sélectionner un espoir fictif.</p><button onclick="draft()">Repêcher un joueur</button></div>';
+out+=drafted.map(n=>card(n,'Joueur repêché • Démo',65,85)).join('');
+}
+document.getElementById('heading').textContent=title;
+document.getElementById('content').innerHTML=out;
+}
+function trade(i){
+if(picks[i].owner!=='Montréal'){document.getElementById('message').textContent='Ce choix ne t’appartient plus.';return}
+picks[i].owner='Anaheim';save();show('choix');
+document.getElementById('message').textContent='Choix transféré à Anaheim (simulation).';
+}
+function draft(){
+let i=picks.findIndex(p=>p.owner==='Montréal');
+if(i<0){document.getElementById('message').textContent='Aucun choix disponible.';return}
+let n='Espoir fictif #'+(drafted.length+1);
+drafted.push(n);picks.splice(i,1);save();show('repechage');
+document.getElementById('message').textContent=n+' a été repêché!';
+}
+show('joueurs');
+</script>
+</body>
+</html>

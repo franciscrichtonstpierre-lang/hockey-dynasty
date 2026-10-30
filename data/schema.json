@@ -42,6 +42,32 @@
     "Do not invent player records, rights, affiliations, pick ownership, or trade conditions.",
     "Keep source facts separate from game ratings and potential.",
     "Store source and verification date for each record.",
-    "Use stable IDs so trades and roster updates do not duplicate players."
-  ]
+    "Use stable IDs so trades and roster updates do not duplicate players.",
+    "Never infer a contract value, term, clause, or expiry status from a cap hit alone.",
+    "Keep cap hit, actual season salary, signing bonus, and two-way salary as separate fields.",
+    "A contract with unknown data must use null and verificationStatus PARTIAL or UNVERIFIED, never a guessed value.",
+    "A player may have one active NHL contract record per season; retained salary obligations are recorded separately from player ownership."
+  ],
+  "contract": {
+    "playerId": "Stable player ID; must match exactly one player record",
+    "organizationId": "NHL team code holding the NHL contract/rights",
+    "contractType": "STANDARD | ENTRY_LEVEL | TWO_WAY | AHL_ONLY | PTO | RFA | UFA | UNKNOWN",
+    "signedDate": "YYYY-MM-DD or null",
+    "startSeason": "YYYY-YY or null",
+    "endSeason": "YYYY-YY or null",
+    "termYears": "integer or null",
+    "capHitUSD": "number or null; annual average value charged to NHL cap",
+    "baseSalaryUSD": "number or null; salary paid in the specified season, distinct from cap hit",
+    "signingBonusUSD": "number or null",
+    "performanceBonusesUSD": "number or null",
+    "twoWaySalaryAHLUSD": "number or null",
+    "twoWaySalaryNHLUSD": "number or null",
+    "clauses": "NONE | NTC | M-NTC | NMC | M-NTC-NMC | UNKNOWN",
+    "expiryStatus": "RFA | UFA | GROUP_6_UFA | NOT_APPLICABLE | UNKNOWN",
+    "retainedSalaryUSD": "number or null",
+    "retainedSalaryByOtherTeamUSD": "number or null",
+    "sourceUrl": "URL of reliable source for this contract",
+    "sourceCheckedAt": "ISO-8601 date",
+    "verificationStatus": "VERIFIED | PARTIAL | UNVERIFIED"
+  }
 }

@@ -219,6 +219,8 @@ if(error)throw error;
 const isOwner=league.owner_id===signedInUser.id;
 const {data:membership,error:membershipError}=await authClient.from("league_members").select("team_id,team_code,role").eq("league_id",id).eq("user_id",signedInUser.id).maybeSingle();
 if(membershipError)throw membershipError;
+// Reuse the team already saved for this member, including the commissioner, instead of asking them to confirm it again.
+if(membership){const savedTeamIndex=codes.indexOf(membership.team_code)>=0?codes.indexOf(membership.team_code):Number(membership.team_id);if(Number.isInteger(savedTeamIndex)&&savedTeamIndex>=0&&savedTeamIndex<teams.length){S.team=savedTeamIndex;save();section="Mon équipe";tab="Statut organisation";uhmShowStage("game");return}}
 let members=[];
 let memberLoadError=null;
 if(isOwner){const result=await authClient.from("league_members").select("user_id,team_id,team_code,role").eq("league_id",id);members=result.data||[];memberLoadError=result.error}

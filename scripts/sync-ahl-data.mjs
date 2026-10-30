@@ -28,17 +28,22 @@ function walk(value, out=[]) {
 }
 const norm=s=>String(s||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]/g,"");
 const teams=JSON.parse(await readFile("data/ahl/teams.json","utf8")).teams;
-// The public AHL feed exposes team identifiers reliably through its season standings view.
-// Use the end-year season (2026 = 2026-27) for team discovery, then season_id for rosters.
-const rawTeams=await get(endpoint("teams",{season:"2026",groupTeamsBy:"league"}));
-const candidates=walk(rawTeams).filter(x=>(x.team_id||x.teamId||x.id)&& (x.name||x.team||x.team_name||x.teamName||x.team_nickname||x.teamNickName||x.team_full_name||x.teamFullName));
+// Bootstrap is the canonical HockeyTech source for both season IDs and team IDs.
+const bootstrap=await get(endpoint("bootstrap",{season:seasonId,pageName:"roster"}));
+const seasonRows=[...(bootstrap.regularSeasons||[]),...(bootstrap.playoffSeasons||[])];
+const requestedSeason=seasonRows.find(s=>{
+  const label=String(s.season_name||s.seasonName||s.name||"").replace(/\s/g,"");
+  return label.includes("2026-2027")||label.includes("2026-27")||String(s.season_id||s.id||"")===seasonId;
+});
+const actualSeasonId=String(requestedSeason?.season_id||requestedSeason?.id||seasonId);
+const candidates=(bootstrap.teamsNoAll||bootstrap.teams||[]).filter(x=>(x.team_id||x.teamId||x.id)&& (x.name||x.team||x.team_name||x.teamName||x.team_nickname||x.teamNickName||x.team_full_name||x.teamFullName));
 let succeeded=0, failed=0;
 for(const affiliate of teams){
   const target=norm(affiliate.ahlName);
   const match=candidates.find(t=>[t.name,t.team,t.team_name,t.teamName,t.team_nickname,t.teamNickName,t.team_full_name,t.teamFullName,[t.team_city||t.city,t.team_nickname||t.teamNickName||t.nickname].filter(Boolean).join(" ")].some(n=>norm(n)===target || (norm(n).length>4 && (target.includes(norm(n)) || norm(n).includes(target)))));
   if(!match){console.error(`ERROR team id not found for ${affiliate.ahlName}`);failed++;continue}
   const teamId=match.team_id||match.teamId||match.id;
-  const url=endpoint("roster",{team_id:teamId,season_id:seasonId});
+  const url=endpoint("roster",{team_id:teamId,season_id:actualSeasonId});
   try{
     const raw=await get(url);
     const objects=walk(raw);
@@ -53,7 +58,7 @@ for(const affiliate of teams){
     }
     if(!players.length)players=objects.filter(p=>(p.player_id||p.person_id)&& (p.first_name||p.last_name||p.name||p.display_name));
     if(players.length<10)throw new Error(`Roster too small or response schema changed (${players.length})`);
-    const payload={teamCode:affiliate.nhlCode,ahlName:affiliate.ahlName,teamId:String(teamId),season:"2026-2027",seasonId,source:"AHL HockeyTech public feed",sourceUrl:url,syncedAt:new Date().toISOString(),count:players.length,players};
+    const payload={teamCode:affiliate.nhlCode,ahlName:affiliate.ahlName,teamId:String(teamId),season:"2026-2027",seasonId:actualSeasonId,source:"AHL HockeyTech public feed",sourceUrl:url,syncedAt:new Date().toISOString(),count:players.length,players};
     const path=`data/ahl/${affiliate.nhlCode}.json`;
     await mkdir(dirname(path),{recursive:true});
     await writeFile(path,JSON.stringify(payload,null,2)+"\n","utf8");
@@ -62,5 +67,5 @@ for(const affiliate of teams){
   }catch(e){console.error(`ERROR ${affiliate.nhlCode}: ${e.message}`);failed++}
   await pause(1100);
 }
-console.log(`LAH sync complete: ${succeeded}/${teams.length} clubs; ${failed} failures`);
+console.log(`LAH sync complete: ${succeeded}/${teams.length} clubs; ${failed} failures; season ID ${actualSeasonId}`);
 if(failed)process.exitCode=1;

@@ -1,0 +1,740 @@
+{
+  "teamCode": "TBL",
+  "ahlName": "Syracuse Crunch",
+  "teamId": "324",
+  "season": "2026-2027",
+  "seasonId": "94",
+  "source": "AHL HockeyTech public feed",
+  "sourceUrl": "https://lscluster.hockeytech.com/feed/index.php?feed=statviewfeed&key=ccb91f29d6744675&client_code=ahl&league_id=4&site_id=3&lang=en&view=roster&team_id=324&season_id=94",
+  "syncedAt": "2026-10-30T23:58:39.165Z",
+  "count": 28,
+  "players": [
+    {
+      "tp_jersey_number": {
+        "properties": {
+          "key": "tp_jersey_number",
+          "hidden": false,
+          "class": "",
+          "label": "#",
+          "title": "Jersey Number",
+          "sortable": true,
+          "align": "right",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "name": {
+        "properties": {
+          "key": "name",
+          "hidden": false,
+          "class": "",
+          "label": "Name",
+          "title": "Name",
+          "sortable": true,
+          "align": "left",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "position": {
+        "properties": {
+          "key": "position",
+          "hidden": false,
+          "class": "",
+          "label": "Pos",
+          "title": "Position",
+          "sortable": true,
+          "align": "center",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "shoots": {
+        "properties": {
+          "key": "shoots",
+          "hidden": false,
+          "class": "",
+          "label": "Shoots",
+          "title": "Shoots",
+          "sortable": true,
+          "align": "center",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "height_hyphenated": {
+        "properties": {
+          "key": "height_hyphenated",
+          "hidden": false,
+          "class": "",
+          "label": "Height",
+          "title": "Height",
+          "sortable": true,
+          "align": "center",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "w": {
+        "properties": {
+          "key": "w",
+          "hidden": false,
+          "class": "",
+          "label": "Weight",
+          "title": "Weight",
+          "sortable": true,
+          "align": "center",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "birthdate": {
+        "properties": {
+          "key": "birthdate",
+          "hidden": false,
+          "class": "",
+          "label": "DOB",
+          "title": "Birthdate",
+          "sortable": true,
+          "align": "left",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "birthplace": {
+        "properties": {
+          "key": "birthplace",
+          "hidden": false,
+          "class": "",
+          "label": "Birth place",
+          "title": "Birth place",
+          "sortable": true,
+          "align": "left",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "player_id": {
+        "properties": {
+          "key": "player_id",
+          "hidden": true,
+          "class": "",
+          "label": "",
+          "title": "",
+          "sortable": true,
+          "align": "center",
+          "highlight": false,
+          "sortKey": ""
+        }
+      }
+    },
+    {
+      "shoots": "R",
+      "birthplace": "Montréal, QC",
+      "height_hyphenated": "6-3",
+      "player_id": "10566",
+      "birthdate": "2002-03-07",
+      "tp_jersey_number": "11",
+      "position": "C",
+      "w": "227",
+      "name": "Lucas Mercuri"
+    },
+    {
+      "shoots": "L",
+      "birthplace": "Toledo, OH",
+      "height_hyphenated": "6-1",
+      "player_id": "9693",
+      "birthdate": "1998-07-08",
+      "tp_jersey_number": "13",
+      "position": "LW",
+      "w": "200",
+      "name": "Brendan Furry"
+    },
+    {
+      "shoots": "L",
+      "birthplace": "Renfrew, ON",
+      "height_hyphenated": "6-2",
+      "player_id": "9754",
+      "birthdate": "2002-06-23",
+      "tp_jersey_number": "14",
+      "position": "C",
+      "w": "206",
+      "name": "Tristan Allard"
+    },
+    {
+      "shoots": "L",
+      "birthplace": "St. John's, NL",
+      "height_hyphenated": "6-1",
+      "player_id": "6453",
+      "birthdate": "1996-03-29",
+      "tp_jersey_number": "19",
+      "position": "C",
+      "w": "201",
+      "name": "Clark Bishop"
+    },
+    {
+      "shoots": "L",
+      "birthplace": "Québec, QC",
+      "height_hyphenated": "5-10",
+      "player_id": "8744",
+      "birthdate": "2001-03-07",
+      "tp_jersey_number": "22",
+      "position": "LW",
+      "w": "173",
+      "name": "Jakob Pelletier"
+    },
+    {
+      "shoots": "L",
+      "birthplace": "Strongsville, OH",
+      "height_hyphenated": "5-10",
+      "player_id": "10148",
+      "birthdate": "2003-03-04",
+      "tp_jersey_number": "25",
+      "position": "C",
+      "w": "183",
+      "name": "Dylan Duke"
+    },
+    {
+      "shoots": "L",
+      "birthplace": "Cleveland, OH",
+      "height_hyphenated": "6-2",
+      "player_id": "6292",
+      "birthdate": "1997-05-23",
+      "tp_jersey_number": "26",
+      "position": "C",
+      "w": "199",
+      "name": "Jansen Harkins"
+    },
+    {
+      "shoots": "R",
+      "birthplace": "Toronto, ON",
+      "height_hyphenated": "6-2",
+      "player_id": "11357",
+      "birthdate": "2006-03-30",
+      "tp_jersey_number": "29",
+      "position": "C",
+      "w": "198",
+      "name": "Sam O'Reilly"
+    },
+    {
+      "shoots": "L",
+      "birthplace": "Oslo, Norway",
+      "height_hyphenated": "6-1",
+      "player_id": "11025",
+      "birthdate": "2004-08-16",
+      "tp_jersey_number": "44",
+      "position": "LW",
+      "w": "197",
+      "name": "Noah Steen"
+    },
+    {
+      "shoots": "L",
+      "birthplace": "Saint-Hyacinthe, QC",
+      "height_hyphenated": "5-11",
+      "player_id": "9381",
+      "birthdate": "2002-01-21",
+      "tp_jersey_number": "73",
+      "position": "LW",
+      "w": "183",
+      "name": "Elliot Desnoyers"
+    },
+    {
+      "shoots": "R",
+      "birthplace": "Phoenix, AZ",
+      "height_hyphenated": "6-0",
+      "player_id": "10607",
+      "birthdate": "2005-01-26",
+      "tp_jersey_number": "79",
+      "position": "RW",
+      "w": "190",
+      "name": "Ethan Gauthier"
+    },
+    {
+      "shoots": "L",
+      "birthplace": "Slate Hill, NY",
+      "height_hyphenated": "5-10",
+      "player_id": "9563",
+      "birthdate": "1999-06-04",
+      "tp_jersey_number": "80",
+      "position": "LW",
+      "w": "177",
+      "name": "Nick Abruzzese"
+    },
+    {
+      "shoots": "L",
+      "birthplace": "Český Těšín, Czechia",
+      "height_hyphenated": "5-11",
+      "player_id": "9901",
+      "birthdate": "2003-09-24",
+      "tp_jersey_number": "95",
+      "position": "C",
+      "w": "187",
+      "name": "Gabriel Szturc"
+    },
+    {
+      "tp_jersey_number": {
+        "properties": {
+          "key": "tp_jersey_number",
+          "hidden": false,
+          "class": "",
+          "label": "#",
+          "title": "Jersey Number",
+          "sortable": true,
+          "align": "right",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "name": {
+        "properties": {
+          "key": "name",
+          "hidden": false,
+          "class": "",
+          "label": "Name",
+          "title": "Name",
+          "sortable": true,
+          "align": "left",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "position": {
+        "properties": {
+          "key": "position",
+          "hidden": false,
+          "class": "",
+          "label": "Pos",
+          "title": "Position",
+          "sortable": true,
+          "align": "center",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "shoots": {
+        "properties": {
+          "key": "shoots",
+          "hidden": false,
+          "class": "",
+          "label": "Shoots",
+          "title": "Shoots",
+          "sortable": true,
+          "align": "center",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "height_hyphenated": {
+        "properties": {
+          "key": "height_hyphenated",
+          "hidden": false,
+          "class": "",
+          "label": "Height",
+          "title": "Height",
+          "sortable": true,
+          "align": "center",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "w": {
+        "properties": {
+          "key": "w",
+          "hidden": false,
+          "class": "",
+          "label": "Weight",
+          "title": "Weight",
+          "sortable": true,
+          "align": "center",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "birthdate": {
+        "properties": {
+          "key": "birthdate",
+          "hidden": false,
+          "class": "",
+          "label": "DOB",
+          "title": "Birthdate",
+          "sortable": true,
+          "align": "left",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "birthplace": {
+        "properties": {
+          "key": "birthplace",
+          "hidden": false,
+          "class": "",
+          "label": "Birth place",
+          "title": "Birth place",
+          "sortable": true,
+          "align": "left",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "player_id": {
+        "properties": {
+          "key": "player_id",
+          "hidden": true,
+          "class": "",
+          "label": "",
+          "title": "",
+          "sortable": true,
+          "align": "center",
+          "highlight": false,
+          "sortKey": ""
+        }
+      }
+    },
+    {
+      "shoots": "R",
+      "birthplace": "Stockholm, Sweden",
+      "height_hyphenated": "6-2",
+      "player_id": "8922",
+      "birthdate": "2000-10-08",
+      "tp_jersey_number": "7",
+      "position": "D",
+      "w": "205",
+      "name": "Simon Lundmark"
+    },
+    {
+      "shoots": "R",
+      "birthplace": "West Bloomfield, MI",
+      "height_hyphenated": "6-3",
+      "player_id": "9079",
+      "birthdate": "1999-03-06",
+      "tp_jersey_number": "8",
+      "position": "D",
+      "w": "205",
+      "name": "Tommy Miller"
+    },
+    {
+      "shoots": "R",
+      "birthplace": "Bronxville, NY",
+      "height_hyphenated": "6-3",
+      "player_id": "6522",
+      "birthdate": "1995-03-07",
+      "tp_jersey_number": "16",
+      "position": "D",
+      "w": "215",
+      "name": "Steven Santini"
+    },
+    {
+      "shoots": "L",
+      "birthplace": "Franklin, MA",
+      "height_hyphenated": "6-2",
+      "player_id": "9032",
+      "birthdate": "1999-09-23",
+      "tp_jersey_number": "23",
+      "position": "D",
+      "w": "202",
+      "name": "Michael Callahan"
+    },
+    {
+      "shoots": "L",
+      "birthplace": "Burnsville, MN",
+      "height_hyphenated": "6-6",
+      "player_id": "4666",
+      "birthdate": "1992-02-20",
+      "tp_jersey_number": "28",
+      "position": "D",
+      "w": "222",
+      "name": "Jarred Tinordi"
+    },
+    {
+      "shoots": "L",
+      "birthplace": "Agryz, Russia",
+      "height_hyphenated": "6-3",
+      "player_id": "9896",
+      "birthdate": "2001-12-14",
+      "tp_jersey_number": "52",
+      "position": "D",
+      "w": "196",
+      "name": "Maxim Groshev"
+    },
+    {
+      "shoots": "R",
+      "birthplace": "Riverview, NB",
+      "height_hyphenated": "6-2",
+      "player_id": "10393",
+      "birthdate": "2004-06-07",
+      "tp_jersey_number": "57",
+      "position": "D",
+      "w": "202",
+      "name": "Dyllan Gill"
+    },
+    {
+      "shoots": "L",
+      "birthplace": "Boise, ID",
+      "height_hyphenated": "6-1",
+      "player_id": "8884",
+      "birthdate": "1998-10-20",
+      "tp_jersey_number": "75",
+      "position": "D",
+      "w": "193",
+      "name": "Matteo Pietroniro"
+    },
+    {
+      "shoots": "R",
+      "birthplace": "Bratislava, Slovakia",
+      "height_hyphenated": "6-4",
+      "player_id": "11358",
+      "birthdate": "2005-08-28",
+      "tp_jersey_number": "82",
+      "position": "D",
+      "w": "207",
+      "name": "Tomas Kralovic"
+    },
+    {
+      "tp_jersey_number": {
+        "properties": {
+          "key": "tp_jersey_number",
+          "hidden": false,
+          "class": "",
+          "label": "#",
+          "title": "Jersey Number",
+          "sortable": true,
+          "align": "right",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "name": {
+        "properties": {
+          "key": "name",
+          "hidden": false,
+          "class": "",
+          "label": "Name",
+          "title": "Name",
+          "sortable": true,
+          "align": "left",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "position": {
+        "properties": {
+          "key": "position",
+          "hidden": false,
+          "class": "",
+          "label": "Pos",
+          "title": "Position",
+          "sortable": true,
+          "align": "center",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "catches": {
+        "properties": {
+          "key": "catches",
+          "hidden": false,
+          "class": "",
+          "label": "Catches",
+          "title": "Catches",
+          "sortable": true,
+          "align": "center",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "height_hyphenated": {
+        "properties": {
+          "key": "height_hyphenated",
+          "hidden": false,
+          "class": "",
+          "label": "Height",
+          "title": "Height",
+          "sortable": true,
+          "align": "center",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "w": {
+        "properties": {
+          "key": "w",
+          "hidden": false,
+          "class": "",
+          "label": "Weight",
+          "title": "Weight",
+          "sortable": true,
+          "align": "center",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "birthdate": {
+        "properties": {
+          "key": "birthdate",
+          "hidden": false,
+          "class": "",
+          "label": "DOB",
+          "title": "Birthdate",
+          "sortable": true,
+          "align": "left",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "birthplace": {
+        "properties": {
+          "key": "birthplace",
+          "hidden": false,
+          "class": "",
+          "label": "Birth place",
+          "title": "Birth place",
+          "sortable": true,
+          "align": "left",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "player_id": {
+        "properties": {
+          "key": "player_id",
+          "hidden": true,
+          "class": "",
+          "label": "",
+          "title": "",
+          "sortable": true,
+          "align": "center",
+          "highlight": false,
+          "sortKey": ""
+        }
+      }
+    },
+    {
+      "catches": "L",
+      "birthplace": "Aalborg, Denmark",
+      "height_hyphenated": "6-7",
+      "player_id": "7785",
+      "birthdate": "2000-12-13",
+      "tp_jersey_number": "30",
+      "position": "G",
+      "w": "235",
+      "name": "Mads Søgaard"
+    },
+    {
+      "catches": "L",
+      "birthplace": "Chicoutimi, QC",
+      "height_hyphenated": "6-1",
+      "player_id": "8484",
+      "birthdate": "2000-07-06",
+      "tp_jersey_number": "33",
+      "position": "G",
+      "w": "168",
+      "name": "Olivier Rodrigue"
+    },
+    {
+      "tp_jersey_number": {
+        "properties": {
+          "key": "tp_jersey_number",
+          "hidden": false,
+          "class": "",
+          "label": "#",
+          "title": "Jersey Number",
+          "sortable": true,
+          "align": "right",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "name": {
+        "properties": {
+          "key": "name",
+          "hidden": false,
+          "class": "",
+          "label": "Name",
+          "title": "Name",
+          "sortable": true,
+          "align": "left",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "role": {
+        "properties": {
+          "key": "role",
+          "hidden": false,
+          "class": "",
+          "label": "Role",
+          "title": "Role",
+          "sortable": true,
+          "align": "left",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "position": {
+        "properties": {
+          "key": "position",
+          "hidden": false,
+          "class": "",
+          "label": "",
+          "title": "Position",
+          "sortable": true,
+          "align": "center",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "shoots": {
+        "properties": {
+          "key": "shoots",
+          "hidden": false,
+          "class": "",
+          "label": "",
+          "title": "Shoots",
+          "sortable": true,
+          "align": "center",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "h": {
+        "properties": {
+          "key": "h",
+          "hidden": false,
+          "class": "",
+          "label": "",
+          "title": "Height",
+          "sortable": true,
+          "align": "center",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "w": {
+        "properties": {
+          "key": "w",
+          "hidden": false,
+          "class": "",
+          "label": "",
+          "title": "Weight",
+          "sortable": true,
+          "align": "center",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "player_id": {
+        "properties": {
+          "key": "player_id",
+          "hidden": true,
+          "class": "",
+          "label": "",
+          "title": "",
+          "sortable": true,
+          "align": "center",
+          "highlight": false,
+          "sortKey": ""
+        }
+      }
+    }
+  ]
+}

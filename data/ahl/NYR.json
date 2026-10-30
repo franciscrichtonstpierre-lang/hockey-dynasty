@@ -1,355 +1,762 @@
 {
-  "schemaVersion": 1,
+  "teamCode": "NYR",
+  "ahlName": "Hartford Wolf Pack",
+  "teamId": "307",
   "season": "2026-2027",
-  "description": "2026-27 opening-night roster; NHL individual rights not verified",
+  "seasonId": "94",
+  "source": "AHL HockeyTech public feed",
+  "sourceUrl": "https://lscluster.hockeytech.com/feed/index.php?feed=statviewfeed&key=ccb91f29d6744675&client_code=ahl&league_id=4&site_id=3&lang=en&view=roster&team_id=307&season_id=94",
+  "syncedAt": "2026-10-30T23:58:28.954Z",
+  "count": 30,
   "players": [
     {
-      "id": "ahl-hartford-carey-terrance",
-      "name": "Carey Terrance",
-      "position": "F",
-      "currentLeague": "AHL",
-      "currentTeam": "Hartford Wolf Pack",
-      "nhlRightsTeam": "NYR",
-      "rightsStatus": "affiliation-not-individual-rights-verified",
-      "source": "https://www.hartfordwolfpack.com/news/detail/hartford-wolf-pack-announce-2026-27-season-opening-roster",
-      "verifiedAt": "2026-10-30",
-      "rosterAsOf": "2026-10-02"
+      "tp_jersey_number": {
+        "properties": {
+          "key": "tp_jersey_number",
+          "hidden": false,
+          "class": "",
+          "label": "#",
+          "title": "Jersey Number",
+          "sortable": true,
+          "align": "right",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "name": {
+        "properties": {
+          "key": "name",
+          "hidden": false,
+          "class": "",
+          "label": "Name",
+          "title": "Name",
+          "sortable": true,
+          "align": "left",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "position": {
+        "properties": {
+          "key": "position",
+          "hidden": false,
+          "class": "",
+          "label": "Pos",
+          "title": "Position",
+          "sortable": true,
+          "align": "center",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "shoots": {
+        "properties": {
+          "key": "shoots",
+          "hidden": false,
+          "class": "",
+          "label": "Shoots",
+          "title": "Shoots",
+          "sortable": true,
+          "align": "center",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "height_hyphenated": {
+        "properties": {
+          "key": "height_hyphenated",
+          "hidden": false,
+          "class": "",
+          "label": "Height",
+          "title": "Height",
+          "sortable": true,
+          "align": "center",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "w": {
+        "properties": {
+          "key": "w",
+          "hidden": false,
+          "class": "",
+          "label": "Weight",
+          "title": "Weight",
+          "sortable": true,
+          "align": "center",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "birthdate": {
+        "properties": {
+          "key": "birthdate",
+          "hidden": false,
+          "class": "",
+          "label": "DOB",
+          "title": "Birthdate",
+          "sortable": true,
+          "align": "left",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "birthplace": {
+        "properties": {
+          "key": "birthplace",
+          "hidden": false,
+          "class": "",
+          "label": "Birth place",
+          "title": "Birth place",
+          "sortable": true,
+          "align": "left",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "player_id": {
+        "properties": {
+          "key": "player_id",
+          "hidden": true,
+          "class": "",
+          "label": "",
+          "title": "",
+          "sortable": true,
+          "align": "center",
+          "highlight": false,
+          "sortKey": ""
+        }
+      }
     },
     {
-      "id": "ahl-hartford-caige-sterzer",
-      "name": "Caige Sterzer",
+      "shoots": "L",
+      "birthplace": "Akwesasne, NY",
+      "height_hyphenated": "6-1",
+      "player_id": "10276",
+      "birthdate": "2005-05-10",
+      "tp_jersey_number": "5",
       "position": "F",
-      "currentLeague": "AHL",
-      "currentTeam": "Hartford Wolf Pack",
-      "nhlRightsTeam": "NYR",
-      "rightsStatus": "affiliation-not-individual-rights-verified",
-      "source": "https://www.hartfordwolfpack.com/news/detail/hartford-wolf-pack-announce-2026-27-season-opening-roster",
-      "verifiedAt": "2026-10-30",
-      "rosterAsOf": "2026-10-02"
+      "w": "187",
+      "name": "Carey Terrance"
     },
     {
-      "id": "ahl-hartford-glenn-gawdin",
-      "name": "Glenn Gawdin",
+      "shoots": "R",
+      "birthplace": "Richmond, BC",
+      "height_hyphenated": "6-1",
+      "player_id": "6784",
+      "birthdate": "1997-03-25",
+      "tp_jersey_number": "9",
       "position": "F",
-      "currentLeague": "AHL",
-      "currentTeam": "Hartford Wolf Pack",
-      "nhlRightsTeam": "NYR",
-      "rightsStatus": "affiliation-not-individual-rights-verified",
-      "source": "https://www.hartfordwolfpack.com/news/detail/hartford-wolf-pack-announce-2026-27-season-opening-roster",
-      "verifiedAt": "2026-10-30",
-      "rosterAsOf": "2026-10-02"
+      "w": "192",
+      "name": "Glenn Gawdin"
     },
     {
-      "id": "ahl-hartford-juuso-parssinen",
-      "name": "Juuso Pärssinen",
+      "shoots": "L",
+      "birthplace": "Hämeenlinna, Finland",
+      "height_hyphenated": "6-3",
+      "player_id": "9164",
+      "birthdate": "2001-02-01",
+      "tp_jersey_number": "13",
       "position": "F",
-      "currentLeague": "AHL",
-      "currentTeam": "Hartford Wolf Pack",
-      "nhlRightsTeam": "NYR",
-      "rightsStatus": "affiliation-not-individual-rights-verified",
-      "source": "https://www.hartfordwolfpack.com/news/detail/hartford-wolf-pack-announce-2026-27-season-opening-roster",
-      "verifiedAt": "2026-10-30",
-      "rosterAsOf": "2026-10-02"
+      "w": "212",
+      "name": "Juuso Pärssinen"
     },
     {
-      "id": "ahl-hartford-taylor-raddysh",
-      "name": "Taylor Raddysh",
+      "shoots": "L",
+      "birthplace": "Cross Lake, MB",
+      "height_hyphenated": "6-3",
+      "player_id": "9012",
+      "birthdate": "2000-03-04",
+      "tp_jersey_number": "15",
       "position": "F",
-      "currentLeague": "AHL",
-      "currentTeam": "Hartford Wolf Pack",
-      "nhlRightsTeam": "NYR",
-      "rightsStatus": "affiliation-not-individual-rights-verified",
-      "source": "https://www.hartfordwolfpack.com/news/detail/hartford-wolf-pack-announce-2026-27-season-opening-roster",
-      "verifiedAt": "2026-10-30",
-      "rosterAsOf": "2026-10-02"
+      "w": "205",
+      "name": "Justin Nachbaur"
     },
     {
-      "id": "ahl-hartford-justin-nachbaur",
-      "name": "Justin Nachbaur",
+      "shoots": "L",
+      "birthplace": "London, ON",
+      "height_hyphenated": "6-2",
+      "player_id": "9667",
+      "birthdate": "2004-06-04",
+      "tp_jersey_number": "18",
       "position": "F",
-      "currentLeague": "AHL",
-      "currentTeam": "Hartford Wolf Pack",
-      "nhlRightsTeam": "NYR",
-      "rightsStatus": "affiliation-not-individual-rights-verified",
-      "source": "https://www.hartfordwolfpack.com/news/detail/hartford-wolf-pack-announce-2026-27-season-opening-roster",
-      "verifiedAt": "2026-10-30",
-      "rosterAsOf": "2026-10-02"
+      "w": "194",
+      "name": "Bryce McConnell-Barker"
     },
     {
-      "id": "ahl-hartford-bryce-mcconnell-barker",
-      "name": "Bryce McConnell-Barker",
+      "shoots": "L",
+      "birthplace": "Mölnlycke, Sweden",
+      "height_hyphenated": "6-0",
+      "player_id": "5995",
+      "birthdate": "1995-03-14",
+      "tp_jersey_number": "21",
       "position": "F",
-      "currentLeague": "AHL",
-      "currentTeam": "Hartford Wolf Pack",
-      "nhlRightsTeam": "NYR",
-      "rightsStatus": "affiliation-not-individual-rights-verified",
-      "source": "https://www.hartfordwolfpack.com/news/detail/hartford-wolf-pack-announce-2026-27-season-opening-roster",
-      "verifiedAt": "2026-10-30",
-      "rosterAsOf": "2026-10-02"
+      "w": "190",
+      "name": "Anton Blidh"
     },
     {
-      "id": "ahl-hartford-anton-blidh",
-      "name": "Anton Blidh",
+      "shoots": "L",
+      "birthplace": "Oshawa, ON",
+      "height_hyphenated": "6-3",
+      "player_id": "10195",
+      "birthdate": "2006-01-21",
+      "tp_jersey_number": "24",
       "position": "F",
-      "currentLeague": "AHL",
-      "currentTeam": "Hartford Wolf Pack",
-      "nhlRightsTeam": "NYR",
-      "rightsStatus": "affiliation-not-individual-rights-verified",
-      "source": "https://www.hartfordwolfpack.com/news/detail/hartford-wolf-pack-announce-2026-27-season-opening-roster",
-      "verifiedAt": "2026-10-30",
-      "rosterAsOf": "2026-10-02"
+      "w": "216",
+      "name": "Liam Greentree"
     },
     {
-      "id": "ahl-hartford-liam-greentree",
-      "name": "Liam Greentree",
+      "shoots": "R",
+      "birthplace": "Rochester, MN",
+      "height_hyphenated": "6-1",
+      "player_id": "10979",
+      "birthdate": "2003-08-30",
+      "tp_jersey_number": "26",
       "position": "F",
-      "currentLeague": "AHL",
-      "currentTeam": "Hartford Wolf Pack",
-      "nhlRightsTeam": "NYR",
-      "rightsStatus": "affiliation-not-individual-rights-verified",
-      "source": "https://www.hartfordwolfpack.com/news/detail/hartford-wolf-pack-announce-2026-27-season-opening-roster",
-      "verifiedAt": "2026-10-30",
-      "rosterAsOf": "2026-10-02"
+      "w": "185",
+      "name": "Brody Lamb"
     },
     {
-      "id": "ahl-hartford-brody-lamb",
-      "name": "Brody Lamb",
+      "shoots": "L",
+      "birthplace": "London, ON",
+      "height_hyphenated": "6-7",
+      "player_id": "10189",
+      "birthdate": "2004-07-27",
+      "tp_jersey_number": "28",
       "position": "F",
-      "currentLeague": "AHL",
-      "currentTeam": "Hartford Wolf Pack",
-      "nhlRightsTeam": "NYR",
-      "rightsStatus": "affiliation-not-individual-rights-verified",
-      "source": "https://www.hartfordwolfpack.com/news/detail/hartford-wolf-pack-announce-2026-27-season-opening-roster",
-      "verifiedAt": "2026-10-30",
-      "rosterAsOf": "2026-10-02"
+      "w": "205",
+      "name": "Dylan Roobroeck"
     },
     {
-      "id": "ahl-hartford-dylan-roobroeck",
-      "name": "Dylan Roobroeck",
+      "shoots": "L",
+      "birthplace": "Ottawa, ON",
+      "height_hyphenated": "6-2",
+      "player_id": "10209",
+      "birthdate": "2006-04-24",
+      "tp_jersey_number": "29",
       "position": "F",
-      "currentLeague": "AHL",
-      "currentTeam": "Hartford Wolf Pack",
-      "nhlRightsTeam": "NYR",
-      "rightsStatus": "affiliation-not-individual-rights-verified",
-      "source": "https://www.hartfordwolfpack.com/news/detail/hartford-wolf-pack-announce-2026-27-season-opening-roster",
-      "verifiedAt": "2026-10-30",
-      "rosterAsOf": "2026-10-02"
+      "w": "212",
+      "name": "Cole Beaudoin"
     },
     {
-      "id": "ahl-hartford-cole-beaudoin",
-      "name": "Cole Beaudoin",
+      "shoots": "L",
+      "birthplace": "Calgary, AB",
+      "height_hyphenated": "5-10",
+      "player_id": "4053",
+      "birthdate": "1990-10-01",
+      "tp_jersey_number": "37",
       "position": "F",
-      "currentLeague": "AHL",
-      "currentTeam": "Hartford Wolf Pack",
-      "nhlRightsTeam": "NYR",
-      "rightsStatus": "affiliation-not-individual-rights-verified",
-      "source": "https://www.hartfordwolfpack.com/news/detail/hartford-wolf-pack-announce-2026-27-season-opening-roster",
-      "verifiedAt": "2026-10-30",
-      "rosterAsOf": "2026-10-02"
+      "w": "181",
+      "name": "Justin Dowling"
     },
     {
-      "id": "ahl-hartford-justin-dowling",
-      "name": "Justin Dowling",
+      "shoots": "R",
+      "birthplace": "Nové Město nad Metují, Czechia",
+      "height_hyphenated": "6-5",
+      "player_id": "10062",
+      "birthdate": "2003-07-20",
+      "tp_jersey_number": "42",
       "position": "F",
-      "currentLeague": "AHL",
-      "currentTeam": "Hartford Wolf Pack",
-      "nhlRightsTeam": "NYR",
-      "rightsStatus": "affiliation-not-individual-rights-verified",
-      "source": "https://www.hartfordwolfpack.com/news/detail/hartford-wolf-pack-announce-2026-27-season-opening-roster",
-      "verifiedAt": "2026-10-30",
-      "rosterAsOf": "2026-10-02"
+      "w": "220",
+      "name": "Jaroslav Chmelař"
     },
     {
-      "id": "ahl-hartford-zakary-karpa",
-      "name": "Zakary Karpa",
+      "shoots": "L",
+      "birthplace": "Greenwich, CT",
+      "height_hyphenated": "6-2",
+      "player_id": "10786",
+      "birthdate": "2002-03-25",
+      "tp_jersey_number": "59",
       "position": "F",
-      "currentLeague": "AHL",
-      "currentTeam": "Hartford Wolf Pack",
-      "nhlRightsTeam": "NYR",
-      "rightsStatus": "affiliation-not-individual-rights-verified",
-      "source": "https://www.hartfordwolfpack.com/news/detail/hartford-wolf-pack-announce-2026-27-season-opening-roster",
-      "verifiedAt": "2026-10-30",
-      "rosterAsOf": "2026-10-02"
+      "w": "190",
+      "name": "Zakary Karpa"
     },
     {
-      "id": "ahl-hartford-lucas-vanroboys",
-      "name": "Lucas Vanroboys",
+      "shoots": "R",
+      "birthplace": "Thamesville, ON",
+      "height_hyphenated": "6-2",
+      "player_id": "10100",
+      "birthdate": "1999-07-24",
+      "tp_jersey_number": "67",
       "position": "F",
-      "currentLeague": "AHL",
-      "currentTeam": "Hartford Wolf Pack",
-      "nhlRightsTeam": "NYR",
-      "rightsStatus": "affiliation-not-individual-rights-verified",
-      "source": "https://www.hartfordwolfpack.com/news/detail/hartford-wolf-pack-announce-2026-27-season-opening-roster",
-      "verifiedAt": "2026-10-30",
-      "rosterAsOf": "2026-10-02"
+      "w": "190",
+      "name": "Lucas Vanroboys"
     },
     {
-      "id": "ahl-hartford-nathan-aspinall",
-      "name": "Nathan Aspinall",
+      "shoots": "L",
+      "birthplace": "Markham, ON",
+      "height_hyphenated": "6-7",
+      "player_id": "10603",
+      "birthdate": "2006-03-30",
+      "tp_jersey_number": "76",
       "position": "F",
-      "currentLeague": "AHL",
-      "currentTeam": "Hartford Wolf Pack",
-      "nhlRightsTeam": "NYR",
-      "rightsStatus": "affiliation-not-individual-rights-verified",
-      "source": "https://www.hartfordwolfpack.com/news/detail/hartford-wolf-pack-announce-2026-27-season-opening-roster",
-      "verifiedAt": "2026-10-30",
-      "rosterAsOf": "2026-10-02"
+      "w": "207",
+      "name": "Nathan Aspinall"
     },
     {
-      "id": "ahl-hartford-jacob-battaglia",
-      "name": "Jacob Battaglia",
+      "shoots": "L",
+      "birthplace": "Mississauga, ON",
+      "height_hyphenated": "6-1",
+      "player_id": "11193",
+      "birthdate": "2006-03-17",
+      "tp_jersey_number": "88",
       "position": "F",
-      "currentLeague": "AHL",
-      "currentTeam": "Hartford Wolf Pack",
-      "nhlRightsTeam": "NYR",
-      "rightsStatus": "affiliation-not-individual-rights-verified",
-      "source": "https://www.hartfordwolfpack.com/news/detail/hartford-wolf-pack-announce-2026-27-season-opening-roster",
-      "verifiedAt": "2026-10-30",
-      "rosterAsOf": "2026-10-02"
+      "w": "203",
+      "name": "Jacob Battaglia"
     },
     {
-      "id": "ahl-hartford-marc-del-gaizo",
-      "name": "Marc Del Gaizo",
+      "tp_jersey_number": {
+        "properties": {
+          "key": "tp_jersey_number",
+          "hidden": false,
+          "class": "",
+          "label": "#",
+          "title": "Jersey Number",
+          "sortable": true,
+          "align": "right",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "name": {
+        "properties": {
+          "key": "name",
+          "hidden": false,
+          "class": "",
+          "label": "Name",
+          "title": "Name",
+          "sortable": true,
+          "align": "left",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "position": {
+        "properties": {
+          "key": "position",
+          "hidden": false,
+          "class": "",
+          "label": "Pos",
+          "title": "Position",
+          "sortable": true,
+          "align": "center",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "shoots": {
+        "properties": {
+          "key": "shoots",
+          "hidden": false,
+          "class": "",
+          "label": "Shoots",
+          "title": "Shoots",
+          "sortable": true,
+          "align": "center",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "height_hyphenated": {
+        "properties": {
+          "key": "height_hyphenated",
+          "hidden": false,
+          "class": "",
+          "label": "Height",
+          "title": "Height",
+          "sortable": true,
+          "align": "center",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "w": {
+        "properties": {
+          "key": "w",
+          "hidden": false,
+          "class": "",
+          "label": "Weight",
+          "title": "Weight",
+          "sortable": true,
+          "align": "center",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "birthdate": {
+        "properties": {
+          "key": "birthdate",
+          "hidden": false,
+          "class": "",
+          "label": "DOB",
+          "title": "Birthdate",
+          "sortable": true,
+          "align": "left",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "birthplace": {
+        "properties": {
+          "key": "birthplace",
+          "hidden": false,
+          "class": "",
+          "label": "Birth place",
+          "title": "Birth place",
+          "sortable": true,
+          "align": "left",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "player_id": {
+        "properties": {
+          "key": "player_id",
+          "hidden": true,
+          "class": "",
+          "label": "",
+          "title": "",
+          "sortable": true,
+          "align": "center",
+          "highlight": false,
+          "sortKey": ""
+        }
+      }
+    },
+    {
+      "shoots": "L",
+      "birthplace": "Basking Ridge, NJ",
+      "height_hyphenated": "5-11",
+      "player_id": "8717",
+      "birthdate": "1999-10-11",
+      "tp_jersey_number": "2",
       "position": "D",
-      "currentLeague": "AHL",
-      "currentTeam": "Hartford Wolf Pack",
-      "nhlRightsTeam": "NYR",
-      "rightsStatus": "affiliation-not-individual-rights-verified",
-      "source": "https://www.hartfordwolfpack.com/news/detail/hartford-wolf-pack-announce-2026-27-season-opening-roster",
-      "verifiedAt": "2026-10-30",
-      "rosterAsOf": "2026-10-02"
+      "w": "187",
+      "name": "Marc Del Gaizo"
     },
     {
-      "id": "ahl-hartford-cooper-moore",
-      "name": "Cooper Moore",
+      "shoots": "R",
+      "birthplace": "Moorhead, MN",
+      "height_hyphenated": "5-11",
+      "player_id": "9651",
+      "birthdate": "2000-10-29",
+      "tp_jersey_number": "4",
       "position": "D",
-      "currentLeague": "AHL",
-      "currentTeam": "Hartford Wolf Pack",
-      "nhlRightsTeam": "NYR",
-      "rightsStatus": "affiliation-not-individual-rights-verified",
-      "source": "https://www.hartfordwolfpack.com/news/detail/hartford-wolf-pack-announce-2026-27-season-opening-roster",
-      "verifiedAt": "2026-10-30",
-      "rosterAsOf": "2026-10-02"
+      "w": "192",
+      "name": "Ethan Frisch"
     },
     {
-      "id": "ahl-hartford-ethan-frisch",
-      "name": "Ethan Frisch",
+      "shoots": "R",
+      "birthplace": "Coquitlam, BC",
+      "height_hyphenated": "6-4",
+      "player_id": "9165",
+      "birthdate": "2002-11-14",
+      "tp_jersey_number": "6",
       "position": "D",
-      "currentLeague": "AHL",
-      "currentTeam": "Hartford Wolf Pack",
-      "nhlRightsTeam": "NYR",
-      "rightsStatus": "affiliation-not-individual-rights-verified",
-      "source": "https://www.hartfordwolfpack.com/news/detail/hartford-wolf-pack-announce-2026-27-season-opening-roster",
-      "verifiedAt": "2026-10-30",
-      "rosterAsOf": "2026-10-02"
+      "w": "205",
+      "name": "Vincent Iorio"
     },
     {
-      "id": "ahl-hartford-vincent-iorio",
-      "name": "Vincent Iorio",
+      "shoots": "L",
+      "birthplace": "Joensuu, Finland ",
+      "height_hyphenated": "6-2",
+      "player_id": "7446",
+      "birthdate": "1999-01-01",
+      "tp_jersey_number": "17",
       "position": "D",
-      "currentLeague": "AHL",
-      "currentTeam": "Hartford Wolf Pack",
-      "nhlRightsTeam": "NYR",
-      "rightsStatus": "affiliation-not-individual-rights-verified",
-      "source": "https://www.hartfordwolfpack.com/news/detail/hartford-wolf-pack-announce-2026-27-season-opening-roster",
-      "verifiedAt": "2026-10-30",
-      "rosterAsOf": "2026-10-02"
+      "w": "205",
+      "name": "Urho Vaakanainen"
     },
     {
-      "id": "ahl-hartford-urho-vaakanainen",
-      "name": "Urho Vaakanainen",
+      "shoots": "L",
+      "birthplace": "Langley, BC",
+      "height_hyphenated": "6-2",
+      "player_id": "6734",
+      "birthdate": "1998-02-15",
+      "tp_jersey_number": "25",
       "position": "D",
-      "currentLeague": "AHL",
-      "currentTeam": "Hartford Wolf Pack",
-      "nhlRightsTeam": "NYR",
-      "rightsStatus": "affiliation-not-individual-rights-verified",
-      "source": "https://www.hartfordwolfpack.com/news/detail/hartford-wolf-pack-announce-2026-27-season-opening-roster",
-      "verifiedAt": "2026-10-30",
-      "rosterAsOf": "2026-10-02"
+      "w": "209",
+      "name": "Dennis Cholowski"
     },
     {
-      "id": "ahl-hartford-dennis-cholowski",
-      "name": "Dennis Cholowski",
+      "shoots": "L",
+      "birthplace": "North Reading, MA",
+      "height_hyphenated": "6-2",
+      "player_id": "10523",
+      "birthdate": "2004-04-13",
+      "tp_jersey_number": "38",
       "position": "D",
-      "currentLeague": "AHL",
-      "currentTeam": "Hartford Wolf Pack",
-      "nhlRightsTeam": "NYR",
-      "rightsStatus": "affiliation-not-individual-rights-verified",
-      "source": "https://www.hartfordwolfpack.com/news/detail/hartford-wolf-pack-announce-2026-27-season-opening-roster",
-      "verifiedAt": "2026-10-30",
-      "rosterAsOf": "2026-10-02"
+      "w": "192",
+      "name": "Jackson Dorrington"
     },
     {
-      "id": "ahl-hartford-anthony-kehrer",
-      "name": "Anthony Kehrer",
+      "shoots": "L",
+      "birthplace": "Edmonton, AB",
+      "height_hyphenated": "6-4",
+      "player_id": "7960",
+      "birthdate": "2001-03-09",
+      "tp_jersey_number": "44",
       "position": "D",
-      "currentLeague": "AHL",
-      "currentTeam": "Hartford Wolf Pack",
-      "nhlRightsTeam": "NYR",
-      "rightsStatus": "affiliation-not-individual-rights-verified",
-      "source": "https://www.hartfordwolfpack.com/news/detail/hartford-wolf-pack-announce-2026-27-season-opening-roster",
-      "verifiedAt": "2026-10-30",
-      "rosterAsOf": "2026-10-02"
+      "w": "201",
+      "name": "Matthew Robertson"
     },
     {
-      "id": "ahl-hartford-jackson-dorrington",
-      "name": "Jackson Dorrington",
+      "shoots": "L",
+      "birthplace": "Pearl River, NY",
+      "height_hyphenated": "6-2",
+      "player_id": "11198",
+      "birthdate": "2005-04-28",
+      "tp_jersey_number": "45",
       "position": "D",
-      "currentLeague": "AHL",
-      "currentTeam": "Hartford Wolf Pack",
-      "nhlRightsTeam": "NYR",
-      "rightsStatus": "affiliation-not-individual-rights-verified",
-      "source": "https://www.hartfordwolfpack.com/news/detail/hartford-wolf-pack-announce-2026-27-season-opening-roster",
-      "verifiedAt": "2026-10-30",
-      "rosterAsOf": "2026-10-02"
+      "w": "194",
+      "name": "Drew Fortescue"
     },
     {
-      "id": "ahl-hartford-drew-fortescue",
-      "name": "Drew Fortescue",
-      "position": "D",
-      "currentLeague": "AHL",
-      "currentTeam": "Hartford Wolf Pack",
-      "nhlRightsTeam": "NYR",
-      "rightsStatus": "affiliation-not-individual-rights-verified",
-      "source": "https://www.hartfordwolfpack.com/news/detail/hartford-wolf-pack-announce-2026-27-season-opening-roster",
-      "verifiedAt": "2026-10-30",
-      "rosterAsOf": "2026-10-02"
+      "tp_jersey_number": {
+        "properties": {
+          "key": "tp_jersey_number",
+          "hidden": false,
+          "class": "",
+          "label": "#",
+          "title": "Jersey Number",
+          "sortable": true,
+          "align": "right",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "name": {
+        "properties": {
+          "key": "name",
+          "hidden": false,
+          "class": "",
+          "label": "Name",
+          "title": "Name",
+          "sortable": true,
+          "align": "left",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "position": {
+        "properties": {
+          "key": "position",
+          "hidden": false,
+          "class": "",
+          "label": "Pos",
+          "title": "Position",
+          "sortable": true,
+          "align": "center",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "catches": {
+        "properties": {
+          "key": "catches",
+          "hidden": false,
+          "class": "",
+          "label": "Catches",
+          "title": "Catches",
+          "sortable": true,
+          "align": "center",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "height_hyphenated": {
+        "properties": {
+          "key": "height_hyphenated",
+          "hidden": false,
+          "class": "",
+          "label": "Height",
+          "title": "Height",
+          "sortable": true,
+          "align": "center",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "w": {
+        "properties": {
+          "key": "w",
+          "hidden": false,
+          "class": "",
+          "label": "Weight",
+          "title": "Weight",
+          "sortable": true,
+          "align": "center",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "birthdate": {
+        "properties": {
+          "key": "birthdate",
+          "hidden": false,
+          "class": "",
+          "label": "DOB",
+          "title": "Birthdate",
+          "sortable": true,
+          "align": "left",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "birthplace": {
+        "properties": {
+          "key": "birthplace",
+          "hidden": false,
+          "class": "",
+          "label": "Birth place",
+          "title": "Birth place",
+          "sortable": true,
+          "align": "left",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "player_id": {
+        "properties": {
+          "key": "player_id",
+          "hidden": true,
+          "class": "",
+          "label": "",
+          "title": "",
+          "sortable": true,
+          "align": "center",
+          "highlight": false,
+          "sortKey": ""
+        }
+      }
     },
     {
-      "id": "ahl-hartford-spencer-martin",
-      "name": "Spencer Martin",
+      "catches": "L",
+      "birthplace": "Oakville, ON",
+      "height_hyphenated": "6-3",
+      "player_id": "5490",
+      "birthdate": "1995-06-08",
+      "tp_jersey_number": "30",
       "position": "G",
-      "currentLeague": "AHL",
-      "currentTeam": "Hartford Wolf Pack",
-      "nhlRightsTeam": "NYR",
-      "rightsStatus": "affiliation-not-individual-rights-verified",
-      "source": "https://www.hartfordwolfpack.com/news/detail/hartford-wolf-pack-announce-2026-27-season-opening-roster",
-      "verifiedAt": "2026-10-30",
-      "rosterAsOf": "2026-10-02"
+      "w": "192",
+      "name": "Spencer Martin"
     },
     {
-      "id": "ahl-hartford-gabriel-carriere",
-      "name": "Gabriel Carriere",
+      "catches": "L",
+      "birthplace": "Port Moody, BC",
+      "height_hyphenated": "6-3",
+      "player_id": "10570",
+      "birthdate": "2003-11-23",
+      "tp_jersey_number": "35",
       "position": "G",
-      "currentLeague": "AHL",
-      "currentTeam": "Hartford Wolf Pack",
-      "nhlRightsTeam": "NYR",
-      "rightsStatus": "affiliation-not-individual-rights-verified",
-      "source": "https://www.hartfordwolfpack.com/news/detail/hartford-wolf-pack-announce-2026-27-season-opening-roster",
-      "verifiedAt": "2026-10-30",
-      "rosterAsOf": "2026-10-02"
+      "w": "198",
+      "name": "Callum Tung"
     },
     {
-      "id": "ahl-hartford-callum-tung",
-      "name": "Callum Tung",
-      "position": "G",
-      "currentLeague": "AHL",
-      "currentTeam": "Hartford Wolf Pack",
-      "nhlRightsTeam": "NYR",
-      "rightsStatus": "affiliation-not-individual-rights-verified",
-      "source": "https://www.hartfordwolfpack.com/news/detail/hartford-wolf-pack-announce-2026-27-season-opening-roster",
-      "verifiedAt": "2026-10-30",
-      "rosterAsOf": "2026-10-02"
+      "tp_jersey_number": {
+        "properties": {
+          "key": "tp_jersey_number",
+          "hidden": false,
+          "class": "",
+          "label": "#",
+          "title": "Jersey Number",
+          "sortable": true,
+          "align": "right",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "name": {
+        "properties": {
+          "key": "name",
+          "hidden": false,
+          "class": "",
+          "label": "Name",
+          "title": "Name",
+          "sortable": true,
+          "align": "left",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "role": {
+        "properties": {
+          "key": "role",
+          "hidden": false,
+          "class": "",
+          "label": "Role",
+          "title": "Role",
+          "sortable": true,
+          "align": "left",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "position": {
+        "properties": {
+          "key": "position",
+          "hidden": false,
+          "class": "",
+          "label": "",
+          "title": "Position",
+          "sortable": true,
+          "align": "center",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "shoots": {
+        "properties": {
+          "key": "shoots",
+          "hidden": false,
+          "class": "",
+          "label": "",
+          "title": "Shoots",
+          "sortable": true,
+          "align": "center",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "h": {
+        "properties": {
+          "key": "h",
+          "hidden": false,
+          "class": "",
+          "label": "",
+          "title": "Height",
+          "sortable": true,
+          "align": "center",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "w": {
+        "properties": {
+          "key": "w",
+          "hidden": false,
+          "class": "",
+          "label": "",
+          "title": "Weight",
+          "sortable": true,
+          "align": "center",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "player_id": {
+        "properties": {
+          "key": "player_id",
+          "hidden": true,
+          "class": "",
+          "label": "",
+          "title": "",
+          "sortable": true,
+          "align": "center",
+          "highlight": false,
+          "sortKey": ""
+        }
+      }
     }
   ]
 }

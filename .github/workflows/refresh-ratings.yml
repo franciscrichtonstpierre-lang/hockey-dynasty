@@ -1,5 +1,9 @@
 name: Refresh player ratings
 on:
+  push:
+    paths:
+      - "scripts/build-ratings.mjs"
+      - ".github/workflows/refresh-ratings.yml"
   workflow_dispatch:
   schedule:
     - cron: "17 8 * * *"

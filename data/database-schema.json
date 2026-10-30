@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "game": "Ultimate Hockey Manager",
   "season": "2026-2027",
-  "description": "Schéma canonique de la base centrale des joueurs. Les notes et potentiels inconnus restent null; aucune cote n'est inventée.",
+  "description": "Schéma canonique UHM : joueurs, choix de repêchage et personnel d'entraîneurs. Les cotes inconnues restent null; aucune cote n'est inventée.",
   "player": {
     "playerId": "string — identifiant source stable (NHL ID si disponible, sinon identifiant externe qualifié)",
     "fullName": "string",
@@ -61,5 +61,34 @@
     "Ne jamais inventer une cote globale, des attributs, un potentiel, un contrat ou des droits.",
     "Conserver la provenance et la date de mise à jour de chaque import.",
     "Les effectifs NHL, les joueurs AHL, les espoirs hors Amérique du Nord et les choix de repêchage sont des ensembles distincts à réconcilier."
+  ],
+  "coach": {
+    "coachId": "string — identifiant stable",
+    "fullName": "string",
+    "role": "head_coach|assistant_coach",
+    "currentTeam": "NHL team code|null",
+    "currentLeague": "NHL|AHL|CHL|NCAA|KHL|SHL|EUROPE|OTHER|UNEMPLOYED",
+    "employmentStatus": "employed|available|fired|retired|unknown",
+    "offensive": "0-99|null",
+    "defensive": "0-99|null",
+    "playerDevelopment": "0-99|null",
+    "playerManagement": "0-99|null",
+    "physicalStyle": "0-99|null",
+    "tacticalStyle": "offensive|defensive|balanced|physical|development|unknown",
+    "powerPlayImpact": "0-99|null",
+    "penaltyKillImpact": "0-99|null",
+    "youngPlayerUsage": "0-99|null",
+    "experienceYears": "number|null",
+    "source": "string",
+    "sourceUpdatedAt": "ISO-8601|null",
+    "ratingsMethod": "Cotes basées sur l'historique documenté, les résultats de l'équipe et le rôle; valeurs inconnues laissées null."
+  },
+  "coachingStaffRules": [
+    "Chaque équipe LNH et LAH dispose d'un entraîneur-chef et de deux entraîneurs adjoints.",
+    "Les DG peuvent congédier et remplacer un entraîneur pendant la saison.",
+    "Le marché des entraîneurs disponibles inclut LNH, LAH, junior, NCAA, KHL, SHL et autres ligues.",
+    "Les entraîneurs influencent les résultats simulés, le jeu offensif et défensif, le jeu physique, les unités spéciales et le développement des joueurs.",
+    "Les cotes des entraîneurs réels doivent être évaluées individuellement à partir de données observables; aucune note arbitraire.",
+    "Un entraîneur ne peut occuper qu'une seule fonction active à la fois; statut et historique d'équipe doivent être suivis."
   ]
 }

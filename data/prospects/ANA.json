@@ -1,8 +1,8 @@
 {
   "teamCode": "ANA",
   "source": "https://api-web.nhle.com/v1/prospects/ANA",
-  "sourceType": "NHL Web API (endpoint public non officiellement documenté)",
-  "syncedUTC": "2026-10-30T10:20:06.707530+00:00",
+  "sourceType": "NHL Web API",
+  "syncedUTC": "2026-10-30T23:57:19.256Z",
   "count": 30,
   "prospects": [
     {
@@ -773,8 +773,7 @@
     }
   ],
   "dataNotes": [
-    "La liste API des espoirs ne garantit pas tous les joueurs dont l'organisation détient les droits.",
-    "Les notes et potentiels de jeu ne sont pas fournis par cette source.",
-    "Ne pas interpréter l'absence d'un joueur comme une preuve que ses droits ne sont pas détenus."
+    "This is the public prospect list returned by the NHL API, not a guarantee of every player whose rights the organization owns.",
+    "Game ratings, potential and rights must only be filled from separately verified sources."
   ]
 }

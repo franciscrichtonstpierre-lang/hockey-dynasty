@@ -1,67 +1,47 @@
-// Build consistent, stats-informed 0–99 ratings for NHL roster players.
-// Uses NHL club stats for the most recently completed regular season; these are game ratings,
-// not official NHL attributes. Players without usable stats remain on the app's provisional fallback.
+// Build league-wide game attributes from NHL Stats REST player-level reports.
+import {writeFile,mkdir} from "node:fs/promises";
 const codes=["ANA","BOS","BUF","CGY","CAR","CHI","COL","CBJ","DAL","DET","EDM","FLA","LAK","MIN","MTL","NSH","NJD","NYI","NYR","OTT","PHI","PIT","SJS","SEA","STL","TBL","TOR","UTA","VAN","VGK","WSH","WPG"];
 const season=process.env.NHL_RATING_SEASON||"20252026";
-const clamp=(n,a=0,b=99)=>Math.max(a,Math.min(b,Math.round(n)));
-const num=(o,...keys)=>{for(const k of keys){const n=Number(o?.[k]);if(Number.isFinite(n)&&o?.[k]!==null&&o?.[k]!==undefined)return n;}return 0};
-async function get(url){const r=await fetch(url,{headers:{"User-Agent":"Hockey-Dynasty/1.0"}});if(!r.ok)throw Error(r.status+" "+url);return r.json()}
-const rows=[];
-for(const code of codes){
-  try{
-    const d=await get(`https://api-web.nhle.com/v1/club-stats/${code}/${season}/2`);
-    for(const p of d.skaters||[]) rows.push({...p,_team:code,_kind:"S"});
-    for(const p of d.goalies||[]) rows.push({...p,_team:code,_kind:"G"});
-    console.log(code,(d.skaters||[]).length,"skaters",(d.goalies||[]).length,"goalies");
-  }catch(e){console.warn("Stats unavailable",code,String(e))}
-}
-if(rows.length<400) throw Error(`Too few NHL stat rows (${rows.length}); refusing to overwrite ratings file`);
-const pct=(arr,v)=>{const vals=arr.filter(Number.isFinite).sort((a,b)=>a-b);if(!vals.length)return 0.5;let lo=0,hi=vals.length;while(lo<hi){const m=(lo+hi)>>1;if(vals[m]<=v)lo=m+1;else hi=m;}return lo/vals.length};
-const sk=rows.filter(p=>p._kind==="S");
-const rates={
- ppg:sk.map(p=>num(p,"points")/Math.max(1,num(p,"gamesPlayed","games"))),
- gpg:sk.map(p=>num(p,"goals")/Math.max(1,num(p,"gamesPlayed","games"))),
- toi:sk.map(p=>num(p,"avgToi","timeOnIcePerGame")),
- shots:sk.map(p=>num(p,"shots")/Math.max(1,num(p,"gamesPlayed","games"))),
- plus:sk.map(p=>num(p,"plusMinus")),
- face:sk.map(p=>num(p,"faceoffWinPct","faceoffWinPercentage")),
- goalies:rows.filter(p=>p._kind==="G")
-};
+const clamp=(n,a=0,b=99)=>Math.max(a,Math.min(b,Math.round(Number.isFinite(n)?n:a)));
+const n=(p,...keys)=>{for(const k of keys){const v=p?.[k];if(v!==null&&v!==undefined&&v!==""&&Number.isFinite(Number(v)))return Number(v)}return 0};
+async function get(url){const r=await fetch(url,{headers:{"User-Agent":"Hockey-Dynasty/1.0"}});if(!r.ok)throw Error("NHL API "+r.status+" "+url);return r.json()}
+const exp=encodeURIComponent("seasonId="+season+" and gameTypeId=2");
+const [skaterRes,goalieRes]=await Promise.all([
+ get("https://api.nhle.com/stats/rest/en/skater/summary?isAggregate=true&isGame=false&cayenneExp="+exp+"&limit=-1"),
+ get("https://api.nhle.com/stats/rest/en/goalie/summary?isAggregate=true&isGame=false&cayenneExp="+exp+"&limit=-1")
+]);
+const skaters=skaterRes.data||[],goalies=goalieRes.data||[];
+if(skaters.length<400||goalies.length<40)throw Error("Incomplete player stats; refusing to replace ratings: "+skaters.length+" skaters / "+goalies.length+" goalies");
+const biosRes=await get("https://api.nhle.com/stats/rest/en/skater/bios?isAggregate=true&isGame=false&cayenneExp="+exp+"&limit=-1");
+const bios=new Map((biosRes.data||[]).map(p=>[String(p.playerId),p]));
+const goalieBiosRes=await get("https://api.nhle.com/stats/rest/en/goalie/bios?isAggregate=true&isGame=false&cayenneExp="+exp+"&limit=-1").catch(()=>({data:[]}));
+const goalieBios=new Map((goalieBiosRes.data||[]).map(p=>[String(p.playerId),p]));
+const pct=(values,v)=>{const a=values.filter(Number.isFinite).sort((x,y)=>x-y);if(!a.length)return .5;let lo=0,hi=a.length;while(lo<hi){const m=(lo+hi)>>1;if(a[m]<=v)lo=m+1;else hi=m}return lo/a.length};
+const games=p=>Math.max(1,n(p,"gamesPlayed"));
+const ppg=p=>n(p,"points")/games(p), gpg=p=>n(p,"goals")/games(p), apg=p=>n(p,"assists")/games(p);
+const rates={ppg:skaters.map(ppg),gpg:skaters.map(gpg),apg:skaters.map(apg),toi:skaters.map(p=>n(p,"timeOnIcePerGame","avgToi")),shots:skaters.map(p=>n(p,"shots")/games(p)),plus:skaters.map(p=>n(p,"plusMinus")),save:goalies.map(p=>n(p,"savePctg","savePercentage")),gaa:goalies.map(p=>n(p,"goalsAgainstAverage","gaa"))};
 const players={};
-for(const p of rows){
- const id=String(p.playerId??p.id??"");if(!id)continue;
- const games=Math.max(1,num(p,"gamesPlayed","games"));
- if(p._kind==="G"){
-   const sv=num(p,"savePct","savePercentage","savePctg");
-   const gaa=num(p,"gaa","goalsAgainstAverage");
-   const wins=num(p,"wins");
-   const savePct=sv>1?sv/100:sv;
-   const goalieBase=clamp(48+(savePct-0.900)*500+(3.0-gaa)*5+pct(rates.goalies.map(x=>num(x,"wins")),wins)*10);
-   players[id]={FI:25,SH:20,PL:30,ST:clamp(goalieBase+2),CH:clamp(goalieBase),PO:clamp(goalieBase+4),HI:clamp(goalieBase-8),SK:clamp(goalieBase-2),EN:clamp(goalieBase),PE:clamp(goalieBase),FA:25,LE:clamp(goalieBase),SR:clamp(goalieBase),OFF:25,DEF:goalieBase,OA:goalieBase};
-   continue;
- }
- const ppg=num(p,"points")/games,gpg=num(p,"goals")/games,apg=num(p,"assists")/games;
- const point=pct(rates.ppg,ppg),goal=pct(rates.gpg,gpg),toi=pct(rates.toi,num(p,"avgToi","timeOnIcePerGame")),shot=pct(rates.shots,num(p,"shots")/games),plus=pct(rates.plus,num(p,"plusMinus"));
- const pos=String(p.position||p.positionCode||"F").toUpperCase();
- const isD=pos==="D"||pos==="DEFENSE";
- const off=clamp(42+point*43+goal*12+shot*5);
- const def=clamp(43+toi*17+plus*20+(isD?12:0));
- const base=clamp(off*.53+def*.47);
- const fi=clamp(42+point*35+pct(rates.ppg,apg)*10);
- const sh=clamp(35+goal*54+shot*10);
- const pl=clamp(40+point*40+pct(rates.ppg,apg)*12);
- const st=clamp(43+toi*28+(isD?8:0));
- const ch=clamp(42+toi*22+plus*13);
- const po=clamp(40+point*27+shot*16+goal*8);
- const hi=clamp(45+toi*12+(isD?12:0));
- const sk=clamp(48+toi*20+point*12);
- const en=clamp(44+toi*30);
- const pe=clamp(42+plus*18+toi*12);
- const fa=pos==="C"?clamp(45+pct(rates.face,num(p,"faceoffWinPct","faceoffWinPercentage"))*40):50;
- const le=clamp(42+toi*18+plus*12);
- const sr=clamp(40+point*25+toi*15+plus*8);
- players[id]={FI:fi,SH:sh,PL:pl,ST:st,CH:ch,PO:po,HI:hi,SK:sk,EN:en,PE:pe,FA:fa,LE:le,SR:sr,OFF:off,DEF:def,OA:base};
+for(const p of skaters){
+ const id=String(p.playerId||"");if(!id)continue;
+ const bio=bios.get(id)||{};
+ const pos=String(bio.positionCode||bio.position||p.positionCode||"F").toUpperCase();
+ const d=pos==="D"||pos==="DEFENSE";
+ const point=pct(rates.ppg,ppg(p)),goal=pct(rates.gpg,gpg(p)),assist=pct(rates.apg,apg(p));
+ const toi=pct(rates.toi,n(p,"timeOnIcePerGame","avgToi")),shot=pct(rates.shots,n(p,"shots")/games(p)),plus=pct(rates.plus,n(p,"plusMinus"));
+ const off=clamp(38+point*48+goal*9+shot*4);
+ const def=clamp(39+toi*17+plus*20+(d?12:0));
+ const oa=clamp(off*.53+def*.47);
+ players[id]={FI:clamp(38+point*35+assist*13),SH:clamp(32+goal*53+shot*12),PL:clamp(38+point*35+assist*15),ST:clamp(40+toi*30+(d?7:0)),CH:clamp(40+toi*20+plus*15),PO:clamp(38+point*24+shot*18+goal*8),HI:clamp(43+toi*12+(d?12:0)),SK:clamp(47+toi*20+point*12),EN:clamp(42+toi*31),PE:clamp(40+plus*20+toi*12),FA:pos==="C"?clamp(42+pct(rates.ppg,n(p,"faceoffWinPctg","faceoffWinPct"))*35):50,LE:clamp(40+toi*18+plus*12),SR:clamp(38+point*26+toi*16+plus*8),OFF:off,DEF:def,OA:oa};
 }
-const output={generatedAt:new Date().toISOString(),season,source:"NHL Web API club stats, regular season",playerCount:Object.keys(players).length,players};
-await (await import("node:fs/promises")).writeFile("data/ratings.json",JSON.stringify(output));
-console.log("Wrote ratings for",output.playerCount,"players");
+for(const p of goalies){
+ const id=String(p.playerId||"");if(!id)continue;
+ const sv=n(p,"savePctg","savePercentage"),gaa=n(p,"goalsAgainstAverage","gaa"),wins=n(p,"wins");
+ const svp=pct(rates.save,sv),gaap=1-pct(rates.gaa,gaa),winp=pct(goalies.map(x=>n(x,"wins")),wins);
+ const ov=clamp(43+svp*27+gaap*18+winp*12);
+ players[id]={FI:20,SH:15,PL:25,ST:clamp(ov+2),CH:ov,PO:clamp(ov+4),HI:clamp(ov-8),SK:clamp(ov-3),EN:ov,PE:ov,FA:20,LE:ov,SR:ov,OFF:20,DEF:ov,OA:ov};
+}
+if(Object.keys(players).length<450)throw Error("Too few ratings generated: "+Object.keys(players).length);
+await mkdir("data",{recursive:true});
+const out={generatedAt:new Date().toISOString(),season,source:"NHL Stats REST player summaries and bios, regular season",playerCount:Object.keys(players).length,skaterCount:skaters.length,goalieCount:goalies.length,players};
+await writeFile("data/ratings.json",JSON.stringify(out));
+console.log("Wrote",out.playerCount,"player ratings for season",season);

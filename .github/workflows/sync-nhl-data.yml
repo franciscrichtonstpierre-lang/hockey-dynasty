@@ -34,7 +34,10 @@ jobs:
         env:
           UHM_AHL_SEASON_ID: "94"
         run: node scripts/sync-ahl-data.mjs
+      - name: Vérifier la complétude des bases LNH, LAH et espoirs
+        run: node scripts/validate-database.mjs
       - name: Publier les fichiers actualisés
+        if: always()
         run: |
           git config user.name "uhm-data-bot"
           git config user.email "uhm-data-bot@users.noreply.github.com"

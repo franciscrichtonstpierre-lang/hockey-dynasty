@@ -40,13 +40,7 @@ for(const p of skaters){
  // Overall reflects role and sustained NHL contribution; +/- is only a minor proxy.
  const off=clamp(39+point*37+goal*9+shot*5);
  const def=clamp(46+toi*21+plus*7+(d?7:0));
- const raw=d?off*.38+def*.62:off*.68+def*.32;
- // EA-style overall bands: an established top-line NHL player is generally 83+,
- // while depth players and short-callups stay lower. Not official EA ratings.
- const impact=point*.46+toi*.30+(d?plus*.10+shot*.14:goal*.14+assist*.10);
- const established=Math.min(1,games(p)/45);
- const target=65+impact*29;
- const oa=clamp((raw*.30+target*.70)*(.72+.28*established)+65*(1-established)*.28,55,97);
+ const oa=clamp(d?off*.38+def*.62:off*.68+def*.32);
  players[id]={FI:clamp(38+point*35+assist*13),SH:clamp(32+goal*53+shot*12),PL:clamp(38+point*35+assist*15),ST:clamp(40+toi*30+(d?7:0)),CH:clamp(40+toi*20+plus*15),PO:clamp(38+point*24+shot*18+goal*8),HI:clamp(43+toi*12+(d?12:0)),SK:clamp(47+toi*20+point*12),EN:clamp(42+toi*31),PE:clamp(40+plus*20+toi*12),FA:pos==="C"?clamp(42+pct((faceoffRes.data||[]).map(x=>n(x,"faceoffWinPct","faceoffWinPctg")),n(faceoffs.get(id),"faceoffWinPct","faceoffWinPctg"))*35):50,LE:clamp(40+toi*18+plus*12),SR:clamp(38+point*26+toi*16+plus*8),OFF:off,DEF:def,OA:oa};
 }
 for(const p of goalies){
@@ -54,13 +48,11 @@ for(const p of goalies){
  const sv=n(p,"savePctg","savePercentage"),gaa=n(p,"goalsAgainstAverage","gaa"),wins=n(p,"wins");
  const w=Math.min(1,Math.sqrt(games(p)/35));
  const svp=centered(pct(rates.save,sv),w),gaap=centered(1-pct(rates.gaa,gaa),w),winp=centered(pct(goalies.map(x=>n(x,"wins")),wins),w);
- const performance=svp*.53+gaap*.32+winp*.15;
- const established=Math.min(1,games(p)/30);
- const ov=clamp((66+performance*28)*(.75+.25*established)+66*(1-established)*.25,55,96);
+ const ov=clamp(48+svp*25+gaap*13+winp*8);
  players[id]={FI:20,SH:15,PL:25,ST:clamp(ov+2),CH:ov,PO:clamp(ov+4),HI:clamp(ov-8),SK:clamp(ov-3),EN:ov,PE:ov,FA:20,LE:ov,SR:ov,OFF:20,DEF:ov,OA:ov};
 }
 if(Object.keys(players).length<450)throw Error("Too few ratings generated: "+Object.keys(players).length);
 await mkdir("data",{recursive:true});
-const out={generatedAt:new Date().toISOString(),season,source:"NHL Stats REST regular season; EA-style overall calibration, not official EA ratings",playerCount:Object.keys(players).length,skaterCount:skaters.length,goalieCount:goalies.length,players};
+const out={generatedAt:new Date().toISOString(),season,source:"NHL Stats REST regular season; sample-adjusted estimates, not scouting grades",playerCount:Object.keys(players).length,skaterCount:skaters.length,goalieCount:goalies.length,players};
 await writeFile("data/ratings.json",JSON.stringify(out));
 console.log("Wrote",out.playerCount,"player ratings for season",season);

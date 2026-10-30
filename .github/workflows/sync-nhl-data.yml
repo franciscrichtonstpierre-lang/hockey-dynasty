@@ -24,10 +24,16 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "22"
-      - name: Synchroniser effectifs et espoirs
+      - name: Synchroniser effectifs et espoirs LNH
+        continue-on-error: true
         env:
           UHM_SEASON: ${{ inputs.season || '20262027' }}
         run: node scripts/sync-nhl-data.mjs
+      - name: Synchroniser les 32 effectifs LAH
+        continue-on-error: true
+        env:
+          UHM_AHL_SEASON_ID: "94"
+        run: node scripts/sync-ahl-data.mjs
       - name: Publier les fichiers actualisés
         run: |
           git config user.name "uhm-data-bot"

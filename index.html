@@ -101,7 +101,7 @@ function developPlayers(days){
  }
  return improved;
 }
-function simulate(){let n=0;for(let d=1;d<=14;d++)if(Math.random()<.52){n++;let a=Math.floor(Math.random()*6),b=Math.floor(Math.random()*6);if(a===b){if(Math.random()<.5)a++;else b++}S.gf+=a;S.ga+=b;if(a>b)S.w++;else if(Math.random()<.25)S.otl++;else S.l++;S.history.push("Jour "+(S.day+d)+" · "+teams[S.team]+" "+a+"–"+b+" Adversaire simulé")}S.day+=14;const improved=developPlayers(14);S.history=S.history.slice(-60);save();render();msg(n+" matchs simulés sur 14 jours. "+(improved?improved+" joueur(s) ont progressé.":"Développement des joueurs enregistré."))}
+async function simulate(){try{const d=await fetchRosterData(codes[S.team]);window.hdRosterCache=[...(d.forwards||[]),...(d.defensemen||[]),...(d.goalies||[])];}catch(e){window.hdRosterCache=[];}let n=0;for(let d=1;d<=14;d++)if(Math.random()<.52){n++;let a=Math.floor(Math.random()*6),b=Math.floor(Math.random()*6);if(a===b){if(Math.random()<.5)a++;else b++}S.gf+=a;S.ga+=b;if(a>b)S.w++;else if(Math.random()<.25)S.otl++;else S.l++;S.history.push("Jour "+(S.day+d)+" · "+teams[S.team]+" "+a+"–"+b+" Adversaire simulé")}S.day+=14;const improved=developPlayers(14);S.history=S.history.slice(-60);save();render();msg(n+" matchs simulés sur 14 jours. "+(improved?improved+" joueur(s) ont progressé.":"Développement des joueurs enregistré."))}
 
 function newSeason(){if(!confirm("Remettre les statistiques de saison à zéro? Les choix et échanges seront conservés."))return;S.season++;S.day=S.w=S.l=S.otl=S.gf=S.ga=0;S.history=[];save();render();msg("Nouvelle saison commencée.")}
 

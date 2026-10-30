@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "game": "Ultimate Hockey Manager",
+  "season": "2026-2027",
+  "description": "Schéma canonique de la base centrale des joueurs. Les notes et potentiels inconnus restent null; aucune cote n'est inventée.",
+  "player": {
+    "playerId": "string — identifiant source stable (NHL ID si disponible, sinon identifiant externe qualifié)",
+    "fullName": "string",
+    "firstName": "string|null",
+    "lastName": "string|null",
+    "position": "F|D|G|null",
+    "detailedPosition": "C|L|R|D|G|null",
+    "currentLeague": "NHL|AHL|NCAA|CHL|EUROPE|OTHER|UNKNOWN",
+    "currentTeam": "string|null",
+    "nhlRightsTeam": "NHL team code|null",
+    "rightsStatus": "signed|drafted_unsigned|free_agent|unknown",
+    "birthDate": "YYYY-MM-DD|null",
+    "nationality": "ISO-3166-1 alpha-3|null",
+    "shootsCatches": "L|R|null",
+    "heightCm": "number|null",
+    "weightKg": "number|null",
+    "sweaterNumber": "number|null",
+    "nhlPlayerId": "number|null",
+    "source": "string",
+    "sourceUpdatedAt": "ISO-8601|null",
+    "attributes": {
+      "skating": "0-99|null",
+      "shooting": "0-99|null",
+      "passing": "0-99|null",
+      "puckControl": "0-99|null",
+      "defense": "0-99|null",
+      "physical": "0-99|null",
+      "hockeyIQ": "0-99|null",
+      "faceoffs": "0-99|null",
+      "goaltending": "0-99|null"
+    },
+    "overall": "0-99|null",
+    "potential": "0-99|null",
+    "potentialGrade": "A|B|C|D|null",
+    "developmentStage": "prospect|young_pro|prime|veteran|null",
+    "contract": {
+      "capHit": "number|null",
+      "yearsRemaining": "number|null",
+      "expiryType": "RFA|UFA|null"
+    }
+  },
+  "draftPick": {
+    "pickId": "string stable",
+    "season": "YYYY-YYYY",
+    "round": "number",
+    "originalTeam": "NHL team code",
+    "currentOwner": "NHL team code",
+    "acquiredVia": "string|null",
+    "source": "string",
+    "verified": "boolean"
+  },
+  "dataRules": [
+    "Ne jamais créer un joueur uniquement sur une ressemblance de nom lorsqu'un identifiant fiable est disponible.",
+    "Dédupliquer par identifiant source; sinon par nom normalisé + date de naissance + équipe.",
+    "Séparer le club où joue le joueur de l'équipe NHL qui détient ses droits.",
+    "Ne jamais inventer une cote globale, des attributs, un potentiel, un contrat ou des droits.",
+    "Conserver la provenance et la date de mise à jour de chaque import.",
+    "Les effectifs NHL, les joueurs AHL, les espoirs hors Amérique du Nord et les choix de repêchage sont des ensembles distincts à réconcilier."
+  ]
+}

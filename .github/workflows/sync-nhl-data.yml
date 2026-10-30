@@ -1,6 +1,12 @@
 name: Synchroniser les données LNH
 
 on:
+  push:
+    paths:
+      - ".github/workflows/sync-nhl-data.yml"
+      - "scripts/sync-ahl-data.mjs"
+      - "scripts/sync-nhl-data.mjs"
+      - "data/ahl/teams.json"
   workflow_dispatch:
     inputs:
       season:

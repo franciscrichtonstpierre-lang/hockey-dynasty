@@ -28,14 +28,16 @@ function walk(value, out=[]) {
 }
 const norm=s=>String(s||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]/g,"");
 const teams=JSON.parse(await readFile("data/ahl/teams.json","utf8")).teams;
-const rawTeams=await get(endpoint("teamsbyseason",{season:seasonId}));
-const candidates=walk(rawTeams).filter(x=>(x.team_id||x.id)&& (x.name||x.team_name||x.teamName||x.team_nickname));
+// The public AHL feed exposes team identifiers reliably through its season standings view.
+// Use the end-year season (2026 = 2026-27) for team discovery, then season_id for rosters.
+const rawTeams=await get(endpoint("teams",{season:"2026",groupTeamsBy:"league"}));
+const candidates=walk(rawTeams).filter(x=>(x.team_id||x.teamId||x.id)&& (x.name||x.team||x.team_name||x.teamName||x.team_nickname||x.teamNickName||x.team_full_name||x.teamFullName));
 let succeeded=0, failed=0;
 for(const affiliate of teams){
   const target=norm(affiliate.ahlName);
-  const match=candidates.find(t=>[t.name,t.team_name,t.teamName,t.team_nickname,[t.team_city,t.team_nickname].filter(Boolean).join(" ")].some(n=>norm(n)===target || (norm(n).length>4 && target.includes(norm(n)))));
+  const match=candidates.find(t=>[t.name,t.team,t.team_name,t.teamName,t.team_nickname,t.teamNickName,t.team_full_name,t.teamFullName,[t.team_city||t.city,t.team_nickname||t.teamNickName||t.nickname].filter(Boolean).join(" ")].some(n=>norm(n)===target || (norm(n).length>4 && (target.includes(norm(n)) || norm(n).includes(target)))));
   if(!match){console.error(`ERROR team id not found for ${affiliate.ahlName}`);failed++;continue}
-  const teamId=match.team_id||match.id;
+  const teamId=match.team_id||match.teamId||match.id;
   const url=endpoint("roster",{team_id:teamId,season_id:seasonId});
   try{
     const raw=await get(url);

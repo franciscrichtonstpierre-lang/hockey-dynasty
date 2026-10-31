@@ -23,6 +23,6 @@ Saison cible : **2026–2027**. Ce dépôt contient l’application et les insta
 ## Principes de données
 
 - Aucun droit LNH n’est déduit uniquement de l’affiliation LAH.
-- Les cotes issues de `data/ratings.json` sont des estimations ajustées à partir des données de performance, pas des rapports de dépistage. Pour rendre tous les joueurs utilisables, les fiches sans cote source reçoivent des attributs 0–99 de repli explicitement marqués comme provisoires (âge/position); le potentiel reste inconnu lorsqu’il n’existe pas de source vérifiée; le dernier audit n’avait encore aucune cote de potentiel source-vérifiée dans les 2 112 fiches.
+- Les cotes issues de `data/ratings.json` sont des estimations ajustées à partir des données de performance, pas des rapports de dépistage. Pour rendre tous les joueurs utilisables, les fiches sans cote source reçoivent des attributs 0–99 de repli explicitement marqués comme provisoires (âge/position); le champ `potential` reste réservé aux valeurs source-vérifiées; `potentialEstimate` fournit séparément une estimation provisoire fondée sur la cote globale et une tranche d’âge. Le dernier audit n’avait aucune cote de potentiel source-vérifiée.
 - Les salaires, contrats, conditions de choix, propriétaires de choix et cotes non confirmés ne sont pas fabriqués.
 - La synchronisation peut publier les données disponibles même si l’audit final échoue. Un audit rouge indique qu’il reste des données à compléter; une publication réussie ne signifie donc pas que le jeu est complet.

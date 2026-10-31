@@ -361,12 +361,8 @@ try {
       const sameRights = candidates.filter(r => r.nhlRightsTeam === teamCode);
       const match = sameRights.length === 1 ? sameRights[0] : candidates.length === 1 ? candidates[0] : null;
       const rawLeague = String(first(p.currentLeague, p.league, p.leagueName, "")).toLowerCase();
-      const league = /\bnhl\b/.test(rawLeague) ? "NHL" :
-        /\bahl\b|american hockey/.test(rawLeague) ? "AHL" :
-        /ncaa|college/.test(rawLeague) ? "NCAA" :
-        /echl|ushl|bchl|ajhl|nahl/.test(rawLeague) ? "OTHER" :
-        /ohl|whl|qmjhl|\bchl\b|junior/.test(rawLeague) ? "CHL" :
-        /shl|khl|vhl|liiga|europe|sweden|finland|swiss|switzerland|czech|russia|germany|slovakia|latvia|norway|denmark|france|austria|icehl|del|mhl|allsvenskan|nationell|mestis|j20|\bnl\b|\bsl\b/.test(rawLeague) ? "EUROPE" : "UNKNOWN";
+      // Reuse the canonical league classifier so specific European leagues stay filterable.
+      const league = leagueFromPipeline(rawLeague);
       const incoming = {
         currentLeague: league,
         currentTeam: str(p.currentTeam),

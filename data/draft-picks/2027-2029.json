@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "seasonContext": "2026-2027",
+  "status": "incomplete",
+  "lastVerifiedAt": null,
+  "years": [2027, 2028, 2029],
+  "expectedBaseSlots": 672,
+  "picks": [],
+  "sources": [
+    {
+      "name": "Pro Sports Transactions — 2027 NHL Entry Draft Pending Transactions",
+      "url": "https://www.prosportstransactions.com/hockey/DraftTrades/Years/2027.htm",
+      "lastSeen": "2026-10-29",
+      "use": "Transaction history, pick protections, conditional language"
+    },
+    {
+      "name": "Pro Sports Transactions — 2028 NHL Entry Draft Pending Transactions",
+      "url": "https://www.prosportstransactions.com/hockey/DraftTrades/Years/2028.htm",
+      "lastSeen": "2026-09-01",
+      "use": "Transaction history, pick protections, conditional language"
+    },
+    {
+      "name": "Pro Sports Transactions — 2029 NHL Entry Draft Pending Transactions",
+      "url": "https://www.prosportstransactions.com/hockey/DraftTrades/Years/2029.htm",
+      "lastSeen": "2026-10-23",
+      "use": "Transaction history, pick protections, conditional language"
+    },
+    {
+      "name": "NHL.com — 2026-27 NHL Trade Tracker",
+      "url": "https://www.nhl.com/news/topic/trade-coverage/2026-27-nhl-trades",
+      "lastSeen": "2026-10-30",
+      "use": "Cross-check official trades and recently transferred draft assets"
+    },
+    {
+      "name": "PuckPedia — NHL Draft",
+      "url": "https://puckpedia.com/draft",
+      "lastSeen": "2026-10-30",
+      "use": "Cross-check draft capital and ownership"
+    }
+  ],
+  "dataRules": [
+    "Do not assign currentOwner until supported by a source.",
+    "Record every base pick slot for each NHL team, year, and round; mark forfeited slots explicitly.",
+    "Keep originalTeam separate from currentOwner.",
+    "Record conditional protections verbatim and mark unresolved conditions as unverified.",
+    "Each pick must have a stable pickId and source URL.",
+    "A present but empty or unverified ledger is not a complete draft-pick database."
+  ]
+}

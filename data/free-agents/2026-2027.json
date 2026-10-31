@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "season": "2026-2027",
   "checkedAt": "2026-10-31",
-  "description": "Joueurs dont l'absence de contrat NHL actif a été confirmée dans les fiches PuckPedia consultées à la date de vérification. Marché initial partiel, à compléter par ligue.",
+  "description": "Marché initial élargi de candidats agents libres NHL/LAH et professionnels internationaux; chaque fiche doit distinguer contrat actuel et droits NHL. Les statuts issus du tracker NHL ne garantissent pas l'absence d'une signature ultérieure.",
   "sources": [
     {
       "name": "PuckPedia — Jake Bean",
@@ -13,6 +13,16 @@
       "name": "PuckPedia — Travis Hamonic",
       "url": "https://puckpedia.com/player/Travis-Hamonic",
       "checkedAt": "2026-10-30"
+    },
+    {
+      "name": "PuckPedia — Antonio Stranges",
+      "url": "https://puckpedia.com/player/antonio-stranges",
+      "checkedAt": "2026-10-31"
+    },
+    {
+      "name": "NHL.com — Free Agent Tracker 2026-27",
+      "url": "https://www.nhl.com/news/topic/free-agency/free-agency-signings-nhl-2026-27",
+      "checkedAt": "2026-10-31"
     }
   ],
   "players": [
@@ -205,6 +215,69 @@
       "source": "https://puckpedia.com/player/brendan-smith",
       "sourceCheckedAt": "2026-10-31",
       "sourceNote": "Fiche consultée : aucun contrat actuel affiché; ancien cap hit 800 000 $. Disponibilité à reconfirmer avant signature."
+    },
+    {
+      "id": "fa-2026-antonio-stranges",
+      "name": "Antonio Stranges",
+      "position": "F",
+      "league": "NHL",
+      "currentLeague": "NHL",
+      "currentTeam": "",
+      "overall": null,
+      "potential": null,
+      "askingSalary": null,
+      "previousTeam": "Dallas Stars",
+      "previousCapHit": 775000,
+      "contractStatus": "FREE_AGENT",
+      "status": "available",
+      "freeAgentType": "UFA no QO",
+      "nhlRightsTeam": "",
+      "rightsStatus": "free_agent",
+      "source": "https://puckpedia.com/player/antonio-stranges",
+      "sourceCheckedAt": "2026-10-31",
+      "sourceNote": "Fiche PuckPedia consultée : aucun contrat actuel affiché; dernier contrat professionnel expiré en 2025-26 et statut UFA sans offre qualificative. À revalider avant signature."
+    },
+    {
+      "id": "fa-2026-kyle-mcdonald",
+      "name": "Kyle McDonald",
+      "position": "F",
+      "league": "NHL",
+      "currentLeague": "NHL",
+      "currentTeam": "",
+      "overall": null,
+      "potential": null,
+      "askingSalary": null,
+      "previousTeam": "Dallas Stars",
+      "previousCapHit": null,
+      "contractStatus": "FREE_AGENT",
+      "status": "available",
+      "freeAgentType": "UFA no QO",
+      "nhlRightsTeam": "",
+      "rightsStatus": "free_agent",
+      "source": "https://www.nhl.com/news/topic/free-agency/free-agency-signings-nhl-2026-27",
+      "sourceCheckedAt": "2026-10-31",
+      "sourceNote": "NHL.com le liste parmi les joueurs n'ayant pas reçu d'offre qualificative. La liste NHL précise qu'elle n'est plus actualisée depuis le début de la pré-saison; contrat actuel et droits à revérifier avant signature."
+    },
+    {
+      "id": "fa-2026-jeremie-poirier",
+      "name": "Jeremie Poirier",
+      "position": "D",
+      "league": "NHL",
+      "currentLeague": "NHL",
+      "currentTeam": "",
+      "overall": null,
+      "potential": null,
+      "askingSalary": null,
+      "previousTeam": "Dallas Stars",
+      "previousCapHit": null,
+      "contractStatus": "FREE_AGENT",
+      "status": "available",
+      "freeAgentType": "UFA no QO",
+      "nhlRightsTeam": "",
+      "rightsStatus": "free_agent",
+      "source": "https://www.nhl.com/news/topic/free-agency/free-agency-signings-nhl-2026-27",
+      "sourceCheckedAt": "2026-10-31",
+      "sourceNote": "NHL.com le liste parmi les joueurs n'ayant pas reçu d'offre qualificative. La liste NHL précise qu'elle n'est plus actualisée depuis le début de la pré-saison; contrat actuel et droits à revérifier avant signature."
     }
   ],
   "coaches": [],
@@ -213,6 +286,7 @@
     "Le fichier n'est pas encore un marché exhaustif de la LNH et de la LAH; ne pas afficher ces deux joueurs comme liste complète.",
     "Les signatures en Europe et les changements de dernière minute doivent être revérifiés avant de signer.",
     "Ajout de joueurs dont les fiches publiques consultées n’affichent pas de contrat actuel au 2026-10-31; vérifier à nouveau avant de traiter leur disponibilité comme garantie.",
-    "Pool élargi par lots à partir de fiches publiques indiquant aucun contrat actuel; l'absence de contrat NHL ne garantit pas l'absence de contrat dans une autre ligue."
+    "Pool élargi par lots à partir de fiches publiques indiquant aucun contrat actuel; l'absence de contrat NHL ne garantit pas l'absence de contrat dans une autre ligue.",
+    "Les joueurs listés dans le tracker NHL peuvent avoir signé depuis sa dernière mise à jour; toute fiche issue de ce tracker doit être revérifiée avant qu'une signature soit autorisée."
   ]
 }

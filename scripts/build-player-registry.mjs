@@ -137,7 +137,7 @@ for (const code of codes) {
         id, name, firstName: str(p.firstName?.default || p.firstName || p.first_name),
         lastName: str(p.lastName?.default || p.lastName || p.last_name), position: posGroup(p), detailedPosition: detailedPos(p),
         currentLeague, currentTeam: str(first(p.currentTeam,p.teamName,p.team_name,p.currentTeamName)),
-        nhlRightsTeam: str(first(p.nhlRightsTeam,p.rightsTeam,p.rights_team,code)),
+        nhlRightsTeam: str(first(p.nhlRightsTeam,p.rightsTeam,p.rights_team)),
         rightsStatus: str(p.rightsStatus),
         birthDate: str(first(p.birthDate,p.birthdate)), shootsCatches: str(first(p.shootsCatches,p.shoots,p.catches)),
         age: Number.isFinite(Number(p.age)) ? Number(p.age) : null,
@@ -423,6 +423,43 @@ try {
   console.warn(`Supplemental prospect data skipped: ${error.message}`);
 }
 console.log(`Supplemental prospects: ${supplementalMatched} matched/enriched; ${supplementalAdded} added; ${supplementalAmbiguous} ambiguous matches left unchanged.`);
+
+// Import cross-team, undrafted players eligible for the next three NHL drafts.
+// Draft eligibility and source rank are kept separate from NHL rights; undrafted players have no rights owner.
+let futureDraftProspectsAdded=0, futureDraftProspectsMatched=0;
+try {
+  const futureDraftData=JSON.parse(await readFile("data/future-draft-prospects/2027-2029.json","utf8"));
+  for(const p of (futureDraftData.prospects||[])){
+    if(!p.name||![2027,2028,2029].includes(Number(p.draftYear)))continue;
+    const key=nameKey(p.name);
+    const candidates=[...records.values()].filter(r=>nameKey(r.name)===key);
+    const matching=candidates.length===1?candidates[0]:null;
+    if(matching){
+      matching.futureDraftEligibility=Number(p.draftYear);
+      matching.futureDraftSourceRank=p.sourceRank??null;
+      matching.futureDraftSource=p.source||futureDraftData.source||null;
+      matching.futureDraftRankType=p.rankType||null;
+      // A player who already has a verified NHL rights holder remains tied to that club.
+      if(!matching.nhlRightsTeam && p.rightsTeam)matching.nhlRightsTeam=p.rightsTeam;
+      futureDraftProspectsMatched++;
+      continue;
+    }
+    const id=p.prospectId||`nhl-draft:${p.draftYear}:${key.replace(/ /g,"-")}`;
+    add({
+      id,name:p.name,position:posGroup({positionCode:p.position}),detailedPosition:detailedPos({positionCode:p.position}),
+      currentLeague:p.currentLeague||"UNKNOWN",currentTeam:str(p.currentTeam),nhlRightsTeam:str(p.rightsTeam),
+      rightsStatus:p.nhlRightsStatus||"undrafted_unassigned",birthDate:null,age:null,
+      draftYear:Number(p.draftYear),futureDraftEligibility:Number(p.draftYear),
+      futureDraftSourceRank:p.sourceRank??null,futureDraftRankType:p.rankType||null,
+      attributes:null,overall:null,potential:null,source:p.source||futureDraftData.source||null,
+      sourceUpdatedAt:p.sourceUpdatedAt||futureDraftData.lastSyncAt||now
+    });
+    futureDraftProspectsAdded++;
+  }
+  console.log(`Future draft prospect registry: ${futureDraftProspectsAdded} new records; ${futureDraftProspectsMatched} existing records linked to draft eligibility.`);
+}catch(error){
+  console.warn(`Future draft prospect registry skipped: ${error.message}`);
+}
 
 // Collapse same-person records that appear in both NHL and AHL snapshots.
 const samePerson = new Map();

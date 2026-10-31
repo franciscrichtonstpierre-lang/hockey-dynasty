@@ -319,7 +319,7 @@ for (const path of ["data/coaches/2026-2027.json", "data/coaches/ahl-2026-2027.j
       status: "provisional_role_estimates",
       note: "Missing coach ratings are role-based simulation estimates, not verified evaluations."
     };
-    await writeFile(path, JSON.stringify(staffData, null, 2) + "\\n", "utf8");
+    await writeFile(path, JSON.stringify(staffData, null, 2) + "\n", "utf8");
     console.log(`Coach ratings ${path}: ${filled} entries given explicitly provisional ratings.`);
   } catch (error) {
     console.warn(`Coach rating fallback skipped ${path}: ${error.message}`);

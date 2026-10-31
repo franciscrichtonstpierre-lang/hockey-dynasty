@@ -301,7 +301,7 @@ try {
   }));
   console.log("Draft HTML diagnostics ANA: "+JSON.stringify({htmlLength:anaDebugHtml.length,tableCount:[...anaDebugHtml.matchAll(/<table\\b/gi)].length,scriptSources,dataRefs,termHits,scriptDiagnostics}));
   try{
-    const hubUrl="https://hockeyinsights.ca/data/team-pipeline.json";
+    const hubUrl="https://hockeyinsights.ca/data/team-hubs/Anaheim%20Ducks.json";
     const hubResponse=await fetch(hubUrl,{headers:{"user-agent":"Hockey-Dynasty-data-sync/1.0","accept":"application/json"},signal:AbortSignal.timeout(10000)});
     const hubText=await hubResponse.text();
     let hubJson=null;try{hubJson=JSON.parse(hubText)}catch{}

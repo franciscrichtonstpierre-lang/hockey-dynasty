@@ -300,15 +300,21 @@ try {
     }catch(error){return {src,error:error.message};}
   }));
   console.log("Draft HTML diagnostics ANA: "+JSON.stringify({htmlLength:anaDebugHtml.length,tableCount:[...anaDebugHtml.matchAll(/<table\\b/gi)].length,scriptSources,dataRefs,termHits,scriptDiagnostics}));
-  try{
-    const hubUrl="https://hockeyinsights.ca/data/team-hubs/Anaheim%20Ducks.json";
-    const hubResponse=await fetch(hubUrl,{headers:{"user-agent":"Hockey-Dynasty-data-sync/1.0","accept":"application/json"},signal:AbortSignal.timeout(10000)});
-    const hubText=await hubResponse.text();
-    let hubJson=null;try{hubJson=JSON.parse(hubText)}catch{}
-    const hubKeys=hubJson&&typeof hubJson==="object"?Object.keys(hubJson):[];
-    const interestingHubFields=hubKeys.filter(k=>/pick|draft|right|snapshot|owner|asset/i.test(k)).map(k=>({key:k,value:JSON.stringify(hubJson[k]).slice(0,1200)}));
-    console.log("Team hub JSON diagnostics ANA: "+JSON.stringify({url:hubUrl,status:hubResponse.status,length:hubText.length,keys:hubKeys,interestingHubFields,preview:hubJson?null:hubText.slice(0,500)}));
-  }catch(error){console.log("Team hub JSON diagnostics ANA: "+JSON.stringify({error:error.message}));}
+  for(const hubUrl of [
+    "https://hockeyinsights.ca/data/team-hubs/ANA.json",
+    "https://hockeyinsights.ca/data/team-hubs/Anaheim.json",
+    "https://hockeyinsights.ca/data/team-hubs/Anaheim%20Ducks.json",
+    "https://hockeyinsights.ca/data/team-hubs/anaheim-ducks.json"
+  ]){
+    try{
+      const hubResponse=await fetch(hubUrl,{headers:{"user-agent":"Mozilla/5.0 (compatible; HockeyDynastyDataSync/1.0)","accept":"application/json"},signal:AbortSignal.timeout(8000)});
+      const hubText=await hubResponse.text();
+      let hubJson=null;try{hubJson=JSON.parse(hubText)}catch{}
+      const hubKeys=hubJson&&typeof hubJson==="object"?Object.keys(hubJson):[];
+      const interestingHubFields=hubKeys.filter(k=>/pick|draft|right|snapshot|owner|asset/i.test(k)).map(k=>({key:k,value:JSON.stringify(hubJson[k]).slice(0,1200)}));
+      console.log("Team hub JSON diagnostics: "+JSON.stringify({url:hubUrl,status:hubResponse.status,length:hubText.length,keys:hubKeys,interestingHubFields,preview:hubJson?null:hubText.slice(0,150)}));
+    }catch(error){console.log("Team hub JSON diagnostics: "+JSON.stringify({url:hubUrl,error:error.message}));}
+  }
 
   const draftPickMap = new Map();
   let draftPickConflicts = 0;

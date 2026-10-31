@@ -47,11 +47,19 @@ for (const code of codes) {
       const normalizedName = norm(name);
       let candidates = contracts.filter(c => Number(c.player_id || c.playerId) === id);
       if (!candidates.length) candidates = contracts.filter(c => norm(c.player_name || c.playerName) === normalizedName);
-      const active = candidates.map(c => ({ c, season: (byKey.get(c.contract_key || c.contractKey)||[])[0] }))
-        .filter(x => x.season && !x.c.bought_out)
-        .sort((a,b) => String(b.c.signed_at||"").localeCompare(String(a.c.signed_at||"")));
-      const selected = active[0] || null;
       const gap = gapFor({id,name});
+      const active = candidates.map(c => ({ c, season: (byKey.get(c.contract_key || c.contractKey)||[])[0] }))
+        .filter(x => {
+          if (x.c.bought_out) return false;
+          if (x.season) return true;
+          const start=String(x.c.start_season||""), end=String(x.c.end_season||"");
+          return !!(start && end && start<=SEASON && end>=SEASON);
+        })
+        .sort((a,b) => {
+          if (!!a.season !== !!b.season) return a.season ? -1 : 1;
+          return String(b.c.signed_at||"").localeCompare(String(a.c.signed_at||""));
+        });
+      const selected = active[0] || null;
       if (!selected) {
         players.push({
           playerId:id, name, teamCode:code, position:group==="goalies"?"G":group==="defensemen"?"D":"F",
@@ -68,7 +76,7 @@ for (const code of codes) {
       );
       players.push({
         playerId:id, name, teamCode:code, position:group==="goalies"?"G":group==="defensemen"?"D":"F",
-        contractStatus:"MATCHED", contract:{
+        contractStatus:selected.season ? "MATCHED" : "MATCHED_CONTRACT_NO_SEASON_ROW", contract:{
           contractKey:key, signingTeam:c.team||null, signedAt:c.signed_at||null,
           signingDateStated:c.signing_date_stated??null, type:c.contract_type||null,
           termYears:c.term_years??null, startSeason:c.start_season||null, endSeason:c.end_season||null,
@@ -78,26 +86,24 @@ for (const code of codes) {
           conflicts:c.conflicts||null, flags:c.flags||null, sourceClaimIds:String(c.claim_ids||"").split(";").filter(Boolean),
           sources:sourceInfo(c)
         },
-        season:{
+        season:season ? {
           season:SEASON, capHitUsd:season.cap_hit_usd??null, aavUsd:season.aav_usd??null,
           baseSalaryUsd:season.base_salary_usd??null, signingBonusUsd:season.signing_bonus_usd??null,
           performanceBonusUsd:season.performance_bonus_usd??null, totalSalaryUsd:season.total_salary_usd??null,
           minorsSalaryUsd:season.minors_salary_usd??null, oneWay:season.one_way??null, clause:season.clause||null
-        },
+        } : null,
         clauses:playerClauses.map(cl=>({kind:cl.kind||null,seasonFrom:cl.season_from||null,seasonTo:cl.season_to||null,listSize:cl.list_size??null,listType:cl.list_type||null})),
         sourceDataset:"ehlersio/nhl-contracts", license:"CC0-1.0"
       });
     }
   }
 }
-const matched=players.filter(p=>p.contractStatus==="MATCHED").length;
+const matchedContracts=players.filter(p=>p.contract!=null).length;\nconst salaryRows=players.filter(p=>p.season?.capHitUsd!=null).length;
 const output={
   schemaVersion:1, season:"2026-2027", seasonKey:SEASON, generatedAt:new Date().toISOString(),
   sourceDataset:"ehlersio/nhl-contracts", sourceUrl:"https://github.com/ehlersio/nhl-contracts/releases/tag/contracts",
   sourceUpdatedAt:timestampRaw.updated_at||timestampRaw.updatedAt||timestampRaw.generated_at||null,
-  license:"CC0-1.0", playerCount:players.length, matchedContracts:matched,
-  coveragePercent:Number((100*matched/Math.max(players.length,1)).toFixed(1)),
-  counts:{matched,missing:players.length-matched,withGapSource:players.filter(p=>p.gapReason).length},
+  license:"CC0-1.0", playerCount:players.length, matchedContracts, salaryRows,\n  coveragePercent:Number((100*matchedContracts/Math.max(players.length,1)).toFixed(1)),\n  salaryCoveragePercent:Number((100*salaryRows/Math.max(players.length,1)).toFixed(1)),\n  counts:{matchedContracts, salaryRows, missingContracts:players.length-matchedContracts,withGapSource:players.filter(p=>p.gapReason).length},
   players,
   dataNotes:[
     "Contract records and seasonal salary values retain the source confidence tier and source claims where available.",
@@ -107,4 +113,4 @@ const output={
   ]
 };
 await writeFile("data/contracts/2026-2027.json",JSON.stringify(output)+"\n","utf8");
-console.log(`Contracts import: ${matched}/${players.length} NHL roster players matched (${output.coveragePercent}%), ${output.counts.withGapSource} gaps documented; upstream ${output.sourceUpdatedAt||"timestamp unknown"}`);
+console.log(`Contracts import: ${matchedContracts}/${players.length} roster players with contract records (${output.coveragePercent}%); ${salaryRows} with 2026-27 cap-hit data (${output.salaryCoveragePercent}%); ${output.counts.withGapSource} gaps documented; upstream ${output.sourceUpdatedAt||"timestamp unknown"}`);

@@ -1,13 +1,521 @@
 {
   "teamCode": "DET",
-  "source": "https://api-web.nhle.com/v1/prospects/DET",
-  "sourceType": "NHL Web API (endpoint public non officiellement documenté)",
-  "syncedUTC": "2026-10-30T10:20:09.739485+00:00",
-  "count": 0,
-  "prospects": [],
+  "source": "https://www.nhl.com/redwings/news/red-wings-release-2026-nhl-prospect-tournament-roster-and-schedule; https://thehockeywriters.com/red-wings-prospect-rankings-summer-2026/; https://www.nhl.com/news/detroit-red-wings-top-prospects-for-2026-27-season-32-in-32",
+  "sourceType": "Liste publique secondaire vérifiée manuellement — joueurs identifiés par nom, position, ligue et choix de repêchage lorsque publiés",
+  "syncedUTC": "2026-10-30T20:00:00-04:00",
+  "count": 35,
+  "prospects": [
+    {
+      "firstName": {
+        "default": "Michael"
+      },
+      "lastName": {
+        "default": "Brandsegg-Nygard"
+      },
+      "positionCode": "R",
+      "positionGroup": "forwards",
+      "currentLeague": "AHL",
+      "currentTeam": "Grand Rapids",
+      "draftYear": 2024,
+      "draftRound": 1,
+      "draftOverall": 15
+    },
+    {
+      "firstName": {
+        "default": "Trey"
+      },
+      "lastName": {
+        "default": "Augustine"
+      },
+      "positionCode": "G",
+      "positionGroup": "goalies",
+      "currentLeague": "NCAA",
+      "currentTeam": "Michigan State",
+      "draftYear": 2023,
+      "draftRound": 2,
+      "draftOverall": 41
+    },
+    {
+      "firstName": {
+        "default": "Carter"
+      },
+      "lastName": {
+        "default": "Bear"
+      },
+      "positionCode": "L",
+      "positionGroup": "forwards",
+      "currentLeague": "CHL",
+      "currentTeam": "Everett",
+      "draftYear": 2025,
+      "draftRound": 1,
+      "draftOverall": 13
+    },
+    {
+      "firstName": {
+        "default": "Nate"
+      },
+      "lastName": {
+        "default": "Danielson"
+      },
+      "positionCode": "C",
+      "positionGroup": "forwards",
+      "currentLeague": "NHL",
+      "currentTeam": "Detroit / Grand Rapids",
+      "draftYear": 2023,
+      "draftRound": 1,
+      "draftOverall": 9
+    },
+    {
+      "firstName": {
+        "default": "J.P."
+      },
+      "lastName": {
+        "default": "Hurlbert"
+      },
+      "positionCode": "L",
+      "positionGroup": "forwards",
+      "currentLeague": "CHL",
+      "currentTeam": "Kamloops / Michigan",
+      "draftYear": 2026,
+      "draftRound": 1,
+      "draftOverall": 23
+    },
+    {
+      "firstName": {
+        "default": "Carter"
+      },
+      "lastName": {
+        "default": "Mazur"
+      },
+      "positionCode": "L",
+      "positionGroup": "forwards",
+      "currentLeague": "AHL",
+      "currentTeam": "Grand Rapids",
+      "draftYear": 2021,
+      "draftRound": 3,
+      "draftOverall": 70
+    },
+    {
+      "firstName": {
+        "default": "Max"
+      },
+      "lastName": {
+        "default": "Plante"
+      },
+      "positionCode": "C",
+      "positionGroup": "forwards",
+      "currentLeague": "NCAA",
+      "currentTeam": "Minnesota Duluth",
+      "draftYear": 2024,
+      "draftRound": 2,
+      "draftOverall": 47
+    },
+    {
+      "firstName": {
+        "default": "Michal"
+      },
+      "lastName": {
+        "default": "Postava"
+      },
+      "positionCode": "G",
+      "positionGroup": "goalies",
+      "currentLeague": "AHL",
+      "currentTeam": "Grand Rapids"
+    },
+    {
+      "firstName": {
+        "default": "Anton"
+      },
+      "lastName": {
+        "default": "Johansson"
+      },
+      "positionCode": "D",
+      "positionGroup": "defensemen",
+      "currentLeague": "EUROPE",
+      "currentTeam": "Leksands IF / Grand Rapids",
+      "draftYear": 2022,
+      "draftRound": 4,
+      "draftOverall": 105
+    },
+    {
+      "firstName": {
+        "default": "William"
+      },
+      "lastName": {
+        "default": "Wallinder"
+      },
+      "positionCode": "D",
+      "positionGroup": "defensemen",
+      "currentLeague": "AHL",
+      "currentTeam": "Grand Rapids",
+      "draftYear": 2020,
+      "draftRound": 2,
+      "draftOverall": 32
+    },
+    {
+      "firstName": {
+        "default": "Eddie"
+      },
+      "lastName": {
+        "default": "Genborg"
+      },
+      "positionCode": "R",
+      "positionGroup": "forwards",
+      "currentLeague": "EUROPE",
+      "currentTeam": "Sweden",
+      "draftYear": 2025,
+      "draftRound": 2,
+      "draftOverall": 44
+    },
+    {
+      "firstName": {
+        "default": "Shai"
+      },
+      "lastName": {
+        "default": "Buium"
+      },
+      "positionCode": "D",
+      "positionGroup": "defensemen",
+      "currentLeague": "AHL",
+      "currentTeam": "Grand Rapids",
+      "draftYear": 2021,
+      "draftRound": 2,
+      "draftOverall": 36
+    },
+    {
+      "firstName": {
+        "default": "Jesse"
+      },
+      "lastName": {
+        "default": "Kiiskinen"
+      },
+      "positionCode": "R",
+      "positionGroup": "forwards",
+      "currentLeague": "AHL",
+      "currentTeam": "Grand Rapids",
+      "draftYear": 2023,
+      "draftRound": 3,
+      "draftOverall": 63
+    },
+    {
+      "firstName": {
+        "default": "Victor"
+      },
+      "lastName": {
+        "default": "Plante"
+      },
+      "positionCode": "L",
+      "positionGroup": "forwards",
+      "currentLeague": "NCAA",
+      "currentTeam": "Minnesota Duluth",
+      "draftYear": 2026,
+      "draftRound": 2,
+      "draftOverall": 47
+    },
+    {
+      "firstName": {
+        "default": "Michal"
+      },
+      "lastName": {
+        "default": "Orsulak"
+      },
+      "positionCode": "G",
+      "positionGroup": "goalies",
+      "currentLeague": "CHL",
+      "currentTeam": "Prince Albert",
+      "draftYear": 2026,
+      "draftRound": 3,
+      "draftOverall": 79
+    },
+    {
+      "firstName": {
+        "default": "Larry"
+      },
+      "lastName": {
+        "default": "Keenan"
+      },
+      "positionCode": "D",
+      "positionGroup": "defensemen",
+      "currentLeague": "CHL",
+      "currentTeam": "OHL",
+      "draftYear": 2025,
+      "draftRound": 5,
+      "draftOverall": 139
+    },
+    {
+      "firstName": {
+        "default": "Ondrej"
+      },
+      "lastName": {
+        "default": "Becher"
+      },
+      "positionCode": "C",
+      "positionGroup": "forwards",
+      "currentLeague": "AHL",
+      "currentTeam": "Grand Rapids",
+      "draftYear": 2021,
+      "draftRound": 5,
+      "draftOverall": 153
+    },
+    {
+      "firstName": {
+        "default": "Dylan"
+      },
+      "lastName": {
+        "default": "James"
+      },
+      "positionCode": "L",
+      "positionGroup": "forwards",
+      "currentLeague": "AHL",
+      "currentTeam": "Grand Rapids",
+      "draftYear": 2022,
+      "draftRound": 2,
+      "draftOverall": 40
+    },
+    {
+      "firstName": {
+        "default": "Rudy"
+      },
+      "lastName": {
+        "default": "Guimond"
+      },
+      "positionCode": "G",
+      "positionGroup": "goalies",
+      "currentLeague": "NCAA",
+      "currentTeam": "NCAA",
+      "draftYear": 2024,
+      "draftRound": 6,
+      "draftOverall": 172
+    },
+    {
+      "firstName": {
+        "default": "Michal"
+      },
+      "lastName": {
+        "default": "Pradel"
+      },
+      "positionCode": "G",
+      "positionGroup": "goalies",
+      "currentLeague": "EUROPE",
+      "currentTeam": "Europe",
+      "draftYear": 2025,
+      "draftRound": 5,
+      "draftOverall": 139
+    },
+    {
+      "firstName": {
+        "default": "Adam"
+      },
+      "lastName": {
+        "default": "Levac"
+      },
+      "positionCode": "C",
+      "positionGroup": "forwards",
+      "currentLeague": "CHL",
+      "currentTeam": "Peterborough",
+      "draftYear": 2026,
+      "draftRound": 4,
+      "draftOverall": 108
+    },
+    {
+      "firstName": {
+        "default": "Beckham"
+      },
+      "lastName": {
+        "default": "Edwards"
+      },
+      "positionCode": "C",
+      "positionGroup": "forwards",
+      "currentLeague": "CHL",
+      "currentTeam": "OHL",
+      "draftYear": 2026,
+      "draftRound": 5,
+      "draftOverall": 143
+    },
+    {
+      "firstName": {
+        "default": "Michal"
+      },
+      "lastName": {
+        "default": "Svrcek"
+      },
+      "positionCode": "L",
+      "positionGroup": "forwards",
+      "currentLeague": "AHL",
+      "currentTeam": "Grand Rapids",
+      "draftYear": 2025,
+      "draftRound": 4,
+      "draftOverall": 119
+    },
+    {
+      "firstName": {
+        "default": "Brent"
+      },
+      "lastName": {
+        "default": "Solomon"
+      },
+      "positionCode": "R",
+      "positionGroup": "forwards",
+      "currentLeague": "CHL",
+      "currentTeam": "OHL",
+      "draftYear": 2024,
+      "draftRound": 6,
+      "draftOverall": 176
+    },
+    {
+      "firstName": {
+        "default": "Brady"
+      },
+      "lastName": {
+        "default": "Cleveland"
+      },
+      "positionCode": "D",
+      "positionGroup": "defensemen",
+      "currentLeague": "NCAA",
+      "currentTeam": "NCAA",
+      "draftYear": 2023,
+      "draftRound": 2,
+      "draftOverall": 47
+    },
+    {
+      "firstName": {
+        "default": "Noah"
+      },
+      "lastName": {
+        "default": "Dower Nilsson"
+      },
+      "positionCode": "L",
+      "positionGroup": "forwards",
+      "currentLeague": "EUROPE",
+      "currentTeam": "Frölunda",
+      "draftYear": 2023,
+      "draftRound": 3,
+      "draftOverall": 73
+    },
+    {
+      "firstName": {
+        "default": "Kienan"
+      },
+      "lastName": {
+        "default": "Draper"
+      },
+      "positionCode": "R",
+      "positionGroup": "forwards",
+      "currentLeague": "NCAA",
+      "currentTeam": "Michigan",
+      "draftYear": 2020,
+      "draftRound": 7,
+      "draftOverall": 187
+    },
+    {
+      "firstName": {
+        "default": "Théo"
+      },
+      "lastName": {
+        "default": "Rochette"
+      },
+      "positionCode": "C",
+      "positionGroup": "forwards",
+      "currentLeague": "EUROPE",
+      "currentTeam": "Lausanne HC"
+    },
+    {
+      "firstName": {
+        "default": "Luka"
+      },
+      "lastName": {
+        "default": "Arkko"
+      },
+      "positionCode": "L",
+      "positionGroup": "forwards",
+      "currentLeague": "EUROPE",
+      "currentTeam": "Pelicans",
+      "draftYear": 2026,
+      "draftRound": 6,
+      "draftOverall": 175
+    },
+    {
+      "firstName": {
+        "default": "Myles"
+      },
+      "lastName": {
+        "default": "Brosnan"
+      },
+      "positionCode": "D",
+      "positionGroup": "defensemen",
+      "currentLeague": "CHL",
+      "currentTeam": "Dexter Southfield",
+      "draftYear": 2026,
+      "draftRound": 7,
+      "draftOverall": 196
+    },
+    {
+      "firstName": {
+        "default": "Cooper"
+      },
+      "lastName": {
+        "default": "Dennis"
+      },
+      "positionCode": "R",
+      "positionGroup": "forwards",
+      "currentLeague": "CHL",
+      "currentTeam": "Brantford"
+    },
+    {
+      "firstName": {
+        "default": "Jacob"
+      },
+      "lastName": {
+        "default": "Truscott"
+      },
+      "positionCode": "D",
+      "positionGroup": "defensemen",
+      "currentLeague": "AHL",
+      "currentTeam": "Grand Rapids"
+    },
+    {
+      "firstName": {
+        "default": "Justice"
+      },
+      "lastName": {
+        "default": "Christensen"
+      },
+      "positionCode": "D",
+      "positionGroup": "defensemen",
+      "currentLeague": "CHL",
+      "currentTeam": "Prince Albert"
+    },
+    {
+      "firstName": {
+        "default": "Haeden"
+      },
+      "lastName": {
+        "default": "Ellis"
+      },
+      "positionCode": "R",
+      "positionGroup": "forwards",
+      "currentLeague": "CHL",
+      "currentTeam": "Kitchener"
+    },
+    {
+      "firstName": {
+        "default": "Will"
+      },
+      "lastName": {
+        "default": "Murphy"
+      },
+      "positionCode": "D",
+      "positionGroup": "defensemen",
+      "currentLeague": "CHL",
+      "currentTeam": "Cape Breton",
+      "draftYear": 2025,
+      "draftRound": 6,
+      "draftOverall": 172
+    }
+  ],
   "dataNotes": [
-    "La liste API des espoirs ne garantit pas tous les joueurs dont l'organisation détient les droits.",
-    "Les notes et potentiels de jeu ne sont pas fournis par cette source.",
-    "Ne pas interpréter l'absence d'un joueur comme une preuve que ses droits ne sont pas détenus."
+    "Remplacement du résultat vide de l'API NHL par une liste secondaire composée des espoirs classés à l'été 2026 et de joueurs du tournoi des espoirs officiel de Detroit.",
+    "La liste couvre les espoirs identifiés par les sources, mais ne garantit pas chaque joueur dont les droits appartiennent encore à Detroit.",
+    "Les identifiants NHL, dates de naissance, tailles, poids, droits contractuels et notes de jeu ne sont pas ajoutés lorsqu'ils ne sont pas confirmés. Les joueurs sans données de repêchage confirmées conservent ces champs absents."
   ]
 }

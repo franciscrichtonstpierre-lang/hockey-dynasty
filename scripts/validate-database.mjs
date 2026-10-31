@@ -45,6 +45,10 @@ if(futureDraft&&Array.isArray(futureDraft.prospects)){
     ids.add(key);
   }
 }
+const echlIndex=await json("data/echl/teams.json");
+const echlFiles=echlIndex&&Array.isArray(echlIndex.teams)?echlIndex.teams:[];
+let echlPlayers=0,echlMissing=[];
+for(const team of echlFiles){const key=String(team.file||"");const data=key?await json("data/echl/"+key):null;const count=data&&Array.isArray(data.players)?data.players.length:0;if(count>=10)echlPlayers+=count;else echlMissing.push(team.teamName||key||"unknown");}
 const registry=await json("data/players/registry.json");
 if (registry && Array.isArray(registry.players)) {
   report.registry.exists=true; report.registry.players=registry.players.length;
@@ -176,7 +180,7 @@ if (picks && Array.isArray(picks.picks)) {
 }
 
 console.log("UHM database audit");
-console.log(`NHL: ${report.nhl.files}/32 fichiers valides, ${report.nhl.players} joueurs; manquants: ${report.nhl.missing.join(", ") || "aucun"}`);
+console.log(`ECHL: ${echlFiles.length}/30 équipes indexées, ${echlPlayers} joueurs dans les effectifs; incomplets: ${echlMissing.join(", ") || "aucun"}`);\nconsole.log(`NHL: ${report.nhl.files}/32 fichiers valides, ${report.nhl.players} joueurs; manquants: ${report.nhl.missing.join(", ") || "aucun"}`);
 console.log(`AHL: ${report.ahl.files}/32 fichiers valides, ${report.ahl.players} joueurs; manquants: ${report.ahl.missing.join(", ") || "aucun"}`);
 console.log(`PROSPECTS: ${report.prospects.files}/32 fichiers non vides, ${report.prospects.players} joueurs; fichiers vides: ${report.prospects.missing.join(", ") || "aucun"}; couverture faible (<10): ${report.prospects.lowCoverage.join(", ") || "aucun"}`);
 console.log(`FUTURS REPÊCHAGES: ${report.futureDraftProspects.exists ? report.futureDraftProspects.total+" espoirs; 2027: "+report.futureDraftProspects.byYear[2027]+", 2028: "+report.futureDraftProspects.byYear[2028]+", 2029: "+report.futureDraftProspects.byYear[2029]+"; invalides/doublons: "+report.futureDraftProspects.invalid : "BASE ABSENTE"}`);
@@ -187,7 +191,7 @@ console.log(`ENTRAÎNEURS LAH: ${report.coaches.ahlStaffExists ? report.coaches.
 console.log(`CHOIX 2027-2029: ${report.draftPicks.records} fiches; ${report.draftPicks.verified} propriétaires vérifiés; ${report.draftPicks.provisionalOwner} propriétaires issus du snapshot secondaire; ${report.draftPicks.excludedConditional} choix conditionnels exclus; ${report.draftPicks.unresolvedOwner} propriétaires non résolus; ${report.draftPicks.unverifiedConditions} conditions non vérifiées; ${report.draftPicks.baseSlots}/${report.draftPicks.expectedBaseSlots} emplacements de base; ${report.draftPicks.missingSlots} emplacements manquants; ${report.draftPicks.invalid} erreurs structurelles; statut ${report.draftPicks.complete ? "COMPLET" : "INCOMPLET"}`);
 console.log("NOTE: la présence des fiches ne garantit pas que les droits, contrats, cotes ou transactions conditionnelles soient tous vérifiés.");
 if (
-  report.nhl.files !== 32 || report.ahl.files !== 32 ||
+  echlFiles.length !== 30 || echlMissing.length > 0 || report.nhl.files !== 32 || report.ahl.files !== 32 ||
   report.prospects.files !== 32 || report.prospects.lowCoverage.length > 0 ||
   !report.futureDraftProspects.exists || report.futureDraftProspects.total === 0 || report.futureDraftProspects.invalid > 0 || draftYears.some(y=>report.futureDraftProspects.byYear[y]===0) ||
   !report.registry.exists || report.registry.unknown > 0 || report.registry.duplicates > 0 || report.registry.duplicateIdentities > 0 || report.registry.missingOverall > 0 || report.registry.missingAttributeSets > 0 || report.registry.invalidRatings > 0 || report.registry.potentialMissing > 0 ||

@@ -103,7 +103,10 @@ const output={
   schemaVersion:1, season:"2026-2027", seasonKey:SEASON, generatedAt:new Date().toISOString(),
   sourceDataset:"ehlersio/nhl-contracts", sourceUrl:"https://github.com/ehlersio/nhl-contracts/releases/tag/contracts",
   sourceUpdatedAt:timestampRaw.updated_at||timestampRaw.updatedAt||timestampRaw.generated_at||null,
-  license:"CC0-1.0", playerCount:players.length, matchedContracts, salaryRows,\n  coveragePercent:Number((100*matchedContracts/Math.max(players.length,1)).toFixed(1)),\n  salaryCoveragePercent:Number((100*salaryRows/Math.max(players.length,1)).toFixed(1)),\n  counts:{matchedContracts, salaryRows, missingContracts:players.length-matchedContracts,withGapSource:players.filter(p=>p.gapReason).length},
+  license:"CC0-1.0", playerCount:players.length, matchedContracts, salaryRows,
+  coveragePercent:Number((100*matchedContracts/Math.max(players.length,1)).toFixed(1)),
+  salaryCoveragePercent:Number((100*salaryRows/Math.max(players.length,1)).toFixed(1)),
+  counts:{matchedContracts, salaryRows, missingContracts:players.length-matchedContracts,withGapSource:players.filter(p=>p.gapReason).length},
   players,
   dataNotes:[
     "Contract records and seasonal salary values retain the source confidence tier and source claims where available.",

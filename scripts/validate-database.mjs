@@ -10,7 +10,7 @@ async function json(path) {
 }
 const report = {
   nhl:{files:0,players:0,missing:[]}, ahl:{files:0,players:0,missing:[]},
-  prospects:{files:0,players:0,missing:[],lowCoverage:[]}, registry:{players:0,exists:false,unknown:0,duplicates:0,duplicateIdentities:0,withOverall:0,missingOverall:0,completeAttributeSets:0,missingAttributeSets:0,invalidRatings:0,potentialAvailable:0,potentialMissing:0},
+  prospects:{files:0,players:0,missing:[],lowCoverage:[]}, registry:{players:0,exists:false,unknown:0,duplicates:0,duplicateIdentities:0,withOverall:0,missingOverall:0,completeAttributeSets:0,missingAttributeSets:0,invalidRatings:0,potentialAvailable:0,potentialEstimated:0,potentialMissing:0},
   contracts:{players:0,matched:0,coveragePercent:0,salaryRows:0,estimatedAavRows:0,missingSalary:0,exists:false},
   coaches:{teams:0,coaches:0,exists:false,missingHead:[],missingAssistants:[],ahlStaffExists:false,ahlTeams:0,ahlCoaches:0,ahlMissingHead:[],ahlMissingAssistants:[]},
   draftPicks:{exists:false,records:0,verified:0,baseSlots:0,expectedBaseSlots:teams.length*draftYears.length*draftRounds.length,missingSlots:0,invalid:0,years:[],unresolvedOwner:0,complete:false}
@@ -40,6 +40,7 @@ if (registry && Array.isArray(registry.players)) {
     const id = p.playerId || p.nhlPlayerId || p.id;
     if (id != null) { const key = String(id); if (ids.has(key)) report.registry.duplicates++; else ids.add(key); }
     if (p.potential != null && Number.isFinite(Number(p.potential)) && Number(p.potential) >= 0 && Number(p.potential) <= 99) report.registry.potentialAvailable++; else report.registry.potentialMissing++;
+    if (p.potentialEstimate != null && Number.isFinite(Number(p.potentialEstimate)) && Number(p.potentialEstimate) >= 0 && Number(p.potentialEstimate) <= 99 && p.potentialStatus === "provisional_model_estimate") report.registry.potentialEstimated++;
     const overall = Number(p.overall ?? p.attributes?.OA);
     if (Number.isFinite(overall) && overall >= 0 && overall <= 99) report.registry.withOverall++; else report.registry.missingOverall++;
     const attrs = p.attributes && typeof p.attributes === "object" ? p.attributes : {};
@@ -125,7 +126,7 @@ console.log("UHM database audit");
 console.log(`NHL: ${report.nhl.files}/32 fichiers valides, ${report.nhl.players} joueurs; manquants: ${report.nhl.missing.join(", ") || "aucun"}`);
 console.log(`AHL: ${report.ahl.files}/32 fichiers valides, ${report.ahl.players} joueurs; manquants: ${report.ahl.missing.join(", ") || "aucun"}`);
 console.log(`PROSPECTS: ${report.prospects.files}/32 fichiers non vides, ${report.prospects.players} joueurs; fichiers vides: ${report.prospects.missing.join(", ") || "aucun"}; couverture faible (<10): ${report.prospects.lowCoverage.join(", ") || "aucun"}`);
-console.log(`REGISTRE CENTRAL: ${report.registry.exists ? report.registry.players+" fiches; ligue inconnue: "+report.registry.unknown+"; identifiants dupliqués: "+report.registry.duplicates+"; identités nom+naissance dupliquées: "+report.registry.duplicateIdentities+"; OA valides: "+report.registry.withOverall+"/"+report.registry.players+"; jeux d’attributs complets: "+report.registry.completeAttributeSets+"/"+report.registry.players+"; cotes invalides: "+report.registry.invalidRatings+"; potentiel source disponible: "+report.registry.potentialAvailable+"/"+report.registry.players : "ABSENT"}`);
+console.log(`REGISTRE CENTRAL: ${report.registry.exists ? report.registry.players+" fiches; ligue inconnue: "+report.registry.unknown+"; identifiants dupliqués: "+report.registry.duplicates+"; identités nom+naissance dupliquées: "+report.registry.duplicateIdentities+"; OA valides: "+report.registry.withOverall+"/"+report.registry.players+"; jeux d’attributs complets: "+report.registry.completeAttributeSets+"/"+report.registry.players+"; cotes invalides: "+report.registry.invalidRatings+"; potentiel source disponible: "+report.registry.potentialAvailable+"/"+report.registry.players+"; estimations provisoires: "+report.registry.potentialEstimated : "ABSENT"}`);
 console.log(`CONTRATS 2026-27: ${report.contracts.exists ? report.contracts.matched+"/"+report.contracts.players+" contrats appariés; salaires/plafond disponibles: "+report.contracts.salaryRows+"/"+report.nhl.players+"; estimations AAV étiquetées: "+report.contracts.estimatedAavRows+"; manquants: "+report.contracts.missingSalary : "ABSENTS"}`);
 console.log(`ENTRAÎNEURS LNH: ${report.coaches.exists ? report.coaches.teams+"/32 équipes, "+report.coaches.coaches+" fiches; chefs manquants: "+report.coaches.missingHead.join(", ")+"; équipes avec moins de 2 adjoints: "+report.coaches.missingAssistants.join(", ") : "BASE ABSENTE"}`);
 console.log(`ENTRAÎNEURS LAH: ${report.coaches.ahlStaffExists ? report.coaches.ahlTeams+"/32 équipes, "+report.coaches.ahlCoaches+" fiches; chefs manquants: "+report.coaches.ahlMissingHead.join(", ")+"; équipes avec moins de 2 adjoints: "+report.coaches.ahlMissingAssistants.join(", ") : "BASE ABSENTE"}`);

@@ -445,6 +445,9 @@ const output = {
 };
 await writeFile("data/players/registry.json", JSON.stringify(output,null,2)+"\n", "utf8");
 console.log(`Player registry: ${players.length} records; ${JSON.stringify(counts)}`);
+const unknownLeagueDetails = players.filter(p=>!p.currentLeague||p.currentLeague==="UNKNOWN")
+  .map(p=>`${p.name} [rights=${p.nhlRightsTeam||"?"}; age=${p.age??"?"}; draft=${p.draftYear??"?"}; team=${p.currentTeam||"?"}]`);
+console.log(`UNKNOWN league detail (${unknownLeagueDetails.length}): ${unknownLeagueDetails.join(" | ")}`);
 
 // Populate coaching ratings for simulation usability, without presenting them as verified scouting grades.
 // Ratings are intentionally marked as provisional until a sourced coach-evaluation dataset is added.

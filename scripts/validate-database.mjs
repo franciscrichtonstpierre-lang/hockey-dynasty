@@ -1,7 +1,9 @@
-// Audit non destructif des fichiers de données UHM avant publication.
+// Audit non destructif des bases UHM avant publication.
 import { access, readFile } from "node:fs/promises";
 
 const teams = ["ANA","BOS","BUF","CGY","CAR","CHI","COL","CBJ","DAL","DET","EDM","FLA","LAK","MIN","MTL","NSH","NJD","NYI","NYR","OTT","PHI","PIT","SJS","SEA","STL","TBL","TOR","UTA","VAN","VGK","WSH","WPG"];
+const draftYears = [2027, 2028, 2029];
+const draftRounds = [1, 2, 3, 4, 5, 6, 7];
 async function json(path) {
   try { await access(path); return JSON.parse(await readFile(path, "utf8")); }
   catch { return null; }
@@ -10,7 +12,8 @@ const report = {
   nhl:{files:0,players:0,missing:[]}, ahl:{files:0,players:0,missing:[]},
   prospects:{files:0,players:0,missing:[]}, registry:{players:0,exists:false},
   contracts:{players:0,matched:0,coveragePercent:0,exists:false},
-  coaches:{teams:0,coaches:0,exists:false}, draftPicks:{exists:false,years:[]}
+  coaches:{teams:0,coaches:0,exists:false},
+  draftPicks:{exists:false,records:0,verified:0,baseSlots:0,expectedBaseSlots:teams.length*draftYears.length*draftRounds.length,missingSlots:0,invalid:0,years:[],complete:false}
 };
 for (const code of teams) {
   const nhl = await json(`data/nhl/${code}.json`);
@@ -35,8 +38,42 @@ if (contracts && Array.isArray(contracts.players)) {
 }
 const coaches=await json("data/coaches/2026-2027.json");
 if (coaches && Array.isArray(coaches.coaches)) { report.coaches.exists=true; report.coaches.teams=coaches.teamCount||0; report.coaches.coaches=coaches.coaches.length; }
+
 const picks=await json("data/draft-picks/2027-2029.json");
-if (picks && Array.isArray(picks.picks)) { report.draftPicks.exists=true; report.draftPicks.years=[...new Set(picks.picks.map(p=>p.year))].sort(); }
+if (picks && Array.isArray(picks.picks)) {
+  report.draftPicks.exists=true;
+  report.draftPicks.records=picks.picks.length;
+  report.draftPicks.years=[...new Set(picks.picks.map(p=>p.year))].sort();
+  const seen = new Set();
+  for (const p of picks.picks) {
+    const validYear = draftYears.includes(Number(p.year));
+    const validRound = draftRounds.includes(Number(p.round));
+    const validOriginal = teams.includes(p.originalTeam);
+    const key = `${p.year}-${p.round}-${p.originalTeam}`;
+    if (!validYear || !validRound || !validOriginal || !p.pickId || seen.has(key)) {
+      report.draftPicks.invalid++;
+      continue;
+    }
+    seen.add(key);
+    if (p.verified === true) report.draftPicks.verified++;
+    const forfeited = p.status === "forfeited";
+    if (p.verified !== true || !p.source || (!forfeited && !teams.includes(p.currentOwner)) || (forfeited && p.currentOwner != null)) {
+      report.draftPicks.invalid++;
+    }
+  }
+  report.draftPicks.baseSlots=seen.size;
+  report.draftPicks.missingSlots=report.draftPicks.expectedBaseSlots-seen.size;
+  const expectedKeys = new Set();
+  for (const year of draftYears) for (const round of draftRounds) for (const team of teams) expectedKeys.add(`${year}-${round}-${team}`);
+  for (const key of expectedKeys) if (!seen.has(key)) report.draftPicks.missingSlots++;
+  report.draftPicks.complete =
+    picks.status === "complete" &&
+    report.draftPicks.baseSlots === report.draftPicks.expectedBaseSlots &&
+    report.draftPicks.missingSlots === 0 &&
+    report.draftPicks.invalid === 0 &&
+    report.draftPicks.verified === report.draftPicks.expectedBaseSlots &&
+    draftYears.every(y=>report.draftPicks.years.includes(y));
+}
 
 console.log("UHM database audit");
 console.log(`NHL: ${report.nhl.files}/32 fichiers valides, ${report.nhl.players} joueurs; manquants: ${report.nhl.missing.join(", ") || "aucun"}`);
@@ -45,6 +82,6 @@ console.log(`PROSPECTS: ${report.prospects.files}/32 fichiers non vides, ${repor
 console.log(`REGISTRE CENTRAL: ${report.registry.exists ? report.registry.players+" fiches" : "ABSENT"}`);
 console.log(`CONTRATS 2026-27: ${report.contracts.exists ? report.contracts.matched+"/"+report.contracts.players+" joueurs appariés ("+report.contracts.coveragePercent+"%)" : "ABSENTS"}`);
 console.log(`ENTRAÎNEURS: ${report.coaches.exists ? report.coaches.teams+"/32 équipes, "+report.coaches.coaches+" fiches" : "BASE ABSENTE"}`);
-console.log(`CHOIX DE REPÊCHAGE: ${report.draftPicks.exists ? "années "+report.draftPicks.years.join(", ") : "BASE D’ACTIFS ABSENTE"}`);
+console.log(`CHOIX 2027-2029: ${report.draftPicks.records} fiches; ${report.draftPicks.verified} vérifiées; ${report.draftPicks.baseSlots}/${report.draftPicks.expectedBaseSlots} emplacements de base; ${report.draftPicks.missingSlots} manquants; ${report.draftPicks.invalid} erreurs; statut ${report.draftPicks.complete ? "COMPLET" : "INCOMPLET"}`);
 console.log("NOTE: la présence des fiches ne garantit pas que les droits, contrats, cotes ou transactions conditionnelles soient tous vérifiés.");
-if (report.nhl.files !== 32 || report.ahl.files !== 32 || report.prospects.files !== 32 || !report.registry.exists || !report.contracts.exists || !report.coaches.exists || !report.draftPicks.exists) process.exitCode = 1;
+if (report.nhl.files !== 32 || report.ahl.files !== 32 || report.prospects.files !== 32 || !report.registry.exists || !report.contracts.exists || !report.coaches.exists || !report.draftPicks.complete) process.exitCode = 1;

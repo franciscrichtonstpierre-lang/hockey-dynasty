@@ -680,6 +680,7 @@ async function loadLeagueCoachOverrides(){
   return {...coach,...(row.payload||{}),coachId:row.coach_id,fullName:row.full_name,teamCode:row.team_code,league:row.league_code,role:row.role,status:row.employment_status};
  });
  for(const row of data||[])if(!existing.has(String(row.coach_id)))commCoachRecords.push({...row.payload,coachId:row.coach_id,fullName:row.full_name,teamCode:row.team_code,league:row.league_code,role:row.role,status:row.employment_status});
+ try{localStorage.setItem(UHM_COMM_COACHES,JSON.stringify(commCoachRecords))}catch(e){}
  UHM_LEAGUE_COACH_OVERRIDES_LOADED=activeOnlineLeagueId;
 }
 async function saveLeagueCoachOverride(coach){

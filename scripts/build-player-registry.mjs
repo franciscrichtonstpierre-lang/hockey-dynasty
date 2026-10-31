@@ -104,6 +104,33 @@ for (const code of codes) {
   } catch (e) { console.warn(`AHL registry skipped ${code}: ${e.message}`); }
 }
 
+// ECHL roster snapshots: these are professional players, but ECHL membership alone does not prove NHL rights.
+try {
+  const { readdir } = await import("node:fs/promises");
+  const files = (await readdir("data/echl")).filter(name => name.endsWith(".json") && name !== "teams.json");
+  for (const file of files) {
+    try {
+      const data = JSON.parse(await readFile(`data/echl/${file}`, "utf8"));
+      for (const p of (Array.isArray(data.players) ? data.players : [])) {
+        const sourceId = first(p.player_id, p.playerId, p.person_id, p.id);
+        const name = nameOf(p);
+        if (!sourceId || !name) continue;
+        add({
+          id: `echl:${sourceId}`, name, firstName: str(first(p.first_name,p.firstName)),
+          lastName: str(first(p.last_name,p.lastName)), position: posGroup(p), detailedPosition: detailedPos(p),
+          currentLeague: "ECHL", currentTeam: data.teamName || data.team_name || null, nhlRightsTeam: null,
+          birthDate: str(first(p.birthdate,p.birthDate)), shootsCatches: str(first(p.shoots,p.catches,p.shootsCatches)),
+          sweaterNumber: Number.isFinite(Number(first(p.tp_jersey_number,p.jersey_number,p.sweater_number))) ? Number(first(p.tp_jersey_number,p.jersey_number,p.sweater_number)) : null,
+          nhlPlayerId: Number.isFinite(Number(first(p.nhl_player_id,p.nhlPlayerId))) ? Number(first(p.nhl_player_id,p.nhlPlayerId)) : null,
+          attributes: null, overall: null, potential: null,
+          source: data.sourceUrl || "ECHL HockeyTech public feed", sourceUpdatedAt: data.syncedAt || now
+        });
+      }
+    } catch (e) { console.warn(`ECHL registry skipped ${file}: ${e.message}`); }
+  }
+  console.log(`ECHL roster snapshots processed: ${files.length} team files.`);
+} catch (e) { console.warn(`ECHL registry unavailable: ${e.message}`); }
+
 // Public prospect lists can describe the development team, but do not prove rights or contract status.
 for (const code of codes) {
   try {

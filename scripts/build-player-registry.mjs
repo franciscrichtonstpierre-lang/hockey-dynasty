@@ -530,7 +530,10 @@ for(const result of pipelineJsonResults){
     if(matches.length===1){
       const match=matches[0];
       let changed=false;
-      if((!match.currentLeague||match.currentLeague==="UNKNOWN")&&league!=="UNKNOWN"){
+      const exactForeign=["KHL","SHL","LIIGA","ICEHL","DEL","NL","CZECH","ECHL"].includes(league);
+      const replaceGenericEurope=match.currentLeague==="EUROPE"&&exactForeign;
+      const replaceGenericOther=match.currentLeague==="OTHER"&&league==="ECHL";
+      if((!match.currentLeague||match.currentLeague==="UNKNOWN"||replaceGenericEurope||replaceGenericOther)&&league!=="UNKNOWN"){
         match.currentLeague=league;match.leagueResolution="hockey_insights_team_prospects_snapshot";changed=true;
         if(currentTeam)match.currentTeam=currentTeam;
       }else if(match.currentLeague===league&&!match.currentTeam&&currentTeam){

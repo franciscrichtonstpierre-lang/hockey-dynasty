@@ -237,7 +237,7 @@ try {
           }
         }
       }
-      return {teamCode,url,rows,draftPicks,error:null};
+      return {teamCode,url,rows,draftPicks,error:null,debugHtml:teamCode==="ANA"?html:null};
     } catch(error) {
       return {teamCode,url,rows:[],error:error.message};
     }
@@ -271,6 +271,9 @@ try {
     teamSnapshots.set(result.teamCode,existing);
   }
   console.log(`Hockey Insights prospect snapshots: ${pipelinePagesFetched}/32 pages with rows; ${pipelineRowsFetched} rows parsed.`);
+  const anaDebugHtml=pipelineResults.find(r=>r.teamCode==="ANA")?.debugHtml||"";
+  const draftDebug=[...anaDebugHtml.matchAll(/draft|2027|2028|2029/gi)].slice(0,18).map(m=>anaDebugHtml.slice(Math.max(0,m.index-100),Math.min(anaDebugHtml.length,m.index+220)));
+  console.log("Draft HTML diagnostics ANA: "+JSON.stringify({htmlLength:anaDebugHtml.length,tableCount:[...anaDebugHtml.matchAll(/<table\\b/gi)].length,snippets:draftDebug}));
   const draftPickMap = new Map();
   let draftPickConflicts = 0;
   for (const result of pipelineResults) {

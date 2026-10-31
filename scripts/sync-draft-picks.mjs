@@ -84,12 +84,12 @@ for (const owner of teams) {
         if (row.conditional) {
           observed.delete(key);
           pick.currentOwner = null;
-          pick.status = "unverified";
+          pick.status = "excluded_conditional";
           pick.verified = false;
           pick.conditions = null;
           pick.conditionsVerified = false;
-          pick.source = null;
-          pick.sourceUpdatedAt = null;
+          pick.source = url;
+          pick.sourceUpdatedAt = stamp;
           pick.acquiredVia = null;
           pick.verificationNote = "Choix conditionnel exclu du registre jouable selon la règle du projet; propriétaire ferme non attribué.";
           continue;

@@ -180,7 +180,8 @@ if (picks && Array.isArray(picks.picks)) {
 }
 
 console.log("UHM database audit");
-console.log(`ECHL: ${echlFiles.length}/30 équipes indexées, ${echlPlayers} joueurs dans les effectifs; incomplets: ${echlMissing.join(", ") || "aucun"}`);\nconsole.log(`NHL: ${report.nhl.files}/32 fichiers valides, ${report.nhl.players} joueurs; manquants: ${report.nhl.missing.join(", ") || "aucun"}`);
+console.log(`ECHL: ${echlFiles.length}/30 équipes indexées, ${echlPlayers} joueurs dans les effectifs; incomplets: ${echlMissing.join(", ") || "aucun"}`);
+console.log(`NHL: ${report.nhl.files}/32 fichiers valides, ${report.nhl.players} joueurs; manquants: ${report.nhl.missing.join(", ") || "aucun"}`);
 console.log(`AHL: ${report.ahl.files}/32 fichiers valides, ${report.ahl.players} joueurs; manquants: ${report.ahl.missing.join(", ") || "aucun"}`);
 console.log(`PROSPECTS: ${report.prospects.files}/32 fichiers non vides, ${report.prospects.players} joueurs; fichiers vides: ${report.prospects.missing.join(", ") || "aucun"}; couverture faible (<10): ${report.prospects.lowCoverage.join(", ") || "aucun"}`);
 console.log(`FUTURS REPÊCHAGES: ${report.futureDraftProspects.exists ? report.futureDraftProspects.total+" espoirs; 2027: "+report.futureDraftProspects.byYear[2027]+", 2028: "+report.futureDraftProspects.byYear[2028]+", 2029: "+report.futureDraftProspects.byYear[2029]+"; invalides/doublons: "+report.futureDraftProspects.invalid : "BASE ABSENTE"}`);

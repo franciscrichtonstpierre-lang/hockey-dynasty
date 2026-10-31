@@ -9,7 +9,7 @@ const headers = { "User-Agent": "Ultimate-Hockey-Manager-data-sync/1.0", "Accept
 const pause = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 async function fetchJson(url) {
-  const response = await fetch(url, { headers, signal: AbortSignal.timeout(20000) });
+  const response = await fetch(url, { headers, signal: AbortSignal.timeout(15000) });
   if (!response.ok) throw new Error(`HTTP ${response.status} for ${url}`);
   return response.json();
 }
@@ -111,9 +111,16 @@ async function syncProspects(code) {
     process.exitCode = 1;
   }
 }
-for (const code of teams) {
+async function syncTeam(code) {
   await syncRoster(code);
   await pause(180);
   await syncProspects(code);
   await pause(180);
 }
+let nextTeamIndex = 0;
+await Promise.all(Array.from({length:4}, async () => {
+  while (nextTeamIndex < teams.length) {
+    const index = nextTeamIndex++;
+    await syncTeam(teams[index]);
+  }
+}));

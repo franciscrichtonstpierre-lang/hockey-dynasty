@@ -830,7 +830,7 @@ function applyLeaguePlayerOverridesToRows(rows){
  });
 }
 async function loadLeaguePlayerOverrides(){
- if(!activeOnlineLeagueId||!authClient||!signedInUser)return;
+ if(!activeOnlineLeagueId||!authClient||!signedInUser){UHM_PLAYER_OVERRIDES_BY_ID=new Map();return;}
  const {data,error}=await authClient.from("league_player_overrides").select("*").eq("league_id",activeOnlineLeagueId).eq("season","2026-2027");
  if(error)throw error;
  UHM_PLAYER_OVERRIDES_BY_ID=new Map((data||[]).map(row=>[String(row.player_id),row]));

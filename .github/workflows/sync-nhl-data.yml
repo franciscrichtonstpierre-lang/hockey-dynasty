@@ -5,6 +5,7 @@ on:
     paths:
       - ".github/workflows/sync-nhl-data.yml"
       - "scripts/sync-ahl-data.mjs"
+      - "scripts/sync-echl-data.mjs"
       - "scripts/sync-nhl-data.mjs"
       - "scripts/build-player-registry.mjs"
       - "scripts/sync-future-draft-prospects.mjs"
@@ -56,6 +57,12 @@ jobs:
         env:
           UHM_AHL_SEASON_ID: "94"
         run: node scripts/sync-ahl-data.mjs
+      - name: Synchroniser les 30 effectifs ECHL
+        if: always()
+        continue-on-error: true
+        env:
+          UHM_ECHL_SEASON_ID: "78"
+        run: node scripts/sync-echl-data.mjs
       - name: Synchroniser les espoirs des repêchages 2027–2029
         if: always()
         continue-on-error: true
@@ -79,7 +86,7 @@ jobs:
         run: |
           git config user.name "uhm-data-bot"
           git config user.email "uhm-data-bot@users.noreply.github.com"
-          git add data/nhl data/prospects data/prospects-supplemental data/future-draft-prospects data/ahl data/coaches data/players/registry.json data/contracts/2026-2027.json data/draft-picks
+          git add data/nhl data/echl data/prospects data/prospects-supplemental data/future-draft-prospects data/ahl data/coaches data/players/registry.json data/contracts/2026-2027.json data/draft-picks
           if git diff --cached --quiet; then
             echo "Aucune modification de données."
           else

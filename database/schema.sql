@@ -33,6 +33,8 @@ alter table public.league_members add constraint league_members_manager_name_len
 
 
 -- Compatibility with the browser app's league owner, invitation and membership fields.
+alter table public.league_members add column if not exists role text not null default 'manager';
+alter table public.league_members add column if not exists team_id integer;
 alter table public.leagues add column if not exists owner_id uuid references auth.users(id) on delete cascade;
 alter table public.leagues add column if not exists join_code text;
 update public.leagues set owner_id = commissioner_id where owner_id is null;

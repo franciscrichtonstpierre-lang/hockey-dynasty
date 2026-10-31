@@ -175,19 +175,18 @@ begin
     return;
   end if;
 
-  foreach v_code in array v_codes loop
-    if not exists (
-      select 1 from public.league_members m
-      where m.league_id = v_league_id and m.team_code = v_code
-    ) then
-      v_team_id := array_position(v_codes, v_code) - 1;
-      exit;
-    end if;
-    v_code := null;
-  end loop;
+  select candidate.code into v_code
+  from unnest(v_codes) as candidate(code)
+  where not exists (
+    select 1 from public.league_members m
+    where m.league_id = v_league_id and m.team_code = candidate.code
+  )
+  order by array_position(v_codes, candidate.code)
+  limit 1;
   if v_code is null then
     raise exception 'Cette ligue a déjà attribué ses 32 équipes.';
   end if;
+  v_team_id := array_position(v_codes, v_code) - 1;
 
   insert into public.league_members(league_id, user_id, role, team_id, team_code, manager_name)
   values (v_league_id, auth.uid(), 'manager', v_team_id, v_code, trim(p_manager_name))

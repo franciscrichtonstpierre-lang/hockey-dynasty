@@ -115,10 +115,6 @@ for (const code of codes) {
       }
       const c=selected.c, season=selected.season, key=c.contract_key||c.contractKey;
       const salaryEstimate = simulationSalaryEstimate(registryPlayer,c,season);
-      const playerClauses=clauses.filter(cl =>
-        (cl.contract_key||cl.contractKey)===key ||
-        (Number(cl.player_id||cl.playerId)===id && String(cl.season_from||"")<=SEASON && String(cl.season_to||"")>=SEASON)
-      );
       players.push({
         playerId:id, name, teamCode:code, position:group==="goalies"?"G":group==="defensemen"?"D":"F",
         contractStatus:selected.season ? "MATCHED" : "MATCHED_CONTRACT_NO_SEASON_ROW", contract:{

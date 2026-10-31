@@ -786,16 +786,28 @@ let initialStage="welcome";try{const previous=localStorage.getItem("uhmLastStage
 let uhmResumeRestorePending=false;
 async function uhmRestoreRememberedLeague(){
  if(uhmResumeRestorePending||document.visibilityState==="hidden")return;
- if(uhmStage!=="leagues"||!authClient||!signedInUser)return;
+ if(uhmStage!=="leagues"||!authClient)return;
  let rememberedLeague="";
  try{rememberedLeague=localStorage.getItem("uhmLastLeagueId")||""}catch(e){}
  if(!rememberedLeague)return;
  uhmResumeRestorePending=true;
- try{await enterOnlineLeague(rememberedLeague)}catch(e){console.warn("UHM restore league failed",e)}
+ try{
+  // The screenshot/system UI can return focus before Supabase has restored its session.
+  // Ask Supabase for the current user instead of abandoning restoration when signedInUser is still null.
+  if(!signedInUser){
+   const {data,error}=await authClient.auth.getUser();
+   if(error)throw error;
+   signedInUser=data?.user||null;
+  }
+  if(!signedInUser)return;
+  await enterOnlineLeague(rememberedLeague);
+ }catch(e){console.warn("UHM restore league failed",e)}
  finally{uhmResumeRestorePending=false}
 }
 window.addEventListener("pageshow",()=>{setTimeout(uhmRestoreRememberedLeague,250)});
 document.addEventListener("visibilitychange",()=>{if(document.visibilityState==="visible")setTimeout(uhmRestoreRememberedLeague,250)});
+// Retry after authentication finishes initializing; pageshow may have fired too early.
+window.addEventListener("load",()=>{setTimeout(uhmRestoreRememberedLeague,1000)});
 async function loadDraftPickLedger(){
  try{
   const response=await fetch("./data/draft-picks/2027-2029.json",{cache:"no-store"});

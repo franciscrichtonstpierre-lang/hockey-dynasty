@@ -781,6 +781,21 @@ function commExportData(){const payload={schemaVersion:1,season:"2026-2027",expo
 
 try{render()}catch(error){console.error("UHM render error",error);const app=document.getElementById("app");if(app)app.innerHTML='<div class="card"><h3>Erreur de chargement</h3><p>Le jeu a rencontré un problème. Ta sauvegarde est conservée.</p><button onclick="location.reload()">Réessayer</button></div>'}
 let initialStage="welcome";try{const previous=localStorage.getItem("uhmLastStage")||sessionStorage.getItem("uhmLastStage");if(["game","leagues"].includes(previous))initialStage=previous}catch(e){}window.addEventListener("pagehide",()=>{try{localStorage.setItem("uhmLastScrollY",String(window.scrollY));localStorage.setItem("uhmLastStage",uhmStage);sessionStorage.setItem("uhmLastStage",uhmStage)}catch(e){}});document.addEventListener("visibilitychange",()=>{if(document.visibilityState==="hidden"){try{localStorage.setItem("uhmLastScrollY",String(window.scrollY));localStorage.setItem("uhmLastStage",uhmStage);sessionStorage.setItem("uhmLastStage",uhmStage)}catch(e){}}});uhmShowStage(initialStage);accountRender();initializeOnlineAuth();
+// Android can suspend or restore the browser tab when opening system UI (including the screenshot menu).
+// If the app returns to the league list while a league is still remembered, reopen that league.
+let uhmResumeRestorePending=false;
+async function uhmRestoreRememberedLeague(){
+ if(uhmResumeRestorePending||document.visibilityState==="hidden")return;
+ if(uhmStage!=="leagues"||!authClient||!signedInUser)return;
+ let rememberedLeague="";
+ try{rememberedLeague=localStorage.getItem("uhmLastLeagueId")||""}catch(e){}
+ if(!rememberedLeague)return;
+ uhmResumeRestorePending=true;
+ try{await enterOnlineLeague(rememberedLeague)}catch(e){console.warn("UHM restore league failed",e)}
+ finally{uhmResumeRestorePending=false}
+}
+window.addEventListener("pageshow",()=>{setTimeout(uhmRestoreRememberedLeague,250)});
+document.addEventListener("visibilitychange",()=>{if(document.visibilityState==="visible")setTimeout(uhmRestoreRememberedLeague,250)});
 async function loadDraftPickLedger(){
  try{
   const response=await fetch("./data/draft-picks/2027-2029.json",{cache:"no-store"});

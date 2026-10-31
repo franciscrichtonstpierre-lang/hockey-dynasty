@@ -154,7 +154,7 @@ begin
 
   select l.id, l.name into v_league_id, v_league_name
   from public.leagues l
-  where upper(trim(l.join_code)) = upper(trim(p_join_code)
+  where upper(trim(l.join_code)) = upper(trim(p_join_code))
   limit 1;
   if v_league_id is null then
     raise exception 'Aucune ligue trouvée avec ce code.';

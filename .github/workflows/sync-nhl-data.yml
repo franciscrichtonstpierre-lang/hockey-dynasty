@@ -87,12 +87,12 @@ jobs:
         run: |
           git config user.name "uhm-data-bot"
           git config user.email "uhm-data-bot@users.noreply.github.com"
-          git add data/nhl data/echl data/prospects data/prospects-supplemental data/future-draft-prospects data/ahl data/coaches data/players/registry.json data/contracts/2026-2027.json data/draft-picks
+          git add data/nhl data/echl data/prospects data/prospects-supplemental data/future-draft-prospects data/ahl data/coaches data/players/registry.json data/contracts/2026-2027.json data/contracts/contract-audit-2026-2027.json data/draft-picks
           if git diff --cached --quiet; then
             echo "Aucune modification de données."
           else
             git commit -m "Synchroniser les effectifs LNH, LAH et espoirs"
             git fetch origin main
-            git rebase -X theirs origin/main
+            git -c rebase.autoStash=true rebase -X theirs origin/main
             git push origin HEAD:main
           fi

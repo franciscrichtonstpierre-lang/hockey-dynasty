@@ -114,7 +114,18 @@ for (const code of codes) {
       const name = nameOf(p);
       if (!name) continue;
       const matchingRecords = [...records.values()].filter(r => nameKey(r.name) === nameKey(name));
-      const id = sourceId ? `nhl:${sourceId}` : matchingRecords.length === 1 ? matchingRecords[0].id : `prospect:${code}:${nameKey(name).replace(/ /g,"-")}`;
+      const prospectBirthDate = str(first(p.birthDate,p.birthdate));
+      const prospectPosition = posGroup(p);
+      const identityMatches = matchingRecords.filter(r =>
+        prospectBirthDate && r.birthDate && prospectBirthDate === r.birthDate &&
+        (!prospectPosition || !r.position || prospectPosition === r.position)
+      );
+      // If name + birth date + compatible position match a single roster entry,
+      // reuse that stable roster ID even when the prospect endpoint has another ID shape.
+      const id = identityMatches.length === 1 ? identityMatches[0].id :
+        sourceId ? `nhl:${sourceId}` :
+        matchingRecords.length === 1 ? matchingRecords[0].id :
+        `prospect:${code}:${nameKey(name).replace(/ /g,"-")}`;
       const leagueRaw = String(first(p.currentLeague,p.league,p.leagueName,p.currentLeagueName,"")).toLowerCase();
       const currentLeague = /\bnhl\b/.test(leagueRaw) ? "NHL" :
         /ahl|american hockey/.test(leagueRaw) ? "AHL" :

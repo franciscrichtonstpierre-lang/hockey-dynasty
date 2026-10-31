@@ -132,7 +132,86 @@ function developPlayers(days){
  }
  return improved;
 }
-async function simulate(){try{const d=await fetchRosterData(codes[S.team]);window.hdRosterCache=[...(d.forwards||[]),...(d.defensemen||[]),...(d.goalies||[])];}catch(e){window.hdRosterCache=[];}let n=0;for(let d=1;d<=14;d++)if(Math.random()<.52){n++;let a=Math.floor(Math.random()*6),b=Math.floor(Math.random()*6);if(a===b){if(Math.random()<.5)a++;else b++}S.gf+=a;S.ga+=b;if(a>b)S.w++;else if(Math.random()<.25)S.otl++;else S.l++;S.history.push("Jour "+(S.day+d)+" · "+teams[S.team]+" "+a+"–"+b+" Adversaire simulé")}S.day+=14;const improved=developPlayers(14);S.history=S.history.slice(-60);save();render();msg(n+" matchs simulés sur 14 jours. "+(improved?improved+" joueur(s) ont progressé.":"Développement des joueurs enregistré."))}
+async function simulate(){
+ const selectedCode=codes[S.team];
+ let selectedRoster=null;
+ try{selectedRoster=await fetchRosterData(selectedCode);window.hdRosterCache=[...(selectedRoster.forwards||[]),...(selectedRoster.defensemen||[]),...(selectedRoster.goalies||[])];}catch(e){window.hdRosterCache=[];}
+ await loadRatings();
+ const startDate=new Date(Date.UTC(Number(S.season)||2026,9,7));
+ startDate.setUTCDate(startDate.getUTCDate()+Math.max(0,Number(S.day)||0));
+ const endDate=new Date(startDate);endDate.setUTCDate(endDate.getUTCDate()+14);
+ const dateKey=d=>d.toISOString().slice(0,10);
+ const startKey=dateKey(startDate),endKey=dateKey(endDate);
+ let scheduled=[],seenGames=new Set(),scheduleAvailable=false;
+ for(const offset of [0,7]){
+  const lookup=new Date(startDate);lookup.setUTCDate(lookup.getUTCDate()+offset);
+  try{
+   const res=await fetch("https://api-web.nhle.com/v1/schedule/"+dateKey(lookup),{cache:"no-store"});
+   if(!res.ok)continue;
+   const data=await res.json();
+   if(Array.isArray(data.gameWeek))scheduleAvailable=true;
+   for(const week of data.gameWeek||[]){
+    const day=String(week.date||"");
+    if(day<startKey||day>=endKey)continue;
+    for(const game of week.games||[]){
+     const id=String(game.id||[game.gameDate,game.homeTeam?.abbrev,game.awayTeam?.abbrev].join("-"));
+     if(seenGames.has(id))continue;
+     seenGames.add(id);
+     const home=String(game.homeTeam?.abbrev||game.homeTeam?.teamAbbrev?.default||"");
+     const away=String(game.awayTeam?.abbrev||game.awayTeam?.teamAbbrev?.default||"");
+     if(codes.includes(home)&&codes.includes(away)&&(game.gameType==null||Number(game.gameType)===2))scheduled.push({date:String(game.gameDate||day),home,away});
+    }
+   }
+  }catch(e){}
+ }
+ let games=scheduled.filter(g=>g.home===selectedCode||g.away===selectedCode);
+ let fallbackUsed=false;
+ if(!games.length){
+  fallbackUsed=true;
+  for(let d=0;d<14;d++){
+   if(Math.random()>=.52)continue;
+   const date=new Date(startDate);date.setUTCDate(date.getUTCDate()+d);
+   const opponent=codes[(codes.indexOf(selectedCode)+1+d*5)%codes.length];
+   if(opponent===selectedCode)continue;
+   const selectedIsHome=Math.random()<.5;
+   games.push({date:dateKey(date),home:selectedIsHome?selectedCode:opponent,away:selectedIsHome?opponent:selectedCode});
+  }
+ }
+ const mean=arr=>arr.length?arr.reduce((sum,x)=>sum+x,0)/arr.length:55;
+ const strengthCache=new Map();
+ async function strength(code){
+  if(strengthCache.has(code))return strengthCache.get(code);
+  try{
+   const roster=code===selectedCode&&selectedRoster?selectedRoster:await fetchRosterData(code);
+   const f=(roster.forwards||[]).map(p=>gameRatings({...p,pos:"F"}));
+   const d=(roster.defensemen||[]).map(p=>gameRatings({...p,pos:"D"}));
+   const g=(roster.goalies||[]).map(p=>gameRatings({...p,pos:"G"}));
+   const result={off:mean(f.map(p=>p.off))*.7+mean(d.map(p=>p.off))*.3,def:mean(d.map(p=>p.def))*.45+mean(g.map(p=>p.def))*.55};
+   strengthCache.set(code,result);return result;
+  }catch(e){const result={off:55,def:55};strengthCache.set(code,result);return result}
+ }
+ const poisson=lambda=>{const limit=Math.exp(-lambda);let product=1,k=0;do{k++;product*=Math.random()}while(product>limit&&k<20);return k-1};
+ const clamp=(v,min,max)=>Math.max(min,Math.min(max,v));
+ let n=0,otGames=0;
+ for(const game of games.sort((a,b)=>a.date.localeCompare(b.date))){
+  const [home,away]=await Promise.all([strength(game.home),strength(game.away)]);
+  let homeGoals=poisson(clamp(2.75+(home.off-away.def)*.035+.14,.65,5.2));
+  let awayGoals=poisson(clamp(2.55+(away.off-home.def)*.035,.65,5.0));
+  let wentOT=false;
+  if(homeGoals===awayGoals){wentOT=true;otGames++;if(Math.random()<.5)homeGoals++;else awayGoals++}
+  const myGoals=game.home===selectedCode?homeGoals:awayGoals;
+  const opponentGoals=game.home===selectedCode?awayGoals:homeGoals;
+  const opponent=game.home===selectedCode?game.away:game.home;
+  S.gf+=myGoals;S.ga+=opponentGoals;n++;
+  if(myGoals>opponentGoals)S.w++;else if(wentOT)S.otl++;else S.l++;
+  S.history.push(game.date+" · "+teams[S.team]+" "+myGoals+"–"+opponentGoals+(wentOT?" (P) ":" ")+teams[codes.indexOf(opponent)]);
+ }
+ S.day+=14;
+ const improved=developPlayers(14);
+ S.history=S.history.slice(-60);save();render();
+ const scheduleMessage=fallbackUsed?"Calendrier officiel indisponible pour cette période; adversaires de secours utilisés.":scheduleAvailable?"Calendrier officiel NHL utilisé.":"Calendrier NHL indisponible; vérifier la connexion.";
+ msg(n+" match(s) simulé(s) sur 14 jours"+(otGames?", dont "+otGames+" en prolongation":"")+". "+scheduleMessage+" "+(improved?improved+" joueur(s) ont progressé.":"Développement enregistré."));
+}
 
 function newSeason(){if(!confirm("Remettre les statistiques de saison à zéro? Les choix et échanges seront conservés."))return;S.season++;S.day=S.w=S.l=S.otl=S.gf=S.ga=0;S.history=[];save();render();msg("Nouvelle saison commencée.")}
 

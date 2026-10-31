@@ -5,6 +5,9 @@ import { readFile, writeFile } from "node:fs/promises";
 const codes = ["ANA","BOS","BUF","CGY","CAR","CHI","COL","CBJ","DAL","DET","EDM","FLA","LAK","MIN","MTL","NSH","NJD","NYI","NYR","OTT","PHI","PIT","SJS","SEA","STL","TBL","TOR","UTA","VAN","VGK","WSH","WPG"];
 const affiliations = JSON.parse(await readFile("data/ahl/teams.json", "utf8")).teams || [];
 const ahlByCode = new Map(affiliations.map(t => [t.nhlCode, t.ahlName]));
+const ratingData = JSON.parse(await readFile("data/ratings.json", "utf8"));
+const ratingMap = ratingData.players || {};
+const ratingSeason = String(ratingData.season || "").replace(/^(\\d{4})(\\d{4})$/, "$1-$2");
 const records = new Map();
 const now = new Date().toISOString();
 const str = v => v == null || v === "" ? null : String(v);
@@ -27,6 +30,14 @@ const nameOf = p => {
 };
 const add = p => {
   if (!p.id || !p.name) return;
+  const rating = p.nhlPlayerId != null ? ratingMap[String(p.nhlPlayerId)] : null;
+  if (rating) {
+    p.attributes = p.attributes || rating;
+    p.overall = p.overall ?? rating.OA ?? null;
+    p.ratingSeason = ratingSeason || null;
+    p.ratingSource = ratingData.source || null;
+    p.ratingStatus = "sample_adjusted_estimate";
+  }
   if (!records.has(p.id)) records.set(p.id, p);
   else {
     const old = records.get(p.id);
@@ -119,8 +130,9 @@ const players = [...records.values()].sort((a,b) => a.name.localeCompare(b.name,
 const counts = players.reduce((out,p) => (out[p.currentLeague]=(out[p.currentLeague]||0)+1,out),{});
 const output = {
   schemaVersion: 1, season: "2026-2027", generatedAt: now,
-  description: "Unified player registry built from source snapshots. Unknown rights, ratings, potential and contracts are not inferred.",
+  description: "Unified player registry built from source snapshots. Ratings are source-labelled estimates; unknown rights, potential and contracts are not inferred.",
   counts, playerCount: players.length, players,
+  ratingsMetadata: { season: ratingSeason || null, source: ratingData.source || null, playersAvailable: Object.keys(ratingMap).length, method: "sample-adjusted estimates; not scouting grades" },
   requiredFields: ["id","name","position","currentLeague","currentTeam","nhlRightsTeam"],
   optionalFields: ["birthDate","contractTeam","contractEnd","potential","source","verifiedAt"],
   leagues: ["NHL","AHL","CHL","NCAA","EUROPE","OTHER","UNKNOWN"],
@@ -129,7 +141,8 @@ const output = {
     "NHL roster membership is assigned to the NHL team shown in the official roster snapshot.",
     "AHL affiliation does not establish NHL contract or rights ownership; nhlRightsTeam stays null unless the source explicitly states it.",
     "NHL public prospect lists may be incomplete or empty for some organizations; absence is not proof of missing rights.",
-    "Attributes, overall ratings, potential, contracts and draft-pick ownership are not fabricated."
+    "Attributes and overall ratings are imported only when an NHL player ID matches data/ratings.json; they are sample-adjusted estimates, not scouting grades.",
+    "Potential, unverified contracts and draft-pick ownership are not fabricated."
   ]
 };
 await writeFile("data/players/registry.json", JSON.stringify(output,null,2)+"\n", "utf8");

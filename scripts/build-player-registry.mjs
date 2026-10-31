@@ -289,7 +289,16 @@ try {
   const termHits=draftTerms.map(term=>{const index=anaDebugHtml.toLowerCase().indexOf(term.toLowerCase());return {term,index,snippet:index>=0?anaDebugHtml.slice(Math.max(0,index-180),Math.min(anaDebugHtml.length,index+420)):null};});
   const scriptSources=[...anaDebugHtml.matchAll(/<script[^>]+src=["']([^"']+)["']/gi)].map(m=>m[1]);
   const dataRefs=[...anaDebugHtml.matchAll(/(?:src|href)=["']([^"']+\.(?:json|js|md)(?:\?[^"']*)?)["']/gi)].map(m=>m[1]).slice(0,30);
-  console.log("Draft HTML diagnostics ANA: "+JSON.stringify({htmlLength:anaDebugHtml.length,tableCount:[...anaDebugHtml.matchAll(/<table\\b/gi)].length,scriptSources,dataRefs,termHits}));
+  const scriptDiagnostics=await Promise.all(scriptSources.filter(src=>src.startsWith("/")||src.includes("hockeyinsights.ca")).slice(0,8).map(async src=>{
+    const scriptUrl=new URL(src,"https://hockeyinsights.ca/team-pipeline/anaheim-ducks/").toString();
+    try{
+      const response=await fetch(scriptUrl,{headers:{"user-agent":"Hockey-Dynasty-data-sync/1.0"},signal:AbortSignal.timeout(10000)});
+      const body=await response.text();
+      const refs=[...body.matchAll(/["'`]([^"'`]{0,180}(?:\\.json|picks|draft|capital|pipeline)[^"'`]{0,180})["'`]/gi)].slice(0,30).map(m=>m[1]);
+      return {src,status:response.status,length:body.length,refs};
+    }catch(error){return {src,error:error.message};}
+  }));
+  console.log("Draft HTML diagnostics ANA: "+JSON.stringify({htmlLength:anaDebugHtml.length,tableCount:[...anaDebugHtml.matchAll(/<table\\b/gi)].length,scriptSources,dataRefs,termHits,scriptDiagnostics}));
   const draftPickMap = new Map();
   let draftPickConflicts = 0;
   for (const result of pipelineResults) {

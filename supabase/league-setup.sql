@@ -79,6 +79,8 @@ alter table public.leagues alter column join_code set not null;
 
 alter table public.league_members add column if not exists manager_name text not null default 'DG';
 alter table public.league_members add column if not exists team_code text;
+-- Existing installations may still require team_code to be non-null; unassigned DGs must be allowed.
+alter table public.league_members alter column team_code drop not null;
 update public.league_members
 set team_code = (array['ANA','BOS','BUF','CGY','CAR','CHI','COL','CBJ','DAL','DET','EDM','FLA','LAK','MIN','MTL','NSH','NJD','NYI','NYR','OTT','PHI','PIT','SJS','SEA','STL','TBL','TOR','UTA','VAN','VGK','WSH','WPG'])[team_id + 1]
 where team_code is null and team_id between 0 and 31;

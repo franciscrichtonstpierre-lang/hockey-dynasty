@@ -140,9 +140,7 @@ declare
   v_league_id uuid;
   v_league_name text;
   v_member public.league_members%rowtype;
-  v_codes text[] := array['ANA','BOS','BUF','CGY','CAR','CHI','COL','CBJ','DAL','DET','EDM','FLA','LAK','MIN','MTL','NSH','NJD','NYI','NYR','OTT','PHI','PIT','SJS','SEA','STL','TBL','TOR','UTA','VAN','VGK','WSH','WPG'];
-  v_code text;
-  v_team_id integer;
+  v_manager_name text := trim(coalesce(p_manager_name, ''));
 begin
   if auth.uid() is null then
     raise exception 'Connexion requise pour rejoindre une ligue.';
@@ -150,14 +148,14 @@ begin
   if p_join_code is null or length(trim(p_join_code)) < 4 or length(trim(p_join_code)) > 8 then
     raise exception 'Le code doit contenir de 4 à 8 caractères.';
   end if;
-  if p_manager_name is null or length(trim(p_manager_name)) < 2 or length(trim(p_manager_name)) > 40 then
+  if length(v_manager_name) < 2 or length(v_manager_name) > 40 then
     raise exception 'Le nom du DG doit contenir de 2 à 40 caractères.';
   end if;
 
   select l.id, l.name into v_league_id, v_league_name
   from public.leagues l
-  where upper(trim(l.join_code)) = upper(trim(p_join_code))
-  for update;
+  where upper(trim(l.join_code)) = upper(trim(p_join_code)
+  limit 1;
   if v_league_id is null then
     raise exception 'Aucune ligue trouvée avec ce code.';
   end if;
@@ -168,29 +166,15 @@ begin
 
   if found then
     update public.league_members m
-    set manager_name = trim(p_manager_name)
-    where m.league_id = v_league_id and m.user_id = auth.uid();
-    return query select v_member.league_id, v_league_name, v_member.team_id,
-      v_member.team_code, trim(p_manager_name), v_member.role;
-    return;
+    set manager_name = v_manager_name
+    where m.league_id = v_league_id and m.user_id = auth.uid()
+    returning * into v_member;
+  else
+    -- Joining only registers the member. The commissioner assigns the team later.
+    insert into public.league_members(league_id, user_id, role, team_id, team_code, manager_name)
+    values (v_league_id, auth.uid(), 'manager', null, null, v_manager_name)
+    returning * into v_member;
   end if;
-
-  select candidate.code into v_code
-  from unnest(v_codes) as candidate(code)
-  where not exists (
-    select 1 from public.league_members m
-    where m.league_id = v_league_id and m.team_code = candidate.code
-  )
-  order by array_position(v_codes, candidate.code)
-  limit 1;
-  if v_code is null then
-    raise exception 'Cette ligue a déjà attribué ses 32 équipes.';
-  end if;
-  v_team_id := array_position(v_codes, v_code) - 1;
-
-  insert into public.league_members(league_id, user_id, role, team_id, team_code, manager_name)
-  values (v_league_id, auth.uid(), 'manager', v_team_id, v_code, trim(p_manager_name))
-  returning * into v_member;
 
   return query select v_member.league_id, v_league_name, v_member.team_id,
     v_member.team_code, v_member.manager_name, v_member.role;

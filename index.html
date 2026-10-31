@@ -291,8 +291,8 @@ async function loadPlayerDirectory(){
        const code=(rightsTeam&&codes.includes(rightsTeam))?rightsTeam:
         (league==="NHL"&&codes.includes(currentTeam)?currentTeam:
         affiliateByName.get(String(currentTeam||"").toLocaleLowerCase("fr"))||"");
-       const id=String(p.nhlPlayerId??p.id??"");
-       return {id,playerId:id,registryId:p.id||null,name:p.name||"",firstName:p.firstName||null,lastName:p.lastName||null,
+       const id=String(p.id??p.nhlPlayerId??"");
+       return {id,playerId:id,nhlPlayerId:p.nhlPlayerId??null,registryId:p.id||null,name:p.name||"",firstName:p.firstName||null,lastName:p.lastName||null,
         code,pos:p.position||"F",kind:league==="NHL"?"LNH":league==="AHL"?"LAH":"Espoir",
         league:league==="UNKNOWN"?"Ligue à confirmer":league,currentTeam,rightsTeam,birthDate:p.birthDate||null,
         nationality:p.nationality||null,shootsCatches:p.shootsCatches||null,heightCm:p.heightCm||null,

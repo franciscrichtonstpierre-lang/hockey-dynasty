@@ -271,6 +271,19 @@ try {
     teamSnapshots.set(result.teamCode,existing);
   }
   console.log(`Hockey Insights prospect snapshots: ${pipelinePagesFetched}/32 pages with rows; ${pipelineRowsFetched} rows parsed.`);
+  let pipelineMarkdown="";
+  try{
+    const mdResponse=await fetch("https://hockeyinsights.ca/content/team-pipeline.md",{
+      headers:{"user-agent":"Hockey-Dynasty-data-sync/1.0","accept":"text/markdown"},
+      signal:AbortSignal.timeout(15000)
+    });
+    if(mdResponse.ok)pipelineMarkdown=await mdResponse.text();
+    else console.warn(`Team pipeline markdown fetch returned HTTP ${mdResponse.status}.`);
+  }catch(error){console.warn(`Team pipeline markdown unavailable: ${error.message}`);}
+  const markdownDraftHits=[...pipelineMarkdown.matchAll(/2027|2028|2029|draft capital|future picks/gi)].slice(0,24)
+    .map(m=>pipelineMarkdown.slice(Math.max(0,m.index-100),Math.min(pipelineMarkdown.length,m.index+240)));
+  console.log("Team pipeline markdown diagnostics: "+JSON.stringify({length:pipelineMarkdown.length,draftHits:markdownDraftHits}));
+
   const anaDebugHtml=pipelineResults.find(r=>r.teamCode==="ANA")?.debugHtml||"";
   const draftDebug=[...anaDebugHtml.matchAll(/draft|2027|2028|2029/gi)].slice(0,18).map(m=>anaDebugHtml.slice(Math.max(0,m.index-100),Math.min(anaDebugHtml.length,m.index+220)));
   console.log("Draft HTML diagnostics ANA: "+JSON.stringify({htmlLength:anaDebugHtml.length,tableCount:[...anaDebugHtml.matchAll(/<table\\b/gi)].length,snippets:draftDebug}));

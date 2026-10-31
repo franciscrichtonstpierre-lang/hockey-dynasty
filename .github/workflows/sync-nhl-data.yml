@@ -9,6 +9,7 @@ on:
       - "scripts/build-player-registry.mjs"
       - "scripts/sync-contracts.mjs"
       - "scripts/validate-database.mjs"
+      - "scripts/check-inline-js.mjs"
       - "data/ahl/teams.json"
       - "data/prospects/**"
       - "data/prospects-supplemental/**"
@@ -58,6 +59,8 @@ jobs:
       - name: Importer les contrats, salaires et clauses vérifiés
         if: always()
         run: node scripts/sync-contracts.mjs
+      - name: Vérifier la syntaxe JavaScript de l’interface
+        run: node scripts/check-inline-js.mjs
       - name: Vérifier la complétude des bases LNH, LAH, espoirs et contrats
         run: node scripts/validate-database.mjs
       - name: Publier les fichiers actualisés

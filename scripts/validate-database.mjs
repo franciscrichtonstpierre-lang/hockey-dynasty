@@ -38,7 +38,7 @@ if (registry && Array.isArray(registry.players)) {
     if (league === "UNKNOWN" || !p.currentLeague) report.registry.unknown++;
     const id = p.playerId || p.nhlPlayerId || p.id;
     if (id != null) { const key = String(id); if (ids.has(key)) report.registry.duplicates++; else ids.add(key); }
-    if (p.birthDate && p.name) { const identity = `${String(p.name).normalize("NFD").replace(/[\\u0300-\\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim()}|${p.birthDate}`; if (identities.has(identity)) report.registry.duplicateIdentities++; else identities.add(identity); }
+    if (p.birthDate && p.name) { const identity = `${String(p.name).normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim()}|${p.birthDate}`; if (identities.has(identity)) report.registry.duplicateIdentities++; else identities.add(identity); }
   }
 }
 const contracts=await json("data/contracts/2026-2027.json");

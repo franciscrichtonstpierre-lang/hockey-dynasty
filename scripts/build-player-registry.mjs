@@ -234,6 +234,24 @@ for (const p of records.values()) {
 }
 console.log(`Provisional rating fallback applied to ${provisionalRatings} records with missing rating data; potentials remain null unless source-backed.`);
 
+let potentialEstimates = 0;
+for (const p of records.values()) {
+  if (p.potential != null && Number.isFinite(Number(p.potential)) && Number(p.potential) >= 0 && Number(p.potential) <= 99) continue;
+  let age = 27;
+  if (p.birthDate) {
+    const birth = new Date(p.birthDate + "T00:00:00Z");
+    if (Number.isFinite(birth.getTime())) age = 2026 - birth.getUTCFullYear();
+  }
+  const overall = Number.isFinite(Number(p.overall)) ? Number(p.overall) : 55;
+  const growth = age <= 18 ? 20 : age <= 20 ? 16 : age <= 22 ? 12 : age <= 24 ? 8 : age <= 26 ? 4 : age <= 29 ? 1 : 0;
+  p.potentialEstimate = Math.max(0, Math.min(99, Math.round(overall + growth)));
+  p.potentialStatus = "provisional_model_estimate";
+  p.potentialEstimateMethod = "overall_plus_age_growth_band_v1; not source-verified";
+  potentialEstimates++;
+}
+console.log(`Potential model estimates created for ${potentialEstimates} records; source-verified potential remains unchanged.`);
+
+
 const players = [...records.values()].sort((a,b) => a.name.localeCompare(b.name,"en"));
 const identityGroups = new Map();
 for (const p of players) {

@@ -192,7 +192,7 @@ try {
         const roundMatch = draft.match(/round\s*(\d+)/i);
         const overallMatch = draft.match(/#(\d+)/);
         rows.push({
-          fullName:name, positionCode, age, currentLeague:leagueName, currentTeam:null, nhlRightsTeam:teamCode,
+          fullName:name, positionCode, age, currentLeague:leagueName, currentTeam:null, nhlRightsTeam:null,
           draftYear:yearMatch?Number(yearMatch[0]):null, draftRound:roundMatch?Number(roundMatch[1]):null,
           draftOverall:overallMatch?Number(overallMatch[1]):null, rightsStatus:"secondary_snapshot_recheck_required",
           source:url, sourceUpdatedAt:"2026-09-28", verificationStatus:"secondary_snapshot_recheck_required"
@@ -366,7 +366,7 @@ try {
       const incoming = {
         currentLeague: league,
         currentTeam: str(p.currentTeam),
-        nhlRightsTeam: str(first(p.nhlRightsTeam, p.rightsTeam, p.rights_team, teamCode)),
+        nhlRightsTeam: str(first(p.nhlRightsTeam, p.rightsTeam, p.rights_team)),
         rightsStatus: str(p.rightsStatus),
         age: Number.isFinite(Number(p.age)) ? Number(p.age) : null,
         draftYear: p.draftYear != null && Number.isFinite(Number(p.draftYear)) ? Number(p.draftYear) : null,

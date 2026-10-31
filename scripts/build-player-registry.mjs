@@ -152,6 +152,31 @@ for (const code of codes) {
   } catch (e) { console.warn(`Prospect registry skipped ${code}: ${e.message}`); }
 }
 
+// Collapse same-person records that appear in both NHL and AHL snapshots.
+const samePerson = new Map();
+for (const p of records.values()) {
+  if (!p.name || !p.birthDate) continue;
+  const key = `${nameKey(p.name)}|${p.birthDate}`;
+  if (!samePerson.has(key)) samePerson.set(key, []);
+  samePerson.get(key).push(p);
+}
+let identityDuplicatesMerged = 0;
+for (const group of samePerson.values()) {
+  if (group.length < 2) continue;
+  const priority = p => p.currentLeague === "NHL" ? 3 : p.currentLeague === "AHL" ? 2 : 1;
+  group.sort((a,b) => priority(b)-priority(a) || Number(!!b.nhlPlayerId)-Number(!!a.nhlPlayerId));
+  const primary = group[0];
+  primary.otherObservedTeams = [...new Set([...(primary.otherObservedTeams||[]), ...group.slice(1).map(p=>p.currentTeam).filter(Boolean)])];
+  for (const duplicate of group.slice(1)) {
+    for (const [key,value] of Object.entries(duplicate)) {
+      if (primary[key] == null && value != null && !["id","currentLeague","currentTeam","nhlRightsTeam","source","attributes","overall","potential"].includes(key)) primary[key] = value;
+    }
+    records.delete(duplicate.id);
+    identityDuplicatesMerged++;
+  }
+}
+console.log(`Merged ${identityDuplicatesMerged} duplicate identity records using NHL > AHL roster priority.`);
+
 // Enrich unknown league only from a unique, same-name roster record.
 const byName = new Map();
 for (const p of records.values()) {

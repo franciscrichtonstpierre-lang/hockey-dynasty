@@ -240,7 +240,7 @@ try {
   if (!supplementalData.dataNotes.includes(snapshotNote)) supplementalData.dataNotes.push(snapshotNote);
   supplementalData.teams = Object.fromEntries(teamSnapshots.entries());
   const supplementalPath = "data/prospects-supplemental/2026-2027.json";
-  const serializedSupplemental = JSON.stringify(supplementalData,null,2)+"\\n";
+  const serializedSupplemental = JSON.stringify(supplementalData,null,2)+"\n";
   const previousSupplemental = await readFile(supplementalPath,"utf8").catch(()=>null);
   if (pipelinePagesFetched>0 && previousSupplemental!==serializedSupplemental) {
     await writeFile(supplementalPath,serializedSupplemental,"utf8");

@@ -96,7 +96,7 @@
       "conditions": null,
       "acquiredVia": null,
       "source": "https://www.nhl.com/blackhawks/team/future-draft-picks",
-      "sourceUpdatedAt": "2026-10-31T02:28:20.900Z",
+      "sourceUpdatedAt": "2026-10-31T02:28:57.542Z",
       "verificationNote": "Propriétaire courant et équipe d’origine recoupés depuis la page officielle NHL Future Draft Picks.",
       "conditionsVerified": true
     },
@@ -106,13 +106,14 @@
       "round": 1,
       "originalTeam": "COL",
       "currentOwner": null,
-      "status": "unverified",
+      "status": "excluded_conditional",
       "verified": false,
       "conditions": null,
       "acquiredVia": null,
-      "source": null,
-      "sourceUpdatedAt": null,
-      "verificationNote": "Propriétaire actuel non confirmé. Ne pas rendre ce choix disponible dans le jeu."
+      "source": "https://hockeyinsights.ca/data/team_prospects_2026_index.json?v=20260807-season",
+      "sourceUpdatedAt": "2026-09-28",
+      "verificationNote": "Choix conditionnel exclu du registre jouable selon la règle du projet.",
+      "conditionsVerified": false
     },
     {
       "pickId": "2027-R1-CBJ",
@@ -170,7 +171,7 @@
       "conditions": null,
       "acquiredVia": "Acquired in exchange for Colton Dach and Jason Dickinson on 3/4/26",
       "source": "https://www.nhl.com/blackhawks/team/future-draft-picks",
-      "sourceUpdatedAt": "2026-10-31T02:28:20.900Z",
+      "sourceUpdatedAt": "2026-10-31T02:28:57.542Z",
       "verificationNote": "Propriétaire courant et équipe d’origine recoupés depuis la page officielle NHL Future Draft Picks.",
       "conditionsVerified": true
     },
@@ -185,7 +186,7 @@
       "conditions": null,
       "acquiredVia": null,
       "source": "https://www.nhl.com/blackhawks/team/future-draft-picks",
-      "sourceUpdatedAt": "2026-10-31T02:28:20.900Z",
+      "sourceUpdatedAt": "2026-10-31T02:28:57.542Z",
       "verificationNote": "Choix conditionnel exclu du registre jouable selon la règle du projet; propriétaire ferme non attribué.",
       "conditionsVerified": false
     },
@@ -390,13 +391,14 @@
       "round": 1,
       "originalTeam": "TBL",
       "currentOwner": null,
-      "status": "unverified",
+      "status": "excluded_conditional",
       "verified": false,
       "conditions": null,
       "acquiredVia": null,
-      "source": null,
-      "sourceUpdatedAt": null,
-      "verificationNote": "Propriétaire actuel non confirmé. Ne pas rendre ce choix disponible dans le jeu."
+      "source": "https://hockeyinsights.ca/data/team_prospects_2026_index.json?v=20260807-season",
+      "sourceUpdatedAt": "2026-09-28",
+      "verificationNote": "Choix conditionnel exclu du registre jouable selon la règle du projet.",
+      "conditionsVerified": false
     },
     {
       "pickId": "2027-R1-TOR",
@@ -404,13 +406,14 @@
       "round": 1,
       "originalTeam": "TOR",
       "currentOwner": null,
-      "status": "unverified",
+      "status": "excluded_conditional",
       "verified": false,
       "conditions": null,
       "acquiredVia": null,
-      "source": null,
-      "sourceUpdatedAt": null,
-      "verificationNote": "Propriétaire actuel non confirmé. Ne pas rendre ce choix disponible dans le jeu."
+      "source": "https://hockeyinsights.ca/data/team_prospects_2026_index.json?v=20260807-season",
+      "sourceUpdatedAt": "2026-09-28",
+      "verificationNote": "Choix conditionnel exclu du registre jouable selon la règle du projet.",
+      "conditionsVerified": false
     },
     {
       "pickId": "2027-R1-UTA",
@@ -448,13 +451,14 @@
       "round": 1,
       "originalTeam": "VGK",
       "currentOwner": null,
-      "status": "unverified",
+      "status": "excluded_conditional",
       "verified": false,
       "conditions": null,
       "acquiredVia": null,
-      "source": null,
-      "sourceUpdatedAt": null,
-      "verificationNote": "Propriétaire actuel non confirmé. Ne pas rendre ce choix disponible dans le jeu."
+      "source": "https://hockeyinsights.ca/data/team_prospects_2026_index.json?v=20260807-season",
+      "sourceUpdatedAt": "2026-09-28",
+      "verificationNote": "Choix conditionnel exclu du registre jouable selon la règle du projet.",
+      "conditionsVerified": false
     },
     {
       "pickId": "2027-R1-WSH",
@@ -572,7 +576,7 @@
       "conditions": null,
       "acquiredVia": null,
       "source": "https://www.nhl.com/blackhawks/team/future-draft-picks",
-      "sourceUpdatedAt": "2026-10-31T02:28:20.900Z",
+      "sourceUpdatedAt": "2026-10-31T02:28:57.542Z",
       "verificationNote": "Propriétaire courant et équipe d’origine recoupés depuis la page officielle NHL Future Draft Picks.",
       "conditionsVerified": true
     },
@@ -582,13 +586,14 @@
       "round": 2,
       "originalTeam": "COL",
       "currentOwner": null,
-      "status": "unverified",
+      "status": "excluded_conditional",
       "verified": false,
       "conditions": null,
       "acquiredVia": null,
-      "source": null,
-      "sourceUpdatedAt": null,
-      "verificationNote": "Propriétaire actuel non confirmé. Ne pas rendre ce choix disponible dans le jeu."
+      "source": "https://hockeyinsights.ca/data/team_prospects_2026_index.json?v=20260807-season",
+      "sourceUpdatedAt": "2026-09-28",
+      "verificationNote": "Choix conditionnel exclu du registre jouable selon la règle du projet.",
+      "conditionsVerified": false
     },
     {
       "pickId": "2027-R2-CBJ",
@@ -596,11 +601,15 @@
       "round": 2,
       "originalTeam": "CBJ",
       "currentOwner": null,
-      "status": "unverified",
+      "status": "excluded_conditional",
       "verified": false,
       "conditions": null,
-      "source": null,
-      "note": "Propriétaire et conditions à vérifier dans une source primaire propre à cette transaction."
+      "source": "https://hockeyinsights.ca/data/team_prospects_2026_index.json?v=20260807-season",
+      "note": "Propriétaire et conditions à vérifier dans une source primaire propre à cette transaction.",
+      "sourceUpdatedAt": "2026-09-28",
+      "conditionsVerified": false,
+      "acquiredVia": null,
+      "verificationNote": "Choix conditionnel exclu du registre jouable selon la règle du projet."
     },
     {
       "pickId": "2027-R2-DAL",
@@ -683,13 +692,14 @@
       "round": 2,
       "originalTeam": "MIN",
       "currentOwner": null,
-      "status": "unverified",
+      "status": "excluded_conditional",
       "verified": false,
       "conditions": null,
       "acquiredVia": null,
-      "source": null,
-      "sourceUpdatedAt": null,
-      "verificationNote": "Propriétaire actuel non confirmé. Ne pas rendre ce choix disponible dans le jeu."
+      "source": "https://hockeyinsights.ca/data/team_prospects_2026_index.json?v=20260807-season",
+      "sourceUpdatedAt": "2026-09-28",
+      "verificationNote": "Choix conditionnel exclu du registre jouable selon la règle du projet.",
+      "conditionsVerified": false
     },
     {
       "pickId": "2027-R2-MTL",
@@ -906,7 +916,7 @@
       "conditions": null,
       "acquiredVia": "Acquired in VAN trade on 6/26/24",
       "source": "https://www.nhl.com/blackhawks/team/future-draft-picks",
-      "sourceUpdatedAt": "2026-10-31T02:28:20.900Z",
+      "sourceUpdatedAt": "2026-10-31T02:28:57.542Z",
       "verificationNote": "Propriétaire courant et équipe d’origine recoupés depuis la page officielle NHL Future Draft Picks.",
       "conditionsVerified": true
     },
@@ -944,13 +954,14 @@
       "round": 2,
       "originalTeam": "WPG",
       "currentOwner": null,
-      "status": "unverified",
+      "status": "excluded_conditional",
       "verified": false,
       "conditions": null,
       "acquiredVia": null,
-      "source": null,
-      "sourceUpdatedAt": null,
-      "verificationNote": "Propriétaire actuel non confirmé. Ne pas rendre ce choix disponible dans le jeu."
+      "source": "https://hockeyinsights.ca/data/team_prospects_2026_index.json?v=20260807-season",
+      "sourceUpdatedAt": "2026-09-28",
+      "verificationNote": "Choix conditionnel exclu du registre jouable selon la règle du projet.",
+      "conditionsVerified": false
     },
     {
       "pickId": "2027-R3-ANA",
@@ -1038,7 +1049,7 @@
       "conditions": null,
       "acquiredVia": null,
       "source": "https://www.nhl.com/blackhawks/team/future-draft-picks",
-      "sourceUpdatedAt": "2026-10-31T02:28:20.900Z",
+      "sourceUpdatedAt": "2026-10-31T02:28:57.542Z",
       "verificationNote": "Propriétaire courant et équipe d’origine recoupés depuis la page officielle NHL Future Draft Picks.",
       "conditionsVerified": true
     },
@@ -1336,7 +1347,7 @@
       "conditions": null,
       "acquiredVia": "Acquired in TBL trade on 6/1/26",
       "source": "https://www.nhl.com/blackhawks/team/future-draft-picks",
-      "sourceUpdatedAt": "2026-10-31T02:28:20.900Z",
+      "sourceUpdatedAt": "2026-10-31T02:28:57.542Z",
       "verificationNote": "Propriétaire courant et équipe d’origine recoupés depuis la page officielle NHL Future Draft Picks.",
       "conditionsVerified": true
     },
@@ -1346,13 +1357,14 @@
       "round": 3,
       "originalTeam": "TOR",
       "currentOwner": null,
-      "status": "unverified",
+      "status": "excluded_conditional",
       "verified": false,
       "conditions": null,
       "acquiredVia": null,
-      "source": null,
-      "sourceUpdatedAt": null,
-      "verificationNote": "Propriétaire actuel non confirmé. Ne pas rendre ce choix disponible dans le jeu."
+      "source": "https://hockeyinsights.ca/data/team_prospects_2026_index.json?v=20260807-season",
+      "sourceUpdatedAt": "2026-09-28",
+      "verificationNote": "Choix conditionnel exclu du registre jouable selon la règle du projet.",
+      "conditionsVerified": false
     },
     {
       "pickId": "2027-R3-UTA",
@@ -1360,13 +1372,14 @@
       "round": 3,
       "originalTeam": "UTA",
       "currentOwner": null,
-      "status": "unverified",
+      "status": "excluded_conditional",
       "verified": false,
       "conditions": null,
       "acquiredVia": null,
-      "source": null,
-      "sourceUpdatedAt": null,
-      "verificationNote": "Propriétaire actuel non confirmé. Ne pas rendre ce choix disponible dans le jeu."
+      "source": "https://hockeyinsights.ca/data/team_prospects_2026_index.json?v=20260807-season",
+      "sourceUpdatedAt": "2026-09-28",
+      "verificationNote": "Choix conditionnel exclu du registre jouable selon la règle du projet.",
+      "conditionsVerified": false
     },
     {
       "pickId": "2027-R3-VAN",
@@ -1857,7 +1870,7 @@
       "conditions": null,
       "acquiredVia": "Re-Acquired in exchange for Lukas Reichel on 10/24/25",
       "source": "https://www.nhl.com/blackhawks/team/future-draft-picks",
-      "sourceUpdatedAt": "2026-10-31T02:28:20.900Z",
+      "sourceUpdatedAt": "2026-10-31T02:28:57.542Z",
       "verificationNote": "Propriétaire courant et équipe d’origine recoupés depuis la page officielle NHL Future Draft Picks.",
       "conditionsVerified": true
     },
@@ -2472,7 +2485,7 @@
       "conditions": null,
       "acquiredVia": null,
       "source": "https://www.nhl.com/blackhawks/team/future-draft-picks",
-      "sourceUpdatedAt": "2026-10-31T02:28:20.900Z",
+      "sourceUpdatedAt": "2026-10-31T02:28:57.542Z",
       "verificationNote": "Propriétaire courant et équipe d’origine recoupés depuis la page officielle NHL Future Draft Picks.",
       "conditionsVerified": true
     },
@@ -2682,7 +2695,7 @@
       "conditions": null,
       "acquiredVia": "Acquired in OTT trade on 6/26/26",
       "source": "https://www.nhl.com/blackhawks/team/future-draft-picks",
-      "sourceUpdatedAt": "2026-10-31T02:28:20.900Z",
+      "sourceUpdatedAt": "2026-10-31T02:28:57.542Z",
       "verificationNote": "Propriétaire courant et équipe d’origine recoupés depuis la page officielle NHL Future Draft Picks.",
       "conditionsVerified": true
     },
@@ -2932,13 +2945,14 @@
       "round": 7,
       "originalTeam": "CAR",
       "currentOwner": null,
-      "status": "unverified",
+      "status": "excluded_conditional",
       "verified": false,
       "conditions": null,
       "acquiredVia": null,
-      "source": null,
-      "sourceUpdatedAt": null,
-      "verificationNote": "Propriétaire actuel non confirmé. Ne pas rendre ce choix disponible dans le jeu."
+      "source": "https://hockeyinsights.ca/data/team_prospects_2026_index.json?v=20260807-season",
+      "sourceUpdatedAt": "2026-09-28",
+      "verificationNote": "Choix conditionnel exclu du registre jouable selon la règle du projet.",
+      "conditionsVerified": false
     },
     {
       "pickId": "2027-R7-CHI",
@@ -2951,7 +2965,7 @@
       "conditions": null,
       "acquiredVia": null,
       "source": "https://www.nhl.com/blackhawks/team/future-draft-picks",
-      "sourceUpdatedAt": "2026-10-31T02:28:20.900Z",
+      "sourceUpdatedAt": "2026-10-31T02:28:57.542Z",
       "verificationNote": "Propriétaire courant et équipe d’origine recoupés depuis la page officielle NHL Future Draft Picks.",
       "conditionsVerified": true
     },
@@ -3427,7 +3441,7 @@
       "conditions": null,
       "acquiredVia": null,
       "source": "https://www.nhl.com/blackhawks/team/future-draft-picks",
-      "sourceUpdatedAt": "2026-10-31T02:28:20.900Z",
+      "sourceUpdatedAt": "2026-10-31T02:28:57.542Z",
       "verificationNote": "Propriétaire courant et équipe d’origine recoupés depuis la page officielle NHL Future Draft Picks.",
       "conditionsVerified": true
     },
@@ -3437,13 +3451,14 @@
       "round": 1,
       "originalTeam": "COL",
       "currentOwner": null,
-      "status": "unverified",
+      "status": "excluded_conditional",
       "verified": false,
       "conditions": null,
       "acquiredVia": null,
-      "source": null,
-      "sourceUpdatedAt": null,
-      "verificationNote": "Propriétaire actuel non confirmé. Ne pas rendre ce choix disponible dans le jeu."
+      "source": "https://hockeyinsights.ca/data/team_prospects_2026_index.json?v=20260807-season",
+      "sourceUpdatedAt": "2026-09-28",
+      "verificationNote": "Choix conditionnel exclu du registre jouable selon la règle du projet.",
+      "conditionsVerified": false
     },
     {
       "pickId": "2028-R1-CBJ",
@@ -3466,13 +3481,14 @@
       "round": 1,
       "originalTeam": "DAL",
       "currentOwner": null,
-      "status": "unverified",
+      "status": "excluded_conditional",
       "verified": false,
       "conditions": null,
       "acquiredVia": null,
-      "source": null,
-      "sourceUpdatedAt": null,
-      "verificationNote": "Propriétaire actuel non confirmé. Ne pas rendre ce choix disponible dans le jeu."
+      "source": "https://hockeyinsights.ca/data/team_prospects_2026_index.json?v=20260807-season",
+      "sourceUpdatedAt": "2026-09-28",
+      "verificationNote": "Choix conditionnel exclu du registre jouable selon la règle du projet.",
+      "conditionsVerified": false
     },
     {
       "pickId": "2028-R1-DET",
@@ -3510,13 +3526,14 @@
       "round": 1,
       "originalTeam": "FLA",
       "currentOwner": null,
-      "status": "unverified",
+      "status": "excluded_conditional",
       "verified": false,
       "conditions": null,
       "acquiredVia": null,
-      "source": null,
-      "sourceUpdatedAt": null,
-      "verificationNote": "Propriétaire actuel non confirmé. Ne pas rendre ce choix disponible dans le jeu."
+      "source": "https://hockeyinsights.ca/data/team_prospects_2026_index.json?v=20260807-season",
+      "sourceUpdatedAt": "2026-09-28",
+      "verificationNote": "Choix conditionnel exclu du registre jouable selon la règle du projet.",
+      "conditionsVerified": false
     },
     {
       "pickId": "2028-R1-LAK",
@@ -3614,13 +3631,14 @@
       "round": 1,
       "originalTeam": "NYR",
       "currentOwner": null,
-      "status": "unverified",
+      "status": "excluded_conditional",
       "verified": false,
       "conditions": null,
       "acquiredVia": null,
-      "source": null,
-      "sourceUpdatedAt": null,
-      "verificationNote": "Propriétaire actuel non confirmé. Ne pas rendre ce choix disponible dans le jeu."
+      "source": "https://hockeyinsights.ca/data/team_prospects_2026_index.json?v=20260807-season",
+      "sourceUpdatedAt": "2026-09-28",
+      "verificationNote": "Choix conditionnel exclu du registre jouable selon la règle du projet.",
+      "conditionsVerified": false
     },
     {
       "pickId": "2028-R1-OTT",
@@ -3733,13 +3751,14 @@
       "round": 1,
       "originalTeam": "TOR",
       "currentOwner": null,
-      "status": "unverified",
+      "status": "excluded_conditional",
       "verified": false,
       "conditions": null,
       "acquiredVia": null,
-      "source": null,
-      "sourceUpdatedAt": null,
-      "verificationNote": "Propriétaire actuel non confirmé. Ne pas rendre ce choix disponible dans le jeu."
+      "source": "https://hockeyinsights.ca/data/team_prospects_2026_index.json?v=20260807-season",
+      "sourceUpdatedAt": "2026-09-28",
+      "verificationNote": "Choix conditionnel exclu du registre jouable selon la règle du projet.",
+      "conditionsVerified": false
     },
     {
       "pickId": "2028-R1-UTA",
@@ -3777,13 +3796,14 @@
       "round": 1,
       "originalTeam": "VGK",
       "currentOwner": null,
-      "status": "unverified",
+      "status": "excluded_conditional",
       "verified": false,
       "conditions": null,
       "acquiredVia": null,
-      "source": null,
-      "sourceUpdatedAt": null,
-      "verificationNote": "Propriétaire actuel non confirmé. Ne pas rendre ce choix disponible dans le jeu."
+      "source": "https://hockeyinsights.ca/data/team_prospects_2026_index.json?v=20260807-season",
+      "sourceUpdatedAt": "2026-09-28",
+      "verificationNote": "Choix conditionnel exclu du registre jouable selon la règle du projet.",
+      "conditionsVerified": false
     },
     {
       "pickId": "2028-R1-WSH",
@@ -3901,7 +3921,7 @@
       "conditions": null,
       "acquiredVia": null,
       "source": "https://www.nhl.com/blackhawks/team/future-draft-picks",
-      "sourceUpdatedAt": "2026-10-31T02:28:20.900Z",
+      "sourceUpdatedAt": "2026-10-31T02:28:57.542Z",
       "verificationNote": "Propriétaire courant et équipe d’origine recoupés depuis la page officielle NHL Future Draft Picks.",
       "conditionsVerified": true
     },
@@ -3976,7 +3996,7 @@
       "conditions": null,
       "acquiredVia": null,
       "source": "https://www.nhl.com/blackhawks/team/future-draft-picks",
-      "sourceUpdatedAt": "2026-10-31T02:28:20.900Z",
+      "sourceUpdatedAt": "2026-10-31T02:28:57.542Z",
       "verificationNote": "Choix conditionnel exclu du registre jouable selon la règle du projet; propriétaire ferme non attribué.",
       "conditionsVerified": false
     },
@@ -4256,13 +4276,14 @@
       "round": 2,
       "originalTeam": "VGK",
       "currentOwner": null,
-      "status": "unverified",
+      "status": "excluded_conditional",
       "verified": false,
       "conditions": null,
       "acquiredVia": null,
-      "source": null,
-      "sourceUpdatedAt": null,
-      "verificationNote": "Propriétaire actuel non confirmé. Ne pas rendre ce choix disponible dans le jeu."
+      "source": "https://hockeyinsights.ca/data/team_prospects_2026_index.json?v=20260807-season",
+      "sourceUpdatedAt": "2026-09-28",
+      "verificationNote": "Choix conditionnel exclu du registre jouable selon la règle du projet.",
+      "conditionsVerified": false
     },
     {
       "pickId": "2028-R2-WSH",
@@ -4315,13 +4336,14 @@
       "round": 3,
       "originalTeam": "BOS",
       "currentOwner": null,
-      "status": "unverified",
+      "status": "excluded_conditional",
       "verified": false,
       "conditions": null,
       "acquiredVia": null,
-      "source": null,
-      "sourceUpdatedAt": null,
-      "verificationNote": "Propriétaire actuel non confirmé. Ne pas rendre ce choix disponible dans le jeu."
+      "source": "https://hockeyinsights.ca/data/team_prospects_2026_index.json?v=20260807-season",
+      "sourceUpdatedAt": "2026-09-28",
+      "verificationNote": "Choix conditionnel exclu du registre jouable selon la règle du projet.",
+      "conditionsVerified": false
     },
     {
       "pickId": "2028-R3-BUF",
@@ -4379,7 +4401,7 @@
       "conditions": null,
       "acquiredVia": null,
       "source": "https://www.nhl.com/blackhawks/team/future-draft-picks",
-      "sourceUpdatedAt": "2026-10-31T02:28:20.900Z",
+      "sourceUpdatedAt": "2026-10-31T02:28:57.542Z",
       "verificationNote": "Propriétaire courant et équipe d’origine recoupés depuis la page officielle NHL Future Draft Picks.",
       "conditionsVerified": true
     },
@@ -4855,7 +4877,7 @@
       "conditions": null,
       "acquiredVia": null,
       "source": "https://www.nhl.com/blackhawks/team/future-draft-picks",
-      "sourceUpdatedAt": "2026-10-31T02:28:20.900Z",
+      "sourceUpdatedAt": "2026-10-31T02:28:57.542Z",
       "verificationNote": "Propriétaire courant et équipe d’origine recoupés depuis la page officielle NHL Future Draft Picks.",
       "conditionsVerified": true
     },
@@ -4955,13 +4977,14 @@
       "round": 4,
       "originalTeam": "LAK",
       "currentOwner": null,
-      "status": "unverified",
+      "status": "excluded_conditional",
       "verified": false,
       "conditions": null,
       "acquiredVia": null,
-      "source": null,
-      "sourceUpdatedAt": null,
-      "verificationNote": "Propriétaire actuel non confirmé. Ne pas rendre ce choix disponible dans le jeu."
+      "source": "https://hockeyinsights.ca/data/team_prospects_2026_index.json?v=20260807-season",
+      "sourceUpdatedAt": "2026-09-28",
+      "verificationNote": "Choix conditionnel exclu du registre jouable selon la règle du projet.",
+      "conditionsVerified": false
     },
     {
       "pickId": "2028-R4-MIN",
@@ -5107,7 +5130,7 @@
       "conditions": null,
       "acquiredVia": "Acquired in SJS trade on 1/8/26",
       "source": "https://www.nhl.com/blackhawks/team/future-draft-picks",
-      "sourceUpdatedAt": "2026-10-31T02:28:20.900Z",
+      "sourceUpdatedAt": "2026-10-31T02:28:57.542Z",
       "verificationNote": "Propriétaire courant et équipe d’origine recoupés depuis la page officielle NHL Future Draft Picks.",
       "conditionsVerified": true
     },
@@ -5332,7 +5355,7 @@
       "conditions": null,
       "acquiredVia": null,
       "source": "https://www.nhl.com/blackhawks/team/future-draft-picks",
-      "sourceUpdatedAt": "2026-10-31T02:28:20.900Z",
+      "sourceUpdatedAt": "2026-10-31T02:28:57.542Z",
       "verificationNote": "Propriétaire courant et équipe d’origine recoupés depuis la page officielle NHL Future Draft Picks.",
       "conditionsVerified": true
     },
@@ -5812,7 +5835,7 @@
       "conditions": null,
       "acquiredVia": null,
       "source": "https://www.nhl.com/blackhawks/team/future-draft-picks",
-      "sourceUpdatedAt": "2026-10-31T02:28:20.900Z",
+      "sourceUpdatedAt": "2026-10-31T02:28:57.542Z",
       "verificationNote": "Propriétaire courant et équipe d’origine recoupés depuis la page officielle NHL Future Draft Picks.",
       "conditionsVerified": true
     },
@@ -6770,7 +6793,7 @@
       "conditions": null,
       "acquiredVia": null,
       "source": "https://www.nhl.com/blackhawks/team/future-draft-picks",
-      "sourceUpdatedAt": "2026-10-31T02:28:20.900Z",
+      "sourceUpdatedAt": "2026-10-31T02:28:57.542Z",
       "verificationNote": "Propriétaire courant et équipe d’origine recoupés depuis la page officielle NHL Future Draft Picks.",
       "conditionsVerified": true
     },
@@ -6780,13 +6803,14 @@
       "round": 1,
       "originalTeam": "COL",
       "currentOwner": null,
-      "status": "unverified",
+      "status": "excluded_conditional",
       "verified": false,
       "conditions": null,
       "acquiredVia": null,
-      "source": null,
-      "sourceUpdatedAt": null,
-      "verificationNote": "Propriétaire actuel non confirmé. Ne pas rendre ce choix disponible dans le jeu."
+      "source": "https://hockeyinsights.ca/data/team_prospects_2026_index.json?v=20260807-season",
+      "sourceUpdatedAt": "2026-09-28",
+      "verificationNote": "Choix conditionnel exclu du registre jouable selon la règle du projet.",
+      "conditionsVerified": false
     },
     {
       "pickId": "2029-R1-CBJ",
@@ -6854,13 +6878,14 @@
       "round": 1,
       "originalTeam": "FLA",
       "currentOwner": null,
-      "status": "unverified",
+      "status": "excluded_conditional",
       "verified": false,
       "conditions": null,
       "acquiredVia": null,
-      "source": null,
-      "sourceUpdatedAt": null,
-      "verificationNote": "Propriétaire actuel non confirmé. Ne pas rendre ce choix disponible dans le jeu."
+      "source": "https://hockeyinsights.ca/data/team_prospects_2026_index.json?v=20260807-season",
+      "sourceUpdatedAt": "2026-09-28",
+      "verificationNote": "Choix conditionnel exclu du registre jouable selon la règle du projet.",
+      "conditionsVerified": false
     },
     {
       "pickId": "2029-R1-LAK",
@@ -7248,7 +7273,7 @@
       "conditions": null,
       "acquiredVia": null,
       "source": "https://www.nhl.com/blackhawks/team/future-draft-picks",
-      "sourceUpdatedAt": "2026-10-31T02:28:20.900Z",
+      "sourceUpdatedAt": "2026-10-31T02:28:57.542Z",
       "verificationNote": "Propriétaire courant et équipe d’origine recoupés depuis la page officielle NHL Future Draft Picks.",
       "conditionsVerified": true
     },
@@ -7724,7 +7749,7 @@
       "conditions": null,
       "acquiredVia": null,
       "source": "https://www.nhl.com/blackhawks/team/future-draft-picks",
-      "sourceUpdatedAt": "2026-10-31T02:28:20.900Z",
+      "sourceUpdatedAt": "2026-10-31T02:28:57.542Z",
       "verificationNote": "Propriétaire courant et équipe d’origine recoupés depuis la page officielle NHL Future Draft Picks.",
       "conditionsVerified": true
     },
@@ -8202,7 +8227,7 @@
       "conditions": null,
       "acquiredVia": null,
       "source": "https://www.nhl.com/blackhawks/team/future-draft-picks",
-      "sourceUpdatedAt": "2026-10-31T02:28:20.900Z",
+      "sourceUpdatedAt": "2026-10-31T02:28:57.542Z",
       "verificationNote": "Propriétaire courant et équipe d’origine recoupés depuis la page officielle NHL Future Draft Picks.",
       "conditionsVerified": true
     },
@@ -8682,7 +8707,7 @@
       "conditions": null,
       "acquiredVia": null,
       "source": "https://www.nhl.com/blackhawks/team/future-draft-picks",
-      "sourceUpdatedAt": "2026-10-31T02:28:20.900Z",
+      "sourceUpdatedAt": "2026-10-31T02:28:57.542Z",
       "verificationNote": "Propriétaire courant et équipe d’origine recoupés depuis la page officielle NHL Future Draft Picks.",
       "conditionsVerified": true
     },
@@ -9162,7 +9187,7 @@
       "conditions": null,
       "acquiredVia": null,
       "source": "https://www.nhl.com/blackhawks/team/future-draft-picks",
-      "sourceUpdatedAt": "2026-10-31T02:28:20.900Z",
+      "sourceUpdatedAt": "2026-10-31T02:28:57.542Z",
       "verificationNote": "Propriétaire courant et équipe d’origine recoupés depuis la page officielle NHL Future Draft Picks.",
       "conditionsVerified": true
     },
@@ -9642,7 +9667,7 @@
       "conditions": null,
       "acquiredVia": null,
       "source": "https://www.nhl.com/blackhawks/team/future-draft-picks",
-      "sourceUpdatedAt": "2026-10-31T02:28:20.900Z",
+      "sourceUpdatedAt": "2026-10-31T02:28:57.542Z",
       "verificationNote": "Propriétaire courant et équipe d’origine recoupés depuis la page officielle NHL Future Draft Picks.",
       "conditionsVerified": true
     },
@@ -10079,7 +10104,7 @@
   ],
   "unresolvedOwners": 657,
   "source": "Official NHL club Future Draft Picks pages, supplemented by Hockey Insights Team Pipeline snapshot",
-  "lastSyncAt": "2026-10-31T02:28:20.900Z",
+  "lastSyncAt": "2026-10-31T02:28:57.542Z",
   "syncSummary": {
     "pagesFetched": 32,
     "totalPages": 32,
@@ -10087,8 +10112,8 @@
     "updated": 24,
     "conflicts": 0,
     "provisionalOwners": 609,
-    "excludedConditional": 2,
-    "unresolved": 22,
+    "excludedConditional": 24,
+    "unresolved": 0,
     "unverifiedConditions": 0,
     "errors": [
       "ANA: aucune ligne de choix reconnue dans https://www.nhl.com/ducks/team/future-draft-picks",
@@ -10121,39 +10146,7 @@
       "VAN: aucune ligne de choix reconnue dans https://www.nhl.com/canucks/team/future-draft-picks",
       "VGK: aucune ligne de choix reconnue dans https://www.nhl.com/goldenknights/team/future-draft-picks",
       "WSH: aucune ligne de choix reconnue dans https://www.nhl.com/capitals/team/future-draft-picks",
-      "WPG: aucune ligne de choix reconnue dans https://www.nhl.com/jets/team/future-draft-picks",
-      "PuckPedia ANA: HTTP 403",
-      "PuckPedia BOS: HTTP 403",
-      "PuckPedia BUF: HTTP 403",
-      "PuckPedia CGY: HTTP 403",
-      "PuckPedia CAR: HTTP 403",
-      "PuckPedia CHI: HTTP 403",
-      "PuckPedia COL: HTTP 403",
-      "PuckPedia CBJ: HTTP 403",
-      "PuckPedia DAL: HTTP 403",
-      "PuckPedia DET: HTTP 403",
-      "PuckPedia EDM: HTTP 403",
-      "PuckPedia FLA: HTTP 403",
-      "PuckPedia LAK: HTTP 403",
-      "PuckPedia MIN: HTTP 403",
-      "PuckPedia MTL: HTTP 403",
-      "PuckPedia NSH: HTTP 403",
-      "PuckPedia NJD: HTTP 403",
-      "PuckPedia NYI: HTTP 403",
-      "PuckPedia NYR: HTTP 403",
-      "PuckPedia OTT: HTTP 403",
-      "PuckPedia PHI: HTTP 403",
-      "PuckPedia PIT: HTTP 403",
-      "PuckPedia SJS: HTTP 403",
-      "PuckPedia SEA: HTTP 403",
-      "PuckPedia STL: HTTP 403",
-      "PuckPedia TBL: HTTP 403",
-      "PuckPedia TOR: HTTP 403",
-      "PuckPedia UTA: HTTP 403",
-      "PuckPedia VAN: HTTP 403",
-      "PuckPedia VGK: HTTP 403",
-      "PuckPedia WSH: HTTP 403",
-      "PuckPedia WPG: HTTP 403"
+      "WPG: aucune ligne de choix reconnue dans https://www.nhl.com/jets/team/future-draft-picks"
     ]
   }
 }

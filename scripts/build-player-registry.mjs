@@ -473,15 +473,15 @@ try {
 const leagueFromPipeline = value => {
   const l=String(value||"").trim().toLowerCase();
   if(!l||/unknown|unassigned|not available|^n\/a$/.test(l))return "UNKNOWN";
-  if(/\\bnhl\\b|national hockey league/.test(l))return "NHL";
-  if(/\\bahl\\b|american hockey league/.test(l))return "AHL";
+  if(/\bnhl\b|national hockey league/.test(l))return "NHL";
+  if(/\bahl\b|american hockey league/.test(l))return "AHL";
   if(/ncaa|college|university/.test(l))return "NCAA";
-  if(/\\bohl\\b/.test(l))return "OHL";
-  if(/\\bwhl\\b/.test(l))return "WHL";
+  if(/\bohl\b/.test(l))return "OHL";
+  if(/\bwhl\b/.test(l))return "WHL";
   if(/qmjhl|lhjmq/.test(l))return "QMJHL";
-  if(/\\bushl\\b/.test(l))return "USHL";
+  if(/\bushl\b/.test(l))return "USHL";
   if(/usntdp|national u17/.test(l))return "USNTDP";
-  if(/\\bechl\\b|bchl|ajhl|nahl|sjhl|mjhl|cchl|ojhl|league1/.test(l))return "OTHER";
+  if(/\bechl\b|bchl|ajhl|nahl|sjhl|mjhl|cchl|ojhl|league1/.test(l))return "OTHER";
   if(/khl|shl|liiga|mhl|vhl|allsvenskan|nationell|europe|sweden|finland|swiss|czech|russia|germany|slovakia|latvia|norway|denmark|france|austria|icehl|del|mestis|\\bnl\\b|\\bsl\\b/.test(l))return "EUROPE";
   return "OTHER";
 };

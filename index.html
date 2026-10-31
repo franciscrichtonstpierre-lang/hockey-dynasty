@@ -443,6 +443,7 @@ const currentTeamIndex=membership?(codes.indexOf(membership.team_code)>=0?codes.
 const teamPicker=(idValue,selected,disabled=false)=>'<select '+(idValue?'id="'+idValue+'"':'')+' style="max-width:100%;width:100%" '+(disabled?'disabled':'')+'><option value="">— Choisir une équipe —</option>'+teams.map((t,i)=>'<option value="'+i+'" '+(selected===i?'selected':'')+'>'+esc(t)+'</option>').join("")+'</select>';
 let body='<h2>🏒 '+esc(league.name)+'</h2><div class="card"><h3>Ma ligue en ligne</h3><p><strong>Rôle :</strong> '+(isOwner?'Owner / Commissaire':'Directeur général')+'</p><p><strong>Code d’invitation :</strong> '+esc(league.join_code||"—")+'</p>';
 if(isOwner){
+ body+='<h3>Code d’accès à la ligue</h3><p>Le commissaire peut changer le code utilisé par les autres directeurs généraux pour rejoindre cette ligue. Le nouveau code doit être unique.</p><div class="controls"><input id="uhmEditJoinCode" maxlength="8" minlength="4" value="'+esc(league.join_code||"")+'" autocapitalize="characters" placeholder="4 à 8 caractères" style="text-transform:uppercase;max-width:220px"><button type="button" id="uhmSaveJoinCode">Modifier le code</button><button type="button" id="uhmGenerateJoinCode">Générer un code</button></div><p id="uhmJoinCodeStatus" role="status" class="muted"></p>';
  body+='<h3>Mon équipe</h3><p>Choisis ton équipe, puis confirme pour entrer dans la gestion.</p>'+teamPicker("uhmOnlineTeam",currentTeamIndex)+'<div class="controls"><button type="button" id="uhmSaveOnlineTeam">Confirmer mon choix</button></div><p id="uhmOnlineTeamStatus" role="status" class="muted"></p>';
  body+='<h3>Gestion des directeurs généraux</h3><p>Comme propriétaire, tu peux attribuer ou modifier les équipes des membres. Une équipe ne peut être attribuée qu’à un seul DG.</p><div id="uhmOwnerMembers">'+(memberLoadError?'<p class="muted">Impossible de charger les membres : '+esc(memberLoadError.message||"accès refusé")+'</p>':members.filter(m=>m.user_id!==signedInUser.id).map((m)=>{const idx=codes.indexOf(m.team_code)>=0?codes.indexOf(m.team_code):Number(m.team_id);return '<div class="card" data-member="'+esc(m.user_id)+'"><p><strong>'+(m.user_id===signedInUser.id?'Toi (Owner)':'DG '+esc(String(m.user_id).slice(0,8)))+'</strong></p><p class="muted">Équipe actuelle : '+esc(teams[idx]||m.team_code||"Non attribuée")+'</p>'+teamPicker("uhmOwnerTeam_"+String(m.user_id).replaceAll("-",""),idx)+'<button type="button" class="uhmSaveMemberTeam" data-user="'+esc(m.user_id)+'" style="margin-top:8px">Enregistrer l’équipe</button><p class="muted uhmMemberStatus" role="status"></p></div>'}).join("")||'<p>Aucun autre DG n’est encore inscrit.</p>')+'</div>';
  if(!memberLoadError){box.dataset.leagueId=id;setTimeout(()=>box.querySelectorAll(".uhmSaveMemberTeam").forEach(button=>{button.onclick=async()=>{const userId=button.dataset.user,card=button.closest("[data-member]"),select=card.querySelector("select"),status=card.querySelector(".uhmMemberStatus"),chosen=select.value;if(chosen===""){status.textContent="Choisis une équipe.";return}const teamCode=codes[Number(chosen)];button.disabled=true;try{const {data:other,error:otherError}=await authClient.from("league_members").select("user_id").eq("league_id",id).eq("team_code",teamCode).neq("user_id",userId);if(otherError)throw otherError;if(other?.length)throw new Error("Cette équipe est déjà attribuée à un autre DG.");const {error:updateError}=await authClient.from("league_members").update({team_id:Number(chosen),team_code:teamCode}).eq("league_id",id).eq("user_id",userId);if(updateError)throw updateError;status.textContent="Équipe enregistrée : "+teams[Number(chosen)]+".";
@@ -452,6 +453,26 @@ if(isOwner){
 }
 body+='</div><div class="controls"><button id="uhmBackToLeagues">Retour à mes ligues</button></div>';
 box.innerHTML=body;
+const joinCodeInput=box.querySelector("#uhmEditJoinCode"),joinCodeStatus=box.querySelector("#uhmJoinCodeStatus");
+const generateJoinCode=()=>{const alphabet="ABCDEFGHJKLMNPQRSTUVWXYZ23456789";const bytes=new Uint8Array(6);crypto.getRandomValues(bytes);joinCodeInput.value=Array.from(bytes,b=>alphabet[b%alphabet.length]).join("")};
+box.querySelector("#uhmGenerateJoinCode")?.addEventListener("click",generateJoinCode);
+box.querySelector("#uhmSaveJoinCode")?.addEventListener("click",async()=>{
+ const code=String(joinCodeInput?.value||"").trim().toUpperCase();
+ if(!/^[A-Z0-9]{4,8}$/.test(code)){joinCodeStatus.textContent="Le code doit contenir de 4 à 8 lettres ou chiffres.";return}
+ const button=box.querySelector("#uhmSaveJoinCode");button.disabled=true;joinCodeStatus.textContent="Vérification du code...";
+ try{
+  const {data:matches,error:lookupError}=await authClient.from("leagues").select("id").eq("join_code",code).neq("id",id);
+  if(lookupError)throw lookupError;
+  if(matches?.length)throw new Error("Ce code est déjà utilisé par une autre ligue.");
+  const {data:updated,error:updateError}=await authClient.from("leagues").update({join_code:code}).eq("id",id).eq("owner_id",signedInUser.id).select("id,join_code").single();
+  if(updateError)throw updateError;
+  if(!updated||updated.join_code!==code)throw new Error("La base n’a pas confirmé la modification.");
+  joinCodeStatus.textContent="Code d’accès modifié : "+code+". Partage le nouveau code avec les DG.";
+  const invitation=[...box.querySelectorAll("p")].find(p=>p.textContent.includes("Code d’invitation :"));
+  if(invitation)invitation.innerHTML="<strong>Code d’invitation :</strong> "+esc(code);
+ }catch(e){joinCodeStatus.textContent="Modification impossible : "+(e.message||"Erreur Supabase")+". Vérifie les règles d’accès de la table leagues."}
+ finally{button.disabled=false}
+});
 box.querySelector("#uhmBackToLeagues").onclick=()=>{try{localStorage.removeItem("uhmLastLeagueId");localStorage.setItem("uhmLastStage","leagues")}catch(e){}uhmShowStage("leagues")};
 const openGame=(teamIndex)=>{S.team=teamIndex;save();section="Mon équipe";tab="Statut organisation";uhmShowStage("game")};
 const localButton=box.querySelector("#uhmLocalDemo");if(localButton)localButton.onclick=()=>openGame(currentTeamIndex>=0?currentTeamIndex:14);

@@ -42,7 +42,7 @@ if (registry && Array.isArray(registry.players)) {
     const overall = Number(p.overall ?? p.attributes?.OA);
     if (Number.isFinite(overall) && overall >= 0 && overall <= 99) report.registry.withOverall++; else report.registry.missingOverall++;
     const attrs = p.attributes && typeof p.attributes === "object" ? p.attributes : {};
-    const validAttrs = ratingFields.every(k => Number.isFinite(Number(attrs[k])) && Number(attrs[k]) >= 0 && Number(attrs[k]) <= 99);
+    const validAttrs = ratingFields.every(k => attrs[k] != null && attrs[k] !== "" && Number.isFinite(Number(attrs[k])) && Number(attrs[k]) >= 0 && Number(attrs[k]) <= 99);
     if (validAttrs) report.registry.completeAttributeSets++; else report.registry.missingAttributeSets++;
     if (Object.values(attrs).some(v => v != null && v !== "" && (!Number.isFinite(Number(v)) || Number(v) < 0 || Number(v) > 99))) report.registry.invalidRatings++;
     if (p.birthDate && p.name) { const identity = `${String(p.name).normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim()}|${p.birthDate}`; if (identities.has(identity)) report.registry.duplicateIdentities++; else identities.add(identity); }

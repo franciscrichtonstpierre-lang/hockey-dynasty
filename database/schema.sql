@@ -18,6 +18,8 @@ create table if not exists public.league_members (
 );
 create index if not exists leagues_commissioner_idx on public.leagues(commissioner_id);
 create index if not exists league_members_user_idx on public.league_members(user_id);
+-- A new DG may join before the commissioner assigns a team.
+alter table public.league_members alter column team_code drop not null;
 alter table public.leagues enable row level security;
 alter table public.league_members enable row level security;
 create policy "Users can create their leagues" on public.leagues for insert to authenticated with check (commissioner_id=auth.uid());

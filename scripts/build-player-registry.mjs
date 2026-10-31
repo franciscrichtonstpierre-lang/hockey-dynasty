@@ -171,10 +171,10 @@ try {
     code, {...data, prospects:[...(Array.isArray(data.prospects)?data.prospects:[])]}
   ]));
   const cleanCell = value => String(value || "")
-    .replace(/<br\\s*\\/?>/gi," ").replace(/<[^>]*>/g," ")
+    .replace(/<br\s*\/?>/gi," ").replace(/<[^>]*>/g," ")
     .replace(/&nbsp;|&#160;/gi," ").replace(/&amp;/gi,"&").replace(/&quot;/gi,'"')
     .replace(/&#39;|&apos;/gi,"'").replace(/&#x([0-9a-f]+);/gi,(_,h)=>String.fromCodePoint(parseInt(h,16)))
-    .replace(/&#(\\d+);/g,(_,n)=>String.fromCodePoint(Number(n))).replace(/\\s+/g," ").trim();
+    .replace(/&#(\d+);/g,(_,n)=>String.fromCodePoint(Number(n))).replace(/\s+/g," ").trim();
   let pipelinePagesFetched = 0, pipelineRowsFetched = 0;
   const pipelineResults = await Promise.all(Object.entries(teamPipelineSlugs).map(async ([teamCode, slug]) => {
     const url = `https://hockeyinsights.ca/team-pipeline/${slug}/`;
@@ -186,14 +186,14 @@ try {
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
       const html = await response.text();
       const rows = [];
-      for (const rowMatch of html.matchAll(/<tr\\b[^>]*>([\\s\\S]*?)<\\/tr>/gi)) {
-        const cells = [...rowMatch[1].matchAll(/<t[dh]\\b[^>]*>([\\s\\S]*?)<\\/t[dh]>/gi)].map(m=>cleanCell(m[1]));
+      for (const rowMatch of html.matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/gi)) {
+        const cells = [...rowMatch[1].matchAll(/<t[dh]\b[^>]*>([\s\S]*?)<\/t[dh]>/gi)].map(m=>cleanCell(m[1]));
         if (cells.length < 5 || /^player$/i.test(cells[0])) continue;
         const name = cells[0], positionCode = cells[1], age = Number(cells[2]), draft = cells[3], leagueName = cells[4];
         if (!name || !leagueName || !/^[A-Za-zÀ-ÿ .'-]+$/.test(name) || !Number.isFinite(age) || age < 15 || age > 45) continue;
-        const yearMatch = draft.match(/\\b(19|20)\\d{2}\\b/);
-        const roundMatch = draft.match(/round\\s*(\\d+)/i);
-        const overallMatch = draft.match(/#(\\d+)/);
+        const yearMatch = draft.match(/\b(19|20)\d{2}\b/);
+        const roundMatch = draft.match(/round\s*(\d+)/i);
+        const overallMatch = draft.match(/#(\d+)/);
         rows.push({
           fullName:name, positionCode, age, currentLeague:leagueName, currentTeam:null, nhlRightsTeam:teamCode,
           draftYear:yearMatch?Number(yearMatch[0]):null, draftRound:roundMatch?Number(roundMatch[1]):null,

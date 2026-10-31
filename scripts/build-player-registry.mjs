@@ -127,12 +127,8 @@ for (const code of codes) {
         matchingRecords.length === 1 ? matchingRecords[0].id :
         `prospect:${code}:${nameKey(name).replace(/ /g,"-")}`;
       const leagueRaw = String(first(p.currentLeague,p.league,p.leagueName,p.currentLeagueName,"")).toLowerCase();
-      const currentLeague = /\bnhl\b/.test(leagueRaw) ? "NHL" :
-        /ahl|american hockey/.test(leagueRaw) ? "AHL" :
-        /ncaa|college/.test(leagueRaw) ? "NCAA" :
-        /echl/.test(leagueRaw) ? "OTHER" :
-        /ohl|whl|qmjhl|chl|junior/.test(leagueRaw) ? "CHL" :
-        /shl|khl|liiga|europe|sweden|finland|swiss|czech|russia|germany|slovakia|latvia|mhl|allsvenskan|nationell|mestis/.test(leagueRaw) ? "EUROPE" : "UNKNOWN";
+      const currentLeague = leagueFromPipeline(leagueRaw);
+
       add({
         id, name, firstName: str(p.firstName?.default || p.firstName || p.first_name),
         lastName: str(p.lastName?.default || p.lastName || p.last_name), position: posGroup(p), detailedPosition: detailedPos(p),
@@ -485,14 +481,14 @@ const leagueFromPipeline = value => {
   if(/\bushl\b/.test(l))return "USHL";
   if(/usntdp|national u17/.test(l))return "USNTDP";
   if(/\bechl\b|bchl|ajhl|nahl|sjhl|mjhl|cchl|ojhl|league1/.test(l))return "OTHER";
-  if(/\\bkhl\\b/.test(l))return "KHL";
-  if(/\\bshl\\b|swedish hockey league/.test(l))return "SHL";
+  if(/\bkhl\b|kontinental hockey league/.test(l))return "KHL";
+  if(/\bshl\b|swedish hockey league|svenska hockeyligan/.test(l))return "SHL";
   if(/liiga|finnish liiga/.test(l))return "LIIGA";
   if(/icehl|ice hockey league|ebel|austrian ice/.test(l))return "ICEHL";
-  if(/\\bdel\\b|deutsche eishockey liga/.test(l))return "DEL";
-  if(/\\bnl\\b|national league switzerland|swiss national league/.test(l))return "NL";
-  if(/czech extraliga|\\bextraliga\\b|tipsport liga/.test(l))return "CZECH";
-  if(/\\bechl\\b/.test(l))return "ECHL";
+  if(/\bdel\b|deutsche eishockey liga/.test(l))return "DEL";
+  if(/\bnl\b|national league switzerland|swiss national league/.test(l))return "NL";
+  if(/czech extraliga|\bextraliga\b|tipsport liga/.test(l))return "CZECH";
+  if(/\bechl\b|east coast hockey league/.test(l))return "ECHL";
   if(/mestis|allsvenskan|nationell|europe|sweden|finland|swiss|czech|russia|germany|slovakia|latvia|norway|denmark|france|austria|mhl|vhl|\\bsl\\b/.test(l))return "EUROPE";
   return "OTHER";
 };

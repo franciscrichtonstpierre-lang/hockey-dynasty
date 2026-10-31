@@ -10,7 +10,7 @@ async function json(path) {
 }
 const report = {
   nhl:{files:0,players:0,missing:[]}, ahl:{files:0,players:0,missing:[]},
-  prospects:{files:0,players:0,missing:[],lowCoverage:[]}, registry:{players:0,exists:false,unknown:0,duplicates:0},
+  prospects:{files:0,players:0,missing:[],lowCoverage:[]}, registry:{players:0,exists:false,unknown:0,duplicates:0,duplicateIdentities:0},
   contracts:{players:0,matched:0,coveragePercent:0,salaryRows:0,missingSalary:0,exists:false},
   coaches:{teams:0,coaches:0,exists:false,missingHead:[],missingAssistants:[],ahlStaffExists:false,ahlTeams:0,ahlCoaches:0,ahlMissingHead:[],ahlMissingAssistants:[]},
   draftPicks:{exists:false,records:0,verified:0,baseSlots:0,expectedBaseSlots:teams.length*draftYears.length*draftRounds.length,missingSlots:0,invalid:0,years:[],unresolvedOwner:0,complete:false}
@@ -32,11 +32,13 @@ const registry=await json("data/players/registry.json");
 if (registry && Array.isArray(registry.players)) {
   report.registry.exists=true; report.registry.players=registry.players.length;
   const ids = new Set();
+  const identities = new Set();
   for (const p of registry.players) {
     const league = String(p.currentLeague || p.league || "UNKNOWN").toUpperCase();
     if (league === "UNKNOWN" || !p.currentLeague) report.registry.unknown++;
     const id = p.playerId || p.nhlPlayerId || p.id;
     if (id != null) { const key = String(id); if (ids.has(key)) report.registry.duplicates++; else ids.add(key); }
+    if (p.birthDate && p.name) { const identity = `${String(p.name).normalize("NFD").replace(/[\\u0300-\\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim()}|${p.birthDate}`; if (identities.has(identity)) report.registry.duplicateIdentities++; else identities.add(identity); }
   }
 }
 const contracts=await json("data/contracts/2026-2027.json");
@@ -123,7 +125,7 @@ console.log("NOTE: la présence des fiches ne garantit pas que les droits, contr
 if (
   report.nhl.files !== 32 || report.ahl.files !== 32 ||
   report.prospects.files !== 32 || report.prospects.lowCoverage.length > 0 ||
-  !report.registry.exists || report.registry.unknown > 0 || report.registry.duplicates > 0 ||
+  !report.registry.exists || report.registry.unknown > 0 || report.registry.duplicates > 0 || report.registry.duplicateIdentities > 0 ||
   !report.contracts.exists || report.contracts.missingSalary > 0 ||
   !report.coaches.exists || report.coaches.missingHead.length > 0 ||
   report.coaches.missingAssistants.length > 0 || !report.coaches.ahlStaffExists || report.coaches.ahlTeams !== 32 || report.coaches.ahlMissingHead.length > 0 || report.coaches.ahlMissingAssistants.length > 0 ||

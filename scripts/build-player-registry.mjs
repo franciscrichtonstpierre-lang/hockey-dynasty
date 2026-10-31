@@ -178,6 +178,37 @@ for (const p of records.values()) {
 }
 console.log(`Registry league enrichment: ${leagueEnriched} UNKNOWN entries resolved via unique roster-name match.`);
 
+// Keep every roster/prospect record usable by the game: if no statistical
+// rating exists, use the same explicitly provisional age/position fallback
+// already shown by the interface. This is not presented as a scouting grade.
+const ratingFields = ["FI","SH","PL","ST","CH","PO","HI","SK","EN","PE","FA","LE","SR","OFF","DEF","OA"];
+let provisionalRatings = 0;
+for (const p of records.values()) {
+  const existing = p.attributes && typeof p.attributes === "object" ? p.attributes : {};
+  const complete = ratingFields.every(k => existing[k] != null && Number.isFinite(Number(existing[k])) && Number(existing[k]) >= 0 && Number(existing[k]) <= 99);
+  if (complete && p.overall != null) continue;
+  let age = 0;
+  if (p.birthDate) {
+    const birth = new Date(p.birthDate + "T00:00:00Z");
+    if (Number.isFinite(birth.getTime())) age = 2026 - birth.getUTCFullYear();
+  }
+  const pos = p.position === "G" ? "G" : p.position === "D" ? "D" : (p.detailedPosition || "F");
+  const base = pos === "G" ? 57 : age && age < 22 ? 53 : age && age < 25 ? 57 : age && age < 29 ? 60 : 58;
+  const fallback = {FI:base,SH:base,PL:base,ST:base,CH:base,PO:base,HI:base,SK:base,EN:base,PE:base,FA:base,LE:base,SR:base,OFF:base,DEF:base,OA:base};
+  if (pos === "D") Object.assign(fallback,{SH:base-5,PL:base-2,ST:base+3,CH:base+3,HI:base+4,DEF:base+3,OFF:base-3});
+  if (pos === "G") Object.assign(fallback,{SH:25,PL:25,SK:base-4,PO:base+5,OFF:25,DEF:base+2});
+  if (p.detailedPosition === "C") fallback.FA = base+5;
+  fallback.OA = Math.round((fallback.OFF+fallback.DEF)/2);
+  p.attributes = Object.fromEntries(ratingFields.map(k => [k, existing[k] != null && Number.isFinite(Number(existing[k])) ? Math.max(0,Math.min(99,Math.round(Number(existing[k])))) : fallback[k]]));
+  if (p.overall == null || !Number.isFinite(Number(p.overall))) p.overall = p.attributes.OA;
+  if (!complete) {
+    p.ratingStatus = p.ratingStatus || "provisional_age_position_fallback";
+    p.ratingSource = p.ratingSource || "Hockey Dynasty fallback model (age/position); not a scouting grade";
+    provisionalRatings++;
+  }
+}
+console.log(`Provisional rating fallback applied to ${provisionalRatings} records with missing rating data; potentials remain null unless source-backed.`);
+
 const players = [...records.values()].sort((a,b) => a.name.localeCompare(b.name,"en"));
 const counts = players.reduce((out,p) => (out[p.currentLeague]=(out[p.currentLeague]||0)+1,out),{});
 const output = {

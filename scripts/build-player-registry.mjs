@@ -4,6 +4,8 @@ import { readFile, writeFile } from "node:fs/promises";
 
 const codes = ["ANA","BOS","BUF","CGY","CAR","CHI","COL","CBJ","DAL","DET","EDM","FLA","LAK","MIN","MTL","NSH","NJD","NYI","NYR","OTT","PHI","PIT","SJS","SEA","STL","TBL","TOR","UTA","VAN","VGK","WSH","WPG"];
 const affiliations = JSON.parse(await readFile("data/ahl/teams.json", "utf8")).teams || [];
+const echlAffiliations = JSON.parse(await readFile("data/echl/affiliations-2026-2027.json", "utf8")).teams || [];
+const echlAffiliationByName = new Map(echlAffiliations.map(t => [String(t.echlName).normalize("NFD").replace(/[\\u0300-\\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim(), t]));
 const ahlByCode = new Map(affiliations.map(t => [t.nhlCode, t.ahlName]));
 const ratingData = JSON.parse(await readFile("data/ratings.json", "utf8"));
 const ratingMap = ratingData.players || {};
@@ -104,6 +106,8 @@ for (const code of codes) {
   } catch (e) { console.warn(`AHL registry skipped ${code}: ${e.message}`); }
 }
 
+// Apply the season's official ECHL-to-NHL/AHL organization affiliation to each roster record.
+const echlTeamNames = new Map(echlAffiliations.map(t => [String(t.echlName).normalize("NFD").replace(/[\\u0300-\\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim(), t]));
 // ECHL roster snapshots: these are professional players, but ECHL membership alone does not prove NHL rights.
 try {
   const { readdir } = await import("node:fs/promises");
@@ -118,7 +122,12 @@ try {
         add({
           id: `echl:${sourceId}`, name, firstName: str(first(p.first_name,p.firstName)),
           lastName: str(first(p.last_name,p.lastName)), position: posGroup(p), detailedPosition: detailedPos(p),
-          currentLeague: "ECHL", currentTeam: data.teamName || data.team_name || null, nhlRightsTeam: null,
+          currentLeague: "ECHL", currentTeam: data.teamName || data.team_name || null,
+          nhlRightsTeam: echlTeamNames.get(nameKey(data.teamName || data.team_name || ""))?.nhlCode || null,
+          ahlAffiliationTeam: echlTeamNames.get(nameKey(data.teamName || data.team_name || ""))?.ahlName || null,
+          affiliationSource: "https://echl.com/teams/nhl-ahl-affiliations",
+          affiliationSeason: "2026-2027",
+          affiliationStatus: echlTeamNames.has(nameKey(data.teamName || data.team_name || "")) ? (echlTeamNames.get(nameKey(data.teamName || data.team_name || ""))?.independent ? "independent_echl_team" : "official_nhl_ahl_affiliation") : "affiliation_unmatched",
           birthDate: str(first(p.birthdate,p.birthDate)), shootsCatches: str(first(p.shoots,p.catches,p.shootsCatches)),
           sweaterNumber: Number.isFinite(Number(first(p.tp_jersey_number,p.jersey_number,p.sweater_number))) ? Number(first(p.tp_jersey_number,p.jersey_number,p.sweater_number)) : null,
           nhlPlayerId: Number.isFinite(Number(first(p.nhl_player_id,p.nhlPlayerId))) ? Number(first(p.nhl_player_id,p.nhlPlayerId)) : null,

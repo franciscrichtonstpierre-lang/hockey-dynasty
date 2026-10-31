@@ -157,7 +157,68 @@ for (const code of codes) {
 let supplementalMatched = 0, supplementalAdded = 0, supplementalAmbiguous = 0;
 try {
   const supplementalData = JSON.parse(await readFile("data/prospects-supplemental/2026-2027.json", "utf8"));
-  for (const [teamCode, teamData] of Object.entries(supplementalData.teams || {})) {
+  const teamPipelineSlugs = {
+    ANA:"anaheim-ducks",BOS:"boston-bruins",BUF:"buffalo-sabres",CGY:"calgary-flames",
+    CAR:"carolina-hurricanes",CHI:"chicago-blackhawks",COL:"colorado-avalanche",CBJ:"columbus-blue-jackets",
+    DAL:"dallas-stars",DET:"detroit-red-wings",EDM:"edmonton-oilers",FLA:"florida-panthers",
+    LAK:"los-angeles-kings",MIN:"minnesota-wild",MTL:"montreal-canadiens",NSH:"nashville-predators",
+    NJD:"new-jersey-devils",NYI:"new-york-islanders",NYR:"new-york-rangers",OTT:"ottawa-senators",
+    PHI:"philadelphia-flyers",PIT:"pittsburgh-penguins",SJS:"san-jose-sharks",SEA:"seattle-kraken",
+    STL:"st-louis-blues",TBL:"tampa-bay-lightning",TOR:"toronto-maple-leafs",UTA:"utah-mammoth",
+    VAN:"vancouver-canucks",VGK:"vegas-golden-knights",WSH:"washington-capitals",WPG:"winnipeg-jets"
+  };
+  const teamSnapshots = new Map(Object.entries(supplementalData.teams || {}).map(([code, data]) => [
+    code, {...data, prospects:[...(Array.isArray(data.prospects)?data.prospects:[])]}
+  ]));
+  const cleanCell = value => String(value || "")
+    .replace(/<br\\s*\\/?>/gi," ").replace(/<[^>]*>/g," ")
+    .replace(/&nbsp;|&#160;/gi," ").replace(/&amp;/gi,"&").replace(/&quot;/gi,'"')
+    .replace(/&#39;|&apos;/gi,"'").replace(/&#x([0-9a-f]+);/gi,(_,h)=>String.fromCodePoint(parseInt(h,16)))
+    .replace(/&#(\\d+);/g,(_,n)=>String.fromCodePoint(Number(n))).replace(/\\s+/g," ").trim();
+  let pipelinePagesFetched = 0, pipelineRowsFetched = 0;
+  const pipelineResults = await Promise.all(Object.entries(teamPipelineSlugs).map(async ([teamCode, slug]) => {
+    const url = `https://hockeyinsights.ca/team-pipeline/${slug}/`;
+    try {
+      const response = await fetch(url, {
+        headers: {"user-agent":"Hockey-Dynasty-data-sync/1.0","accept":"text/html"},
+        signal: AbortSignal.timeout(12000)
+      });
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      const html = await response.text();
+      const rows = [];
+      for (const rowMatch of html.matchAll(/<tr\\b[^>]*>([\\s\\S]*?)<\\/tr>/gi)) {
+        const cells = [...rowMatch[1].matchAll(/<t[dh]\\b[^>]*>([\\s\\S]*?)<\\/t[dh]>/gi)].map(m=>cleanCell(m[1]));
+        if (cells.length < 5 || /^player$/i.test(cells[0])) continue;
+        const name = cells[0], positionCode = cells[1], age = Number(cells[2]), draft = cells[3], leagueName = cells[4];
+        if (!name || !leagueName || !/^[A-Za-zÀ-ÿ .'-]+$/.test(name) || !Number.isFinite(age) || age < 15 || age > 45) continue;
+        const yearMatch = draft.match(/\\b(19|20)\\d{2}\\b/);
+        const roundMatch = draft.match(/round\\s*(\\d+)/i);
+        const overallMatch = draft.match(/#(\\d+)/);
+        rows.push({
+          fullName:name, positionCode, age, currentLeague:leagueName, currentTeam:null, nhlRightsTeam:teamCode,
+          draftYear:yearMatch?Number(yearMatch[0]):null, draftRound:roundMatch?Number(roundMatch[1]):null,
+          draftOverall:overallMatch?Number(overallMatch[1]):null, rightsStatus:"secondary_snapshot_recheck_required",
+          source:url, sourceUpdatedAt:"2026-09-28", verificationStatus:"secondary_snapshot_recheck_required"
+        });
+      }
+      return {teamCode,url,rows,error:null};
+    } catch(error) {
+      return {teamCode,url,rows:[],error:error.message};
+    }
+  }));
+  for (const result of pipelineResults) {
+    if (result.rows.length) {
+      pipelinePagesFetched++;
+      pipelineRowsFetched += result.rows.length;
+      const existing = teamSnapshots.get(result.teamCode) || {source:result.url,snapshotDate:"2026-09-28",prospects:[]};
+      existing.source = existing.source || result.url;
+      existing.snapshotDate = existing.snapshotDate || "2026-09-28";
+      existing.prospects.push(...result.rows);
+      teamSnapshots.set(result.teamCode,existing);
+    }
+  }
+  console.log(`Hockey Insights prospect snapshots: ${pipelinePagesFetched}/32 pages with rows; ${pipelineRowsFetched} rows parsed.`);
+  for (const [teamCode, teamData] of teamSnapshots.entries()) {
     for (const p of (Array.isArray(teamData.prospects) ? teamData.prospects : [])) {
       const name = nameOf(p);
       if (!name) continue;

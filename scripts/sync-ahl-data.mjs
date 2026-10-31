@@ -50,13 +50,13 @@ for(const affiliate of teams){
     let players=[];
     for(const obj of objects){
       for(const key of ["Roster","roster","players","Players","data"]){
-        if(Array.isArray(obj[key]) && obj[key].some(p=>p&&typeof p==="object"&&(p.player_id||p.person_id||p.first_name||p.last_name||p.name))){
+        if(Array.isArray(obj[key]) && obj[key].some(p=>p&&typeof p==="object"&&(typeof p.player_id==="string"||typeof p.player_id==="number"||typeof p.person_id==="string"||typeof p.person_id==="number")&&(typeof p.name==="string"||typeof p.display_name==="string"||typeof p.first_name==="string"||typeof p.last_name==="string"))){
           players=obj[key];break;
         }
       }
       if(players.length)break;
     }
-    if(!players.length)players=objects.filter(p=>(p.player_id||p.person_id)&& (p.first_name||p.last_name||p.name||p.display_name));
+    if(!players.length)players=objects.filter(p=>(typeof p.player_id==="string"||typeof p.player_id==="number"||typeof p.person_id==="string"||typeof p.person_id==="number")&&(typeof p.name==="string"||typeof p.display_name==="string"||typeof p.first_name==="string"||typeof p.last_name==="string"));
     if(players.length<10)throw new Error(`Roster too small or response schema changed (${players.length})`);
     const payload={teamCode:affiliate.nhlCode,ahlName:affiliate.ahlName,teamId:String(teamId),season:"2026-2027",seasonId:actualSeasonId,source:"AHL HockeyTech public feed",sourceUrl:url,syncedAt:new Date().toISOString(),count:players.length,players};
     const path=`data/ahl/${affiliate.nhlCode}.json`;

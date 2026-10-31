@@ -70,8 +70,23 @@ async function syncProspects(code) {
     await writeValidated(path, payload, d => Array.isArray(d.prospects) && d.prospects.length > 0);
     console.log(`OK prospects ${code}: ${list.length}`);
   } catch (error) {
-    // L'endpoint prospects n'est pas toujours disponible pour chaque organisation.
-    // Conserver le dernier fichier valide si l'API échoue.
+    // Certaines équipes n'ont pas de liste exposée par l'API NHL.
+    // Si une liste locale valide existe déjà, la conserver sans faire échouer
+    // la synchronisation pour une réponse vide de l'API.
+    if (error.message === "Empty prospects response") {
+      try {
+        const existing = JSON.parse(await readFile(path, "utf8"));
+        const existingList = Array.isArray(existing)
+          ? existing
+          : existing?.prospects || existing?.players || existing?.data;
+        if (Array.isArray(existingList) && existingList.length > 0) {
+          console.warn(`WARN prospects ${code}: API vide; conservation de la liste locale existante (${existingList.length} entrées)`);
+          return;
+        }
+      } catch {
+        // Aucun fichier local lisible : l'erreur doit rester visible ci-dessous.
+      }
+    }
     console.error(`ERROR prospects ${code}: ${error.message}`);
     process.exitCode = 1;
   }

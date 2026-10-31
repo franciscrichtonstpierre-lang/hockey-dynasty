@@ -95,6 +95,11 @@ if (contracts && Array.isArray(contracts.players)) {
   report.contracts.organizationUnmatched=Number(contracts.organizationContractUnmatchedCount ?? contracts.organizationContracts?.filter(p=>p.contract==null).length ?? 0);
   report.contracts.organizationMissing=Math.max(0,report.contracts.registryPlayers-report.nhl.players-report.contracts.organizationCovered);
 }
+const contractAudit=await json("data/contracts/contract-audit-2026-2027.json");
+report.contracts.auditExists=!!(contractAudit && Array.isArray(contractAudit.records));
+report.contracts.auditRecords=report.contracts.auditExists?contractAudit.records.length:0;
+report.contracts.auditMissingSource=report.contracts.auditExists?contractAudit.records.filter(p=>!Array.isArray(p.sourceUrls)||p.sourceUrls.length===0).length:0;
+report.contracts.auditUnmatched=report.contracts.auditExists?contractAudit.records.filter(p=>!p.contractKey).length:0;
 const coaches=await json("data/coaches/2026-2027.json");
 if (coaches && Array.isArray(coaches.coaches)) {
   report.coaches.exists=true; report.coaches.teams=coaches.teamCount||0; report.coaches.coaches=coaches.coaches.length;

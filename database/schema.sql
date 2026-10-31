@@ -83,3 +83,8 @@ $$;
 revoke all on function public.find_league_by_code(text) from public;
 revoke all on function public.find_league_by_code(text) from anon;
 grant execute on function public.find_league_by_code(text) to authenticated;
+
+
+drop policy if exists "Users can update own league membership" on public.league_members;
+create policy "Users can update own league membership" on public.league_members
+for update to authenticated using (user_id = auth.uid()) with check (user_id = auth.uid());

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Importation des effectifs — UHM</title>
+<script src="./auth-config.js"></script>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#081625;color:#eef6fc;font:15px system-ui,Arial;padding:18px}.wrap{max-width:760px;margin:24px auto}.card{background:#102941;border:1px solid #31536c;border-radius:12px;padding:20px;margin:12px 0}h1{font-size:23px;margin:0 0 8px}p{color:#bfd0df;line-height:1.5}button,a{display:inline-block;background:#b32740;border:1px solid #f37a8b;border-radius:8px;color:white;padding:12px 16px;text-decoration:none;font:inherit;font-weight:700}button:disabled{opacity:.5}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#071522;padding:14px;border-radius:8px;color:#d6e8f6}.muted{color:#9eb7ca}
+</style></head><body><main class="wrap">
+<section class="card"><h1>🏒 Importation des données Hockey Dynasty</h1><p>Cette page importe les effectifs NHL officiels 2026-2027 dans la base du jeu. L'import est réservé au propriétaire UHM et peut être relancé sans créer de doublons.</p><p class="muted">Les notes Overall/Potentiel et les droits NHL ne sont pas inventés : ils resteront à vérifier séparément.</p><div id="status">Vérification de la session…</div><pre id="result">En attente…</pre><a href="./index.html">Retour au jeu</a></section>
+</main>
+<script>
+(async()=>{
+ const status=document.getElementById("status"),out=document.getElementById("result");
+ const say=(s)=>status.textContent=s;
+ const cfg=window.UHM_AUTH_CONFIG;
+ if(!cfg?.url||!cfg?.anonKey){say("Configuration Supabase absente.");return}
+ const load=async(url)=>{const s=document.createElement("script");s.src=url;document.head.appendChild(s);await new Promise((ok,no)=>{s.onload=ok;s.onerror=no})};
+ try{await load("https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2");}
+ catch(e){try{await load("https://unpkg.com/@supabase/supabase-js@2");}catch(e2){say("La bibliothèque Supabase ne s'est pas chargée.");return}}
+ const client=window.supabase.createClient(cfg.url,cfg.anonKey);
+ const {data:{session},error}=await client.auth.getSession();
+ if(error||!session){say("Connecte-toi d'abord dans Hockey Dynasty, puis ouvre cette page.");return}
+ const {data:role,error:roleError}=await client.from("app_admins").select("role").eq("user_id",session.user.id).maybeSingle();
+ if(roleError||role?.role!=="owner"){say("Accès réservé au propriétaire UHM.");return}
+ say("Session propriétaire confirmée. Import NHL en cours…");
+ out.textContent="Récupération des 32 effectifs depuis l'API publique de la NHL.";
+ const {data,error:invokeError}=await client.functions.invoke("world-roster-import",{body:{season:"2026-2027"}});
+ if(invokeError){say("L'importation n'a pas pu être terminée.");out.textContent=invokeError.message||String(invokeError);return}
+ say(data?.ok?"Import NHL terminé.":"Import NHL partiel — vérifie les détails.");
+ out.textContent=JSON.stringify(data,null,2);
+})().catch(e=>{document.getElementById("status").textContent="Erreur inattendue";document.getElementById("result").textContent=String(e)});
+</script></body></html>

@@ -22,10 +22,13 @@ const teamLeague = team => {
   const t=String(team||"").toLowerCase();
   if(/usntdp|national u17/.test(t))return "USNTDP";
   if(/university|notre dame|michigan/.test(t))return "NCAA";
-  if(/thunderbirds|wheat kings|raiders|medicine hat|silvertips|wild|oil kings|chiefs|hurricanes|rockets|blazers|hitmen|spokane|everett|wenatchee|kelowna|prince albert|brandon/.test(t))return "WHL";
+  if(/tri-city americans|victoria royals|thunderbirds|wheat kings|raiders|medicine hat|silvertips|wild|oil kings|chiefs|hurricanes|rockets|blazers|hitmen|spokane|everett|wenatchee|kelowna|prince albert|brandon|lethbridge hurricanes|kamloops blazers/.test(t))return "WHL";
   if(/remparts|sea dogs|sea dogs|mooseheads|shawinigan|drummondville|armada|newfoundland regiment|islanders|olympiques|oceanic/.test(t))return "QMJHL";
+  if(/sudbury wolves|niagara icedogs|sarnia sting|kitchener rangers|guelph storm|saginaw spirit|brantford bulldogs|london knights|flint firebirds|soo greyhounds|barrie colts|north bay battalion|brampton steelheads/.test(t))return "OHL";
   if(/spirit|storm|iceDogs|ic edogs|rangers|sting|bulldogs|knights|firebirds|greyhounds|colts|battalion|67's|steelheads/.test(t))return "OHL";
   if(/fargo force|muskegon|youngstown|sioux falls|green bay|des moines|buccaneers/.test(t))return "USHL";
+  if(/penticton vees/.test(t))return "OTHER";
+  if(/metallurg novokuznetsk|almaz cherepovets|loko-76|krasnaya armiya|chaika/.test(t))return "EUROPE";
   if(/biel/.test(t))return "NL";
   if(/yaroslavl|moskva|nizhny|krasnaya|chaika/.test(t))return "KHL";
   if(/u20|u18|frolunda|frölunda|modo|moDo|leksands|örebro|orebro|karpat|kärpät|lukko|hifk|brynas|brynäs|färjestad|farjestad|djurgardens|djurgårdens|jokerit|kometa|pardubice|mannheim/.test(t))return "EUROPE";
@@ -100,8 +103,8 @@ for (const year of years) {
           const name=m[2].trim(),position=m[3].toUpperCase().split("/")[0];
           const teamText=(line.split("·").slice(1).join("·").split("(")[0]||"").replace(/·\s*shoots.*$/i,"").trim();
           const currentTeam=teamText||null;
-          const playerAnchor=[...li[1].matchAll(/<a\\b[^>]*href=["']([^"']+)["'][^>]*>([\\s\\S]*?)<\\/a>/gi)].find(a=>plain(a[2]).includes(name));
-          const sourceProfileUrl=playerAnchor?new URL(playerAnchor[1],fallbackUrl).href:null;
+          const playerAnchor=[...li[1].matchAll(/<a\b[^>]*href=["']([^"']+)["'][^>]*>([\s\S]*?)<\/a>/gi)].find(a=>plain(a[2]).includes(name));
+          const sourceProfileUrl=playerAnchor?new URL(playerAnchor[1],playerAnchor[1].startsWith("/prospects/")?"https://rinkcentral.com":fallbackUrl).href:null;
           all.push({
             prospectId:`nhl-draft:2027:${name.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"")}`,
             name,position,currentTeam,currentLeague:teamLeague(currentTeam),draftYear:2027,sourceRank:rank,sourceProfileUrl,
@@ -140,14 +143,14 @@ for(let start=0;start<profileTargets.length;start+=6){
       if(!response.ok)throw new Error(`HTTP ${response.status}`);
       const html=await response.text();
       const textValue=plain(html);
-      const where=textValue.match(/Where he plays\\s*[·:]\\s*2026-27\\s+(.+?)\\s*·\\s*([A-Z0-9-]+)/i);
-      const leagueLine=textValue.match(/League\\s*·\\s*2026-27\\s+([A-Z0-9-]+)/i);
-      const clubLine=textValue.match(/Club\\s*·\\s*2026-27\\s+(.+?)(?:\\s+Draft year|\\s+Frequently Asked|\\s+Scouting Notes|$)/i);
-      const born=textValue.match(/Born\\s+(\\d{4}-\\d{2}-\\d{2})/i);
+      const where=textValue.match(/Where he plays\s*[·:]\s*2026-27\s+(.+?)\s*·\s*([A-Z0-9-]+)/i);
+      const leagueLine=textValue.match(/League\s*·\s*2026-27\s+([A-Z0-9-]+)/i);
+      const clubLine=textValue.match(/Club\s*·\s*2026-27\s+(.+?)(?:\s+Draft year|\s+Frequently Asked|\s+Scouting Notes|$)/i);
+      const born=textValue.match(/Born\s+(\d{4}-\d{2}-\d{2})/i);
       const team=where?.[1]?.trim()||clubLine?.[1]?.trim()||null;
       const rawLeague=where?.[2]||leagueLine?.[1]||"";
       const l=rawLeague.toLowerCase();
-      const league=/\\bnhl\\b/.test(l)?"NHL":/\\bahl\\b/.test(l)?"AHL":/ncaa|college/.test(l)?"NCAA":/\\bohl\\b/.test(l)?"OHL":/\\bwhl\\b/.test(l)?"WHL":/qmjhl|lhjmq/.test(l)?"QMJHL":/\\bushl\\b/.test(l)?"USHL":/usntdp|national u17/.test(l)?"USNTDP":/mhl|vhl|khl|shl|liiga|u20|europe|sweden|finland|swiss|czech|russia|germany|slovakia|latvia|norway|denmark|france|austria|del|nl/.test(l)?"EUROPE":rawLeague?"OTHER":"UNKNOWN";
+      const league=/\bnhl\b/.test(l)?"NHL":/\bahl\b/.test(l)?"AHL":/ncaa|college/.test(l)?"NCAA":/\bohl\b/.test(l)?"OHL":/\bwhl\b/.test(l)?"WHL":/qmjhl|lhjmq/.test(l)?"QMJHL":/\bushl\b/.test(l)?"USHL":/usntdp|national u17/.test(l)?"USNTDP":/mhl|vhl|khl|shl|liiga|u20|europe|sweden|finland|swiss|czech|russia|germany|slovakia|latvia|norway|denmark|france|austria|del|nl/.test(l)?"EUROPE":rawLeague?"OTHER":"UNKNOWN";
       return {prospect:p,team,league,birthDate:born?.[1]||null,error:null};
     }catch(error){return {prospect:p,error:error.message};}
   }));

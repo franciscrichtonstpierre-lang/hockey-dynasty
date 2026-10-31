@@ -193,6 +193,21 @@ for (const registryPlayer of (registryData.players || [])) {
     sourceDataset:"ehlersio/nhl-contracts", license:"CC0-1.0"
   });
 }
+// Preserve explicit coverage for every registry player, including unsigned prospects and players whose public contract cannot be matched.
+const coveredRegistryIds = new Set(organizationContracts.map(p => String(p.registryId)));
+const nhlRosterIds = new Set(players.map(p => String(p.playerId)));
+for (const rp of (registryData.players || [])) {
+  if (coveredRegistryIds.has(String(rp.id)) || (rp.nhlPlayerId != null && nhlRosterIds.has(String(rp.nhlPlayerId)))) continue;
+  organizationContracts.push({
+    playerId: rp.nhlPlayerId != null ? Number(rp.nhlPlayerId) : null,
+    registryId: rp.id, name: rp.name,
+    currentLeague: rp.currentLeague || null, currentTeam: rp.currentTeam || null,
+    nhlRightsTeam: rp.nhlRightsTeam || null,
+    contractStatus: rp.nhlPlayerId != null ? "NO_MATCHED_2026_27_CONTRACT" : "NO_NHL_PLAYER_ID_SOURCE_UNAVAILABLE",
+    contract: null, season: null, sourceDataset: "ehlersio/nhl-contracts", license: "CC0-1.0",
+    dataNote: "No verified 2026-27 contract matched. This is not proof that the player has no contract; verify against the player's league/team or official announcement."
+  });
+}
 const matchedContracts=players.filter(p=>p.contract!=null).length;
 const salaryRows=players.filter(p=>p.season?.capHitUsd!=null).length;
 const estimatedAavRows=players.filter(p=>p.contract?.estimatedAavUsd!=null).length;
@@ -203,7 +218,7 @@ const output={
   sourceDataset:"ehlersio/nhl-contracts", sourceUrl:"https://github.com/ehlersio/nhl-contracts/releases/tag/contracts",
   sourceUpdatedAt:timestampRaw.updated_at||timestampRaw.updatedAt||timestampRaw.generated_at||null,
   license:"CC0-1.0", playerCount:players.length, matchedContracts, salaryRows, estimatedAavRows, modelSalaryRows, usableSalaryRows,
-  organizationContractCount:organizationContracts.length, organizationContracts,
+  organizationContractCount:organizationContracts.length, organizationContractCoverageCount:organizationContracts.length, organizationContractMatchedCount:organizationContracts.filter(p=>p.contract!=null).length, organizationContractUnmatchedCount:organizationContracts.filter(p=>p.contract==null).length, organizationContracts,
   coveragePercent:Number((100*matchedContracts/Math.max(players.length,1)).toFixed(1)),
   salaryCoveragePercent:Number((100*salaryRows/Math.max(players.length,1)).toFixed(1)),
   counts:{matchedContracts, salaryRows, missingContracts:players.length-matchedContracts,withGapSource:players.filter(p=>p.gapReason).length},

@@ -17,7 +17,7 @@ function parseJsonp(text) {
   return JSON.parse(raw.replace(/^\uFEFF/,""));
 }
 async function get(url) {
-  const res=await fetch(url,{headers:{"User-Agent":"Ultimate-Hockey-Manager-data-sync/1.0","Accept":"application/json, text/javascript"},signal:AbortSignal.timeout(25000)});
+  const res=await fetch(url,{headers:{"User-Agent":"Ultimate-Hockey-Manager-data-sync/1.0","Accept":"application/json, text/javascript"},signal:AbortSignal.timeout(15000)});
   if(!res.ok)throw new Error(`HTTP ${res.status}: ${url}`);
   return parseJsonp(await res.text());
 }
@@ -38,10 +38,10 @@ const requestedSeason=seasonRows.find(s=>{
 const actualSeasonId=String(requestedSeason?.season_id||requestedSeason?.id||seasonId);
 const candidates=(bootstrap.teamsNoAll||bootstrap.teams||[]).filter(x=>(x.team_id||x.teamId||x.id)&& (x.name||x.team||x.team_name||x.teamName||x.team_nickname||x.teamNickName||x.team_full_name||x.teamFullName));
 let succeeded=0, failed=0;
-for(const affiliate of teams){
+async function syncAffiliate(affiliate){
   const target=norm(affiliate.ahlName);
   const match=candidates.find(t=>[t.name,t.team,t.team_name,t.teamName,t.team_nickname,t.teamNickName,t.team_full_name,t.teamFullName,[t.team_city||t.city,t.team_nickname||t.teamNickName||t.nickname].filter(Boolean).join(" ")].some(n=>norm(n)===target || (norm(n).length>4 && (target.includes(norm(n)) || norm(n).includes(target)))));
-  if(!match){console.error(`ERROR team id not found for ${affiliate.ahlName}`);failed++;continue}
+  if(!match){console.error(`ERROR team id not found for ${affiliate.ahlName}`);failed++;return}
   const teamId=match.team_id||match.teamId||match.id;
   const url=endpoint("roster",{team_id:teamId,season_id:actualSeasonId});
   try{
@@ -65,7 +65,15 @@ for(const affiliate of teams){
     console.log(`OK ${affiliate.nhlCode} / ${affiliate.ahlName}: ${players.length}`);
     succeeded++;
   }catch(e){console.error(`ERROR ${affiliate.nhlCode}: ${e.message}`);failed++}
-  await pause(1100);
+  await pause(350);
 }
+let nextTeamIndex=0;
+await Promise.all(Array.from({length:4},async()=>{
+  while(nextTeamIndex<teams.length){
+    const index=nextTeamIndex++;
+    await syncAffiliate(teams[index]);
+  }
+}));
+
 console.log(`LAH sync complete: ${succeeded}/${teams.length} clubs; ${failed} failures; season ID ${actualSeasonId}`);
 if(failed)process.exitCode=1;

@@ -14,14 +14,16 @@ const scalar = v => v == null || ["string","number","boolean"].includes(typeof v
 const str = v => { const x = scalar(v); return x == null || x === "" ? null : String(x); };
 const first = (...values) => values.find(v => scalar(v) != null && String(v).trim() !== "");
 const posGroup = p => {
-  const p0 = String(first(p.positionCode, p.position, p.positionGroup, p.position_name, "")).toUpperCase();
-  if (["G","GOALIE","GOALTENDER"].includes(p0)) return "G";
-  if (["D","DEFENSE","DEFENCEMAN","DEFENSEMAN"].includes(p0)) return "D";
-  if (["F","C","L","R","LW","RW","W","FORWARD","CENTRE","CENTER"].includes(p0)) return "F";
+  const raw = String(first(p.positionCode, p.position, p.positionGroup, p.position_name, "")).toUpperCase();
+  const parts = raw.split(/[\\/,]/).map(x => x.trim()).filter(Boolean);
+  if (parts.some(x => ["G","GOALIE","GOALTENDER"].includes(x))) return "G";
+  if (parts.some(x => ["D","DEFENSE","DEFENCEMAN","DEFENSEMAN"].includes(x))) return "D";
+  if (parts.some(x => ["F","C","L","R","LW","RW","W","FORWARD","CENTRE","CENTER"].includes(x))) return "F";
   return null;
 };
 const detailedPos = p => {
-  const p0 = String(first(p.positionCode, p.position, p.position_name, "")).toUpperCase();
+  const raw = String(first(p.positionCode, p.position, p.position_name, "")).toUpperCase();
+  const p0 = raw.split(/[\\/,]/).map(x => x.trim()).find(Boolean) || raw;
   return ({ C:"C", L:"L", LW:"L", R:"R", RW:"R", D:"D", G:"G", W:"R" })[p0] || null;
 };
 const nameOf = p => {

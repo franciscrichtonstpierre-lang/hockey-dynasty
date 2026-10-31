@@ -480,7 +480,8 @@ const leagueFromPipeline = value => {
   if(/qmjhl|lhjmq/.test(l))return "QMJHL";
   if(/\bushl\b/.test(l))return "USHL";
   if(/usntdp|national u17/.test(l))return "USNTDP";
-  if(/\bechl\b|bchl|ajhl|nahl|sjhl|mjhl|cchl|ojhl|league1/.test(l))return "OTHER";
+  if(/\bechl\b|east coast hockey league/.test(l))return "ECHL";
+  if(/bchl|ajhl|nahl|sjhl|mjhl|cchl|ojhl|league1/.test(l))return "OTHER";
   if(/\bkhl\b|kontinental hockey league/.test(l))return "KHL";
   if(/\bshl\b|swedish hockey league|svenska hockeyligan/.test(l))return "SHL";
   if(/liiga|finnish liiga/.test(l))return "LIIGA";
@@ -488,7 +489,6 @@ const leagueFromPipeline = value => {
   if(/\bdel\b|deutsche eishockey liga/.test(l))return "DEL";
   if(/\bnl\b|national league switzerland|swiss national league/.test(l))return "NL";
   if(/czech extraliga|\bextraliga\b|tipsport liga/.test(l))return "CZECH";
-  if(/\bechl\b|east coast hockey league/.test(l))return "ECHL";
   if(/mestis|allsvenskan|nationell|europe|sweden|finland|swiss|czech|russia|germany|slovakia|latvia|norway|denmark|france|austria|mhl|vhl|\\bsl\\b/.test(l))return "EUROPE";
   return "OTHER";
 };

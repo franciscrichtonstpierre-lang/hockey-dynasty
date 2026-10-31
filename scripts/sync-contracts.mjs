@@ -15,11 +15,11 @@ const fetchJson = async (name, optional = false) => {
   return res.json();
 };
 const rows = data => Array.isArray(data) ? data : (data.rows || data.data || data.records || []);
-const [contractsRaw, seasonsRaw, clausesRaw, gapsRaw, claimsRaw, timestampRaw] = await Promise.all([
-  fetchJson("contracts"), fetchJson("contract_seasons"), fetchJson("clauses"),
-  fetchJson("gaps"), fetchJson("claims"), fetchJson("timestamp", true)
+const [contractsRaw, seasonsRaw, gapsRaw, claimsRaw, timestampRaw] = await Promise.all([
+  fetchJson("contracts"), fetchJson("contract_seasons"), fetchJson("gaps"),
+  fetchJson("claims"), fetchJson("timestamp", true)
 ]);
-const contracts = rows(contractsRaw), seasons = rows(seasonsRaw), clauses = rows(clausesRaw), gaps = rows(gapsRaw), claims = rows(claimsRaw);
+const contracts = rows(contractsRaw), seasons = rows(seasonsRaw), gaps = rows(gapsRaw), claims = rows(claimsRaw);
 const byKey = new Map();
 for (const row of seasons) {
   if (row.season !== SEASON) continue;
@@ -135,11 +135,10 @@ for (const code of codes) {
         },
         season:season ? {
           season:SEASON, capHitUsd:season.cap_hit_usd??null, aavUsd:season.aav_usd??null,
-          baseSalaryUsd:season.base_salary_usd??null, signingBonusUsd:season.signing_bonus_usd??null,
-          performanceBonusUsd:season.performance_bonus_usd??null, totalSalaryUsd:season.total_salary_usd??null,
-          minorsSalaryUsd:season.minors_salary_usd??null, oneWay:season.one_way??null, clause:season.clause||null
+          baseSalaryUsd:season.base_salary_usd??null, performanceBonusUsd:season.performance_bonus_usd??null,
+          totalSalaryUsd:season.total_salary_usd??null,
+          minorsSalaryUsd:season.minors_salary_usd??null, oneWay:season.one_way??null
         } : null,
-        clauses:playerClauses.map(cl=>({kind:cl.kind||null,seasonFrom:cl.season_from||null,seasonTo:cl.season_to||null,listSize:cl.list_size??null,listType:cl.list_type||null})),
         simulationSalaryUsd:salaryEstimate.usd, simulationSalaryStatus:salaryEstimate.status,
         simulationSalaryMethod:salaryEstimate.method,
         sourceDataset:"ehlersio/nhl-contracts", license:"CC0-1.0"
@@ -163,11 +162,13 @@ const output={
   players,
   dataNotes:[
     "Contract records and seasonal salary values retain the source confidence tier and source claims where available.",
-    "Cap hit, AAV, base salary, signing bonus, performance bonus and total salary remain separate fields.",
+    "Cap hit, AAV, base salary, performance bonus and total salary remain separate fields; signing bonuses and NTC/NMC clauses are intentionally excluded from the game dataset.",
+    "Salary arbitration is not modeled. RFA/UFA status remains available for simplified contract negotiation.",
     "A missing record is marked as a gap; no salary or contract term is invented.",
     "estimatedAavUsd is calculated from reported contract total divided by term and is an estimate only, not a verified 2026-27 salary or cap-hit row.",
     "simulationSalaryUsd is a clearly labelled game fallback: it prefers a verified seasonal cap hit, then contract AAV estimate, then a provisional overall/age model; it never overwrites source fields.",
     "A provisional simulation salary is not evidence that a player has a verified contract or cap hit.",
+    "This game import intentionally omits no-trade clauses, no-movement clauses and signing bonuses; no salary-arbitration process is represented in game rules.",
     "This is a public dataset snapshot, not legal or payroll advice. Verify important clauses and disputed values against official team announcements."
   ]
 };

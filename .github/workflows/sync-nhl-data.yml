@@ -57,6 +57,6 @@ jobs:
           else
             git commit -m "Synchroniser les effectifs LNH, LAH et espoirs"
             git fetch origin main
-            git rebase origin/main
+            git rebase -X theirs origin/main
             git push origin HEAD:main
           fi

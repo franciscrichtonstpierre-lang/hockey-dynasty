@@ -311,7 +311,7 @@ try {
       const hubText=await hubResponse.text();
       let hubJson=null;try{hubJson=JSON.parse(hubText)}catch{}
       const hubKeys=hubJson&&typeof hubJson==="object"?Object.keys(hubJson):[];
-      const interestingHubFields=hubKeys.filter(k=>/pick|draft|right|snapshot|owner|asset/i.test(k)).map(k=>({key:k,value:JSON.stringify(hubJson[k]).slice(0,1200)}));
+      const interestingHubFields=hubKeys.filter(k=>/pick|draft|right|snapshot|owner|asset|puckpedia|footprint|pipeline|team|meta/i.test(k)).map(k=>({key:k,value:JSON.stringify(hubJson[k]).slice(0,2200)}));
       console.log("Team hub JSON diagnostics: "+JSON.stringify({url:hubUrl,status:hubResponse.status,length:hubText.length,keys:hubKeys,interestingHubFields,preview:hubJson?null:hubText.slice(0,150)}));
     }catch(error){console.log("Team hub JSON diagnostics: "+JSON.stringify({url:hubUrl,error:error.message}));}
   }

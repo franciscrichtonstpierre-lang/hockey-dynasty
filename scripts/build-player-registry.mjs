@@ -568,7 +568,24 @@ const manualLeagueCorrections=JSON.parse(await readFile("data/players/manual-lea
 let manualCorrectionsApplied=0,manualCorrectionsMissing=0,manualCorrectionsAmbiguous=0;
 for(const correction of (manualLeagueCorrections.players||[])){
   const names=[correction.name,...(correction.aliases||[])].map(nameKey);
-  const matches=[...records.values()].filter(p=>names.includes(nameKey(p.name)));
+  let matches=[...records.values()].filter(p=>names.includes(nameKey(p.name)));
+  if(matches.length>1&&correction.birthDate){
+    const exactBirth=matches.filter(p=>p.birthDate===correction.birthDate);
+    if(exactBirth.length)matches=exactBirth;
+  }
+  if(matches.length>1&&correction.position){
+    const wantedPosition=posGroup(correction)||String(correction.position).toUpperCase();
+    const exactPosition=matches.filter(p=>p.position===wantedPosition||p.detailedPosition===String(correction.position).toUpperCase());
+    if(exactPosition.length)matches=exactPosition;
+  }
+  if(matches.length>1&&correction.currentTeam){
+    const exactTeam=matches.filter(p=>nameKey(p.currentTeam)===nameKey(correction.currentTeam));
+    if(exactTeam.length)matches=exactTeam;
+  }
+  if(matches.length>1){
+    const unresolved=matches.filter(p=>!p.currentLeague||p.currentLeague==="UNKNOWN");
+    if(unresolved.length)matches=unresolved;
+  }
   if(matches.length!==1){
     if(matches.length===0)manualCorrectionsMissing++;else manualCorrectionsAmbiguous++;
     continue;

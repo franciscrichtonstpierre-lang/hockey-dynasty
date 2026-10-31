@@ -469,7 +469,7 @@ try {
 
 // Enrich current league/team fields from the public Hockey Insights per-club prospect export.
 // Only explicit league labels are used; the club file itself is not treated as proof of NHL rights.
-const leagueFromPipeline = value => {
+function leagueFromPipeline(value) {
   const l=String(value||"").trim().toLowerCase();
   if(!l||/unknown|unassigned|not available|^n\/a$/.test(l))return "UNKNOWN";
   if(/\bnhl\b|national hockey league/.test(l))return "NHL";
@@ -494,7 +494,7 @@ const leagueFromPipeline = value => {
   if(/mestis/.test(l))return "MESTIS";
   if(/nationell|europe|sweden|finland|swiss|czech|russia|germany|slovakia|latvia|norway|denmark|france|austria|\bmhl\b|\bsl\b/.test(l))return "EUROPE";
   return "OTHER";
-};
+}
 let pipelineJsonPagesFetched=0,pipelineJsonRows=0,pipelineJsonEnriched=0,pipelineJsonAdded=0,pipelineJsonAmbiguous=0,pipelineJsonUnknown=0;
 const pipelineJsonResults=await Promise.all(codes.map(async teamCode=>{
   const url=`https://hockeyinsights.ca/data/team-prospects/${teamCode}.json`;

@@ -489,7 +489,10 @@ const leagueFromPipeline = value => {
   if(/\bdel\b|deutsche eishockey liga/.test(l))return "DEL";
   if(/\bnl\b|national league switzerland|swiss national league/.test(l))return "NL";
   if(/czech extraliga|\bextraliga\b|tipsport liga/.test(l))return "CZECH";
-  if(/mestis|allsvenskan|nationell|europe|sweden|finland|swiss|czech|russia|germany|slovakia|latvia|norway|denmark|france|austria|mhl|vhl|\\bsl\\b/.test(l))return "EUROPE";
+  if(/\\bvhl\\b|supreme hockey league/.test(l))return "VHL";
+  if(/allsvenskan/.test(l))return "ALLSVENSKAN";
+  if(/mestis/.test(l))return "MESTIS";
+  if(/nationell|europe|sweden|finland|swiss|czech|russia|germany|slovakia|latvia|norway|denmark|france|austria|\\bmhl\\b|\\bsl\\b/.test(l))return "EUROPE";
   return "OTHER";
 };
 let pipelineJsonPagesFetched=0,pipelineJsonRows=0,pipelineJsonEnriched=0,pipelineJsonAdded=0,pipelineJsonAmbiguous=0,pipelineJsonUnknown=0;

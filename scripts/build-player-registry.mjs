@@ -224,7 +224,7 @@ const output = {
     "NHL roster membership is assigned to the NHL team shown in the official roster snapshot.",
     "AHL affiliation does not establish NHL contract or rights ownership; nhlRightsTeam stays null unless the source explicitly states it.",
     "NHL public prospect lists may be incomplete or empty for some organizations; absence is not proof of missing rights.",
-    "Attributes and overall ratings are imported only when an NHL player ID matches data/ratings.json; they are sample-adjusted estimates, not scouting grades.",
+    "Source ratings are imported only when an NHL player ID matches data/ratings.json; missing ratings receive an explicitly provisional age/position fallback for game usability, not a scouting grade.",
     "Potential, unverified contracts and draft-pick ownership are not fabricated."
   ]
 };

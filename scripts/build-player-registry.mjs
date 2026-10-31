@@ -10,8 +10,9 @@ const ratingMap = ratingData.players || {};
 const ratingSeason = String(ratingData.season || "").replace(/^(\d{4})(\d{4})$/, "$1-$2");
 const records = new Map();
 const now = new Date().toISOString();
-const str = v => v == null || v === "" ? null : String(v);
-const first = (...values) => values.find(v => v != null && String(v).trim() !== "");
+const scalar = v => v == null || ["string","number","boolean"].includes(typeof v) ? v : null;
+const str = v => { const x = scalar(v); return x == null || x === "" ? null : String(x); };
+const first = (...values) => values.find(v => scalar(v) != null && String(v).trim() !== "");
 const posGroup = p => {
   const p0 = String(first(p.positionCode, p.position, p.positionGroup, p.position_name, "")).toUpperCase();
   if (["G","GOALIE","GOALTENDER"].includes(p0)) return "G";

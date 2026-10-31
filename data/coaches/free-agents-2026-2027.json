@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "season": "2026-2027",
+  "checkedAt": "2026-10-30",
+  "description": "Entraîneurs expérimentés sans poste d'entraîneur actif confirmé dans les sources consultées. Pool initial partiel, pas une liste exhaustive de tous les candidats LNH/LAH.",
+  "sourceReferences": [
+    {
+      "name": "Sportsnet — Gerard Gallant quitte Shanghai pour raisons de santé",
+      "url": "https://www.sportsnet.ca/hockey/article/coach-gerard-gallant-leaves-khls-shanghai-dragons-for-health-related-reasons/",
+      "checkedAt": "2026-10-30"
+    },
+    {
+      "name": "The Hockey News — Gerard Gallant intéressé par un retour dans la LNH",
+      "url": "https://thehockeynews.com/news/latest-news/four-nhl-coaches-most-likely-to-be-called-for-job-openings-in-2026-27",
+      "checkedAt": "2026-10-30"
+    },
+    {
+      "name": "NHL.com — Columbus congédie Dean Evason et Steve McCarthy",
+      "url": "https://www.nhl.com/bluejackets/news/blue-jackets-part-ways-with-head-coach-dean-evason-name-rick-bowness-head-coach",
+      "checkedAt": "2026-10-30"
+    }
+  ],
+  "coaches": [
+    {
+      "coachId": "freecoach-gerard-gallant",
+      "fullName": "Gerard Gallant",
+      "team": "",
+      "teamCode": null,
+      "league": "NHL",
+      "role": "head_coach",
+      "status": "available",
+      "formerTeam": "Shanghai Dragons",
+      "offensive": 65,
+      "defensive": 64,
+      "playerDevelopment": 62,
+      "playerManagement": 66,
+      "physicalStyle": 65,
+      "powerPlayImpact": 62,
+      "penaltyKillImpact": 62,
+      "youngPlayerUsage": 63,
+      "experienceYears": 20,
+      "ratingsStatus": "provisional_role_estimate",
+      "source": "https://www.sportsnet.ca/hockey/article/coach-gerard-gallant-leaves-khls-shanghai-dragons-for-health-related-reasons/",
+      "notes": "Disponibilité à confirmer avant signature; cotes de jeu provisoires."
+    },
+    {
+      "coachId": "freecoach-dean-evason",
+      "fullName": "Dean Evason",
+      "team": "",
+      "teamCode": null,
+      "league": "NHL",
+      "role": "head_coach",
+      "status": "available",
+      "formerTeam": "Columbus Blue Jackets",
+      "offensive": 62,
+      "defensive": 63,
+      "playerDevelopment": 64,
+      "playerManagement": 63,
+      "physicalStyle": 64,
+      "powerPlayImpact": 61,
+      "penaltyKillImpact": 62,
+      "youngPlayerUsage": 64,
+      "experienceYears": 8,
+      "ratingsStatus": "provisional_role_estimate",
+      "source": "https://www.nhl.com/bluejackets/news/blue-jackets-part-ways-with-head-coach-dean-evason-name-rick-bowness-head-coach",
+      "notes": "Congédié en janvier 2026; disponibilité à confirmer avant signature."
+    },
+    {
+      "coachId": "freecoach-steve-mccarthy",
+      "fullName": "Steve McCarthy",
+      "team": "",
+      "teamCode": null,
+      "league": "AHL",
+      "role": "assistant_coach",
+      "status": "available",
+      "formerTeam": "Columbus Blue Jackets",
+      "offensive": 55,
+      "defensive": 56,
+      "playerDevelopment": 56,
+      "playerManagement": 55,
+      "physicalStyle": 55,
+      "powerPlayImpact": 55,
+      "penaltyKillImpact": 56,
+      "youngPlayerUsage": 56,
+      "experienceYears": 5,
+      "ratingsStatus": "provisional_role_estimate",
+      "source": "https://www.nhl.com/bluejackets/news/blue-jackets-part-ways-with-head-coach-dean-evason-name-rick-bowness-head-coach",
+      "notes": "Congédié en janvier 2026; ligue cible et disponibilité à confirmer. Cotes provisoires."
+    }
+  ],
+  "notes": [
+    "Les évaluations ne sont pas des notes de dépistage officielles.",
+    "Vérifier l'emploi actuel et les obligations contractuelles avant de finaliser une embauche.",
+    "Marché initial partiel : ne prétend pas couvrir tous les entraîneurs disponibles."
+  ]
+}

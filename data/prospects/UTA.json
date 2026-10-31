@@ -1,13 +1,629 @@
 {
   "teamCode": "UTA",
-  "source": "https://api-web.nhle.com/v1/prospects/UTA",
-  "sourceType": "NHL Web API (endpoint public non officiellement documenté)",
-  "syncedUTC": "2026-10-30T10:20:15.582347+00:00",
-  "count": 0,
-  "prospects": [],
+  "source": "https://hockeyinsights.ca/team-pipeline/utah-mammoth/; https://www.nhl.com/utah/news/utah-mammoth-announce-2026-development-camp-roster-release-6-28-26",
+  "sourceType": "Liste publique secondaire vérifiée manuellement — joueurs identifiés par nom, position, ligue et choix de repêchage lorsque publiés",
+  "syncedUTC": "2026-10-30T20:00:00-04:00",
+  "count": 41,
+  "prospects": [
+    {
+      "firstName": {
+        "default": "Caleb"
+      },
+      "lastName": {
+        "default": "Desnoyers"
+      },
+      "positionCode": "C",
+      "positionGroup": "forwards",
+      "currentLeague": "CHL",
+      "currentTeam": "Moncton",
+      "draftYear": 2025,
+      "draftRound": 1,
+      "draftOverall": 4
+    },
+    {
+      "firstName": {
+        "default": "Tij"
+      },
+      "lastName": {
+        "default": "Iginla"
+      },
+      "positionCode": "C",
+      "positionGroup": "forwards",
+      "currentLeague": "CHL",
+      "currentTeam": "Kelowna",
+      "draftYear": 2024,
+      "draftRound": 1,
+      "draftOverall": 6
+    },
+    {
+      "firstName": {
+        "default": "Dmitriy"
+      },
+      "lastName": {
+        "default": "Simashev"
+      },
+      "positionCode": "D",
+      "positionGroup": "defensemen",
+      "currentLeague": "NHL",
+      "currentTeam": "Utah",
+      "draftYear": 2023,
+      "draftRound": 1,
+      "draftOverall": 6
+    },
+    {
+      "firstName": {
+        "default": "Daniil"
+      },
+      "lastName": {
+        "default": "But"
+      },
+      "positionCode": "L",
+      "positionGroup": "forwards",
+      "currentLeague": "NHL",
+      "currentTeam": "Utah",
+      "draftYear": 2023,
+      "draftRound": 1,
+      "draftOverall": 12
+    },
+    {
+      "firstName": {
+        "default": "Sebastian"
+      },
+      "lastName": {
+        "default": "Cossa"
+      },
+      "positionCode": "G",
+      "positionGroup": "goalies",
+      "currentLeague": "AHL",
+      "currentTeam": "Tucson",
+      "draftYear": 2021,
+      "draftRound": 1,
+      "draftOverall": 15
+    },
+    {
+      "firstName": {
+        "default": "Ethan"
+      },
+      "lastName": {
+        "default": "Belchetz"
+      },
+      "positionCode": "L",
+      "positionGroup": "forwards",
+      "currentLeague": "CHL",
+      "currentTeam": "Windsor",
+      "draftYear": 2026,
+      "draftRound": 1,
+      "draftOverall": 17
+    },
+    {
+      "firstName": {
+        "default": "Maveric"
+      },
+      "lastName": {
+        "default": "Lamoureux"
+      },
+      "positionCode": "D",
+      "positionGroup": "defensemen",
+      "currentLeague": "NHL",
+      "currentTeam": "Utah",
+      "draftYear": 2022,
+      "draftRound": 1,
+      "draftOverall": 29
+    },
+    {
+      "firstName": {
+        "default": "Artem"
+      },
+      "lastName": {
+        "default": "Duda"
+      },
+      "positionCode": "D",
+      "positionGroup": "defensemen",
+      "currentLeague": "AHL",
+      "currentTeam": "Tucson",
+      "draftYear": 2022,
+      "draftRound": 2,
+      "draftOverall": 36
+    },
+    {
+      "firstName": {
+        "default": "Michael"
+      },
+      "lastName": {
+        "default": "Hrabal"
+      },
+      "positionCode": "G",
+      "positionGroup": "goalies",
+      "currentLeague": "NCAA",
+      "currentTeam": "UMass",
+      "draftYear": 2023,
+      "draftRound": 2,
+      "draftOverall": 38
+    },
+    {
+      "firstName": {
+        "default": "Julian"
+      },
+      "lastName": {
+        "default": "Lutz"
+      },
+      "positionCode": "L",
+      "positionGroup": "forwards",
+      "currentLeague": "AHL",
+      "currentTeam": "Tucson",
+      "draftYear": 2022,
+      "draftRound": 2,
+      "draftOverall": 43
+    },
+    {
+      "firstName": {
+        "default": "Ilya"
+      },
+      "lastName": {
+        "default": "Fedotov"
+      },
+      "positionCode": "L",
+      "positionGroup": "forwards",
+      "currentLeague": "EUROPE",
+      "currentTeam": "KHL",
+      "draftYear": 2021,
+      "draftRound": 2,
+      "draftOverall": 43
+    },
+    {
+      "firstName": {
+        "default": "Max"
+      },
+      "lastName": {
+        "default": "Psenicka"
+      },
+      "positionCode": "D",
+      "positionGroup": "defensemen",
+      "currentLeague": "CHL",
+      "currentTeam": "WHL",
+      "draftYear": 2025,
+      "draftRound": 2,
+      "draftOverall": 46
+    },
+    {
+      "firstName": {
+        "default": "Will"
+      },
+      "lastName": {
+        "default": "Skahan"
+      },
+      "positionCode": "D",
+      "positionGroup": "defensemen",
+      "currentLeague": "NCAA",
+      "currentTeam": "Boston College",
+      "draftYear": 2024,
+      "draftRound": 2,
+      "draftOverall": 65
+    },
+    {
+      "firstName": {
+        "default": "Miko"
+      },
+      "lastName": {
+        "default": "Matikka"
+      },
+      "positionCode": "R",
+      "positionGroup": "forwards",
+      "currentLeague": "AHL",
+      "currentTeam": "Tucson",
+      "draftYear": 2022,
+      "draftRound": 3,
+      "draftOverall": 67
+    },
+    {
+      "firstName": {
+        "default": "Noel"
+      },
+      "lastName": {
+        "default": "Nordh"
+      },
+      "positionCode": "L",
+      "positionGroup": "forwards",
+      "currentLeague": "AHL",
+      "currentTeam": "Tucson",
+      "draftYear": 2023,
+      "draftRound": 3,
+      "draftOverall": 72
+    },
+    {
+      "firstName": {
+        "default": "Stepan"
+      },
+      "lastName": {
+        "default": "Hoch"
+      },
+      "positionCode": "L",
+      "positionGroup": "forwards",
+      "currentLeague": "EUROPE",
+      "currentTeam": "Czechia",
+      "draftYear": 2025,
+      "draftRound": 3,
+      "draftOverall": 78
+    },
+    {
+      "firstName": {
+        "default": "Tanner"
+      },
+      "lastName": {
+        "default": "Ludtke"
+      },
+      "positionCode": "C",
+      "positionGroup": "forwards",
+      "currentLeague": "NCAA",
+      "currentTeam": "Minnesota",
+      "draftYear": 2023,
+      "draftRound": 3,
+      "draftOverall": 81
+    },
+    {
+      "firstName": {
+        "default": "Vadim"
+      },
+      "lastName": {
+        "default": "Moroz"
+      },
+      "positionCode": "R",
+      "positionGroup": "forwards",
+      "currentLeague": "EUROPE",
+      "currentTeam": "KHL",
+      "draftYear": 2023,
+      "draftRound": 3,
+      "draftOverall": 88
+    },
+    {
+      "firstName": {
+        "default": "Tomas"
+      },
+      "lastName": {
+        "default": "Lavoie"
+      },
+      "positionCode": "D",
+      "positionGroup": "defensemen",
+      "currentLeague": "CHL",
+      "currentTeam": "Cape Breton",
+      "draftYear": 2024,
+      "draftRound": 3,
+      "draftOverall": 89
+    },
+    {
+      "firstName": {
+        "default": "Adam"
+      },
+      "lastName": {
+        "default": "Valentini"
+      },
+      "positionCode": "C",
+      "positionGroup": "forwards",
+      "currentLeague": "NCAA",
+      "currentTeam": "NCAA",
+      "draftYear": 2026,
+      "draftRound": 3,
+      "draftOverall": 96
+    },
+    {
+      "firstName": {
+        "default": "Veeti"
+      },
+      "lastName": {
+        "default": "Väisänen"
+      },
+      "positionCode": "D",
+      "positionGroup": "defensemen",
+      "currentLeague": "CHL",
+      "currentTeam": "WHL",
+      "draftYear": 2024,
+      "draftRound": 3,
+      "draftOverall": 96
+    },
+    {
+      "firstName": {
+        "default": "Gregor"
+      },
+      "lastName": {
+        "default": "Biber"
+      },
+      "positionCode": "D",
+      "positionGroup": "defensemen",
+      "currentLeague": "EUROPE",
+      "currentTeam": "SHL",
+      "draftYear": 2024,
+      "draftRound": 4,
+      "draftOverall": 98
+    },
+    {
+      "firstName": {
+        "default": "Terrell"
+      },
+      "lastName": {
+        "default": "Goldsmith"
+      },
+      "positionCode": "D",
+      "positionGroup": "defensemen",
+      "currentLeague": "CHL",
+      "currentTeam": "WHL",
+      "draftYear": 2023,
+      "draftRound": 4,
+      "draftOverall": 102
+    },
+    {
+      "firstName": {
+        "default": "Gabe"
+      },
+      "lastName": {
+        "default": "Smith"
+      },
+      "positionCode": "C",
+      "positionGroup": "forwards",
+      "currentLeague": "CHL",
+      "currentTeam": "QMJHL",
+      "draftYear": 2024,
+      "draftRound": 4,
+      "draftOverall": 103
+    },
+    {
+      "firstName": {
+        "default": "Yegor"
+      },
+      "lastName": {
+        "default": "Borikov"
+      },
+      "positionCode": "R",
+      "positionGroup": "forwards",
+      "currentLeague": "EUROPE",
+      "currentTeam": "KHL",
+      "draftYear": 2025,
+      "draftRound": 4,
+      "draftOverall": 110
+    },
+    {
+      "firstName": {
+        "default": "Carl"
+      },
+      "lastName": {
+        "default": "Axelsson"
+      },
+      "positionCode": "G",
+      "positionGroup": "goalies",
+      "currentLeague": "NCAA",
+      "currentTeam": "USHL",
+      "draftYear": 2026,
+      "draftRound": 4,
+      "draftOverall": 115
+    },
+    {
+      "firstName": {
+        "default": "Theodor"
+      },
+      "lastName": {
+        "default": "Knights"
+      },
+      "positionCode": "D",
+      "positionGroup": "defensemen",
+      "currentLeague": "EUROPE",
+      "currentTeam": "J20 Nationell",
+      "draftYear": 2026,
+      "draftRound": 5,
+      "draftOverall": 130
+    },
+    {
+      "firstName": {
+        "default": "Matthew"
+      },
+      "lastName": {
+        "default": "Morden"
+      },
+      "positionCode": "D",
+      "positionGroup": "defensemen",
+      "currentLeague": "NCAA",
+      "currentTeam": "NCAA",
+      "draftYear": 2022,
+      "draftRound": 5,
+      "draftOverall": 131
+    },
+    {
+      "firstName": {
+        "default": "Melker"
+      },
+      "lastName": {
+        "default": "Thelin"
+      },
+      "positionCode": "G",
+      "positionGroup": "goalies",
+      "currentLeague": "EUROPE",
+      "currentTeam": "SHL",
+      "draftYear": 2023,
+      "draftRound": 5,
+      "draftOverall": 134
+    },
+    {
+      "firstName": {
+        "default": "Owen"
+      },
+      "lastName": {
+        "default": "Allard"
+      },
+      "positionCode": "C",
+      "positionGroup": "forwards",
+      "currentLeague": "AHL",
+      "currentTeam": "Tucson",
+      "draftYear": 2024,
+      "draftRound": 5,
+      "draftOverall": 135
+    },
+    {
+      "firstName": {
+        "default": "Ivan"
+      },
+      "lastName": {
+        "default": "Tkach-Tkachenko"
+      },
+      "positionCode": "G",
+      "positionGroup": "goalies",
+      "currentLeague": "EUROPE",
+      "currentTeam": "MHL",
+      "draftYear": 2025,
+      "draftRound": 5,
+      "draftOverall": 142
+    },
+    {
+      "firstName": {
+        "default": "Florent"
+      },
+      "lastName": {
+        "default": "Houle"
+      },
+      "positionCode": "R",
+      "positionGroup": "forwards",
+      "currentLeague": "CHL",
+      "currentTeam": "QMJHL",
+      "draftYear": 2026,
+      "draftRound": 5,
+      "draftOverall": 147
+    },
+    {
+      "firstName": {
+        "default": "Joshua"
+      },
+      "lastName": {
+        "default": "Roy"
+      },
+      "positionCode": "R",
+      "positionGroup": "forwards",
+      "currentLeague": "NHL",
+      "currentTeam": "Utah",
+      "draftYear": 2021,
+      "draftRound": 5,
+      "draftOverall": 150
+    },
+    {
+      "firstName": {
+        "default": "Samu"
+      },
+      "lastName": {
+        "default": "Bau"
+      },
+      "positionCode": "C",
+      "positionGroup": "forwards",
+      "currentLeague": "EUROPE",
+      "currentTeam": "Liiga",
+      "draftYear": 2023,
+      "draftRound": 6,
+      "draftOverall": 162
+    },
+    {
+      "firstName": {
+        "default": "Carsen"
+      },
+      "lastName": {
+        "default": "Musser"
+      },
+      "positionCode": "G",
+      "positionGroup": "goalies",
+      "currentLeague": "NCAA",
+      "currentTeam": "NCAA",
+      "draftYear": 2023,
+      "draftRound": 6,
+      "draftOverall": 166
+    },
+    {
+      "firstName": {
+        "default": "Vojtech"
+      },
+      "lastName": {
+        "default": "Hradec"
+      },
+      "positionCode": "C",
+      "positionGroup": "forwards",
+      "currentLeague": "EUROPE",
+      "currentTeam": "Czechia",
+      "draftYear": 2024,
+      "draftRound": 6,
+      "draftOverall": 167
+    },
+    {
+      "firstName": {
+        "default": "Ludvig"
+      },
+      "lastName": {
+        "default": "Johnson"
+      },
+      "positionCode": "D",
+      "positionGroup": "defensemen",
+      "currentLeague": "EUROPE",
+      "currentTeam": "NL",
+      "draftYear": 2025,
+      "draftRound": 6,
+      "draftOverall": 174
+    },
+    {
+      "firstName": {
+        "default": "Reko"
+      },
+      "lastName": {
+        "default": "Alanko"
+      },
+      "positionCode": "D",
+      "positionGroup": "defensemen",
+      "currentLeague": "EUROPE",
+      "currentTeam": "Mestis",
+      "draftYear": 2025,
+      "draftRound": 6,
+      "draftOverall": 182
+    },
+    {
+      "firstName": {
+        "default": "Ludvig"
+      },
+      "lastName": {
+        "default": "Lafton"
+      },
+      "positionCode": "D",
+      "positionGroup": "defensemen",
+      "currentLeague": "NCAA",
+      "currentTeam": "USHL",
+      "draftYear": 2024,
+      "draftRound": 6,
+      "draftOverall": 190
+    },
+    {
+      "firstName": {
+        "default": "Artem"
+      },
+      "lastName": {
+        "default": "Prima"
+      },
+      "positionCode": "L",
+      "positionGroup": "forwards",
+      "currentLeague": "CHL",
+      "currentTeam": "NAHL",
+      "draftYear": 2026,
+      "draftRound": 7,
+      "draftOverall": 211
+    },
+    {
+      "firstName": {
+        "default": "Sam"
+      },
+      "lastName": {
+        "default": "Lipkin"
+      },
+      "positionCode": "L",
+      "positionGroup": "forwards",
+      "currentLeague": "AHL",
+      "currentTeam": "Tucson",
+      "draftYear": 2021,
+      "draftRound": 7,
+      "draftOverall": 223
+    }
+  ],
   "dataNotes": [
-    "La liste API des espoirs ne garantit pas tous les joueurs dont l'organisation détient les droits.",
-    "Les notes et potentiels de jeu ne sont pas fournis par cette source.",
-    "Ne pas interpréter l'absence d'un joueur comme une preuve que ses droits ne sont pas détenus."
+    "Remplacement du résultat vide de l'API NHL par la liste publique Hockey Insights des 41 espoirs de l'organisation de moins de 25 ans.",
+    "Les ligues et choix de repêchage sont repris de la source publique; l'affectation courante peut évoluer et doit être rafraîchie avec les effectifs officiels.",
+    "Aucun identifiant NHL, date de naissance, attribut ou potentiel n'est inventé. Les joueurs NHL déjà dans l'effectif peuvent aussi apparaître dans la liste d'espoirs de la source."
   ]
 }

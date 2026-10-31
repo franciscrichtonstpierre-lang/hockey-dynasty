@@ -1,0 +1,686 @@
+{
+  "teamId": "66",
+  "teamName": "Allen Americans",
+  "season": "2026-2027",
+  "seasonId": "78",
+  "source": "ECHL HockeyTech / LeagueStat public feed",
+  "sourceUrl": "https://lscluster.hockeytech.com/feed/index.php?feed=statviewfeed&key=2c2b89ea7345cae8&client_code=echl&league_id=1&site_id=0&lang=en&view=roster&team_id=66&season_id=78",
+  "syncedAt": "2026-10-31T19:42:29.860Z",
+  "count": 29,
+  "players": [
+    {
+      "tp_jersey_number": {
+        "properties": {
+          "key": "tp_jersey_number",
+          "hidden": false,
+          "class": "",
+          "label": "#",
+          "title": "Jersey Number",
+          "sortable": true,
+          "align": "right",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "name": {
+        "properties": {
+          "key": "name",
+          "hidden": false,
+          "class": "",
+          "label": "Name",
+          "title": "Name",
+          "sortable": true,
+          "align": "left",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "position": {
+        "properties": {
+          "key": "position",
+          "hidden": false,
+          "class": "",
+          "label": "Pos",
+          "title": "Position",
+          "sortable": true,
+          "align": "center",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "h": {
+        "properties": {
+          "key": "h",
+          "hidden": false,
+          "class": "",
+          "label": "Height",
+          "title": "Height",
+          "sortable": true,
+          "align": "center",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "w": {
+        "properties": {
+          "key": "w",
+          "hidden": false,
+          "class": "",
+          "label": "Weight",
+          "title": "Weight",
+          "sortable": true,
+          "align": "center",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "shoots": {
+        "properties": {
+          "key": "shoots",
+          "hidden": false,
+          "class": "",
+          "label": "Shoots",
+          "title": "Shoots",
+          "sortable": true,
+          "align": "center",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "birthplace": {
+        "properties": {
+          "key": "birthplace",
+          "hidden": false,
+          "class": "",
+          "label": "Birth place",
+          "title": "Birth place",
+          "sortable": true,
+          "align": "left",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "player_id": {
+        "properties": {
+          "key": "player_id",
+          "hidden": true,
+          "class": "",
+          "label": "",
+          "title": "",
+          "sortable": true,
+          "align": "center",
+          "highlight": false,
+          "sortKey": ""
+        }
+      }
+    },
+    {
+      "shoots": "L",
+      "birthplace": "Seat Pleasant, MD",
+      "player_id": "11336",
+      "tp_jersey_number": "4",
+      "position": "LW",
+      "h": "6-4",
+      "w": "255",
+      "name": "Divyne Apollon"
+    },
+    {
+      "shoots": "R",
+      "birthplace": "",
+      "player_id": "11541",
+      "tp_jersey_number": "9",
+      "position": "RW",
+      "h": "6-0",
+      "w": "205",
+      "name": "Chase Coughlin"
+    },
+    {
+      "shoots": "R",
+      "birthplace": "Lake Forest, IL",
+      "player_id": "10436",
+      "tp_jersey_number": "14",
+      "position": "RW",
+      "h": "5-10",
+      "w": "175",
+      "name": "Mathieu De St. Phalle"
+    },
+    {
+      "shoots": "R",
+      "birthplace": "Pierrefond, QC, Canada",
+      "player_id": "8496",
+      "tp_jersey_number": "17",
+      "position": "RW",
+      "h": "6-0",
+      "w": "185",
+      "name": "Anthony Rinaldi"
+    },
+    {
+      "shoots": "L",
+      "birthplace": "Halifax, NS",
+      "player_id": "11071",
+      "tp_jersey_number": "21",
+      "position": "C",
+      "h": "6-0",
+      "w": "190",
+      "name": "Riley Kidney"
+    },
+    {
+      "shoots": "L",
+      "birthplace": "Steinbach, MAN",
+      "player_id": "11611",
+      "tp_jersey_number": "22",
+      "position": "LW",
+      "h": "6-1",
+      "w": "200",
+      "name": "Luke Mistelbacher"
+    },
+    {
+      "shoots": "L",
+      "birthplace": "Kamloops, BC",
+      "player_id": "4143",
+      "tp_jersey_number": "26",
+      "position": "LW",
+      "h": "6-6",
+      "w": "230",
+      "name": "Spencer Asuchak"
+    },
+    {
+      "shoots": "L",
+      "birthplace": "Philadelphia, PA",
+      "player_id": "11583",
+      "tp_jersey_number": "28",
+      "position": "LW",
+      "h": "6-3",
+      "w": "204",
+      "name": "Sam Lipkin"
+    },
+    {
+      "shoots": "L",
+      "birthplace": "Bakersfield, CA, United States",
+      "player_id": "8586",
+      "tp_jersey_number": "29",
+      "position": "RW",
+      "h": "6-0",
+      "w": "182",
+      "name": "Brayden Watts"
+    },
+    {
+      "shoots": "R",
+      "birthplace": "Sucker Creek, ALTA",
+      "player_id": "11542",
+      "tp_jersey_number": "42",
+      "position": "C",
+      "h": "5-11",
+      "w": "175",
+      "name": "Zackary Shantz"
+    },
+    {
+      "shoots": "L",
+      "birthplace": "Soderhamn, Sweden",
+      "player_id": "11577",
+      "tp_jersey_number": "43",
+      "position": "LW",
+      "h": "6'2\"",
+      "w": "202",
+      "name": "Noel Nordh"
+    },
+    {
+      "shoots": "L",
+      "birthplace": "Regina, SK",
+      "player_id": "11197",
+      "tp_jersey_number": "61",
+      "position": "LW",
+      "h": "5-11",
+      "w": "170",
+      "name": "Lukas Sillinger"
+    },
+    {
+      "shoots": "L",
+      "birthplace": "Dallas, TX, United States",
+      "player_id": "9463",
+      "tp_jersey_number": "67",
+      "position": "LW",
+      "h": "5-9",
+      "w": "170",
+      "name": "Hank Crone"
+    },
+    {
+      "shoots": "L",
+      "birthplace": "Plano, TX, United States",
+      "player_id": "10273",
+      "tp_jersey_number": "91",
+      "position": "C",
+      "h": "6-2",
+      "w": "196",
+      "name": "Michael Gildon"
+    },
+    {
+      "shoots": "R",
+      "birthplace": "Helsinki, Finland",
+      "player_id": "10673",
+      "tp_jersey_number": "94",
+      "position": "RW",
+      "h": "6-3",
+      "w": "188",
+      "name": "Miko Matikka"
+    },
+    {
+      "tp_jersey_number": {
+        "properties": {
+          "key": "tp_jersey_number",
+          "hidden": false,
+          "class": "",
+          "label": "#",
+          "title": "Jersey Number",
+          "sortable": true,
+          "align": "right",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "name": {
+        "properties": {
+          "key": "name",
+          "hidden": false,
+          "class": "",
+          "label": "Name",
+          "title": "Name",
+          "sortable": true,
+          "align": "left",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "position": {
+        "properties": {
+          "key": "position",
+          "hidden": false,
+          "class": "",
+          "label": "Pos",
+          "title": "Position",
+          "sortable": true,
+          "align": "center",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "h": {
+        "properties": {
+          "key": "h",
+          "hidden": false,
+          "class": "",
+          "label": "Height",
+          "title": "Height",
+          "sortable": true,
+          "align": "center",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "w": {
+        "properties": {
+          "key": "w",
+          "hidden": false,
+          "class": "",
+          "label": "Weight",
+          "title": "Weight",
+          "sortable": true,
+          "align": "center",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "shoots": {
+        "properties": {
+          "key": "shoots",
+          "hidden": false,
+          "class": "",
+          "label": "Shoots",
+          "title": "Shoots",
+          "sortable": true,
+          "align": "center",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "birthplace": {
+        "properties": {
+          "key": "birthplace",
+          "hidden": false,
+          "class": "",
+          "label": "Birth place",
+          "title": "Birth place",
+          "sortable": true,
+          "align": "left",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "player_id": {
+        "properties": {
+          "key": "player_id",
+          "hidden": true,
+          "class": "",
+          "label": "",
+          "title": "",
+          "sortable": true,
+          "align": "center",
+          "highlight": false,
+          "sortKey": ""
+        }
+      }
+    },
+    {
+      "shoots": "R",
+      "birthplace": "Stratford, ON",
+      "player_id": "10480",
+      "tp_jersey_number": "2",
+      "position": "D",
+      "h": "6-0",
+      "w": "185",
+      "name": "Sam Sedley"
+    },
+    {
+      "shoots": "R",
+      "birthplace": "Olmsted Twp., OH",
+      "player_id": "10543",
+      "tp_jersey_number": "2",
+      "position": "D",
+      "h": "6-4",
+      "w": "219",
+      "name": "Quinn Warmuth"
+    },
+    {
+      "shoots": "R",
+      "birthplace": "Napanee, ONT",
+      "player_id": "11540",
+      "tp_jersey_number": "8",
+      "position": "D",
+      "h": "5-11",
+      "w": "170",
+      "name": "Cal Uens"
+    },
+    {
+      "shoots": "R",
+      "birthplace": "Fort St. James, BC",
+      "player_id": "11579",
+      "tp_jersey_number": "10",
+      "position": "D",
+      "h": "6-4",
+      "w": "225",
+      "name": "Terrell Goldsmith"
+    },
+    {
+      "shoots": "R",
+      "birthplace": "Orillia, ON, Canada",
+      "player_id": "9970",
+      "tp_jersey_number": "19",
+      "position": "D",
+      "h": "6-2",
+      "w": "220",
+      "name": "Michael Greco"
+    },
+    {
+      "shoots": "L",
+      "birthplace": "Algonquin, IL",
+      "player_id": "11013",
+      "tp_jersey_number": "24",
+      "position": "D",
+      "h": "5-11",
+      "w": "185",
+      "name": "Jackson Decker"
+    },
+    {
+      "shoots": "R",
+      "birthplace": "Kelowna, BC",
+      "player_id": "8592",
+      "tp_jersey_number": "27",
+      "position": "D",
+      "h": "6-0",
+      "w": "185",
+      "name": "Nolan Kneen"
+    },
+    {
+      "shoots": "R",
+      "birthplace": "Richmond Hill, ON",
+      "player_id": "10460",
+      "tp_jersey_number": "86",
+      "position": "D",
+      "h": "6'1",
+      "w": "190",
+      "name": "Andre Anania"
+    },
+    {
+      "tp_jersey_number": {
+        "properties": {
+          "key": "tp_jersey_number",
+          "hidden": false,
+          "class": "",
+          "label": "#",
+          "title": "Jersey Number",
+          "sortable": true,
+          "align": "right",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "name": {
+        "properties": {
+          "key": "name",
+          "hidden": false,
+          "class": "",
+          "label": "Name",
+          "title": "Name",
+          "sortable": true,
+          "align": "left",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "position": {
+        "properties": {
+          "key": "position",
+          "hidden": false,
+          "class": "",
+          "label": "Pos",
+          "title": "Position",
+          "sortable": true,
+          "align": "center",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "h": {
+        "properties": {
+          "key": "h",
+          "hidden": false,
+          "class": "",
+          "label": "Height",
+          "title": "Height",
+          "sortable": true,
+          "align": "center",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "w": {
+        "properties": {
+          "key": "w",
+          "hidden": false,
+          "class": "",
+          "label": "Weight",
+          "title": "Weight",
+          "sortable": true,
+          "align": "center",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "catches": {
+        "properties": {
+          "key": "catches",
+          "hidden": false,
+          "class": "",
+          "label": "Catches",
+          "title": "Catches",
+          "sortable": true,
+          "align": "center",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "birthplace": {
+        "properties": {
+          "key": "birthplace",
+          "hidden": false,
+          "class": "",
+          "label": "Birth place",
+          "title": "Birth place",
+          "sortable": true,
+          "align": "left",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "player_id": {
+        "properties": {
+          "key": "player_id",
+          "hidden": true,
+          "class": "",
+          "label": "",
+          "title": "",
+          "sortable": true,
+          "align": "center",
+          "highlight": false,
+          "sortKey": ""
+        }
+      }
+    },
+    {
+      "catches": "L",
+      "birthplace": "Stockholm, SWE, Sweden",
+      "player_id": "10155",
+      "tp_jersey_number": "32",
+      "position": "G",
+      "h": "6'4",
+      "w": "205",
+      "name": "Jesper Vikman"
+    },
+    {
+      "catches": "L",
+      "birthplace": " Lafayette, CO",
+      "player_id": "11613",
+      "tp_jersey_number": "33",
+      "position": "G",
+      "h": "6-4",
+      "w": "210",
+      "name": "Sammy Bernard"
+    },
+    {
+      "tp_jersey_number": {
+        "properties": {
+          "key": "tp_jersey_number",
+          "hidden": false,
+          "class": "",
+          "label": "",
+          "title": "Jersey Number",
+          "sortable": true,
+          "align": "right",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "name": {
+        "properties": {
+          "key": "name",
+          "hidden": false,
+          "class": "",
+          "label": "Name",
+          "title": "Name",
+          "sortable": true,
+          "align": "left",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "role": {
+        "properties": {
+          "key": "role",
+          "hidden": false,
+          "class": "",
+          "label": "Role",
+          "title": "Role",
+          "sortable": true,
+          "align": "left",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "h": {
+        "properties": {
+          "key": "h",
+          "hidden": false,
+          "class": "",
+          "label": "",
+          "title": "Height",
+          "sortable": true,
+          "align": "center",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "w": {
+        "properties": {
+          "key": "w",
+          "hidden": false,
+          "class": "",
+          "label": "",
+          "title": "Weight",
+          "sortable": true,
+          "align": "center",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "shoots": {
+        "properties": {
+          "key": "shoots",
+          "hidden": false,
+          "class": "",
+          "label": "",
+          "title": "Shoots",
+          "sortable": true,
+          "align": "center",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "hometown": {
+        "properties": {
+          "key": "hometown",
+          "hidden": false,
+          "class": "",
+          "label": "",
+          "title": "Home town",
+          "sortable": true,
+          "align": "left",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "player_id": {
+        "properties": {
+          "key": "player_id",
+          "hidden": true,
+          "class": "",
+          "label": "",
+          "title": "",
+          "sortable": true,
+          "align": "center",
+          "highlight": false,
+          "sortKey": ""
+        }
+      }
+    }
+  ]
+}

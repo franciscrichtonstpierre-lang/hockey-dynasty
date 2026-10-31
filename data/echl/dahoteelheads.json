@@ -1,0 +1,706 @@
+{
+  "teamId": "11",
+  "teamName": "Idaho Steelheads",
+  "season": "2026-2027",
+  "seasonId": "78",
+  "source": "ECHL HockeyTech / LeagueStat public feed",
+  "sourceUrl": "https://lscluster.hockeytech.com/feed/index.php?feed=statviewfeed&key=2c2b89ea7345cae8&client_code=echl&league_id=1&site_id=0&lang=en&view=roster&team_id=11&season_id=78",
+  "syncedAt": "2026-10-31T19:42:31.027Z",
+  "count": 31,
+  "players": [
+    {
+      "tp_jersey_number": {
+        "properties": {
+          "key": "tp_jersey_number",
+          "hidden": false,
+          "class": "",
+          "label": "#",
+          "title": "Jersey Number",
+          "sortable": true,
+          "align": "right",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "name": {
+        "properties": {
+          "key": "name",
+          "hidden": false,
+          "class": "",
+          "label": "Name",
+          "title": "Name",
+          "sortable": true,
+          "align": "left",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "position": {
+        "properties": {
+          "key": "position",
+          "hidden": false,
+          "class": "",
+          "label": "Pos",
+          "title": "Position",
+          "sortable": true,
+          "align": "center",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "h": {
+        "properties": {
+          "key": "h",
+          "hidden": false,
+          "class": "",
+          "label": "Height",
+          "title": "Height",
+          "sortable": true,
+          "align": "center",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "w": {
+        "properties": {
+          "key": "w",
+          "hidden": false,
+          "class": "",
+          "label": "Weight",
+          "title": "Weight",
+          "sortable": true,
+          "align": "center",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "shoots": {
+        "properties": {
+          "key": "shoots",
+          "hidden": false,
+          "class": "",
+          "label": "Shoots",
+          "title": "Shoots",
+          "sortable": true,
+          "align": "center",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "birthplace": {
+        "properties": {
+          "key": "birthplace",
+          "hidden": false,
+          "class": "",
+          "label": "Birth place",
+          "title": "Birth place",
+          "sortable": true,
+          "align": "left",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "player_id": {
+        "properties": {
+          "key": "player_id",
+          "hidden": true,
+          "class": "",
+          "label": "",
+          "title": "",
+          "sortable": true,
+          "align": "center",
+          "highlight": false,
+          "sortKey": ""
+        }
+      }
+    },
+    {
+      "shoots": "L",
+      "birthplace": "Edina, MN",
+      "player_id": "10875",
+      "tp_jersey_number": "9",
+      "position": "F",
+      "h": "5-11",
+      "w": "180",
+      "name": "Grant Silianoff"
+    },
+    {
+      "shoots": "L",
+      "birthplace": "Toronto, ON",
+      "player_id": "11116",
+      "tp_jersey_number": "11",
+      "position": "F",
+      "h": "5-10",
+      "w": "185",
+      "name": "Angus MacDonell"
+    },
+    {
+      "shoots": "L",
+      "birthplace": "Edmonton, AB",
+      "player_id": "11413",
+      "tp_jersey_number": "15",
+      "position": "F",
+      "h": "6-2",
+      "w": "209",
+      "name": "Adam Hall"
+    },
+    {
+      "shoots": "L",
+      "birthplace": "Madison, WI",
+      "player_id": "8879",
+      "tp_jersey_number": "17",
+      "position": "F",
+      "h": "6-2",
+      "w": "195",
+      "name": "Ty Pelton-Byce"
+    },
+    {
+      "shoots": "R",
+      "birthplace": "Thornhill, ON, Canada",
+      "player_id": "9362",
+      "tp_jersey_number": "18",
+      "position": "F",
+      "h": "6-1",
+      "w": "200",
+      "name": "Lee Lapid"
+    },
+    {
+      "shoots": "R",
+      "birthplace": "St. Cloud, MN",
+      "player_id": "10891",
+      "tp_jersey_number": "20",
+      "position": "F",
+      "h": "5-11",
+      "w": "180",
+      "name": "Nick Portz"
+    },
+    {
+      "shoots": "R",
+      "birthplace": "Edina, MN",
+      "player_id": "10830",
+      "tp_jersey_number": "21",
+      "position": "F",
+      "h": "5-11",
+      "w": "180",
+      "name": "Mason Nevers"
+    },
+    {
+      "shoots": "L",
+      "birthplace": "Edina, MN",
+      "player_id": "10888",
+      "tp_jersey_number": "25",
+      "position": "F",
+      "h": "5-10",
+      "w": "170",
+      "name": "Liam Malmquist"
+    },
+    {
+      "shoots": "L",
+      "birthplace": "Minto, ND",
+      "player_id": "8464",
+      "tp_jersey_number": "26",
+      "position": "F",
+      "h": "5-10",
+      "w": "190",
+      "name": "Jade Miller"
+    },
+    {
+      "shoots": "R",
+      "birthplace": "Osprey, FL",
+      "player_id": "11329",
+      "tp_jersey_number": "27",
+      "position": "F",
+      "h": "5-11",
+      "w": "165",
+      "name": "Morgan Winters"
+    },
+    {
+      "shoots": "L",
+      "birthplace": "Cold Lake, AB",
+      "player_id": "11605",
+      "tp_jersey_number": "28",
+      "position": "F",
+      "h": "6-1",
+      "w": "176",
+      "name": "Jaxon Fuder"
+    },
+    {
+      "shoots": "L",
+      "birthplace": "Chippewa Falls, WI",
+      "player_id": "10884",
+      "tp_jersey_number": "29",
+      "position": "F",
+      "h": "5-8",
+      "w": "173",
+      "name": "Jordan Steinmetz"
+    },
+    {
+      "shoots": "L",
+      "birthplace": "Sarepta, AB, Canada",
+      "player_id": "8469",
+      "tp_jersey_number": "32",
+      "position": "F",
+      "h": "6-2",
+      "w": "202",
+      "name": "Robbie Holmes"
+    },
+    {
+      "shoots": "L",
+      "birthplace": "Wilcox, SK",
+      "player_id": "10623",
+      "tp_jersey_number": "45",
+      "position": "F",
+      "h": "5-10",
+      "w": "185",
+      "name": "Luke Mylymok"
+    },
+    {
+      "shoots": "L",
+      "birthplace": "Detroit Lakes, MN, United States",
+      "player_id": "11318",
+      "tp_jersey_number": "73",
+      "position": "F",
+      "h": "6-2",
+      "w": "194",
+      "name": "Jens Richards"
+    },
+    {
+      "shoots": "L",
+      "birthplace": "Red Deer, AB, Canada",
+      "player_id": "9019",
+      "tp_jersey_number": "77",
+      "position": "F",
+      "h": "6-5",
+      "w": "201",
+      "name": "Kale Howarth"
+    },
+    {
+      "shoots": "R",
+      "birthplace": "Zlin, Czechia",
+      "player_id": "11482",
+      "tp_jersey_number": "90",
+      "position": "F",
+      "h": "6-3",
+      "w": "209",
+      "name": "Zdenek Sedlak"
+    },
+    {
+      "tp_jersey_number": {
+        "properties": {
+          "key": "tp_jersey_number",
+          "hidden": false,
+          "class": "",
+          "label": "#",
+          "title": "Jersey Number",
+          "sortable": true,
+          "align": "right",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "name": {
+        "properties": {
+          "key": "name",
+          "hidden": false,
+          "class": "",
+          "label": "Name",
+          "title": "Name",
+          "sortable": true,
+          "align": "left",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "position": {
+        "properties": {
+          "key": "position",
+          "hidden": false,
+          "class": "",
+          "label": "Pos",
+          "title": "Position",
+          "sortable": true,
+          "align": "center",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "h": {
+        "properties": {
+          "key": "h",
+          "hidden": false,
+          "class": "",
+          "label": "Height",
+          "title": "Height",
+          "sortable": true,
+          "align": "center",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "w": {
+        "properties": {
+          "key": "w",
+          "hidden": false,
+          "class": "",
+          "label": "Weight",
+          "title": "Weight",
+          "sortable": true,
+          "align": "center",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "shoots": {
+        "properties": {
+          "key": "shoots",
+          "hidden": false,
+          "class": "",
+          "label": "Shoots",
+          "title": "Shoots",
+          "sortable": true,
+          "align": "center",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "birthplace": {
+        "properties": {
+          "key": "birthplace",
+          "hidden": false,
+          "class": "",
+          "label": "Birth place",
+          "title": "Birth place",
+          "sortable": true,
+          "align": "left",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "player_id": {
+        "properties": {
+          "key": "player_id",
+          "hidden": true,
+          "class": "",
+          "label": "",
+          "title": "",
+          "sortable": true,
+          "align": "center",
+          "highlight": false,
+          "sortKey": ""
+        }
+      }
+    },
+    {
+      "shoots": "L",
+      "birthplace": "Colleyville, TX",
+      "player_id": "10873",
+      "tp_jersey_number": "6",
+      "position": "D",
+      "h": "5-11",
+      "w": "185",
+      "name": "Jeff Baum"
+    },
+    {
+      "shoots": "R",
+      "birthplace": "Raleigh, NC",
+      "player_id": "11330",
+      "tp_jersey_number": "7",
+      "position": "D",
+      "h": "6-3",
+      "w": "215",
+      "name": "Nick Young"
+    },
+    {
+      "shoots": "L",
+      "birthplace": "Eagle, Idaho",
+      "player_id": "11478",
+      "tp_jersey_number": "8",
+      "position": "D",
+      "h": "6-4",
+      "w": "218",
+      "name": "John Driscoll"
+    },
+    {
+      "shoots": "L",
+      "birthplace": "Lacombe, AB, Canada",
+      "player_id": "6026",
+      "tp_jersey_number": "10",
+      "position": "D",
+      "h": "6-1",
+      "w": "205",
+      "name": "Samuel Jardine"
+    },
+    {
+      "shoots": "L",
+      "birthplace": "Kuopio, Finland",
+      "player_id": "11481",
+      "tp_jersey_number": "43",
+      "position": "D",
+      "h": "6-5",
+      "w": "214",
+      "name": "Niilopekka Muhonen"
+    },
+    {
+      "shoots": "L",
+      "birthplace": "Pottstown, PA",
+      "player_id": "11237",
+      "tp_jersey_number": "46",
+      "position": "D",
+      "h": "6-0",
+      "w": "180",
+      "name": "Dylan Gratton"
+    },
+    {
+      "shoots": "R",
+      "birthplace": "Bloomingdale, IL, United States",
+      "player_id": "4994",
+      "tp_jersey_number": "81",
+      "position": "D",
+      "h": "6-2",
+      "w": "209",
+      "name": "Charlie Dodero"
+    },
+    {
+      "tp_jersey_number": {
+        "properties": {
+          "key": "tp_jersey_number",
+          "hidden": false,
+          "class": "",
+          "label": "#",
+          "title": "Jersey Number",
+          "sortable": true,
+          "align": "right",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "name": {
+        "properties": {
+          "key": "name",
+          "hidden": false,
+          "class": "",
+          "label": "Name",
+          "title": "Name",
+          "sortable": true,
+          "align": "left",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "position": {
+        "properties": {
+          "key": "position",
+          "hidden": false,
+          "class": "",
+          "label": "Pos",
+          "title": "Position",
+          "sortable": true,
+          "align": "center",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "h": {
+        "properties": {
+          "key": "h",
+          "hidden": false,
+          "class": "",
+          "label": "Height",
+          "title": "Height",
+          "sortable": true,
+          "align": "center",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "w": {
+        "properties": {
+          "key": "w",
+          "hidden": false,
+          "class": "",
+          "label": "Weight",
+          "title": "Weight",
+          "sortable": true,
+          "align": "center",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "catches": {
+        "properties": {
+          "key": "catches",
+          "hidden": false,
+          "class": "",
+          "label": "Catches",
+          "title": "Catches",
+          "sortable": true,
+          "align": "center",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "birthplace": {
+        "properties": {
+          "key": "birthplace",
+          "hidden": false,
+          "class": "",
+          "label": "Birth place",
+          "title": "Birth place",
+          "sortable": true,
+          "align": "left",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "player_id": {
+        "properties": {
+          "key": "player_id",
+          "hidden": true,
+          "class": "",
+          "label": "",
+          "title": "",
+          "sortable": true,
+          "align": "center",
+          "highlight": false,
+          "sortKey": ""
+        }
+      }
+    },
+    {
+      "catches": "L",
+      "birthplace": "Jyvaskyla, Finland",
+      "player_id": "11217",
+      "tp_jersey_number": "30",
+      "position": "G",
+      "h": "6-5",
+      "w": "234",
+      "name": "Topias Leinonen"
+    },
+    {
+      "catches": "L",
+      "birthplace": "O'Fallon, MO",
+      "player_id": "10515",
+      "tp_jersey_number": "33",
+      "position": "G",
+      "h": "6-1",
+      "w": "180",
+      "name": "Jake Barczewski"
+    },
+    {
+      "catches": "R",
+      "birthplace": "Oshawa, ON",
+      "player_id": "10178",
+      "tp_jersey_number": "35",
+      "position": "G",
+      "h": "6-3",
+      "w": "185",
+      "name": "Anson Thornton"
+    },
+    {
+      "tp_jersey_number": {
+        "properties": {
+          "key": "tp_jersey_number",
+          "hidden": false,
+          "class": "",
+          "label": "",
+          "title": "Jersey Number",
+          "sortable": true,
+          "align": "right",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "name": {
+        "properties": {
+          "key": "name",
+          "hidden": false,
+          "class": "",
+          "label": "Name",
+          "title": "Name",
+          "sortable": true,
+          "align": "left",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "role": {
+        "properties": {
+          "key": "role",
+          "hidden": false,
+          "class": "",
+          "label": "Role",
+          "title": "Role",
+          "sortable": true,
+          "align": "left",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "h": {
+        "properties": {
+          "key": "h",
+          "hidden": false,
+          "class": "",
+          "label": "",
+          "title": "Height",
+          "sortable": true,
+          "align": "center",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "w": {
+        "properties": {
+          "key": "w",
+          "hidden": false,
+          "class": "",
+          "label": "",
+          "title": "Weight",
+          "sortable": true,
+          "align": "center",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "shoots": {
+        "properties": {
+          "key": "shoots",
+          "hidden": false,
+          "class": "",
+          "label": "",
+          "title": "Shoots",
+          "sortable": true,
+          "align": "center",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "hometown": {
+        "properties": {
+          "key": "hometown",
+          "hidden": false,
+          "class": "",
+          "label": "",
+          "title": "Home town",
+          "sortable": true,
+          "align": "left",
+          "highlight": false,
+          "sortKey": ""
+        }
+      },
+      "player_id": {
+        "properties": {
+          "key": "player_id",
+          "hidden": true,
+          "class": "",
+          "label": "",
+          "title": "",
+          "sortable": true,
+          "align": "center",
+          "highlight": false,
+          "sortKey": ""
+        }
+      }
+    }
+  ]
+}

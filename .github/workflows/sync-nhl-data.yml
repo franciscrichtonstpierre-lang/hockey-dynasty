@@ -73,7 +73,7 @@ jobs:
         run: |
           git config user.name "uhm-data-bot"
           git config user.email "uhm-data-bot@users.noreply.github.com"
-          git add data/nhl data/prospects data/ahl data/coaches data/players/registry.json data/contracts/2026-2027.json data/draft-picks/2027-2029.json
+          git add data/nhl data/prospects data/prospects-supplemental data/ahl data/coaches data/players/registry.json data/contracts/2026-2027.json data/draft-picks/2027-2029.json
           if git diff --cached --quiet; then
             echo "Aucune modification de données."
           else

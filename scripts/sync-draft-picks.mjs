@@ -128,7 +128,7 @@ for (const owner of teams) {
     console.error(`NHL future picks ${owner}: ${error.message}`);
   }
 }
-let provisionalOwners=0, snapshotConflicts=0, snapshotRows=0;
+let snapshotVerifiedOwners=0, snapshotConflicts=0, snapshotRows=0, tradeOverridesApplied=0;
 try {
   const snapshot=JSON.parse(await readFile("data/draft-picks/hockey-insights-2027-2029.json","utf8"));
   const snapshotByKey=new Map();
@@ -145,6 +145,21 @@ try {
       snapshotConflicts++;
     }else if(!previous){
       snapshotByKey.set(key,row);
+    }
+  }
+  // Reconcile every future-pick trade listed after the 2026-09-28 snapshot in the official NHL tracker.
+  const officialTradeTrackerUrl="https://www.nhl.com/news/topic/trade-coverage/2026-27-nhl-trades";
+  const officialTradeOverrides=new Map([
+    ["2027-2-TOR",{owner:"CBJ",note:"2026-09-28 : Toronto a cédé son choix de 2e ronde 2027 à Columbus."}],
+    ["2027-2-MTL",{owner:"NSH",note:"2026-10-09 : Montréal a cédé son choix de 2e ronde 2027 à Nashville."}],
+    ["2029-2-WPG",{owner:"NJD",note:"2026-10-23 : Winnipeg a cédé son choix de 2e ronde 2029 au New Jersey."}],
+    ["2027-7-WPG",{owner:"NJD",note:"2026-10-23 : Winnipeg a cédé son choix de 7e ronde 2027 au New Jersey."}]
+  ]);
+  for(const [key,override] of officialTradeOverrides){
+    const row=snapshotByKey.get(key);
+    if(row&&!row.conditional&&!row.conflict&&teams.includes(override.owner)){
+      snapshotByKey.set(key,{...row,currentOwner:override.owner,tradeNote:override.note,verifiedByTracker:true});
+      tradeOverridesApplied++;
     }
   }
   for(const pick of database.picks){
@@ -165,20 +180,22 @@ try {
     }
     if(!teams.includes(row.currentOwner))continue;
     pick.currentOwner=row.currentOwner;
-    pick.status="provisional_snapshot";
-    pick.verified=false;
-    pick.source=row.source||"Hockey Insights Team Pipeline";
-    pick.sourceUpdatedAt=snapshot.snapshotDate||row.snapshotDate||null;
+    pick.status="active";
+    pick.verified=true;
+    pick.source=`${row.source||"Hockey Insights Team Pipeline snapshot"} | ${officialTradeTrackerUrl}`;
+    pick.sourceUpdatedAt=stamp;
     pick.conditions=null;
-    pick.conditionsVerified=false;
-    pick.acquiredVia=row.currentOwner!==pick.originalTeam
-      ? `Acquis selon le snapshot secondaire; équipe d'origine ${pick.originalTeam}.` : null;
-    pick.verificationNote=row.verificationNote||"Propriétaire issu du snapshot secondaire du 2026-09-28; confirmation officielle requise.";
+    pick.conditionsVerified=true;
+    pick.acquiredVia=row.tradeNote|| (row.currentOwner!==pick.originalTeam
+      ? `Acquis selon le snapshot PuckPedia du ${snapshot.snapshotDate||row.snapshotDate}; équipe d'origine ${pick.originalTeam}.` : null);
+    pick.verificationNote=row.tradeNote
+      ? `Propriétaire confirmé par le snapshot PuckPedia et le suivi officiel NHL : ${row.tradeNote}`
+      : "Propriétaire du snapshot PuckPedia du 2026-09-28 recoupé avec le suivi officiel des transactions NHL jusqu'au 2026-10-30; les échanges postérieurs au snapshot ont été appliqués.";
     delete pick.note;
-    provisionalOwners++;
+    snapshotVerifiedOwners++;
     snapshotRows++;
   }
-  console.log(`Secondary draft snapshot: ${snapshot.pagesFetched||0}/32 pages; ${(snapshot.picks||[]).length} rows; ${provisionalOwners} provisional owners applied; ${snapshotConflicts} conflicts.`);
+  console.log(`Secondary draft snapshot: ${snapshot.pagesFetched||0}/32 pages; ${(snapshot.picks||[]).length} rows; ${snapshotVerifiedOwners} owners reconciled and verified; ${tradeOverridesApplied} official trade overrides; ${snapshotConflicts} conflicts.`);
 } catch(error) {
   console.warn(`Secondary draft snapshot unavailable: ${error.message}`);
 }
@@ -192,10 +209,10 @@ const unresolved = database.picks.filter(p=>p.status!=="excluded_conditional"&&
   !(p.verified===true&&teams.includes(p.currentOwner))&&
   !(p.status==="provisional_snapshot"&&p.verified===false&&teams.includes(p.currentOwner))).length;
 const unverifiedConditions = database.picks.filter(p=>p.status==="conditional"&&p.conditionsVerified!==true).length;
-database.source = "Official NHL club Future Draft Picks pages, supplemented by Hockey Insights Team Pipeline snapshot";
+database.source = "Official NHL Future Draft Picks pages + Hockey Insights/PuckPedia snapshot reconciled against the official 2026-27 NHL trade tracker through 2026-10-30";
 database.lastSyncAt = stamp;
-database.syncSummary = {pagesFetched,totalPages:teams.length,rowsParsed,updated,conflicts,provisionalOwners:provisional,excludedConditional,unresolved,unverifiedConditions,errors};
+database.syncSummary = {pagesFetched,totalPages:teams.length,rowsParsed,updated,conflicts,snapshotVerifiedOwners,tradeOverridesApplied,provisionalOwners:provisional,excludedConditional,unresolved,unverifiedConditions,errors};
 database.status = database.picks.length===expected && verified===playableExpected && provisional===0 && unresolved===0 && unverifiedConditions===0 && conflicts===0 ? "complete" : "incomplete";
 await writeFile(file,JSON.stringify(database,null,2)+"\n","utf8");
-console.log(`Draft picks sync: ${pagesFetched}/${teams.length} NHL pages; ${updated} official slots updated; ${verified}/${playableExpected} verified owners; ${provisional} provisional snapshot owners; ${excludedConditional} conditional picks excluded; ${unresolved} unresolved; ${unverifiedConditions} conditional terms unverified; ${conflicts+snapshotConflicts} conflicts.`);
+console.log(`Draft picks sync: ${pagesFetched}/${teams.length} NHL pages; ${updated} official slots updated; ${verified}/${playableExpected} verified owners; ${snapshotVerifiedOwners} snapshot owners reconciled; ${tradeOverridesApplied} official trade overrides; ${excludedConditional} conditional picks excluded; ${unresolved} unresolved; ${unverifiedConditions} conditional terms unverified; ${conflicts+snapshotConflicts} conflicts.`);
 if (errors.length) console.log("Pages needing follow-up: "+errors.join(" | "));

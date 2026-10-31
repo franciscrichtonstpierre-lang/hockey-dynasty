@@ -1,6 +1,6 @@
 # Base des choix de repêchage NHL 2027–2029
 
-Le fichier `2027-2029.json` est le registre canonique des droits de repêchage. Le fichier a été créé comme structure de données et inventaire de provenance; **il n'est pas encore rempli et ne doit pas être présenté comme un inventaire réel complet**.
+Le fichier `2027-2029.json` est le registre canonique des droits de repêchage. Il énumère les 672 emplacements de base pour 2027–2029; 15 propriétaires ont une transaction sourcée, tandis que 657 emplacements restent explicitement non vérifiés. **La présence des 672 fiches ne signifie pas que le registre est complet ou prêt pour les transactions du jeu.**
 
 ## Modèle d'une fiche
 
@@ -29,7 +29,7 @@ Le fichier `2027-2029.json` est le registre canonique des droits de repêchage. 
 
 ## Contrôles de complétude
 
-L'audit exige un emplacement de base pour chacune des 32 équipes, des 7 rondes et des années 2027, 2028 et 2029 (672 emplacements), puis une vérification de chaque propriétaire ou forfait. Une base vide, partielle ou contenant des conditions non résolues reste en échec.
+L'audit exige un emplacement de base pour chacune des 32 équipes, des 7 rondes et des années 2027, 2028 et 2029 (672 emplacements), puis une vérification de chaque propriétaire ou forfait. Une base sans tous ses emplacements, sans propriétaire vérifié pour chaque choix, ou contenant des conditions non résolues reste en échec.
 
 ## Sources à croiser
 

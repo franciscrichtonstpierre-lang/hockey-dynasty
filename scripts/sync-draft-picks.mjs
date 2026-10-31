@@ -128,14 +128,62 @@ for (const owner of teams) {
     console.error(`NHL future picks ${owner}: ${error.message}`);
   }
 }
+let provisionalOwners=0, snapshotConflicts=0, snapshotRows=0;
+try {
+  const snapshot=JSON.parse(await readFile("data/draft-picks/hockey-insights-2027-2029.json","utf8"));
+  const snapshotByKey=new Map();
+  for(const row of (snapshot.picks||[])){
+    if(!years.includes(Number(row.year))||!Number.isInteger(Number(row.round))||!teams.includes(row.originalOwner))continue;
+    const key=`${row.year}-${row.round}-${row.originalOwner}`;
+    const previous=snapshotByKey.get(key);
+    if(row.conflict||previous&&previous.currentOwner!==row.currentOwner){
+      snapshotByKey.set(key,{...row,currentOwner:null,conflict:true});
+      snapshotConflicts++;
+    }else if(!previous||previous.conditional&&!row.conditional){
+      snapshotByKey.set(key,row);
+    }
+  }
+  for(const pick of database.picks){
+    if(pick.status==="provisional_snapshot"&&pick.verified!==true){
+      pick.currentOwner=null;pick.status="unverified";pick.source=null;pick.sourceUpdatedAt=null;pick.acquiredVia=null;
+      pick.verificationNote="Aucun propriétaire officiel confirmé; en attente du snapshot secondaire courant.";
+    }
+    if(pick.verified===true&&teams.includes(pick.currentOwner))continue;
+    if(pick.status==="excluded_conditional"||/conflit/i.test(pick.note||""))continue;
+    const row=snapshotByKey.get(`${pick.year}-${pick.round}-${pick.originalTeam}`);
+    if(!row||row.conflict||!teams.includes(row.currentOwner))continue;
+    pick.currentOwner=row.currentOwner;
+    pick.status="provisional_snapshot";
+    pick.verified=false;
+    pick.source=row.source||"Hockey Insights Team Pipeline";
+    pick.sourceUpdatedAt=snapshot.snapshotDate||row.snapshotDate||null;
+    pick.conditions=null;
+    pick.conditionsVerified=false;
+    pick.acquiredVia=row.currentOwner!==pick.originalTeam
+      ? `Acquis selon le snapshot secondaire; équipe d'origine ${pick.originalTeam}.` : null;
+    pick.verificationNote=row.verificationNote||"Propriétaire issu du snapshot secondaire du 2026-09-28; confirmation officielle requise.";
+    delete pick.note;
+    provisionalOwners++;
+    snapshotRows++;
+  }
+  console.log(`Secondary draft snapshot: ${snapshot.pagesFetched||0}/32 pages; ${(snapshot.picks||[]).length} rows; ${provisionalOwners} provisional owners applied; ${snapshotConflicts} conflicts.`);
+} catch(error) {
+  console.warn(`Secondary draft snapshot unavailable: ${error.message}`);
+}
+
 const expected = teams.length * years.length * 7;
+const excludedConditional = database.picks.filter(p=>p.status==="excluded_conditional").length;
+const playableExpected = expected-excludedConditional;
 const verified = database.picks.filter(p=>p.verified===true&&p.source&&teams.includes(p.currentOwner)).length;
-const unresolved = database.picks.filter(p=>p.verified!==true||!teams.includes(p.currentOwner)).length;
+const provisional = database.picks.filter(p=>p.status==="provisional_snapshot"&&p.verified===false&&teams.includes(p.currentOwner)).length;
+const unresolved = database.picks.filter(p=>p.status!=="excluded_conditional"&&
+  !(p.verified===true&&teams.includes(p.currentOwner))&&
+  !(p.status==="provisional_snapshot"&&p.verified===false&&teams.includes(p.currentOwner))).length;
 const unverifiedConditions = database.picks.filter(p=>p.status==="conditional"&&p.conditionsVerified!==true).length;
-database.source = "Official NHL club Future Draft Picks pages";
+database.source = "Official NHL club Future Draft Picks pages, supplemented by Hockey Insights Team Pipeline snapshot";
 database.lastSyncAt = stamp;
-database.syncSummary = {pagesFetched,totalPages:teams.length,rowsParsed,updated,conflicts,unresolved,unverifiedConditions,errors};
-database.status = database.picks.length===expected && verified===expected && unresolved===0 && unverifiedConditions===0 && conflicts===0 ? "complete" : "incomplete";
+database.syncSummary = {pagesFetched,totalPages:teams.length,rowsParsed,updated,conflicts,provisionalOwners:provisional,excludedConditional,unresolved,unverifiedConditions,errors};
+database.status = database.picks.length===expected && verified===playableExpected && provisional===0 && unresolved===0 && unverifiedConditions===0 && conflicts===0 ? "complete" : "incomplete";
 await writeFile(file,JSON.stringify(database,null,2)+"\n","utf8");
-console.log(`Draft picks official sync: ${pagesFetched}/${teams.length} pages; ${updated} slots updated; ${verified}/${expected} verified owners; ${unresolved} unresolved; ${unverifiedConditions} conditional terms unverified; ${conflicts} conflicts.`);
+console.log(`Draft picks sync: ${pagesFetched}/${teams.length} NHL pages; ${updated} official slots updated; ${verified}/${playableExpected} verified owners; ${provisional} provisional snapshot owners; ${excludedConditional} conditional picks excluded; ${unresolved} unresolved; ${unverifiedConditions} conditional terms unverified; ${conflicts+snapshotConflicts} conflicts.`);
 if (errors.length) console.log("Pages needing follow-up: "+errors.join(" | "));

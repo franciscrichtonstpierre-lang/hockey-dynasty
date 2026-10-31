@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "source": "Draft Prospects Hockey prospect hub plus Elite Prospects consolidated 2027 ranking and sourced fallback lists",
+  "source": "Draft Prospects Hockey 2027-2029 lists plus current-team data from Elite Prospects and the 2027 season database",
   "snapshotDate": "2026-10-30",
   "years": [
     2027,
@@ -501,21 +501,6 @@
       "snapshotType": "fallback_seed_public_list"
     },
     {
-      "prospectId": "nhl-draft:2027:roberts-naudins",
-      "name": "Roberts Naudins",
-      "position": "C/LW",
-      "currentTeam": "Penticton Vees",
-      "currentLeague": "WHL",
-      "draftYear": 2027,
-      "sourceRank": null,
-      "rankType": "source_list_order",
-      "rightsTeam": null,
-      "nhlRightsStatus": "undrafted_unassigned",
-      "source": "https://www.eliteprospects.com/draft-center/consolidated-ranking",
-      "sourceUpdatedAt": "2026-10-30T00:00:00Z",
-      "snapshotType": "public_consolidated_ranking"
-    },
-    {
       "prospectId": "nhl-draft:2027:aden-bouchard",
       "name": "Aden Bouchard",
       "position": "D",
@@ -529,6 +514,40 @@
       "source": "https://www.eliteprospects.com/draft-center/consolidated-ranking",
       "sourceUpdatedAt": "2026-10-30T00:00:00Z",
       "snapshotType": "public_consolidated_ranking"
+    },
+    {
+      "prospectId": "nhl-draft:2027:bogdan-vasilevsky",
+      "name": "Bogdan Vasilevsky",
+      "position": "F",
+      "currentTeam": "Almaz Cherepovets",
+      "currentLeague": "EUROPE",
+      "draftYear": 2027,
+      "sourceRank": null,
+      "rankType": "source_list_order",
+      "rightsTeam": null,
+      "nhlRightsStatus": "undrafted_unassigned",
+      "source": "https://draftprospectshockey.com/season-database",
+      "sourceUpdatedAt": "2026-10-30T00:00:00Z",
+      "snapshotType": "public_2027_season_database",
+      "currentTeamSource": "https://draftprospectshockey.com/season-database",
+      "currentLeagueSource": "https://draftprospectshockey.com/season-database"
+    },
+    {
+      "prospectId": "nhl-draft:2027:caiden-clair",
+      "name": "Caiden Clair",
+      "position": "F",
+      "currentTeam": "St. Michael's Buzzers",
+      "currentLeague": "OJHL",
+      "draftYear": 2027,
+      "sourceRank": null,
+      "rankType": "source_list_order",
+      "rightsTeam": null,
+      "nhlRightsStatus": "undrafted_unassigned",
+      "source": "https://draftprospectshockey.com/season-database",
+      "sourceUpdatedAt": "2026-10-30T00:00:00Z",
+      "snapshotType": "public_2027_season_database",
+      "currentTeamSource": "https://draftprospectshockey.com/season-database",
+      "currentLeagueSource": "https://draftprospectshockey.com/season-database"
     },
     {
       "prospectId": "nhl-draft:2027:carson-scott",
@@ -574,6 +593,23 @@
       "source": "https://www.eliteprospects.com/draft-center/consolidated-ranking",
       "sourceUpdatedAt": "2026-10-30T00:00:00Z",
       "snapshotType": "public_consolidated_ranking"
+    },
+    {
+      "prospectId": "nhl-draft:2027:davids-tarvids",
+      "name": "Davids Tarvids",
+      "position": "C/LW",
+      "currentTeam": "HC Plzen U20",
+      "currentLeague": "EUROPE",
+      "draftYear": 2027,
+      "sourceRank": null,
+      "rankType": "source_list_order",
+      "rightsTeam": null,
+      "nhlRightsStatus": "undrafted_unassigned",
+      "source": "https://draftprospectshockey.com/season-database",
+      "sourceUpdatedAt": "2026-10-30T00:00:00Z",
+      "snapshotType": "public_2027_season_database",
+      "currentTeamSource": "https://draftprospectshockey.com/season-database",
+      "currentLeagueSource": "https://draftprospectshockey.com/season-database"
     },
     {
       "prospectId": "nhl-draft:2027:diego-gutierrez",
@@ -666,6 +702,23 @@
       "snapshotType": "public_consolidated_ranking"
     },
     {
+      "prospectId": "nhl-draft:2027:jonas-schwarz",
+      "name": "Jonas Schwarz",
+      "position": "C",
+      "currentTeam": "Lukko U20",
+      "currentLeague": "EUROPE",
+      "draftYear": 2027,
+      "sourceRank": null,
+      "rankType": "source_list_order",
+      "rightsTeam": null,
+      "nhlRightsStatus": "undrafted_unassigned",
+      "source": "https://draftprospectshockey.com/season-database",
+      "sourceUpdatedAt": "2026-10-30T00:00:00Z",
+      "snapshotType": "public_2027_season_database",
+      "currentTeamSource": "https://draftprospectshockey.com/season-database",
+      "currentLeagueSource": "https://draftprospectshockey.com/season-database"
+    },
+    {
       "prospectId": "nhl-draft:2027:kingston-harris",
       "name": "Kingston Harris",
       "position": "F",
@@ -679,6 +732,23 @@
       "source": "https://www.eliteprospects.com/draft-center/consolidated-ranking",
       "sourceUpdatedAt": "2026-10-30T00:00:00Z",
       "snapshotType": "public_consolidated_ranking"
+    },
+    {
+      "prospectId": "nhl-draft:2027:lauri-rantanen",
+      "name": "Lauri Rantanen",
+      "position": "F",
+      "currentTeam": "Pelicans U20",
+      "currentLeague": "EUROPE",
+      "draftYear": 2027,
+      "sourceRank": null,
+      "rankType": "source_list_order",
+      "rightsTeam": null,
+      "nhlRightsStatus": "undrafted_unassigned",
+      "source": "https://draftprospectshockey.com/season-database",
+      "sourceUpdatedAt": "2026-10-30T00:00:00Z",
+      "snapshotType": "public_2027_season_database",
+      "currentTeamSource": "https://draftprospectshockey.com/season-database",
+      "currentLeagueSource": "https://draftprospectshockey.com/season-database"
     },
     {
       "prospectId": "nhl-draft:2027:luca-blonda",
@@ -701,6 +771,21 @@
       "position": "LW",
       "currentTeam": "Saint John Sea Dogs",
       "currentLeague": "QMJHL",
+      "draftYear": 2027,
+      "sourceRank": null,
+      "rankType": "source_list_order",
+      "rightsTeam": null,
+      "nhlRightsStatus": "undrafted_unassigned",
+      "source": "https://www.eliteprospects.com/draft-center/consolidated-ranking",
+      "sourceUpdatedAt": "2026-10-30T00:00:00Z",
+      "snapshotType": "public_consolidated_ranking"
+    },
+    {
+      "prospectId": "nhl-draft:2027:roberts-naudins",
+      "name": "Roberts Naudins",
+      "position": "C/LW",
+      "currentTeam": "Penticton Vees",
+      "currentLeague": "WHL",
       "draftYear": 2027,
       "sourceRank": null,
       "rankType": "source_list_order",

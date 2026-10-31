@@ -53,7 +53,7 @@ async function syncTeam(team){
     const payload={teamId:id,teamName:name,season:"2026-2027",seasonId:actualSeasonId,source:"ECHL HockeyTech / LeagueStat public feed",sourceUrl:url,syncedAt:new Date().toISOString(),count:players.length,players};
     const path=`data/echl/${slug(name)}.json`;
     await mkdir(dirname(path),{recursive:true});
-    await writeFile(path,JSON.stringify(payload,null,2)+"\\n","utf8");
+    await writeFile(path,JSON.stringify(payload,null,2)+"\n","utf8");
     console.log(`OK ${name}: ${players.length} joueurs`);succeeded++;
   }catch(e){console.error(`ERREUR ${name}: ${e.message}`);failed++}
   await pause(300);
@@ -61,6 +61,6 @@ async function syncTeam(team){
 let next=0;
 await Promise.all(Array.from({length:4},async()=>{while(next<teams.length){const i=next++;await syncTeam(teams[i])}}));
 const index={season:"2026-2027",seasonId:actualSeasonId,generatedAt:new Date().toISOString(),source:"ECHL HockeyTech / LeagueStat public feed",teamCount:teams.length,rostersFetched:succeeded,failed,teams:teams.map(t=>({teamId:String(t.team_id||t.teamId||t.id),teamName:String(t.name||t.team_full_name||t.teamFullName||t.team_name||t.teamName||t.team||t.team_nickname||t.teamNickName||"").trim(),file:slug(t.name||t.team_full_name||t.teamFullName||t.team_name||t.teamName||t.team||t.team_nickname||t.teamNickName)+".json"}))};
-await writeFile("data/echl/teams.json",JSON.stringify(index,null,2)+"\\n","utf8");
+await writeFile("data/echl/teams.json",JSON.stringify(index,null,2)+"\n","utf8");
 console.log(`ECHL sync: ${succeeded}/${teams.length} équipes; ${failed} échecs; saison ${actualSeasonId}`);
 if(failed||succeeded!==teams.length)process.exitCode=1;

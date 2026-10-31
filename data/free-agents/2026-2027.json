@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "season": "2026-2027",
-  "checkedAt": "2026-10-30",
+  "checkedAt": "2026-10-31",
   "description": "Joueurs dont l'absence de contrat NHL actif a été confirmée dans les fiches PuckPedia consultées à la date de vérification. Marché initial partiel, à compléter par ligue.",
   "sources": [
     {
@@ -53,12 +53,89 @@
       "source": "https://puckpedia.com/player/Travis-Hamonic",
       "sourceCheckedAt": "2026-10-30",
       "sourceNote": "Fiche consultée : aucun contrat actuel; ancien cap hit de 1 000 000 $ en 2025-26."
+    },
+    {
+      "id": "fa-2026-evander-kane",
+      "name": "Evander Kane",
+      "position": "F",
+      "league": "NHL",
+      "currentLeague": "NHL",
+      "currentTeam": "",
+      "overall": null,
+      "potential": null,
+      "askingSalary": null,
+      "previousTeam": "Edmonton Oilers",
+      "previousCapHit": 5125000,
+      "contractStatus": "FREE_AGENT",
+      "status": "available",
+      "freeAgentType": "UFA",
+      "source": "https://puckpedia.com/player/evander-kane",
+      "sourceCheckedAt": "2026-10-31",
+      "sourceNote": "Fiche consultée : aucun contrat actuel affiché; ancien cap hit 5 125 000 $. Disponibilité à reconfirmer avant signature."
+    },
+    {
+      "id": "fa-2026-patrik-laine",
+      "name": "Patrik Laine",
+      "position": "F",
+      "league": "NHL",
+      "currentLeague": "NHL",
+      "currentTeam": "",
+      "overall": null,
+      "potential": null,
+      "askingSalary": null,
+      "previousTeam": "Montreal Canadiens",
+      "previousCapHit": 8700000,
+      "contractStatus": "FREE_AGENT",
+      "status": "available",
+      "freeAgentType": "UFA",
+      "source": "https://puckpedia.com/player/patrik-laine",
+      "sourceCheckedAt": "2026-10-31",
+      "sourceNote": "Fiche consultée : aucun contrat actuel affiché; ancien cap hit 8 700 000 $. Disponibilité à reconfirmer avant signature."
+    },
+    {
+      "id": "fa-2026-vladimir-tarasenko",
+      "name": "Vladimir Tarasenko",
+      "position": "F",
+      "league": "NHL",
+      "currentLeague": "NHL",
+      "currentTeam": "",
+      "overall": null,
+      "potential": null,
+      "askingSalary": null,
+      "previousTeam": "Minnesota Wild",
+      "previousCapHit": 4750000,
+      "contractStatus": "FREE_AGENT",
+      "status": "available",
+      "freeAgentType": "UFA",
+      "source": "https://puckpedia.com/player/vladimir-tarasenko",
+      "sourceCheckedAt": "2026-10-31",
+      "sourceNote": "Fiche consultée : aucun contrat actuel affiché; ancien cap hit 4 750 000 $. Disponibilité à reconfirmer avant signature."
+    },
+    {
+      "id": "fa-2026-james-van-riemsdyk",
+      "name": "James van Riemsdyk",
+      "position": "F",
+      "league": "NHL",
+      "currentLeague": "NHL",
+      "currentTeam": "",
+      "overall": null,
+      "potential": null,
+      "askingSalary": null,
+      "previousTeam": "Detroit Red Wings",
+      "previousCapHit": 1000000,
+      "contractStatus": "FREE_AGENT",
+      "status": "available",
+      "freeAgentType": "UFA",
+      "source": "https://puckpedia.com/player/james-vanriemsdyk",
+      "sourceCheckedAt": "2026-10-31",
+      "sourceNote": "Fiche consultée : aucun contrat actuel affiché; ancien cap hit 1 000 000 $. Disponibilité à reconfirmer avant signature."
     }
   ],
   "coaches": [],
   "notes": [
     "Ne pas confondre un cap hit antérieur avec une demande salariale actuelle.",
     "Le fichier n'est pas encore un marché exhaustif de la LNH et de la LAH; ne pas afficher ces deux joueurs comme liste complète.",
-    "Les signatures en Europe et les changements de dernière minute doivent être revérifiés avant de signer."
+    "Les signatures en Europe et les changements de dernière minute doivent être revérifiés avant de signer.",
+    "Ajout de joueurs dont les fiches publiques consultées n’affichent pas de contrat actuel au 2026-10-31; vérifier à nouveau avant de traiter leur disponibilité comme garantie."
   ]
 }

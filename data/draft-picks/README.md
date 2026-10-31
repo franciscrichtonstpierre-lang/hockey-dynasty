@@ -23,9 +23,9 @@ Le fichier `2027-2029.json` est le registre canonique des droits de repêchage. 
 - `originalTeam` est le club auquel le choix appartenait initialement.
 - `currentOwner` est le club qui détient actuellement le droit; il ne doit pas être déduit du rang projeté au repêchage.
 - `status` vaut `active` ou `forfeited`. Un choix perdu doit être conservé comme emplacement historique vérifié, avec `currentOwner: null`.
-- `conditions` conserve le texte des protections, échanges conditionnels et choix « meilleur / moins bon ».
+- `conditions` reste `null` dans le registre jouable : les choix conditionnels, protégés ou « meilleur / moins bon » sont exclus.
 - `verified` ne peut être vrai qu'après vérification des sources et de l'état des conditions.
-- Les actifs additionnels acquis par échange sont enregistrés comme leurs propres choix d'origine; les choix conditionnels ne doivent pas être dupliqués en deux actifs fermes.
+- Les choix conditionnels sont exclus du registre jouable conformément à la règle du projet. Leur emplacement de base reste non vérifié et sans propriétaire jouable tant qu'il n'existe pas de choix ferme à attribuer. Les actifs additionnels acquis par échange sont enregistrés comme leurs propres choix d'origine.
 
 ## Contrôles de complétude
 

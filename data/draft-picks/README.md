@@ -1,6 +1,6 @@
 # Base des choix de repêchage NHL 2027–2029
 
-Le fichier `2027-2029.json` est le registre canonique des droits de repêchage. Il énumère les 672 emplacements de base pour 2027–2029; au dernier audit, 39 propriétaires étaient vérifiés, 631 emplacements restaient non résolus et 2 choix conditionnels étaient exclus du registre jouable. **La présence des 672 fiches ne signifie pas que le registre est complet ou prêt pour les transactions du jeu.**
+Le fichier `2027-2029.json` est le registre canonique des droits de repêchage. Il énumère les 672 emplacements de base pour 2027–2029; au dernier audit, 39 propriétaires étaient vérifiés, 609 étaient provisoires à partir du snapshot PuckPedia du 28 septembre 2026, 24 emplacements conditionnels étaient exclus et aucun propriétaire ne restait non attribué. **La présence des 672 fiches ne signifie pas que le registre est complet ou prêt pour les transactions du jeu : les 609 propriétaires provisoires doivent être recoupés avec les transactions plus récentes.**
 
 ## Modèle d'une fiche
 
@@ -22,9 +22,9 @@ Le fichier `2027-2029.json` est le registre canonique des droits de repêchage. 
 
 - `originalTeam` est le club auquel le choix appartenait initialement.
 - `currentOwner` est le club qui détient actuellement le droit; il ne doit pas être déduit du rang projeté au repêchage.
-- `status` vaut `active` ou `forfeited`. Un choix perdu doit être conservé comme emplacement historique vérifié, avec `currentOwner: null`.
-- `conditions` reste `null` dans le registre jouable : les choix conditionnels, protégés ou « meilleur / moins bon » sont exclus.
-- `verified` ne peut être vrai qu'après vérification des sources et de l'état des conditions.
+- `status` peut être `active`, `forfeited`, `provisional_snapshot`, `unverified` ou `excluded_conditional`. Un choix perdu doit être conservé comme emplacement historique vérifié, avec `currentOwner: null`. Un propriétaire `provisional_snapshot` provient du snapshot daté indiqué dans la fiche et n'est pas équivalent à une vérification actuelle.
+- `conditions` reste `null` dans le registre jouable : les choix conditionnels, protégés ou « meilleur / moins bon » sont exclus et reçoivent `status: "excluded_conditional"`.
+- `verified` ne peut être vrai qu'après vérification des sources et de l'état des conditions. Le snapshot secondaire ne permet pas, à lui seul, de mettre ce champ à `true`.
 - Les choix conditionnels sont exclus du registre jouable conformément à la règle du projet. Leur emplacement de base reste non vérifié et sans propriétaire jouable tant qu'il n'existe pas de choix ferme à attribuer. Les actifs additionnels acquis par échange sont enregistrés comme leurs propres choix d'origine.
 
 ## Contrôles de complétude

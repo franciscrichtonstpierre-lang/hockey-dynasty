@@ -20,14 +20,15 @@ const positionPattern = /\((C\/LW|LW\/C|RW\/C|C\/RW|LW|RW|C|D|G|F|LD|RD)(?:\s*\/
 const teamWords = new Set(["top prospects","other notable prospects","player","team","league","gp","g","a","tp","pim"]);
 const teamLeague = team => {
   const t=String(team||"").toLowerCase();
-  if(/usntdp|national u17/.test(t))return "USNTDP";
+  if(/usntdp juniors|ntdp juniors/.test(t))return "USHL";
+  if(/usntdp|national u17|national u18/.test(t))return "USNTDP";
   if(/university|notre dame|michigan/.test(t))return "NCAA";
   if(/tri-city americans|victoria royals|thunderbirds|wheat kings|raiders|medicine hat|silvertips|wild|oil kings|chiefs|hurricanes|rockets|blazers|hitmen|spokane|everett|wenatchee|kelowna|prince albert|brandon|lethbridge hurricanes|kamloops blazers/.test(t))return "WHL";
   if(/remparts|sea dogs|sea dogs|mooseheads|shawinigan|drummondville|armada|newfoundland regiment|islanders|olympiques|oceanic/.test(t))return "QMJHL";
   if(/sudbury wolves|niagara icedogs|sarnia sting|kitchener rangers|guelph storm|saginaw spirit|brantford bulldogs|london knights|flint firebirds|soo greyhounds|barrie colts|north bay battalion|brampton steelheads/.test(t))return "OHL";
   if(/spirit|storm|iceDogs|ic edogs|rangers|sting|bulldogs|knights|firebirds|greyhounds|colts|battalion|67's|steelheads/.test(t))return "OHL";
   if(/fargo force|muskegon|youngstown|sioux falls|green bay|des moines|buccaneers/.test(t))return "USHL";
-  if(/penticton vees/.test(t))return "OTHER";
+  if(/penticton vees/.test(t))return "WHL";
   if(/metallurg novokuznetsk|almaz cherepovets|loko-76|krasnaya armiya|chaika/.test(t))return "EUROPE";
   if(/biel/.test(t))return "NL";
   if(/yaroslavl|moskva|nizhny|krasnaya|chaika/.test(t))return "KHL";

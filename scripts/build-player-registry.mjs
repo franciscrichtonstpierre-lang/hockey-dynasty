@@ -285,8 +285,11 @@ try {
   console.log("Team pipeline markdown diagnostics: "+JSON.stringify({length:pipelineMarkdown.length,draftHits:markdownDraftHits}));
 
   const anaDebugHtml=pipelineResults.find(r=>r.teamCode==="ANA")?.debugHtml||"";
-  const draftDebug=[...anaDebugHtml.matchAll(/draft|2027|2028|2029/gi)].slice(0,18).map(m=>anaDebugHtml.slice(Math.max(0,m.index-100),Math.min(anaDebugHtml.length,m.index+220)));
-  console.log("Draft HTML diagnostics ANA: "+JSON.stringify({htmlLength:anaDebugHtml.length,tableCount:[...anaDebugHtml.matchAll(/<table\\b/gi)].length,snippets:draftDebug}));
+  const draftTerms=["draft capital","future draft","puckpedia","pick-chip","draft-picks","draftPicks","futurePicks","2027 picks","R1"];
+  const termHits=draftTerms.map(term=>{const index=anaDebugHtml.toLowerCase().indexOf(term.toLowerCase());return {term,index,snippet:index>=0?anaDebugHtml.slice(Math.max(0,index-180),Math.min(anaDebugHtml.length,index+420)):null};});
+  const scriptSources=[...anaDebugHtml.matchAll(/<script[^>]+src=["']([^"']+)["']/gi)].map(m=>m[1]);
+  const dataRefs=[...anaDebugHtml.matchAll(/(?:src|href)=["']([^"']+\.(?:json|js|md)(?:\?[^"']*)?)["']/gi)].map(m=>m[1]).slice(0,30);
+  console.log("Draft HTML diagnostics ANA: "+JSON.stringify({htmlLength:anaDebugHtml.length,tableCount:[...anaDebugHtml.matchAll(/<table\\b/gi)].length,scriptSources,dataRefs,termHits}));
   const draftPickMap = new Map();
   let draftPickConflicts = 0;
   for (const result of pipelineResults) {

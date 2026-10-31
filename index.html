@@ -506,7 +506,8 @@ async function commInitEditor(){
    localStorage.setItem(UHM_COMM_COACHES,JSON.stringify(commCoachRecords));
   }else commCoachRecords=existing;
  }catch(e){try{commCoachRecords=JSON.parse(localStorage.getItem(UHM_COMM_COACHES)||"[]");if(!Array.isArray(commCoachRecords))commCoachRecords=[]}catch(err){commCoachRecords=[]}}
- if(!playerDirectoryCache||!playerDirectoryCache.length){
+ if(!playerDirectoryCache||!playerDirectoryCache.length||!playerDirectoryCache.some(p=>p.registryId)){
+  playerDirectoryCache=null;try{localStorage.removeItem(UHM_PLAYER_CACHE_KEY)}catch(e){}
   const box=el("commPlayerForm");if(box)box.innerHTML='<p>Chargement du répertoire de joueurs…</p>';
   loadPlayerDirectory().then(()=>{try{const edits=JSON.parse(localStorage.getItem(UHM_COMM_PLAYER_EDITS)||"{}");playerDirectoryCache=(playerDirectoryCache||[]).map(p=>({...p,...(edits[p.playerId||p.id]||{})}));commSearchPlayers()}catch(e){}});
  }else commSearchPlayers();

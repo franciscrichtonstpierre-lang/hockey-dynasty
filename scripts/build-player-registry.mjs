@@ -440,6 +440,9 @@ try {
       matching.futureDraftSourceRank=p.sourceRank??null;
       matching.futureDraftSource=p.source||futureDraftData.source||null;
       matching.futureDraftRankType=p.rankType||null;
+      matching.futureDraftProfileUrl=p.sourceProfileUrl||matching.futureDraftProfileUrl||null;
+      matching.currentTeamSource=p.currentTeamSource||matching.currentTeamSource||null;
+      matching.currentLeagueSource=p.currentLeagueSource||matching.currentLeagueSource||null;
       if(hadUnknownLeague&&p.currentLeague&&p.currentLeague!=="UNKNOWN"){
         matching.currentLeague=p.currentLeague;
         matching.currentTeam=matching.currentTeam||str(p.currentTeam);

@@ -723,9 +723,10 @@ async function commInitEditor(){
  try{
   let existing=[];
   try{const raw=JSON.parse(localStorage.getItem(UHM_COMM_COACHES)||"[]");if(Array.isArray(raw))existing=raw}catch(e){}
-  const [nhlResponse,ahlResponse]=await Promise.all([
+  const [nhlResponse,ahlResponse,freeResponse]=await Promise.all([
    fetch("./data/coaches/2026-2027.json",{cache:"no-store"}),
-   fetch("./data/coaches/ahl-2026-2027.json",{cache:"no-store"})
+   fetch("./data/coaches/ahl-2026-2027.json",{cache:"no-store"}),
+   fetch("./data/coaches/free-agents-2026-2027.json",{cache:"no-store"})
   ]);
   const norm=v=>String(v||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLocaleLowerCase("fr").replace(/[^a-z0-9]+/g," ").trim();
   let base=[];
@@ -736,17 +737,30 @@ async function commInitEditor(){
     role:c.role||"unknown",status:c.employmentStatus||"unknown",offensive:c.offensive??null,defensive:c.defensive??null,
     playerDevelopment:c.playerDevelopment??null,playerManagement:c.playerManagement??null,physicalStyle:c.physicalStyle??null,
     powerPlayImpact:c.powerPlayImpact??null,penaltyKillImpact:c.penaltyKillImpact??null,youngPlayerUsage:c.youngPlayerUsage??null,
-    experienceYears:c.experienceYears??null,source:c.source||data.sourceUrl||"",notes:c.verificationStatus||"Importé de la base du personnel LNH"
+    experienceYears:c.experienceYears??null,ratingsStatus:c.ratingsStatus||"provisional_role_estimate",
+    source:c.source||data.sourceUrl||"",notes:c.verificationStatus||"Importé de la base du personnel LNH"
    })));
   }
   if(ahlResponse.ok){
    const data=await ahlResponse.json();
    base=base.concat((data.coaches||[]).map(c=>({
-    coachId:c.id,fullName:c.name,team:c.teamName||c.teamCode,teamCode:c.teamCode,league:"AHL",
+    coachId:c.coachId||c.id,fullName:c.fullName||c.name,team:c.teamName||c.teamCode,teamCode:c.teamCode,league:"AHL",
     role:c.role==="goaltending_coach"?"goalie_coach":c.role||"unknown",status:c.employmentStatus||"unknown",
-    offensive:null,defensive:null,playerDevelopment:null,playerManagement:null,physicalStyle:null,
-    powerPlayImpact:null,penaltyKillImpact:null,youngPlayerUsage:null,experienceYears:null,
-    source:c.sourceUrl||data.sourceUrl||c.source||"",notes:"Personnel LAH importé; cotes d’entraîneur non évaluées"
+    offensive:c.offensive??null,defensive:c.defensive??null,playerDevelopment:c.playerDevelopment??null,
+    playerManagement:c.playerManagement??null,physicalStyle:c.physicalStyle??null,
+    powerPlayImpact:c.powerPlayImpact??null,penaltyKillImpact:c.penaltyKillImpact??null,
+    youngPlayerUsage:c.youngPlayerUsage??null,experienceYears:c.experienceYears??null,
+    ratingsStatus:c.ratingsStatus||"provisional_role_estimate",
+    source:c.sourceUrl||data.sourceUrl||c.source||"",notes:"Personnel LAH importé; cotes à vérifier"
+   })));
+  }
+  if(freeResponse.ok){
+   const data=await freeResponse.json();
+   base=base.concat((data.coaches||[]).map(c=>({
+    ...c,coachId:c.coachId,fullName:c.fullName,team:c.team||"",teamCode:c.teamCode||null,
+    league:c.league||"NHL",role:c.role||"unknown",status:"available",
+    ratingsStatus:c.ratingsStatus||"provisional_role_estimate",
+    source:c.source||"",notes:c.notes||"Agent libre entraîneur; disponibilité à revérifier"
    })));
   }
   if(base.length){

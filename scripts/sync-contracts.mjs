@@ -144,11 +144,13 @@ for (const code of codes) {
 const matchedContracts=players.filter(p=>p.contract!=null).length;
 const salaryRows=players.filter(p=>p.season?.capHitUsd!=null).length;
 const estimatedAavRows=players.filter(p=>p.contract?.estimatedAavUsd!=null).length;
+const modelSalaryRows=players.filter(p=>p.simulationSalaryStatus==="provisional_model_estimate"&&Number(p.simulationSalaryUsd)>0).length;
+const usableSalaryRows=players.filter(p=>Number(p.season?.capHitUsd)>0||Number(p.contract?.estimatedAavUsd)>0||Number(p.simulationSalaryUsd)>0).length;
 const output={
   schemaVersion:1, season:"2026-2027", seasonKey:SEASON, generatedAt:new Date().toISOString(),
   sourceDataset:"ehlersio/nhl-contracts", sourceUrl:"https://github.com/ehlersio/nhl-contracts/releases/tag/contracts",
   sourceUpdatedAt:timestampRaw.updated_at||timestampRaw.updatedAt||timestampRaw.generated_at||null,
-  license:"CC0-1.0", playerCount:players.length, matchedContracts, salaryRows, estimatedAavRows,
+  license:"CC0-1.0", playerCount:players.length, matchedContracts, salaryRows, estimatedAavRows, modelSalaryRows, usableSalaryRows,
   coveragePercent:Number((100*matchedContracts/Math.max(players.length,1)).toFixed(1)),
   salaryCoveragePercent:Number((100*salaryRows/Math.max(players.length,1)).toFixed(1)),
   counts:{matchedContracts, salaryRows, missingContracts:players.length-matchedContracts,withGapSource:players.filter(p=>p.gapReason).length},
@@ -158,6 +160,8 @@ const output={
     "Cap hit, AAV, base salary, signing bonus, performance bonus and total salary remain separate fields.",
     "A missing record is marked as a gap; no salary or contract term is invented.",
     "estimatedAavUsd is calculated from reported contract total divided by term and is an estimate only, not a verified 2026-27 salary or cap-hit row.",
+    "simulationSalaryUsd is a clearly labelled game fallback: it prefers a verified seasonal cap hit, then contract AAV estimate, then a provisional overall/age model; it never overwrites source fields.",
+    "A provisional simulation salary is not evidence that a player has a verified contract or cap hit.",
     "This is a public dataset snapshot, not legal or payroll advice. Verify important clauses and disputed values against official team announcements."
   ]
 };

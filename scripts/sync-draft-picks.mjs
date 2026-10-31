@@ -176,7 +176,10 @@ function parsePuckpediaYear(html,owner,year,url){
     if(round<1||round>7)continue;
     const pickFrom=String(rawCells[1]||"").trim();
     const details=String(rawCells[3]||"").trim();
-    const conditional=/conditional|\*/i.test(details);
+    const targetOrdinal=round===1?"1st":round===2?"2nd":round===3?"3rd":`${round}th`;
+    const targetPickPattern=new RegExp("\\b"+year+"\\b[^.]{0,70}\\b"+targetOrdinal+"\\s+round pick","i");
+    const targetPickMatch=targetPickPattern.exec(details);
+    const conditional=!!targetPickMatch && /conditional/i.test(details.slice(Math.max(0,targetPickMatch.index-40),targetPickMatch.index));
     let originalTeam=teamCodeInText(pickFrom);
     const parenthetical=details.match(new RegExp(year+"\\s+(?:\\d+(?:st|nd|rd|th)?\\s+)?"+round+"?\\s*(?:round|R)\\s*"+round+"?[^\\n]{0,90}\\(([A-Z]{3})\\)","i"));
     // Common PuckPedia wording: "a 2027 2nd round pick (CBJ)".
@@ -227,6 +230,7 @@ for(const result of puckpediaResults){
     const pick=database.picks.find(p=>Number(p.year)===row.year&&Number(p.round)===row.round&&p.originalTeam===row.originalTeam);
     if(!pick)continue;
     if(row.conditional){
+      observed.delete(key);
       pick.currentOwner=null;pick.status="excluded_conditional";pick.verified=false;pick.conditions=null;pick.conditionsVerified=false;
       pick.source=row.url;pick.sourceUpdatedAt=stamp;pick.acquiredVia=row.details||null;
       pick.verificationNote="Choix marqué conditionnel sur PuckPedia; exclu du registre jouable selon la règle du projet.";

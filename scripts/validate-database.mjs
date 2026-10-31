@@ -62,7 +62,7 @@ if (picks && Array.isArray(picks.picks)) {
     }
   }
   report.draftPicks.baseSlots=seen.size;
-  report.draftPicks.missingSlots=report.draftPicks.expectedBaseSlots-seen.size;
+  report.draftPicks.missingSlots=0;
   const expectedKeys = new Set();
   for (const year of draftYears) for (const round of draftRounds) for (const team of teams) expectedKeys.add(`${year}-${round}-${team}`);
   for (const key of expectedKeys) if (!seen.has(key)) report.draftPicks.missingSlots++;

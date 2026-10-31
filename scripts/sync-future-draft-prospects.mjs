@@ -80,15 +80,43 @@ for (const year of years) {
   } catch (error) {
     errors.push(`${year}: Elite Prospects ${error.message}`);
     console.warn(`Future draft prospects ${year}: Elite Prospects ${error.message}`);
-    // Some public prospect sites block automated runners. A separately sourced fallback
-    // keeps known prospects available while preserving the source and snapshot date.
+    // Draft Prospects Hockey publishes a static 2027 class page that can serve as an alternate source.
+    if(year===2027){
+      try{
+        const fallbackUrl="https://draftprospectshockey.com/prospects-hub";
+        const fallbackResponse=await fetch(fallbackUrl,{
+          headers:{"user-agent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/131.0.0.0 Safari/537.36","accept":"text/html","accept-language":"en-US,en;q=0.9"},
+          signal:AbortSignal.timeout(15000)
+        });
+        if(!fallbackResponse.ok)throw new Error(`HTTP ${fallbackResponse.status}`);
+        const fallbackHtml=await fallbackResponse.text();
+        let parsed=0;
+        for(const li of fallbackHtml.matchAll(/<li\\b[^>]*>([\\s\\S]*?)<\\/li>/gi)){
+          const line=plain(li[1]);
+          const m=line.match(/^(\\d+|-)\\s+(.+?)\\s+(C\\/LW|LW\\/C|RW\\/C|C\\/RW|RW\\/LW|LW\\/RW|C\\/W|W\\/C|LW|RW|C|D|G|F|LD|RD)(?:\\s*[·(]|$)/i);
+          if(!m)continue;
+          const rank=m[1]==="-"?null:Number(m[1]);
+          const name=m[2].trim(),position=m[3].toUpperCase().split("/")[0];
+          const teamText=(line.split("·").slice(1).join("·").split("(")[0]||"").replace(/·\\s*shoots.*$/i,"").trim();
+          const currentTeam=teamText||null;
+          all.push({
+            prospectId:`nhl-draft:2027:${name.normalize("NFD").replace(/[\\u0300-\\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"")}`,
+            name,position,currentTeam,currentLeague:teamLeague(currentTeam),draftYear:2027,sourceRank:rank,
+            rankType:rank==null?"source_list_order":"source_rank",rightsTeam:null,nhlRightsStatus:"undrafted_unassigned",
+            source:fallbackUrl,sourceUpdatedAt:"2026-10-30T00:00:00Z"
+          });
+          parsed++;
+        }
+        console.log(`Future draft prospects 2027 alternate source: ${parsed} rows parsed.`);
+      }catch(fallbackError){console.warn(`Future draft alternate source unavailable: ${fallbackError.message}`);}
+    }
   }
 }
 try{
   const seed=JSON.parse(await readFile("data/future-draft-prospects/fallback-seed.json","utf8"));
   for(const p of (seed.prospects||[])){
     if(!years.includes(Number(p.draftYear)))continue;
-    const key=`${p.draftYear}|${p.name.normalize("NFD").replace(/[\\u0300-\\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim()}`;
+    const key=`${p.draftYear}|${p.name.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim()}`;
     if(!all.some(existing=>`${existing.draftYear}|${existing.name.normalize("NFD").replace(/[\\u0300-\\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim()}`===key))all.push(p);
   }
 }catch(error){console.warn(`Future draft fallback seed unavailable: ${error.message}`);}

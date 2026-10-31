@@ -503,7 +503,7 @@ async function loadCommissionerMembers(){
  if(!authClient||!signedInUser||!activeOnlineLeagueId||!activeOnlineIsCommissioner){box.innerHTML='<p>Cette section est réservée au commissaire d’une ligue en ligne ouverte.</p>';return}
  box.innerHTML='<p>Chargement des DG inscrits...</p>';
  try{
-  const {data:members,error}=await authClient.from("league_members").select("user_id,team_id,team_code,role,manager_name").eq("league_id",activeOnlineLeagueId);
+  const {data:members,error}=await authClient.from("league_members").select("user_id,team_id,team_code,role").eq("league_id",activeOnlineLeagueId);
   if(error)throw error;
   const others=(members||[]).filter(m=>m.user_id!==signedInUser.id);
   if(!others.length){box.innerHTML='<h3>'+esc(activeOnlineLeagueName)+'</h3><p>La base de données ne retourne aucun autre membre visible pour cette ligue.</p><p class="muted">Membres visibles par ce compte : '+(members||[]).length+'. Si ton autre compte a bien rejoint cette ligue, les règles d’accès Supabase de <code>league_members</code> doivent autoriser le commissaire à consulter les membres de sa ligue. Cette section ne peut pas afficher les comptes masqués par ces règles.</p><button type="button" onclick="loadCommissionerMembers()">Réessayer</button>';return}

@@ -510,9 +510,10 @@ const UHM_NHL_STAFF_2026=[
 let UHM_COACH_BASE_CACHE=[];
 async function preloadUhmCoachData(){
  if(UHM_COACH_BASE_CACHE.length)return UHM_COACH_BASE_CACHE;
- const [nhlResponse,ahlResponse]=await Promise.all([
+ const [nhlResponse,ahlResponse,freeResponse]=await Promise.all([
   fetch("./data/coaches/2026-2027.json",{cache:"no-store"}),
-  fetch("./data/coaches/ahl-2026-2027.json",{cache:"no-store"})
+  fetch("./data/coaches/ahl-2026-2027.json",{cache:"no-store"}),
+  fetch("./data/coaches/free-agents-2026-2027.json",{cache:"no-store"})
  ]);
  const base=[];
  if(nhlResponse.ok){
@@ -541,6 +542,7 @@ async function preloadUhmCoachData(){
    source:c.source||c.sourceUrl||data.sourceUrl||"",notes:c.verificationStatus||"Personnel LAH importé"
   })));
  }
+ if(freeResponse.ok){const data=await freeResponse.json();base.push(...(data.coaches||[]).map(c=>({...c,team:c.team||"",teamCode:c.teamCode||null,status:"available",source:c.source||"",notes:c.notes||"Agent libre entraîneur à revérifier"})));}
  UHM_COACH_BASE_CACHE=base.filter(c=>c.coachId&&c.fullName);
  return UHM_COACH_BASE_CACHE;
 }

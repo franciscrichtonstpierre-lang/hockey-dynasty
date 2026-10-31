@@ -29,6 +29,13 @@ for (const row of seasons) {
   byKey.get(key).push(row);
 }
 const claimById = new Map(claims.map(c => [String(c.claim_id || c.claimId || c.id), c]));
+const contractsByPlayerId = new Map();
+for (const contract of contracts) {
+  const id = Number(contract.player_id || contract.playerId);
+  if (!Number.isFinite(id) || id <= 0) continue;
+  if (!contractsByPlayerId.has(id)) contractsByPlayerId.set(id, []);
+  contractsByPlayerId.get(id).push(contract);
+}
 const norm = value => String(value || "").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim();
 const sourceInfo = c => {
   const ids = String(c.claim_ids || c.claimIds || "").split(";").filter(Boolean);
@@ -142,6 +149,50 @@ for (const code of codes) {
     }
   }
 }
+const organizationContracts = [];
+for (const registryPlayer of (registryData.players || [])) {
+  if (registryPlayer.currentLeague === "NHL" || registryPlayer.nhlPlayerId == null) continue;
+  const id = Number(registryPlayer.nhlPlayerId);
+  const candidates = contractsByPlayerId.get(id) || [];
+  const active = candidates.map(c => ({ c, season: (byKey.get(c.contract_key || c.contractKey) || [])[0] }))
+    .filter(x => {
+      if (x.c.bought_out) return false;
+      if (x.season) return true;
+      const start=String(x.c.start_season||""), end=String(x.c.end_season||"");
+      return !!(start && end && start<=SEASON && end>=SEASON);
+    })
+    .sort((a,b) => {
+      if (!!a.season !== !!b.season) return a.season ? -1 : 1;
+      return String(b.c.signed_at||"").localeCompare(String(a.c.signed_at||""));
+    });
+  const selected = active[0];
+  if (!selected) continue;
+  const contract = selected.c, season = selected.season;
+  organizationContracts.push({
+    playerId:id, registryId:registryPlayer.id, name:registryPlayer.name,
+    currentLeague:registryPlayer.currentLeague || null, currentTeam:registryPlayer.currentTeam || null,
+    nhlRightsTeam:registryPlayer.nhlRightsTeam || null,
+    contractStatus:season ? "MATCHED" : "MATCHED_CONTRACT_NO_SEASON_ROW",
+    contract:{
+      contractKey:contract.contract_key||contract.contractKey||null,
+      signingTeam:contract.team||null, signedAt:contract.signed_at||null,
+      type:contract.contract_type||null, termYears:contract.term_years??null,
+      startSeason:contract.start_season||null, endSeason:contract.end_season||null,
+      expiryStatus:contract.expiry_status||null, boughtOut:!!contract.bought_out,
+      oneWay:contract.one_way??null, totalUsd:contract.total_usd??null,
+      nhlSalaryUsd:contract.nhl_salary_usd??null, minorsSalaryUsd:contract.minors_salary_usd??null,
+      confidenceTier:contract.best_tier||null, sourceCount:contract.n_sources??null,
+      sourceClaimIds:String(contract.claim_ids||"").split(";").filter(Boolean),
+      sources:sourceInfo(contract)
+    },
+    season:season ? {
+      season:SEASON, capHitUsd:season.cap_hit_usd??null, aavUsd:season.aav_usd??null,
+      baseSalaryUsd:season.base_salary_usd??null, totalSalaryUsd:season.total_salary_usd??null,
+      minorsSalaryUsd:season.minors_salary_usd??null, oneWay:season.one_way??null
+    } : null,
+    sourceDataset:"ehlersio/nhl-contracts", license:"CC0-1.0"
+  });
+}
 const matchedContracts=players.filter(p=>p.contract!=null).length;
 const salaryRows=players.filter(p=>p.season?.capHitUsd!=null).length;
 const estimatedAavRows=players.filter(p=>p.contract?.estimatedAavUsd!=null).length;
@@ -152,6 +203,7 @@ const output={
   sourceDataset:"ehlersio/nhl-contracts", sourceUrl:"https://github.com/ehlersio/nhl-contracts/releases/tag/contracts",
   sourceUpdatedAt:timestampRaw.updated_at||timestampRaw.updatedAt||timestampRaw.generated_at||null,
   license:"CC0-1.0", playerCount:players.length, matchedContracts, salaryRows, estimatedAavRows, modelSalaryRows, usableSalaryRows,
+  organizationContractCount:organizationContracts.length, organizationContracts,
   coveragePercent:Number((100*matchedContracts/Math.max(players.length,1)).toFixed(1)),
   salaryCoveragePercent:Number((100*salaryRows/Math.max(players.length,1)).toFixed(1)),
   counts:{matchedContracts, salaryRows, missingContracts:players.length-matchedContracts,withGapSource:players.filter(p=>p.gapReason).length},

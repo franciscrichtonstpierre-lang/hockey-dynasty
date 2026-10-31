@@ -75,7 +75,7 @@ jobs:
       - name: Vérifier la complétude des bases LNH, LAH, espoirs et contrats
         run: node scripts/validate-database.mjs
       - name: Publier les fichiers actualisés
-        if: always()
+        if: success()
         run: |
           git config user.name "uhm-data-bot"
           git config user.email "uhm-data-bot@users.noreply.github.com"

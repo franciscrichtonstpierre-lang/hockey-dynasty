@@ -20,7 +20,8 @@ const positionPattern = /\((C\/LW|LW\/C|RW\/C|C\/RW|LW|RW|C|D|G|F|LD|RD)(?:\s*\/
 const teamWords = new Set(["top prospects","other notable prospects","player","team","league","gp","g","a","tp","pim"]);
 const teamLeague = team => {
   const t=String(team||"").toLowerCase();
-  if(/university|notre dame|michigan|usntdp|national u17/.test(t))return "NCAA";
+  if(/usntdp|national u17/.test(t))return "USNTDP";
+  if(/university|notre dame|michigan/.test(t))return "NCAA";
   if(/thunderbirds|wheat kings|raiders|medicine hat|silvertips|wild|oil kings|chiefs|hurricanes|rockets|blazers|hitmen|spokane|everett|wenatchee|kelowna|prince albert|brandon/.test(t))return "WHL";
   if(/remparts|sea dogs|sea dogs|mooseheads|shawinigan|drummondville|armada|newfoundland regiment|islanders|olympiques|oceanic/.test(t))return "QMJHL";
   if(/spirit|storm|iceDogs|ic edogs|rangers|sting|bulldogs|knights|firebirds|greyhounds|colts|battalion|67's|steelheads/.test(t))return "OHL";
@@ -117,7 +118,13 @@ try{
   for(const p of (seed.prospects||[])){
     if(!years.includes(Number(p.draftYear)))continue;
     const key=`${p.draftYear}|${p.name.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim()}`;
-    if(!all.some(existing=>`${existing.draftYear}|${existing.name.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim()}`===key))all.push(p);
+    const existing=all.find(row=>`${row.draftYear}|${row.name.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim()}`===key);
+    if(!existing){all.push(p);continue;}
+    if((!existing.currentTeam||!String(existing.currentTeam).trim())&&p.currentTeam)existing.currentTeam=p.currentTeam;
+    if((!existing.currentLeague||existing.currentLeague==="UNKNOWN")&&p.currentLeague&&p.currentLeague!=="UNKNOWN")existing.currentLeague=p.currentLeague;
+    if(existing.sourceRank==null&&p.sourceRank!=null)existing.sourceRank=p.sourceRank;
+    if(!existing.position&&p.position)existing.position=p.position;
+    if(!existing.source||/eliteprospects/i.test(existing.source)&&p.sourceRank!=null&&existing.sourceRank==null)existing.source=p.source;
   }
 }catch(error){console.warn(`Future draft fallback seed unavailable: ${error.message}`);}
 const byIdentity = new Map();

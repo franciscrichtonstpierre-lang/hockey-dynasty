@@ -1,7 +1,25 @@
--- Hockey Dynasty: réparer uniquement la fonction SQL utilisée pour rejoindre une ligue.
--- À exécuter dans Supabase > SQL Editor si l'erreur indique que
--- public.join_league_by_code(p_join_code, p_manager_name) est introuvable.
--- Prérequis: public.leagues et public.league_members existent avec les colonnes utilisées ci-dessous.
+-- Réparation compatible avec les anciennes installations UHM.
+-- Exécuter dans Supabase > SQL Editor avec un compte administrateur.
+
+create extension if not exists pgcrypto;
+
+-- Garantir les colonnes utilisées par le code du jeu.
+alter table public.leagues add column if not exists name text;
+alter table public.leagues add column if not exists join_code text;
+update public.leagues
+set join_code = upper(substr(encode(gen_random_bytes(6), 'hex'), 1, 8))
+where join_code is null or btrim(join_code) = '';
+alter table public.leagues alter column join_code set default upper(substr(encode(gen_random_bytes(6), 'hex'), 1, 8));
+alter table public.leagues alter column join_code set not null;
+create unique index if not exists leagues_join_code_unique on public.leagues(join_code);
+
+alter table public.league_members add column if not exists manager_name text not null default 'DG';
+alter table public.league_members add column if not exists role text not null default 'manager';
+alter table public.league_members add column if not exists team_id integer;
+alter table public.league_members add column if not exists team_code text;
+alter table public.league_members alter column team_code drop not null;
+create unique index if not exists league_members_unique_membership
+on public.league_members(league_id, user_id);
 
 create or replace function public.join_league_by_code(p_join_code text, p_manager_name text)
 returns table (
@@ -76,4 +94,7 @@ revoke all on function public.join_league_by_code(text, text) from public;
 revoke all on function public.join_league_by_code(text, text) from anon;
 grant execute on function public.join_league_by_code(text, text) to authenticated;
 
+notify pgrst, 'reload schema';
+
+-- Rafraîchir immédiatement le cache des fonctions RPC de Supabase.
 notify pgrst, 'reload schema';

@@ -10,6 +10,7 @@ on:
       - "scripts/sync-contracts.mjs"
       - "scripts/validate-database.mjs"
       - "data/ahl/teams.json"
+      - "data/prospects/**"
   workflow_dispatch:
     inputs:
       season:

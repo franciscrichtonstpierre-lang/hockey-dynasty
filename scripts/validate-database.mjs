@@ -40,7 +40,7 @@ if(futureDraft&&Array.isArray(futureDraft.prospects)){
     }
     report.futureDraftProspects.total++;
     report.futureDraftProspects.byYear[year]++;
-    const key=`${year}|${String(p.name).normalize("NFD").replace(/[\\u0300-\\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim()}`;
+    const key=`${year}|${String(p.name).normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim()}`;
     if(ids.has(key))report.futureDraftProspects.invalid++;
     ids.add(key);
   }

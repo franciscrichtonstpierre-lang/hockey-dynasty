@@ -91,16 +91,16 @@ for (const year of years) {
         if(!fallbackResponse.ok)throw new Error(`HTTP ${fallbackResponse.status}`);
         const fallbackHtml=await fallbackResponse.text();
         let parsed=0;
-        for(const li of fallbackHtml.matchAll(/<li\\b[^>]*>([\\s\\S]*?)<\\/li>/gi)){
+        for(const li of fallbackHtml.matchAll(/<li\b[^>]*>([\s\S]*?)<\/li>/gi)){
           const line=plain(li[1]);
-          const m=line.match(/^(\\d+|-)\\s+(.+?)\\s+(C\\/LW|LW\\/C|RW\\/C|C\\/RW|RW\\/LW|LW\\/RW|C\\/W|W\\/C|LW|RW|C|D|G|F|LD|RD)(?:\\s*[·(]|$)/i);
+          const m=line.match(/^(\d+|-)\s+(.+?)\s+(C\/LW|LW\/C|RW\/C|C\/RW|RW\/LW|LW\/RW|C\/W|W\/C|LW|RW|C|D|G|F|LD|RD)(?:\s*[·(]|$)/i);
           if(!m)continue;
           const rank=m[1]==="-"?null:Number(m[1]);
           const name=m[2].trim(),position=m[3].toUpperCase().split("/")[0];
-          const teamText=(line.split("·").slice(1).join("·").split("(")[0]||"").replace(/·\\s*shoots.*$/i,"").trim();
+          const teamText=(line.split("·").slice(1).join("·").split("(")[0]||"").replace(/·\s*shoots.*$/i,"").trim();
           const currentTeam=teamText||null;
           all.push({
-            prospectId:`nhl-draft:2027:${name.normalize("NFD").replace(/[\\u0300-\\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"")}`,
+            prospectId:`nhl-draft:2027:${name.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"")}`,
             name,position,currentTeam,currentLeague:teamLeague(currentTeam),draftYear:2027,sourceRank:rank,
             rankType:rank==null?"source_list_order":"source_rank",rightsTeam:null,nhlRightsStatus:"undrafted_unassigned",
             source:fallbackUrl,sourceUpdatedAt:"2026-10-30T00:00:00Z"
@@ -117,7 +117,7 @@ try{
   for(const p of (seed.prospects||[])){
     if(!years.includes(Number(p.draftYear)))continue;
     const key=`${p.draftYear}|${p.name.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim()}`;
-    if(!all.some(existing=>`${existing.draftYear}|${existing.name.normalize("NFD").replace(/[\\u0300-\\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim()}`===key))all.push(p);
+    if(!all.some(existing=>`${existing.draftYear}|${existing.name.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim()}`===key))all.push(p);
   }
 }catch(error){console.warn(`Future draft fallback seed unavailable: ${error.message}`);}
 const byIdentity = new Map();

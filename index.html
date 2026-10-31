@@ -454,7 +454,7 @@ if(isOwner){
  if(!memberLoadError){box.dataset.leagueId=id;setTimeout(()=>box.querySelectorAll(".uhmSaveMemberTeam").forEach(button=>{button.onclick=async()=>{const userId=button.dataset.user,card=button.closest("[data-member]"),select=card.querySelector("select"),status=card.querySelector(".uhmMemberStatus"),chosen=select.value;if(chosen===""){status.textContent="Choisis une équipe.";return}const teamCode=codes[Number(chosen)];button.disabled=true;try{const {data:other,error:otherError}=await authClient.from("league_members").select("user_id").eq("league_id",id).eq("team_code",teamCode).neq("user_id",userId);if(otherError)throw otherError;if(other?.length)throw new Error("Cette équipe est déjà attribuée à un autre DG.");const {error:updateError}=await authClient.from("league_members").update({team_id:Number(chosen),team_code:teamCode}).eq("league_id",id).eq("user_id",userId);if(updateError)throw updateError;status.textContent="Équipe enregistrée : "+teams[Number(chosen)]+".";
 }catch(e){status.textContent="Modification impossible : "+(e.message||"Erreur Supabase")}finally{button.disabled=false}}}),0)}
 }else{
- body+='<h3>Attribution de ton équipe</h3><p>Le commissaire doit t’attribuer une équipe. Tu ne peux pas choisir ton club toi-même.</p><p class="muted" role="status">En attente de l’attribution du commissaire.</p>
+ body+='<h3>Attribution de ton équipe</h3><p>Le commissaire doit t’attribuer une équipe. Tu ne peux pas choisir ton club toi-même.</p><p class="muted" role="status">En attente de l’attribution du commissaire.</p>';
 }
 body+='</div><div class="controls"><button id="uhmBackToLeagues">Retour à mes ligues</button></div>';
 box.innerHTML=body;

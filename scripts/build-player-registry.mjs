@@ -295,12 +295,13 @@ try {
       const response=await fetch(scriptUrl,{headers:{"user-agent":"Hockey-Dynasty-data-sync/1.0"},signal:AbortSignal.timeout(10000)});
       const body=await response.text();
       const refs=[...body.matchAll(/["'`]([^"'`]{0,180}(?:\.json|picks|draft|capital|pipeline)[^"'`]{0,180})["'`]/gi)].slice(0,30).map(m=>m[1]);
-      return {src,status:response.status,length:body.length,refs};
+      const hits=[...body.matchAll(/2027|2028|2029|draft|pick|\.json|fetch\(/gi)].slice(0,30).map(m=>({term:m[0],index:m.index,snippet:body.slice(Math.max(0,m.index-90),Math.min(body.length,m.index+220))}));
+      return {src,status:response.status,length:body.length,refs,hits};
     }catch(error){return {src,error:error.message};}
   }));
   console.log("Draft HTML diagnostics ANA: "+JSON.stringify({htmlLength:anaDebugHtml.length,tableCount:[...anaDebugHtml.matchAll(/<table\\b/gi)].length,scriptSources,dataRefs,termHits,scriptDiagnostics}));
   try{
-    const hubUrl="https://hockeyinsights.ca/data/team-hubs/Anaheim%20Ducks.json";
+    const hubUrl="https://hockeyinsights.ca/data/team-pipeline.json";
     const hubResponse=await fetch(hubUrl,{headers:{"user-agent":"Hockey-Dynasty-data-sync/1.0","accept":"application/json"},signal:AbortSignal.timeout(10000)});
     const hubText=await hubResponse.text();
     let hubJson=null;try{hubJson=JSON.parse(hubText)}catch{}

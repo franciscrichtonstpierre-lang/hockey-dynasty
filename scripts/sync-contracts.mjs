@@ -236,4 +236,43 @@ const output={
   ]
 };
 await writeFile("data/contracts/2026-2027.json",JSON.stringify(output)+"\n","utf8");
+const auditRows = [
+  ...players.map(p => ({
+    scope: "NHL_ROSTER", playerId: p.playerId, registryId: registryByNhlId.get(String(p.playerId))?.id || null,
+    name: p.name, teamCode: p.teamCode, league: "NHL", contractStatus: p.contractStatus,
+    contractKey: p.contract?.contractKey || null, contractType: p.contract?.type || null,
+    startSeason: p.contract?.startSeason || null, endSeason: p.contract?.endSeason || null,
+    capHitUsd: p.season?.capHitUsd ?? null, aavUsd: p.season?.aavUsd ?? p.contract?.estimatedAavUsd ?? null,
+    simulationSalaryStatus: p.simulationSalaryStatus,
+    sourceUrls: (p.contract?.sources || []).map(s => s.url).filter(Boolean),
+    verificationNote: p.contract ? "Matched to the public contract dataset; check source links and confidence tier." : "No contract matched in this dataset; this does not prove no contract exists."
+  })),
+  ...organizationContracts.map(p => ({
+    scope: "ORGANIZATION_REGISTRY", playerId: p.playerId, registryId: p.registryId, name: p.name,
+    teamCode: p.nhlRightsTeam || p.currentTeam || null, league: p.currentLeague || null,
+    contractStatus: p.contractStatus, contractKey: p.contract?.contractKey || null,
+    contractType: p.contract?.type || null, startSeason: p.contract?.startSeason || null,
+    endSeason: p.contract?.endSeason || null, capHitUsd: p.season?.capHitUsd ?? null,
+    aavUsd: p.season?.aavUsd ?? null, simulationSalaryStatus: null,
+    sourceUrls: (p.contract?.sources || []).map(s => s.url).filter(Boolean),
+    verificationNote: p.contract ? "Matched to the public contract dataset; confirm whether it represents the player's current league/team contract." : (p.dataNote || "No contract matched in this dataset; this does not prove no contract exists.")
+  }))
+];
+const audit = {
+  schemaVersion: 1, season: "2026-2027", generatedAt: output.generatedAt,
+  sourceDataset: output.sourceDataset, sourceUrl: output.sourceUrl, sourceUpdatedAt: output.sourceUpdatedAt,
+  summary: {
+    nhlRosterPlayers: players.length, nhlMatchedContracts: matchedContracts,
+    nhlUnmatchedContracts: players.length - matchedContracts, nhlWithSeasonCapHit: salaryRows,
+    nhlWithEstimatedAav: estimatedAavRows, nhlWithProvisionalSimulationSalary: modelSalaryRows,
+    organizationRegistryPlayers: organizationContracts.length,
+    organizationMatchedContracts: organizationContracts.filter(p => p.contract != null).length,
+    organizationUnmatchedContracts: organizationContracts.filter(p => p.contract == null).length,
+    recordsWithAtLeastOneSourceUrl: auditRows.filter(p => p.sourceUrls.length > 0).length,
+    recordsWithoutSourceUrl: auditRows.filter(p => p.sourceUrls.length === 0).length
+  },
+  meaning: "Audit inventory, not a claim of complete real-world contract coverage. Missing match means unverified, not unsigned. Provisional simulation salaries are not real contract values.",
+  records: auditRows
+};
+await writeFile("data/contracts/contract-audit-2026-2027.json",JSON.stringify(audit)+"\n","utf8");
 console.log(`Contracts import: ${matchedContracts}/${players.length} roster players with contract records (${output.coveragePercent}%); ${salaryRows} with 2026-27 cap-hit data (${output.salaryCoveragePercent}%); ${estimatedAavRows} contract AAV estimates labelled non-verified; ${output.counts.withGapSource} gaps documented; upstream ${output.sourceUpdatedAt||"timestamp unknown"}`);

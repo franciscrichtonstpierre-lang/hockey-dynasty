@@ -98,7 +98,8 @@ for (const code of codes) {
     }
   }
 }
-const matchedContracts=players.filter(p=>p.contract!=null).length;\nconst salaryRows=players.filter(p=>p.season?.capHitUsd!=null).length;
+const matchedContracts=players.filter(p=>p.contract!=null).length;
+const salaryRows=players.filter(p=>p.season?.capHitUsd!=null).length;
 const output={
   schemaVersion:1, season:"2026-2027", seasonKey:SEASON, generatedAt:new Date().toISOString(),
   sourceDataset:"ehlersio/nhl-contracts", sourceUrl:"https://github.com/ehlersio/nhl-contracts/releases/tag/contracts",

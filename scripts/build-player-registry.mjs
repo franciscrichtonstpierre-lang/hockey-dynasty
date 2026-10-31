@@ -210,6 +210,16 @@ for (const p of records.values()) {
 console.log(`Provisional rating fallback applied to ${provisionalRatings} records with missing rating data; potentials remain null unless source-backed.`);
 
 const players = [...records.values()].sort((a,b) => a.name.localeCompare(b.name,"en"));
+const identityGroups = new Map();
+for (const p of players) {
+  if (!p.name || !p.birthDate) continue;
+  const key = `${nameKey(p.name)}|${p.birthDate}`;
+  if (!identityGroups.has(key)) identityGroups.set(key, []);
+  identityGroups.get(key).push(p);
+}
+const duplicateIdentityReport = [...identityGroups.values()].filter(group => group.length > 1)
+  .map(group => group.map(p => ({id:p.id,name:p.name,birthDate:p.birthDate,league:p.currentLeague,team:p.currentTeam})));
+console.log(`Potential duplicate identities: ${JSON.stringify(duplicateIdentityReport)}`);
 const counts = players.reduce((out,p) => (out[p.currentLeague]=(out[p.currentLeague]||0)+1,out),{});
 const output = {
   schemaVersion: 1, season: "2026-2027", generatedAt: now,

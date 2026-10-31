@@ -86,8 +86,8 @@ if (contracts && Array.isArray(contracts.players)) {
   report.contracts.missingVerifiedSalary=Math.max(0,report.nhl.players-report.contracts.salaryRows);
   report.contracts.missingSalary=Math.max(0,report.nhl.players-report.contracts.usableSalaryRows);
   report.contracts.seasonRows=contracts.players.filter(p=>p.season && p.season.season==="2026-27").length;
-  report.contracts.sourceBackedContracts=contracts.players.filter(p=>p.contract && Array.isArray(p.contract.sources) && p.contract.sources.some(s=>typeof s.url==="string" && /^https?:\\/\\//.test(s.url))).length;
-  report.contracts.matchedWithoutSource=contracts.players.filter(p=>p.contract && !(Array.isArray(p.contract.sources) && p.contract.sources.some(s=>typeof s.url==="string" && /^https?:\\/\\//.test(s.url)))).length;
+  report.contracts.sourceBackedContracts=contracts.players.filter(p=>p.contract && Array.isArray(p.contract.sources) && p.contract.sources.some(s=>typeof s.url==="string" && (s.url.startsWith("https://") || s.url.startsWith("http://")))).length;
+  report.contracts.matchedWithoutSource=contracts.players.filter(p=>p.contract && !(Array.isArray(p.contract.sources) && p.contract.sources.some(s=>typeof s.url==="string" && (s.url.startsWith("https://") || s.url.startsWith("http://"))))).length;
   report.contracts.unmatchedPlayers=contracts.players.filter(p=>!p.contract).map(p=>({name:p.name,teamCode:p.teamCode,status:p.contractStatus,gapReason:p.gapReason||null}));
   report.contracts.registryPlayers=report.registry.players;
   report.contracts.organizationCovered=Number(contracts.organizationContractCoverageCount ?? contracts.organizationContracts?.length ?? 0);

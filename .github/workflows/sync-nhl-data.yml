@@ -11,6 +11,8 @@ on:
       - "scripts/validate-database.mjs"
       - "data/ahl/teams.json"
       - "data/prospects/**"
+      - "data/draft-picks/**"
+      - "data/coaches/**"
   workflow_dispatch:
     inputs:
       season:

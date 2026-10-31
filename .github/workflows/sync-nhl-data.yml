@@ -7,6 +7,7 @@ on:
       - "scripts/sync-ahl-data.mjs"
       - "scripts/sync-nhl-data.mjs"
       - "scripts/build-player-registry.mjs"
+      - "scripts/sync-contracts.mjs"
       - "data/ahl/teams.json"
   workflow_dispatch:
     inputs:
@@ -44,14 +45,17 @@ jobs:
       - name: Construire le registre central des joueurs
         if: always()
         run: node scripts/build-player-registry.mjs
-      - name: Vérifier la complétude des bases LNH, LAH et espoirs
+      - name: Importer les contrats, salaires et clauses vérifiés
+        if: always()
+        run: node scripts/sync-contracts.mjs
+      - name: Vérifier la complétude des bases LNH, LAH, espoirs et contrats
         run: node scripts/validate-database.mjs
       - name: Publier les fichiers actualisés
         if: always()
         run: |
           git config user.name "uhm-data-bot"
           git config user.email "uhm-data-bot@users.noreply.github.com"
-          git add data/nhl data/prospects data/ahl data/players/registry.json
+          git add data/nhl data/prospects data/ahl data/players/registry.json data/contracts/2026-2027.json
           if git diff --cached --quiet; then
             echo "Aucune modification de données."
           else

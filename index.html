@@ -448,10 +448,114 @@ const UHM_NHL_STAFF_2026=[
 ["Washington Capitals","Spencer Carbery","Ray Bennett","Patrick Wellar","Scott Allen","Scott Murray"],
 ["Winnipeg Jets","Scott Arniel","Davis Payne","Dean Chynoweth","Marty Johnston","Wade Flaherty"]
 ];
-function ensureCoachDatabase(){let rows=[];try{const saved=JSON.parse(localStorage.getItem(UHM_COMM_COACHES)||"[]");if(Array.isArray(saved))rows=saved}catch(e){}const ids=new Set(rows.map(c=>c.coachId));UHM_NHL_STAFF_2026.forEach(staff=>staff.slice(1).forEach((name,i)=>{const slug=(staff[0]+"-"+name).toLowerCase().replaceAll(" ","-").replaceAll(".","");const id="nhlcoach-"+slug;if(ids.has(id)||rows.some(c=>String(c.fullName||"").toLocaleLowerCase("fr")===String(name).toLocaleLowerCase("fr")&&String(c.team||"").toLocaleLowerCase("fr")===String(staff[0]).toLocaleLowerCase("fr")))return;const goalie=i===staff.length-2&&staff.length>=5;rows.push({coachId:id,fullName:name,team:staff[0],league:"NHL",role:i===0?"head_coach":goalie?"goalie_coach":"assistant_coach",status:"employed",offensive:null,defensive:null,playerDevelopment:null,playerManagement:null,source:"NHL Coaches Association, 2026-2027; à revérifier",notes:"Fiche initiale; cotes non évaluées."});ids.add(id)}));localStorage.setItem(UHM_COMM_COACHES,JSON.stringify(rows));return rows}
-function coachFire(id){const rows=ensureCoachDatabase(),c=rows.find(x=>x.coachId===id);if(!c||c.status!=="employed")return;if(!confirm("Congédier "+c.fullName+"? Il deviendra disponible pour les autres équipes."))return;c.formerTeam=c.team;c.team="";c.status="available";localStorage.setItem(UHM_COMM_COACHES,JSON.stringify(rows));render()}
-function coachHire(id){const rows=ensureCoachDatabase(),c=rows.find(x=>x.coachId===id);if(!c||c.status==="employed"||c.status==="retired")return;if(!confirm("Engager "+c.fullName+" avec "+teams[S.team]+"?"))return;c.formerTeam=c.formerTeam||c.team||"";c.team=teams[S.team];c.league="NHL";c.status="employed";localStorage.setItem(UHM_COMM_COACHES,JSON.stringify(rows));render()}
-function renderCoachesPage(teamName){const rows=ensureCoachDatabase(),own=rows.filter(c=>c.status==="employed"&&String(c.team||"").toLocaleLowerCase("fr")===String(teamName||"").toLocaleLowerCase("fr")),available=rows.filter(c=>c.status==="available"||c.status==="fired"),role=c=>c.role==="head_coach"?"Entraîneur-chef":c.role==="goalie_coach"?"Entraîneur des gardiens":c.role==="assistant_coach"?"Entraîneur adjoint":c.role||"Rôle à définir",row=c=>'<div class="item"><div><strong>'+esc(c.fullName)+'</strong><div class="muted"><small>'+esc(role(c))+'</small></div></div><div class="rating"><b>'+(c.offensive??"—")+'</b><small>OFF</small></div><div class="rating"><b>'+(c.defensive??"—")+'</b><small>DÉF</small></div><button type="button" onclick="coachFire(\''+esc(c.coachId)+'\')">Congédier</button></div>',market=available.map(c=>'<div class="item"><div><strong>'+esc(c.fullName)+'</strong><div class="muted"><small>'+esc(role(c))+(c.formerTeam?" · Ancienne équipe : "+esc(c.formerTeam):"")+'</small></div></div><button type="button" onclick="coachHire(\''+esc(c.coachId)+'\')">Engager</button></div>').join("");return '<h2>Personnel d’entraîneurs · '+esc(teamName)+'</h2><p class="muted">Personnel LNH de départ 2026-2027. Les changements de personnel sont sauvegardés localement sur cet appareil.</p>'+card("Personnel en poste ("+own.length+")",own.map(row).join("")||"<p>Aucun entraîneur en poste.</p>")+card("Marché des entraîneurs ("+available.length+")",market||"<p>Aucun candidat disponible. Congédie un entraîneur pour l’ajouter au marché.</p>")}
+let UHM_COACH_BASE_CACHE=[];
+async function preloadUhmCoachData(){
+ if(UHM_COACH_BASE_CACHE.length)return UHM_COACH_BASE_CACHE;
+ const [nhlResponse,ahlResponse]=await Promise.all([
+  fetch("./data/coaches/2026-2027.json",{cache:"no-store"}),
+  fetch("./data/coaches/ahl-2026-2027.json",{cache:"no-store"})
+ ]);
+ const base=[];
+ if(nhlResponse.ok){
+  const data=await nhlResponse.json();
+  base.push(...(data.coaches||[]).map(c=>({
+   coachId:c.coachId,fullName:c.fullName,team:c.teamName||c.teamCode,teamCode:c.teamCode,league:"NHL",
+   role:c.role||"unknown",status:c.employmentStatus||"unknown",
+   offensive:c.offensive??null,defensive:c.defensive??null,playerDevelopment:c.playerDevelopment??null,
+   playerManagement:c.playerManagement??null,physicalStyle:c.physicalStyle??null,
+   powerPlayImpact:c.powerPlayImpact??null,penaltyKillImpact:c.penaltyKillImpact??null,
+   youngPlayerUsage:c.youngPlayerUsage??null,experienceYears:c.experienceYears??null,
+   ratingsStatus:c.ratingsStatus||"provisional_role_estimate",
+   source:c.source||data.sourceUrl||"",notes:c.verificationStatus||"Personnel LNH importé"
+  })));
+ }
+ if(ahlResponse.ok){
+  const data=await ahlResponse.json();
+  base.push(...(data.coaches||[]).map(c=>({
+   coachId:c.coachId||c.id,fullName:c.fullName||c.name,team:c.teamName||c.teamCode,teamCode:c.teamCode,league:"AHL",
+   role:c.role==="goaltending_coach"?"goalie_coach":c.role||"unknown",status:c.employmentStatus||"unknown",
+   offensive:c.offensive??null,defensive:c.defensive??null,playerDevelopment:c.playerDevelopment??null,
+   playerManagement:c.playerManagement??null,physicalStyle:c.physicalStyle??null,
+   powerPlayImpact:c.powerPlayImpact??null,penaltyKillImpact:c.penaltyKillImpact??null,
+   youngPlayerUsage:c.youngPlayerUsage??null,experienceYears:c.experienceYears??null,
+   ratingsStatus:c.ratingsStatus||"provisional_role_estimate",
+   source:c.source||c.sourceUrl||data.sourceUrl||"",notes:c.verificationStatus||"Personnel LAH importé"
+  })));
+ }
+ UHM_COACH_BASE_CACHE=base.filter(c=>c.coachId&&c.fullName);
+ return UHM_COACH_BASE_CACHE;
+}
+function ensureCoachDatabase(){
+ let rows=[];try{const saved=JSON.parse(localStorage.getItem(UHM_COMM_COACHES)||"[]");if(Array.isArray(saved))rows=saved}catch(e){}
+ const norm=v=>String(v||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLocaleLowerCase("fr").replace(/[^a-z0-9]+/g," ").trim();
+ if(UHM_COACH_BASE_CACHE.length){
+  const used=new Set();
+  const merged=UHM_COACH_BASE_CACHE.map(base=>{
+   const old=rows.find(c=>c.coachId===base.coachId)||rows.find(c=>norm(c.fullName)===norm(base.fullName)&&norm(c.team)===norm(base.team));
+   if(old)used.add(old);
+   const result={...base,...(old||{}),coachId:base.coachId,fullName:base.fullName};
+   if(!old||old.team==null)result.team=base.team;
+   if(!old||old.teamCode==null)result.teamCode=base.teamCode;
+   if(!old||old.league==null)result.league=base.league;
+   if(!old||old.role==null)result.role=base.role;
+   if(!old||old.status==null)result.status=base.status;
+   for(const k of ["offensive","defensive","playerDevelopment","playerManagement","physicalStyle","powerPlayImpact","penaltyKillImpact","youngPlayerUsage","experienceYears"]){
+    if(old?.[k]==null&&base[k]!=null)result[k]=base[k];
+   }
+   if(old?.ratingsStatus==null&&base.ratingsStatus)result.ratingsStatus=base.ratingsStatus;
+   if(old?.source==null&&base.source)result.source=base.source;
+   return result;
+  });
+  const extras=rows.filter(old=>!used.has(old)&&!merged.some(c=>norm(c.fullName)===norm(old.fullName)&&norm(c.team)===norm(old.team)));
+  rows=[...merged,...extras];
+ }
+ const ids=new Set(rows.map(c=>c.coachId));
+ UHM_NHL_STAFF_2026.forEach(staff=>staff.slice(1).forEach((name,i)=>{
+  const slug=(staff[0]+"-"+name).toLowerCase().replaceAll(" ","-").replaceAll(".","");
+  const id="nhlcoach-"+slug;
+  if(ids.has(id)||rows.some(c=>String(c.fullName||"").toLocaleLowerCase("fr")===String(name).toLocaleLowerCase("fr")&&String(c.team||"").toLocaleLowerCase("fr")===String(staff[0]).toLocaleLowerCase("fr")))return;
+  const goalie=i===staff.length-2&&staff.length>=5;
+  rows.push({coachId:id,fullName:name,team:staff[0],teamCode:codes[teams.indexOf(staff[0])],league:"NHL",role:i===0?"head_coach":goalie?"goalie_coach":"assistant_coach",status:"employed",offensive:null,defensive:null,playerDevelopment:null,playerManagement:null,source:"NHL Coaches Association, 2026-2027; à revérifier",notes:"Fiche de secours; cotes non évaluées."});
+  ids.add(id);
+ }));
+ localStorage.setItem(UHM_COMM_COACHES,JSON.stringify(rows));return rows;
+}
+function coachFire(id){
+ const rows=ensureCoachDatabase(),c=rows.find(x=>x.coachId===id);
+ if(!c||c.status!=="employed")return;
+ if(!confirm("Congédier "+c.fullName+"? Il deviendra disponible pour les autres équipes."))return;
+ c.formerTeam=c.team;c.formerTeamCode=c.teamCode||null;c.team="";c.teamCode=null;c.status="available";
+ localStorage.setItem(UHM_COMM_COACHES,JSON.stringify(rows));render();
+}
+function coachHire(id){
+ const rows=ensureCoachDatabase(),c=rows.find(x=>x.coachId===id);
+ if(!c||c.status==="employed"||c.status==="retired")return;
+ if(!confirm("Engager "+c.fullName+" avec "+teams[S.team]+"?"))return;
+ c.formerTeam=c.formerTeam||c.team||"";c.formerTeamCode=c.formerTeamCode||c.teamCode||null;
+ c.team=teams[S.team];c.teamCode=codes[S.team];c.league="NHL";c.status="employed";
+ localStorage.setItem(UHM_COMM_COACHES,JSON.stringify(rows));render();
+}
+function coachPromote(id){
+ const rows=ensureCoachDatabase(),c=rows.find(x=>x.coachId===id);
+ if(!c||c.status!=="employed"||c.league!=="AHL")return;
+ if(!confirm("Promouvoir "+c.fullName+" au personnel LNH de "+teams[S.team]+"?"))return;
+ c.formerTeam=c.team;c.formerTeamCode=c.teamCode||null;c.team=teams[S.team];c.teamCode=codes[S.team];c.league="NHL";c.status="employed";
+ localStorage.setItem(UHM_COMM_COACHES,JSON.stringify(rows));render();
+}
+function renderCoachesPage(teamName){
+ const rows=ensureCoachDatabase(),teamIndex=teams.indexOf(teamName),teamCode=codes[teamIndex];
+ const own=rows.filter(c=>c.status==="employed"&&c.league!=="AHL"&&String(c.team||"").toLocaleLowerCase("fr")===String(teamName||"").toLocaleLowerCase("fr"));
+ const ahlOwn=rows.filter(c=>c.status==="employed"&&c.league==="AHL"&&c.teamCode===teamCode);
+ const available=rows.filter(c=>c.status==="available"||c.status==="fired");
+ const role=c=>c.role==="head_coach"?"Entraîneur-chef":c.role==="goalie_coach"?"Entraîneur des gardiens":c.role==="assistant_coach"?"Entraîneur adjoint":c.role==="associate_coach"?"Entraîneur associé":c.role||"Rôle à définir";
+ const row=c=>'<div class="item"><div><strong>'+esc(c.fullName)+'</strong><div class="muted"><small>'+esc(role(c))+' · '+esc(c.league||"NHL")+(c.ratingsStatus==="provisional_role_estimate"?" · cotes provisoires":"")+'</small></div></div><div class="rating"><b>'+(c.offensive??"—")+'</b><small>OFF</small></div><div class="rating"><b>'+(c.defensive??"—")+'</b><small>DÉF</small></div><button type="button" onclick="coachFire(\\''+esc(c.coachId)+'\\')">Congédier</button></div>';
+ const ahlRow=c=>'<div class="item"><div><strong>'+esc(c.fullName)+'</strong><div class="muted"><small>'+esc(role(c))+' · cotes '+(c.ratingsStatus==="provisional_role_estimate"?"provisoires":"à confirmer")+'</small></div></div><div class="rating"><b>'+(c.offensive??"—")+'</b><small>OFF</small></div><div class="rating"><b>'+(c.defensive??"—")+'</b><small>DÉF</small></div><button type="button" onclick="coachPromote(\\''+esc(c.coachId)+'\\')">Promouvoir LNH</button> <button type="button" onclick="coachFire(\\''+esc(c.coachId)+'\\')">Congédier</button></div>';
+ const market=available.map(c=>'<div class="item"><div><strong>'+esc(c.fullName)+'</strong><div class="muted"><small>'+esc(role(c))+(c.formerTeam?" · Ancienne équipe : "+esc(c.formerTeam):"")+' · '+esc(c.league||"NHL")+'</small></div></div><button type="button" onclick="coachHire(\\''+esc(c.coachId)+'\\')">Engager</button></div>').join("");
+ return '<h2>Personnel d’entraîneurs · '+esc(teamName)+'</h2><p class="muted">Effectifs de départ LNH et LAH 2026-2027. Les cotes estimées sont identifiées comme provisoires. Les changements sont sauvegardés localement sur cet appareil.</p>'+
+ card("Personnel LNH en poste ("+own.length+")",own.map(row).join("")||"<p>Aucun entraîneur LNH en poste.</p>")+
+ card("Personnel de l’affilié LAH ("+ahlOwn.length+")",ahlOwn.map(ahlRow).join("")||"<p>Personnel LAH non chargé pour cette équipe.</p>")+
+ card("Marché des entraîneurs ("+available.length+")",market||"<p>Aucun candidat disponible. Congédie un entraîneur pour l’ajouter au marché.</p>");
+}
 function commIsAllowed(){return !activeOnlineLeagueId||!!(activeOnlineIsCommissioner&&signedInUser)}
 async function commInitEditor(){
  if(!commIsAllowed()){
@@ -526,4 +630,5 @@ function commExportData(){const payload={schemaVersion:1,season:"2026-2027",expo
 
 try{render()}catch(error){console.error("UHM render error",error);const app=document.getElementById("app");if(app)app.innerHTML='<div class="card"><h3>Erreur de chargement</h3><p>Le jeu a rencontré un problème. Ta sauvegarde est conservée.</p><button onclick="location.reload()">Réessayer</button></div>'}
 let initialStage="welcome";try{const previous=sessionStorage.getItem("uhmLastStage");if(["game","leagues"].includes(previous))initialStage=previous}catch(e){}uhmShowStage(initialStage);accountRender();initializeOnlineAuth();
+preloadUhmCoachData().then(()=>{ensureCoachDatabase();if(uhmStage==="game")render()}).catch(error=>console.warn("Personnel d’entraîneurs non chargé:",error));
 </script></body></html>

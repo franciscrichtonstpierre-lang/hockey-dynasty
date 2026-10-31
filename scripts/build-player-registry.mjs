@@ -29,7 +29,7 @@ const nameOf = p => {
   if (full) return String(full).trim();
   return [first(p.firstName?.default, p.firstName, p.first_name), first(p.lastName?.default, p.lastName, p.last_name)].filter(Boolean).join(" ").trim();
 };
-const nameKey = value => String(value || "").normalize("NFD").replace(/[\\u0300-\\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim();
+const nameKey = value => String(value || "").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim();
 const add = p => {
   if (!p.id || !p.name) return;
   const rating = p.nhlPlayerId != null ? ratingMap[String(p.nhlPlayerId)] : null;
@@ -114,7 +114,7 @@ for (const code of codes) {
       const matchingRecords = [...records.values()].filter(r => nameKey(r.name) === nameKey(name));
       const id = sourceId ? `nhl:${sourceId}` : matchingRecords.length === 1 ? matchingRecords[0].id : `prospect:${code}:${nameKey(name).replace(/ /g,"-")}`;
       const leagueRaw = String(first(p.currentLeague,p.league,p.leagueName,p.currentLeagueName,"")).toLowerCase();
-      const currentLeague = /\\bnhl\\b/.test(leagueRaw) ? "NHL" :
+      const currentLeague = /\bnhl\b/.test(leagueRaw) ? "NHL" :
         /ahl|american hockey/.test(leagueRaw) ? "AHL" :
         /ncaa|college/.test(leagueRaw) ? "NCAA" :
         /echl/.test(leagueRaw) ? "OTHER" :
@@ -128,9 +128,9 @@ for (const code of codes) {
         rightsStatus: str(p.rightsStatus),
         birthDate: str(first(p.birthDate,p.birthdate)), shootsCatches: str(first(p.shootsCatches,p.shoots,p.catches)),
         age: Number.isFinite(Number(p.age)) ? Number(p.age) : null,
-        draftYear: Number.isFinite(Number(p.draftYear)) ? Number(p.draftYear) : null,
-        draftRound: Number.isFinite(Number(p.draftRound)) ? Number(p.draftRound) : null,
-        draftOverall: Number.isFinite(Number(p.draftOverall)) ? Number(p.draftOverall) : null,
+        draftYear: p.draftYear != null && Number.isFinite(Number(p.draftYear)) ? Number(p.draftYear) : null,
+        draftRound: p.draftRound != null && Number.isFinite(Number(p.draftRound)) ? Number(p.draftRound) : null,
+        draftOverall: p.draftOverall != null && Number.isFinite(Number(p.draftOverall)) ? Number(p.draftOverall) : null,
         nhlPlayerId: sourceId != null && Number.isFinite(Number(sourceId)) ? Number(sourceId) : null,
         attributes: null, overall: null, potential: null, source: p.source || data.source || `https://api-web.nhle.com/v1/prospects/${code}`,
         sourceUpdatedAt: p.sourceUpdatedAt || data.syncedUTC || now

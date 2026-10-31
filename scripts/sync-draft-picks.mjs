@@ -128,6 +128,129 @@ for (const owner of teams) {
     console.error(`NHL future picks ${owner}: ${error.message}`);
   }
 }
+// PuckPedia team draft pages are a second, current ownership source. Only apply rows whose
+// original team and holder can be resolved from the pick row or its transaction details.
+const puckpediaSlugs={
+  ANA:"ANAHEIM-DUCKS",BOS:"BOSTON-BRUINS",BUF:"BUFFALO-SABRES",CGY:"CALGARY-FLAMES",
+  CAR:"CAROLINA-HURRICANES",CHI:"CHICAGO-BLACKHAWKS",COL:"COLORADO-AVALANCHE",CBJ:"COLUMBUS-BLUE-JACKETS",
+  DAL:"DALLAS-STARS",DET:"DETROIT-RED-WINGS",EDM:"EDMONTON-OILERS",FLA:"FLORIDA-PANTHERS",
+  LAK:"LOS-ANGELES-KINGS",MIN:"MINNESOTA-WILD",MTL:"MONTREAL-CANADIENS",NSH:"NASHVILLE-PREDATORS",
+  NJD:"NEW-JERSEY-DEVILS",NYI:"NEW-YORK-ISLANDERS",NYR:"NEW-YORK-RANGERS",OTT:"OTTAWA-SENATORS",
+  PHI:"PHILADELPHIA-FLYERS",PIT:"PITTSBURGH-PENGUINS",SJS:"SAN-JOSE-SHARKS",SEA:"SEATTLE-KRAKEN",
+  STL:"ST-LOUIS-BLUES",TBL:"TAMPA-BAY-LIGHTNING",TOR:"TORONTO-MAPLE-LEAFS",UTA:"UTAH-MAMMOTH",
+  VAN:"VANCOUVER-CANUCKS",VGK:"VEGAS-GOLDEN-KNIGHTS",WSH:"WASHINGTON-CAPITALS",WPG:"WINNIPEG-JETS"
+};
+const puckpediaTeamNames={
+  ANA:"Anaheim Ducks",BOS:"Boston Bruins",BUF:"Buffalo Sabres",CGY:"Calgary Flames",CAR:"Carolina Hurricanes",
+  CHI:"Chicago Blackhawks",COL:"Colorado Avalanche",CBJ:"Columbus Blue Jackets",DAL:"Dallas Stars",DET:"Detroit Red Wings",
+  EDM:"Edmonton Oilers",FLA:"Florida Panthers",LAK:"Los Angeles Kings",MIN:"Minnesota Wild",MTL:"Montreal Canadiens",
+  NSH:"Nashville Predators",NJD:"New Jersey Devils",NYI:"New York Islanders",NYR:"New York Rangers",OTT:"Ottawa Senators",
+  PHI:"Philadelphia Flyers",PIT:"Pittsburgh Penguins",SJS:"San Jose Sharks",SEA:"Seattle Kraken",STL:"St. Louis Blues",
+  TBL:"Tampa Bay Lightning",TOR:"Toronto Maple Leafs",UTA:"Utah Mammoth",VAN:"Vancouver Canucks",VGK:"Vegas Golden Knights",
+  WSH:"Washington Capitals",WPG:"Winnipeg Jets"
+};
+const fullNameToCode=new Map(Object.entries(puckpediaTeamNames).map(([code,name])=>[name.toLowerCase(),code]));
+function teamCodeInText(value){
+  const textValue=String(value||"");
+  const codeMatch=textValue.match(/\b([A-Z]{3})\b/);
+  if(codeMatch&&teams.includes(codeMatch[1]))return codeMatch[1];
+  for(const [code,name] of Object.entries(puckpediaTeamNames)){
+    if(textValue.toLowerCase().includes(name.toLowerCase()))return code;
+  }
+  return null;
+}
+function parsePuckpediaYear(html,owner,year,url){
+  const heading=new RegExp("<h[23][^>]*>\\s*"+year+"\\s+NHL Draft\\s*</h[23]>","i").exec(html);
+  if(!heading)return [];
+  const start=heading.index+heading[0].length;
+  const tail=html.slice(start);
+  const nextHeading=new RegExp("<h[23][^>]*>\\s*"+(year+1)+"\\s+NHL Draft\\s*</h[23]>","i").exec(tail);
+  const section=nextHeading?tail.slice(0,nextHeading.index):tail;
+  const result=[];
+  for(const rowMatch of section.matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/gi)){
+    const rawCells=[...rowMatch[1].matchAll(/<t[dh]\b[^>]*>([\s\S]*?)<\/t[dh]>/gi)].map(m=>plain(m[1]));
+    if(rawCells.length<3||/^(round|year)$/i.test(rawCells[0]||""))continue;
+    const roundMatch=String(rawCells[0]||"").match(/^\s*(\d+)/);
+    if(!roundMatch)continue;
+    const round=Number(roundMatch[1]);
+    if(round<1||round>7)continue;
+    const pickFrom=String(rawCells[1]||"").trim();
+    const details=String(rawCells[3]||"").trim();
+    const conditional=/conditional|\*/i.test(details);
+    let originalTeam=teamCodeInText(pickFrom);
+    const parenthetical=details.match(new RegExp(year+"\\s+(?:\\d+(?:st|nd|rd|th)?\\s+)?"+round+"?\\s*(?:round|R)\\s*"+round+"?[^\\n]{0,90}\\(([A-Z]{3})\\)","i"));
+    // Common PuckPedia wording: "a 2027 2nd round pick (CBJ)".
+    const explicitPickCode=details.match(new RegExp(year+"[^\\n]{0,100}?\\b"+round+"(?:st|nd|rd|th)?\\s+round pick\\s*\\(([A-Z]{3})\\)","i"));
+    const anyTeamCode=explicitPickCode?.[1]||parenthetical?.[1]||null;
+    if(!originalTeam&&anyTeamCode&&teams.includes(anyTeamCode))originalTeam=anyTeamCode;
+    if(!originalTeam&&!details)originalTeam=owner;
+    let currentOwner=owner;
+    if(/traded away/i.test(details)){
+      originalTeam=originalTeam||owner;
+      const fromMatch=details.match(/\bfrom\s+(.+?)(?:\s+for\s+|\s+in\s+exchange\s+for\s+|$)/i);
+      const fromCode=fromMatch?teamCodeInText(fromMatch[1]):null;
+      currentOwner=fromCode;
+    }else if(!originalTeam&&details){
+      // The source club is only accepted when the row explicitly names the pick's origin.
+      originalTeam=anyTeamCode;
+    }
+    if(!originalTeam||!teams.includes(originalTeam)||!currentOwner||!teams.includes(currentOwner))continue;
+    result.push({year,round,originalTeam,currentOwner,conditional,details,pickFrom,url});
+  }
+  return result;
+}
+let puckpediaPagesFetched=0,puckpediaRowsParsed=0,puckpediaUpdated=0,puckpediaConflicts=0;
+const puckpediaResults=[];
+for(let start=0;start<teams.length;start+=4){
+  const batch=await Promise.all(teams.slice(start,start+4).map(async owner=>{
+    const url=`https://puckpedia.com/team/${puckpediaSlugs[owner]}/draftpicks`;
+    try{
+      const response=await fetch(url,{
+        headers:{"user-agent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/131.0.0.0 Safari/537.36","accept":"text/html,application/xhtml+xml","accept-language":"en-US,en;q=0.9"},
+        signal:AbortSignal.timeout(15000)
+      });
+      if(!response.ok)throw new Error(`HTTP ${response.status}`);
+      const html=await response.text();
+      const rows=years.flatMap(year=>parsePuckpediaYear(html,owner,year,url));
+      return {owner,url,rows,error:null};
+    }catch(error){return {owner,url,rows:[],error:error.message};}
+  }));
+  puckpediaResults.push(...batch);
+  await new Promise(resolve=>setTimeout(resolve,120));
+}
+for(const result of puckpediaResults){
+  if(result.error){errors.push(`PuckPedia ${result.owner}: ${result.error}`);continue;}
+  puckpediaPagesFetched++;
+  puckpediaRowsParsed+=result.rows.length;
+  for(const row of result.rows){
+    const key=`${row.year}-${row.round}-${row.originalTeam}`;
+    const pick=database.picks.find(p=>Number(p.year)===row.year&&Number(p.round)===row.round&&p.originalTeam===row.originalTeam);
+    if(!pick)continue;
+    if(row.conditional){
+      pick.currentOwner=null;pick.status="excluded_conditional";pick.verified=false;pick.conditions=null;pick.conditionsVerified=false;
+      pick.source=row.url;pick.sourceUpdatedAt=stamp;pick.acquiredVia=row.details||null;
+      pick.verificationNote="Choix marqué conditionnel sur PuckPedia; exclu du registre jouable selon la règle du projet.";
+      continue;
+    }
+    if(pick.status==="excluded_conditional")continue;
+    const previousOwner=observed.get(key);
+    if(previousOwner&&previousOwner.owner!==row.currentOwner&&pick.verified===true&&pick.currentOwner!==row.currentOwner){
+      // Do not overwrite a source-backed contradiction; leave it for manual reconciliation.
+      pick.status="unverified";pick.verified=false;pick.currentOwner=null;pick.source=null;
+      pick.note=`Conflit entre les sources NHL et PuckPedia (${previousOwner.owner} / ${row.currentOwner}); validation manuelle requise.`;
+      puckpediaConflicts++;
+      continue;
+    }
+    pick.currentOwner=row.currentOwner;pick.status="active";pick.verified=true;pick.source=row.url;pick.sourceUpdatedAt=stamp;
+    pick.conditions=null;pick.conditionsVerified=true;pick.acquiredVia=row.details||null;
+    pick.verificationNote="Propriétaire recoupé depuis la page PuckPedia du club détenteur; choix non conditionnel dans la ligne source.";
+    delete pick.note;
+    observed.set(key,{owner:row.currentOwner,url:row.url,row});
+    puckpediaUpdated++;
+  }
+}
+console.log(`PuckPedia draft sync: ${puckpediaPagesFetched}/32 pages; ${puckpediaRowsParsed} parsed ownership rows; ${puckpediaUpdated} pick rows updated; ${puckpediaConflicts} conflicts.`);
+
 let provisionalOwners=0, snapshotConflicts=0, snapshotRows=0;
 try {
   const snapshot=JSON.parse(await readFile("data/draft-picks/hockey-insights-2027-2029.json","utf8"));

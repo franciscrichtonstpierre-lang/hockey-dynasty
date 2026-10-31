@@ -283,3 +283,45 @@ const output = {
 };
 await writeFile("data/players/registry.json", JSON.stringify(output,null,2)+"\n", "utf8");
 console.log(`Player registry: ${players.length} records; ${JSON.stringify(counts)}`);
+
+// Populate coaching ratings for simulation usability, without presenting them as verified scouting grades.
+// Ratings are intentionally marked as provisional until a sourced coach-evaluation dataset is added.
+for (const path of ["data/coaches/2026-2027.json", "data/coaches/ahl-2026-2027.json"]) {
+  try {
+    const staffData = JSON.parse(await readFile(path, "utf8"));
+    let filled = 0;
+    for (const coach of (Array.isArray(staffData.coaches) ? staffData.coaches : [])) {
+      const fields = ["offensive","defensive","playerDevelopment","playerManagement","physicalStyle","powerPlayImpact","penaltyKillImpact","youngPlayerUsage"];
+      const complete = fields.every(k => coach[k] != null && Number.isFinite(Number(coach[k])) && Number(coach[k]) >= 0 && Number(coach[k]) <= 99);
+      if (complete) continue;
+      const roleBase = coach.role === "head_coach" ? 63 : coach.role === "assistant_coach" ? 57 : 55;
+      const key = String(coach.coachId || coach.fullName || "");
+      let hash = 0;
+      for (const ch of key) hash = (hash * 31 + ch.charCodeAt(0)) >>> 0;
+      const variation = (hash % 5) - 2;
+      const base = Math.max(40, Math.min(85, roleBase + variation));
+      const defaults = {
+        offensive: base, defensive: base, playerDevelopment: base + 1,
+        playerManagement: base, physicalStyle: base, powerPlayImpact: base,
+        penaltyKillImpact: base, youngPlayerUsage: base
+      };
+      for (const field of fields) {
+        if (coach[field] == null || !Number.isFinite(Number(coach[field])) || Number(coach[field]) < 0 || Number(coach[field]) > 99) {
+          coach[field] = Math.max(0, Math.min(99, defaults[field]));
+        }
+      }
+      coach.ratingsStatus = "provisional_role_estimate";
+      coach.ratingsSource = "Hockey Dynasty role-based fallback model; not a sourced scouting grade";
+      filled++;
+    }
+    staffData.ratingsMetadata = {
+      ...(staffData.ratingsMetadata || {}),
+      status: "provisional_role_estimates",
+      note: "Missing coach ratings are role-based simulation estimates, not verified evaluations."
+    };
+    await writeFile(path, JSON.stringify(staffData, null, 2) + "\\n", "utf8");
+    console.log(`Coach ratings ${path}: ${filled} entries given explicitly provisional ratings.`);
+  } catch (error) {
+    console.warn(`Coach rating fallback skipped ${path}: ${error.message}`);
+  }
+}

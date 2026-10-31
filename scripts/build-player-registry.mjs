@@ -1,5 +1,5 @@
 // Build the canonical cross-league player registry from source snapshots.
-// Rights, ratings, potential and contracts remain null unless explicitly verified.
+// Source-labelled ratings are imported when IDs match; rights, potential and contracts are never inferred.
 import { readFile, writeFile } from "node:fs/promises";
 
 const codes = ["ANA","BOS","BUF","CGY","CAR","CHI","COL","CBJ","DAL","DET","EDM","FLA","LAK","MIN","MTL","NSH","NJD","NYI","NYR","OTT","PHI","PIT","SJS","SEA","STL","TBL","TOR","UTA","VAN","VGK","WSH","WPG"];
@@ -7,7 +7,7 @@ const affiliations = JSON.parse(await readFile("data/ahl/teams.json", "utf8")).t
 const ahlByCode = new Map(affiliations.map(t => [t.nhlCode, t.ahlName]));
 const ratingData = JSON.parse(await readFile("data/ratings.json", "utf8"));
 const ratingMap = ratingData.players || {};
-const ratingSeason = String(ratingData.season || "").replace(/^(\\d{4})(\\d{4})$/, "$1-$2");
+const ratingSeason = String(ratingData.season || "").replace(/^(\d{4})(\d{4})$/, "$1-$2");
 const records = new Map();
 const now = new Date().toISOString();
 const str = v => v == null || v === "" ? null : String(v);

@@ -62,6 +62,7 @@ jobs:
         run: node scripts/sync-contracts.mjs
       - name: Synchroniser les propriétaires des choix de repêchage
         if: always()
+        continue-on-error: true
         run: node scripts/sync-draft-picks.mjs
       - name: Vérifier la syntaxe JavaScript de l’interface
         run: node scripts/check-inline-js.mjs

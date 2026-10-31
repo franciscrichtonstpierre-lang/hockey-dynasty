@@ -18,6 +18,18 @@ const decode = s => String(s||"")
 const plain = s => decode(String(s||"").replace(/<br\s*\/?>/gi," ").replace(/<[^>]*>/g," ").replace(/\s+/g," ").trim());
 const positionPattern = /\((C\/LW|LW\/C|RW\/C|C\/RW|LW|RW|C|D|G|F|LD|RD)(?:\s*\/\s*(?:C|LW|RW|D|G|F|LD|RD))*\)$/i;
 const teamWords = new Set(["top prospects","other notable prospects","player","team","league","gp","g","a","tp","pim"]);
+const teamLeague = team => {
+  const t=String(team||"").toLowerCase();
+  if(/university|notre dame|michigan|usntdp|national u17/.test(t))return "NCAA";
+  if(/thunderbirds|wheat kings|raiders|medicine hat|silvertips|wild|oil kings|chiefs|hurricanes|rockets|blazers|hitmen|spokane|everett|wenatchee|kelowna|prince albert|brandon/.test(t))return "WHL";
+  if(/remparts|sea dogs|sea dogs|mooseheads|shawinigan|drummondville|armada|newfoundland regiment|islanders|olympiques|oceanic/.test(t))return "QMJHL";
+  if(/spirit|storm|iceDogs|ic edogs|rangers|sting|bulldogs|knights|firebirds|greyhounds|colts|battalion|67's|steelheads/.test(t))return "OHL";
+  if(/fargo force|muskegon|youngstown|sioux falls|green bay|des moines|buccaneers/.test(t))return "USHL";
+  if(/biel/.test(t))return "NL";
+  if(/yaroslavl|moskva|nizhny|krasnaya|chaika/.test(t))return "KHL";
+  if(/u20|u18|frolunda|frölunda|modo|moDo|leksands|örebro|orebro|karpat|kärpät|lukko|hifk|brynas|brynäs|färjestad|farjestad|djurgardens|djurgårdens|jokerit|kometa|pardubice|mannheim/.test(t))return "EUROPE";
+  return "UNKNOWN";
+};
 const all = [];
 const errors = [];
 for (const year of years) {
@@ -66,10 +78,20 @@ for (const year of years) {
     console.log(`Future draft prospects ${year}: ${deduped.size} rows parsed from ${url}`);
     if (!deduped.size) errors.push(`${year}: aucune ligne reconnue`);
   } catch (error) {
-    errors.push(`${year}: ${error.message}`);
-    console.warn(`Future draft prospects ${year}: ${error.message}`);
+    errors.push(`${year}: Elite Prospects ${error.message}`);
+    console.warn(`Future draft prospects ${year}: Elite Prospects ${error.message}`);
+    // Some public prospect sites block automated runners. A separately sourced fallback
+    // keeps known prospects available while preserving the source and snapshot date.
   }
 }
+try{
+  const seed=JSON.parse(await readFile("data/future-draft-prospects/fallback-seed.json","utf8"));
+  for(const p of (seed.prospects||[])){
+    if(!years.includes(Number(p.draftYear)))continue;
+    const key=`${p.draftYear}|${p.name.normalize("NFD").replace(/[\\u0300-\\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim()}`;
+    if(!all.some(existing=>`${existing.draftYear}|${existing.name.normalize("NFD").replace(/[\\u0300-\\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim()}`===key))all.push(p);
+  }
+}catch(error){console.warn(`Future draft fallback seed unavailable: ${error.message}`);}
 const byIdentity = new Map();
 for (const p of all) {
   const key = `${p.draftYear}|${p.name.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim()}`;

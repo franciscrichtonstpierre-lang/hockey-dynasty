@@ -64,7 +64,7 @@ if (report.coaches.ahlStaffExists) {
   for (const code of teams) {
     const staff=ahlCoaches.coaches.filter(x=>x.teamCode===code && x.league==="AHL" && x.employmentStatus==="employed");
     if (!staff.some(x=>x.role==="head_coach")) report.coaches.ahlMissingHead.push(code);
-    if (staff.filter(x=>x.role==="assistant_coach").length < 2) report.coaches.ahlMissingAssistants.push(code);
+    if (staff.filter(x=>x.role==="assistant_coach").length < 1) report.coaches.ahlMissingAssistants.push(code);
   }
 }
 

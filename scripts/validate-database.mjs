@@ -39,8 +39,13 @@ if (registry && Array.isArray(registry.players)) {
     if (league === "UNKNOWN" || !p.currentLeague) report.registry.unknown++;
     const id = p.playerId || p.nhlPlayerId || p.id;
     if (id != null) { const key = String(id); if (ids.has(key)) report.registry.duplicates++; else ids.add(key); }
-    if (p.potential != null && Number.isFinite(Number(p.potential)) && Number(p.potential) >= 0 && Number(p.potential) <= 99) report.registry.potentialAvailable++; else report.registry.potentialMissing++;
-    if (p.potentialEstimate != null && Number.isFinite(Number(p.potentialEstimate)) && Number(p.potentialEstimate) >= 0 && Number(p.potentialEstimate) <= 99 && p.potentialStatus === "provisional_model_estimate") report.registry.potentialEstimated++;
+    if (p.potential != null && Number.isFinite(Number(p.potential)) && Number(p.potential) >= 0 && Number(p.potential) <= 99) {
+      report.registry.potentialAvailable++;
+    } else if (p.potentialEstimate != null && Number.isFinite(Number(p.potentialEstimate)) && Number(p.potentialEstimate) >= 0 && Number(p.potentialEstimate) <= 99 && p.potentialStatus === "provisional_model_estimate") {
+      report.registry.potentialEstimated++;
+    } else {
+      report.registry.potentialMissing++;
+    }
     const overall = Number(p.overall ?? p.attributes?.OA);
     if (Number.isFinite(overall) && overall >= 0 && overall <= 99) report.registry.withOverall++; else report.registry.missingOverall++;
     const attrs = p.attributes && typeof p.attributes === "object" ? p.attributes : {};

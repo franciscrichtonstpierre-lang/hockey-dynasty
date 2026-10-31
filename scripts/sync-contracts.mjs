@@ -151,9 +151,9 @@ for (const code of codes) {
 }
 const organizationContracts = [];
 for (const registryPlayer of (registryData.players || [])) {
-  if (registryPlayer.currentLeague === "NHL" || registryPlayer.nhlPlayerId == null) continue;
+  if (registryPlayer.currentLeague === "NHL") continue;
   const id = Number(registryPlayer.nhlPlayerId);
-  const candidates = contractsByPlayerId.get(id) || [];
+  const candidates = Number.isFinite(id) ? (contractsByPlayerId.get(id) || []) : [];
   const active = candidates.map(c => ({ c, season: (byKey.get(c.contract_key || c.contractKey) || [])[0] }))
     .filter(x => {
       if (x.c.bought_out) return false;
@@ -169,9 +169,13 @@ for (const registryPlayer of (registryData.players || [])) {
   if (!selected) continue;
   const contract = selected.c, season = selected.season;
   organizationContracts.push({
-    playerId:id, registryId:registryPlayer.id, name:registryPlayer.name,
+    playerId:Number.isFinite(id) ? id : null, registryId:registryPlayer.id, name:registryPlayer.name,
     currentLeague:registryPlayer.currentLeague || null, currentTeam:registryPlayer.currentTeam || null,
     nhlRightsTeam:registryPlayer.nhlRightsTeam || null,
+    ahlAffiliationTeam:registryPlayer.ahlAffiliationTeam || null,
+    affiliationSource:registryPlayer.affiliationSource || null,
+    affiliationSeason:registryPlayer.affiliationSeason || null,
+    affiliationStatus:registryPlayer.affiliationStatus || null,
     contractStatus:season ? "MATCHED" : "MATCHED_CONTRACT_NO_SEASON_ROW",
     contract:{
       contractKey:contract.contract_key||contract.contractKey||null,
@@ -203,7 +207,11 @@ for (const rp of (registryData.players || [])) {
     registryId: rp.id, name: rp.name,
     currentLeague: rp.currentLeague || null, currentTeam: rp.currentTeam || null,
     nhlRightsTeam: rp.nhlRightsTeam || null,
-    contractStatus: rp.nhlPlayerId != null ? "NO_MATCHED_2026_27_CONTRACT" : "NO_NHL_PLAYER_ID_SOURCE_UNAVAILABLE",
+    ahlAffiliationTeam: rp.ahlAffiliationTeam || null,
+    affiliationSource: rp.affiliationSource || null,
+    affiliationSeason: rp.affiliationSeason || null,
+    affiliationStatus: rp.affiliationStatus || null,
+    contractStatus: rp.nhlPlayerId != null ? "NO_MATCHED_2026_27_CONTRACT" : (rp.currentLeague === "ECHL" ? "ECHL_CONTRACT_LEVEL_UNVERIFIED" : "NO_NHL_PLAYER_ID_SOURCE_UNAVAILABLE"),
     contract: null, season: null, sourceDataset: "ehlersio/nhl-contracts", license: "CC0-1.0",
     dataNote: "No verified 2026-27 contract matched. This is not proof that the player has no contract; verify against the player's league/team or official announcement."
   });

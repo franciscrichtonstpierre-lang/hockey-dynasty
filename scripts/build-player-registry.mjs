@@ -563,6 +563,32 @@ for(const result of pipelineJsonResults){
 }
 console.log(`Hockey Insights team prospect JSON: ${pipelineJsonPagesFetched}/32 team files; ${pipelineJsonRows} rows; ${pipelineJsonEnriched} existing records enriched; ${pipelineJsonAdded} new records; ${pipelineJsonAmbiguous} ambiguous identities; ${pipelineJsonUnknown} source rows without a known league.`);
 
+// Apply auditable, source-backed current league/team corrections to legacy prospect entries.
+const manualLeagueCorrections=JSON.parse(await readFile("data/players/manual-league-corrections.json","utf8"));
+let manualCorrectionsApplied=0,manualCorrectionsMissing=0,manualCorrectionsAmbiguous=0;
+for(const correction of (manualLeagueCorrections.players||[])){
+  const names=[correction.name,...(correction.aliases||[])].map(nameKey);
+  const matches=[...records.values()].filter(p=>names.includes(nameKey(p.name)));
+  if(matches.length!==1){
+    if(matches.length===0)manualCorrectionsMissing++;else manualCorrectionsAmbiguous++;
+    continue;
+  }
+  const p=matches[0];
+  if(correction.currentLeague)p.currentLeague=correction.currentLeague;
+  if(Object.prototype.hasOwnProperty.call(correction,"currentTeam"))p.currentTeam=correction.currentTeam;
+  if(correction.nhlRightsTeam&&codes.includes(correction.nhlRightsTeam))p.nhlRightsTeam=correction.nhlRightsTeam;
+  if(correction.birthDate&&!p.birthDate)p.birthDate=correction.birthDate;
+  if(correction.position&&!p.position)p.position=posGroup(correction)||correction.position;
+  if(correction.currentStatus)p.currentStatus=correction.currentStatus;
+  p.currentTeamSource=correction.source||null;
+  p.currentLeagueSource=correction.source||null;
+  p.leagueResolution="manual_source_verified";
+  p.manualCorrectionSource=correction.source||null;
+  p.sourceUpdatedAt=manualLeagueCorrections.verifiedAt||p.sourceUpdatedAt||now;
+  manualCorrectionsApplied++;
+}
+console.log(`Manual league corrections: ${manualCorrectionsApplied}/${manualLeagueCorrections.players?.length||0} applied; ${manualCorrectionsMissing} missing records; ${manualCorrectionsAmbiguous} ambiguous identities.`);
+
 // Collapse same-person records that appear in both NHL and AHL snapshots.
 const samePerson = new Map();
 for (const p of records.values()) {

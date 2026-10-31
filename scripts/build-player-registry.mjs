@@ -485,7 +485,15 @@ const leagueFromPipeline = value => {
   if(/\bushl\b/.test(l))return "USHL";
   if(/usntdp|national u17/.test(l))return "USNTDP";
   if(/\bechl\b|bchl|ajhl|nahl|sjhl|mjhl|cchl|ojhl|league1/.test(l))return "OTHER";
-  if(/khl|shl|liiga|mhl|vhl|allsvenskan|nationell|europe|sweden|finland|swiss|czech|russia|germany|slovakia|latvia|norway|denmark|france|austria|icehl|del|mestis|\\bnl\\b|\\bsl\\b/.test(l))return "EUROPE";
+  if(/\\bkhl\\b/.test(l))return "KHL";
+  if(/\\bshl\\b|swedish hockey league/.test(l))return "SHL";
+  if(/liiga|finnish liiga/.test(l))return "LIIGA";
+  if(/icehl|ice hockey league|ebel|austrian ice/.test(l))return "ICEHL";
+  if(/\\bdel\\b|deutsche eishockey liga/.test(l))return "DEL";
+  if(/\\bnl\\b|national league switzerland|swiss national league/.test(l))return "NL";
+  if(/czech extraliga|\\bextraliga\\b|tipsport liga/.test(l))return "CZECH";
+  if(/\\bechl\\b/.test(l))return "ECHL";
+  if(/mestis|allsvenskan|nationell|europe|sweden|finland|swiss|czech|russia|germany|slovakia|latvia|norway|denmark|france|austria|mhl|vhl|\\bsl\\b/.test(l))return "EUROPE";
   return "OTHER";
 };
 let pipelineJsonPagesFetched=0,pipelineJsonRows=0,pipelineJsonEnriched=0,pipelineJsonAdded=0,pipelineJsonAmbiguous=0,pipelineJsonUnknown=0;

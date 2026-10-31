@@ -1,0 +1,25 @@
+name: Vérifier l’interface
+
+on:
+  push:
+    paths:
+      - ".github/workflows/check-interface.yml"
+      - "index.html"
+      - "scripts/check-inline-js.mjs"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  syntax:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupérer le dépôt
+        uses: actions/checkout@v4
+      - name: Installer Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Vérifier la syntaxe JavaScript intégrée
+        run: node scripts/check-inline-js.mjs

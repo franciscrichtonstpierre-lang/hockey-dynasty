@@ -435,11 +435,18 @@ try {
     const candidates=[...records.values()].filter(r=>nameKey(r.name)===key);
     const matching=candidates.length===1?candidates[0]:null;
     if(matching){
+      const hadUnknownLeague=!matching.currentLeague||matching.currentLeague==="UNKNOWN";
       matching.futureDraftEligibility=Number(p.draftYear);
       matching.futureDraftSourceRank=p.sourceRank??null;
       matching.futureDraftSource=p.source||futureDraftData.source||null;
       matching.futureDraftRankType=p.rankType||null;
-      // A player who already has a verified NHL rights holder remains tied to that club.
+      if(hadUnknownLeague&&p.currentLeague&&p.currentLeague!=="UNKNOWN"){
+        matching.currentLeague=p.currentLeague;
+        matching.currentTeam=matching.currentTeam||str(p.currentTeam);
+        matching.leagueResolution="future_draft_source";
+      }else if(matching.currentLeague===p.currentLeague&&!matching.currentTeam&&p.currentTeam){
+        matching.currentTeam=str(p.currentTeam);
+      }
       if(!matching.nhlRightsTeam && p.rightsTeam)matching.nhlRightsTeam=p.rightsTeam;
       futureDraftProspectsMatched++;
       continue;
@@ -460,6 +467,98 @@ try {
 }catch(error){
   console.warn(`Future draft prospect registry skipped: ${error.message}`);
 }
+
+// Enrich current league/team fields from the public Hockey Insights per-club prospect export.
+// Only explicit league labels are used; the club file itself is not treated as proof of NHL rights.
+const leagueFromPipeline = value => {
+  const l=String(value||"").trim().toLowerCase();
+  if(!l||/unknown|unassigned|not available|^n\/a$/.test(l))return "UNKNOWN";
+  if(/\\bnhl\\b|national hockey league/.test(l))return "NHL";
+  if(/\\bahl\\b|american hockey league/.test(l))return "AHL";
+  if(/ncaa|college|university/.test(l))return "NCAA";
+  if(/\\bohl\\b/.test(l))return "OHL";
+  if(/\\bwhl\\b/.test(l))return "WHL";
+  if(/qmjhl|lhjmq/.test(l))return "QMJHL";
+  if(/\\bushl\\b/.test(l))return "USHL";
+  if(/usntdp|national u17/.test(l))return "USNTDP";
+  if(/\\bechl\\b|bchl|ajhl|nahl|sjhl|mjhl|cchl|ojhl|league1/.test(l))return "OTHER";
+  if(/khl|shl|liiga|mhl|vhl|allsvenskan|nationell|europe|sweden|finland|swiss|czech|russia|germany|slovakia|latvia|norway|denmark|france|austria|icehl|del|mestis|\\bnl\\b|\\bsl\\b/.test(l))return "EUROPE";
+  return "OTHER";
+};
+let pipelineJsonPagesFetched=0,pipelineJsonRows=0,pipelineJsonEnriched=0,pipelineJsonAdded=0,pipelineJsonAmbiguous=0,pipelineJsonUnknown=0;
+const pipelineJsonResults=await Promise.all(codes.map(async teamCode=>{
+  const url=`https://hockeyinsights.ca/data/team-prospects/${teamCode}.json`;
+  try{
+    const response=await fetch(url,{headers:{"user-agent":"Mozilla/5.0 (compatible; HockeyDynastyDataSync/1.0)","accept":"application/json"},signal:AbortSignal.timeout(12000)});
+    if(!response.ok)throw new Error(`HTTP ${response.status}`);
+    return {teamCode,url,data:await response.json(),error:null};
+  }catch(error){return {teamCode,url,data:null,error:error.message};}
+}));
+for(const result of pipelineJsonResults){
+  if(result.error)continue;
+  const data=result.data;
+  const candidates=Array.isArray(data)?data:[data?.prospects,data?.players,data?.rows,data?.records,data?.items,data?.data,data?.team?.prospects].find(Array.isArray)||[];
+  if(!Array.isArray(candidates))continue;
+  pipelineJsonPagesFetched++;
+  for(const p of candidates){
+    pipelineJsonRows++;
+    const name=nameOf(p)||str(first(p.player_name,p.full_name,p.displayName));
+    if(!name)continue;
+    const rawLeague=first(p.currentLeague,p.currentLeagueName,p.league,p.leagueName,p.leagueLabel,p.leagueCode,p.teamLeague,p.current_league,p.current_league_name,p.league?.name);
+    const league=leagueFromPipeline(rawLeague);
+    const currentTeam=str(first(p.currentTeam,p.currentTeamName,p.teamName,p.team_name,p.club,p.clubName,p.currentClub,p.team?.name,p.team?.label));
+    const birthDate=str(first(p.birthDate,p.birthdate,p.birth_date));
+    const position=posGroup(p);
+    const explicitRights=str(first(p.nhlRightsTeam,p.rightsTeam,p.rights_team,p.nhlRightsCode,p.rightsCode));
+    const draftYear=Number(first(p.draftYear,p.draft_year,p.yearDrafted));
+    let matches=[...records.values()].filter(r=>nameKey(r.name)===nameKey(name));
+    if(birthDate){
+      const sameBirth=matches.filter(r=>r.birthDate===birthDate&&(!position||!r.position||r.position===position));
+      if(sameBirth.length)matches=sameBirth;
+    }
+    if(matches.length>1&&position){
+      const samePosition=matches.filter(r=>!r.position||r.position===position);
+      if(samePosition.length)matches=samePosition;
+    }
+    if(matches.length===1){
+      const match=matches[0];
+      let changed=false;
+      if((!match.currentLeague||match.currentLeague==="UNKNOWN")&&league!=="UNKNOWN"){
+        match.currentLeague=league;match.leagueResolution="hockey_insights_team_prospects_snapshot";changed=true;
+        if(currentTeam)match.currentTeam=currentTeam;
+      }else if(match.currentLeague===league&&!match.currentTeam&&currentTeam){
+        match.currentTeam=currentTeam;changed=true;
+      }
+      if(!match.birthDate&&birthDate){match.birthDate=birthDate;changed=true;}
+      if(!match.position&&position){match.position=position;changed=true;}
+      if(!match.draftYear&&Number.isFinite(draftYear)&&draftYear>1900&&draftYear<2100){match.draftYear=draftYear;changed=true;}
+      if(!match.nhlRightsTeam&&explicitRights&&codes.includes(explicitRights)){match.nhlRightsTeam=explicitRights;changed=true;}
+      if(changed){match.teamPipelineSnapshotDate=data?.meta?.generatedLocalDate||data?.generatedAt||"2026-09-08";match.teamPipelineSource=result.url;pipelineJsonEnriched++;}
+      if(league==="UNKNOWN")pipelineJsonUnknown++;
+    }else if(matches.length>1){
+      pipelineJsonAmbiguous++;
+    }else if(league!=="UNKNOWN"){
+      const key=nameKey(name);
+      add({
+        id:`pipeline:${result.teamCode}:${key.replace(/ /g,"-")}`,name,
+        firstName:str(first(p.firstName,p.first_name)),lastName:str(first(p.lastName,p.last_name)),
+        position,detailedPosition:detailedPos(p),currentLeague:league,currentTeam,
+        nhlRightsTeam:explicitRights&&codes.includes(explicitRights)?explicitRights:null,
+        rightsStatus:str(first(p.rightsStatus,p.rights_status)),birthDate,
+        age:Number.isFinite(Number(p.age))?Number(p.age):null,
+        draftYear:Number.isFinite(draftYear)&&draftYear>1900&&draftYear<2100?draftYear:null,
+        draftRound:Number.isFinite(Number(first(p.draftRound,p.draft_round)))?Number(first(p.draftRound,p.draft_round)):null,
+        draftOverall:Number.isFinite(Number(first(p.draftOverall,p.draft_overall,p.pick)))?Number(first(p.draftOverall,p.draft_overall,p.pick)):null,
+        nhlPlayerId:Number.isFinite(Number(first(p.nhlPlayerId,p.nhl_player_id)))?Number(first(p.nhlPlayerId,p.nhl_player_id)):null,
+        attributes:null,overall:null,potential:null,source:str(first(p.source,data?.source,result.url)),
+        sourceUpdatedAt:str(first(p.sourceUpdatedAt,p.source_updated_at,data?.meta?.generatedLocalDate,data?.generatedAt,now)),
+        teamPipelineSnapshotDate:data?.meta?.generatedLocalDate||data?.generatedAt||"2026-09-08"
+      });
+      pipelineJsonAdded++;
+    }
+  }
+}
+console.log(`Hockey Insights team prospect JSON: ${pipelineJsonPagesFetched}/32 team files; ${pipelineJsonRows} rows; ${pipelineJsonEnriched} existing records enriched; ${pipelineJsonAdded} new records; ${pipelineJsonAmbiguous} ambiguous identities; ${pipelineJsonUnknown} source rows without a known league.`);
 
 // Collapse same-person records that appear in both NHL and AHL snapshots.
 const samePerson = new Map();

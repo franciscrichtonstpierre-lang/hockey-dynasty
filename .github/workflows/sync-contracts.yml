@@ -26,7 +26,6 @@ jobs:
         run: node scripts/sync-contracts.mjs
       - name: Audit database
         id: audit
-        continue-on-error: true
         run: node scripts/validate-database.mjs
       - name: Commit refreshed contract snapshot
         run: |

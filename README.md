@@ -9,14 +9,14 @@ Saison cible : **2026–2027**. Ce dépôt contient l’application et les insta
 - **Registre central :** 2 361 fiches générées à partir des effectifs LNH, LAH et listes d’espoirs; 603 fiches ont encore une ligue inconnue. Ce nombre ne signifie pas que toutes les fiches sont complètes ni qu’elles sont toutes des personnes uniques confirmées.
 - **Espoirs :** 32/32 fichiers non vides, 889 entrées au dernier audit après fusion de suppléments secondaires pour Buffalo, Los Angeles, les Islanders et Toronto. Les suppléments ont des dates de capture distinctes et exigent une revérification des droits. Detroit, Utah et Vancouver conservent aussi des listes locales parce que l’API publique NHL ne fournit pas de réponse exploitable.
 - **Contrats :** 799/801 joueurs LNH appariés à un dossier contractuel dans le jeu de données CC0; 482/801 ont une ligne salariale/cap hit 2026–2027 exploitable. Les autres valeurs restent « À vérifier » au lieu d’être inventées.
-- **Entraîneurs LNH :** 32 équipes et 158 fiches dans la base initiale. Les fonctions exactes, les adjoints et les changements en cours de saison doivent être revérifiés; le personnel LAH reste à compléter.
-- **Choix de repêchage :** le registre énumère maintenant les **672 emplacements de base** (32 équipes × 7 rondes × 3 années). À la dernière vérification, **15 propriétaires sont sourcés et 657 restent non résolus**. Ces choix non vérifiés ne doivent pas être proposés à l’échange ni au repêchage. Les conditions et protections doivent aussi être confirmées.
+- **Entraîneurs LNH :** 32 équipes et 158 fiches dans la base initiale. **Personnel LAH ajouté :** 32 équipes et 159 fiches dans `data/coaches/ahl-2026-2027.json`. Les fonctions exactes et les changements en cours de saison doivent encore être revérifiés; l’audit contrôle maintenant les entraîneurs-chefs et les adjoints dans les deux ligues.
+- **Choix de repêchage :** le registre énumère maintenant les **672 emplacements de base** (32 équipes × 7 rondes × 3 années). À la dernière vérification, **15 propriétaires sont sourcés et 657 restent non résolus**. Les attributions ajoutées sans preuve propre à la transaction ont été annulées plutôt que présentées comme vérifiées. Ces choix non vérifiés ne doivent pas être proposés à l’échange ni au repêchage. Les conditions et protections doivent aussi être confirmées.
 
 ## Synchronisation et audit
 
 - `scripts/sync-nhl-data.mjs` — effectifs LNH et listes d’espoirs accessibles par l’API NHL; fusionne aussi les compléments secondaires sourcés de BUF, LAK, NYI et TOR, sans remplacer les données API par des doublons.
 - `scripts/sync-ahl-data.mjs` — affiliations et effectifs LAH.
-- `scripts/build-player-registry.mjs` — registre central; importe les cotes uniquement lorsqu’un identifiant correspond.
+- `scripts/build-player-registry.mjs` — registre central; importe les cotes uniquement lorsqu’un identifiant correspond et enrichit une ligue inconnue seulement si une correspondance de nom unique mène à un effectif de ligue connue.
 - `scripts/sync-contracts.mjs` — contrats, salaires par saison et clauses à partir de [ehlersio/nhl-contracts](https://github.com/ehlersio/nhl-contracts), sous licence CC0-1.0.
 - `scripts/validate-database.mjs` — audit strict de couverture, salaires, doublons, listes d’espoirs, personnel LNH/LAH et propriétaires de choix; il échoue volontairement tant que des données requises restent manquantes ou non vérifiées.
 

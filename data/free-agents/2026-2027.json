@@ -23,6 +23,16 @@
       "name": "NHL.com — Free Agent Tracker 2026-27",
       "url": "https://www.nhl.com/news/topic/free-agency/free-agency-signings-nhl-2026-27",
       "checkedAt": "2026-10-31"
+    },
+    {
+      "name": "PuckPedia — Joey Anderson",
+      "url": "https://puckpedia.com/player/Joey-Anderson",
+      "checkedAt": "2026-10-31"
+    },
+    {
+      "name": "PuckPedia — Jeremie Poirier",
+      "url": "https://puckpedia.com/player/jeremie-poirier",
+      "checkedAt": "2026-10-31"
     }
   ],
   "players": [
@@ -262,9 +272,9 @@
       "id": "fa-2026-jeremie-poirier",
       "name": "Jeremie Poirier",
       "position": "D",
-      "league": "NHL",
-      "currentLeague": "NHL",
-      "currentTeam": "",
+      "league": "DEL",
+      "currentLeague": "DEL",
+      "currentTeam": "Adler Mannheim",
       "overall": null,
       "potential": null,
       "askingSalary": null,
@@ -272,12 +282,54 @@
       "previousCapHit": null,
       "contractStatus": "FREE_AGENT",
       "status": "available",
-      "freeAgentType": "UFA no QO",
+      "freeAgentType": "Professionnel international · droits NHL libres",
       "nhlRightsTeam": "",
       "rightsStatus": "free_agent",
-      "source": "https://www.nhl.com/news/topic/free-agency/free-agency-signings-nhl-2026-27",
+      "source": "https://puckpedia.com/player/jeremie-poirier",
       "sourceCheckedAt": "2026-10-31",
-      "sourceNote": "NHL.com le liste parmi les joueurs n'ayant pas reçu d'offre qualificative. La liste NHL précise qu'elle n'est plus actualisée depuis le début de la pré-saison; contrat actuel et droits à revérifier avant signature."
+      "sourceNote": "Aucun contrat NHL actuel affiché; statistiques 2026-27 indiquées avec Adler Mannheim (DEL). Peut être recruté par une équipe NHL si son contrat DEL et son admissibilité le permettent; droits NHL à revérifier."
+    },
+    {
+      "id": "fa-2026-joey-anderson",
+      "name": "Joey Anderson",
+      "position": "F",
+      "league": "NHL",
+      "currentLeague": "NHL",
+      "currentTeam": "",
+      "overall": null,
+      "potential": null,
+      "askingSalary": null,
+      "previousTeam": "Chicago Blackhawks",
+      "previousCapHit": 800000,
+      "contractStatus": "FREE_AGENT",
+      "status": "available",
+      "freeAgentType": "UFA",
+      "rightsStatus": "free_agent",
+      "nhlRightsTeam": "",
+      "source": "https://puckpedia.com/player/Joey-Anderson",
+      "sourceCheckedAt": "2026-10-31",
+      "sourceNote": "Fiche consultée : aucun contrat actuel affiché et contrat précédent expiré en 2025-26. Vérifier qu'aucun contrat AHL ou autre ligue n'a été signé avant l'offre."
+    },
+    {
+      "id": "fa-2026-kole-lind",
+      "name": "Kole Lind",
+      "position": "F",
+      "league": "NHL",
+      "currentLeague": "NHL",
+      "currentTeam": "",
+      "overall": null,
+      "potential": null,
+      "askingSalary": null,
+      "previousTeam": "Dallas Stars",
+      "previousCapHit": 775000,
+      "contractStatus": "FREE_AGENT",
+      "status": "available",
+      "freeAgentType": "UFA",
+      "rightsStatus": "free_agent",
+      "nhlRightsTeam": "",
+      "source": "https://puckpedia.com/player/Kole-Lind",
+      "sourceCheckedAt": "2026-10-31",
+      "sourceNote": "Fiche PuckPedia : aucun contrat NHL actuel affiché et statut UFA après 2025-26. Vérifier séparément toute entente AHL avant de traiter comme disponible."
     }
   ],
   "coaches": [],

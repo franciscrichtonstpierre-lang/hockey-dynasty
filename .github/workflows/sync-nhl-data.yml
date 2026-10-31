@@ -11,7 +11,6 @@ on:
       - "scripts/sync-draft-picks.mjs"
       - "scripts/validate-database.mjs"
       - "scripts/check-inline-js.mjs"
-      - "index.html"
       - "data/ahl/teams.json"
       - "data/prospects/**"
       - "data/prospects-supplemental/**"

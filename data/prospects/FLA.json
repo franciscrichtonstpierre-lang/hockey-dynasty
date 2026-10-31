@@ -1,9 +1,9 @@
 {
   "teamCode": "FLA",
   "source": "https://api-web.nhle.com/v1/prospects/FLA",
-  "sourceType": "NHL Web API",
-  "syncedUTC": "2026-10-31T02:01:42.155Z",
-  "count": 34,
+  "sourceType": "NHL Web API + source-labelled supplemental pipeline",
+  "syncedUTC": "2026-10-31T02:02:22.453Z",
+  "count": 37,
   "prospects": [
     {
       "id": 8485597,
@@ -846,6 +846,51 @@
         "default": "New Jersey"
       },
       "positionGroup": "goalies"
+    },
+    {
+      "fullName": "Donovan Sebrango",
+      "positionCode": "D",
+      "age": 24,
+      "currentLeague": "NHL",
+      "currentTeam": null,
+      "nhlRightsTeam": "FLA",
+      "draftYear": 2020,
+      "draftRound": 3,
+      "draftOverall": 63,
+      "rightsStatus": "secondary_snapshot_recheck_required",
+      "source": "https://hockeyinsights.ca/team-pipeline/florida-panthers/",
+      "sourceUpdatedAt": "2026-09-28",
+      "verificationStatus": "secondary_snapshot_recheck_required"
+    },
+    {
+      "fullName": "Samu Salminen",
+      "positionCode": "C",
+      "age": 23,
+      "currentLeague": "NCAA",
+      "currentTeam": null,
+      "nhlRightsTeam": "FLA",
+      "draftYear": 2021,
+      "draftRound": 3,
+      "draftOverall": 68,
+      "rightsStatus": "secondary_snapshot_recheck_required",
+      "source": "https://hockeyinsights.ca/team-pipeline/florida-panthers/",
+      "sourceUpdatedAt": "2026-09-28",
+      "verificationStatus": "secondary_snapshot_recheck_required"
+    },
+    {
+      "fullName": "Stepan Gorbunov",
+      "positionCode": "C",
+      "age": 20,
+      "currentLeague": "KHL",
+      "currentTeam": null,
+      "nhlRightsTeam": "FLA",
+      "draftYear": 2024,
+      "draftRound": 6,
+      "draftOverall": 169,
+      "rightsStatus": "secondary_snapshot_recheck_required",
+      "source": "https://hockeyinsights.ca/team-pipeline/florida-panthers/",
+      "sourceUpdatedAt": "2026-09-28",
+      "verificationStatus": "secondary_snapshot_recheck_required"
     }
   ],
   "dataNotes": [

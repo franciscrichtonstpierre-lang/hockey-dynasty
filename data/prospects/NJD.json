@@ -1,9 +1,9 @@
 {
   "teamCode": "NJD",
   "source": "https://api-web.nhle.com/v1/prospects/NJD",
-  "sourceType": "NHL Web API",
-  "syncedUTC": "2026-10-31T02:01:44.687Z",
-  "count": 44,
+  "sourceType": "NHL Web API + source-labelled supplemental pipeline",
+  "syncedUTC": "2026-10-31T02:02:25.213Z",
+  "count": 48,
   "prospects": [
     {
       "id": 8484446,
@@ -1114,6 +1114,66 @@
       },
       "birthCountry": "RUS",
       "positionGroup": "goalies"
+    },
+    {
+      "fullName": "Anton Silayev",
+      "positionCode": "D",
+      "age": 20,
+      "currentLeague": "KHL",
+      "currentTeam": null,
+      "nhlRightsTeam": "NJD",
+      "draftYear": 2024,
+      "draftRound": 1,
+      "draftOverall": 10,
+      "rightsStatus": "secondary_snapshot_recheck_required",
+      "source": "https://hockeyinsights.ca/team-pipeline/new-jersey-devils/",
+      "sourceUpdatedAt": "2026-09-28",
+      "verificationStatus": "secondary_snapshot_recheck_required"
+    },
+    {
+      "fullName": "Alexander Command",
+      "positionCode": "C",
+      "age": 18,
+      "currentLeague": "J20 NATIONELL",
+      "currentTeam": null,
+      "nhlRightsTeam": "NJD",
+      "draftYear": 2026,
+      "draftRound": 1,
+      "draftOverall": 12,
+      "rightsStatus": "secondary_snapshot_recheck_required",
+      "source": "https://hockeyinsights.ca/team-pipeline/new-jersey-devils/",
+      "sourceUpdatedAt": "2026-09-28",
+      "verificationStatus": "secondary_snapshot_recheck_required"
+    },
+    {
+      "fullName": "Rémi Poirier",
+      "positionCode": "G",
+      "age": 24,
+      "currentLeague": "AHL",
+      "currentTeam": null,
+      "nhlRightsTeam": "NJD",
+      "draftYear": 2020,
+      "draftRound": 6,
+      "draftOverall": 185,
+      "rightsStatus": "secondary_snapshot_recheck_required",
+      "source": "https://hockeyinsights.ca/team-pipeline/new-jersey-devils/",
+      "sourceUpdatedAt": "2026-09-28",
+      "verificationStatus": "secondary_snapshot_recheck_required"
+    },
+    {
+      "fullName": "Ben Steeves",
+      "positionCode": "LW",
+      "age": 24,
+      "currentLeague": "AHL",
+      "currentTeam": null,
+      "nhlRightsTeam": "NJD",
+      "draftYear": null,
+      "draftRound": null,
+      "draftOverall": null,
+      "rightsStatus": "secondary_snapshot_recheck_required",
+      "source": "https://hockeyinsights.ca/team-pipeline/new-jersey-devils/",
+      "sourceUpdatedAt": "2026-09-28",
+      "verificationStatus": "secondary_snapshot_recheck_required"
     }
   ],
   "dataNotes": [

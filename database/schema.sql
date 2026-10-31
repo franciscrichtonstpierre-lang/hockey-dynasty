@@ -30,3 +30,54 @@ create policy "Members see roster assignments" on public.league_members for sele
 alter table public.league_members add column if not exists manager_name text not null default 'DG';
 alter table public.league_members drop constraint if exists league_members_manager_name_length;
 alter table public.league_members add constraint league_members_manager_name_length check (char_length(manager_name) between 2 and 40);
+
+
+-- Compatibility with the browser app's league owner, invitation and membership fields.
+alter table public.leagues add column if not exists owner_id uuid references auth.users(id) on delete cascade;
+alter table public.leagues add column if not exists join_code text;
+update public.leagues set owner_id = commissioner_id where owner_id is null;
+update public.leagues
+set join_code = upper(substr(encode(gen_random_bytes(6), 'hex'), 1, 8))
+where join_code is null or btrim(join_code) = '';
+alter table public.leagues alter column owner_id set not null;
+alter table public.leagues alter column join_code set default upper(substr(encode(gen_random_bytes(6), 'hex'), 1, 8));
+alter table public.leagues alter column join_code set not null;
+create unique index if not exists leagues_join_code_unique on public.leagues(join_code);
+
+drop policy if exists "League owners can update leagues" on public.leagues;
+create policy "League owners can update leagues" on public.leagues
+for update to authenticated using (owner_id = auth.uid()) with check (owner_id = auth.uid());
+
+drop policy if exists "Users can join leagues" on public.league_members;
+create policy "Users can join leagues" on public.league_members
+for insert to authenticated with check (user_id = auth.uid());
+
+drop policy if exists "League owners can update member assignments" on public.league_members;
+create policy "League owners can update member assignments" on public.league_members
+for update to authenticated
+using (exists (select 1 from public.leagues l where l.id = league_id and l.owner_id = auth.uid()))
+with check (exists (select 1 from public.leagues l where l.id = league_id and l.owner_id = auth.uid()));
+
+create or replace function public.find_league_by_code(p_join_code text)
+returns table (id uuid, name text, join_code text)
+language plpgsql
+security definer
+set search_path = public
+as $$
+begin
+  if auth.uid() is null then
+    raise exception 'Connexion requise pour rechercher une ligue.';
+  end if;
+  if p_join_code is null or length(trim(p_join_code)) = 0 then
+    return;
+  end if;
+  return query
+    select l.id, l.name, l.join_code
+    from public.leagues l
+    where upper(trim(l.join_code)) = upper(trim(p_join_code))
+    limit 1;
+end;
+$$;
+revoke all on function public.find_league_by_code(text) from public;
+revoke all on function public.find_league_by_code(text) from anon;
+grant execute on function public.find_league_by_code(text) to authenticated;

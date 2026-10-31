@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "season": "2026-2027",
+  "checkedAt": "2026-10-30",
+  "description": "Joueurs dont l'absence de contrat NHL actif a été confirmée dans les fiches PuckPedia consultées à la date de vérification. Marché initial partiel, à compléter par ligue.",
+  "sources": [
+    {
+      "name": "PuckPedia — Jake Bean",
+      "url": "https://puckpedia.com/player/jake-bean",
+      "checkedAt": "2026-10-30"
+    },
+    {
+      "name": "PuckPedia — Travis Hamonic",
+      "url": "https://puckpedia.com/player/Travis-Hamonic",
+      "checkedAt": "2026-10-30"
+    }
+  ],
+  "players": [
+    {
+      "id": "fa-2026-jake-bean",
+      "name": "Jake Bean",
+      "position": "D",
+      "league": "NHL",
+      "currentLeague": "NHL",
+      "currentTeam": "",
+      "overall": null,
+      "potential": null,
+      "askingSalary": null,
+      "previousTeam": "Calgary Flames",
+      "previousCapHit": 1750000,
+      "contractStatus": "FREE_AGENT",
+      "status": "available",
+      "freeAgentType": "UFA",
+      "source": "https://puckpedia.com/player/jake-bean",
+      "sourceCheckedAt": "2026-10-30",
+      "sourceNote": "Fiche consultée : aucun contrat actuel; ancien cap hit de 1 750 000 $ pour 2024-25 et 2025-26."
+    },
+    {
+      "id": "fa-2026-travis-hamonic",
+      "name": "Travis Hamonic",
+      "position": "D",
+      "league": "NHL",
+      "currentLeague": "NHL",
+      "currentTeam": "",
+      "overall": null,
+      "potential": null,
+      "askingSalary": null,
+      "previousTeam": "Ottawa Senators",
+      "previousCapHit": 1000000,
+      "contractStatus": "FREE_AGENT",
+      "status": "available",
+      "freeAgentType": "UFA",
+      "source": "https://puckpedia.com/player/Travis-Hamonic",
+      "sourceCheckedAt": "2026-10-30",
+      "sourceNote": "Fiche consultée : aucun contrat actuel; ancien cap hit de 1 000 000 $ en 2025-26."
+    }
+  ],
+  "coaches": [],
+  "notes": [
+    "Ne pas confondre un cap hit antérieur avec une demande salariale actuelle.",
+    "Le fichier n'est pas encore un marché exhaustif de la LNH et de la LAH; ne pas afficher ces deux joueurs comme liste complète.",
+    "Les signatures en Europe et les changements de dernière minute doivent être revérifiés avant de signer."
+  ]
+}

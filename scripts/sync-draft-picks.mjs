@@ -79,6 +79,21 @@ for (const owner of teams) {
         const pick = database.picks.find(p=>Number(p.year)===row.year&&Number(p.round)===row.round&&p.originalTeam===row.originalTeam);
         if (!pick) continue;
         rowsParsed++;
+        // Project rule: conditional picks are excluded from the playable ledger.
+        // Never re-introduce them as assets during an automated NHL sync.
+        if (row.conditional) {
+          observed.delete(key);
+          pick.currentOwner = null;
+          pick.status = "unverified";
+          pick.verified = false;
+          pick.conditions = null;
+          pick.conditionsVerified = false;
+          pick.source = null;
+          pick.sourceUpdatedAt = null;
+          pick.acquiredVia = null;
+          pick.verificationNote = "Choix conditionnel exclu du registre jouable selon la règle du projet; propriétaire ferme non attribué.";
+          continue;
+        }
         const previous = observed.get(key);
         if (previous && previous.owner !== owner) {
           pick.currentOwner = null;

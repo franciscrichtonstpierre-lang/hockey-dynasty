@@ -230,9 +230,9 @@ try {
       const league = /\bnhl\b/.test(rawLeague) ? "NHL" :
         /\bahl\b|american hockey/.test(rawLeague) ? "AHL" :
         /ncaa|college/.test(rawLeague) ? "NCAA" :
-        /echl|ushl|bchl/.test(rawLeague) ? "OTHER" :
+        /echl|ushl|bchl|ajhl|nahl/.test(rawLeague) ? "OTHER" :
         /ohl|whl|qmjhl|\bchl\b|junior/.test(rawLeague) ? "CHL" :
-        /shl|khl|liiga|europe|sweden|finland|swiss|czech|russia|germany|slovakia|latvia|mhl|allsvenskan|nationell|mestis|j20|\bsl\b/.test(rawLeague) ? "EUROPE" : "UNKNOWN";
+        /shl|khl|vhl|liiga|europe|sweden|finland|swiss|switzerland|czech|russia|germany|slovakia|latvia|norway|denmark|france|austria|icehl|del|mhl|allsvenskan|nationell|mestis|j20|\bnl\b|\bsl\b/.test(rawLeague) ? "EUROPE" : "UNKNOWN";
       const incoming = {
         currentLeague: league,
         currentTeam: str(p.currentTeam),

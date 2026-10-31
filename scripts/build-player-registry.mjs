@@ -29,6 +29,7 @@ const nameOf = p => {
   if (full) return String(full).trim();
   return [first(p.firstName?.default, p.firstName, p.first_name), first(p.lastName?.default, p.lastName, p.last_name)].filter(Boolean).join(" ").trim();
 };
+const nameKey = value => String(value || "").normalize("NFD").replace(/[\\u0300-\\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim();
 const add = p => {
   if (!p.id || !p.name) return;
   const rating = p.nhlPlayerId != null ? ratingMap[String(p.nhlPlayerId)] : null;
@@ -47,7 +48,7 @@ const add = p => {
     const preserveRoster = ["NHL","AHL"].includes(old.currentLeague) && !["NHL","AHL"].includes(p.currentLeague);
     records.set(p.id, {
       ...old, ...incoming,
-      ...(preserveRoster ? { currentLeague: old.currentLeague, currentTeam: old.currentTeam, nhlRightsTeam: old.nhlRightsTeam, position: old.position, detailedPosition: old.detailedPosition } : {}),
+      ...(preserveRoster ? { currentLeague: old.currentLeague, currentTeam: old.currentTeam, nhlRightsTeam: old.nhlRightsTeam || p.nhlRightsTeam, position: old.position, detailedPosition: old.detailedPosition } : {}),
       attributes: old.attributes || p.attributes
     });
   }
@@ -110,18 +111,29 @@ for (const code of codes) {
       const sourceId = first(p.id, p.playerId, p.player_id, p.nhlPlayerId);
       const name = nameOf(p);
       if (!name) continue;
-      const id = sourceId ? `nhl:${sourceId}` : `prospect:${code}:${name.normalize("NFD").replace(/[\\u0300-\\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g,"-")}`;
+      const matchingRecords = [...records.values()].filter(r => nameKey(r.name) === nameKey(name));
+      const id = sourceId ? `nhl:${sourceId}` : matchingRecords.length === 1 ? matchingRecords[0].id : `prospect:${code}:${nameKey(name).replace(/ /g,"-")}`;
       const leagueRaw = String(first(p.currentLeague,p.league,p.leagueName,p.currentLeagueName,"")).toLowerCase();
-      const currentLeague = /ncaa|college/.test(leagueRaw) ? "NCAA" : /ahl|american hockey/.test(leagueRaw) ? "AHL" : /ohl|whl|qmjhl|chl|junior/.test(leagueRaw) ? "CHL" : /shl|khl|liiga|europe|sweden|finland|swiss|czech|russia|germany/.test(leagueRaw) ? "EUROPE" : "UNKNOWN";
+      const currentLeague = /\\bnhl\\b/.test(leagueRaw) ? "NHL" :
+        /ahl|american hockey/.test(leagueRaw) ? "AHL" :
+        /ncaa|college/.test(leagueRaw) ? "NCAA" :
+        /echl/.test(leagueRaw) ? "OTHER" :
+        /ohl|whl|qmjhl|chl|junior/.test(leagueRaw) ? "CHL" :
+        /shl|khl|liiga|europe|sweden|finland|swiss|czech|russia|germany|slovakia|latvia|mhl|allsvenskan|nationell|mestis/.test(leagueRaw) ? "EUROPE" : "UNKNOWN";
       add({
         id, name, firstName: str(p.firstName?.default || p.firstName || p.first_name),
         lastName: str(p.lastName?.default || p.lastName || p.last_name), position: posGroup(p), detailedPosition: detailedPos(p),
         currentLeague, currentTeam: str(first(p.currentTeam,p.teamName,p.team_name,p.currentTeamName)),
-        nhlRightsTeam: str(first(p.nhlRightsTeam,p.rightsTeam,p.rights_team)),
+        nhlRightsTeam: str(first(p.nhlRightsTeam,p.rightsTeam,p.rights_team,code)),
+        rightsStatus: str(p.rightsStatus),
         birthDate: str(first(p.birthDate,p.birthdate)), shootsCatches: str(first(p.shootsCatches,p.shoots,p.catches)),
-        nhlPlayerId: Number.isFinite(Number(sourceId)) ? Number(sourceId) : null,
-        attributes: null, overall: null, potential: null, source: data.source || `https://api-web.nhle.com/v1/prospects/${code}`,
-        sourceUpdatedAt: data.syncedUTC || now
+        age: Number.isFinite(Number(p.age)) ? Number(p.age) : null,
+        draftYear: Number.isFinite(Number(p.draftYear)) ? Number(p.draftYear) : null,
+        draftRound: Number.isFinite(Number(p.draftRound)) ? Number(p.draftRound) : null,
+        draftOverall: Number.isFinite(Number(p.draftOverall)) ? Number(p.draftOverall) : null,
+        nhlPlayerId: sourceId != null && Number.isFinite(Number(sourceId)) ? Number(sourceId) : null,
+        attributes: null, overall: null, potential: null, source: p.source || data.source || `https://api-web.nhle.com/v1/prospects/${code}`,
+        sourceUpdatedAt: p.sourceUpdatedAt || data.syncedUTC || now
       });
     }
   } catch (e) { console.warn(`Prospect registry skipped ${code}: ${e.message}`); }

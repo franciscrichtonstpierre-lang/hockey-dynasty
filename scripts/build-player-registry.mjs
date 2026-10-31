@@ -203,11 +203,11 @@ try {
         });
       }
       // Parse the year/round draft-capital grid on the same team page.
-      for (const tableMatch of html.matchAll(/<table\\b[^>]*>([\\s\\S]*?)<\\/table>/gi)) {
-        const tableRows = [...tableMatch[1].matchAll(/<tr\\b[^>]*>([\\s\\S]*?)<\\/tr>/gi)];
+      for (const tableMatch of html.matchAll(/<table\b[^>]*>([\s\S]*?)<\/table>/gi)) {
+        const tableRows = [...tableMatch[1].matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/gi)];
         let headerIndex=-1, yearIndex=-1, roundIndexes={};
         for (let hi=0; hi<Math.min(tableRows.length,4); hi++) {
-          const headerCells=[...tableRows[hi][1].matchAll(/<t[dh]\\b[^>]*>([\\s\\S]*?)<\\/t[dh]>/gi)];
+          const headerCells=[...tableRows[hi][1].matchAll(/<t[dh]\b[^>]*>([\s\S]*?)<\/t[dh]>/gi)];
           const labels=headerCells.map(m=>cleanCell(m[1]).toLowerCase());
           const yi=labels.findIndex(v=>v==="year");
           const indexes={};
@@ -216,12 +216,12 @@ try {
         }
         if(headerIndex<0) continue;
         for(const rowMatch of tableRows.slice(headerIndex+1)){
-          const cells=[...rowMatch[1].matchAll(/<t[dh]\\b[^>]*>([\\s\\S]*?)<\\/t[dh]>/gi)];
+          const cells=[...rowMatch[1].matchAll(/<t[dh]\b[^>]*>([\s\S]*?)<\/t[dh]>/gi)];
           const year=Number(cleanCell(cells[yearIndex]?.[1]||""));
           if(![2027,2028,2029].includes(year))continue;
           for(let round=1;round<=7;round++){
             const cellText=cleanCell(cells[roundIndexes[round]]?.[1]||"");
-            for(const chip of cellText.matchAll(/(?:^|\\s)R([1-7])\\s*(\\?)?(?:\\s*↔\\s*([A-Z]{3}))?/g)){
+            for(const chip of cellText.matchAll(/(?:^|\s)R([1-7])\s*(\?)?(?:\s*↔\s*([A-Z]{3}))?/g)){
               if(Number(chip[1])!==round)continue;
               const originalOwner=chip[3]||teamCode;
               if(!teamPipelineSlugs[originalOwner])continue;
@@ -297,7 +297,7 @@ try {
       "Official NHL Future Draft Picks rows take precedence over this snapshot."
     ]
   };
-  const serializedDraftSnapshot=JSON.stringify(draftSnapshot,null,2)+"\\n";
+  const serializedDraftSnapshot=JSON.stringify(draftSnapshot,null,2)+"\n";
   const previousDraftSnapshot=await readFile(draftSnapshotPath,"utf8").catch(()=>null);
   if(draftPickMap.size>0&&previousDraftSnapshot!==serializedDraftSnapshot){
     await writeFile(draftSnapshotPath,serializedDraftSnapshot,"utf8");

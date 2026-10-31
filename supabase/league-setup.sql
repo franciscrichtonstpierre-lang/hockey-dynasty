@@ -231,9 +231,9 @@ begin
     );
   end loop;
 
-  insert into public.leagues(name, owner_id, commissioner_id, join_code)
+  insert into public.leagues as new_league(name, owner_id, commissioner_id, join_code)
   values (v_name, auth.uid(), auth.uid(), v_join_code)
-  returning public.leagues.id into v_id;
+  returning new_league.id into v_id;
 
   insert into public.league_members(league_id, user_id, role, team_id, team_code, manager_name)
   values (v_id, auth.uid(), 'commissioner', 14, 'MTL', v_manager_name);

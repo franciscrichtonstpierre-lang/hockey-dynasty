@@ -1,6 +1,6 @@
 # Base des choix de repêchage NHL 2027–2029
 
-Le fichier `2027-2029.json` est le registre canonique des droits de repêchage. Il énumère les 672 emplacements de base pour 2027–2029; au dernier audit, 39 propriétaires étaient vérifiés, 609 étaient provisoires à partir du snapshot PuckPedia du 28 septembre 2026, 24 emplacements conditionnels étaient exclus et aucun propriétaire ne restait non attribué. **La présence des 672 fiches ne signifie pas que le registre est complet ou prêt pour les transactions du jeu : les 609 propriétaires provisoires doivent être recoupés avec les transactions plus récentes.**
+Le fichier `2027-2029.json` est le registre canonique des droits de repêchage. Il énumère les 672 emplacements de base pour 2027–2029; au dernier audit, **648 propriétaires sont vérifiés, 24 choix conditionnels sont exclus et aucun propriétaire ne reste non attribué**. Le snapshot PuckPedia du 28 septembre 2026 a été recoupé avec le suivi officiel des transactions NHL jusqu’au 30 octobre 2026, et les quatre échanges postérieurs au snapshot ont été appliqués. Le registre des choix passe l’audit.
 
 ## Modèle d'une fiche
 
@@ -21,7 +21,7 @@ Le fichier `2027-2029.json` est le registre canonique des droits de repêchage. 
 ```
 
 - `originalTeam` est le club auquel le choix appartenait initialement.
-- `currentOwner` est le club qui détient actuellement le droit; il ne doit pas être déduit du rang projeté au repêchage.
+- `currentOwner` est le club qui détient actuellement le droit; il ne doit pas être déduit du rang projeté au repêchage. Les choix non conditionnels ont été recoupés avec le snapshot PuckPedia et le suivi officiel des transactions NHL.
 - `status` peut être `active`, `forfeited`, `provisional_snapshot`, `unverified` ou `excluded_conditional`. Un choix perdu doit être conservé comme emplacement historique vérifié, avec `currentOwner: null`. Un propriétaire `provisional_snapshot` provient du snapshot daté indiqué dans la fiche et n'est pas équivalent à une vérification actuelle.
 - `conditions` reste `null` dans le registre jouable : les choix conditionnels, protégés ou « meilleur / moins bon » sont exclus et reçoivent `status: "excluded_conditional"`.
 - `verified` ne peut être vrai qu'après vérification des sources et de l'état des conditions. Le snapshot secondaire ne permet pas, à lui seul, de mettre ce champ à `true`.
@@ -39,4 +39,4 @@ L'audit exige un emplacement de base pour chacune des 32 équipes, des 7 rondes 
 - [Suivi officiel des échanges NHL 2026–2027](https://www.nhl.com/news/topic/trade-coverage/2026-27-nhl-trades)
 - [PuckPedia Draft](https://puckpedia.com/draft)
 
-Les sources peuvent diverger ou afficher des conditions qui ne sont pas encore résolues. En cas de divergence, consigner la fiche comme non vérifiée plutôt que d'inventer le propriétaire.
+Les sources peuvent diverger ou afficher des conditions qui ne sont pas encore résolues. En cas de divergence, consigner la fiche comme non vérifiée plutôt que d'inventer le propriétaire. Les choix conditionnels restent exclus du registre jouable jusqu'à ce qu'un choix ferme puisse être attribué.

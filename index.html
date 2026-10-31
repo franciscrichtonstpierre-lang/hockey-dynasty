@@ -592,7 +592,7 @@ function coachHire(id,targetLeague="NHL"){
  if(!c||c.status==="employed"||c.status==="retired")return;
  targetLeague=targetLeague==="AHL"?"AHL":"NHL";
  const destination=targetLeague==="AHL"?"le personnel de la LAH":"le personnel de la LNH";
- if(!confirm("Engager "+c.fullName dans "+destination+" de "+teams[S.team]+"?"))return;
+ if(!confirm("Engager "+c.fullName+" dans "+destination+" de "+teams[S.team]+"?"))return;
  c.formerTeam=c.formerTeam||c.team||"";c.formerTeamCode=c.formerTeamCode||c.teamCode||null;
  c.team=teams[S.team];c.teamCode=codes[S.team];c.league=targetLeague;c.status="employed";c.userEdited=true;
  localStorage.setItem(UHM_COMM_COACHES,JSON.stringify(rows));render();

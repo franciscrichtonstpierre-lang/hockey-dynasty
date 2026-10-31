@@ -166,3 +166,49 @@ $$;
 revoke all on function public.join_league_by_code(text, text) from public;
 revoke all on function public.join_league_by_code(text, text) from anon;
 grant execute on function public.join_league_by_code(text, text) to authenticated;
+
+
+-- Atomic league creation: create the league and commissioner membership together.
+create or replace function public.create_league_with_commissioner(p_name text, p_manager_name text)
+returns table (id uuid, name text, join_code text, manager_name text)
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  v_id uuid;
+  v_name text := trim(coalesce(p_name, ''));
+  v_manager_name text := trim(coalesce(p_manager_name, ''));
+  v_join_code text;
+begin
+  if auth.uid() is null then
+    raise exception 'Connexion requise pour créer une ligue.';
+  end if;
+  if length(v_name) < 3 or length(v_name) > 80 then
+    raise exception 'Le nom de ligue doit contenir de 3 à 80 caractères.';
+  end if;
+  if length(v_manager_name) < 2 or length(v_manager_name) > 40 then
+    raise exception 'Le nom du DG doit contenir de 2 à 40 caractères.';
+  end if;
+
+  loop
+    v_join_code := upper(substr(encode(gen_random_bytes(6), 'hex'), 1, 8));
+    exit when not exists (
+      select 1 from public.leagues l where l.join_code = v_join_code
+    );
+  end loop;
+
+  insert into public.leagues(name, owner_id, commissioner_id, join_code)
+  values (v_name, auth.uid(), auth.uid(), v_join_code)
+  returning public.leagues.id into v_id;
+
+  insert into public.league_members(league_id, user_id, role, team_id, team_code, manager_name)
+  values (v_id, auth.uid(), 'commissioner', 14, 'MTL', v_manager_name);
+
+  return query select l.id, l.name, l.join_code, v_manager_name
+  from public.leagues l where l.id = v_id;
+end;
+$$;
+revoke all on function public.create_league_with_commissioner(text, text) from public;
+revoke all on function public.create_league_with_commissioner(text, text) from anon;
+grant execute on function public.create_league_with_commissioner(text, text) to authenticated;

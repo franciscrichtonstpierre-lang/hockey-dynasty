@@ -152,6 +152,79 @@ for (const code of codes) {
   } catch (e) { console.warn(`Prospect registry skipped ${code}: ${e.message}`); }
 }
 
+// Enrich NHL API prospect records with the separately maintained organization snapshots.
+// These snapshots provide league/team context absent from the NHL prospects endpoint; they do not override NHL/AHL roster membership.
+let supplementalMatched = 0, supplementalAdded = 0, supplementalAmbiguous = 0;
+try {
+  const supplementalData = JSON.parse(await readFile("data/prospects-supplemental/2026-2027.json", "utf8"));
+  for (const [teamCode, teamData] of Object.entries(supplementalData.teams || {})) {
+    for (const p of (Array.isArray(teamData.prospects) ? teamData.prospects : [])) {
+      const name = nameOf(p);
+      if (!name) continue;
+      const key = nameKey(name);
+      const candidates = [...records.values()].filter(r => nameKey(r.name) === key);
+      const sameRights = candidates.filter(r => r.nhlRightsTeam === teamCode);
+      const match = sameRights.length === 1 ? sameRights[0] : candidates.length === 1 ? candidates[0] : null;
+      const rawLeague = String(first(p.currentLeague, p.league, p.leagueName, "")).toLowerCase();
+      const league = /\\bnhl\\b/.test(rawLeague) ? "NHL" :
+        /\\bahl\\b|american hockey/.test(rawLeague) ? "AHL" :
+        /ncaa|college/.test(rawLeague) ? "NCAA" :
+        /echl|ushl|bchl/.test(rawLeague) ? "OTHER" :
+        /ohl|whl|qmjhl|\\bchl\\b|junior/.test(rawLeague) ? "CHL" :
+        /shl|khl|liiga|europe|sweden|finland|swiss|czech|russia|germany|slovakia|latvia|mhl|allsvenskan|nationell|mestis|j20|\\bsl\\b/.test(rawLeague) ? "EUROPE" : "UNKNOWN";
+      const incoming = {
+        currentLeague: league,
+        currentTeam: str(p.currentTeam),
+        nhlRightsTeam: str(first(p.nhlRightsTeam, p.rightsTeam, p.rights_team, teamCode)),
+        rightsStatus: str(p.rightsStatus),
+        age: Number.isFinite(Number(p.age)) ? Number(p.age) : null,
+        draftYear: p.draftYear != null && Number.isFinite(Number(p.draftYear)) ? Number(p.draftYear) : null,
+        draftRound: p.draftRound != null && Number.isFinite(Number(p.draftRound)) ? Number(p.draftRound) : null,
+        draftOverall: p.draftOverall != null && Number.isFinite(Number(p.draftOverall)) ? Number(p.draftOverall) : null,
+        supplementalVerificationStatus: str(p.verificationStatus),
+        supplementalSnapshotDate: str(p.sourceUpdatedAt || teamData.snapshotDate),
+        supplementalSource: str(p.source || teamData.source || supplementalData.sourceName)
+      };
+      if (match) {
+        // Roster membership is stronger evidence than an older organization snapshot.
+        if (!["NHL", "AHL"].includes(match.currentLeague) && league !== "UNKNOWN") {
+          match.currentLeague = league;
+          match.leagueResolution = "supplemental_secondary_snapshot";
+        }
+        for (const [field, value] of Object.entries(incoming)) {
+          if (value == null || value === "") continue;
+          if (match[field] == null || match[field] === "" || field === "nhlRightsTeam" && !match[field]) match[field] = value;
+        }
+        if (!match.position) match.position = posGroup(p);
+        if (!match.detailedPosition) match.detailedPosition = detailedPos(p);
+        if (!match.source && incoming.supplementalSource) match.source = incoming.supplementalSource;
+        supplementalMatched++;
+      } else if (candidates.length > 1) {
+        supplementalAmbiguous++;
+      } else {
+        const id = `supplemental:${teamCode}:${key.replace(/ /g,"-")}`;
+        add({
+          id, name, firstName: str(p.firstName?.default || p.firstName || p.first_name),
+          lastName: str(p.lastName?.default || p.lastName || p.last_name),
+          position: posGroup(p), detailedPosition: detailedPos(p),
+          currentLeague: league, currentTeam: incoming.currentTeam, nhlRightsTeam: incoming.nhlRightsTeam,
+          rightsStatus: incoming.rightsStatus, birthDate: str(first(p.birthDate,p.birthdate)),
+          age: incoming.age, draftYear: incoming.draftYear, draftRound: incoming.draftRound, draftOverall: incoming.draftOverall,
+          attributes: null, overall: null, potential: null, source: incoming.supplementalSource,
+          sourceUpdatedAt: incoming.supplementalSnapshotDate,
+          supplementalVerificationStatus: incoming.supplementalVerificationStatus,
+          supplementalSnapshotDate: incoming.supplementalSnapshotDate,
+          supplementalSource: incoming.supplementalSource
+        });
+        supplementalAdded++;
+      }
+    }
+  }
+} catch (error) {
+  console.warn(`Supplemental prospect data skipped: ${error.message}`);
+}
+console.log(`Supplemental prospects: ${supplementalMatched} matched/enriched; ${supplementalAdded} added; ${supplementalAmbiguous} ambiguous matches left unchanged.`);
+
 // Collapse same-person records that appear in both NHL and AHL snapshots.
 const samePerson = new Map();
 for (const p of records.values()) {

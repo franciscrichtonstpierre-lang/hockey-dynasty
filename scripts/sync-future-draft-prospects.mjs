@@ -128,44 +128,13 @@ try{
     if((!existing.currentTeam||!String(existing.currentTeam).trim())&&p.currentTeam)existing.currentTeam=p.currentTeam;
     if((!existing.currentLeague||existing.currentLeague==="UNKNOWN")&&p.currentLeague&&p.currentLeague!=="UNKNOWN")existing.currentLeague=p.currentLeague;
     if(existing.sourceRank==null&&p.sourceRank!=null)existing.sourceRank=p.sourceRank;
+    if(p.currentTeamSource)existing.currentTeamSource=p.currentTeamSource;
+    if(p.currentLeagueSource)existing.currentLeagueSource=p.currentLeagueSource;
     if(!existing.position&&p.position)existing.position=p.position;
     if(!existing.source||/eliteprospects/i.test(existing.source)&&p.sourceRank!=null&&existing.sourceRank==null)existing.source=p.source;
   }
 }catch(error){console.warn(`Future draft fallback seed unavailable: ${error.message}`);}
 
-// The list page omits team/league for some prospects; their linked profiles contain the current 2026-27 club.
-const profileTargets=all.filter(p=>Number(p.draftYear)===2027&&p.sourceProfileUrl&&(!p.currentTeam||!p.currentLeague||p.currentLeague==="UNKNOWN"));
-let profilePagesFetched=0,profileEnriched=0,profileErrors=0;
-for(let start=0;start<profileTargets.length;start+=6){
-  const batch=await Promise.all(profileTargets.slice(start,start+6).map(async p=>{
-    try{
-      const response=await fetch(p.sourceProfileUrl,{headers:{"user-agent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/131.0.0.0 Safari/537.36","accept":"text/html","accept-language":"en-US,en;q=0.9"},signal:AbortSignal.timeout(8000)});
-      if(!response.ok)throw new Error(`HTTP ${response.status}`);
-      const html=await response.text();
-      const textValue=plain(html);
-      const where=textValue.match(/Where he plays\s*[·:]\s*2026-27\s+(.+?)\s*·\s*([A-Z0-9-]+)/i);
-      const leagueLine=textValue.match(/League\s*·\s*2026-27\s+([A-Z0-9-]+)/i);
-      const clubLine=textValue.match(/Club\s*·\s*2026-27\s+(.+?)(?:\s+Draft year|\s+Frequently Asked|\s+Scouting Notes|$)/i);
-      const born=textValue.match(/Born\s+(\d{4}-\d{2}-\d{2})/i);
-      const team=where?.[1]?.trim()||clubLine?.[1]?.trim()||null;
-      const rawLeague=where?.[2]||leagueLine?.[1]||"";
-      const l=rawLeague.toLowerCase();
-      const league=/\bnhl\b/.test(l)?"NHL":/\bahl\b/.test(l)?"AHL":/ncaa|college/.test(l)?"NCAA":/\bohl\b/.test(l)?"OHL":/\bwhl\b/.test(l)?"WHL":/qmjhl|lhjmq/.test(l)?"QMJHL":/\bushl\b/.test(l)?"USHL":/usntdp|national u17/.test(l)?"USNTDP":/mhl|vhl|khl|shl|liiga|u20|europe|sweden|finland|swiss|czech|russia|germany|slovakia|latvia|norway|denmark|france|austria|del|nl/.test(l)?"EUROPE":rawLeague?"OTHER":"UNKNOWN";
-      return {prospect:p,team,league,birthDate:born?.[1]||null,error:null};
-    }catch(error){return {prospect:p,error:error.message};}
-  }));
-  for(const result of batch){
-    if(result.error){profileErrors++;continue;}
-    profilePagesFetched++;
-    const p=result.prospect;
-    let changed=false;
-    if(result.team&&(!p.currentTeam||!String(p.currentTeam).trim())){p.currentTeam=result.team;changed=true;}
-    if(result.league&&result.league!=="UNKNOWN"&&(!p.currentLeague||p.currentLeague==="UNKNOWN")){p.currentLeague=result.league;changed=true;}
-    if(result.birthDate&&!p.birthDate){p.birthDate=result.birthDate;changed=true;}
-    if(changed){p.profileSourceUrl=p.sourceProfileUrl;p.sourceUpdatedAt=new Date().toISOString();profileEnriched++;}
-  }
-}
-console.log(`Future draft profiles: ${profilePagesFetched}/${profileTargets.length} pages; ${profileEnriched} records enriched; ${profileErrors} errors.`);
 const byIdentity = new Map();
 for (const p of all) {
   const key = `${p.draftYear}|${p.name.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim()}`;

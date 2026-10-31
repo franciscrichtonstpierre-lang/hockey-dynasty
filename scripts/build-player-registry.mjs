@@ -172,7 +172,7 @@ try {
   ]));
   const cleanCell = value => String(value || "")
     .replace(/<br\s*\/?>/gi," ").replace(/<[^>]*>/g," ")
-    .replace(/&nbsp;|&#160;/gi," ").replace(/&amp;/gi,"&").replace(/&quot;/gi,'"')
+    .replace(/&nbsp;|&#160;/gi," ").replace(/&amp;/gi,"&").replace(/&harr;|&#8596;|&#x2194;/gi,"↔").replace(/&quot;/gi,'"')
     .replace(/&#39;|&apos;/gi,"'").replace(/&#x([0-9a-f]+);/gi,(_,h)=>String.fromCodePoint(parseInt(h,16)))
     .replace(/&#(\d+);/g,(_,n)=>String.fromCodePoint(Number(n))).replace(/\s+/g," ").trim();
   let pipelinePagesFetched = 0, pipelineRowsFetched = 0;
@@ -186,6 +186,7 @@ try {
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
       const html = await response.text();
       const rows = [];
+      const draftPicks = [];
       for (const rowMatch of html.matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/gi)) {
         const cells = [...rowMatch[1].matchAll(/<t[dh]\b[^>]*>([\s\S]*?)<\/t[dh]>/gi)].map(m=>cleanCell(m[1]));
         if (cells.length < 5 || /^player$/i.test(cells[0])) continue;
@@ -201,7 +202,42 @@ try {
           source:url, sourceUpdatedAt:"2026-09-28", verificationStatus:"secondary_snapshot_recheck_required"
         });
       }
-      return {teamCode,url,rows,error:null};
+      // Parse the year/round draft-capital grid on the same team page.
+      for (const tableMatch of html.matchAll(/<table\\b[^>]*>([\\s\\S]*?)<\\/table>/gi)) {
+        const tableRows = [...tableMatch[1].matchAll(/<tr\\b[^>]*>([\\s\\S]*?)<\\/tr>/gi)];
+        let headerIndex=-1, yearIndex=-1, roundIndexes={};
+        for (let hi=0; hi<Math.min(tableRows.length,4); hi++) {
+          const headerCells=[...tableRows[hi][1].matchAll(/<t[dh]\\b[^>]*>([\\s\\S]*?)<\\/t[dh]>/gi)];
+          const labels=headerCells.map(m=>cleanCell(m[1]).toLowerCase());
+          const yi=labels.findIndex(v=>v==="year");
+          const indexes={};
+          for (let round=1;round<=7;round++) indexes[round]=labels.findIndex(v=>v===("r"+round));
+          if(yi>=0&&Object.values(indexes).every(v=>v>=0)){headerIndex=hi;yearIndex=yi;roundIndexes=indexes;break;}
+        }
+        if(headerIndex<0) continue;
+        for(const rowMatch of tableRows.slice(headerIndex+1)){
+          const cells=[...rowMatch[1].matchAll(/<t[dh]\\b[^>]*>([\\s\\S]*?)<\\/t[dh]>/gi)];
+          const year=Number(cleanCell(cells[yearIndex]?.[1]||""));
+          if(![2027,2028,2029].includes(year))continue;
+          for(let round=1;round<=7;round++){
+            const cellText=cleanCell(cells[roundIndexes[round]]?.[1]||"");
+            for(const chip of cellText.matchAll(/(?:^|\\s)R([1-7])\\s*(\\?)?(?:\\s*↔\\s*([A-Z]{3}))?/g)){
+              if(Number(chip[1])!==round)continue;
+              const originalOwner=chip[3]||teamCode;
+              if(!teamPipelineSlugs[originalOwner])continue;
+              const conditional=Boolean(chip[2]);
+              draftPicks.push({
+                year,round,originalOwner,currentOwner:conditional?originalOwner:teamCode,conditional,
+                source:url,snapshotDate:"2026-09-28",sourceType:"Hockey Insights Team Pipeline / PuckPedia snapshot",
+                verificationNote:conditional
+                  ?"Transfert conditionnel ignoré selon la règle du projet; propriétaire provisoire conservé à l'équipe d'origine."
+                  :"Propriétaire issu du snapshot secondaire du 2026-09-28; confirmation officielle requise."
+              });
+            }
+          }
+        }
+      }
+      return {teamCode,url,rows,draftPicks,error:null};
     } catch(error) {
       return {teamCode,url,rows:[],error:error.message};
     }
@@ -235,6 +271,41 @@ try {
     teamSnapshots.set(result.teamCode,existing);
   }
   console.log(`Hockey Insights prospect snapshots: ${pipelinePagesFetched}/32 pages with rows; ${pipelineRowsFetched} rows parsed.`);
+  const draftPickMap = new Map();
+  let draftPickConflicts = 0;
+  for (const result of pipelineResults) {
+    for (const pick of (result.draftPicks||[])) {
+      const key=`${pick.year}-${pick.round}-${pick.originalOwner}`;
+      const previous=draftPickMap.get(key);
+      if(!previous){draftPickMap.set(key,pick);continue;}
+      if(previous.conditional&&!pick.conditional){draftPickMap.set(key,pick);continue;}
+      if(!previous.conditional&&pick.conditional)continue;
+      if(previous.currentOwner!==pick.currentOwner){
+        draftPickMap.set(key,{...previous,currentOwner:null,conflict:true,verificationNote:"Conflit entre les pages de filière pour ce choix; validation manuelle requise."});
+        draftPickConflicts++;
+      }
+    }
+  }
+  const draftSnapshotPath="data/draft-picks/hockey-insights-2027-2029.json";
+  const draftSnapshot={
+    schemaVersion:1,source:"Hockey Insights Team Pipeline / PuckPedia context",snapshotDate:"2026-09-28",
+    pagesFetched:pipelineResults.filter(r=>(r.draftPicks||[]).length>0).length,totalPages:32,
+    picks:[...draftPickMap.values()].sort((a,b)=>a.year-b.year||a.round-b.round||a.originalOwner.localeCompare(b.originalOwner)),
+    notes:[
+      "Secondary snapshot date: 2026-09-28; it may not include later trades.",
+      "Conditional transfers are not applied; where the only listing is conditional, the original team is retained as a provisional game fallback.",
+      "Official NHL Future Draft Picks rows take precedence over this snapshot."
+    ]
+  };
+  const serializedDraftSnapshot=JSON.stringify(draftSnapshot,null,2)+"\\n";
+  const previousDraftSnapshot=await readFile(draftSnapshotPath,"utf8").catch(()=>null);
+  if(draftPickMap.size>0&&previousDraftSnapshot!==serializedDraftSnapshot){
+    await writeFile(draftSnapshotPath,serializedDraftSnapshot,"utf8");
+    console.log(`Saved secondary draft-pick snapshot: ${draftPickMap.size} unique picks; ${draftSnapshot.pagesFetched}/32 pages; ${draftPickConflicts} conflicts.`);
+  } else {
+    console.log(`Secondary draft-pick snapshot: ${draftPickMap.size} unique picks; ${draftSnapshot.pagesFetched}/32 pages; ${draftPickConflicts} conflicts.`);
+  }
+
   const snapshotNote = "League and development-team context supplemented from Hockey Insights Team Pipeline (2026-09-28 snapshot); secondary data that must be rechecked against current transactions.";
   if (!Array.isArray(supplementalData.dataNotes)) supplementalData.dataNotes=[];
   if (!supplementalData.dataNotes.includes(snapshotNote)) supplementalData.dataNotes.push(snapshotNote);

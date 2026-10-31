@@ -1,13 +1,536 @@
 {
   "teamCode": "VAN",
-  "source": "https://api-web.nhle.com/v1/prospects/VAN",
-  "sourceType": "NHL Web API (endpoint public non officiellement documenté)",
-  "syncedUTC": "2026-10-30T10:20:15.875362+00:00",
-  "count": 0,
-  "prospects": [],
+  "source": "https://hockeyinsights.ca/team-pipeline/vancouver-canucks/; https://www.nhl.com/news/topic/32-in-32/vancouver-canucks-top-prospects-for-2026-27-season-32-in-32",
+  "sourceType": "Liste publique secondaire vérifiée manuellement — joueurs identifiés par nom, position, ligue et choix de repêchage lorsque publiés",
+  "syncedUTC": "2026-10-30T20:00:00-04:00",
+  "count": 35,
+  "prospects": [
+    {
+      "firstName": {
+        "default": "Caleb"
+      },
+      "lastName": {
+        "default": "Malhotra"
+      },
+      "positionCode": "C",
+      "positionGroup": "forwards",
+      "currentLeague": "NCAA",
+      "currentTeam": "Boston University",
+      "draftYear": 2026,
+      "draftRound": 1,
+      "draftOverall": 3
+    },
+    {
+      "firstName": {
+        "default": "Tom"
+      },
+      "lastName": {
+        "default": "Willander"
+      },
+      "positionCode": "D",
+      "positionGroup": "defensemen",
+      "currentLeague": "NHL",
+      "currentTeam": "Vancouver",
+      "draftYear": 2023,
+      "draftRound": 1,
+      "draftOverall": 11
+    },
+    {
+      "firstName": {
+        "default": "Zeev"
+      },
+      "lastName": {
+        "default": "Buium"
+      },
+      "positionCode": "D",
+      "positionGroup": "defensemen",
+      "currentLeague": "NHL",
+      "currentTeam": "Vancouver",
+      "draftYear": 2024,
+      "draftRound": 1,
+      "draftOverall": 12
+    },
+    {
+      "firstName": {
+        "default": "Braeden"
+      },
+      "lastName": {
+        "default": "Cootes"
+      },
+      "positionCode": "C",
+      "positionGroup": "forwards",
+      "currentLeague": "CHL",
+      "currentTeam": "Seattle",
+      "draftYear": 2025,
+      "draftRound": 1,
+      "draftOverall": 15
+    },
+    {
+      "firstName": {
+        "default": "Jonathan"
+      },
+      "lastName": {
+        "default": "Lekkerimäki"
+      },
+      "positionCode": "R",
+      "positionGroup": "forwards",
+      "currentLeague": "NHL",
+      "currentTeam": "Vancouver",
+      "draftYear": 2022,
+      "draftRound": 1,
+      "draftOverall": 15
+    },
+    {
+      "firstName": {
+        "default": "Adam"
+      },
+      "lastName": {
+        "default": "Novotny"
+      },
+      "positionCode": "L",
+      "positionGroup": "forwards",
+      "currentLeague": "CHL",
+      "currentTeam": "Peterborough",
+      "draftYear": 2026,
+      "draftRound": 1,
+      "draftOverall": 24
+    },
+    {
+      "firstName": {
+        "default": "Brooks"
+      },
+      "lastName": {
+        "default": "Rogowski"
+      },
+      "positionCode": "C",
+      "positionGroup": "forwards",
+      "currentLeague": "CHL",
+      "currentTeam": "OHL",
+      "draftYear": 2026,
+      "draftRound": 2,
+      "draftOverall": 33
+    },
+    {
+      "firstName": {
+        "default": "Niklas"
+      },
+      "lastName": {
+        "default": "Aaram-Olsen"
+      },
+      "positionCode": "L",
+      "positionGroup": "forwards",
+      "currentLeague": "EUROPE",
+      "currentTeam": "SHL",
+      "draftYear": 2026,
+      "draftRound": 2,
+      "draftOverall": 41
+    },
+    {
+      "firstName": {
+        "default": "Alexei"
+      },
+      "lastName": {
+        "default": "Medvedev"
+      },
+      "positionCode": "G",
+      "positionGroup": "goalies",
+      "currentLeague": "CHL",
+      "currentTeam": "London",
+      "draftYear": 2025,
+      "draftRound": 2,
+      "draftOverall": 47
+    },
+    {
+      "firstName": {
+        "default": "Kieren"
+      },
+      "lastName": {
+        "default": "Dervin"
+      },
+      "positionCode": "C",
+      "positionGroup": "forwards",
+      "currentLeague": "CHL",
+      "currentTeam": "OHL",
+      "draftYear": 2025,
+      "draftRound": 3,
+      "draftOverall": 65
+    },
+    {
+      "firstName": {
+        "default": "Leevi"
+      },
+      "lastName": {
+        "default": "Meriläinen"
+      },
+      "positionCode": "G",
+      "positionGroup": "goalies",
+      "currentLeague": "NHL",
+      "currentTeam": "Vancouver",
+      "draftYear": 2020,
+      "draftRound": 3,
+      "draftOverall": 71
+    },
+    {
+      "firstName": {
+        "default": "Dmitri"
+      },
+      "lastName": {
+        "default": "Ivchenko"
+      },
+      "positionCode": "G",
+      "positionGroup": "goalies",
+      "currentLeague": "EUROPE",
+      "currentTeam": "MHL",
+      "draftYear": 2026,
+      "draftRound": 3,
+      "draftOverall": 78
+    },
+    {
+      "firstName": {
+        "default": "Sawyer"
+      },
+      "lastName": {
+        "default": "Mynio"
+      },
+      "positionCode": "D",
+      "positionGroup": "defensemen",
+      "currentLeague": "AHL",
+      "currentTeam": "Abbotsford",
+      "draftYear": 2023,
+      "draftRound": 3,
+      "draftOverall": 89
+    },
+    {
+      "firstName": {
+        "default": "Jack"
+      },
+      "lastName": {
+        "default": "Thompson"
+      },
+      "positionCode": "D",
+      "positionGroup": "defensemen",
+      "currentLeague": "NHL",
+      "currentTeam": "Vancouver",
+      "draftYear": 2020,
+      "draftRound": 3,
+      "draftOverall": 93
+    },
+    {
+      "firstName": {
+        "default": "Yaroslav"
+      },
+      "lastName": {
+        "default": "Bryzgalov"
+      },
+      "positionCode": "L",
+      "positionGroup": "forwards",
+      "currentLeague": "CHL",
+      "currentTeam": "WHL",
+      "draftYear": 2026,
+      "draftRound": 4,
+      "draftOverall": 97
+    },
+    {
+      "firstName": {
+        "default": "Ty"
+      },
+      "lastName": {
+        "default": "Mueller"
+      },
+      "positionCode": "C",
+      "positionGroup": "forwards",
+      "currentLeague": "AHL",
+      "currentTeam": "Abbotsford",
+      "draftYear": 2023,
+      "draftRound": 4,
+      "draftOverall": 105
+    },
+    {
+      "firstName": {
+        "default": "Vilmer"
+      },
+      "lastName": {
+        "default": "Alriksson"
+      },
+      "positionCode": "L",
+      "positionGroup": "forwards",
+      "currentLeague": "AHL",
+      "currentTeam": "Abbotsford",
+      "draftYear": 2023,
+      "draftRound": 4,
+      "draftOverall": 107
+    },
+    {
+      "firstName": {
+        "default": "Daimon"
+      },
+      "lastName": {
+        "default": "Gardner"
+      },
+      "positionCode": "C",
+      "positionGroup": "forwards",
+      "currentLeague": "NCAA",
+      "currentTeam": "NCAA",
+      "draftYear": 2022,
+      "draftRound": 4,
+      "draftOverall": 112
+    },
+    {
+      "firstName": {
+        "default": "Matthew"
+      },
+      "lastName": {
+        "default": "Perkins"
+      },
+      "positionCode": "C",
+      "positionGroup": "forwards",
+      "currentLeague": "NCAA",
+      "currentTeam": "NCAA",
+      "draftYear": 2023,
+      "draftRound": 4,
+      "draftOverall": 119
+    },
+    {
+      "firstName": {
+        "default": "Riley"
+      },
+      "lastName": {
+        "default": "Patterson"
+      },
+      "positionCode": "C",
+      "positionGroup": "forwards",
+      "currentLeague": "CHL",
+      "currentTeam": "OHL",
+      "draftYear": 2024,
+      "draftRound": 4,
+      "draftOverall": 125
+    },
+    {
+      "firstName": {
+        "default": "Connor"
+      },
+      "lastName": {
+        "default": "Davis"
+      },
+      "positionCode": "R",
+      "positionGroup": "forwards",
+      "currentLeague": "USHL",
+      "currentTeam": "USHL",
+      "draftYear": 2026,
+      "draftRound": 5,
+      "draftOverall": 129
+    },
+    {
+      "firstName": {
+        "default": "Aku"
+      },
+      "lastName": {
+        "default": "Koskenvuo"
+      },
+      "positionCode": "G",
+      "positionGroup": "goalies",
+      "currentLeague": "ECHL",
+      "currentTeam": "Kalamazoo",
+      "draftYear": 2021,
+      "draftRound": 5,
+      "draftOverall": 137
+    },
+    {
+      "firstName": {
+        "default": "Wilson"
+      },
+      "lastName": {
+        "default": "Bjorck"
+      },
+      "positionCode": "C",
+      "positionGroup": "forwards",
+      "currentLeague": "NCAA",
+      "currentTeam": "NCAA",
+      "draftYear": 2025,
+      "draftRound": 5,
+      "draftOverall": 143
+    },
+    {
+      "firstName": {
+        "default": "Ty"
+      },
+      "lastName": {
+        "default": "Young"
+      },
+      "positionCode": "G",
+      "positionGroup": "goalies",
+      "currentLeague": "AHL",
+      "currentTeam": "Abbotsford",
+      "draftYear": 2022,
+      "draftRound": 5,
+      "draftOverall": 144
+    },
+    {
+      "firstName": {
+        "default": "Victor"
+      },
+      "lastName": {
+        "default": "Mancini"
+      },
+      "positionCode": "D",
+      "positionGroup": "defensemen",
+      "currentLeague": "NHL",
+      "currentTeam": "Vancouver",
+      "draftYear": 2022,
+      "draftRound": 5,
+      "draftOverall": 159
+    },
+    {
+      "firstName": {
+        "default": "Anthony"
+      },
+      "lastName": {
+        "default": "Romani"
+      },
+      "positionCode": "R",
+      "positionGroup": "forwards",
+      "currentLeague": "NCAA",
+      "currentTeam": "NCAA",
+      "draftYear": 2024,
+      "draftRound": 6,
+      "draftOverall": 162
+    },
+    {
+      "firstName": {
+        "default": "Aiden"
+      },
+      "lastName": {
+        "default": "Celebrini"
+      },
+      "positionCode": "D",
+      "positionGroup": "defensemen",
+      "currentLeague": "NCAA",
+      "currentTeam": "NCAA",
+      "draftYear": 2023,
+      "draftRound": 6,
+      "draftOverall": 171
+    },
+    {
+      "firstName": {
+        "default": "Gabriel"
+      },
+      "lastName": {
+        "default": "Chiarot"
+      },
+      "positionCode": "R",
+      "positionGroup": "forwards",
+      "currentLeague": "CHL",
+      "currentTeam": "OHL",
+      "draftYear": 2025,
+      "draftRound": 6,
+      "draftOverall": 175
+    },
+    {
+      "firstName": {
+        "default": "Lucian"
+      },
+      "lastName": {
+        "default": "Bernat"
+      },
+      "positionCode": "R",
+      "positionGroup": "forwards",
+      "currentLeague": "EUROPE",
+      "currentTeam": "U20 SM-Sarja",
+      "draftYear": 2026,
+      "draftRound": 6,
+      "draftOverall": 176
+    },
+    {
+      "firstName": {
+        "default": "Samuel"
+      },
+      "lastName": {
+        "default": "Eriksson"
+      },
+      "positionCode": "D",
+      "positionGroup": "defensemen",
+      "currentLeague": "EUROPE",
+      "currentTeam": "J20 Nationell",
+      "draftYear": 2026,
+      "draftRound": 6,
+      "draftOverall": 184
+    },
+    {
+      "firstName": {
+        "default": "Parker"
+      },
+      "lastName": {
+        "default": "Alcos"
+      },
+      "positionCode": "D",
+      "positionGroup": "defensemen",
+      "currentLeague": "CHL",
+      "currentTeam": "WHL",
+      "draftYear": 2024,
+      "draftRound": 6,
+      "draftOverall": 189
+    },
+    {
+      "firstName": {
+        "default": "Matthew"
+      },
+      "lastName": {
+        "default": "Lansing"
+      },
+      "positionCode": "C",
+      "positionGroup": "forwards",
+      "currentLeague": "NCAA",
+      "currentTeam": "NCAA",
+      "draftYear": 2025,
+      "draftRound": 7,
+      "draftOverall": 207
+    },
+    {
+      "firstName": {
+        "default": "Kirill"
+      },
+      "lastName": {
+        "default": "Kudryavtsev"
+      },
+      "positionCode": "D",
+      "positionGroup": "defensemen",
+      "currentLeague": "AHL",
+      "currentTeam": "Abbotsford",
+      "draftYear": 2022,
+      "draftRound": 7,
+      "draftOverall": 208
+    },
+    {
+      "firstName": {
+        "default": "Basile"
+      },
+      "lastName": {
+        "default": "Sansonnens"
+      },
+      "positionCode": "D",
+      "positionGroup": "defensemen",
+      "currentLeague": "EUROPE",
+      "currentTeam": "NL",
+      "draftYear": 2024,
+      "draftRound": 7,
+      "draftOverall": 221
+    },
+    {
+      "firstName": {
+        "default": "Anri"
+      },
+      "lastName": {
+        "default": "Ravinskis"
+      },
+      "positionCode": "F",
+      "positionGroup": "forwards",
+      "currentLeague": "AHL",
+      "currentTeam": "Abbotsford"
+    }
+  ],
   "dataNotes": [
-    "La liste API des espoirs ne garantit pas tous les joueurs dont l'organisation détient les droits.",
-    "Les notes et potentiels de jeu ne sont pas fournis par cette source.",
-    "Ne pas interpréter l'absence d'un joueur comme une preuve que ses droits ne sont pas détenus."
+    "Remplacement du résultat vide de l'API NHL par la liste publique Hockey Insights des espoirs de moins de 25 ans et joueurs signés non-inscrits à l'effectif NHL.",
+    "Les ligues et choix de repêchage sont repris de la source publique; l'affectation courante peut évoluer et doit être rafraîchie avec les effectifs officiels.",
+    "Aucun identifiant NHL, date de naissance, attribut ou potentiel n'est inventé. La liste source peut inclure de jeunes joueurs ayant déjà disputé des matchs NHL."
   ]
 }

@@ -116,8 +116,9 @@ const output={
     "Contract records and seasonal salary values retain the source confidence tier and source claims where available.",
     "Cap hit, AAV, base salary, signing bonus, performance bonus and total salary remain separate fields.",
     "A missing record is marked as a gap; no salary or contract term is invented.",
+    "estimatedAavUsd is calculated from reported contract total divided by term and is an estimate only, not a verified 2026-27 salary or cap-hit row.",
     "This is a public dataset snapshot, not legal or payroll advice. Verify important clauses and disputed values against official team announcements."
   ]
 };
 await writeFile("data/contracts/2026-2027.json",JSON.stringify(output)+"\n","utf8");
-console.log(`Contracts import: ${matchedContracts}/${players.length} roster players with contract records (${output.coveragePercent}%); ${salaryRows} with 2026-27 cap-hit data (${output.salaryCoveragePercent}%); ${output.counts.withGapSource} gaps documented; upstream ${output.sourceUpdatedAt||"timestamp unknown"}`);
+console.log(`Contracts import: ${matchedContracts}/${players.length} roster players with contract records (${output.coveragePercent}%); ${salaryRows} with 2026-27 cap-hit data (${output.salaryCoveragePercent}%); ${estimatedAavRows} contract AAV estimates labelled non-verified; ${output.counts.withGapSource} gaps documented; upstream ${output.sourceUpdatedAt||"timestamp unknown"}`);

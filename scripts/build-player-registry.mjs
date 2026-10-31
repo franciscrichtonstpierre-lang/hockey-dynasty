@@ -294,7 +294,7 @@ try {
     try{
       const response=await fetch(scriptUrl,{headers:{"user-agent":"Hockey-Dynasty-data-sync/1.0"},signal:AbortSignal.timeout(10000)});
       const body=await response.text();
-      const refs=[...body.matchAll(/["'`]([^"'`]{0,180}(?:\\.json|picks|draft|capital|pipeline)[^"'`]{0,180})["'`]/gi)].slice(0,30).map(m=>m[1]);
+      const refs=[...body.matchAll(/["'`]([^"'`]{0,180}(?:\.json|picks|draft|capital|pipeline)[^"'`]{0,180})["'`]/gi)].slice(0,30).map(m=>m[1]);
       return {src,status:response.status,length:body.length,refs};
     }catch(error){return {src,error:error.message};}
   }));

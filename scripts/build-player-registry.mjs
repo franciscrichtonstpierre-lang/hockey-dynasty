@@ -304,7 +304,11 @@ try {
     "https://hockeyinsights.ca/data/team-hubs/ANA.json",
     "https://hockeyinsights.ca/data/team-hubs/Anaheim.json",
     "https://hockeyinsights.ca/data/team-hubs/Anaheim%20Ducks.json",
-    "https://hockeyinsights.ca/data/team-hubs/anaheim-ducks.json"
+    "https://hockeyinsights.ca/data/team-hubs/anaheim-ducks.json",
+    "https://hockeyinsights.ca/data/team_pipeline_summary.json",
+    "https://hockeyinsights.ca/data/team_prospects_2026_index.json",
+    "https://hockeyinsights.ca/data/team_pipeline_chl_slots.json",
+    "https://hockeyinsights.ca/data/pipeline_live/index.json"
   ]){
     try{
       const hubResponse=await fetch(hubUrl,{headers:{"user-agent":"Mozilla/5.0 (compatible; HockeyDynastyDataSync/1.0)","accept":"application/json"},signal:AbortSignal.timeout(8000)});

@@ -23,6 +23,11 @@ on:
 permissions:
   contents: write
 
+# Prevent overlapping sync jobs from racing while committing generated data.
+concurrency:
+  group: hockey-dynasty-data-sync-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
   sync:
     runs-on: ubuntu-latest

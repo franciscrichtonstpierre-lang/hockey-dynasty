@@ -13,7 +13,7 @@ const report = {
   prospects:{files:0,players:0,missing:[],lowCoverage:[]}, registry:{players:0,exists:false,unknown:0,duplicates:0,duplicateIdentities:0,withOverall:0,missingOverall:0,completeAttributeSets:0,missingAttributeSets:0,invalidRatings:0,potentialAvailable:0,potentialEstimated:0,potentialMissing:0},
   contracts:{players:0,matched:0,coveragePercent:0,salaryRows:0,estimatedAavRows:0,modelSalaryRows:0,usableSalaryRows:0,missingSalary:0,missingVerifiedSalary:0,exists:false},
   coaches:{teams:0,coaches:0,exists:false,missingHead:[],missingAssistants:[],ahlStaffExists:false,ahlTeams:0,ahlCoaches:0,ahlMissingHead:[],ahlMissingAssistants:[],ratingsComplete:0,ratingsMissing:0,ahlRatingsComplete:0,ahlRatingsMissing:0},
-  draftPicks:{exists:false,records:0,verified:0,excludedConditional:0,playableSlots:0,baseSlots:0,expectedBaseSlots:teams.length*draftYears.length*draftRounds.length,missingSlots:0,invalid:0,years:[],unresolvedOwner:0,unverifiedConditions:0,complete:false}
+  draftPicks:{exists:false,records:0,verified:0,provisionalOwner:0,excludedConditional:0,playableSlots:0,baseSlots:0,expectedBaseSlots:teams.length*draftYears.length*draftRounds.length,missingSlots:0,invalid:0,years:[],unresolvedOwner:0,unverifiedConditions:0,complete:false}
 };
 for (const code of teams) {
   const nhl = await json(`data/nhl/${code}.json`);
@@ -116,6 +116,8 @@ if (picks && Array.isArray(picks.picks)) {
     if (verifiedOwner) {
       report.draftPicks.verified++;
       if (p.status === "conditional" && p.conditionsVerified !== true) report.draftPicks.unverifiedConditions++;
+    } else if (p.status === "provisional_snapshot" && p.verified === false && teams.includes(p.currentOwner)) {
+      report.draftPicks.provisionalOwner++;
     } else if (p.status === "excluded_conditional" && p.verified === false && p.currentOwner == null) {
       report.draftPicks.excludedConditional++;
     } else if (p.status === "unverified" && p.verified === false && p.currentOwner == null) {
@@ -138,6 +140,7 @@ if (picks && Array.isArray(picks.picks)) {
     report.draftPicks.unresolvedOwner === 0 &&
     report.draftPicks.unverifiedConditions === 0 &&
     report.draftPicks.verified === report.draftPicks.playableSlots &&
+    report.draftPicks.provisionalOwner === 0 &&
     draftYears.every(y=>report.draftPicks.years.includes(y));
 }
 
@@ -149,7 +152,7 @@ console.log(`REGISTRE CENTRAL: ${report.registry.exists ? report.registry.player
 console.log(`CONTRATS 2026-27: ${report.contracts.exists ? report.contracts.matched+"/"+report.contracts.players+" contrats appariés; cap hit vérifié: "+report.contracts.salaryRows+"/"+report.nhl.players+"; estimations AAV de contrat: "+report.contracts.estimatedAavRows+"; estimations de simulation: "+report.contracts.modelSalaryRows+"; montants utilisables: "+report.contracts.usableSalaryRows+"/"+report.nhl.players+"; sans montant utilisable: "+report.contracts.missingSalary+"; cap hits vérifiés manquants: "+report.contracts.missingVerifiedSalary : "ABSENTS"}`);
 console.log(`ENTRAÎNEURS LNH: ${report.coaches.exists ? report.coaches.teams+"/32 équipes, "+report.coaches.coaches+" fiches; chefs manquants: "+report.coaches.missingHead.join(", ")+"; équipes avec moins de 2 adjoints: "+report.coaches.missingAssistants.join(", ")+"; cotes complètes: "+report.coaches.ratingsComplete+"/"+report.coaches.coaches : "BASE ABSENTE"}`);
 console.log(`ENTRAÎNEURS LAH: ${report.coaches.ahlStaffExists ? report.coaches.ahlTeams+"/32 équipes, "+report.coaches.ahlCoaches+" fiches; chefs manquants: "+report.coaches.ahlMissingHead.join(", ")+"; équipes avec moins de 2 adjoints: "+report.coaches.ahlMissingAssistants.join(", ")+"; cotes complètes: "+report.coaches.ahlRatingsComplete+"/"+report.coaches.ahlCoaches : "BASE ABSENTE"}`);
-console.log(`CHOIX 2027-2029: ${report.draftPicks.records} fiches; ${report.draftPicks.verified} propriétaires vérifiés; ${report.draftPicks.excludedConditional} choix conditionnels exclus; ${report.draftPicks.unresolvedOwner} propriétaires non résolus; ${report.draftPicks.unverifiedConditions} conditions non vérifiées; ${report.draftPicks.baseSlots}/${report.draftPicks.expectedBaseSlots} emplacements de base; ${report.draftPicks.missingSlots} emplacements manquants; ${report.draftPicks.invalid} erreurs structurelles; statut ${report.draftPicks.complete ? "COMPLET" : "INCOMPLET"}`);
+console.log(`CHOIX 2027-2029: ${report.draftPicks.records} fiches; ${report.draftPicks.verified} propriétaires vérifiés; ${report.draftPicks.provisionalOwner} propriétaires issus du snapshot secondaire; ${report.draftPicks.excludedConditional} choix conditionnels exclus; ${report.draftPicks.unresolvedOwner} propriétaires non résolus; ${report.draftPicks.unverifiedConditions} conditions non vérifiées; ${report.draftPicks.baseSlots}/${report.draftPicks.expectedBaseSlots} emplacements de base; ${report.draftPicks.missingSlots} emplacements manquants; ${report.draftPicks.invalid} erreurs structurelles; statut ${report.draftPicks.complete ? "COMPLET" : "INCOMPLET"}`);
 console.log("NOTE: la présence des fiches ne garantit pas que les droits, contrats, cotes ou transactions conditionnelles soient tous vérifiés.");
 if (
   report.nhl.files !== 32 || report.ahl.files !== 32 ||

@@ -3,15 +3,21 @@ import { readFile, writeFile } from "node:fs/promises";
 
 const BASE = "https://github.com/ehlersio/nhl-contracts/releases/download/contracts";
 const SEASON = "2026-27";
-const fetchJson = async name => {
-  const res = await fetch(`${BASE}/${name}.json`, { headers: { "user-agent": "Hockey-Dynasty-data-sync/1.0" } });
-  if (!res.ok) throw new Error(`Download ${name}.json failed: HTTP ${res.status}`);
+const fetchJson = async (name, optional = false) => {
+  const res = await fetch(`${BASE}/${name}.json`, { headers: { "user-agent": "Hockey-Dynasty-data-sync/1.0" }, signal: AbortSignal.timeout(15000) });
+  if (!res.ok) {
+    if (optional && res.status === 404) {
+      console.warn(`Optional source file ${name}.json not published; continuing without source timestamp.`);
+      return {};
+    }
+    throw new Error(`Download ${name}.json failed: HTTP ${res.status}`);
+  }
   return res.json();
 };
 const rows = data => Array.isArray(data) ? data : (data.rows || data.data || data.records || []);
 const [contractsRaw, seasonsRaw, clausesRaw, gapsRaw, claimsRaw, timestampRaw] = await Promise.all([
   fetchJson("contracts"), fetchJson("contract_seasons"), fetchJson("clauses"),
-  fetchJson("gaps"), fetchJson("claims"), fetchJson("timestamp")
+  fetchJson("gaps"), fetchJson("claims"), fetchJson("timestamp", true)
 ]);
 const contracts = rows(contractsRaw), seasons = rows(seasonsRaw), clauses = rows(clausesRaw), gaps = rows(gapsRaw), claims = rows(claimsRaw);
 const byKey = new Map();

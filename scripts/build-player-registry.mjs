@@ -141,6 +141,32 @@ for (const code of codes) {
   } catch (e) { console.warn(`Prospect registry skipped ${code}: ${e.message}`); }
 }
 
+// Enrich unknown league only from a unique, same-name roster record.
+const byName = new Map();
+for (const p of records.values()) {
+  const key = nameKey(p.name);
+  if (!byName.has(key)) byName.set(key, []);
+  byName.get(key).push(p);
+}
+let leagueEnriched = 0;
+for (const p of records.values()) {
+  if (p.currentLeague !== "UNKNOWN") continue;
+  const matches = (byName.get(nameKey(p.name)) || []).filter(q =>
+    q.id !== p.id && q.currentLeague && q.currentLeague !== "UNKNOWN" && q.currentLeague !== "OTHER"
+  );
+  const leagues = new Set(matches.map(q => q.currentLeague));
+  if (leagues.size !== 1 || matches.length === 0) continue;
+  const league = [...leagues][0];
+  const sameLeague = matches.filter(q => q.currentLeague === league);
+  const teams = new Set(sameLeague.map(q => q.currentTeam).filter(Boolean));
+  if (teams.size > 1) continue;
+  p.currentLeague = league;
+  if (!p.currentTeam && teams.size === 1) p.currentTeam = [...teams][0];
+  p.leagueResolution = "matched_unique_name_to_roster_source";
+  leagueEnriched++;
+}
+console.log(`Registry league enrichment: ${leagueEnriched} UNKNOWN entries resolved via unique roster-name match.`);
+
 const players = [...records.values()].sort((a,b) => a.name.localeCompare(b.name,"en"));
 const counts = players.reduce((out,p) => (out[p.currentLeague]=(out[p.currentLeague]||0)+1,out),{});
 const output = {

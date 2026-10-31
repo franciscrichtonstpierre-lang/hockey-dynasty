@@ -36,6 +36,12 @@ async function syncRoster(code) {
     process.exitCode = 1;
   }
 }
+const prospectName = p => String(p.fullName || p.name || [
+  p.firstName?.default || p.firstName || p.first_name || "",
+  p.lastName?.default || p.lastName || p.last_name || ""
+].filter(Boolean).join(" ")).trim();
+const prospectKey = p => prospectName(p).normalize("NFD").replace(/[\\u0300-\\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim();
+
 async function syncProspects(code) {
   const path = `data/prospects/${code}.json`;
   const url = `https://api-web.nhle.com/v1/prospects/${code}`;
@@ -55,20 +61,34 @@ async function syncProspects(code) {
       throw new Error("Unrecognised prospects response schema");
     }
     if (!Array.isArray(list) || list.length === 0) throw new Error("Empty prospects response");
+    let supplemental = [];
+    try {
+      const supplementalDb = JSON.parse(await readFile("data/prospects-supplemental/2026-2027.json", "utf8"));
+      supplemental = supplementalDb.teams?.[code]?.prospects || [];
+    } catch { /* Optional supplemental snapshot is absent. */ }
+    const names = new Set(list.map(prospectKey).filter(Boolean));
+    const extras = supplemental.filter(p => {
+      const key = prospectKey(p);
+      if (!key || names.has(key)) return false;
+      names.add(key);
+      return true;
+    });
+    const merged = [...list, ...extras];
     const payload = {
       teamCode: code,
       source: url,
-      sourceType: "NHL Web API",
+      sourceType: extras.length ? "NHL Web API + source-labelled supplemental pipeline" : "NHL Web API",
       syncedUTC: new Date().toISOString(),
-      count: list.length,
-      prospects: list,
+      count: merged.length,
+      prospects: merged,
       dataNotes: [
-        "This is the public prospect list returned by the NHL API, not a guarantee of every player whose rights the organization owns.",
-        "Game ratings, potential and rights must only be filled from separately verified sources."
+        "NHL API rows are retained as the primary source.",
+        "Supplemental pipeline rows carry their own source and snapshot date and may be stale; verify current league and NHL rights before final release.",
+        "Game ratings and potential are not inferred from age, draft slot or external prospect rank."
       ]
     };
     await writeValidated(path, payload, d => Array.isArray(d.prospects) && d.prospects.length > 0);
-    console.log(`OK prospects ${code}: ${list.length}`);
+    console.log(`OK prospects ${code}: API ${list.length} + supplemental ${extras.length} = ${merged.length}`);
   } catch (error) {
     // Certaines équipes n'ont pas de liste exposée par l'API NHL.
     // Si une liste locale valide existe déjà, la conserver sans faire échouer

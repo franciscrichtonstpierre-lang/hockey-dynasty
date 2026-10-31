@@ -216,7 +216,7 @@ async function simulate(){
 function newSeason(){if(!confirm("Remettre les statistiques de saison à zéro? Les choix et échanges seront conservés."))return;S.season++;S.day=S.w=S.l=S.otl=S.gf=S.ga=0;S.history=[];save();render();msg("Nouvelle saison commencée.")}
 
 const codes=["ANA","BOS","BUF","CGY","CAR","CHI","COL","CBJ","DAL","DET","EDM","FLA","LAK","MIN","MTL","NSH","NJD","NYI","NYR","OTT","PHI","PIT","SJS","SEA","STL","TBL","TOR","UTA","VAN","VGK","WSH","WPG"];
-function gameRatings(p){let pos=p.pos||"F";let r=hdRatings[String(p.id||"")];if(r){r=applyDevelopment(p.id,r);return {off:Number(r.OFF)||25,def:Number(r.DEF)||25,ov:Number(r.OA)||25};}let key=String(p.id||p.name||"Joueur");let h=0;for(let i=0;i<key.length;i++)h=(h*31+key.charCodeAt(i))>>>0;let base=50+(h%17);let off=Math.max(20,Math.min(85,base+(pos==="D"?-7:pos==="G"?-25:5)));let def=Math.max(20,Math.min(85,base+(pos==="D"?9:pos==="G"?-5:pos==="F"?-3:0)));let ov=pos==="G"?Math.max(20,Math.min(85,base-2)):Math.round(off*.53+def*.47);return {off:Math.round(off),def:Math.round(def),ov};}
+function gameRatings(p){let pos=p.pos||p.positionCode||"F";let r=hdRatings[String(p.id||p.playerId||"")];if(r){r=applyDevelopment(p.id||p.playerId,r);return {off:Number(r.OFF)||25,def:Number(r.DEF)||25,ov:Number(r.OA)||25};}const fallback=playerAttributes({...p,positionCode:p.positionCode||pos});return {off:Number(fallback.OFF)||25,def:Number(fallback.DEF)||25,ov:Number(fallback.OA)||25};}
 let hdRatings={};
 let hdRatingsLoaded=false;
 async function loadRatings(){if(hdRatingsLoaded)return;try{const r=await fetch("./data/ratings.json?"+Date.now(),{cache:"no-store"});if(r.ok){const d=await r.json();hdRatings=d.players||{};}}catch(e){}hdRatingsLoaded=true}

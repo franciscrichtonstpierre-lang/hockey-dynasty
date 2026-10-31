@@ -82,6 +82,8 @@ for (const code of codes) {
           termYears:c.term_years??null, startSeason:c.start_season||null, endSeason:c.end_season||null,
           expiryStatus:c.expiry_status||null, boughtOut:!!c.bought_out, oneWay:c.one_way??null,
           totalUsd:c.total_usd??null, nhlSalaryUsd:c.nhl_salary_usd??null, minorsSalaryUsd:c.minors_salary_usd??null,
+          estimatedAavUsd: Number(c.total_usd)>0 && Number(c.term_years)>0 ? Math.round(Number(c.total_usd)/Number(c.term_years)) : null,
+          estimatedAavMethod: Number(c.total_usd)>0 && Number(c.term_years)>0 ? "contract_total_divided_by_term; estimate_only_not_verified_season_cap_hit" : null,
           confidenceTier:c.best_tier||null, tiers:c.tiers||null, sourceCount:c.n_sources??null,
           conflicts:c.conflicts||null, flags:c.flags||null, sourceClaimIds:String(c.claim_ids||"").split(";").filter(Boolean),
           sources:sourceInfo(c)
@@ -100,11 +102,12 @@ for (const code of codes) {
 }
 const matchedContracts=players.filter(p=>p.contract!=null).length;
 const salaryRows=players.filter(p=>p.season?.capHitUsd!=null).length;
+const estimatedAavRows=players.filter(p=>p.contract?.estimatedAavUsd!=null).length;
 const output={
   schemaVersion:1, season:"2026-2027", seasonKey:SEASON, generatedAt:new Date().toISOString(),
   sourceDataset:"ehlersio/nhl-contracts", sourceUrl:"https://github.com/ehlersio/nhl-contracts/releases/tag/contracts",
   sourceUpdatedAt:timestampRaw.updated_at||timestampRaw.updatedAt||timestampRaw.generated_at||null,
-  license:"CC0-1.0", playerCount:players.length, matchedContracts, salaryRows,
+  license:"CC0-1.0", playerCount:players.length, matchedContracts, salaryRows, estimatedAavRows,
   coveragePercent:Number((100*matchedContracts/Math.max(players.length,1)).toFixed(1)),
   salaryCoveragePercent:Number((100*salaryRows/Math.max(players.length,1)).toFixed(1)),
   counts:{matchedContracts, salaryRows, missingContracts:players.length-matchedContracts,withGapSource:players.filter(p=>p.gapReason).length},

@@ -40,7 +40,7 @@ const prospectName = p => String(p.fullName || p.name || [
   p.firstName?.default || p.firstName || p.first_name || "",
   p.lastName?.default || p.lastName || p.last_name || ""
 ].filter(Boolean).join(" ")).trim();
-const prospectKey = p => prospectName(p).normalize("NFD").replace(/[\\u0300-\\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim();
+const prospectKey = p => prospectName(p).normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim();
 
 async function syncProspects(code) {
   const path = `data/prospects/${code}.json`;

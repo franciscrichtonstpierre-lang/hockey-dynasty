@@ -10,6 +10,7 @@ on:
       - "scripts/sync-contracts.mjs"
       - "scripts/validate-database.mjs"
       - "scripts/check-inline-js.mjs"
+      - "index.html"
       - "data/ahl/teams.json"
       - "data/prospects/**"
       - "data/prospects-supplemental/**"

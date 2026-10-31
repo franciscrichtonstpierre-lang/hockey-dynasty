@@ -271,88 +271,78 @@ try {
     teamSnapshots.set(result.teamCode,existing);
   }
   console.log(`Hockey Insights prospect snapshots: ${pipelinePagesFetched}/32 pages with rows; ${pipelineRowsFetched} rows parsed.`);
-  let pipelineMarkdown="";
-  try{
-    const mdResponse=await fetch("https://hockeyinsights.ca/content/team-pipeline.md",{
-      headers:{"user-agent":"Hockey-Dynasty-data-sync/1.0","accept":"text/markdown"},
-      signal:AbortSignal.timeout(15000)
-    });
-    if(mdResponse.ok)pipelineMarkdown=await mdResponse.text();
-    else console.warn(`Team pipeline markdown fetch returned HTTP ${mdResponse.status}.`);
-  }catch(error){console.warn(`Team pipeline markdown unavailable: ${error.message}`);}
-  const markdownDraftHits=[...pipelineMarkdown.matchAll(/2027|2028|2029|draft capital|future picks/gi)].slice(0,24)
-    .map(m=>pipelineMarkdown.slice(Math.max(0,m.index-100),Math.min(pipelineMarkdown.length,m.index+240)));
-  console.log("Team pipeline markdown diagnostics: "+JSON.stringify({length:pipelineMarkdown.length,draftHits:markdownDraftHits}));
-
-  const anaDebugHtml=pipelineResults.find(r=>r.teamCode==="ANA")?.debugHtml||"";
-  const draftTerms=["draft capital","future draft","puckpedia","pick-chip","draft-picks","draftPicks","futurePicks","2027 picks","R1"];
-  const termHits=draftTerms.map(term=>{const index=anaDebugHtml.toLowerCase().indexOf(term.toLowerCase());return {term,index,snippet:index>=0?anaDebugHtml.slice(Math.max(0,index-180),Math.min(anaDebugHtml.length,index+420)):null};});
-  const scriptSources=[...anaDebugHtml.matchAll(/<script[^>]+src=["']([^"']+)["']/gi)].map(m=>m[1]);
-  const dataRefs=[...anaDebugHtml.matchAll(/(?:src|href)=["']([^"']+\.(?:json|js|md)(?:\?[^"']*)?)["']/gi)].map(m=>m[1]).slice(0,30);
-  const scriptDiagnostics=await Promise.all(scriptSources.filter(src=>src.startsWith("/")||src.includes("hockeyinsights.ca")).slice(0,8).map(async src=>{
-    const scriptUrl=new URL(src,"https://hockeyinsights.ca/team-pipeline/anaheim-ducks/").toString();
-    try{
-      const response=await fetch(scriptUrl,{headers:{"user-agent":"Hockey-Dynasty-data-sync/1.0"},signal:AbortSignal.timeout(10000)});
-      const body=await response.text();
-      const refs=[...body.matchAll(/["'`]([^"'`]{0,180}(?:\.json|picks|draft|capital|pipeline)[^"'`]{0,180})["'`]/gi)].slice(0,30).map(m=>m[1]);
-      const hits=[...body.matchAll(/2027|2028|2029|draft|pick|\.json|fetch\(/gi)].slice(0,30).map(m=>({term:m[0],index:m.index,snippet:body.slice(Math.max(0,m.index-90),Math.min(body.length,m.index+220))}));
-      return {src,status:response.status,length:body.length,refs,hits};
-    }catch(error){return {src,error:error.message};}
-  }));
-  console.log("Draft HTML diagnostics ANA: "+JSON.stringify({htmlLength:anaDebugHtml.length,tableCount:[...anaDebugHtml.matchAll(/<table\\b/gi)].length,scriptSources,dataRefs,termHits,scriptDiagnostics}));
-  for(const hubUrl of [
-    "https://hockeyinsights.ca/data/team-hubs/ANA.json",
-    "https://hockeyinsights.ca/data/team-hubs/Anaheim.json",
-    "https://hockeyinsights.ca/data/team-hubs/Anaheim%20Ducks.json",
-    "https://hockeyinsights.ca/data/team-hubs/anaheim-ducks.json",
-    "https://hockeyinsights.ca/data/team_pipeline_summary.json",
-    "https://hockeyinsights.ca/data/team_prospects_2026_index.json",
-    "https://hockeyinsights.ca/data/team_pipeline_chl_slots.json",
-    "https://hockeyinsights.ca/data/pipeline_live/index.json"
-  ]){
-    try{
-      const hubResponse=await fetch(hubUrl,{headers:{"user-agent":"Mozilla/5.0 (compatible; HockeyDynastyDataSync/1.0)","accept":"application/json"},signal:AbortSignal.timeout(8000)});
-      const hubText=await hubResponse.text();
-      let hubJson=null;try{hubJson=JSON.parse(hubText)}catch{}
-      const hubKeys=hubJson&&typeof hubJson==="object"?Object.keys(hubJson):[];
-      const interestingHubFields=hubKeys.filter(k=>/pick|draft|right|snapshot|owner|asset|puckpedia|footprint|pipeline|team|meta/i.test(k)).map(k=>({key:k,value:JSON.stringify(hubJson[k]).slice(0,2200)}));
-      console.log("Team hub JSON diagnostics: "+JSON.stringify({url:hubUrl,status:hubResponse.status,length:hubText.length,keys:hubKeys,interestingHubFields,preview:hubJson?null:hubText.slice(0,150)}));
-    }catch(error){console.log("Team hub JSON diagnostics: "+JSON.stringify({url:hubUrl,error:error.message}));}
-  }
-
   const draftPickMap = new Map();
   let draftPickConflicts = 0;
-  for (const result of pipelineResults) {
-    for (const pick of (result.draftPicks||[])) {
-      const key=`${pick.year}-${pick.round}-${pick.originalOwner}`;
-      const previous=draftPickMap.get(key);
-      if(!previous){draftPickMap.set(key,pick);continue;}
-      if(previous.conditional&&!pick.conditional){draftPickMap.set(key,pick);continue;}
-      if(!previous.conditional&&pick.conditional)continue;
-      if(previous.currentOwner!==pick.currentOwner){
-        draftPickMap.set(key,{...previous,currentOwner:null,conflict:true,verificationNote:"Conflit entre les pages de filière pour ce choix; validation manuelle requise."});
-        draftPickConflicts++;
+  let draftSnapshotDate = "2026-09-28";
+  let draftIndexFetched = false;
+  const draftIndexUrl = "https://hockeyinsights.ca/data/team_prospects_2026_index.json?v=20260807-season";
+  try {
+    const draftIndexResponse = await fetch(draftIndexUrl, {
+      headers: {"user-agent":"Mozilla/5.0 (compatible; HockeyDynastyDataSync/1.0)","accept":"application/json"},
+      signal: AbortSignal.timeout(15000)
+    });
+    if (!draftIndexResponse.ok) throw new Error(`HTTP ${draftIndexResponse.status}`);
+    const draftIndexData = await draftIndexResponse.json();
+    draftIndexFetched = true;
+    const stamp = draftIndexData.meta?.puckpediaLastUpdated || draftIndexData.meta?.generatedAt || draftIndexData.meta?.generatedLocalDate;
+    if (stamp) draftSnapshotDate = String(stamp).slice(0,10);
+    for (const club of (draftIndexData.teams || [])) {
+      const owner = String(club.key || "");
+      if (!teamPipelineSlugs[owner]) continue;
+      for (const yearRow of (club.futureDraftCapital?.years || [])) {
+        for (const p of (yearRow.picks || [])) {
+          const year = Number(p.year || yearRow.year);
+          const round = Number(p.round);
+          const originalOwner = String(p.originalTeam || "");
+          const currentOwner = String(p.projectedTeam || owner);
+          const conditional = Boolean(p.conditionText && String(p.conditionText).trim() || p.conditional === true || p.status === "conditional" || p.locked === true);
+          if (![2027,2028,2029].includes(year) || round < 1 || round > 7 || !teamPipelineSlugs[originalOwner] || !teamPipelineSlugs[currentOwner]) continue;
+          const key = `${year}-${round}-${originalOwner}`;
+          const record = {
+            year, round, originalOwner, currentOwner, conditional, conflict: false,
+            source: draftIndexUrl, snapshotDate: draftSnapshotDate,
+            sourceType: "Hockey Insights team_prospects_2026_index.json / PuckPedia snapshot",
+            verificationNote: conditional
+              ? "La source signale une condition; ce choix est exclu du registre jouable."
+              : "Propriétaire du snapshot PuckPedia du 2026-09-28; confirmation avec les transactions plus récentes requise."
+          };
+          const previous = draftPickMap.get(key);
+          if (!previous || conditional) {
+            draftPickMap.set(key, conditional ? {...record,currentOwner:null} : record);
+          } else if (previous.conditional) {
+            continue;
+          } else if (previous.currentOwner !== currentOwner) {
+            draftPickMap.set(key, {...previous,currentOwner:null,conflict:true,verificationNote:"Conflit entre les clubs dans le snapshot PuckPedia; validation manuelle requise."});
+            draftPickConflicts++;
+          }
+        }
       }
     }
+    console.log(`PuckPedia-backed capital index: ${draftIndexData.teams?.length||0} teams; ${draftPickMap.size} unique 2027–2029 base slots; snapshot ${draftSnapshotDate}; ${draftPickConflicts} conflicts.`);
+  } catch (error) {
+    console.warn(`PuckPedia-backed capital index unavailable: ${error.message}`);
   }
-  const draftSnapshotPath="data/draft-picks/hockey-insights-2027-2029.json";
-  const draftSnapshot={
-    schemaVersion:1,source:"Hockey Insights Team Pipeline / PuckPedia context",snapshotDate:"2026-09-28",
-    pagesFetched:pipelineResults.filter(r=>(r.draftPicks||[]).length>0).length,totalPages:32,
-    picks:[...draftPickMap.values()].sort((a,b)=>a.year-b.year||a.round-b.round||a.originalOwner.localeCompare(b.originalOwner)),
-    notes:[
-      "Secondary snapshot date: 2026-09-28; it may not include later trades.",
-      "Conditional transfers are not applied; where the only listing is conditional, the original team is retained as a provisional game fallback.",
-      "Official NHL Future Draft Picks rows take precedence over this snapshot."
+  const draftSnapshotPath = "data/draft-picks/hockey-insights-2027-2029.json";
+  const draftSnapshot = {
+    schemaVersion: 1,
+    source: "Hockey Insights team_prospects_2026_index.json / PuckPedia",
+    snapshotDate: draftSnapshotDate,
+    pagesFetched: draftIndexFetched ? 32 : 0,
+    totalPages: 32,
+    picks: [...draftPickMap.values()].sort((a,b)=>a.year-b.year||a.round-b.round||a.originalOwner.localeCompare(b.originalOwner)),
+    notes: [
+      "PuckPedia-backed snapshot is dated 2026-09-28 and may miss later trades.",
+      "Rows from this source remain provisional until reconciled with current NHL transactions.",
+      "Conditional picks are excluded from the playable ledger."
     ]
   };
-  const serializedDraftSnapshot=JSON.stringify(draftSnapshot,null,2)+"\n";
-  const previousDraftSnapshot=await readFile(draftSnapshotPath,"utf8").catch(()=>null);
-  if(draftPickMap.size>0&&previousDraftSnapshot!==serializedDraftSnapshot){
+  const serializedDraftSnapshot = JSON.stringify(draftSnapshot,null,2)+"\n";
+  const previousDraftSnapshot = await readFile(draftSnapshotPath,"utf8").catch(()=>null);
+  if (draftPickMap.size > 0 && previousDraftSnapshot !== serializedDraftSnapshot) {
     await writeFile(draftSnapshotPath,serializedDraftSnapshot,"utf8");
-    console.log(`Saved secondary draft-pick snapshot: ${draftPickMap.size} unique picks; ${draftSnapshot.pagesFetched}/32 pages; ${draftPickConflicts} conflicts.`);
+    console.log(`Saved secondary draft-pick snapshot: ${draftPickMap.size} unique slots; ${draftSnapshot.pagesFetched}/32 team records; ${draftPickConflicts} conflicts.`);
   } else {
-    console.log(`Secondary draft-pick snapshot: ${draftPickMap.size} unique picks; ${draftSnapshot.pagesFetched}/32 pages; ${draftPickConflicts} conflicts.`);
+    console.log(`Secondary draft-pick snapshot: ${draftPickMap.size} unique slots; ${draftSnapshot.pagesFetched}/32 team records; ${draftPickConflicts} conflicts.`);
   }
 
   const snapshotNote = "League and development-team context supplemented from Hockey Insights Team Pipeline (2026-09-28 snapshot); secondary data that must be rechecked against current transactions.";

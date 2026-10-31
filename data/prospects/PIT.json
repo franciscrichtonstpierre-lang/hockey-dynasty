@@ -2,7 +2,7 @@
   "teamCode": "PIT",
   "source": "https://api-web.nhle.com/v1/prospects/PIT",
   "sourceType": "NHL Web API",
-  "syncedUTC": "2026-10-31T00:46:51.140Z",
+  "syncedUTC": "2026-10-31T00:50:22.642Z",
   "count": 30,
   "prospects": [
     {
@@ -790,7 +790,8 @@
     }
   ],
   "dataNotes": [
-    "This is the public prospect list returned by the NHL API, not a guarantee of every player whose rights the organization owns.",
-    "Game ratings, potential and rights must only be filled from separately verified sources."
+    "NHL API rows are retained as the primary source.",
+    "Supplemental pipeline rows carry their own source and snapshot date and may be stale; verify current league and NHL rights before final release.",
+    "Game ratings and potential are not inferred from age, draft slot or external prospect rank."
   ]
 }

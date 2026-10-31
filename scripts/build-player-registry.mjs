@@ -207,17 +207,45 @@ try {
     }
   }));
   for (const result of pipelineResults) {
-    if (result.rows.length) {
-      pipelinePagesFetched++;
-      pipelineRowsFetched += result.rows.length;
-      const existing = teamSnapshots.get(result.teamCode) || {source:result.url,snapshotDate:"2026-09-28",prospects:[]};
-      existing.source = existing.source || result.url;
-      existing.snapshotDate = existing.snapshotDate || "2026-09-28";
-      existing.prospects.push(...result.rows);
-      teamSnapshots.set(result.teamCode,existing);
+    if (!result.rows.length) continue;
+    pipelinePagesFetched++;
+    pipelineRowsFetched += result.rows.length;
+    const existing = teamSnapshots.get(result.teamCode) || {source:result.url,snapshotDate:"2026-09-28",prospects:[]};
+    existing.source = existing.source || result.url;
+    existing.snapshotDate = existing.snapshotDate || "2026-09-28";
+    const byName = new Map(existing.prospects.map(p=>[nameKey(nameOf(p)),p]).filter(([key])=>key));
+    for (const row of result.rows) {
+      const key = nameKey(row.fullName);
+      const previous = byName.get(key);
+      if (previous) {
+        if (!previous.currentLeague || String(previous.currentLeague).toUpperCase()==="UNKNOWN") previous.currentLeague=row.currentLeague;
+        if (!previous.positionCode) previous.positionCode=row.positionCode;
+        if (!previous.age) previous.age=row.age;
+        if (!previous.draftYear && row.draftYear) previous.draftYear=row.draftYear;
+        if (!previous.draftRound && row.draftRound) previous.draftRound=row.draftRound;
+        if (!previous.draftOverall && row.draftOverall) previous.draftOverall=row.draftOverall;
+        if (!previous.source) previous.source=row.source;
+        if (!previous.sourceUpdatedAt) previous.sourceUpdatedAt=row.sourceUpdatedAt;
+        if (!previous.verificationStatus) previous.verificationStatus=row.verificationStatus;
+      } else {
+        existing.prospects.push(row);
+        byName.set(key,row);
+      }
     }
+    teamSnapshots.set(result.teamCode,existing);
   }
   console.log(`Hockey Insights prospect snapshots: ${pipelinePagesFetched}/32 pages with rows; ${pipelineRowsFetched} rows parsed.`);
+  const snapshotNote = "League and development-team context supplemented from Hockey Insights Team Pipeline (2026-09-28 snapshot); secondary data that must be rechecked against current transactions.";
+  if (!Array.isArray(supplementalData.dataNotes)) supplementalData.dataNotes=[];
+  if (!supplementalData.dataNotes.includes(snapshotNote)) supplementalData.dataNotes.push(snapshotNote);
+  supplementalData.teams = Object.fromEntries(teamSnapshots.entries());
+  const supplementalPath = "data/prospects-supplemental/2026-2027.json";
+  const serializedSupplemental = JSON.stringify(supplementalData,null,2)+"\\n";
+  const previousSupplemental = await readFile(supplementalPath,"utf8").catch(()=>null);
+  if (pipelinePagesFetched>0 && previousSupplemental!==serializedSupplemental) {
+    await writeFile(supplementalPath,serializedSupplemental,"utf8");
+    console.log("Saved refreshed 32-team prospect league snapshots for the next roster sync.");
+  }
   for (const [teamCode, teamData] of teamSnapshots.entries()) {
     for (const p of (Array.isArray(teamData.prospects) ? teamData.prospects : [])) {
       const name = nameOf(p);

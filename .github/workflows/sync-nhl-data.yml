@@ -8,6 +8,7 @@ on:
       - "scripts/sync-nhl-data.mjs"
       - "scripts/build-player-registry.mjs"
       - "scripts/sync-contracts.mjs"
+      - "scripts/validate-database.mjs"
       - "data/ahl/teams.json"
   workflow_dispatch:
     inputs:

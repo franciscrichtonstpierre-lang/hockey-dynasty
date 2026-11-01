@@ -10,11 +10,12 @@ const entries=[];
 const liBlocks=[...hub.matchAll(/<li\b[^>]*>([\s\S]*?)<\/li>/gi)].map(m=>m[1]);
 for(const block of liBlocks){
  const text=decode(block);
- if(!text||!/·/.test(text)||!/(?:\bD\b|\bF\b|\bC\b|\bLW\b|\bRW\b|\bG\b)/.test(text))continue;
+ if(!text||!/(?:\bD\b|\bF\b|\bC\b|\bLW\b|\bRW\b|\bG\b)/.test(text))continue;
  const a=block.match(/<a\b[^>]*href=["']([^"']*rinkcentral\.com\/prospects\/[^"']+)["'][^>]*>([\s\S]*?)<\/a>/i);
- let name=a?decode(a[2]):text.replace(/^\s*(?:\d+|-)\s*/,"").split(/\s+(?:D|F|C|LW|RW|G|C\/W|C\/LW|RW\/C)\s*[·]/)[0].trim();
+ const nameMatch=text.match(/^\s*(?:\d+|-)?\s*(.+?)\s+(?:D|F|C|LW|RW|G|C\/W|C\/LW|RW\/C)\b/);
+ const name=a?decode(a[2]):nameMatch?nameMatch[1].trim():null;
  if(!name||name.length<3)continue;
- const teamPart=text.match(/(?:\bD\b|\bF\b|\bC\b|\bLW\b|\bRW\b|\bG\b|\bC\/W\b|\bC\/LW\b|\bRW\/C)\s*[·]\s*([^·(]+?)(?:\s*\(|\s*·|$)/);
+ const teamPart=text.match(/(?:\bD\b|\bF\b|\bC\b|\bLW\b|\bRW\b|\bG\b|\bC\/W\b|\bC\/LW\b|\bRW\/C\b)\s*[·]\s*([^·(]+?)(?:\s*\(|\s*·|$)/);
  entries.push({name,nameKey:norm(name),draftYear:2027,hubUrl,profileUrl:a?new URL(a[1],hubUrl).toString():null,currentTeam:teamPart?teamPart[1].trim():null});
 }
 const unique=[...new Map(entries.map(p=>[p.nameKey,p])).values()];

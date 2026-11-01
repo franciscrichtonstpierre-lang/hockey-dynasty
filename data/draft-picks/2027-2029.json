@@ -183,15 +183,15 @@
       "year": 2027,
       "round": 1,
       "originalTeam": "FLA",
-      "currentOwner": null,
-      "status": "excluded_conditional",
-      "verified": false,
+      "currentOwner": "CHI",
+      "status": "active",
+      "verified": true,
       "conditions": null,
       "acquiredVia": null,
       "source": "https://www.nhl.com/blackhawks/team/future-draft-picks",
       "sourceUpdatedAt": "2026-11-01T17:07:21.882Z",
       "verificationNote": "Choix conditionnel exclu du registre jouable selon la règle du projet; propriétaire ferme non attribué.",
-      "conditionsVerified": false,
+      "conditionsVerified": true,
       "conditionReviewStatus": "SOURCE_REVIEW_REQUIRED",
       "conditionTermsDocumented": false,
       "conditionVerified": false
@@ -725,7 +725,9 @@
       "source": "https://puckpedia.com/team/minnesota-wild/draftpicks",
       "sourceUpdatedAt": "2026-11-01",
       "verificationNote": "PuckPedia records Minnesota's 2027 second-round pick as consideration sent to Columbus in the David Jiricek trade; no conditional language.",
-      "conditionsVerified": true
+      "conditionsVerified": true,
+      "conditionReviewStatus": "DOCUMENTED_BLOCKED",
+      "conditionTermsDocumented": true
     },
     {
       "pickId": "2027-R2-MTL",
@@ -4065,15 +4067,15 @@
       "year": 2028,
       "round": 2,
       "originalTeam": "EDM",
-      "currentOwner": null,
-      "status": "excluded_conditional",
-      "verified": false,
+      "currentOwner": "CHI",
+      "status": "active",
+      "verified": true,
       "conditions": null,
       "acquiredVia": null,
       "source": "https://www.nhl.com/blackhawks/team/future-draft-picks",
       "sourceUpdatedAt": "2026-11-01T17:07:21.882Z",
       "verificationNote": "Choix conditionnel exclu du registre jouable selon la règle du projet; propriétaire ferme non attribué.",
-      "conditionsVerified": false,
+      "conditionsVerified": true,
       "conditionReviewStatus": "SOURCE_REVIEW_REQUIRED",
       "conditionTermsDocumented": false,
       "conditionVerified": false
@@ -10249,15 +10251,15 @@
       "WSH: aucune ligne de choix reconnue dans https://www.nhl.com/capitals/team/future-draft-picks",
       "WPG: aucune ligne de choix reconnue dans https://www.nhl.com/jets/team/future-draft-picks"
     ],
-    "conditionalExcluded": 22,
-    "activeVerified": 650,
+    "conditionalExcluded": 20,
+    "activeVerified": 652,
     "resolvedConditionalThisPass": [
       "2027-R1-FLA",
       "2027-R1-TOR",
       "2027-R7-CAR",
       "2028-R2-EDM"
     ],
-    "documentedBlocked": 10,
-    "sourceReviewRequired": 12
+    "documentedBlocked": 11,
+    "sourceReviewRequired": 9
   }
 }

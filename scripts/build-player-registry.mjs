@@ -670,6 +670,40 @@ for(const correction of (manualLeagueCorrections.players||[])){
 }
 console.log(`Manual league corrections: ${manualCorrectionsApplied} existing records updated; ${manualCorrectionsAdded} verified missing records added; ${manualCorrectionsAmbiguous} ambiguous identities (${manualCorrectionsAmbiguousNames.join(", ")}).`);
 
+let manualAliasGroupsMerged=0;
+for(const correction of (manualLeagueCorrections.players||[])){
+  if(!correction.birthDate||!(correction.aliases||[]).length)continue;
+  const aliasNames=new Set([correction.name,...correction.aliases].map(nameKey));
+  let group=[...records.values()].filter(p=>aliasNames.has(nameKey(p.name))&&(!p.birthDate||p.birthDate===correction.birthDate));
+  group=group.filter(p=>!p.birthDate||p.birthDate===correction.birthDate);
+  if(group.length<2)continue;
+  const pos=posGroup(correction)||String(correction.position||"").toUpperCase();
+  if(pos)group=group.filter(p=>!p.position||p.position===pos||p.detailedPosition===String(correction.position||"").toUpperCase());
+  if(group.length<2)continue;
+  group.sort((a,b)=>
+    Number(b.currentLeague===correction.currentLeague)-Number(a.currentLeague===correction.currentLeague)||
+    Number(b.currentTeam===correction.currentTeam)-Number(a.currentTeam===correction.currentTeam)||
+    Number(!!b.nhlPlayerId)-Number(!!a.nhlPlayerId)||
+    Number(String(b.id).startsWith("nhl:"))-Number(String(a.id).startsWith("nhl:"))
+  );
+  const primary=group[0];
+  primary.name=correction.name;
+  primary.birthDate=correction.birthDate;
+  if(correction.currentLeague)primary.currentLeague=correction.currentLeague;
+  if(correction.currentTeam)primary.currentTeam=correction.currentTeam;
+  if(correction.nhlRightsTeam&&codes.includes(correction.nhlRightsTeam))primary.nhlRightsTeam=correction.nhlRightsTeam;
+  primary.aliases=[...new Set([...(primary.aliases||[]),...(correction.aliases||[])])];
+  primary.manualCorrectionSource=correction.source||primary.manualCorrectionSource||null;
+  for(const duplicate of group.slice(1)){
+    for(const [key,value] of Object.entries(duplicate)){
+      if(primary[key]==null&&value!=null&&!["id","name","currentLeague","currentTeam","nhlRightsTeam","source","attributes","overall","potential"].includes(key))primary[key]=value;
+    }
+    records.delete(duplicate.id);
+    manualAliasGroupsMerged++;
+  }
+}
+console.log(`Manual name aliases merged: ${manualAliasGroupsMerged} duplicate records removed using verified birth dates.`);
+
 const juniorBioLeagueMap={OHL:["OHL","CHL-OHL"],WHL:["WHL","CHL-WHL"],QMJHL:["QMJHL","CHL-QMJHL"],USHL:["USHL"]};
 let juniorBioApplied=0,juniorBioAmbiguous=0;
 try{

@@ -679,7 +679,8 @@ try{
   if(matches.length!==1){if(matches.length>1)ncaaBioAmbiguous++;continue;}
   const p=matches[0];
   if(!p.birthDate)p.birthDate=bio.birthDate;
-  if(bio.currentTeam)p.currentTeam=bio.currentTeam;
+  if(bio.recordType==="roster"&&bio.currentTeam)p.currentTeam=bio.currentTeam;
+  if(bio.recordType==="recruit"&&bio.committedTeam)p.committedTeam=bio.committedTeam;
   p.birthDateSource=bio.sourceUrl;
   p.bioSourceUrl=bio.sourceUrl;
   ncaaBioApplied++;

@@ -145,6 +145,54 @@
       "simulationSalaryMethod": "2026-27 season-specific salary and cap hit from PuckPedia; signing bonus absent",
       "sourceDataset": "manual_verified_contract_override",
       "license": "source-linked"
+    },
+    {
+      "playerId": 8482949,
+      "name": "Arsenii Sergeev",
+      "teamCode": "CGY",
+      "position": "G",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "manual-arsenii-sergeev-2025-2027",
+        "signingTeam": "CGY",
+        "signedAt": "2025-04-14",
+        "type": "Entry Level Contract",
+        "termYears": 2,
+        "startSeason": "2025-26",
+        "endSeason": "2026-27",
+        "expiryStatus": "RFA",
+        "boughtOut": false,
+        "oneWay": false,
+        "totalUsd": 1807500,
+        "estimatedAavUsd": 866250,
+        "estimatedAavMethod": "official Calgary Flames announcement AAV; season cap hit kept separate",
+        "confidenceTier": "SOURCE_VERIFIED",
+        "sources": [
+          {
+            "publisher": "Calgary Flames",
+            "url": "https://www.nhl.com/flames/news/flames-sign-arsenii-sergeev-14-04-25"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/ARSENI-SERGEYEV"
+          }
+        ]
+      },
+      "season": {
+        "seasonKey": "2026-2027",
+        "capHitUsd": 941250,
+        "aavUsd": 866250,
+        "baseSalaryUsd": 850000,
+        "performanceBonusUsd": 57500,
+        "totalSalaryUsd": 850000,
+        "minorsSalaryUsd": 80000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 941250,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "2026-27 cap hit from PuckPedia; base salary separated; signing bonus excluded from displayed salary fields",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
     }
   ]
 }

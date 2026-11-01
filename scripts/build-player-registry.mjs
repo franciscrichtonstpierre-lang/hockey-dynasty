@@ -700,9 +700,8 @@ try{
   p.birthDateSource=bio.sourceUrl||bio.profileUrl||bio.hubUrl;
   p.bioSourceUrl=bio.sourceUrl||bio.profileUrl||bio.hubUrl;
   p.draftEligibilityYear=bio.draftYear;
-  const europeanCodes=new Set(["EUROPE","OTHER","KHL","LIIGA","SHL","MHL","VHL","MESTIS","NL","DEL","CZE-EXL","HSA","ICEHL","EIHL","USNTDP","USHL","OHL","WHL","QMJHL"]);
-  if(bio.currentTeam&&(!p.currentLeague||europeanCodes.has(p.currentLeague)))p.currentTeam=bio.currentTeam;
-  if(bio.currentLeague&&(!p.currentLeague||p.currentLeague==="EUROPE"||p.currentLeague==="OTHER"))p.currentLeague=bio.currentLeague;
+  if(bio.currentTeam)p.currentTeam=bio.currentTeam;
+  if(bio.currentLeague)p.currentLeague=bio.currentLeague;
   futureDraftBioApplied++;
  }
  console.log("Future draft Elite Prospects biography enrichment: "+futureDraftBioApplied+" records updated; "+futureDraftBioAmbiguous+" ambiguous matches.");

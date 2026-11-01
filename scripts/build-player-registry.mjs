@@ -688,6 +688,22 @@ try{
  console.log("NCAA College Hockey News biography enrichment: "+ncaaBioApplied+" records updated; "+ncaaBioAmbiguous+" ambiguous matches.");
 }catch(error){console.warn("NCAA biography enrichment skipped: "+error.message);}
 
+let futureDraftBioApplied=0,futureDraftBioAmbiguous=0;
+try{
+ const futureDraftData=JSON.parse(await readFile("data/players/future-draft-bio-enrichment.json","utf8"));
+ for(const bio of (futureDraftData.players||[])){
+  const matches=[...records.values()].filter(p=>nameKey(p.name)===bio.nameKey);
+  if(matches.length!==1){if(matches.length>1)futureDraftBioAmbiguous++;continue;}
+  const p=matches[0];
+  if(!p.birthDate)p.birthDate=bio.birthDate;
+  p.birthDateSource=bio.sourceUrl;
+  p.bioSourceUrl=bio.sourceUrl;
+  p.draftEligibilityYear=bio.draftYear;
+  futureDraftBioApplied++;
+ }
+ console.log("Future draft Elite Prospects biography enrichment: "+futureDraftBioApplied+" records updated; "+futureDraftBioAmbiguous+" ambiguous matches.");
+}catch(error){console.warn("Future draft biography enrichment skipped: "+error.message);}
+
 // Collapse same-person records that appear in both NHL and AHL snapshots.
 const samePerson = new Map();
 for (const p of records.values()) {

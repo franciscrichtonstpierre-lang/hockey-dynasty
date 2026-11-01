@@ -116,7 +116,7 @@ if(tab==="Repêchage"){h='<h2>Repêchage amateur</h2>'+card("Repêchage réel ·
 if(tab==="Gestion des DG"){h='<h2>Gestion des directeurs généraux</h2><div id="uhmCommissionerMembers" class="card">Chargement des membres de la ligue...</div>';setTimeout(loadCommissionerMembers,0)}
 if(tab==="Code d’accès à la ligue"){h='<h2>Code d’accès à la ligue</h2><div id="uhmCommissionerJoinCode" class="card">Chargement du code de la ligue...</div>';setTimeout(loadCommissionerJoinCode,0)}
 if(tab==="Éditeur joueurs et entraîneurs"){h='<h2>Éditeur du commissaire · joueurs et entraîneurs</h2>'+card("Accès et limites",'<p>Cette zone est réservée au commissaire de la ligue en ligne active. Les modifications sont conservées sur cet appareil et peuvent être exportées en JSON. La synchronisation entre tous les DG nécessite encore les tables de données partagées Supabase.</p>')+card("Joueurs",'<p>Recherche un joueur importé, puis modifie ses informations et ses cotes. Les valeurs inconnues restent vides.</p><div id="directoryStatus" class="muted">Répertoire non chargé.</div><div class="controls"><input id="commPlayerQuery" placeholder="Nom du joueur..." oninput="commSearchPlayers()" style="flex:1;min-width:180px"><select id="commPlayerSelect" onchange="commLoadPlayer()"><option value="">Choisir un joueur</option></select></div><div id="commPlayerForm"></div>')+card("Entraîneurs",'<p>Ajoute ou modifie les fiches des entraîneurs et leurs cotes sur 100. Les fiches créées ici sont locales tant que la base partagée n’est pas branchée.</p><div class="controls"><input id="commCoachQuery" placeholder="Rechercher un entraîneur..." oninput="commRenderCoaches()" style="flex:1;min-width:180px"><button type="button" onclick="commNewCoach()">+ Nouvel entraîneur</button><button type="button" onclick="document.getElementById(\'commImportFile\').click()">Importer JSON</button><button type="button" onclick="commExportData()">Exporter JSON</button><input id="commImportFile" type="file" accept=".json,application/json" hidden onchange="commImportData(event)"></div><div id="commCoachList"></div><div id="commCoachForm"></div>');setTimeout(commInitEditor,0)}
-if(tab==="Simulation"){h='<h2>Simulation de saison</h2>'+card("Durée de simulation",'<p>Choisis la durée de l’avance du calendrier.</p><div class="controls"><label for="simulationDays">Jours à simuler</label><select id="simulationDays"><option value="1">1 jour</option><option value="7">7 jours</option><option value="14" selected>14 jours</option><option value="21">21 jours</option></select>'+action("▶ Simuler la période","simulate()")+action("Nouvelle saison","newSeason()")+'</div>')+card("Bilan de saison",'<div class="grid">'+[["Matchs",S.w+S.l+S.otl],["Buts pour",S.gf],["Buts contre",S.ga],["Points",S.w*2+S.otl]].map(x=>'<div class="tile"><small>'+x[0]+'</small><b>'+x[1]+'</b></div>').join('')+'</div>')+card("Derniers résultats",S.history.length?S.history.slice(-12).reverse().map(x=>'<div class="item">'+esc(x)+'</div>').join(''):'<p>Aucun match simulé.</p>')}
+if(tab==="Simulation"){h='<h2>Simulation de saison</h2>'+card("Durée de simulation",'<p>Choisis la durée de l’avance du calendrier.</p><div class="controls"><label for="simulationDays">Jours à simuler</label><select id="simulationDays"><option value="1">1 jour</option><option value="7">7 jours</option><option value="14" selected>14 jours</option><option value="28">28 jours</option></select>'+action("▶ Simuler la période","simulate()")+action("Nouvelle saison","newSeason()")+'</div>')+card("Bilan de saison",'<div class="grid">'+[["Matchs",S.w+S.l+S.otl],["Buts pour",S.gf],["Buts contre",S.ga],["Points",S.w*2+S.otl]].map(x=>'<div class="tile"><small>'+x[0]+'</small><b>'+x[1]+'</b></div>').join('')+'</div>')+card("Derniers résultats",S.history.length?S.history.slice(-12).reverse().map(x=>'<div class="item">'+esc(x)+'</div>').join(''):'<p>Aucun match simulé.</p>')}
 el("app").innerHTML=h}
 
 function uhmPlayerKey(p){return String(p?.nhlPlayerId??p?.playerId??p?.id??p?.registryId??p?.name??"")}
@@ -216,8 +216,8 @@ function developPlayers(days){
   const current=S.development[id]||{delta:0,experience:0};
   const ceiling=age<=22?8:age<=25?5:age<=28?2:age<=32?1:-2;
   current.experience+=days;
-  if(current.experience>=56){
-   current.experience-=56;
+  if(current.experience>=7){
+   current.experience-=7;
    const chance=age<=22?.62:age<=25?.43:age<=28?.19:age<=32?.08:.12;
    if(Math.random()<chance){
     const change=age>=33?-1:1;
@@ -230,7 +230,7 @@ function developPlayers(days){
  return improved;
 }
 async function simulate(){
- const selectedDays=[1,7,14,21].includes(Number(el('simulationDays')?.value))?Number(el('simulationDays').value):14;
+ const selectedDays=[1,7,14,28].includes(Number(el('simulationDays')?.value))?Number(el('simulationDays').value):14;
  const selectedCode=codes[S.team];
  let selectedRoster=null;
  try{selectedRoster=await fetchRosterData(selectedCode);window.hdRosterCache=[...(selectedRoster.forwards||[]),...(selectedRoster.defensemen||[]),...(selectedRoster.goalies||[])];}catch(e){window.hdRosterCache=[];}

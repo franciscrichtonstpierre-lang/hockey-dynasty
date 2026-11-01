@@ -1,6 +1,6 @@
 {
   "season": "2026-2027",
-  "sourceNote": "Manually reconciled contract rows using NHL team announcements and PuckPedia season breakdowns. Signing-bonus fields are intentionally omitted from the simulation.",
+  "sourceNote": "Manually reconciled contract rows using NHL team announcements and PuckPedia season breakdowns. Signing-bonus fields are intentionally omitted from the simulation. Six additional 2026-27 contracts were reconciled against PuckPedia and club announcements on 2026-11-01. Signing bonuses are excluded from the simulation salary field; performance bonuses remain separately represented.",
   "players": [
     {
       "playerId": 8484168,
@@ -191,6 +191,293 @@
       "simulationSalaryUsd": 941250,
       "simulationSalaryStatus": "source_verified_manual_override",
       "simulationSalaryMethod": "2026-27 cap hit from PuckPedia; base salary separated; signing bonus excluded from displayed salary fields",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8484160,
+      "name": "Nate Danielson",
+      "teamCode": "DET",
+      "position": "C",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "signingTeam": "DET",
+        "signedAt": "2023-07-13",
+        "type": "Entry Level Contract",
+        "termYears": 3,
+        "startSeason": "2023-24",
+        "endSeason": "2027-28",
+        "expiryStatus": "RFA",
+        "boughtOut": false,
+        "oneWay": false,
+        "totalUsd": 2704998,
+        "estimatedAavUsd": 901666,
+        "estimatedAavMethod": "Published contract value divided by the three-year ELC term; season-specific performance bonus is recorded separately.",
+        "confidenceTier": "SOURCE_VERIFIED",
+        "sources": [
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/nate-danielson"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "capHitUsd": 909166,
+        "aavUsd": 1909166,
+        "baseSalaryUsd": 855000,
+        "performanceBonusUsd": 1000000,
+        "totalSalaryUsd": 855000,
+        "minorsSalaryUsd": 82500,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 909166,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 cap hit; base salary and performance bonus stored separately; signing bonus excluded from the salary field.",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8483771,
+      "name": "Sandis Vilmanis",
+      "teamCode": "FLA",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "signingTeam": "FLA",
+        "signedAt": "2024-03-02",
+        "type": "Entry Level Contract",
+        "termYears": 3,
+        "startSeason": "2024-25",
+        "endSeason": "2026-27",
+        "expiryStatus": "RFA",
+        "boughtOut": false,
+        "oneWay": false,
+        "totalUsd": 2640000,
+        "estimatedAavUsd": 880000,
+        "estimatedAavMethod": "Published ELC value divided by three-year term; season-specific signing bonus is excluded from the salary field.",
+        "confidenceTier": "SOURCE_VERIFIED",
+        "sources": [
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/sandis-vilmanis"
+          },
+          {
+            "publisher": "Florida Panthers",
+            "url": "https://www.nhl.com/panthers/news/florida-panthers-agree-to-terms-with-forward-sandis-vilmanis-on-a-two-year-contract-extension"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "capHitUsd": 930000,
+        "aavUsd": 930000,
+        "baseSalaryUsd": 850000,
+        "performanceBonusUsd": 0,
+        "totalSalaryUsd": 850000,
+        "minorsSalaryUsd": 82500,
+        "oneWay": false
+      },
+      "futureExtension": {
+        "startSeason": "2027-28",
+        "endSeason": "2028-29",
+        "termYears": 2,
+        "totalUsd": 1850000,
+        "capHitUsd": 925000,
+        "aavUsd": 925000,
+        "baseSalary2027_28": 900000,
+        "baseSalary2028_29": 950000,
+        "signedAt": "2026-07-01",
+        "expiryStatus": "RFA"
+      },
+      "simulationSalaryUsd": 930000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 cap hit; base salary recorded separately; signing bonus excluded from salary field.",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8483676,
+      "name": "Stephen Halliday",
+      "teamCode": "OTT",
+      "position": "C",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "signingTeam": "OTT",
+        "signedAt": "2026-05-05",
+        "type": "Standard Player Contract",
+        "termYears": 2,
+        "startSeason": "2026-27",
+        "endSeason": "2027-28",
+        "expiryStatus": "RFA",
+        "boughtOut": false,
+        "oneWay": true,
+        "totalUsd": 2150000,
+        "estimatedAavUsd": 1075000,
+        "estimatedAavMethod": "Published two-year contract value divided by term.",
+        "confidenceTier": "SOURCE_VERIFIED",
+        "sources": [
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/stephen-halliday"
+          },
+          {
+            "publisher": "Ottawa Senators",
+            "url": "https://www.nhl.com/senators/news/senators-agree-to-two-year-contract-extension-with-centre-stephen-halliday"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "capHitUsd": 1075000,
+        "aavUsd": 1075000,
+        "baseSalaryUsd": 975000,
+        "performanceBonusUsd": 0,
+        "totalSalaryUsd": 975000,
+        "minorsSalaryUsd": 975000,
+        "oneWay": true
+      },
+      "simulationSalaryUsd": 1075000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 cap hit; base salary recorded separately.",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8485468,
+      "name": "Trey Taylor",
+      "teamCode": "DAL",
+      "position": "D",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "signingTeam": "DAL",
+        "signedAt": "2025-03-25",
+        "type": "Entry Level Contract",
+        "termYears": 2,
+        "startSeason": "2025-26",
+        "endSeason": "2026-27",
+        "expiryStatus": "RFA",
+        "boughtOut": false,
+        "oneWay": false,
+        "totalUsd": 1950000,
+        "estimatedAavUsd": 975000,
+        "estimatedAavMethod": "Published two-year ELC value divided by term.",
+        "confidenceTier": "SOURCE_VERIFIED",
+        "sources": [
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/trey-taylor"
+          },
+          {
+            "publisher": "Dallas Stars",
+            "url": "https://www.nhl.com/stars/news/topic/transactions/dallas-stars-sign-defenseman-trey-taylor-to-a-two-year-entry-level-contract-032425"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "capHitUsd": 975000,
+        "aavUsd": 975000,
+        "baseSalaryUsd": 877500,
+        "performanceBonusUsd": 0,
+        "totalSalaryUsd": 877500,
+        "minorsSalaryUsd": 85000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 975000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 cap hit; base salary excludes signing bonus.",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8483507,
+      "name": "Vinzenz Rohrer",
+      "teamCode": "MTL",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "signingTeam": "MTL",
+        "signedAt": "2025-06-14",
+        "type": "Entry Level Contract",
+        "termYears": 3,
+        "startSeason": "2025-26",
+        "endSeason": "2027-28",
+        "expiryStatus": "RFA",
+        "boughtOut": false,
+        "oneWay": false,
+        "totalUsd": 2895000,
+        "estimatedAavUsd": 965000,
+        "estimatedAavMethod": "Published three-year ELC value divided by term.",
+        "confidenceTier": "SOURCE_VERIFIED",
+        "sources": [
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/vinzenz-rohrer"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "capHitUsd": 972500,
+        "aavUsd": 972500,
+        "baseSalaryUsd": 855000,
+        "performanceBonusUsd": 0,
+        "totalSalaryUsd": 855000,
+        "minorsSalaryUsd": 82500,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 972500,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 cap hit; base salary excludes signing bonus.",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8482154,
+      "name": "Alex Jefferies",
+      "teamCode": "NYI",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "signingTeam": "NYI",
+        "signedAt": "2026-07-24",
+        "type": "Two-way Standard Player Contract",
+        "termYears": 1,
+        "startSeason": "2026-27",
+        "endSeason": "2026-27",
+        "expiryStatus": "UFA-G6",
+        "boughtOut": false,
+        "oneWay": false,
+        "totalUsd": 850000,
+        "estimatedAavUsd": 850000,
+        "estimatedAavMethod": "One-year NHL salary cap hit.",
+        "confidenceTier": "SOURCE_VERIFIED",
+        "sources": [
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/alex-jefferies"
+          },
+          {
+            "publisher": "TheAHL",
+            "url": "https://theahl.com/stats/roster/457"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "capHitUsd": 850000,
+        "aavUsd": 850000,
+        "baseSalaryUsd": 850000,
+        "performanceBonusUsd": 0,
+        "totalSalaryUsd": 850000,
+        "minorsSalaryUsd": 100000,
+        "minimumGuaranteedUsd": 130000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 850000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia two-way NHL/AHL contract; NHL cap hit used for cap calculations and AHL salary retained separately.",
       "sourceDataset": "manual_verified_contract_override",
       "license": "source-linked"
     }

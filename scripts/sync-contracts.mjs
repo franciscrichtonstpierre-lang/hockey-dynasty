@@ -260,12 +260,12 @@ const dbSyncManifest={season:"2026-2027",nhlTeams:{},organizationTeams:{},genera
 for(const code of codes){
  const rows=players.filter(p=>p.teamCode===code);
  dbSyncManifest.nhlTeams[code]=rows.length;
- await writeFile(dbSyncDir+"/NHL-"+code+".json",JSON.stringify({season:"2026-2027",scope:"NHL_ROSTER",teamCode:code,players:rows})+"\\n","utf8");
+ await writeFile(dbSyncDir+"/NHL-"+code+".json",JSON.stringify({season:"2026-2027",scope:"NHL_ROSTER",teamCode:code,players:rows})+"\n","utf8");
  const orgRows=organizationContracts.filter(p=>(p.nhlRightsTeam||p.currentTeam)===code);
  dbSyncManifest.organizationTeams[code]=orgRows.length;
- await writeFile(dbSyncDir+"/ORG-"+code+".json",JSON.stringify({season:"2026-2027",scope:"ORGANIZATION_REGISTRY",teamCode:code,players:orgRows})+"\\n","utf8");
+ await writeFile(dbSyncDir+"/ORG-"+code+".json",JSON.stringify({season:"2026-2027",scope:"ORGANIZATION_REGISTRY",teamCode:code,players:orgRows})+"\n","utf8");
 }
-await writeFile(dbSyncDir+"/manifest.json",JSON.stringify(dbSyncManifest,null,2)+"\\n","utf8");
+await writeFile(dbSyncDir+"/manifest.json",JSON.stringify(dbSyncManifest,null,2)+"\n","utf8");
 console.log("Supabase contract sync export: "+Object.values(dbSyncManifest.nhlTeams).reduce((a,b)=>a+b,0)+" NHL roster rows; "+Object.values(dbSyncManifest.organizationTeams).reduce((a,b)=>a+b,0)+" organization rows.");
 const auditRows = [
   ...players.map(p => ({

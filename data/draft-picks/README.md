@@ -1,8 +1,8 @@
 # Base des choix de repêchage NHL 2027–2029
 
-Le fichier `2027-2029.json` est le registre canonique des 672 emplacements de base (32 équipes × 7 rondes × 3 années). Au dernier rapprochement, **654 choix sont actifs avec propriétaire vérifié et 18 choix conditionnels restent exclus du registre jouable**. Sept dossiers ont été clarifiés depuis le premier audit : 2027 R1 FLA → CHI, 2027 R1 TOR → COL, 2027 R7 CAR → PHI, 2028 R2 EDM → CHI, 2027 R1 TBL → SEA, 2028 R1 VGK → VGK et 2028 R4 LAK → LAK. Pour le choix des Kings, la condition Panarin est résolue et non satisfaite : le choix n'a donc pas été transféré. Les autres choix actifs ont été confirmés comme des choix fermes, et non conditionnels.
+Le fichier `2027-2029.json` est le registre canonique des 672 emplacements de base (32 équipes × 7 rondes × 3 années). Au dernier rapprochement, **655 choix sont actifs avec propriétaire vérifié et 17 choix conditionnels restent exclus du registre jouable**. Huit dossiers ont été clarifiés depuis le premier audit : 2027 R1 FLA → CHI, 2027 R1 TOR → COL, 2027 R7 CAR → PHI, 2028 R2 EDM → CHI, 2027 R1 TBL → SEA, 2028 R1 VGK → VGK, 2028 R4 LAK → LAK et 2028 R3 BOS → BOS. Pour le choix des Kings, la condition Panarin est résolue et non satisfaite : le choix n'a donc pas été transféré. Le choix 2028 R3 NYR reste bloqué séparément comme choix conditionnel vers Boston.
 
-Parmi les 18 choix encore bloqués, les conditions sont documentées pour 17; un dossier (`2028-R3-BOS`) nécessite encore une source fiable indiquant le texte exact de la condition. Les choix bloqués conservent `currentOwner: null` afin de ne pas les rendre échangeables par erreur. Le registre jouable est complet pour les choix fermes, mais l'audit des conditions demeure partiel tant que les 18 conditions ne sont pas résolues.
+Les 17 choix encore bloqués ont maintenant tous une condition ou une chaîne de propriété documentée. Ils conservent `currentOwner: null` afin de ne pas les rendre échangeables par erreur. Le registre jouable est complet pour les choix fermes; les 17 conditions restent bloquées jusqu'à ce que leur résultat ou leur propriétaire final soit connu.
 
 ## Modèle d'une fiche
 

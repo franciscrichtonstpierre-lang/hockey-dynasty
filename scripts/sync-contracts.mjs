@@ -149,6 +149,15 @@ for (const code of codes) {
     }
   }
 }
+const manualOverrides = JSON.parse(await readFile("data/contracts/manual-overrides-2026-2027.json","utf8"));
+let manualOverridesApplied = 0;
+for (const override of (manualOverrides.players || [])) {
+  const index = players.findIndex(p => Number(p.playerId) === Number(override.playerId));
+  if (index >= 0) players[index] = { ...players[index], ...override };
+  else players.push(override);
+  manualOverridesApplied++;
+}
+console.log("Manual verified contract overrides: "+manualOverridesApplied+" applied.");
 const organizationContracts = [];
 for (const registryPlayer of (registryData.players || [])) {
   if (registryPlayer.currentLeague === "NHL") continue;

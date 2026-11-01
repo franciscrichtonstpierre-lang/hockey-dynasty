@@ -691,15 +691,15 @@
       "year": 2027,
       "round": 2,
       "originalTeam": "MIN",
-      "currentOwner": null,
-      "status": "excluded_conditional",
-      "verified": false,
+      "currentOwner": "CBJ",
+      "status": "active",
+      "verified": true,
       "conditions": null,
-      "acquiredVia": null,
-      "source": "https://hockeyinsights.ca/data/team_prospects_2026_index.json?v=20260807-season",
-      "sourceUpdatedAt": "2026-09-28",
-      "verificationNote": "Choix conditionnel exclu du registre jouable selon la règle du projet.",
-      "conditionsVerified": false
+      "acquiredVia": "2024-11-30 David Jiricek trade: Minnesota sent its 2027 second-round pick to Columbus",
+      "source": "https://puckpedia.com/team/minnesota-wild/draftpicks",
+      "sourceUpdatedAt": "2026-11-01",
+      "verificationNote": "PuckPedia records Minnesota's 2027 second-round pick as consideration sent to Columbus in the David Jiricek trade; no conditional language.",
+      "conditionsVerified": true
     },
     {
       "pickId": "2027-R2-MTL",
@@ -2944,15 +2944,15 @@
       "year": 2027,
       "round": 7,
       "originalTeam": "CAR",
-      "currentOwner": null,
-      "status": "excluded_conditional",
-      "verified": false,
+      "currentOwner": "PHI",
+      "status": "active",
+      "verified": true,
       "conditions": null,
-      "acquiredVia": null,
-      "source": "https://hockeyinsights.ca/data/team_prospects_2026_index.json?v=20260807-season",
-      "sourceUpdatedAt": "2026-09-28",
-      "verificationNote": "Choix conditionnel exclu du registre jouable selon la règle du projet.",
-      "conditionsVerified": false
+      "acquiredVia": "2026-03-06 Nicolas Deslauriers trade: Carolina sent its 2027 seventh-round pick to Philadelphia",
+      "source": "https://puckpedia.com/team/carolina-hurricanes/draftpicks",
+      "sourceUpdatedAt": "2026-11-01",
+      "verificationNote": "PuckPedia records Carolina's 2027 seventh-round pick as the return sent to Philadelphia for Nicolas Deslauriers; no conditional language.",
+      "conditionsVerified": true
     },
     {
       "pickId": "2027-R7-CHI",
@@ -10150,11 +10150,13 @@
       "WSH: aucune ligne de choix reconnue dans https://www.nhl.com/capitals/team/future-draft-picks",
       "WPG: aucune ligne de choix reconnue dans https://www.nhl.com/jets/team/future-draft-picks"
     ],
-    "conditionalExcluded": 22,
-    "activeVerified": 650,
+    "conditionalExcluded": 20,
+    "activeVerified": 652,
     "resolvedConditionalThisPass": [
       "2027-R1-FLA",
-      "2027-R1-TOR"
+      "2027-R1-TOR",
+      "2027-R2-MIN",
+      "2027-R7-CAR"
     ]
   }
 }

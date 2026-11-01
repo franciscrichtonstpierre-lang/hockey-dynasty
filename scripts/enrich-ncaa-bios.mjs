@@ -33,7 +33,8 @@ async function worker(){
    const title=decode((html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i)||[])[1]||"");
    const teamName=title.replace(/\s+2026[‑-]27\s+Roster.*/i,"").trim()||decode(url.split("/").slice(-2,-1)[0].replace(/-/g," "));
    const found=[];
-   const trs=[...html.matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/gi)];
+   const mainTable=[...html.matchAll(/<table\b[^>]*>([\s\S]*?)<\/table>/gi)].map(m=>m[1]).find(table=>/DOB/i.test(table)&&/Name/i.test(table));
+   const trs=[...(mainTable||html).matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/gi)];
    for(const tr of trs){
     const cells=[...tr[1].matchAll(/<t[dh]\b[^>]*>([\s\S]*?)<\/t[dh]>/gi)].map(m=>decode(m[1]));
     if(cells.length<3)continue;

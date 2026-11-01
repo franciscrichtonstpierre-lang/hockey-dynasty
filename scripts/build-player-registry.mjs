@@ -607,7 +607,8 @@ console.log(`Hockey Insights team prospect JSON: ${pipelineJsonPagesFetched}/32 
 
 // Apply auditable, source-backed current league/team corrections to legacy prospect entries.
 const manualLeagueCorrections=JSON.parse(await readFile("data/players/manual-league-corrections.json","utf8"));
-let manualCorrectionsApplied=0,manualCorrectionsMissing=0,manualCorrectionsAmbiguous=0;
+let manualCorrectionsApplied=0,manualCorrectionsAmbiguous=0,manualCorrectionsAdded=0;
+const manualCorrectionsAmbiguousNames=[];
 for(const correction of (manualLeagueCorrections.players||[])){
   const names=[correction.name,...(correction.aliases||[])].map(nameKey);
   const allMatches=[...records.values()].filter(p=>names.includes(nameKey(p.name)));
@@ -629,8 +630,24 @@ for(const correction of (manualLeagueCorrections.players||[])){
     const unresolved=matches.filter(p=>!p.currentLeague||p.currentLeague==="UNKNOWN");
     if(unresolved.length)matches=unresolved;
   }
+  if(matches.length===0){
+    const manualId=`manual-correction:${nameKey(correction.name).replace(/ /g,"-")}`;
+    add({
+      id:manualId,name:correction.name,aliases:correction.aliases||[],
+      position:posGroup(correction)||String(correction.position||"").toUpperCase()||null,
+      currentLeague:correction.currentLeague||"OTHER",currentTeam:correction.currentTeam||null,
+      nhlRightsTeam:codes.includes(correction.nhlRightsTeam)?correction.nhlRightsTeam:null,
+      birthDate:correction.birthDate||null,source:correction.source||"manual-league-corrections",
+      sourceUpdatedAt:manualLeagueCorrections.verifiedAt||now,
+      leagueResolution:"manual_source_verified",manualCorrectionSource:correction.source||null,
+      attributes:null,overall:null,potential:null
+    });
+    manualCorrectionsAdded++;
+    continue;
+  }
   if(matches.length!==1){
-    if(matches.length===0)manualCorrectionsMissing++;else manualCorrectionsAmbiguous++;
+    manualCorrectionsAmbiguous++;
+    manualCorrectionsAmbiguousNames.push(correction.name);
     continue;
   }
   const selected=matches[0];
@@ -651,7 +668,7 @@ for(const correction of (manualLeagueCorrections.players||[])){
   }
   manualCorrectionsApplied++;
 }
-console.log(`Manual league corrections: ${manualCorrectionsApplied}/${manualLeagueCorrections.players?.length||0} applied; ${manualCorrectionsMissing} missing records; ${manualCorrectionsAmbiguous} ambiguous identities.`);
+console.log(`Manual league corrections: ${manualCorrectionsApplied} existing records updated; ${manualCorrectionsAdded} verified missing records added; ${manualCorrectionsAmbiguous} ambiguous identities (${manualCorrectionsAmbiguousNames.join(", ")}).`);
 
 const juniorBioLeagueMap={OHL:["OHL","CHL-OHL"],WHL:["WHL","CHL-WHL"],QMJHL:["QMJHL","CHL-QMJHL"],USHL:["USHL"]};
 let juniorBioApplied=0,juniorBioAmbiguous=0;

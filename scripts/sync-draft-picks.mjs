@@ -230,6 +230,24 @@ const manualConditionResolutions = new Map([
     source:"https://puckpedia.com/draft-pick/2420282",
     note:"Edmonton's 2028 second-round pick transferred to Chicago in the Connor Murphy trade.",
     verificationNote:"The individual pick record and NHL trade release identify Chicago as owner. Chicago's future-picks page still displays a conflicting conditional label; that discrepancy is retained for audit."
+  }],
+  ["2027-R1-TBL", {
+    owner:"SEA",
+    source:"https://puckpedia.com/team/tampa-bay-lightning/draftpicks",
+    note:"Tampa Bay's 2027 first-round pick was traded to Seattle in the Oliver Bjorkstrand three-team trade.",
+    verificationNote:"PuckPedia lists the 2027 first as transferred to Seattle; no conditional term is shown."
+  }],
+  ["2028-R1-VGK", {
+    owner:"VGK",
+    source:"https://puckpedia.com/team/vegas-golden-knights/draftpicks",
+    note:"Vegas retains its own 2028 first-round pick. The separate conditional 2028 first acquired from New York is tracked as 2028-R1-NYR.",
+    verificationNote:"PuckPedia's Vegas pick ledger distinguishes Vegas's own first from the conditional New York first."
+  }],
+  ["2028-R4-LAK", {
+    owner:"LAK",
+    source:"https://puckpedia.com/trade/1074",
+    note:"Los Angeles retains its 2028 fourth-round pick; the Panarin-trade condition was resolved and not met, so the pick did not transfer to New York.",
+    verificationNote:"PuckPedia's trade analysis says the condition (Los Angeles wins two playoff rounds in 2026) was resolved and the draft pick was not transferred."
   }]
 ]);
 for (const [pickId, resolution] of manualConditionResolutions) {
@@ -267,14 +285,20 @@ const blockedConditionNotes = new Map([
   ["2028-R1-DAL", {text:"Dallas's 2028 first-round pick was included as a conditional pick in the Mikko Rantanen trade to Carolina; condition remains unresolved.",beneficiary:"CAR",source:"https://puckpedia.com/team/carolina-hurricanes/draftpicks"}],
   ["2028-R1-FLA", {text:"Florida's 2028 first-round pick appears as a conditional asset in the Utah-to-Boston John-Jason Peterka trade; keep blocked pending final condition.",beneficiary:"BOS",source:"https://puckpedia.com/team/utah-mammoth/draftpicks"}],
   ["2028-R2-VGK", {text:"Vegas's 2028 second-round pick was included conditionally in the Rasmus Andersson trade to Calgary; condition remains unresolved.",beneficiary:"CGY",source:"https://puckpedia.com/team/vegas-golden-knights/draftpicks"}],
-  ["2029-R1-FLA", {text:"Florida's 2029 first-round pick is included conditionally in the Brady Tkachuk trade to Ottawa; condition remains unresolved.",beneficiary:"OTT",source:"https://puckpedia.com/team/florida-panthers/draftpicks"}]
+  ["2029-R1-FLA", {text:"Florida's 2029 first-round pick is included conditionally in the Brady Tkachuk trade to Ottawa; condition remains unresolved.",beneficiary:"OTT",source:"https://puckpedia.com/team/florida-panthers/draftpicks"}],
+  ["2027-R1-COL", {text:"Toronto has a conditional claim to Colorado's 2027 first-round pick in the Nicolas Roy trade. The pick is top-10 protected; if it falls in the top 10, the obligation rolls to Colorado's 2028 first-round pick.",beneficiary:"TOR",group:"TOR-COL-2027-R1-2028-R1",source:"https://puckpedia.com/team/colorado-avalanche/draftpicks"}],
+  ["2027-R1-VGK", {text:"Vegas's 2027 first-round pick was routed through Calgary and is subject to a top-10 protection before the contingent New Jersey transfer can be finalized. The final branch depends on the 2027 draft position.",beneficiary:"NJD",currentOwner:"NJD",alternateOwner:"CGY",group:"NJD-VGK-2027-R1-TOP10",source:"https://puckpedia.com/team/vegas-golden-knights/draftpicks"}],
+  ["2028-R1-NYR", {text:"New York's 2028 first-round pick was included in the Pavel Dorofeyev trade to Vegas. It is top-10 protected; if it falls in the top 10, the obligation rolls to a 2029 first-round pick.",beneficiary:"VGK",group:"VGK-NYR-2028-R1-2029-R1",source:"https://puckpedia.com/trade/1149"}],
+  ["2028-R1-TOR", {text:"Toronto's 2027 first-round obligation to Philadelphia for Scott Laughton is protected; if the 2027 pick does not convey, Toronto's 2028 first-round pick is the fallback. Keep blocked until the 2027 protection outcome is known.",beneficiary:"PHI",group:"PHI-TOR-2027-R1-2028-R1",source:"https://puckpedia.com/team/toronto-maple-leafs/draftpicks"}],
+  ["2028-R3-NYR", {text:"Boston acquired New York's 2028 third-round pick in the William Borgen trade. It upgrades to a 2028 second if Boston reaches the Eastern Conference Final in 2027 or 2028 and Borgen plays in 50% of the playoff games.",beneficiary:"BOS",group:"BOS-NYR-2028-R3-UPGRADE-R2",source:"https://puckpedia.com/trade/1195"}],
+  ["2029-R1-COL", {text:"Colorado's 2029 first is part of a multi-team conditional chain. PuckPedia lists Nashville, New Jersey and Calgary as conditional claimants if Colorado's 2027 first goes to Toronto and the protected 2028 first rolls forward; final priority and ownership remain unresolved.",beneficiary:"NSH;NJD;CGY",group:"COL-2027-R1-2028-R1-2029-R1",source:"https://puckpedia.com/draft-pick/120291"}]
 ]);
 const blockedConditionalPickIds = [
-  "2027-R1-COL","2027-R1-TBL","2027-R1-VGK",
+  "2027-R1-COL","2027-R1-VGK",
   "2027-R2-COL","2027-R2-CBJ","2027-R2-MIN","2027-R2-WPG",
   "2027-R3-TOR","2027-R3-UTA",
-  "2028-R1-COL","2028-R1-DAL","2028-R1-FLA","2028-R1-NYR","2028-R1-TOR","2028-R1-VGK",
-  "2028-R2-VGK","2028-R3-BOS","2028-R4-LAK",
+  "2028-R1-COL","2028-R1-DAL","2028-R1-FLA","2028-R1-NYR","2028-R1-TOR",
+  "2028-R2-VGK","2028-R3-BOS","2028-R3-NYR",
   "2029-R1-COL","2029-R1-FLA"
 ];
 for (const pickId of blockedConditionalPickIds) {

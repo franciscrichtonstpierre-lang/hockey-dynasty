@@ -3990,15 +3990,15 @@
       "year": 2028,
       "round": 2,
       "originalTeam": "EDM",
-      "currentOwner": null,
-      "status": "excluded_conditional",
-      "verified": false,
+      "currentOwner": "CHI",
+      "status": "active",
+      "verified": true,
       "conditions": null,
-      "acquiredVia": null,
-      "source": "https://www.nhl.com/blackhawks/team/future-draft-picks",
-      "sourceUpdatedAt": "2026-11-01T17:04:29.039Z",
-      "verificationNote": "Choix conditionnel exclu du registre jouable selon la règle du projet; propriétaire ferme non attribué.",
-      "conditionsVerified": false
+      "acquiredVia": "2026-03-02 Connor Murphy trade: Edmonton sent its 2028 second-round pick to Chicago",
+      "source": "https://puckpedia.com/draft-pick/2420282",
+      "sourceUpdatedAt": "2026-11-01",
+      "verificationNote": "PuckPedia's individual pick record identifies Chicago as current owner and the NHL trade release describes an outright 2028 second-round pick. Chicago's future-picks page still labels it conditional; conflicting label retained for audit.",
+      "conditionsVerified": true
     },
     {
       "pickId": "2028-R2-FLA",
@@ -10150,13 +10150,14 @@
       "WSH: aucune ligne de choix reconnue dans https://www.nhl.com/capitals/team/future-draft-picks",
       "WPG: aucune ligne de choix reconnue dans https://www.nhl.com/jets/team/future-draft-picks"
     ],
-    "conditionalExcluded": 20,
-    "activeVerified": 652,
+    "conditionalExcluded": 19,
+    "activeVerified": 653,
     "resolvedConditionalThisPass": [
       "2027-R1-FLA",
       "2027-R1-TOR",
       "2027-R2-MIN",
-      "2027-R7-CAR"
+      "2027-R7-CAR",
+      "2028-R2-EDM"
     ]
   }
 }

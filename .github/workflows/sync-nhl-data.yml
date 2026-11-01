@@ -7,6 +7,7 @@ on:
       - "index.html"
       - "scripts/sync-ahl-data.mjs"
       - "scripts/sync-echl-data.mjs"
+      - "scripts/enrich-echl-bios.mjs"
       - "scripts/sync-nhl-data.mjs"
       - "scripts/build-player-registry.mjs"
       - "scripts/sync-future-draft-prospects.mjs"

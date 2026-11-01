@@ -613,6 +613,10 @@ for(const correction of (manualLeagueCorrections.players||[])){
   const names=[correction.name,...(correction.aliases||[])].map(nameKey);
   const allMatches=[...records.values()].filter(p=>names.includes(nameKey(p.name)));
   let matches=allMatches;
+  if(correction.playerId){
+    const exactId=[...records.values()].filter(p=>String(p.id)===String(correction.playerId));
+    if(exactId.length)matches=exactId;
+  }
   if(matches.length>1&&correction.birthDate){
     const exactBirth=matches.filter(p=>p.birthDate===correction.birthDate);
     if(exactBirth.length)matches=exactBirth;

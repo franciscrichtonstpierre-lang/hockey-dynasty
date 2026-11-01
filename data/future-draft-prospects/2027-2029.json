@@ -6,10 +6,10 @@
     2028,
     2029
   ],
-  "lastSyncAt": "2026-11-01T16:39:10.540Z",
+  "lastSyncAt": "2026-11-01T17:03:09.800Z",
   "countsByYear": {
     "2027": 102,
-    "2028": 32,
+    "2028": 28,
     "2029": 3
   },
   "prospects": [
@@ -1701,36 +1701,6 @@
       "snapshotType": "fallback_seed_public_list"
     },
     {
-      "prospectId": "nhl-draft:2028:gordei-khotkov",
-      "name": "Gordei Khotkov",
-      "position": "D",
-      "currentTeam": "Saginaw Spirit",
-      "currentLeague": "OHL",
-      "draftYear": 2028,
-      "sourceRank": null,
-      "rankType": "scouting_watchlist",
-      "rightsTeam": null,
-      "nhlRightsStatus": "undrafted_unassigned",
-      "source": "https://www.dailyfaceoff.com/news/2028-nhl-draft-maddox-schultz-among-15-players-you-need-to-know",
-      "sourceUpdatedAt": "2026-07-03T14:30:00Z",
-      "currentTeamSource": "https://www.dailyfaceoff.com/news/2028-nhl-draft-maddox-schultz-among-15-players-you-need-to-know"
-    },
-    {
-      "prospectId": "nhl-draft:2028:isak-alvudd",
-      "name": "Isak Alvudd",
-      "position": "LW",
-      "currentTeam": "HV71 U18",
-      "currentLeague": "EUROPE",
-      "draftYear": 2028,
-      "sourceRank": null,
-      "rankType": "scouting_watchlist",
-      "rightsTeam": null,
-      "nhlRightsStatus": "undrafted_unassigned",
-      "source": "https://www.dailyfaceoff.com/news/2028-nhl-draft-maddox-schultz-among-15-players-you-need-to-know",
-      "sourceUpdatedAt": "2026-07-03T14:30:00Z",
-      "currentTeamSource": "https://www.dailyfaceoff.com/news/2028-nhl-draft-maddox-schultz-among-15-players-you-need-to-know"
-    },
-    {
       "prospectId": "nhl-draft:2028:jack-hair",
       "name": "Jack Hair",
       "position": "D",
@@ -1761,21 +1731,6 @@
       "snapshotType": "fallback_seed_public_list"
     },
     {
-      "prospectId": "nhl-draft:2028:kane-cloutier",
-      "name": "Kane Cloutier",
-      "position": "C",
-      "currentTeam": "Oshawa Generals",
-      "currentLeague": "OHL",
-      "draftYear": 2028,
-      "sourceRank": null,
-      "rankType": "scouting_watchlist",
-      "rightsTeam": null,
-      "nhlRightsStatus": "undrafted_unassigned",
-      "source": "https://www.dailyfaceoff.com/news/2028-nhl-draft-maddox-schultz-among-15-players-you-need-to-know",
-      "sourceUpdatedAt": "2026-07-03T14:30:00Z",
-      "currentTeamSource": "https://www.dailyfaceoff.com/news/2028-nhl-draft-maddox-schultz-among-15-players-you-need-to-know"
-    },
-    {
       "prospectId": "nhl-draft:2028:leon-roos",
       "name": "Leon Roos",
       "position": "C",
@@ -1804,21 +1759,6 @@
       "source": "https://www.eliteprospects.com/draft-center/2028",
       "sourceUpdatedAt": "2026-10-30T00:00:00Z",
       "snapshotType": "fallback_seed_public_list"
-    },
-    {
-      "prospectId": "nhl-draft:2028:lionel-dedial",
-      "name": "Lionel Dedial",
-      "position": "RW",
-      "currentTeam": "GCK Lions U21",
-      "currentLeague": "EUROPE",
-      "draftYear": 2028,
-      "sourceRank": null,
-      "rankType": "scouting_watchlist",
-      "rightsTeam": null,
-      "nhlRightsStatus": "undrafted_unassigned",
-      "source": "https://www.dailyfaceoff.com/news/2028-nhl-draft-maddox-schultz-among-15-players-you-need-to-know",
-      "sourceUpdatedAt": "2026-07-03T14:30:00Z",
-      "currentTeamSource": "https://www.dailyfaceoff.com/news/2028-nhl-draft-maddox-schultz-among-15-players-you-need-to-know"
     },
     {
       "prospectId": "nhl-draft:2028:louis-oscar-holowaychuk",
@@ -1893,8 +1833,7 @@
       "nhlRightsStatus": "undrafted_unassigned",
       "source": "https://www.eliteprospects.com/draft-center/2028",
       "sourceUpdatedAt": "2026-10-30T00:00:00Z",
-      "snapshotType": "fallback_seed_public_list",
-      "scoutingWatchlistSource": "https://www.dailyfaceoff.com/news/2028-nhl-draft-maddox-schultz-among-15-players-you-need-to-know"
+      "snapshotType": "fallback_seed_public_list"
     },
     {
       "prospectId": "nhl-draft:2028:milan-kutsevich",
@@ -2096,13 +2035,5 @@
     "2027: Elite Prospects HTTP 403",
     "2028: Elite Prospects HTTP 403",
     "2029: Elite Prospects HTTP 403"
-  ],
-  "supplementalSources": [
-    {
-      "name": "Daily Faceoff — 2028 NHL Draft early watchlist",
-      "url": "https://www.dailyfaceoff.com/news/2028-nhl-draft-maddox-schultz-among-15-players-you-need-to-know",
-      "publishedAt": "2026-07-03",
-      "classification": "scouting_watchlist; not an official ranking"
-    }
   ]
 }

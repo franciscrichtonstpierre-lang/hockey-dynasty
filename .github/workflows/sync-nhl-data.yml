@@ -11,6 +11,7 @@ on:
       - "scripts/enrich-junior-bios.mjs"
       - "scripts/sync-nhl-data.mjs"
       - "scripts/build-player-registry.mjs"
+      - "scripts/enrich-nhl-player-bios.mjs"
       - "scripts/sync-future-draft-prospects.mjs"
       - "scripts/sync-contracts.mjs"
       - "data/contracts/2026-2027.json"
@@ -86,6 +87,10 @@ jobs:
       - name: Construire le registre central des joueurs
         if: always()
         run: node scripts/build-player-registry.mjs
+      - name: Compléter les dates de naissance depuis l’API NHL
+        if: always()
+        continue-on-error: true
+        run: node scripts/enrich-nhl-player-bios.mjs
       - name: Importer les contrats, salaires et clauses vérifiés
         if: always()
         run: node scripts/sync-contracts.mjs
@@ -102,7 +107,7 @@ jobs:
         run: |
           git config user.name "uhm-data-bot"
           git config user.email "uhm-data-bot@users.noreply.github.com"
-          git add data/nhl data/echl data/players/junior-bio-enrichment.json data/prospects data/prospects-supplemental data/future-draft-prospects data/ahl data/coaches data/players/registry.json data/contracts/2026-2027.json data/contracts/contract-audit-2026-2027.json data/contracts/manual-overrides-2026-2027.json data/draft-picks
+          git add data/nhl data/echl data/players/junior-bio-enrichment.json data/prospects data/prospects-supplemental data/future-draft-prospects data/ahl data/coaches data/players/registry.json data/players/nhl-player-bios.json data/players/nhl-player-bio-audit.json data/contracts/2026-2027.json data/contracts/contract-audit-2026-2027.json data/contracts/manual-overrides-2026-2027.json data/draft-picks
           if git diff --cached --quiet; then
             echo "Aucune modification de données."
           else

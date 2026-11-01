@@ -21,7 +21,7 @@
         "oneWay": false,
         "totalUsd": 2719998,
         "estimatedAavUsd": 906666,
-        "estimatedAavMethod": "reported contract total divided by three years; season cap hit kept separate",
+        "estimatedAavMethod": "published contract total divided by three years; signing bonus excluded from displayed salary",
         "confidenceTier": "SOURCE_VERIFIED",
         "sources": [
           {
@@ -37,10 +37,10 @@
       "season": {
         "seasonKey": "2026-2027",
         "capHitUsd": 914167,
-        "aavUsd": 940833,
+        "aavUsd": 906666,
         "baseSalaryUsd": 855000,
         "performanceBonusUsd": 0,
-        "totalSalaryUsd": 950000,
+        "totalSalaryUsd": 855000,
         "minorsSalaryUsd": 82500,
         "oneWay": false
       },
@@ -88,7 +88,7 @@
         "aavUsd": 950000,
         "baseSalaryUsd": 855000,
         "performanceBonusUsd": 500000,
-        "totalSalaryUsd": 950000,
+        "totalSalaryUsd": 855000,
         "minorsSalaryUsd": 82500,
         "oneWay": false
       },

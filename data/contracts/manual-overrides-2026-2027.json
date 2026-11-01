@@ -1,0 +1,150 @@
+{
+  "season": "2026-2027",
+  "sourceNote": "Manually reconciled contract rows using NHL team announcements and PuckPedia season breakdowns. Signing-bonus fields are intentionally omitted from the simulation.",
+  "players": [
+    {
+      "playerId": 8484168,
+      "name": "Oscar Fisker Molgaard",
+      "teamCode": "SEA",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "manual-oscar-fisker-molgaard-2024-2028",
+        "signingTeam": "SEA",
+        "signedAt": "2024-06-14",
+        "type": "Entry Level Contract",
+        "termYears": 3,
+        "startSeason": "2024-25",
+        "endSeason": "2027-28",
+        "expiryStatus": "RFA",
+        "boughtOut": false,
+        "oneWay": false,
+        "totalUsd": 2719998,
+        "estimatedAavUsd": 906666,
+        "estimatedAavMethod": "reported contract total divided by three years; season cap hit kept separate",
+        "confidenceTier": "SOURCE_VERIFIED",
+        "sources": [
+          {
+            "publisher": "Seattle Kraken",
+            "url": "https://www.nhl.com/kraken/news/seattle-kraken-agree-to-terms-with-oscar-fisker-molgaard-on-entry-level-contract"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/oscar-fisker-molgaard"
+          }
+        ]
+      },
+      "season": {
+        "seasonKey": "2026-2027",
+        "capHitUsd": 914167,
+        "aavUsd": 940833,
+        "baseSalaryUsd": 855000,
+        "performanceBonusUsd": 0,
+        "totalSalaryUsd": 950000,
+        "minorsSalaryUsd": 82500,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 914167,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "2026-27 season cap hit from PuckPedia; base salary kept separate; signing bonus omitted from fields",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8483429,
+      "name": "Seamus Casey",
+      "teamCode": "NJD",
+      "position": "D",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "manual-seamus-casey-2024-2027",
+        "signingTeam": "NJD",
+        "signedAt": "2024-05-06",
+        "type": "Entry Level Contract",
+        "termYears": 3,
+        "startSeason": "2024-25",
+        "endSeason": "2026-27",
+        "expiryStatus": "RFA",
+        "boughtOut": false,
+        "oneWay": false,
+        "totalUsd": 2850000,
+        "estimatedAavUsd": 950000,
+        "estimatedAavMethod": "published three-year contract value divided by term",
+        "confidenceTier": "SOURCE_VERIFIED",
+        "sources": [
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/seamus-casey"
+          },
+          {
+            "publisher": "NHLPA",
+            "url": "https://www.nhlpa.com/compensation/new-jersey-devils/"
+          }
+        ]
+      },
+      "season": {
+        "seasonKey": "2026-2027",
+        "capHitUsd": 950000,
+        "aavUsd": 950000,
+        "baseSalaryUsd": 855000,
+        "performanceBonusUsd": 500000,
+        "totalSalaryUsd": 950000,
+        "minorsSalaryUsd": 82500,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 950000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "2026-27 NHLPA/PuckPedia salary and cap hit; signing bonus omitted as a separate field",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8484305,
+      "name": "Zach Metsa",
+      "teamCode": "BUF",
+      "position": "D",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "manual-zach-metsa-2025-2027",
+        "signingTeam": "BUF",
+        "signedAt": "2025-07-01",
+        "type": "Standard Contract",
+        "termYears": 2,
+        "startSeason": "2025-26",
+        "endSeason": "2026-27",
+        "expiryStatus": "UFA",
+        "boughtOut": false,
+        "oneWay": false,
+        "totalUsd": 1625000,
+        "estimatedAavUsd": 812500,
+        "estimatedAavMethod": "two-year contract total divided by term; season-specific AAV stored below",
+        "confidenceTier": "SOURCE_VERIFIED",
+        "sources": [
+          {
+            "publisher": "Buffalo Sabres",
+            "url": "https://www.nhl.com/sabres/team/press/players/2026-27regularseason/metsa"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/zach-metsa"
+          }
+        ]
+      },
+      "season": {
+        "seasonKey": "2026-2027",
+        "capHitUsd": 850000,
+        "aavUsd": 850000,
+        "baseSalaryUsd": 850000,
+        "performanceBonusUsd": 0,
+        "totalSalaryUsd": 850000,
+        "minorsSalaryUsd": 300000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 850000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "2026-27 season-specific salary and cap hit from PuckPedia; signing bonus absent",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    }
+  ]
+}

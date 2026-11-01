@@ -287,6 +287,10 @@ async function simulate(){
    strengthCache.set(code,result);return result;
   }catch(e){const result={off:55,def:55};strengthCache.set(code,result);return result}
  }
+ // Précharger en parallèle uniquement les équipes réellement rencontrées pendant ces 14 jours.
+ const requiredCodes=[...new Set(games.flatMap(game=>[game.home,game.away]))];
+ msg('Préparation de la simulation : '+requiredCodes.length+' équipes à calculer…');
+ await Promise.all(requiredCodes.map(code=>strength(code)));
  const poisson=lambda=>{const limit=Math.exp(-lambda);let product=1,k=0;do{k++;product*=Math.random()}while(product>limit&&k<20);return k-1};
  const clamp=(v,min,max)=>Math.max(min,Math.min(max,v));
  let n=0,otGames=0;

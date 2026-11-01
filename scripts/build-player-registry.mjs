@@ -671,6 +671,22 @@ try{
  console.log("Junior HockeyTech biography enrichment: "+juniorBioApplied+" records updated; "+juniorBioAmbiguous+" ambiguous matches.");
 }catch(error){console.warn("Junior HockeyTech bio enrichment skipped: "+error.message);}
 
+let ncaaBioApplied=0,ncaaBioAmbiguous=0;
+try{
+ const ncaaBioData=JSON.parse(await readFile("data/players/ncaa-bio-enrichment.json","utf8"));
+ for(const bio of (ncaaBioData.players||[])){
+  const matches=[...records.values()].filter(p=>nameKey(p.name)===bio.nameKey&&p.currentLeague==="NCAA");
+  if(matches.length!==1){if(matches.length>1)ncaaBioAmbiguous++;continue;}
+  const p=matches[0];
+  if(!p.birthDate)p.birthDate=bio.birthDate;
+  if(bio.currentTeam)p.currentTeam=bio.currentTeam;
+  p.birthDateSource=bio.sourceUrl;
+  p.bioSourceUrl=bio.sourceUrl;
+  ncaaBioApplied++;
+ }
+ console.log("NCAA College Hockey News biography enrichment: "+ncaaBioApplied+" records updated; "+ncaaBioAmbiguous+" ambiguous matches.");
+}catch(error){console.warn("NCAA biography enrichment skipped: "+error.message);}
+
 // Collapse same-person records that appear in both NHL and AHL snapshots.
 const samePerson = new Map();
 for (const p of records.values()) {

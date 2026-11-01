@@ -1,9 +1,9 @@
 // Récupère les biographies juniors depuis les listes officielles d'équipes et leurs effectifs HockeyTech.
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 const configs=[
- {code:"OHL",client:"ohl",key:"f1aa699db3d81487",leagueId:"1",siteId:"1",seasonId:"83",base:"https://lscluster.hockeytech.com/feed/index.php"},
- {code:"WHL",client:"whl",key:"f1aa699db3d81487",leagueId:"7",siteId:"0",seasonId:"289",base:"https://lscluster.hockeytech.com/feed/index.php"},
- {code:"QMJHL",client:"lhjmq",key:"f322673b6bcae299",leagueId:"6",siteId:"0",seasonId:"211",base:"https://cluster.leaguestat.com/feed/index.php"},
+ {code:"OHL",client:"ohl",key:"f1aa699db3d81487",leagueId:"1",siteId:"1",seasonId:null,base:"https://lscluster.hockeytech.com/feed/index.php"},
+ {code:"WHL",client:"whl",key:"f1aa699db3d81487",leagueId:"7",siteId:"0",seasonId:null,base:"https://lscluster.hockeytech.com/feed/index.php"},
+ {code:"QMJHL",client:"lhjmq",key:"f322673b6bcae299",leagueId:"6",siteId:"0",seasonId:null,base:"https://cluster.leaguestat.com/feed/index.php"},
  {code:"USHL",client:"ushl",key:"e828f89b243dc43f",leagueId:"1",siteId:"0",seasonId:null,base:"https://lscluster.hockeytech.com/feed/index.php"}
 ];
 const first=(...v)=>v.find(x=>x!=null&&String(x).trim()!=="");

@@ -2,7 +2,7 @@
   "teamCode": "PIT",
   "source": "https://api-web.nhle.com/v1/prospects/PIT",
   "sourceType": "NHL Web API + source-labelled supplemental pipeline",
-  "syncedUTC": "2026-11-01T09:06:22.529Z",
+  "syncedUTC": "2026-11-01T15:36:04.554Z",
   "count": 48,
   "prospects": [
     {
@@ -259,6 +259,32 @@
       "birthCountry": "CAN",
       "birthStateProvince": {
         "default": "Ontario"
+      },
+      "positionGroup": "forwards"
+    },
+    {
+      "id": 8483487,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/PIT/8483487.png",
+      "firstName": {
+        "default": "Rutger"
+      },
+      "lastName": {
+        "default": "McGroarty"
+      },
+      "sweaterNumber": 2,
+      "positionCode": "R",
+      "shootsCatches": "L",
+      "heightInInches": 74,
+      "weightInPounds": 212,
+      "heightInCentimeters": 188,
+      "weightInKilograms": 96,
+      "birthDate": "2004-03-30",
+      "birthCity": {
+        "default": "Lincoln"
+      },
+      "birthCountry": "USA",
+      "birthStateProvince": {
+        "default": "Nebraska"
       },
       "positionGroup": "forwards"
     },
@@ -798,21 +824,6 @@
       "draftYear": 2025,
       "draftRound": 1,
       "draftOverall": 11,
-      "rightsStatus": "secondary_snapshot_recheck_required",
-      "source": "https://hockeyinsights.ca/team-pipeline/pittsburgh-penguins/",
-      "sourceUpdatedAt": "2026-09-28",
-      "verificationStatus": "secondary_snapshot_recheck_required"
-    },
-    {
-      "fullName": "Rutger McGroarty",
-      "positionCode": "RW",
-      "age": 22,
-      "currentLeague": "NHL",
-      "currentTeam": null,
-      "nhlRightsTeam": "PIT",
-      "draftYear": 2022,
-      "draftRound": 1,
-      "draftOverall": 14,
       "rightsStatus": "secondary_snapshot_recheck_required",
       "source": "https://hockeyinsights.ca/team-pipeline/pittsburgh-penguins/",
       "sourceUpdatedAt": "2026-09-28",

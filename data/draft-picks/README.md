@@ -1,6 +1,8 @@
 # Base des choix de repêchage NHL 2027–2029
 
-Le fichier `2027-2029.json` est le registre canonique des droits de repêchage. Il énumère les 672 emplacements de base pour 2027–2029; au dernier audit, **648 propriétaires sont vérifiés, 24 choix conditionnels sont exclus et aucun propriétaire ne reste non attribué**. Le snapshot PuckPedia du 28 septembre 2026 a été recoupé avec le suivi officiel des transactions NHL jusqu’au 30 octobre 2026, et les quatre échanges postérieurs au snapshot ont été appliqués. Le registre des choix passe l’audit.
+Le fichier `2027-2029.json` est le registre canonique des 672 emplacements de base (32 équipes × 7 rondes × 3 années). Au dernier rapprochement, **652 choix sont actifs avec propriétaire vérifié et 20 choix conditionnels restent exclus du registre jouable**. Quatre conditions ont été résolues et leurs propriétaires intégrés : 2027 R1 FLA → CHI, 2027 R1 TOR → COL, 2027 R7 CAR → PHI et 2028 R2 EDM → CHI. Deux des quatre dossiers présentent encore une étiquette « conditional » sur une page d'équipe NHL, mais les fiches de transaction et les fiches de choix PuckPedia indiquent un transfert ferme; la divergence est consignée dans chaque fiche.
+
+Parmi les 20 choix encore bloqués, les conditions sont documentées pour 11; les 9 autres nécessitent encore une source fiable indiquant le texte exact de la condition ou son résultat. Les choix bloqués conservent `currentOwner: null` afin de ne pas les rendre échangeables par erreur. Le registre n'est donc pas déclaré entièrement terminé tant que ces 20 conditions ne sont pas résolues.
 
 ## Modèle d'une fiche
 
@@ -21,15 +23,15 @@ Le fichier `2027-2029.json` est le registre canonique des droits de repêchage. 
 ```
 
 - `originalTeam` est le club auquel le choix appartenait initialement.
-- `currentOwner` est le club qui détient actuellement le droit; il ne doit pas être déduit du rang projeté au repêchage. Les choix non conditionnels ont été recoupés avec le snapshot PuckPedia et le suivi officiel des transactions NHL.
-- `status` peut être `active`, `forfeited`, `provisional_snapshot`, `unverified` ou `excluded_conditional`. Un choix perdu doit être conservé comme emplacement historique vérifié, avec `currentOwner: null`. Un propriétaire `provisional_snapshot` provient du snapshot daté indiqué dans la fiche et n'est pas équivalent à une vérification actuelle.
-- `conditions` reste `null` dans le registre jouable : les choix conditionnels, protégés ou « meilleur / moins bon » sont exclus et reçoivent `status: "excluded_conditional"`.
-- `verified` ne peut être vrai qu'après vérification des sources et de l'état des conditions. Le snapshot secondaire ne permet pas, à lui seul, de mettre ce champ à `true`.
-- Les choix conditionnels sont exclus du registre jouable conformément à la règle du projet. Leur emplacement de base reste non vérifié et sans propriétaire jouable tant qu'il n'existe pas de choix ferme à attribuer. Les actifs additionnels acquis par échange sont enregistrés comme leurs propres choix d'origine.
+- `currentOwner` est le club qui détient actuellement le droit; il ne doit pas être déduit du rang projeté au repêchage.
+- `status` peut être `active`, `forfeited`, `provisional_snapshot`, `unverified` ou `excluded_conditional`. Un choix perdu doit être conservé comme emplacement historique vérifié, avec `currentOwner: null`.
+- `conditions` reste `null` dans le registre jouable. Le texte de condition et les bénéficiaires éventuels sont conservés dans les métadonnées d'audit (`conditionText`, `conditionalBeneficiary`, `conditionalSelectionGroup`).
+- `conditionReviewStatus` distingue les conditions documentées mais toujours bloquées (`DOCUMENTED_BLOCKED`) des dossiers qui nécessitent encore une source (`SOURCE_REVIEW_REQUIRED`).
+- `verified` ne peut être vrai qu'après vérification des sources et de l'état des conditions. Les choix conditionnels non résolus restent exclus et sans propriétaire jouable.
 
 ## Contrôles de complétude
 
-L'audit exige un emplacement de base pour chacune des 32 équipes, des 7 rondes et des années 2027, 2028 et 2029 (672 emplacements), puis une vérification de chaque propriétaire ou forfait. Une base sans tous ses emplacements, sans propriétaire vérifié pour chaque choix, ou contenant des conditions non résolues reste en échec.
+L'audit exige un emplacement de base pour chacune des 32 équipes, des 7 rondes et des années 2027, 2028 et 2029 (672 emplacements), puis une vérification de chaque propriétaire ou forfait. Une base contenant des conditions non résolues reste en état partiel, même si tous les emplacements de base sont présents.
 
 ## Sources à croiser
 

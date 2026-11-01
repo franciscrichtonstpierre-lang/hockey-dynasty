@@ -200,6 +200,110 @@ try {
   console.warn(`Secondary draft snapshot unavailable: ${error.message}`);
 }
 
+
+/*
+ * Manual condition resolutions are applied after automated NHL-page parsing.
+ * This prevents stale "conditional" labels on team pages from re-blocking
+ * picks whose trade/pick records show that the condition has resolved.
+ */
+const manualConditionResolutions = new Map([
+  ["2027-R1-FLA", {
+    owner:"CHI",
+    source:"https://puckpedia.com/trade/934",
+    note:"Florida's 2027 first-round pick transferred to Chicago after the protection rolled forward and resolved.",
+    verificationNote:"PuckPedia's individual trade/pick record identifies Chicago as current owner and the protection as resolved. The Chicago future-picks page still displays a conflicting conditional label; that stale label is recorded for audit."
+  }],
+  ["2027-R1-TOR", {
+    owner:"COL",
+    source:"https://puckpedia.com/team/toronto-maple-leafs/draftpicks",
+    note:"Toronto's 2027 first-round pick transferred to Colorado; owner confirmed in the individual pick ledger.",
+    verificationNote:"Current owner cross-checked against the PuckPedia pick ledger and trade history."
+  }],
+  ["2027-R7-CAR", {
+    owner:"PHI",
+    source:"https://puckpedia.com/team/carolina-hurricanes/draftpicks",
+    note:"Carolina's 2027 seventh-round pick transferred to Philadelphia; owner confirmed in the individual pick ledger.",
+    verificationNote:"Current owner cross-checked against the PuckPedia pick ledger and trade history."
+  }],
+  ["2028-R2-EDM", {
+    owner:"CHI",
+    source:"https://puckpedia.com/draft-pick/2420282",
+    note:"Edmonton's 2028 second-round pick transferred to Chicago in the Connor Murphy trade.",
+    verificationNote:"The individual pick record and NHL trade release identify Chicago as owner. Chicago's future-picks page still displays a conflicting conditional label; that discrepancy is retained for audit."
+  }]
+]);
+for (const [pickId, resolution] of manualConditionResolutions) {
+  const pick = database.picks.find(p => p.pickId === pickId);
+  if (!pick) throw new Error(`Manual resolved pick is missing: ${pickId}`);
+  Object.assign(pick, {
+    currentOwner: resolution.owner,
+    status: "active",
+    verified: true,
+    conditions: null,
+    conditionsVerified: true,
+    source: resolution.source,
+    sourceUpdatedAt: stamp,
+    acquiredVia: resolution.note,
+    verificationNote: resolution.verificationNote,
+    conditionText: null,
+    conditionReviewStatus: "RESOLVED",
+    conditionTermsDocumented: true,
+    conditionVerified: true,
+    conditionalBeneficiary: null,
+    conditionalCurrentOwner: null,
+    conditionalAlternateOwner: null,
+    conditionalSelectionGroup: null
+  });
+}
+
+const blockedConditionNotes = new Map([
+  ["2027-R2-COL", {text:"Calgary receives the better of Colorado or Minnesota's 2027 second-round picks in the Nazem Kadri trade; which pick is conveyed depends on the final order.",beneficiary:"CGY",group:"CGY-2027-R2-BETTER-OF-COL-MIN",source:"https://puckpedia.com/team/colorado-avalanche/draftpicks"}],
+  ["2027-R2-MIN", {text:"Minnesota's 2027 second-round pick is listed in the David Jiricek trade to Columbus, but is also referenced in the Colorado-Calgary better-of-two 2027 second-round condition. Ownership chain must be reconciled before release.",beneficiary:"CGY",currentOwner:"CBJ",group:"CGY-2027-R2-BETTER-OF-COL-MIN",source:"https://puckpedia.com/team/minnesota-wild/draftpicks"}],
+  ["2027-R2-CBJ", {text:"Seattle receives the higher of Columbus or Winnipeg's 2027 second-round picks through the Florida trade; selection is not determined until the order is known.",beneficiary:"SEA",group:"SEA-2027-R2-HIGHER-OF-CBJ-WPG",source:"https://puckpedia.com/team/florida-panthers/draftpicks"}],
+  ["2027-R2-WPG", {text:"Seattle receives the higher of Columbus or Winnipeg's 2027 second-round picks through the Florida trade; selection is not determined until the order is known.",beneficiary:"SEA",group:"SEA-2027-R2-HIGHER-OF-CBJ-WPG",source:"https://puckpedia.com/team/florida-panthers/draftpicks"}],
+  ["2027-R3-TOR", {text:"Toronto's 2027 third-round pick was sent to Utah for Matias Maccelli; PuckPedia lists a possible upgrade to a 2029 second if Toronto makes the playoffs and Maccelli records at least 51 points in 2025-26. Its later routing is linked to the earlier-of-two third-round clause.",beneficiary:"NYR",currentOwner:"UTA",group:"NYR-2027-R3-EARLIER-OF-UTA-TOR",source:"https://puckpedia.com/team/toronto-maple-leafs/draftpicks"}],
+  ["2027-R3-UTA", {text:"The Vincent Trocheck trade gives NYR the earlier of Utah or Toronto's 2027 third-round picks; the selected pick is not known yet.",beneficiary:"NYR",group:"NYR-2027-R3-EARLIER-OF-UTA-TOR",source:"https://puckpedia.com/team/utah-mammoth/draftpicks"}],
+  ["2028-R1-COL", {text:"Colorado's 2028 first-round pick is in a multi-step conditional transfer chain; PuckPedia lists Nashville as the current holder and Toronto as a contingent owner. Keep blocked pending final condition and chain verification.",currentOwner:"NSH",alternateOwner:"TOR",source:"https://puckpedia.com/team/colorado-avalanche/draftpicks"}],
+  ["2028-R1-DAL", {text:"Dallas's 2028 first-round pick was included as a conditional pick in the Mikko Rantanen trade to Carolina; condition remains unresolved.",beneficiary:"CAR",source:"https://puckpedia.com/team/carolina-hurricanes/draftpicks"}],
+  ["2028-R1-FLA", {text:"Florida's 2028 first-round pick appears as a conditional asset in the Utah-to-Boston John-Jason Peterka trade; keep blocked pending final condition.",beneficiary:"BOS",source:"https://puckpedia.com/team/utah-mammoth/draftpicks"}],
+  ["2028-R2-VGK", {text:"Vegas's 2028 second-round pick was included conditionally in the Rasmus Andersson trade to Calgary; condition remains unresolved.",beneficiary:"CGY",source:"https://puckpedia.com/team/vegas-golden-knights/draftpicks"}],
+  ["2029-R1-FLA", {text:"Florida's 2029 first-round pick is included conditionally in the Brady Tkachuk trade to Ottawa; condition remains unresolved.",beneficiary:"OTT",source:"https://puckpedia.com/team/florida-panthers/draftpicks"}]
+]);
+const blockedConditionalPickIds = [
+  "2027-R1-COL","2027-R1-TBL","2027-R1-VGK",
+  "2027-R2-COL","2027-R2-CBJ","2027-R2-MIN","2027-R2-WPG",
+  "2027-R3-TOR","2027-R3-UTA",
+  "2028-R1-COL","2028-R1-DAL","2028-R1-FLA","2028-R1-NYR","2028-R1-TOR","2028-R1-VGK",
+  "2028-R2-VGK","2028-R3-BOS","2028-R4-LAK",
+  "2029-R1-COL","2029-R1-FLA"
+];
+for (const pickId of blockedConditionalPickIds) {
+  const pick = database.picks.find(p => p.pickId === pickId);
+  if (!pick) throw new Error(`Blocked conditional pick is missing: ${pickId}`);
+  const note = blockedConditionNotes.get(pickId);
+  Object.assign(pick, {
+    currentOwner: null,
+    status: "excluded_conditional",
+    verified: false,
+    conditions: null,
+    conditionsVerified: false,
+    source: note?.source || pick.source || "Hockey Insights / PuckPedia snapshot",
+    sourceUpdatedAt: stamp,
+    acquiredVia: null,
+    conditionText: note?.text || null,
+    conditionReviewStatus: note ? "DOCUMENTED_BLOCKED" : "SOURCE_REVIEW_REQUIRED",
+    conditionTermsDocumented: Boolean(note),
+    conditionVerified: false,
+    conditionalBeneficiary: note?.beneficiary || null,
+    conditionalCurrentOwner: note?.currentOwner || null,
+    conditionalAlternateOwner: note?.alternateOwner || null,
+    conditionalSelectionGroup: note?.group || null,
+    verificationNote: note
+      ? "Condition terms documented, but the pick remains blocked until the selection or final ownership is resolved."
+      : "Still blocked: exact condition terms or a reliable resolution source are required."
+  });
+}
+
 const expected = teams.length * years.length * 7;
 const excludedConditional = database.picks.filter(p=>p.status==="excluded_conditional").length;
 const playableExpected = expected-excludedConditional;
@@ -211,7 +315,10 @@ const unresolved = database.picks.filter(p=>p.status!=="excluded_conditional"&&
 const unverifiedConditions = database.picks.filter(p=>p.status==="conditional"&&p.conditionsVerified!==true).length;
 database.source = "Official NHL Future Draft Picks pages + Hockey Insights/PuckPedia snapshot reconciled against the official 2026-27 NHL trade tracker through 2026-10-30";
 database.lastSyncAt = stamp;
-database.syncSummary = {pagesFetched,totalPages:teams.length,rowsParsed,updated,conflicts,snapshotVerifiedOwners,tradeOverridesApplied,provisionalOwners:provisional,excludedConditional,unresolved,unverifiedConditions,errors};
+const documentedBlocked = database.picks.filter(p=>p.status==="excluded_conditional"&&p.conditionTermsDocumented===true).length;
+const sourceReviewRequired = excludedConditional-documentedBlocked;
+database.syncSummary = {pagesFetched,totalPages:teams.length,rowsParsed,updated,conflicts,snapshotVerifiedOwners,tradeOverridesApplied,provisionalOwners:provisional,excludedConditional,unresolved,unverifiedConditions,activeVerified:verified,manualConditionResolutions:manualConditionResolutions.size,documentedBlocked,sourceReviewRequired,resolvedConditionalThisPass:[...manualConditionResolutions.keys()],errors};
+database.conditionalAuditStatus = excludedConditional ? "PARTIAL" : "COMPLETE";
 database.status = database.picks.length===expected && verified===playableExpected && provisional===0 && unresolved===0 && unverifiedConditions===0 && conflicts===0 ? "complete" : "incomplete";
 await writeFile(file,JSON.stringify(database,null,2)+"\n","utf8");
 console.log(`Draft picks sync: ${pagesFetched}/${teams.length} NHL pages; ${updated} official slots updated; ${verified}/${playableExpected} verified owners; ${snapshotVerifiedOwners} snapshot owners reconciled; ${tradeOverridesApplied} official trade overrides; ${excludedConditional} conditional picks excluded; ${unresolved} unresolved; ${unverifiedConditions} conditional terms unverified; ${conflicts+snapshotConflicts} conflicts.`);

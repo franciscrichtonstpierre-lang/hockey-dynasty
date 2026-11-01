@@ -20,6 +20,7 @@ on:
       - "data/future-draft-prospects/**"
       - "data/draft-picks/**"
       - "data/coaches/**"
+      - "data/players/manual-league-corrections.json"
   workflow_dispatch:
     inputs:
       season:

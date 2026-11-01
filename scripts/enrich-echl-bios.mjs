@@ -75,6 +75,14 @@ async function worker(){
  }
 }
 await Promise.all(Array.from({length:6},()=>worker()));
+const correctionDoc=JSON.parse(await readFile("data/players/manual-league-corrections.json","utf8"));
+const normalizeName=value=>String(value||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim();
+const corrections=new Map((correctionDoc.players||[]).map(item=>[normalizeName(item.name),item]));
+for(const {player} of entries){
+ const correction=corrections.get(normalizeName(player.name));
+ if(correction?.birthDate){player.birthdate=correction.birthDate;player.bioSourceUrl=correction.source||player.bioSourceUrl;}
+ if(correction?.currentTeam)player.team_name=correction.currentTeam;
+}
 for(const file of files)await writeFile(file.path,JSON.stringify(file.data,null,2)+"\n","utf8");
 await writeFile(cachePath,JSON.stringify(cache,null,2)+"\n","utf8");
 const missing=entries.filter(({player})=>!player.birthdate).map(({id,player})=>({playerId:id,name:player.name,team:player.team_name||null}));

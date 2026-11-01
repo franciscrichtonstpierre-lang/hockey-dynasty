@@ -87,6 +87,13 @@ body.uhmMenuOpen{overflow:hidden}
 #ahlLineupStatus .lineTable td:nth-child(2){grid-column:1/-1}
 @media(max-width:650px){.lineGroup .lineTable tbody{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;padding:8px}.lineGroup .lineTable tr{padding:8px}.lineGroup .lineTable select{font-size:11px;padding:8px 5px}}
 @media(max-width:370px){.lineGroup .lineTable tbody{grid-template-columns:1fr}}
+
+.team-brand{display:inline-flex;align-items:center;gap:5px;vertical-align:middle;white-space:nowrap}
+.team-brand-logo{display:inline-block;width:23px;height:23px;object-fit:contain;vertical-align:middle;filter:drop-shadow(0 1px 2px #0007)}
+.team-brand-code .team-brand-logo{width:20px;height:20px}
+h1 .team-brand-logo,h2 .team-brand-logo,h3 .team-brand-logo,.lineupHero .team-brand-logo{width:30px;height:30px}
+.rosterTable .team-brand-logo{width:20px;height:20px}
+@media(max-width:600px){.team-brand-logo{width:20px;height:20px}h1 .team-brand-logo,h2 .team-brand-logo,h3 .team-brand-logo{width:25px;height:25px}}
 </style><style>#uhmGateway{max-width:750px;margin:24px auto}body.uhmGate #app,body.uhmGate #accountPanel,body.uhmGate #message,body.uhmGate #uhmMenuButton{display:none!important}body.uhmGame #uhmGateway,body.uhmGame #accountPanel{display:none!important}</style></head><body><header><div class="uhmHeader"><div><h1>🏒 ULTIMATE HOCKEY MANAGER</h1><small>Bureau du DG • v0.7 • Saison de démonstration 2026–2027</small></div><button id="uhmMenuButton" class="uhmMenuButton" type="button" onclick="toggleUhmMenu(true)" aria-controls="uhmOverlay" aria-expanded="false">☰ Menu</button></div></header><main><section id="uhmGateway" class="card"></section><section id="accountPanel" class="card" style="margin-bottom:12px"></section><div id="uhmOverlay" class="uhmOverlay" hidden onclick="if(event.target===this)toggleUhmMenu(false)"><aside class="uhmDrawer" role="dialog" aria-modal="true" aria-label="Navigation UHM"><div class="uhmDrawerTop"><strong>☰ Sections UHM</strong><button type="button" onclick="toggleUhmMenu(false)" aria-label="Fermer le menu">✕</button></div><div id="uhmMenuSections"></div></aside></div><nav id="nav" hidden></nav><div id="subnav" hidden></div><div id="message"></div><div id="app"></div></main><footer>Prototype indépendant. Les cotes de repli et les scores simulés sont provisoires. Les ligues en ligne nécessitent une configuration Supabase valide; certaines données de jeu restent sauvegardées localement.<div style="text-align:center;margin:8px 0 18px"><a href="./world-data-import.html" style="color:#d9edf9;font-size:12px">Importation des données mondiales (propriétaire UHM)</a></div></footer><script src="./performance.js?v=20261101"></script><script>
 const teams=["Anaheim Ducks","Boston Bruins","Buffalo Sabres","Calgary Flames","Carolina Hurricanes","Chicago Blackhawks","Colorado Avalanche","Columbus Blue Jackets","Dallas Stars","Detroit Red Wings","Edmonton Oilers","Florida Panthers","Los Angeles Kings","Minnesota Wild","Montréal Canadiens","Nashville Predators","New Jersey Devils","New York Islanders","New York Rangers","Ottawa Senators","Philadelphia Flyers","Pittsburgh Penguins","San Jose Sharks","Seattle Kraken","St. Louis Blues","Tampa Bay Lightning","Toronto Maple Leafs","Utah Mammoth","Vancouver Canucks","Vegas Golden Knights","Washington Capitals","Winnipeg Jets"];
 const players=[["Nick Suzuki","C",89,92],["Cole Caufield","AD",87,91],["Juraj Slafkovský","AG",84,92],["Ivan Demidov","AD",82,96],["Kirby Dach","C",78,85],["Alex Newhook","AG",79,84],["Brendan Gallagher","AD",76,76],["Josh Anderson","AD",76,77],["Jake Evans","C",78,79],["Oliver Kapanen","C",75,84],["Lane Hutson","D",87,95],["Kaiden Guhle","D",82,88],["Mike Matheson","D",82,83],["Arber Xhekaj","D",76,82],["Alexandre Carrier","D",79,80],["Samuel Montembeault","G",82,85],["Jakub Dobeš","G",77,86]];
@@ -1038,4 +1045,52 @@ async function loadDraftPickLedger(){
 }
 preloadUhmCoachData().then(()=>{ensureCoachDatabase();if(uhmStage==="game")render()}).catch(error=>console.warn("Personnel d’entraîneurs non chargé:",error));
 loadDraftPickLedger().then(()=>{if(uhmStage==="game")render()}).catch(error=>console.warn("Registre des choix non chargé:",error));
+
+/* Logos des 32 organisations dans les libellés visibles de toute l'interface. */
+function startTeamLogoDecorator(){
+ if(window.uhmTeamLogoObserverStarted)return;
+ window.uhmTeamLogoObserverStarted=true;
+ const roots=["app","nav","subnav","message","uhmMenuSections","accountPanel","uhmGateway"].map(id=>document.getElementById(id)).filter(Boolean);
+ const names=teams.map((name,i)=>({name,code:codes[i]})).sort((a,b)=>b.name.length-a.name.length);
+ const aliases=names.flatMap(x=>[{label:x.name,code:x.code},{label:x.code,code:x.code}]);
+ const escaped=aliases.map(x=>x.label.replace(/[.*+?^${}()|[\]\\]/g,"\\$&"));
+ const matcher=new RegExp("(^|[^A-Za-z0-9])("+escaped.join("|")+")(?=$|[^A-Za-z0-9])","g");
+ const lookup=new Map(aliases.map(x=>[x.label.toLocaleLowerCase("fr"),x.code]));
+ const decorateNode=node=>{
+  if(!node||node.nodeType!==Node.TEXT_NODE||!node.nodeValue||!matcher.test(node.nodeValue))return;
+  matcher.lastIndex=0;
+  const parent=node.parentElement;
+  if(!parent||parent.closest(".team-brand,.trade-team-banner,script,style,select,option,textarea,input,[contenteditable=true]"))return;
+  const value=node.nodeValue,fragment=document.createDocumentFragment();
+  let last=0,match;matcher.lastIndex=0;
+  while((match=matcher.exec(value))){
+   const start=match.index+match[1].length,end=matcher.lastIndex;
+   if(start>last)fragment.appendChild(document.createTextNode(value.slice(last,start)));
+   const label=match[2],code=lookup.get(label.toLocaleLowerCase("fr"));
+   if(!code){fragment.appendChild(document.createTextNode(label));last=end;continue}
+   const brand=document.createElement("span");brand.className="team-brand"+(label===code?" team-brand-code":"");
+   const img=document.createElement("img");img.className="team-brand-logo";img.src="https://assets.nhle.com/logos/nhl/svg/"+code+"_light.svg";img.alt="Logo "+names.find(x=>x.code===code).name;img.loading="lazy";img.onerror=function(){this.hidden=true};
+   brand.appendChild(img);brand.appendChild(document.createTextNode(label));fragment.appendChild(brand);last=end;
+  }
+  if(last<value.length)fragment.appendChild(document.createTextNode(value.slice(last)));
+  if(last>0)node.parentNode.replaceChild(fragment,node);
+ };
+ const scan=root=>{
+  if(!root)return;
+  const walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT);
+  const nodes=[];while(walker.nextNode())nodes.push(walker.currentNode);
+  nodes.forEach(decorateNode);
+ };
+ roots.forEach(scan);
+ const observer=new MutationObserver(records=>{
+  for(const record of records){
+   if(record.type==="characterData")decorateNode(record.target);
+   record.addedNodes&&record.addedNodes.forEach(node=>{if(node.nodeType===Node.TEXT_NODE)decorateNode(node);else if(node.nodeType===Node.ELEMENT_NODE)scan(node)});
+  }
+ });
+ roots.forEach(root=>observer.observe(root,{childList:true,subtree:true,characterData:true}));
+ window.uhmTeamLogoObserver=observer;
+}
+
+startTeamLogoDecorator();
 </script></body></html>

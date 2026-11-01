@@ -1,5 +1,5 @@
 // Import verified NHL contract claims and per-season salary structure from the CC0 nhl-contracts dataset.
-import { readFile, writeFile } from "node:fs/promises";
+import { readFile, writeFile, mkdir } from "node:fs/promises";
 
 const BASE = "https://github.com/ehlersio/nhl-contracts/releases/download/contracts";
 const SEASON = "2026-27";
@@ -253,6 +253,20 @@ const output={
   ]
 };
 await writeFile("data/contracts/2026-2027.json",JSON.stringify(output)+"\n","utf8");
+
+const dbSyncDir="data/contracts/db-sync";
+await mkdir(dbSyncDir,{recursive:true});
+const dbSyncManifest={season:"2026-2027",nhlTeams:{},organizationTeams:{},generatedAt:new Date().toISOString()};
+for(const code of codes){
+ const rows=players.filter(p=>p.teamCode===code);
+ dbSyncManifest.nhlTeams[code]=rows.length;
+ await writeFile(dbSyncDir+"/NHL-"+code+".json",JSON.stringify({season:"2026-2027",scope:"NHL_ROSTER",teamCode:code,players:rows})+"\\n","utf8");
+ const orgRows=organizationContracts.filter(p=>(p.nhlRightsTeam||p.currentTeam)===code);
+ dbSyncManifest.organizationTeams[code]=orgRows.length;
+ await writeFile(dbSyncDir+"/ORG-"+code+".json",JSON.stringify({season:"2026-2027",scope:"ORGANIZATION_REGISTRY",teamCode:code,players:orgRows})+"\\n","utf8");
+}
+await writeFile(dbSyncDir+"/manifest.json",JSON.stringify(dbSyncManifest,null,2)+"\\n","utf8");
+console.log("Supabase contract sync export: "+Object.values(dbSyncManifest.nhlTeams).reduce((a,b)=>a+b,0)+" NHL roster rows; "+Object.values(dbSyncManifest.organizationTeams).reduce((a,b)=>a+b,0)+" organization rows.");
 const auditRows = [
   ...players.map(p => ({
     scope: "NHL_ROSTER", playerId: p.playerId, registryId: registryByNhlId.get(String(p.playerId))?.id || null,

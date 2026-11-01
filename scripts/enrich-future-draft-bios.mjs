@@ -28,11 +28,17 @@ async function worker(){
    const html=await get(url);
    const title=decode((html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i)||[])[1]||"");
    const name=title.replace(/\s*-\s*Stats.*$/i,"").trim();
+   const heading=decode((html.match(/<h2[^>]*>([\s\S]*?)<\/h2>/i)||[])[1]||"");
+   const teamMatch=heading.match(/#?\d*\s*(.+?)\s*\/\s*(.+?)\s*-\s*26\/27/i);
+   const currentTeam=teamMatch?teamMatch[1].trim():null;
+   const rawLeague=teamMatch?teamMatch[2].trim():null;
+   const leagueUpper=String(rawLeague||"").toUpperCase();
+   const currentLeague=leagueUpper.includes("LIIGA")?"LIIGA":leagueUpper.includes("KHL")?"KHL":leagueUpper.includes("SHL")?"SHL":leagueUpper.includes("WHL")?"WHL":leagueUpper.includes("OHL")?"OHL":leagueUpper.includes("QMJHL")?"QMJHL":leagueUpper.includes("USHL")?"USHL":rawLeague;
    const plain=decode(html);
    const m=plain.match(/Date of Birth\s+([A-Za-zÀ-ÿ]{3,12}\s+\d{1,2},\s+\d{4})/i);
    const birthDate=m?dateOnly(m[1]):null;
    if(!birthDate){withoutDob++;continue;}
-   players.push({name,nameKey:norm(name),birthDate,draftYear:year,sourceUrl:url});
+   players.push({name,nameKey:norm(name),birthDate,draftYear:year,currentTeam,currentLeague,sourceUrl:url});
    updated++;
   }catch(error){errors.push({url,error:String(error.message||error)});}
  }

@@ -248,6 +248,12 @@ const manualConditionResolutions = new Map([
     source:"https://puckpedia.com/trade/1074",
     note:"Los Angeles retains its 2028 fourth-round pick; the Panarin-trade condition was resolved and not met, so the pick did not transfer to New York.",
     verificationNote:"PuckPedia's trade analysis says the condition (Los Angeles wins two playoff rounds in 2026) was resolved and the draft pick was not transferred."
+  }],
+  ["2028-R3-BOS", {
+    owner:"BOS",
+    source:"https://puckpedia.com/draft-pick/320283",
+    note:"Boston's own 2028 third-round pick remains with Boston. The separate conditional third-round pick acquired from New York in the Borgen trade is tracked as 2028-R3-NYR.",
+    verificationNote:"PuckPedia's individual Boston 2028 third-round pick page says Boston owns it and it has not been traded; the NHL release separately documents New York's conditional third-round pick."
   }]
 ]);
 for (const [pickId, resolution] of manualConditionResolutions) {
@@ -298,7 +304,7 @@ const blockedConditionalPickIds = [
   "2027-R2-COL","2027-R2-CBJ","2027-R2-MIN","2027-R2-WPG",
   "2027-R3-TOR","2027-R3-UTA",
   "2028-R1-COL","2028-R1-DAL","2028-R1-FLA","2028-R1-NYR","2028-R1-TOR",
-  "2028-R2-VGK","2028-R3-BOS","2028-R3-NYR",
+  "2028-R2-VGK","2028-R3-NYR",
   "2029-R1-COL","2029-R1-FLA"
 ];
 for (const pickId of blockedConditionalPickIds) {

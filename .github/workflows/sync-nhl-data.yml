@@ -15,7 +15,7 @@ on:
       - "scripts/sync-future-draft-prospects.mjs"
       - "scripts/sync-contracts.mjs"
       - "data/contracts/2026-2027.json"
-      - "data/contracts/manual-overrides-2026-2027.json"
+      - "data/contracts/manual-overrides-2026-2027.json data/contracts/db-sync"
       - "scripts/sync-draft-picks.mjs"
       - "scripts/validate-database.mjs"
       - "scripts/check-inline-js.mjs"

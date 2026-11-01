@@ -205,29 +205,65 @@ async function loadFutureDraftProspects(){
   }).join("");
  }catch(e){root.textContent="La liste des espoirs des prochains repêchages est indisponible pour le moment."}
 }
-// Persistent, gradual development. Only players with actual NHL roster IDs are affected.
-if(!S.development)S.development={};
-function developPlayers(days){
- const roster=window.hdRosterCache||[];
- let improved=0;
- for(const p of roster){
-  const id=String(p.id||p.playerId||"");if(!id)continue;
-  const age=p.birthDate?Math.floor((Date.now()-new Date(p.birthDate).getTime())/31557600000):27;
-  const current=S.development[id]||{delta:0,experience:0};
-  const ceiling=age<=22?8:age<=25?5:age<=28?2:age<=32?1:-2;
-  current.experience+=days;
-  if(current.experience>=7){
-   current.experience-=7;
-   const chance=age<=22?.62:age<=25?.43:age<=28?.19:age<=32?.08:.12;
-   if(Math.random()<chance){
-    const change=age>=33?-1:1;
-    const next=Math.max(-4,Math.min(ceiling,current.delta+change));
-    if(next!==current.delta){current.delta=next;if(change>0)improved++}
-   }
+// Développement mondial : registre central NHL, AHL, ECHL, NCAA, junior, Europe et espoirs.
+if(!S.development||typeof S.development!=="object")S.development={};
+if(!S.retiredPlayers||typeof S.retiredPlayers!=="object")S.retiredPlayers={};
+let hdGlobalPlayerRegistryPromise=null;
+function hdCanonicalPlayerId(id){const s=String(id||"");const m=s.match(/^[a-z-]+:(\\d+)$/i);return m?m[1]:s}
+function hdIsRetired(id){const s=String(id||"");const c=hdCanonicalPlayerId(s);return !!(S.retiredPlayers[s]||S.retiredPlayers[c])}
+async function loadGlobalPlayerRegistry(){
+ if(!hdGlobalPlayerRegistryPromise)hdGlobalPlayerRegistryPromise=(async()=>{
+  const base="./data/players/registry-index/registry-";
+  const chunks=await Promise.all(Array.from({length:7},async(_,i)=>{const n=String(i+1).padStart(3,"0");const r=await fetch(base+n+".json",{cache:"force-cache"});if(!r.ok)throw Error("Registre joueurs indisponible ("+n+")");return r.json()}));
+  return chunks.flatMap(x=>Array.isArray(x.players)?x.players:[]);
+ })().catch(e=>{hdGlobalPlayerRegistryPromise=null;throw e});
+ return hdGlobalPlayerRegistryPromise;
+}
+function hdPlayerAge(p,asOf){
+ if(!p.birthDate)return Number.isFinite(Number(p.age))?Number(p.age):27;
+ const birth=new Date(p.birthDate+"T00:00:00Z");if(Number.isNaN(birth.getTime()))return 27;
+ return Math.max(0,Math.floor((asOf-birth.getTime())/31557600000));
+}
+function developOnePlayer(p,days,asOf){
+ const id=String(p.id||p.playerId||"");if(!id||hdIsRetired(id))return {improved:false,retired:false};
+ const key=hdCanonicalPlayerId(id),age=hdPlayerAge(p,asOf);
+ const current=S.development[key]||S.development[id]||{delta:0,experience:0};
+ current.delta=Number(current.delta)||0;current.experience=(Number(current.experience)||0)+days;
+ const overall=Number(p.overall)||55,potential=Number(p.potential)||overall;
+ const ceiling=age<=20?Math.max(2,Math.min(12,potential-overall+2)):age<=23?Math.max(1,Math.min(9,potential-overall+1)):age<=26?3:age<=29?1:age<=32?0:-3;
+ let improved=false;
+ while(current.experience>=7){
+  current.experience-=7;
+  if(age<=23){
+   const chance=age<=18?.68:age<=20?.56:.39;
+   if(Math.random()<chance&&current.delta<ceiling){current.delta++;improved=true}
+  }else if(age<=26){
+   if(Math.random()<.22&&current.delta<ceiling){current.delta++;improved=true}
+  }else if(age<=32){
+   if(Math.random()<.055&&current.delta<ceiling){current.delta++;improved=true}
+  }else if(age>=33&&Math.random()<(age>=38?.42:age>=35?.24:.12)){
+   current.delta=Math.max(-12,current.delta-1);
   }
-  S.development[id]=current;
+  const weak=Math.max(0,65-overall)/100;
+  let retireChance=age<35?0:age===35?.002:age===36?.006:age===37?.018:age===38?.045:age===39?.10:age===40?.20:age===41?.32:.45;
+  retireChance*=1+weak*1.8;
+  if(potential>=85)retireChance*=.55;
+  if(potential<=overall)retireChance*=1.25;
+  if(age>=35&&Math.random()<Math.min(.8,retireChance)){
+   S.retiredPlayers[key]={id:key,name:p.name||p.fullName||"Joueur",league:p.currentLeague||"Inconnue",team:p.currentTeam||null,age,overall:Math.max(1,overall+current.delta),retiredOn:asOf.toISOString().slice(0,10)};
+   S.development[key]=current;return {improved,retired:true};
+  }
  }
- return improved;
+ S.development[key]=current;
+ if(id!==key)S.development[id]=current;
+ return {improved,retired:false};
+}
+async function developPlayers(days,asOf){
+ let players=await loadGlobalPlayerRegistry(),improved=0,retired=0;
+ const date=asOf instanceof Date?asOf:new Date(asOf||Date.UTC(Number(S.season)||2026,9,7)+Math.max(0,Number(S.day)||0)*86400000);
+ for(const p of players){const result=developOnePlayer(p,days,date);if(result.improved)improved++;if(result.retired)retired++}
+ window.hdDevelopmentSummary={players:players.length,improved,retired};
+ return {players:players.length,improved,retired};
 }
 async function simulate(){
  const selectedDays=[1,7,14,28].includes(Number(el('simulationDays')?.value))?Number(el('simulationDays').value):14;
@@ -309,10 +345,10 @@ async function simulate(){
   S.history.push(game.date+" · "+teams[S.team]+" "+myGoals+"–"+opponentGoals+(wentOT?" (P) ":" ")+teams[codes.indexOf(opponent)]);
  }
  S.day+=selectedDays;
- const improved=developPlayers(selectedDays);
+ const development=await developPlayers(selectedDays,startDate);
  S.history=S.history.slice(-60);save();render();
  const scheduleMessage=fallbackUsed?"Calendrier officiel indisponible pour cette période; adversaires de secours utilisés.":scheduleAvailable?"Calendrier officiel NHL utilisé.":"Calendrier NHL indisponible; vérifier la connexion.";
- msg(n+" match(s) simulé(s) sur "+selectedDays+" jour(s)"+(otGames?", dont "+otGames+" en prolongation":"")+". "+scheduleMessage+" "+(improved?improved+" joueur(s) ont progressé.":"Développement enregistré."));
+ msg(n+" match(s) simulé(s) sur "+selectedDays+" jour(s)"+(otGames?", dont "+otGames+" en prolongation":"")+". "+scheduleMessage+" "+(development.improved?development.improved+" joueur(s) ont progressé.":"Développement enregistré.")+" "+(development.retired?development.retired+" retraite(s) enregistrée(s).":"Aucune retraite cette période.")+" Développement global : "+development.players+" joueurs suivis.");
 }
 
 function newSeason(){if(!confirm("Remettre les statistiques de saison à zéro? Les choix et échanges seront conservés."))return;S.season++;S.day=S.w=S.l=S.otl=S.gf=S.ga=0;S.history=[];save();render();msg("Nouvelle saison commencée.")}

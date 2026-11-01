@@ -49,6 +49,15 @@ async function syncTeam(team){
       if(players.length)break;
     }
     if(!players.length)players=objects.filter(p=>(p.player_id!=null||p.person_id!=null)&&(p.name||p.display_name||p.first_name||p.last_name));
+    // LeagueStat prepends a column-schema descriptor row to some roster arrays.
+    // Keep only real player rows; schema cells are objects, not scalar IDs/names.
+    players=players.filter(p=>{
+      const id=p?.player_id??p?.person_id;
+      const name=p?.name??p?.display_name;
+      return p && typeof p==="object" &&
+        (typeof id==="string"||typeof id==="number") &&
+        typeof name==="string" && name.trim().length>1;
+    });
     if(players.length<10)throw new Error(`Roster trop petit ou schéma modifié (${players.length})`);
     const payload={teamId:id,teamName:name,season:"2026-2027",seasonId:actualSeasonId,source:"ECHL HockeyTech / LeagueStat public feed",sourceUrl:url,syncedAt:new Date().toISOString(),count:players.length,players};
     const path=`data/echl/${slug(name)}.json`;

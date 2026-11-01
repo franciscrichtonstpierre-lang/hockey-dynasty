@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "seasonContext": "2026-2027",
   "status": "complete",
-  "lastVerifiedAt": "2026-10-30",
+  "lastVerifiedAt": "2026-11-01",
   "years": [
     2027,
     2028,
@@ -180,15 +180,15 @@
       "year": 2027,
       "round": 1,
       "originalTeam": "FLA",
-      "currentOwner": null,
-      "status": "excluded_conditional",
-      "verified": false,
+      "currentOwner": "CHI",
+      "status": "active",
+      "verified": true,
       "conditions": null,
-      "acquiredVia": null,
-      "source": "https://www.nhl.com/blackhawks/team/future-draft-picks",
-      "sourceUpdatedAt": "2026-11-01T17:04:29.039Z",
-      "verificationNote": "Choix conditionnel exclu du registre jouable selon la règle du projet; propriétaire ferme non attribué.",
-      "conditionsVerified": false
+      "acquiredVia": "2025-03-01 Seth Jones / Spencer Knight trade; 2026 first-round top-10 protection condition resolved and pick rolled to 2027 unprotected",
+      "source": "https://puckpedia.com/trade/934",
+      "sourceUpdatedAt": "2026-11-01",
+      "verificationNote": "Condition marked resolved by PuckPedia; the 2027 pick is unprotected and owned by Chicago. Chicago future-picks page still labels it conditional, so that page appears stale and is retained as a conflicting source.",
+      "conditionsVerified": true
     },
     {
       "pickId": "2027-R1-LAK",
@@ -405,15 +405,15 @@
       "year": 2027,
       "round": 1,
       "originalTeam": "TOR",
-      "currentOwner": null,
-      "status": "excluded_conditional",
-      "verified": false,
+      "currentOwner": "COL",
+      "status": "active",
+      "verified": true,
       "conditions": null,
-      "acquiredVia": null,
-      "source": "https://hockeyinsights.ca/data/team_prospects_2026_index.json?v=20260807-season",
-      "sourceUpdatedAt": "2026-09-28",
-      "verificationNote": "Choix conditionnel exclu du registre jouable selon la règle du projet.",
-      "conditionsVerified": false
+      "acquiredVia": "2026-03-05 Colorado acquired Nicolas Roy from Toronto for Toronto's 2027 first-round pick and a 2026 fifth-round pick",
+      "source": "https://puckpedia.com/team/colorado-avalanche/draftpicks",
+      "sourceUpdatedAt": "2026-11-01",
+      "verificationNote": "PuckPedia's Colorado and Toronto draft-pick ledgers both record the 2027 first-round pick moving from Toronto to Colorado; no conditional language appears in the transaction.",
+      "conditionsVerified": true
     },
     {
       "pickId": "2027-R1-UTA",
@@ -10149,6 +10149,12 @@
       "VGK: aucune ligne de choix reconnue dans https://www.nhl.com/goldenknights/team/future-draft-picks",
       "WSH: aucune ligne de choix reconnue dans https://www.nhl.com/capitals/team/future-draft-picks",
       "WPG: aucune ligne de choix reconnue dans https://www.nhl.com/jets/team/future-draft-picks"
+    ],
+    "conditionalExcluded": 22,
+    "activeVerified": 650,
+    "resolvedConditionalThisPass": [
+      "2027-R1-FLA",
+      "2027-R1-TOR"
     ]
   }
 }

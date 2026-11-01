@@ -663,12 +663,9 @@ try{
   if(matches.length!==1){if(matches.length>1)juniorBioAmbiguous++;continue;}
   const p=matches[0];
   if(!p.birthDate)p.birthDate=bio.birthDate;
-  if(bio.currentTeam)p.currentTeam=bio.currentTeam;
   p.leaguePlayerId=bio.playerId||p.leaguePlayerId||null;
-  p.currentTeamSource=bio.sourceUrl;
-  p.currentLeagueSource=bio.sourceUrl;
+  p.birthDateSource=bio.sourceUrl;
   p.bioSourceUrl=bio.sourceUrl;
-  p.leagueResolution="official_hockeytech_roster_match";
   juniorBioApplied++;
  }
  console.log("Junior HockeyTech biography enrichment: "+juniorBioApplied+" records updated; "+juniorBioAmbiguous+" ambiguous matches.");

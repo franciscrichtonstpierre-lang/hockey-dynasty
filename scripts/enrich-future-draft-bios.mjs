@@ -34,7 +34,7 @@ async function worker(){
    const name=title.replace(/\s*-\s*Stats.*$/i,"").trim()||p.name;
    const yearMatch=plain.match(/\bBorn\s+((?:19|20)\d{2})\b/i);
    const clubMatch=plain.match(/Club\s*[·:]\s*2026-27\s+(.+?)(?:\s+League|\s+Draft year|$)/i);
-   const leagueMatch=plain.match(/League\s*[·:]\s*2026-27\s+([A-Za-z0-9 -]+)/i);
+   const leagueMatch=plain.match(/League\s*[·:]\s*2026-27\s+([A-Za-z0-9-]+)/i);
    const currentTeam=clubMatch?clubMatch[1].trim():p.currentTeam;
    const rawLeague=leagueMatch?leagueMatch[1].trim():null;
    const upper=String(rawLeague||"").toUpperCase();

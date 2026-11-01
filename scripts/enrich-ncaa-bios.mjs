@@ -33,24 +33,27 @@ async function worker(){
    const title=decode((html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i)||[])[1]||"");
    const teamName=title.replace(/\s+2026[‑-]27\s+Roster.*/i,"").trim()||decode(url.split("/").slice(-2,-1)[0].replace(/-/g," "));
    const found=[];
-   const mainTable=[...html.matchAll(/<table\b[^>]*>([\s\S]*?)<\/table>/gi)].map(m=>m[1]).find(table=>/DOB/i.test(table)&&/Name/i.test(table));
-   const trs=[...(mainTable||html).matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/gi)];
-   for(const tr of trs){
-    const cells=[...tr[1].matchAll(/<t[dh]\b[^>]*>([\s\S]*?)<\/t[dh]>/gi)].map(m=>decode(m[1]));
-    if(cells.length<3)continue;
-    const dob=cells.map(dateOnly).find(Boolean);
-    if(!dob)continue;
-    let rawName=cells.find(x=>/,/.test(x)&&x.length>3);
-    if(!rawName)rawName=cells[1]||cells[0];
-    if(!rawName||/^(name|player)$/i.test(rawName))continue;
-    let fullName=rawName;
-    if(rawName.includes(",")){
-     const [last,...rest]=rawName.split(",");
-     fullName=rest.join(",").trim()+" "+last.trim();
+   const tables=[...html.matchAll(/<table\b[^>]*>([\s\S]*?)<\/table>/gi)].map(m=>m[1]).filter(table=>/DOB/i.test(table)&&/Name/i.test(table));
+   for(let tableIndex=0;tableIndex<tables.length;tableIndex++){
+    const recordType=tableIndex===0?"roster":"recruit";
+    const trs=[...tables[tableIndex].matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/gi)];
+    for(const tr of trs){
+     const cells=[...tr[1].matchAll(/<t[dh]\b[^>]*>([\s\S]*?)<\/t[dh]>/gi)].map(m=>decode(m[1]));
+     if(cells.length<3)continue;
+     const dob=cells.map(dateOnly).find(Boolean);
+     if(!dob)continue;
+     let rawName=cells.find(x=>/,/.test(x)&&x.length>3);
+     if(!rawName)rawName=cells[1]||cells[0];
+     if(!rawName||/^(name|player)$/i.test(rawName))continue;
+     let fullName=rawName;
+     if(rawName.includes(",")){
+      const [last,...rest]=rawName.split(",");
+      fullName=rest.join(",").trim()+" "+last.trim();
+     }
+     fullName=fullName.replace(/\s+/g," ").trim();
+     if(!fullName||fullName.length<4)continue;
+     found.push({league:"NCAA",recordType,name:fullName,nameKey:norm(fullName),birthDate:dob,currentTeam:recordType==="roster"?teamName:null,committedTeam:recordType==="recruit"?teamName:null,sourceUrl:url});
     }
-    fullName=fullName.replace(/\s+/g," ").trim();
-    if(!fullName||fullName.length<4)continue;
-    found.push({league:"NCAA",name:fullName,nameKey:norm(fullName),birthDate:dob,currentTeam:teamName,sourceUrl:url});
    }
    pages.push({url,teamName,players:found});
    console.log(teamName+": "+found.length+" dates de naissance.");
@@ -65,9 +68,11 @@ for(const page of pages)for(const p of page.players){
 }
 const players=[],ambiguous=[];
 for(const [key,items] of byName){
- const unique=[...new Map(items.map(p=>[p.birthDate+"|"+p.currentTeam,p])).values()];
- if(unique.length===1)players.push(unique[0]);
- else ambiguous.push({name:items[0].name,teams:unique.map(x=>x.currentTeam)});
+ const roster=items.filter(p=>p.recordType==="roster");
+ const recruits=items.filter(p=>p.recordType==="recruit");
+ if(roster.length===1)players.push(roster[0]);
+ else if(roster.length===0&&recruits.length===1)players.push(recruits[0]);
+ else ambiguous.push({name:items[0].name,teams:[...new Set(items.map(x=>x.currentTeam||x.committedTeam).filter(Boolean))]});
 }
 await mkdir("data/players",{recursive:true});
 const output={season:"2026-2027",generatedAt:new Date().toISOString(),source:"College Hockey News 2026-27 team rosters",teams:pages.length,players,ambiguous,errors};

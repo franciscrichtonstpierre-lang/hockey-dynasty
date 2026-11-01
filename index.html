@@ -261,7 +261,7 @@ function developOnePlayer(p,days,asOf){
 async function developPlayers(days,asOf){
  let players=await loadGlobalPlayerRegistry(),improved=0,retired=0;
  const date=asOf instanceof Date?asOf:new Date(asOf||Date.UTC(Number(S.season)||2026,9,7)+Math.max(0,Number(S.day)||0)*86400000);
- for(const p of players){const result=developOnePlayer(p,days,date);if(result.improved)improved++;if(result.retired)retired++}
+ for(const p of players){const key=hdCanonicalPlayerId(p.id);if(String(p.currentLeague||"").toUpperCase()==="RETIRED"){if(key)S.retiredPlayers[key]=S.retiredPlayers[key]||{id:key,name:p.name||"Joueur",league:"RETIRED",team:null,age:hdPlayerAge(p,date),retiredOn:date.toISOString().slice(0,10)};continue}const result=developOnePlayer(p,days,date);if(result.improved)improved++;if(result.retired)retired++}
  window.hdDevelopmentSummary={players:players.length,improved,retired};
  return {players:players.length,improved,retired};
 }

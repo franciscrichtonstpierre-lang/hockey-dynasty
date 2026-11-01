@@ -1,5 +1,5 @@
 // Build the canonical cross-league player registry from source snapshots.
-// Source-labelled ratings are imported when IDs match; rights, potential and contracts are never inferred.
+// Source-labelled ratings are imported when IDs match; unknown rights and contracts are never inferred, while missing potential receives a flagged provisional estimate.
 import { readFile, writeFile } from "node:fs/promises";
 
 const codes = ["ANA","BOS","BUF","CGY","CAR","CHI","COL","CBJ","DAL","DET","EDM","FLA","LAK","MIN","MTL","NSH","NJD","NYI","NYR","OTT","PHI","PIT","SJS","SEA","STL","TBL","TOR","UTA","VAN","VGK","WSH","WPG"];
@@ -839,7 +839,7 @@ console.log(`Potential duplicate identities: ${JSON.stringify(duplicateIdentityR
 const counts = players.reduce((out,p) => (out[p.currentLeague]=(out[p.currentLeague]||0)+1,out),{});
 const output = {
   schemaVersion: 1, season: "2026-2027", generatedAt: now,
-  description: "Unified player registry built from source snapshots. Ratings are source-labelled estimates; unknown rights, potential and contracts are not inferred.",
+  description: "Unified player registry built from source snapshots. Ratings and potential are source-labelled where available; missing ratings and potential receive explicitly provisional model estimates.",
   counts, playerCount: players.length, players,
   ratingsMetadata: { season: ratingSeason || null, source: ratingData.source || null, playersAvailable: Object.keys(ratingMap).length, method: "sample-adjusted estimates; not scouting grades" },
   requiredFields: ["id","name","position","currentLeague","currentTeam","nhlRightsTeam"],
@@ -851,7 +851,7 @@ const output = {
     "AHL affiliation does not establish NHL contract or rights ownership; nhlRightsTeam stays null unless the source explicitly states it.",
     "NHL public prospect lists may be incomplete or empty for some organizations; absence is not proof of missing rights.",
     "Source ratings are imported only when an NHL player ID matches data/ratings.json; missing ratings receive an explicitly provisional age/position fallback for game usability, not a scouting grade.",
-    "Potential, unverified contracts and draft-pick ownership are not fabricated."
+    "Potential without a source is assigned a provisional age-growth estimate; unverified contracts and draft-pick ownership are never fabricated."
   ]
 };
 await writeFile("data/players/registry.json", JSON.stringify(output,null,2)+"\n", "utf8");

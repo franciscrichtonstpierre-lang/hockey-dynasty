@@ -695,9 +695,10 @@ try{
   const matches=[...records.values()].filter(p=>nameKey(p.name)===bio.nameKey);
   if(matches.length!==1){if(matches.length>1)futureDraftBioAmbiguous++;continue;}
   const p=matches[0];
-  if(!p.birthDate)p.birthDate=bio.birthDate;
-  p.birthDateSource=bio.sourceUrl;
-  p.bioSourceUrl=bio.sourceUrl;
+  if(!p.birthDate&&bio.birthDate)p.birthDate=bio.birthDate;
+  if(!p.birthYear&&bio.birthYear)p.birthYear=bio.birthYear;
+  p.birthDateSource=bio.sourceUrl||bio.profileUrl||bio.hubUrl;
+  p.bioSourceUrl=bio.sourceUrl||bio.profileUrl||bio.hubUrl;
   p.draftEligibilityYear=bio.draftYear;
   const europeanCodes=new Set(["EUROPE","OTHER","KHL","LIIGA","SHL","MHL","VHL","MESTIS","NL","DEL","CZE-EXL","HSA","ICEHL","EIHL","USNTDP","USHL","OHL","WHL","QMJHL"]);
   if(bio.currentTeam&&(!p.currentLeague||europeanCodes.has(p.currentLeague)))p.currentTeam=bio.currentTeam;

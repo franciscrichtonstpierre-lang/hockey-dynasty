@@ -800,11 +800,12 @@ for (const p of records.values()) {
   const overall = Number.isFinite(Number(p.overall)) ? Number(p.overall) : 55;
   const growth = age <= 18 ? 20 : age <= 20 ? 16 : age <= 22 ? 12 : age <= 24 ? 8 : age <= 26 ? 4 : age <= 29 ? 1 : 0;
   p.potentialEstimate = Math.max(0, Math.min(99, Math.round(overall + growth)));
+  p.potential = p.potentialEstimate;
   p.potentialStatus = "provisional_model_estimate";
   p.potentialEstimateMethod = "overall_plus_age_growth_band_v1; not source-verified";
   potentialEstimates++;
 }
-console.log(`Potential model estimates created for ${potentialEstimates} records; source-verified potential remains unchanged.`);
+console.log(`Potential ratings assigned to ${potentialEstimates} records using a labelled provisional age-growth model; source-verified potential remains unchanged.`);
 
 
 const players = [...records.values()].sort((a,b) => a.name.localeCompare(b.name,"en"));

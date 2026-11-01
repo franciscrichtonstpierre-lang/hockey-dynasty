@@ -660,6 +660,8 @@ for(const correction of (manualLeagueCorrections.players||[])){
     if(correction.birthDate&&!p.birthDate)p.birthDate=correction.birthDate;
     if(correction.position&&!p.position)p.position=posGroup(correction)||correction.position;
     if(correction.currentStatus)p.currentStatus=correction.currentStatus;
+    if(Object.prototype.hasOwnProperty.call(correction,"playable"))p.playable=correction.playable;
+    if(correction.retired)p.retired=true;
     p.currentTeamSource=correction.source||null;
     p.currentLeagueSource=correction.source||null;
     p.leagueResolution="manual_source_verified";

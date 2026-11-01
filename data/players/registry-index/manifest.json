@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
   "sourcePath": "data/players/registry.json",
-  "sourceGeneratedAt": "2026-11-01T17:18:31.579Z",
+  "sourceGeneratedAt": "2026-11-01T17:19:33.842Z",
   "playerCount": 3334,
   "chunkSize": 500,
   "chunkCount": 7,
-  "generatedAt": "2026-11-01T17:19:38.292Z",
+  "generatedAt": "2026-11-01T17:20:16.254Z",
   "fields": [
     "id",
     "name",
@@ -15,6 +15,13 @@
     "currentTeam",
     "nhlRightsTeam",
     "draftYear",
+    "overall",
+    "potential",
+    "ratingStatus",
+    "potentialStatus",
+    "age",
+    "nationality",
+    "shootsCatches",
     "source"
   ]
 }

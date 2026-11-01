@@ -33,7 +33,7 @@ async function worker(){
    const currentTeam=teamMatch?teamMatch[1].trim():null;
    const rawLeague=teamMatch?teamMatch[2].trim():null;
    const leagueUpper=String(rawLeague||"").toUpperCase();
-   const currentLeague=leagueUpper.includes("LIIGA")?"LIIGA":leagueUpper.includes("KHL")?"KHL":leagueUpper.includes("SHL")?"SHL":leagueUpper.includes("WHL")?"WHL":leagueUpper.includes("OHL")?"OHL":leagueUpper.includes("QMJHL")?"QMJHL":leagueUpper.includes("USHL")?"USHL":rawLeague;
+   const currentLeague=leagueUpper.includes("U20")||leagueUpper.includes("U18")||leagueUpper.includes("U16")?"EUROPE":leagueUpper.includes("LIIGA")?"LIIGA":leagueUpper.includes("KHL")?"KHL":leagueUpper.includes("MHL")?"MHL":leagueUpper.includes("SHL")?"SHL":leagueUpper.includes("WHL")?"WHL":leagueUpper.includes("OHL")?"OHL":leagueUpper.includes("QMJHL")?"QMJHL":leagueUpper.includes("USHL")?"USHL":leagueUpper.includes("NTDP")?"USNTDP":null;
    const plain=decode(html);
    const m=plain.match(/Date of Birth\s+([A-Za-zÀ-ÿ]{3,12}\s+\d{1,2},\s+\d{4})/i);
    const birthDate=m?dateOnly(m[1]):null;

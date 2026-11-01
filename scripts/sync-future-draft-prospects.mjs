@@ -143,7 +143,7 @@ for (const p of all) {
 }
 const output = {
   schemaVersion: 1,
-  source: "Elite Prospects Draft Center + Draft Prospects Hockey + fallback snapshot",
+  source: "Elite Prospects Draft Center + Draft Prospects Hockey + Daily Faceoff scouting watchlists + fallback snapshot",
   years,
   lastSyncAt: new Date().toISOString(),
   countsByYear: Object.fromEntries(years.map(y=>[y,[...byIdentity.values()].filter(p=>p.draftYear===y).length])),

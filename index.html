@@ -116,7 +116,7 @@ if(tab==="Repêchage"){h='<h2>Repêchage amateur</h2>'+card("Repêchage réel ·
 if(tab==="Gestion des DG"){h='<h2>Gestion des directeurs généraux</h2><div id="uhmCommissionerMembers" class="card">Chargement des membres de la ligue...</div>';setTimeout(loadCommissionerMembers,0)}
 if(tab==="Code d’accès à la ligue"){h='<h2>Code d’accès à la ligue</h2><div id="uhmCommissionerJoinCode" class="card">Chargement du code de la ligue...</div>';setTimeout(loadCommissionerJoinCode,0)}
 if(tab==="Éditeur joueurs et entraîneurs"){h='<h2>Éditeur du commissaire · joueurs et entraîneurs</h2>'+card("Accès et limites",'<p>Cette zone est réservée au commissaire de la ligue en ligne active. Les modifications sont conservées sur cet appareil et peuvent être exportées en JSON. La synchronisation entre tous les DG nécessite encore les tables de données partagées Supabase.</p>')+card("Joueurs",'<p>Recherche un joueur importé, puis modifie ses informations et ses cotes. Les valeurs inconnues restent vides.</p><div id="directoryStatus" class="muted">Répertoire non chargé.</div><div class="controls"><input id="commPlayerQuery" placeholder="Nom du joueur..." oninput="commSearchPlayers()" style="flex:1;min-width:180px"><select id="commPlayerSelect" onchange="commLoadPlayer()"><option value="">Choisir un joueur</option></select></div><div id="commPlayerForm"></div>')+card("Entraîneurs",'<p>Ajoute ou modifie les fiches des entraîneurs et leurs cotes sur 100. Les fiches créées ici sont locales tant que la base partagée n’est pas branchée.</p><div class="controls"><input id="commCoachQuery" placeholder="Rechercher un entraîneur..." oninput="commRenderCoaches()" style="flex:1;min-width:180px"><button type="button" onclick="commNewCoach()">+ Nouvel entraîneur</button><button type="button" onclick="document.getElementById(\'commImportFile\').click()">Importer JSON</button><button type="button" onclick="commExportData()">Exporter JSON</button><input id="commImportFile" type="file" accept=".json,application/json" hidden onchange="commImportData(event)"></div><div id="commCoachList"></div><div id="commCoachForm"></div>');setTimeout(commInitEditor,0)}
-if(tab==="Simulation"){h='<h2>Simulation de saison</h2>'+card("Simulateur 14 jours",'<p>Calendrier officiel NHL utilisé quand il est disponible; les scores sont simulés à partir des cotes d’attaque, de défense et des gardiens. Le moteur EHM complet, les blessures, les stratégies détaillées et les statistiques de toute la ligue restent à développer.</p><div class="grid">'+[["Matchs",S.w+S.l+S.otl],["Buts pour",S.gf],["Buts contre",S.ga],["Points",S.w*2+S.otl]].map(x=>'<div class="tile"><small>'+x[0]+'</small><b>'+x[1]+'</b></div>').join('')+'</div><br><div class="controls">'+action("▶ Simuler 14 jours","simulate()")+action("Nouvelle saison","newSeason()")+'</div>')+card("Derniers résultats",S.history.length?S.history.slice(-12).reverse().map(x=>'<div class="item">'+esc(x)+'</div>').join(''):'<p>Aucun match simulé.</p>')}
+if(tab==="Simulation"){h='<h2>Simulation de saison</h2>'+card("Durée de simulation",'<p>Choisis la durée de l’avance du calendrier.</p><div class="controls"><label for="simulationDays">Jours à simuler</label><select id="simulationDays"><option value="1">1 jour</option><option value="7">7 jours</option><option value="14" selected>14 jours</option><option value="21">21 jours</option></select>'+action("▶ Simuler la période","simulate()")+action("Nouvelle saison","newSeason()")+'</div>')+card("Bilan de saison",'<div class="grid">'+[["Matchs",S.w+S.l+S.otl],["Buts pour",S.gf],["Buts contre",S.ga],["Points",S.w*2+S.otl]].map(x=>'<div class="tile"><small>'+x[0]+'</small><b>'+x[1]+'</b></div>').join('')+'</div>')+card("Derniers résultats",S.history.length?S.history.slice(-12).reverse().map(x=>'<div class="item">'+esc(x)+'</div>').join(''):'<p>Aucun match simulé.</p>')}
 el("app").innerHTML=h}
 
 function uhmPlayerKey(p){return String(p?.nhlPlayerId??p?.playerId??p?.id??p?.registryId??p?.name??"")}
@@ -230,17 +230,18 @@ function developPlayers(days){
  return improved;
 }
 async function simulate(){
+ const selectedDays=[1,7,14,21].includes(Number(el('simulationDays')?.value))?Number(el('simulationDays').value):14;
  const selectedCode=codes[S.team];
  let selectedRoster=null;
  try{selectedRoster=await fetchRosterData(selectedCode);window.hdRosterCache=[...(selectedRoster.forwards||[]),...(selectedRoster.defensemen||[]),...(selectedRoster.goalies||[])];}catch(e){window.hdRosterCache=[];}
  await loadRatings();
  const startDate=new Date(Date.UTC(Number(S.season)||2026,9,7));
  startDate.setUTCDate(startDate.getUTCDate()+Math.max(0,Number(S.day)||0));
- const endDate=new Date(startDate);endDate.setUTCDate(endDate.getUTCDate()+14);
+ const endDate=new Date(startDate);endDate.setUTCDate(endDate.getUTCDate()+selectedDays);
  const dateKey=d=>d.toISOString().slice(0,10);
  const startKey=dateKey(startDate),endKey=dateKey(endDate);
  let scheduled=[],seenGames=new Set(),scheduleAvailable=false;
- for(const offset of [0,7]){
+ for(let offset=0;offset<selectedDays;offset+=7){
   const lookup=new Date(startDate);lookup.setUTCDate(lookup.getUTCDate()+offset);
   try{
    const res=await fetch("https://api-web.nhle.com/v1/schedule/"+dateKey(lookup),{cache:"no-store"});
@@ -265,7 +266,7 @@ async function simulate(){
  let fallbackUsed=false;
  if(!games.length){
   fallbackUsed=true;
-  for(let d=0;d<14;d++){
+  for(let d=0;d<selectedDays;d++){
    if(Math.random()>=.52)continue;
    const date=new Date(startDate);date.setUTCDate(date.getUTCDate()+d);
    const opponent=codes[(codes.indexOf(selectedCode)+1+d*5)%codes.length];
@@ -307,11 +308,11 @@ async function simulate(){
   if(myGoals>opponentGoals)S.w++;else if(wentOT)S.otl++;else S.l++;
   S.history.push(game.date+" · "+teams[S.team]+" "+myGoals+"–"+opponentGoals+(wentOT?" (P) ":" ")+teams[codes.indexOf(opponent)]);
  }
- S.day+=14;
- const improved=developPlayers(14);
+ S.day+=selectedDays;
+ const improved=developPlayers(selectedDays);
  S.history=S.history.slice(-60);save();render();
  const scheduleMessage=fallbackUsed?"Calendrier officiel indisponible pour cette période; adversaires de secours utilisés.":scheduleAvailable?"Calendrier officiel NHL utilisé.":"Calendrier NHL indisponible; vérifier la connexion.";
- msg(n+" match(s) simulé(s) sur 14 jours"+(otGames?", dont "+otGames+" en prolongation":"")+". "+scheduleMessage+" "+(improved?improved+" joueur(s) ont progressé.":"Développement enregistré."));
+ msg(n+" match(s) simulé(s) sur "+selectedDays+" jour(s)"+(otGames?", dont "+otGames+" en prolongation":"")+". "+scheduleMessage+" "+(improved?improved+" joueur(s) ont progressé.":"Développement enregistré."));
 }
 
 function newSeason(){if(!confirm("Remettre les statistiques de saison à zéro? Les choix et échanges seront conservés."))return;S.season++;S.day=S.w=S.l=S.otl=S.gf=S.ga=0;S.history=[];save();render();msg("Nouvelle saison commencée.")}

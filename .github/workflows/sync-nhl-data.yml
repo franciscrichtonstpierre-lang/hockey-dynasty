@@ -65,6 +65,12 @@ jobs:
         env:
           UHM_ECHL_SEASON_ID: "78"
         run: node scripts/sync-echl-data.mjs
+      - name: Compléter les biographies et dates de naissance ECHL
+        if: always()
+        continue-on-error: true
+        env:
+          UHM_ECHL_SEASON_ID: "78"
+        run: node scripts/enrich-echl-bios.mjs
       - name: Synchroniser les espoirs des repêchages 2027–2029
         if: always()
         continue-on-error: true

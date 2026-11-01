@@ -653,6 +653,27 @@ for(const correction of (manualLeagueCorrections.players||[])){
 }
 console.log(`Manual league corrections: ${manualCorrectionsApplied}/${manualLeagueCorrections.players?.length||0} applied; ${manualCorrectionsMissing} missing records; ${manualCorrectionsAmbiguous} ambiguous identities.`);
 
+const juniorBioLeagueMap={OHL:["OHL","CHL-OHL"],WHL:["WHL","CHL-WHL"],QMJHL:["QMJHL","CHL-QMJHL"],USHL:["USHL"]};
+let juniorBioApplied=0,juniorBioAmbiguous=0;
+try{
+ const juniorBioData=JSON.parse(await readFile("data/players/junior-bio-enrichment.json","utf8"));
+ for(const bio of (juniorBioData.players||[])){
+  const allowed=juniorBioLeagueMap[bio.league]||[];
+  const matches=[...records.values()].filter(p=>nameKey(p.name)===bio.nameKey&&allowed.includes(p.currentLeague));
+  if(matches.length!==1){if(matches.length>1)juniorBioAmbiguous++;continue;}
+  const p=matches[0];
+  if(!p.birthDate)p.birthDate=bio.birthDate;
+  if(bio.currentTeam)p.currentTeam=bio.currentTeam;
+  p.leaguePlayerId=bio.playerId||p.leaguePlayerId||null;
+  p.currentTeamSource=bio.sourceUrl;
+  p.currentLeagueSource=bio.sourceUrl;
+  p.bioSourceUrl=bio.sourceUrl;
+  p.leagueResolution="official_hockeytech_roster_match";
+  juniorBioApplied++;
+ }
+ console.log("Junior HockeyTech biography enrichment: "+juniorBioApplied+" records updated; "+juniorBioAmbiguous+" ambiguous matches.");
+}catch(error){console.warn("Junior HockeyTech bio enrichment skipped: "+error.message);}
+
 // Collapse same-person records that appear in both NHL and AHL snapshots.
 const samePerson = new Map();
 for (const p of records.values()) {

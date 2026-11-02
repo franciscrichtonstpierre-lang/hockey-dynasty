@@ -1,6 +1,7 @@
 // Build the canonical cross-league player registry from source snapshots.
 // Source-labelled ratings are imported when IDs match; unknown rights and contracts are never inferred, while missing potential receives a flagged provisional estimate.
 import { readFile, writeFile } from "node:fs/promises";
+import { emptyRatings, hasAnyRating, normalizeRatings } from "./lib/player-ratings.mjs";
 
 const codes = ["ANA","BOS","BUF","CGY","CAR","CHI","COL","CBJ","DAL","DET","EDM","FLA","LAK","MIN","MTL","NSH","NJD","NYI","NYR","OTT","PHI","PIT","SJS","SEA","STL","TBL","TOR","UTA","VAN","VGK","WSH","WPG"];
 const affiliations = JSON.parse(await readFile("data/ahl/teams.json", "utf8")).teams || [];
@@ -9,6 +10,7 @@ const echlAffiliationByName = new Map(echlAffiliations.map(t => [String(t.echlNa
 const ahlByCode = new Map(affiliations.map(t => [t.nhlCode, t.ahlName]));
 const ratingData = JSON.parse(await readFile("data/ratings.json", "utf8"));
 const ratingMap = ratingData.players || {};
+const ratingMetadata = ratingData.playerMetadata || {};
 const ratingSeason = String(ratingData.season || "").replace(/^(\d{4})(\d{4})$/, "$1-$2");
 const records = new Map();
 const now = new Date().toISOString();
@@ -38,11 +40,16 @@ const add = p => {
   if (!p.id || !p.name) return;
   const rating = p.nhlPlayerId != null ? ratingMap[String(p.nhlPlayerId)] : null;
   if (rating) {
-    p.attributes = p.attributes || rating;
+    p.attributes = rating;
     p.overall = p.overall ?? rating.OA ?? null;
     p.ratingSeason = ratingSeason || null;
-    p.ratingSource = ratingData.source || null;
-    p.ratingStatus = "sample_adjusted_estimate";
+    const metadata = ratingMetadata[String(p.nhlPlayerId)] || {};
+    p.ratingSource = metadata.source || ratingData.source || null;
+    p.ratingConfidence = metadata.confidence || "unknown";
+    p.ratingSampleConfidence = metadata.sampleConfidence || "unknown";
+    p.ratingSampleSize = metadata.sampleSize ?? null;
+    p.ratedAttributes = metadata.ratedAttributes || Object.keys(rating).filter(key => rating[key] != null);
+    p.ratingStatus = metadata.status || "sample_adjusted_statistical_estimate";
   }
   if (!records.has(p.id)) records.set(p.id, p);
   else {
@@ -53,7 +60,7 @@ const add = p => {
     records.set(p.id, {
       ...old, ...incoming,
       ...(preserveRoster ? { currentLeague: old.currentLeague, currentTeam: old.currentTeam, nhlRightsTeam: old.nhlRightsTeam || p.nhlRightsTeam, position: old.position, detailedPosition: old.detailedPosition } : {}),
-      attributes: old.attributes || p.attributes
+      attributes: p.ratingStatus === "sample_adjusted_statistical_estimate" ? p.attributes : old.attributes || p.attributes
     });
   }
 };
@@ -815,36 +822,25 @@ for (const p of records.values()) {
 }
 console.log(`Registry league enrichment: ${leagueEnriched} UNKNOWN entries resolved via unique roster-name match.`);
 
-// Keep every roster/prospect record usable by the game: if no statistical
-// rating exists, use the same explicitly provisional age/position fallback
-// already shown by the interface. This is not presented as a scouting grade.
-const ratingFields = ["FI","SH","PL","ST","CH","PO","HI","SK","EN","PE","FA","LE","SR","OFF","DEF","OA"];
-let provisionalRatings = 0;
+// Preserve the shared schema without implying that a missing scouting grade is known.
+let unratedPlayers = 0;
 for (const p of records.values()) {
-  const existing = p.attributes && typeof p.attributes === "object" ? p.attributes : {};
-  const complete = ratingFields.every(k => existing[k] != null && Number.isFinite(Number(existing[k])) && Number(existing[k]) >= 0 && Number(existing[k]) <= 99);
-  if (complete && p.overall != null) continue;
-  let age = 0;
-  if (p.birthDate) {
-    const birth = new Date(p.birthDate + "T00:00:00Z");
-    if (Number.isFinite(birth.getTime())) age = 2026 - birth.getUTCFullYear();
-  }
-  const pos = p.position === "G" ? "G" : p.position === "D" ? "D" : (p.detailedPosition || "F");
-  const base = pos === "G" ? 57 : age && age < 22 ? 53 : age && age < 25 ? 57 : age && age < 29 ? 60 : 58;
-  const fallback = {FI:base,SH:base,PL:base,ST:base,CH:base,PO:base,HI:base,SK:base,EN:base,PE:base,FA:base,LE:base,SR:base,OFF:base,DEF:base,OA:base};
-  if (pos === "D") Object.assign(fallback,{SH:base-5,PL:base-2,ST:base+3,CH:base+3,HI:base+4,DEF:base+3,OFF:base-3});
-  if (pos === "G") Object.assign(fallback,{SH:25,PL:25,SK:base-4,PO:base+5,OFF:25,DEF:base+2});
-  if (p.detailedPosition === "C") fallback.FA = base+5;
-  fallback.OA = Math.round((fallback.OFF+fallback.DEF)/2);
-  p.attributes = Object.fromEntries(ratingFields.map(k => [k, existing[k] != null && Number.isFinite(Number(existing[k])) ? Math.max(0,Math.min(99,Math.round(Number(existing[k])))) : fallback[k]]));
-  if (p.overall == null || !Number.isFinite(Number(p.overall))) p.overall = p.attributes.OA;
-  if (!complete) {
-    p.ratingStatus = p.ratingStatus || "provisional_age_position_fallback";
-    p.ratingSource = p.ratingSource || "Hockey Dynasty fallback model (age/position); not a scouting grade";
-    provisionalRatings++;
+  p.attributes = p.attributes ? normalizeRatings(p.attributes) : emptyRatings();
+  if (p.overall == null && p.attributes.OA != null) p.overall = p.attributes.OA;
+  if (!hasAnyRating(p.attributes)) {
+    p.overall = null;
+    p.ratingStatus = "unrated";
+    p.ratingSource = null;
+    p.ratingConfidence = "none";
+    unratedPlayers++;
+  } else {
+    p.ratingStatus ||= "source_unverified";
+    p.ratingSource ||= "Source not recorded";
+    p.ratingConfidence ||= "unknown";
+    p.ratedAttributes ||= Object.keys(p.attributes).filter(key => p.attributes[key] != null);
   }
 }
-console.log(`Provisional rating fallback applied to ${provisionalRatings} records with missing rating data; potentials remain null unless source-backed.`);
+console.log(`Registry ratings: ${records.size - unratedPlayers} with at least one sourced or retained rating; ${unratedPlayers} explicitly unrated.`);
 
 let potentialEstimates = 0;
 for (const p of records.values()) {
@@ -879,9 +875,9 @@ console.log(`Potential duplicate identities: ${JSON.stringify(duplicateIdentityR
 const counts = players.reduce((out,p) => (out[p.currentLeague]=(out[p.currentLeague]||0)+1,out),{});
 const output = {
   schemaVersion: 1, season: "2026-2027", generatedAt: now,
-  description: "Unified player registry built from source snapshots. Ratings and potential are source-labelled where available; missing ratings and potential receive explicitly provisional model estimates.",
+  description: "Unified player registry built from source snapshots. Ratings are present only when a source or explicitly labelled estimate exists; potential is a separate field.",
   counts, playerCount: players.length, players,
-  ratingsMetadata: { season: ratingSeason || null, source: ratingData.source || null, playersAvailable: Object.keys(ratingMap).length, method: "sample-adjusted estimates; not scouting grades" },
+  ratingsMetadata: { season: ratingSeason || null, source: ratingData.source || null, playersAvailable: Object.keys(ratingMap).length, method: "sample-adjusted statistical estimates; not scouting grades", attributes: ["FI","SH","PL","ST","CH","PO","HI","SK","EN","PE","FA","LE","SR","OFF","DEF","OA"] },
   requiredFields: ["id","name","position","currentLeague","currentTeam","nhlRightsTeam"],
   optionalFields: ["birthDate","contractTeam","contractEnd","potential","source","verifiedAt"],
   leagues: ["NHL","AHL","CHL","NCAA","EUROPE","OTHER","UNKNOWN"],
@@ -890,7 +886,8 @@ const output = {
     "NHL roster membership is assigned to the NHL team shown in the official roster snapshot.",
     "AHL affiliation does not establish NHL contract or rights ownership; nhlRightsTeam stays null unless the source explicitly states it.",
     "NHL public prospect lists may be incomplete or empty for some organizations; absence is not proof of missing rights.",
-    "Source ratings are imported only when an NHL player ID matches data/ratings.json; missing ratings receive an explicitly provisional age/position fallback for game usability, not a scouting grade.",
+    "Source ratings are imported only when an NHL player ID matches data/ratings.json; missing ratings stay null and are labelled unrated.",
+    "AHL player statistics are stored separately as raw statistics and are not converted into unsupported scouting attributes.",
     "Potential without a source is assigned a provisional age-growth estimate; unverified contracts and draft-pick ownership are never fabricated."
   ]
 };

@@ -27,7 +27,7 @@ const ppg=p=>stabilized(n(p,"points"),games(p)), gpg=p=>stabilized(n(p,"goals"),
 const sample=p=>Math.min(1,Math.sqrt(games(p)/55));
 const centered=(v,w)=>.5+(v-.5)*w;
 const rates={ppg:skaters.map(ppg),gpg:skaters.map(gpg),apg:skaters.map(apg),toi:skaters.map(toiSeconds),shots:skaters.map(p=>n(p,"shots")/games(p)),plus:skaters.map(p=>n(p,"plusMinus")/Math.sqrt(games(p))),save:goalies.map(p=>n(p,"savePctg","savePercentage")),gaa:goalies.map(p=>n(p,"goalsAgainstAverage","gaa"))};
-const players={};
+const players={},playerMetadata={};
 for(const p of skaters){
  const id=String(p.playerId||"");if(!id)continue;
  const bio=bios.get(id)||{};
@@ -41,7 +41,8 @@ for(const p of skaters){
  const off=clamp(39+point*37+goal*9+shot*5);
  const def=clamp(46+toi*21+plus*7+(d?7:0));
  const oa=clamp(d?off*.38+def*.62:off*.68+def*.32);
- players[id]={FI:clamp(38+point*35+assist*13),SH:clamp(32+goal*53+shot*12),PL:clamp(38+point*35+assist*15),ST:clamp(40+toi*30+(d?7:0)),CH:clamp(40+toi*20+plus*15),PO:clamp(38+point*24+shot*18+goal*8),HI:clamp(43+toi*12+(d?12:0)),SK:clamp(47+toi*20+point*12),EN:clamp(42+toi*31),PE:clamp(40+plus*20+toi*12),FA:pos==="C"?clamp(42+pct((faceoffRes.data||[]).map(x=>n(x,"faceoffWinPct","faceoffWinPctg")),n(faceoffs.get(id),"faceoffWinPct","faceoffWinPctg"))*35):50,LE:clamp(40+toi*18+plus*12),SR:clamp(38+point*26+toi*16+plus*8),OFF:off,DEF:def,OA:oa};
+ players[id]={FI:clamp(38+point*35+assist*13),SH:clamp(32+goal*53+shot*12),PL:clamp(38+point*35+assist*15),ST:clamp(40+toi*30+(d?7:0)),CH:clamp(40+toi*20+plus*15),PO:clamp(38+point*24+shot*18+goal*8),HI:clamp(43+toi*12+(d?12:0)),SK:clamp(47+toi*20+point*12),EN:clamp(42+toi*31),PE:clamp(40+plus*20+toi*12),FA:pos==="C"?clamp(42+pct((faceoffRes.data||[]).map(x=>n(x,"faceoffWinPct","faceoffWinPctg")),n(faceoffs.get(id),"faceoffWinPct","faceoffWinPctg"))*35):null,LE:clamp(40+toi*18+plus*12),SR:clamp(38+point*26+toi*16+plus*8),OFF:off,DEF:def,OA:oa};
+ playerMetadata[id]={source:"NHL Stats REST regular-season player statistics",status:"sample_adjusted_statistical_estimate",confidence:"low",sampleConfidence:games(p)>=55?"high":games(p)>=20?"medium":"low",sampleSize:games(p),ratedAttributes:Object.keys(players[id]).filter(key=>players[id][key]!=null),season};
 }
 for(const p of goalies){
  const id=String(p.playerId||"");if(!id)continue;
@@ -49,10 +50,11 @@ for(const p of goalies){
  const w=Math.min(1,Math.sqrt(games(p)/35));
  const svp=centered(pct(rates.save,sv),w),gaap=centered(1-pct(rates.gaa,gaa),w),winp=centered(pct(goalies.map(x=>n(x,"wins")),wins),w);
  const ov=clamp(48+svp*25+gaap*13+winp*8);
- players[id]={FI:20,SH:15,PL:25,ST:clamp(ov+2),CH:ov,PO:clamp(ov+4),HI:clamp(ov-8),SK:clamp(ov-3),EN:ov,PE:ov,FA:20,LE:ov,SR:ov,OFF:20,DEF:ov,OA:ov};
+ players[id]={FI:null,SH:null,PL:null,ST:clamp(ov+2),CH:ov,PO:clamp(ov+4),HI:clamp(ov-8),SK:clamp(ov-3),EN:ov,PE:ov,FA:null,LE:ov,SR:ov,OFF:null,DEF:ov,OA:ov};
+ playerMetadata[id]={source:"NHL Stats REST regular-season goalie statistics",status:"sample_adjusted_statistical_estimate",confidence:"low",sampleConfidence:games(p)>=35?"high":games(p)>=15?"medium":"low",sampleSize:games(p),ratedAttributes:Object.keys(players[id]).filter(key=>players[id][key]!=null),season};
 }
 if(Object.keys(players).length<450)throw Error("Too few ratings generated: "+Object.keys(players).length);
 await mkdir("data",{recursive:true});
-const out={generatedAt:new Date().toISOString(),season,source:"NHL Stats REST regular season; sample-adjusted estimates, not scouting grades",playerCount:Object.keys(players).length,skaterCount:skaters.length,goalieCount:goalies.length,players};
+const out={schemaVersion:2,generatedAt:new Date().toISOString(),season,source:"NHL Stats REST regular-season statistics; sample-adjusted estimates, not scouting grades",playerCount:Object.keys(players).length,skaterCount:skaters.length,goalieCount:goalies.length,attributes:Object.keys(players[Object.keys(players)[0]]||{}),playerMetadata,players};
 await writeFile("data/ratings.json",JSON.stringify(out));
 console.log("Wrote",out.playerCount,"player ratings for season",season);

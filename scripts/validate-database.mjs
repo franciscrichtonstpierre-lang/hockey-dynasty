@@ -90,7 +90,6 @@ if (contracts && Array.isArray(contracts.players)) {
   report.contracts.matched=contracts.matchedContracts||contracts.players.filter(p=>p.contractStatus==="MATCHED").length;
   report.contracts.coveragePercent=contracts.coveragePercent||0;
   report.contracts.salaryRows=contracts.players.filter(p=>Number(p.season?.baseSalaryUsd)>0).length;
-  report.contracts.estimatedAavRows=contracts.estimatedAavRows||contracts.players.filter(p=>p.contract?.estimatedAavUsd!=null).length;
   report.contracts.modelSalaryRows=contracts.players.filter(p=>p.simulationSalaryStatus==="provisional_model_estimate"&&Number(p.simulationSalaryUsd)>0).length;
   report.contracts.usableSalaryRows=contracts.players.filter(p=>
     Number(p.season?.baseSalaryUsd)>0 || Number(p.simulationSalaryUsd)>0

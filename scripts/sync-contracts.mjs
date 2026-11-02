@@ -335,7 +335,6 @@ const output={
     "Contract records and seasonal salary values retain the source confidence tier and source claims where available.",
     "Salary arbitration is not modeled. RFA/UFA status remains available for simplified contract negotiation.",
     "A missing record is marked as a gap; no salary or contract term is invented.",
-    "estimatedAavUsd is calculated from reported contract total divided by term and is an estimate only, not a verified 2026-27 salary or cap-hit row.",
     "A provisional simulation salary is not evidence that a player has a verified contract or cap hit.",
     "This game import intentionally omits no-trade clauses, no-movement clauses and signing bonuses; no salary-arbitration process is represented in game rules.",
     "This is a public dataset snapshot, not legal or payroll advice. Verify important clauses and disputed values against official team announcements."

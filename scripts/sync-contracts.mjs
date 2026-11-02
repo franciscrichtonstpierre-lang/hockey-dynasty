@@ -44,6 +44,23 @@ const sourceInfo = c => {
     publishedAt: s.published_at || null, confidenceTier: s.confidence_tier || null
   })).filter(s => s.url);
 };
+function actualSalaryFields(currentLeague, contract, season) {
+  const baseRaw = season?.base_salary_usd ?? contract?.nhl_salary_usd ?? null;
+  const minorsRaw = season?.minors_salary_usd ?? contract?.minors_salary_usd ?? null;
+  const base = baseRaw == null || baseRaw === "" ? null : Number(baseRaw);
+  const minors = minorsRaw == null || minorsRaw === "" ? null : Number(minorsRaw);
+  const oneWay = season?.one_way ?? contract?.one_way ?? null;
+  const league = String(currentLeague || "").toUpperCase();
+  const current = league === "AHL"
+    ? (Number.isFinite(minors) ? minors : ((oneWay === true || oneWay === "true") && Number.isFinite(base) ? base : null))
+    : (Number.isFinite(base) ? base : null);
+  const impact = league === "NHL" ? (Number.isFinite(base) ? base : null) : 0;
+  const basis = league === "AHL" && Number.isFinite(minors) ? "verified_minors_salary"
+    : league === "AHL" && (oneWay === true || oneWay === "true") && Number.isFinite(base) ? "verified_one_way_base_salary"
+    : league === "NHL" && Number.isFinite(base) ? "verified_nhl_base_salary"
+    : Number.isFinite(base) ? "verified_contract_base_salary" : "salary_not_verified";
+  return { contractSalaryUsd: Number.isFinite(base) ? base : null, currentLeagueSalaryUsd: current, nhlPayrollImpactUsd: impact, salaryBasis: basis };
+}
 const gapFor = player => gaps.find(g =>
   (player.id && Number(g.player_id || g.playerId) === Number(player.id)) ||
   norm(g.player_name || g.playerName || g.name) === norm(player.name)
@@ -114,6 +131,7 @@ for (const code of codes) {
           playerId:id, name, teamCode:code, position:group==="goalies"?"G":group==="defensemen"?"D":"F",
           contractStatus:gap ? "GAP_REPORTED_BY_SOURCE" : "NO_MATCHED_2026_27_CONTRACT",
           gapReason:gap?.gap || null, contract:null, season:null, clauses:[],
+          ...actualSalaryFields("NHL", null, null),
           simulationSalaryUsd:salaryEstimate.usd, simulationSalaryStatus:salaryEstimate.status,
           simulationSalaryMethod:salaryEstimate.method,
           sourceDataset:"ehlersio/nhl-contracts", license:"CC0-1.0"
@@ -142,6 +160,7 @@ for (const code of codes) {
           totalSalaryUsd:season.total_salary_usd??null,
           minorsSalaryUsd:season.minors_salary_usd??null, oneWay:season.one_way??null
         } : null,
+        ...actualSalaryFields("NHL", c, season),
         simulationSalaryUsd:salaryEstimate.usd, simulationSalaryStatus:salaryEstimate.status,
         simulationSalaryMethod:salaryEstimate.method,
         sourceDataset:"ehlersio/nhl-contracts", license:"CC0-1.0"
@@ -208,6 +227,7 @@ for (const registryPlayer of (registryData.players || [])) {
       baseSalaryUsd:season.base_salary_usd??null, totalSalaryUsd:season.total_salary_usd??null,
       minorsSalaryUsd:season.minors_salary_usd??null, oneWay:season.one_way??null
     } : null,
+    ...actualSalaryFields(registryPlayer.currentLeague, contract, season),
     sourceDataset:"ehlersio/nhl-contracts", license:"CC0-1.0"
   });
 }
@@ -226,15 +246,15 @@ for (const rp of (registryData.players || [])) {
     affiliationSeason: rp.affiliationSeason || null,
     affiliationStatus: rp.affiliationStatus || null,
     contractStatus: rp.nhlPlayerId != null ? "NO_MATCHED_2026_27_CONTRACT" : (rp.currentLeague === "ECHL" ? "ECHL_CONTRACT_LEVEL_UNVERIFIED" : "NO_NHL_PLAYER_ID_SOURCE_UNAVAILABLE"),
-    contract: null, season: null, sourceDataset: "ehlersio/nhl-contracts", license: "CC0-1.0",
+    contract: null, season: null, ...actualSalaryFields(rp.currentLeague, null, null), sourceDataset: "ehlersio/nhl-contracts", license: "CC0-1.0",
     dataNote: "No verified 2026-27 contract matched. This is not proof that the player has no contract; verify against the player's league/team or official announcement."
   });
 }
 const matchedContracts=players.filter(p=>p.contract!=null).length;
-const salaryRows=players.filter(p=>p.season?.capHitUsd!=null).length;
+const salaryRows=players.filter(p=>p.currentLeagueSalaryUsd!=null).length;
 const estimatedAavRows=players.filter(p=>p.contract?.estimatedAavUsd!=null).length;
 const modelSalaryRows=players.filter(p=>p.simulationSalaryStatus==="provisional_model_estimate"&&Number(p.simulationSalaryUsd)>0).length;
-const usableSalaryRows=players.filter(p=>Number(p.season?.capHitUsd)>0||Number(p.contract?.estimatedAavUsd)>0||Number(p.simulationSalaryUsd)>0).length;
+const usableSalaryRows=players.filter(p=>p.currentLeagueSalaryUsd!=null).length;
 const output={
   schemaVersion:1, season:"2026-2027", seasonKey:SEASON, generatedAt:new Date().toISOString(),
   sourceDataset:"ehlersio/nhl-contracts", sourceUrl:"https://github.com/ehlersio/nhl-contracts/releases/tag/contracts",

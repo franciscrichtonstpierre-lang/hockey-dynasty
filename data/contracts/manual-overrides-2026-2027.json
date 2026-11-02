@@ -1,6 +1,6 @@
 {
   "season": "2026-2027",
-  "sourceNote": "Manually reconciled contract rows using NHL team announcements and PuckPedia season breakdowns. Signing-bonus fields are intentionally omitted from the simulation. Six additional 2026-27 contracts were reconciled against PuckPedia and club announcements on 2026-11-01. Signing bonuses are excluded from the simulation salary field; performance bonuses remain separately represented.",
+  "sourceNote": "Manually reconciled contract rows using NHL team announcements and PuckPedia season breakdowns. Signing-bonus fields are intentionally omitted from the simulation. Six additional 2026-27 contracts were reconciled against PuckPedia and club announcements on 2026-11-01. Signing bonuses are excluded from the simulation salary field; performance bonuses remain separately represented. Four additional Anaheim Ducks 2026-27 salary breakdowns reconciled against PuckPedia player contract pages and NHL/club announcements on 2026-11-02; base salary is kept separate from cap hit and signing bonuses are excluded.",
   "players": [
     {
       "playerId": 8484168,
@@ -478,6 +478,194 @@
       "simulationSalaryUsd": 850000,
       "simulationSalaryStatus": "source_verified_manual_override",
       "simulationSalaryMethod": "PuckPedia two-way NHL/AHL contract; NHL cap hit used for cap calculations and AHL salary retained separately.",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8478421,
+      "name": "A.J. Greer",
+      "teamCode": "ANA",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "manual-aj-greer-2026-2030",
+        "signingTeam": "ANA",
+        "signedAt": "2026-06-30",
+        "type": "Standard Player Contract",
+        "termYears": 4,
+        "startSeason": "2026-27",
+        "endSeason": "2029-30",
+        "expiryStatus": "UFA",
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": 17000000,
+        "estimatedAavUsd": 4250000,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "sources": [
+          {
+            "publisher": "NHL.com",
+            "url": "https://www.nhl.com/news/aj-greer-signs-four-year-contract-with-anaheim-ducks"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/aj-greer"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "capHitUsd": 4250000,
+        "aavUsd": 4250000,
+        "baseSalaryUsd": 4250000,
+        "performanceBonusUsd": 0,
+        "totalSalaryUsd": 4250000,
+        "minorsSalaryUsd": 4250000,
+        "oneWay": null
+      },
+      "simulationSalaryUsd": 4250000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonuses excluded.",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8478366,
+      "name": "Frank Vatrano",
+      "teamCode": "ANA",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "manual-frank-vatrano-2025-2028",
+        "signingTeam": "ANA",
+        "signedAt": "2025-01-05",
+        "type": "Standard Player Contract",
+        "termYears": 3,
+        "startSeason": "2025-26",
+        "endSeason": "2027-28",
+        "expiryStatus": "UFA",
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": 18000000,
+        "estimatedAavUsd": 4571189,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "sources": [
+          {
+            "publisher": "NHL.com",
+            "url": "https://www.nhl.com/news/frank-vatrano-signs-3-year-contract-with-anaheim-ducks"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/frank-vatrano/contracts"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "capHitUsd": 4571189,
+        "aavUsd": 4571189,
+        "baseSalaryUsd": 6000000,
+        "performanceBonusUsd": 0,
+        "totalSalaryUsd": 6000000,
+        "minorsSalaryUsd": 6000000,
+        "oneWay": null
+      },
+      "simulationSalaryUsd": 4571189,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary is $6,000,000; cap hit kept separate; signing bonuses excluded.",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8484153,
+      "name": "Leo Carlsson",
+      "teamCode": "ANA",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "manual-leo-carlsson-2026-2031",
+        "signingTeam": "ANA",
+        "signedAt": "2026-07-03",
+        "type": "Standard Player Contract",
+        "termYears": 5,
+        "startSeason": "2026-27",
+        "endSeason": "2030-31",
+        "expiryStatus": "UFA",
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": 90000000,
+        "estimatedAavUsd": 18000000,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "sources": [
+          {
+            "publisher": "NHL.com",
+            "url": "https://www.nhl.com/news/leo-carlsson-signs-5-year-contract-with-ducks-match-flyers-offer-sheet"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/leo-carlsson/contracts"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "capHitUsd": 18000000,
+        "aavUsd": 18000000,
+        "baseSalaryUsd": 850000,
+        "performanceBonusUsd": 0,
+        "totalSalaryUsd": 850000,
+        "minorsSalaryUsd": null,
+        "oneWay": null
+      },
+      "simulationSalaryUsd": 18000000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary $850,000 separated from $18,000,000 cap hit; signing bonus excluded.",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8484762,
+      "name": "Beckett Sennecke",
+      "teamCode": "ANA",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "manual-beckett-sennecke-2024-2028",
+        "signingTeam": "ANA",
+        "signedAt": "2024-07-05",
+        "type": "Entry Level Contract",
+        "termYears": 3,
+        "startSeason": "2024-25",
+        "endSeason": "2027-28",
+        "expiryStatus": "RFA",
+        "boughtOut": false,
+        "oneWay": false,
+        "totalUsd": 2850000,
+        "estimatedAavUsd": 4053750,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "sources": [
+          {
+            "publisher": "Anaheim Ducks / NHL.com",
+            "url": "https://www.nhl.com/ducks/news/ducks-sign-third-overall-pick-sennecke-to-entry-level-contract"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/beckett-sennecke"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "capHitUsd": 953750,
+        "aavUsd": 4053750,
+        "baseSalaryUsd": 877500,
+        "performanceBonusUsd": 3100000,
+        "totalSalaryUsd": 975000,
+        "minorsSalaryUsd": 85000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 953750,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary $877,500; performance bonus and cap hit recorded separately; signing bonus excluded.",
       "sourceDataset": "manual_verified_contract_override",
       "license": "source-linked"
     }

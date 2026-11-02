@@ -1,6 +1,6 @@
 {
   "season": "2026-2027",
-  "sourceNote": "Manually reconciled contract rows using NHL team announcements and PuckPedia season breakdowns. Signing-bonus fields are intentionally omitted from the simulation. Six additional 2026-27 contracts were reconciled against PuckPedia and club announcements on 2026-11-01. Signing bonuses are excluded from the simulation salary field; performance bonuses remain separately represented. Four additional Anaheim Ducks 2026-27 salary breakdowns reconciled against PuckPedia player contract pages and NHL/club announcements on 2026-11-02; base salary is kept separate from cap hit and signing bonuses are excluded.",
+  "sourceNote": "Manually reconciled contract rows using NHL team announcements and PuckPedia season breakdowns. Signing-bonus fields are intentionally omitted from the simulation. Six additional 2026-27 contracts were reconciled against PuckPedia and club announcements on 2026-11-01. Signing bonuses are excluded from the simulation salary field; performance bonuses remain separately represented. Four additional Anaheim Ducks 2026-27 salary breakdowns reconciled against PuckPedia player contract pages and NHL/club announcements on 2026-11-02; base salary is kept separate from cap hit and signing bonuses are excluded. Eight additional Anaheim 2026-27 base salaries, cap hits and terms were reconciled against PuckPedia player contract breakdowns and NHL club announcements on 2026-11-02; signing bonuses are excluded from the salary field.",
   "players": [
     {
       "playerId": 8484168,
@@ -666,6 +666,362 @@
       "simulationSalaryUsd": 953750,
       "simulationSalaryStatus": "source_verified_manual_override",
       "simulationSalaryMethod": "PuckPedia 2026-27 base salary $877,500; performance bonus and cap hit recorded separately; signing bonus excluded.",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8483445,
+      "name": "Cutter Gauthier",
+      "teamCode": "ANA",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "manual-cutter-gauthier-2026-2032",
+        "signingTeam": "ANA",
+        "signedAt": "2026-09-15",
+        "type": "Standard Player Contract",
+        "termYears": 6,
+        "startSeason": "2026-27",
+        "endSeason": "2031-32",
+        "expiryStatus": "UFA",
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": 81000000,
+        "estimatedAavUsd": 13500000,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "sources": [
+          {
+            "publisher": "NHL.com",
+            "url": "https://www.nhl.com/news/cutter-gauthier-signs-six-year-contract-with-anaheim-ducks"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/cutter-gauthier"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "capHitUsd": 13500000,
+        "aavUsd": 13500000,
+        "baseSalaryUsd": 850000,
+        "performanceBonusUsd": 0,
+        "totalSalaryUsd": 850000,
+        "minorsSalaryUsd": 82500,
+        "oneWay": null
+      },
+      "simulationSalaryUsd": 13500000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary separated from cap hit; signing bonus excluded.",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8481563,
+      "name": "Drew Helleson",
+      "teamCode": "ANA",
+      "position": "D",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "manual-drew-helleson-2025-2027",
+        "signingTeam": "ANA",
+        "signedAt": "2025-07-18",
+        "type": "Standard Player Contract",
+        "termYears": 2,
+        "startSeason": "2025-26",
+        "endSeason": "2026-27",
+        "expiryStatus": "RFA",
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": 2200000,
+        "estimatedAavUsd": 1100000,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "sources": [
+          {
+            "publisher": "NHL.com",
+            "url": "https://www.nhl.com/news/drew-helleson-signs-2-year-contract-with-anaheim-ducks"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/drew-helleson/contracts"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "capHitUsd": 1100000,
+        "aavUsd": 1100000,
+        "baseSalaryUsd": 1100000,
+        "performanceBonusUsd": 0,
+        "totalSalaryUsd": 1100000,
+        "minorsSalaryUsd": 1100000,
+        "oneWay": null
+      },
+      "simulationSalaryUsd": 1100000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary; cap hit retained separately.",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8480843,
+      "name": "Lukas Dostal",
+      "teamCode": "ANA",
+      "position": "G",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "manual-lukas-dostal-2025-2030",
+        "signingTeam": "ANA",
+        "signedAt": null,
+        "type": "Standard Player Contract",
+        "termYears": 5,
+        "startSeason": "2025-26",
+        "endSeason": "2029-30",
+        "expiryStatus": "UFA",
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": 32500000,
+        "estimatedAavUsd": 6500000,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "sources": [
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/lukas-dostal"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "capHitUsd": 6500000,
+        "aavUsd": 6500000,
+        "baseSalaryUsd": 6500000,
+        "performanceBonusUsd": 0,
+        "totalSalaryUsd": 6500000,
+        "minorsSalaryUsd": 6500000,
+        "oneWay": null
+      },
+      "simulationSalaryUsd": 6500000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit.",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8485400,
+      "name": "Roger McQueen",
+      "teamCode": "ANA",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "manual-roger-mcqueen-2026-2029",
+        "signingTeam": "ANA",
+        "signedAt": "2026-04-18",
+        "type": "Entry Level Contract",
+        "termYears": 3,
+        "startSeason": "2026-27",
+        "endSeason": "2028-29",
+        "expiryStatus": "RFA",
+        "boughtOut": false,
+        "oneWay": false,
+        "totalUsd": 3225000,
+        "estimatedAavUsd": 1858333,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "sources": [
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/roger-mcqueen"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "capHitUsd": 1075000,
+        "aavUsd": 1858333,
+        "baseSalaryUsd": 922500,
+        "performanceBonusUsd": 550000,
+        "totalSalaryUsd": 922500,
+        "minorsSalaryUsd": 85000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 1075000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary; performance bonus separate; signing bonus excluded.",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8480068,
+      "name": "Ryan Poehling",
+      "teamCode": "ANA",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "manual-ryan-poehling-2026-2030",
+        "signingTeam": "ANA",
+        "signedAt": "2026-03-05",
+        "type": "Standard Player Contract",
+        "termYears": 4,
+        "startSeason": "2026-27",
+        "endSeason": "2029-30",
+        "expiryStatus": "UFA",
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": 15000000,
+        "estimatedAavUsd": 3750000,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "sources": [
+          {
+            "publisher": "NHL.com",
+            "url": "https://www.nhl.com/news/anaheim-ducks-sign-ryan-poehling-to-four-year-contract"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/ryan-poehling"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "capHitUsd": 3750000,
+        "aavUsd": 3750000,
+        "baseSalaryUsd": 3750000,
+        "performanceBonusUsd": 0,
+        "totalSalaryUsd": 3750000,
+        "minorsSalaryUsd": 3750000,
+        "oneWay": null
+      },
+      "simulationSalaryUsd": 3750000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit.",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8482731,
+      "name": "Tyson Hinds",
+      "teamCode": "ANA",
+      "position": "D",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "manual-tyson-hinds-2026-2028",
+        "signingTeam": "ANA",
+        "signedAt": "2026-07-07",
+        "type": "Standard Player Contract",
+        "termYears": 2,
+        "startSeason": "2026-27",
+        "endSeason": "2027-28",
+        "expiryStatus": "RFA",
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": 1800000,
+        "estimatedAavUsd": 900000,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "sources": [
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/tyson-hinds"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "capHitUsd": 900000,
+        "aavUsd": 900000,
+        "baseSalaryUsd": 900000,
+        "performanceBonusUsd": 0,
+        "totalSalaryUsd": 900000,
+        "minorsSalaryUsd": 900000,
+        "oneWay": null
+      },
+      "simulationSalaryUsd": 900000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit.",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8478024,
+      "name": "Ville Husso",
+      "teamCode": "ANA",
+      "position": "G",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "manual-ville-husso-2025-2027",
+        "signingTeam": "ANA",
+        "signedAt": "2025-06-29",
+        "type": "Standard Player Contract",
+        "termYears": 2,
+        "startSeason": "2025-26",
+        "endSeason": "2026-27",
+        "expiryStatus": "UFA",
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": 4400000,
+        "estimatedAavUsd": 2200000,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "sources": [
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/ville-husso/contracts"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "capHitUsd": 2200000,
+        "aavUsd": 2200000,
+        "baseSalaryUsd": 2200000,
+        "performanceBonusUsd": 0,
+        "totalSalaryUsd": 2200000,
+        "minorsSalaryUsd": 2200000,
+        "oneWay": null
+      },
+      "simulationSalaryUsd": 2200000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit.",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8483521,
+      "name": "Noah Warren",
+      "teamCode": "ANA",
+      "position": "D",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "manual-noah-warren-2023-2027",
+        "signingTeam": "ANA",
+        "signedAt": "2023-07-19",
+        "type": "Entry Level Contract",
+        "termYears": 3,
+        "startSeason": "2023-24",
+        "endSeason": "2026-27",
+        "expiryStatus": "RFA",
+        "boughtOut": false,
+        "oneWay": false,
+        "totalUsd": 2595000,
+        "estimatedAavUsd": 918333,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "sources": [
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/noah-warren"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "capHitUsd": 865000,
+        "aavUsd": 918333,
+        "baseSalaryUsd": 855000,
+        "performanceBonusUsd": 0,
+        "totalSalaryUsd": 855000,
+        "minorsSalaryUsd": 82500,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 865000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary; cap hit and AAV kept separate.",
       "sourceDataset": "manual_verified_contract_override",
       "license": "source-linked"
     }

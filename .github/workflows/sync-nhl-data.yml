@@ -6,6 +6,7 @@ on:
       - ".github/workflows/sync-nhl-data.yml"
       - "index.html"
       - "scripts/sync-ahl-data.mjs"
+      - "scripts/sync-ahl-player-stats.mjs"
       - "scripts/sync-echl-data.mjs"
       - "scripts/enrich-echl-bios.mjs"
       - "scripts/enrich-junior-bios.mjs"
@@ -67,6 +68,12 @@ jobs:
         env:
           UHM_AHL_SEASON_ID: "94"
         run: node scripts/sync-ahl-data.mjs
+      - name: Synchroniser les statistiques individuelles LAH
+        if: always()
+        continue-on-error: true
+        env:
+          UHM_AHL_SEASON_ID: "94"
+        run: node scripts/sync-ahl-player-stats.mjs
       - name: Synchroniser les 30 effectifs ECHL
         if: always()
         continue-on-error: true

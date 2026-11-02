@@ -70,7 +70,6 @@ jobs:
         run: node scripts/sync-ahl-data.mjs
       - name: Synchroniser les statistiques individuelles LAH
         if: always()
-        continue-on-error: true
         env:
           UHM_AHL_SEASON_ID: "94"
         run: node scripts/sync-ahl-player-stats.mjs

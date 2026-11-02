@@ -8,7 +8,7 @@ Saison cible : **2026–2027**. Ce dépôt contient l’application et les insta
 
 - **LNH :** 32/32 fichiers d’effectifs valides, 800 joueurs.
 - **LAH :** 32/32 fichiers d’effectifs valides, 809 joueurs.
-- **Registre central :** 3 336 fiches. L’audit confirme des identifiants uniques et des cartes complètes sur 3 336/3 336 fiches; deux fiches ont encore une ligue inconnue. **Les potentiels sont des estimations provisoires** : 0/3 336 sont source-vérifiés.
+- **Registre central :** 3 343 fiches. L’audit confirme des identifiants uniques et des cartes complètes sur 3 343/3 343 fiches; deux fiches ont encore une ligue inconnue. **Les potentiels sont des estimations provisoires** : 0/3 343 sont source-vérifiés.
 - **Espoirs d’organisation :** 32/32 fichiers non vides, 1 315 joueurs. Tous ont maintenant une carte de cotes raccordée à l’application; quatre profils sans fiche centrale correspondante portent une estimation de profil marquée de confiance très faible. Certains droits et ligues restent à revérifier. **Prochains repêchages :** un registre transversal contient 102 noms pour 2027, 37 pour 2028 et 7 pour 2029; ces listes ne sont pas définitives.
 - **Contrats :** 805/805 joueurs LNH sont appariés à un dossier contractuel; 490/800 ont un cap hit 2026–2027 source-vérifié. Les estimations d’AAV et de salaire de simulation sont étiquetées séparément du cap hit officiel.
 - **Entraîneurs LNH :** 32 équipes et 158 fiches. **Personnel LAH :** 32 équipes et 159 fiches dans `data/coaches/ahl-2026-2027.json`. Les 32 équipes de chaque ligue ont un entraîneur-chef et des adjoints; les cotes de simulation sont présentes, mais ne doivent pas être confondues avec des évaluations de dépistage source-vérifiées.

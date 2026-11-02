@@ -7,6 +7,7 @@ on:
   push:
     paths:
       - "scripts/sync-contracts.mjs"
+      - "data/contracts/nhlpa-salaries-2026-2027.json"
       - ".github/workflows/sync-contracts.yml"
 
 permissions:

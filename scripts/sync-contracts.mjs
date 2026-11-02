@@ -177,6 +177,23 @@ for (const override of (manualOverrides.players || [])) {
   manualOverridesApplied++;
 }
 console.log("Manual verified contract overrides: "+manualOverridesApplied+" applied.");
+for (const override of (manualOverrides.players || [])) {
+  const base = override.season?.baseSalaryUsd;
+  const minors = override.season?.minorsSalaryUsd;
+  const oneWay = override.season?.oneWay;
+  const salaryFields = actualSalaryFields("NHL", {
+    nhl_salary_usd: base,
+    minors_salary_usd: minors,
+    one_way: oneWay
+  }, {
+    base_salary_usd: base,
+    minors_salary_usd: minors,
+    one_way: oneWay
+  });
+  const index = players.findIndex(p => Number(p.playerId) === Number(override.playerId));
+  if (index >= 0) players[index] = { ...players[index], ...salaryFields };
+}
+
 const organizationContracts = [];
 for (const registryPlayer of (registryData.players || [])) {
   if (registryPlayer.currentLeague === "NHL") continue;
@@ -232,6 +249,33 @@ for (const registryPlayer of (registryData.players || [])) {
   });
 }
 // Preserve explicit coverage for every registry player, including unsigned prospects and players whose public contract cannot be matched.
+
+const manualOverrideByPlayerId = new Map((manualOverrides.players || []).map(p => [Number(p.playerId), p]));
+for (const organizationPlayer of organizationContracts) {
+  const override = manualOverrideByPlayerId.get(Number(organizationPlayer.playerId));
+  if (!override) continue;
+  const base = override.season?.baseSalaryUsd;
+  const minors = override.season?.minorsSalaryUsd;
+  const oneWay = override.season?.oneWay;
+  const salaryFields = actualSalaryFields(organizationPlayer.currentLeague, {
+    nhl_salary_usd: base,
+    minors_salary_usd: minors,
+    one_way: oneWay
+  }, {
+    base_salary_usd: base,
+    minors_salary_usd: minors,
+    one_way: oneWay
+  });
+  Object.assign(organizationPlayer, {
+    contractStatus: override.contractStatus,
+    contract: override.contract,
+    season: override.season,
+    ...salaryFields,
+    sourceDataset: override.sourceDataset || "manual_verified_contract_override",
+    license: override.license || "source-linked",
+    dataNote: "Manually verified contract override; source links are attached to the contract record."
+  });
+}
 const coveredRegistryIds = new Set(organizationContracts.map(p => String(p.registryId)));
 const nhlRosterIds = new Set(players.map(p => String(p.playerId)));
 for (const rp of (registryData.players || [])) {

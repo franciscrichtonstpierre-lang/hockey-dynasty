@@ -28,7 +28,7 @@ for (const player of ratingLookup.players || []) {
 function sourceLine(marker) {
   const start = html.indexOf(marker);
   assert.notEqual(start, -1, `index.html contains ${marker}`);
-  const end = html.indexOf("\r\n", start);
+  const end = html.indexOf("\\n", start);
   assert.notEqual(end, -1, `source line ends for ${marker}`);
   return html.slice(start, end);
 }

@@ -80,11 +80,6 @@ function simulationSalaryEstimate(registryPlayer, contract, season) {
   if (season?.cap_hit_usd!=null && Number.isFinite(cap) && cap>0) {
     return {usd:Math.round(cap),status:"verified_cap_hit",method:"source_2026_27_season_cap_hit"};
   }
-  const aav=Number(contract?.total_usd)>0 && Number(contract?.term_years)>0
-    ? Math.round(Number(contract.total_usd)/Number(contract.term_years)) : null;
-  if (aav!=null && Number.isFinite(aav) && aav>0) {
-    return {usd:aav,status:"contract_aav_estimate",method:"reported_contract_total_divided_by_term"};
-  }
   const overall=Number(registryPlayer?.overall);
   const oa=Number.isFinite(overall)?Math.max(0,Math.min(99,overall)):55;
   const age=ageFor(registryPlayer);
@@ -155,7 +150,7 @@ for (const code of codes) {
           sources:sourceInfo(c)
         },
         season:season ? {
-          season:SEASON, capHitUsd:season.cap_hit_usd??null, aavUsd:season.aav_usd??null,
+          season:SEASON, capHitUsd:season.cap_hit_usd??null,
           baseSalaryUsd:season.base_salary_usd??null, performanceBonusUsd:season.performance_bonus_usd??null,
           totalSalaryUsd:season.total_salary_usd??null,
           minorsSalaryUsd:season.minors_salary_usd??null, oneWay:season.one_way??null
@@ -269,7 +264,7 @@ for (const registryPlayer of (registryData.players || [])) {
       sources:sourceInfo(contract)
     },
     season:season ? {
-      season:SEASON, capHitUsd:season.cap_hit_usd??null, aavUsd:season.aav_usd??null,
+      season:SEASON, capHitUsd:season.cap_hit_usd??null,
       baseSalaryUsd:season.base_salary_usd??null, totalSalaryUsd:season.total_salary_usd??null,
       minorsSalaryUsd:season.minors_salary_usd??null, oneWay:season.one_way??null
     } : null,
@@ -326,14 +321,13 @@ for (const rp of (registryData.players || [])) {
 }
 const matchedContracts=players.filter(p=>p.contract!=null).length;
 const salaryRows=players.filter(p=>p.currentLeagueSalaryUsd!=null).length;
-const estimatedAavRows=players.filter(p=>p.contract?.estimatedAavUsd!=null).length;
 const modelSalaryRows=players.filter(p=>p.simulationSalaryStatus==="provisional_model_estimate"&&Number(p.simulationSalaryUsd)>0).length;
 const usableSalaryRows=players.filter(p=>p.currentLeagueSalaryUsd!=null).length;
 const output={
   schemaVersion:1, season:"2026-2027", seasonKey:SEASON, generatedAt:new Date().toISOString(),
   sourceDataset:"ehlersio/nhl-contracts", sourceUrl:"https://github.com/ehlersio/nhl-contracts/releases/tag/contracts",
   sourceUpdatedAt:timestampRaw.updated_at||timestampRaw.updatedAt||timestampRaw.generated_at||null,
-  license:"CC0-1.0", playerCount:players.length, matchedContracts, salaryRows, estimatedAavRows, modelSalaryRows, usableSalaryRows,
+  license:"CC0-1.0", playerCount:players.length, matchedContracts, salaryRows, modelSalaryRows, usableSalaryRows,
   organizationContractCount:organizationContracts.length, organizationContractCoverageCount:organizationContracts.length, organizationContractMatchedCount:organizationContracts.filter(p=>p.contract!=null).length, organizationContractUnmatchedCount:organizationContracts.filter(p=>p.contract==null).length, organizationContracts,
   coveragePercent:Number((100*matchedContracts/Math.max(players.length,1)).toFixed(1)),
   salaryCoveragePercent:Number((100*salaryRows/Math.max(players.length,1)).toFixed(1)),
@@ -372,7 +366,7 @@ const auditRows = [
     name: p.name, teamCode: p.teamCode, league: "NHL", contractStatus: p.contractStatus,
     contractKey: p.contract?.contractKey || null, contractType: p.contract?.type || null,
     startSeason: p.contract?.startSeason || null, endSeason: p.contract?.endSeason || null,
-    capHitUsd: p.season?.capHitUsd ?? null, aavUsd: p.season?.aavUsd ?? p.contract?.estimatedAavUsd ?? null,
+    capHitUsd: p.season?.capHitUsd ?? null,
     simulationSalaryStatus: p.simulationSalaryStatus,
     sourceUrls: (p.contract?.sources || []).map(s => s.url).filter(Boolean),
     verificationNote: p.contract ? "Matched to the public contract dataset; check source links and confidence tier." : "No contract matched in this dataset; this does not prove no contract exists."
@@ -383,7 +377,7 @@ const auditRows = [
     contractStatus: p.contractStatus, contractKey: p.contract?.contractKey || null,
     contractType: p.contract?.type || null, startSeason: p.contract?.startSeason || null,
     endSeason: p.contract?.endSeason || null, capHitUsd: p.season?.capHitUsd ?? null,
-    aavUsd: p.season?.aavUsd ?? null, simulationSalaryStatus: null,
+    simulationSalaryStatus: null,
     sourceUrls: (p.contract?.sources || []).map(s => s.url).filter(Boolean),
     verificationNote: p.contract ? "Matched to the public contract dataset; confirm whether it represents the player's current league/team contract." : (p.dataNote || "No contract matched in this dataset; this does not prove no contract exists.")
   }))
@@ -396,7 +390,7 @@ const audit = {
     nhlUnmatchedContracts: players.length - matchedContracts,
     nhlWithVerifiedCurrentLeagueSalary: salaryRows,
     nhlWithSeasonCapHit: players.filter(p => p.season?.capHitUsd != null).length,
-    nhlWithEstimatedAav: estimatedAavRows, nhlWithProvisionalSimulationSalary: modelSalaryRows,
+    nhlWithProvisionalSimulationSalary: modelSalaryRows,
     organizationRegistryPlayers: organizationContracts.length,
     organizationMatchedContracts: organizationContracts.filter(p => p.contract != null).length,
     organizationUnmatchedContracts: organizationContracts.filter(p => p.contract == null).length,

@@ -364,7 +364,9 @@ const audit = {
   sourceDataset: output.sourceDataset, sourceUrl: output.sourceUrl, sourceUpdatedAt: output.sourceUpdatedAt,
   summary: {
     nhlRosterPlayers: players.length, nhlMatchedContracts: matchedContracts,
-    nhlUnmatchedContracts: players.length - matchedContracts, nhlWithSeasonCapHit: salaryRows,
+    nhlUnmatchedContracts: players.length - matchedContracts,
+    nhlWithVerifiedCurrentLeagueSalary: salaryRows,
+    nhlWithSeasonCapHit: players.filter(p => p.season?.capHitUsd != null).length,
     nhlWithEstimatedAav: estimatedAavRows, nhlWithProvisionalSimulationSalary: modelSalaryRows,
     organizationRegistryPlayers: organizationContracts.length,
     organizationMatchedContracts: organizationContracts.filter(p => p.contract != null).length,
@@ -376,4 +378,4 @@ const audit = {
   records: auditRows
 };
 await writeFile("data/contracts/contract-audit-2026-2027.json",JSON.stringify(audit)+"\n","utf8");
-console.log(`Contracts import: ${matchedContracts}/${players.length} roster players with contract records (${output.coveragePercent}%); ${salaryRows} with 2026-27 cap-hit data (${output.salaryCoveragePercent}%); ${estimatedAavRows} contract AAV estimates labelled non-verified; ${output.counts.withGapSource} gaps documented; upstream ${output.sourceUpdatedAt||"timestamp unknown"}`);
+console.log(`Contracts import: ${matchedContracts}/${players.length} roster players with contract records (${output.coveragePercent}%); ${salaryRows} with verified 2026-27 current-league base salary (${output.salaryCoveragePercent}%); ${estimatedAavRows} contract AAV estimates labelled non-verified; ${output.counts.withGapSource} gaps documented; upstream ${output.sourceUpdatedAt||"timestamp unknown"}`);

@@ -1,5 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
+import { resolve } from "node:path";
 import { findPlayerRows, parseJsonp, validatePlayerRows } from "../scripts/lib/ahl-stat-feed.mjs";
 
 test("parses HockeyTech JSONP section rows and keeps source statistics", () => {
@@ -28,4 +30,16 @@ test("rejects incomplete feeds before replacing the snapshot", () => {
     () => validatePlayerRows([{ player_id: "1", name: "No stats" }], { minimum: 2, kind: "goalie" }),
     /response incomplete\/schema changed/
   );
+});
+
+test("validated AHL snapshot contains raw sourced stats, not inferred ratings", () => {
+  const snapshot = JSON.parse(readFileSync(resolve("data/ahl/player-stats-2026-2027.json"), "utf8"));
+  assert.equal(snapshot.seasonId, "94");
+  assert.equal(snapshot.skaters.length, snapshot.counts.skaters);
+  assert.equal(snapshot.goalies.length, snapshot.counts.goalies);
+  assert.ok(snapshot.skaters.length >= 50);
+  assert.ok(snapshot.goalies.length >= 10);
+  assert.match(snapshot.source, /HockeyTech/);
+  assert.ok(snapshot.skaters.every(p => p.player_id != null && p.games_played != null && !p.attributes));
+  assert.ok(snapshot.goalies.every(p => p.player_id != null && p.games_played != null && !p.attributes));
 });

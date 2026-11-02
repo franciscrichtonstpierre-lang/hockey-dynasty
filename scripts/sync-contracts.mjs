@@ -194,6 +194,35 @@ for (const override of (manualOverrides.players || [])) {
   if (index >= 0) players[index] = { ...players[index], ...salaryFields };
 }
 
+
+const nhlpaSalarySnapshot = JSON.parse(await readFile("data/contracts/nhlpa-salaries-2026-2027.json","utf8"));
+let nhlpaSalaryOverridesApplied = 0;
+for (const salaryRecord of (nhlpaSalarySnapshot.players || [])) {
+  const index = players.findIndex(p => Number(p.playerId) === Number(salaryRecord.playerId));
+  if (index < 0) continue;
+  const player = players[index];
+  const existingSeason = player.season || {};
+  const updatedSeason = { ...existingSeason, season: "2026-27", baseSalaryUsd: Number(salaryRecord.baseSalaryUsd) };
+  const salaryFields = actualSalaryFields("NHL", {
+    nhl_salary_usd: updatedSeason.baseSalaryUsd,
+    minors_salary_usd: updatedSeason.minorsSalaryUsd,
+    one_way: updatedSeason.oneWay
+  }, {
+    base_salary_usd: updatedSeason.baseSalaryUsd,
+    minors_salary_usd: updatedSeason.minorsSalaryUsd,
+    one_way: updatedSeason.oneWay
+  });
+  players[index] = {
+    ...player,
+    season: updatedSeason,
+    ...salaryFields,
+    salarySource: { publisher: "NHLPA", url: salaryRecord.sourceUrl, season: "2026-2027" },
+    salaryVerificationStatus: "SOURCE_VERIFIED"
+  };
+  nhlpaSalaryOverridesApplied++;
+}
+console.log("NHLPA 2026-27 base salary overrides applied: " + nhlpaSalaryOverridesApplied + ".");
+
 const organizationContracts = [];
 for (const registryPlayer of (registryData.players || [])) {
   if (registryPlayer.currentLeague === "NHL") continue;

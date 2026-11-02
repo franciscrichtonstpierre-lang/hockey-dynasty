@@ -7,6 +7,11 @@ on:
       - "index.html"
       - "scripts/sync-ahl-data.mjs"
       - "scripts/sync-ahl-player-stats.mjs"
+      - "scripts/sync-cross-league-player-stats.mjs"
+      - "scripts/apply-player-ratings.mjs"
+      - "scripts/lib/cross-league-rating-model.mjs"
+      - "scripts/lib/player-ratings.mjs"
+      - "scripts/export-registry-index.mjs"
       - "scripts/sync-echl-data.mjs"
       - "scripts/enrich-echl-bios.mjs"
       - "scripts/enrich-junior-bios.mjs"
@@ -23,6 +28,7 @@ on:
       - "scripts/sync-draft-picks.mjs"
       - "scripts/validate-database.mjs"
       - "scripts/check-inline-js.mjs"
+      - "tests/**"
       - "data/ahl/teams.json"
       - "data/prospects/**"
       - "data/prospects-supplemental/**"
@@ -30,6 +36,8 @@ on:
       - "data/draft-picks/**"
       - "data/coaches/**"
       - "data/players/manual-league-corrections.json"
+      - "data/junior/**"
+      - "data/free-agents/2026-2027.json"
   workflow_dispatch:
     inputs:
       season:
@@ -89,6 +97,9 @@ jobs:
         if: always()
         continue-on-error: true
         run: node scripts/enrich-junior-bios.mjs
+      - name: Synchroniser les statistiques ECHL et junior
+        if: always()
+        run: node scripts/sync-cross-league-player-stats.mjs
       - name: Synchroniser les espoirs des repêchages 2027–2029
         if: always()
         continue-on-error: true
@@ -115,6 +126,14 @@ jobs:
         if: always()
         continue-on-error: true
         run: node scripts/sync-draft-picks.mjs
+      - name: Compléter les cotes des joueurs de toutes les ligues
+        if: always()
+        run: node scripts/apply-player-ratings.mjs
+      - name: Exporter le registre complet pour la recherche du jeu
+        if: always()
+        run: node scripts/export-registry-index.mjs
+      - name: Tester le modèle partagé et les données de toutes les ligues
+        run: node --test tests/*.test.mjs
       - name: Vérifier la syntaxe JavaScript de l’interface
         run: node scripts/check-inline-js.mjs
       - name: Vérifier la complétude des bases LNH, LAH, espoirs et contrats
@@ -124,7 +143,7 @@ jobs:
         run: |
           git config user.name "uhm-data-bot"
           git config user.email "uhm-data-bot@users.noreply.github.com"
-          git add data/nhl data/echl data/players/junior-bio-enrichment.json data/players/ncaa-bio-enrichment.json data/players/future-draft-bio-enrichment.json data/prospects data/prospects-supplemental data/future-draft-prospects data/ahl data/coaches data/players/registry.json data/players/nhl-player-bios.json data/players/nhl-player-bio-audit.json data/contracts/2026-2027.json data/contracts/contract-audit-2026-2027.json data/contracts/manual-overrides-2026-2027.json data/contracts/db-sync data/draft-picks
+          git add data/nhl data/echl data/junior data/free-agents/2026-2027.json data/ratings.json data/players/junior-bio-enrichment.json data/players/ncaa-bio-enrichment.json data/players/future-draft-bio-enrichment.json data/prospects data/prospects-supplemental data/future-draft-prospects data/ahl data/coaches data/players/registry.json data/players/registry-index data/players/nhl-player-bios.json data/players/nhl-player-bio-audit.json data/contracts/2026-2027.json data/contracts/contract-audit-2026-2027.json data/contracts/manual-overrides-2026-2027.json data/contracts/db-sync data/draft-picks
           if git diff --cached --quiet; then
             echo "Aucune modification de données."
           else

@@ -26,10 +26,13 @@ test("every generated NHL rating has exactly the shared schema and individual pr
     const metadata = data.playerMetadata[id];
     assert.ok(metadata?.source, `source for ${id}`);
     assert.ok(metadata?.status, `status for ${id}`);
-    assert.equal(metadata?.confidence, "low", `proxy estimate confidence for ${id}`);
-    assert.ok(["low", "medium", "high"].includes(metadata?.sampleConfidence), `sample confidence for ${id}`);
-    assert.ok(Number.isInteger(metadata?.sampleSize) && metadata.sampleSize > 0, `sample size for ${id}`);
-    assert.ok(RATING_ATTRIBUTES.every(key => ratings[key] == null || (Number.isInteger(ratings[key]) && ratings[key] >= 0 && ratings[key] <= 99)), `rating range for ${id}`);
-    assert.deepEqual(metadata.ratedAttributes, RATING_ATTRIBUTES.filter(key => ratings[key] != null), `rated attributes for ${id}`);
+    assert.ok(["low", "very_low"].includes(metadata?.confidence), `honest confidence label for ${id}`);
+    assert.ok(metadata?.status && metadata?.method && metadata?.evidence, `rating provenance for ${id}`);
+    if (metadata.sampleSize != null) {
+      assert.ok(["low", "medium", "high"].includes(metadata.sampleConfidence), `sample confidence for ${id}`);
+      assert.ok(Number.isInteger(metadata.sampleSize) && metadata.sampleSize > 0, `sample size for ${id}`);
+    } else assert.equal(metadata.sampleConfidence, null, `no sample confidence without a sample for ${id}`);
+    assert.ok(RATING_ATTRIBUTES.every(key => Number.isInteger(ratings[key]) && ratings[key] >= 0 && ratings[key] <= 99), `complete rating range for ${id}`);
+    assert.deepEqual(metadata.ratedAttributes, RATING_ATTRIBUTES, `rated attributes for ${id}`);
   }
 });

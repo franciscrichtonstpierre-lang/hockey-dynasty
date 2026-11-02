@@ -24,6 +24,9 @@ const compact = players.map(p => ({
   ratingSampleConfidence: p.ratingSampleConfidence ?? null,
   ratingSampleSize: p.ratingSampleSize ?? null,
   ratedAttributes: p.ratedAttributes ?? [],
+  ratingMethod: p.ratingMethod ?? null,
+  ratingEvidence: p.ratingEvidence ?? null,
+  ratingModeledAttributes: p.ratingModeledAttributes ?? [],
   potential: p.potential ?? null,
   ratingStatus: p.ratingStatus ?? null,
   potentialStatus: p.potentialStatus ?? null,
@@ -59,7 +62,7 @@ const manifest = {
   chunkSize,
   chunkCount,
   generatedAt: new Date().toISOString(),
-  fields: ["id", "name", "birthDate", "position", "currentLeague", "currentTeam", "nhlRightsTeam", "draftYear", "overall", "attributes", "ratingSource", "ratingConfidence", "ratingSampleConfidence", "ratingSampleSize", "ratedAttributes", "potential", "ratingStatus", "potentialStatus", "age", "nationality", "shootsCatches", "source"]
+  fields: ["id", "name", "birthDate", "position", "currentLeague", "currentTeam", "nhlRightsTeam", "draftYear", "overall", "attributes", "ratingSource", "ratingConfidence", "ratingSampleConfidence", "ratingSampleSize", "ratedAttributes", "ratingMethod", "ratingEvidence", "ratingModeledAttributes", "potential", "ratingStatus", "potentialStatus", "age", "nationality", "shootsCatches", "source"]
 };
 await writeFile(`${outputDir}/manifest.json`, JSON.stringify(manifest, null, 2) + "\n", "utf8");
 console.log(`Exported ${compact.length} registry identities into ${chunkCount} chunks.`);

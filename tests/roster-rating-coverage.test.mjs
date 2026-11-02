@@ -89,3 +89,47 @@ test("the UI rating resolver finds complete cards for every active NHL, AHL, and
     assert.deepEqual(missing, [], `${group.label} players missing complete cards`);
   }
 });
+
+test("the live organization renderer displays ratings for all Montreal prospect rows", () => {
+  const rendererContext = createContext({
+    window: { hdRatingPresentation: { ATTRIBUTES: RATING_ATTRIBUTES } },
+    effectifUniquePlayers: players => players,
+    effectifPlayerName: player => player.name || player.fullName || player.full_name || player.display_name || "",
+    registryRatingForPlayer: (player, kind, teamCode) => resolverContext.resolveRating(player, kind, teamCode),
+    applyDevelopment: (_id, attributes) => attributes,
+    hdRatings: {},
+    playerAttributes: player => Object.fromEntries(RATING_ATTRIBUTES.map(attribute => [attribute, player.attributes?.[attribute] ?? null])),
+    esc: value => String(value ?? "")
+  });
+  new Script(`${sourceLine("function renderRatedDevelopmentTable(")}\nglobalThis.renderRatedDevelopmentTable = renderRatedDevelopmentTable;`, {
+    filename: "index.html:renderRatedDevelopmentTable"
+  }).runInContext(rendererContext);
+
+  const data = JSON.parse(readFileSync("data/prospects/MTL.json", "utf8"));
+  const players = data.prospects || data.players || [];
+  const html = rendererContext.renderRatedDevelopmentTable(players, "Espoirs", "MTL");
+  const visiblyUnrated = [];
+
+  for (const player of players) {
+    const name = player.name || player.fullName || player.full_name || player.display_name;
+    if (!name) continue;
+    const escaped = String(name).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    const row = html.match(new RegExp(`<tr><td class="playerName">${escaped}</td>.*?</tr>`))?.[0];
+    assert.ok(row, `rendered row exists for ${name}`);
+    if (/—/.test(row)) visiblyUnrated.push(name);
+  }
+
+  assert.deepEqual(visiblyUnrated, [], "Montreal prospects must not render empty rating cells");
+});
+
+test("the organization roster loader waits for and retries the shared ratings registry", () => {
+  const loader = sourceLine("async function loadRatings()");
+  const registryFetcher = sourceLine("async function fetchRatingRegistry()");
+  const organizationLoader = sourceLine("async function loadOrganizationEffectifExtras(");
+
+  assert.match(loader, /hdRegistryRatingsLoaded/);
+  assert.match(loader, /hdRatingsLoadPromise/);
+  assert.match(registryFetcher, /raw\.githubusercontent\.com/);
+  assert.match(registryFetcher, /cdn\.jsdelivr\.net/);
+  assert.match(organizationLoader, /await loadRatings\(\)/);
+});

@@ -94,6 +94,7 @@ test("the live organization renderer displays ratings for all Montreal prospect 
   const rendererContext = createContext({
     window: { hdRatingPresentation: { ATTRIBUTES: RATING_ATTRIBUTES } },
     effectifUniquePlayers: players => players,
+    effectifContractForPlayer: () => undefined,
     effectifPlayerName: player => player.name || player.fullName || player.full_name || player.display_name || "",
     registryRatingForPlayer: (player, kind, teamCode) => resolverContext.resolveRating(player, kind, teamCode),
     applyDevelopment: (_id, attributes) => attributes,

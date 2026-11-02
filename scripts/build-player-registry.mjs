@@ -850,7 +850,7 @@ for (const p of records.values()) {
     const birth = new Date(p.birthDate + "T00:00:00Z");
     if (Number.isFinite(birth.getTime())) age = 2026 - birth.getUTCFullYear();
   }
-  const overall = Number.isFinite(Number(p.overall)) ? Number(p.overall) : 55;
+  const overall = p.overall != null && p.overall !== "" && Number.isFinite(Number(p.overall)) ? Number(p.overall) : 55;
   const growth = age <= 18 ? 20 : age <= 20 ? 16 : age <= 22 ? 12 : age <= 24 ? 8 : age <= 26 ? 4 : age <= 29 ? 1 : 0;
   p.potentialEstimate = Math.max(0, Math.min(99, Math.round(overall + growth)));
   p.potential = p.potentialEstimate;

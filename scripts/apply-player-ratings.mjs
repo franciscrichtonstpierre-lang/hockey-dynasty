@@ -1,6 +1,6 @@
 // Completes the shared 16-rating card for every registry and free-agent player.
 import { readFile, writeFile } from "node:fs/promises";
-import { createLeagueStatIndex, estimatePlayerRatings, matchStatIndex, statNameKey } from "./lib/cross-league-rating-model.mjs";
+import { createLeagueStatIndex, estimatePlayerPotential, estimatePlayerRatings, matchStatIndex, statNameKey } from "./lib/cross-league-rating-model.mjs";
 import { RATING_ATTRIBUTES } from "./lib/player-ratings.mjs";
 
 async function readJson(path, fallback = null) {
@@ -44,6 +44,13 @@ for (const player of registry.players || []) {
   const result = estimatePlayerRatings(modelPlayer, useCurrentLeagueStats ? statRow : null, useCurrentLeagueStats ? statIndex : null, useNhlStats ? direct : null);
   player.attributes = result.attributes;
   player.overall = result.overall;
+  if (!(["source_verified", "verified"].includes(player.potentialStatus))) {
+    const potential = estimatePlayerPotential(player, player.overall);
+    player.potential = potential.value;
+    player.potentialEstimate = potential.value;
+    player.potentialStatus = potential.status;
+    player.potentialEstimateMethod = potential.method;
+  }
   player.ratedAttributes = RATING_ATTRIBUTES.slice();
   if (useNhlStats && directMeta) {
     player.ratingSource = directMeta.source || ratings.source;
@@ -141,6 +148,10 @@ for (const player of freeAgents.players || []) {
     player.ratingStatus = record.ratingStatus;
     player.ratingMethod = record.ratingMethod;
     player.ratingEvidence = record.ratingEvidence;
+    player.potential = record.potential;
+    player.potentialEstimate = record.potentialEstimate;
+    player.potentialStatus = record.potentialStatus;
+    player.potentialEstimateMethod = record.potentialEstimateMethod;
     player.ratedAttributes = RATING_ATTRIBUTES.slice();
     player.ratingModeledAttributes = record.ratingModeledAttributes || [];
   } else {
@@ -153,6 +164,13 @@ for (const player of freeAgents.players || []) {
       ratingEvidence:result.metadata.evidence, ratedAttributes:RATING_ATTRIBUTES.slice(),
       ratingModeledAttributes:result.metadata.modeledAttributes
     });
+  }
+  if (!(["source_verified", "verified"].includes(player.potentialStatus))) {
+    const potential = estimatePlayerPotential(player, player.overall);
+    player.potential = potential.value;
+    player.potentialEstimate = potential.value;
+    player.potentialStatus = potential.status;
+    player.potentialEstimateMethod = potential.method;
   }
   if (!exact(player.attributes)) throw new Error(`Invalid 16-rating card for free agent ${player.name} (${player.id}).`);
 }

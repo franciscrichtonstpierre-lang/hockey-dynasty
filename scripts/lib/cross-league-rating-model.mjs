@@ -242,6 +242,18 @@ export function estimatePlayerRatings(player, statRow, statIndex, existingRating
   };
 }
 
+export function estimatePlayerPotential(player, overall = player?.overall) {
+  const current = Number(overall);
+  if (!Number.isFinite(current)) return { value:null, status:"unavailable", method:"no_current_overall" };
+  const age = playerAge(player);
+  const growth = age > 0 ? (age <= 18 ? 20 : age <= 20 ? 16 : age <= 22 ? 12 : age <= 24 ? 8 : age <= 26 ? 4 : age <= 29 ? 1 : 0) : 0;
+  return {
+    value:clamp(current + growth),
+    status:"provisional_model_estimate",
+    method:"current_overall_plus_age_growth_band_v2; not source-verified"
+  };
+}
+
 export function matchStatIndex(player, indexes) {
   const league = leagueKey(player?.currentLeague || player?.league);
   if (indexes.has(league)) return { index:indexes.get(league), row:matchLeagueStats(player, indexes.get(league)) };

@@ -143,8 +143,6 @@ for (const code of codes) {
           termYears:c.term_years??null, startSeason:c.start_season||null, endSeason:c.end_season||null,
           expiryStatus:c.expiry_status||null, boughtOut:!!c.bought_out, oneWay:c.one_way??null,
           totalUsd:c.total_usd??null, nhlSalaryUsd:c.nhl_salary_usd??null, minorsSalaryUsd:c.minors_salary_usd??null,
-          estimatedAavUsd: Number(c.total_usd)>0 && Number(c.term_years)>0 ? Math.round(Number(c.total_usd)/Number(c.term_years)) : null,
-          estimatedAavMethod: Number(c.total_usd)>0 && Number(c.term_years)>0 ? "contract_total_divided_by_term; estimate_only_not_verified_season_cap_hit" : null,
           confidenceTier:c.best_tier||null, tiers:c.tiers||null, sourceCount:c.n_sources??null,
           conflicts:c.conflicts||null, flags:c.flags||null, sourceClaimIds:String(c.claim_ids||"").split(";").filter(Boolean),
           sources:sourceInfo(c)
@@ -335,11 +333,9 @@ const output={
   players,
   dataNotes:[
     "Contract records and seasonal salary values retain the source confidence tier and source claims where available.",
-    "Cap hit, AAV, base salary, performance bonus and total salary remain separate fields; signing bonuses and NTC/NMC clauses are intentionally excluded from the game dataset.",
     "Salary arbitration is not modeled. RFA/UFA status remains available for simplified contract negotiation.",
     "A missing record is marked as a gap; no salary or contract term is invented.",
     "estimatedAavUsd is calculated from reported contract total divided by term and is an estimate only, not a verified 2026-27 salary or cap-hit row.",
-    "simulationSalaryUsd is a clearly labelled game fallback: it prefers a verified seasonal cap hit, then contract AAV estimate, then a provisional overall/age model; it never overwrites source fields.",
     "A provisional simulation salary is not evidence that a player has a verified contract or cap hit.",
     "This game import intentionally omits no-trade clauses, no-movement clauses and signing bonuses; no salary-arbitration process is represented in game rules.",
     "This is a public dataset snapshot, not legal or payroll advice. Verify important clauses and disputed values against official team announcements."
@@ -401,4 +397,3 @@ const audit = {
   records: auditRows
 };
 await writeFile("data/contracts/contract-audit-2026-2027.json",JSON.stringify(audit)+"\n","utf8");
-console.log(`Contracts import: ${matchedContracts}/${players.length} roster players with contract records (${output.coveragePercent}%); ${salaryRows} with verified 2026-27 current-league base salary (${output.salaryCoveragePercent}%); ${estimatedAavRows} contract AAV estimates labelled non-verified; ${output.counts.withGapSource} gaps documented; upstream ${output.sourceUpdatedAt||"timestamp unknown"}`);

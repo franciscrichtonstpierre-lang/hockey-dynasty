@@ -6,7 +6,7 @@ const configs = [
   { code:"ECHL", folder:"echl", seasonFile:"data/echl/teams.json", client:"echl", key:"2c2b89ea7345cae8", leagueId:"1", siteId:"0", base:"https://lscluster.hockeytech.com/feed/index.php", minSkaters:200, minGoalies:20 },
   { code:"OHL", folder:"junior", client:"ohl", key:"f1aa699db3d81487", leagueId:"1", siteId:"1", base:"https://lscluster.hockeytech.com/feed/index.php", minSkaters:100, minGoalies:10 },
   { code:"WHL", folder:"junior", client:"whl", key:"f1aa699db3d81487", leagueId:"7", siteId:"0", base:"https://lscluster.hockeytech.com/feed/index.php", minSkaters:100, minGoalies:10 },
-  { code:"QMJHL", folder:"junior", client:"lhjmq", key:"f322673b6bcae299", leagueId:"6", siteId:"0", base:"https://cluster.leaguestat.com/feed/index.php", minSkaters:100, minGoalies:10 },
+  { code:"QMJHL", folder:"junior", seasonId:"214", client:"lhjmq", key:"f322673b6bcae299", leagueId:"6", siteId:"0", base:"https://cluster.leaguestat.com/feed/index.php", minSkaters:100, minGoalies:10 },
   { code:"USHL", folder:"junior", client:"ushl", key:"e828f89b243dc43f", leagueId:"1", siteId:"0", base:"https://lscluster.hockeytech.com/feed/index.php", minSkaters:100, minGoalies:10 }
 ];
 
@@ -27,10 +27,10 @@ function uniqueRows(rows) {
 }
 
 for (const cfg of configs) {
-  let seasonId;
-  if (cfg.seasonFile) {
+  let seasonId = cfg.seasonId ? String(cfg.seasonId) : null;
+  if (!seasonId && cfg.seasonFile) {
     seasonId = String(JSON.parse(await readFile(cfg.seasonFile, "utf8")).seasonId);
-  } else {
+  } else if (!seasonId) {
     const sample = bioData.players.find(player => player.league === cfg.code && player.sourceUrl);
     seasonId = sample ? new URL(sample.sourceUrl).searchParams.get("season_id") : null;
   }

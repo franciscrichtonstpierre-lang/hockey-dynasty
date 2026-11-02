@@ -251,8 +251,9 @@ for (const registryPlayer of (registryData.players || [])) {
 // Preserve explicit coverage for every registry player, including unsigned prospects and players whose public contract cannot be matched.
 
 const manualOverrideByPlayerId = new Map((manualOverrides.players || []).map(p => [Number(p.playerId), p]));
+const manualOverrideByNameAndTeam = new Map((manualOverrides.players || []).map(p => [norm(p.name) + "|" + String(p.teamCode || ""), p]));
 for (const organizationPlayer of organizationContracts) {
-  const override = manualOverrideByPlayerId.get(Number(organizationPlayer.playerId));
+  const override = manualOverrideByPlayerId.get(Number(organizationPlayer.playerId)) || manualOverrideByNameAndTeam.get(norm(organizationPlayer.name) + "|" + String(organizationPlayer.nhlRightsTeam || ""));
   if (!override) continue;
   const base = override.season?.baseSalaryUsd;
   const minors = override.season?.minorsSalaryUsd;

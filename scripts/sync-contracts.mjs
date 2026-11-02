@@ -162,7 +162,12 @@ const organizationContracts = [];
 for (const registryPlayer of (registryData.players || [])) {
   if (registryPlayer.currentLeague === "NHL") continue;
   const id = Number(registryPlayer.nhlPlayerId);
-  const candidates = Number.isFinite(id) ? (contractsByPlayerId.get(id) || []) : [];
+  let candidates = Number.isFinite(id) ? (contractsByPlayerId.get(id) || []) : [];
+  if (!candidates.length && registryPlayer.name) {
+    const named = contracts.filter(c => norm(c.player_name || c.playerName || c.name) === norm(registryPlayer.name));
+    const sameRightsTeam = named.filter(c => !registryPlayer.nhlRightsTeam || !c.team || c.team === registryPlayer.nhlRightsTeam);
+    candidates = sameRightsTeam.length === 1 ? sameRightsTeam : named.length === 1 ? named : [];
+  }
   const active = candidates.map(c => ({ c, season: (byKey.get(c.contract_key || c.contractKey) || [])[0] }))
     .filter(x => {
       if (x.c.bought_out) return false;

@@ -1024,6 +1024,58 @@
       "simulationSalaryMethod": "PuckPedia 2026-27 base salary; cap hit and AAV kept separate.",
       "sourceDataset": "manual_verified_contract_override",
       "license": "source-linked"
+    },
+    {
+      "playerId": 8483678,
+      "name": "Elias Pettersson",
+      "teamCode": "VAN",
+      "position": "D",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8483678|VAN|2023-04",
+        "signingTeam": "VAN",
+        "signedAt": "2023-04-20",
+        "type": "Entry Level Contract",
+        "termYears": 3,
+        "startSeason": "2023-24",
+        "endSeason": "2026-27",
+        "expiryStatus": "RFA",
+        "boughtOut": false,
+        "oneWay": false,
+        "totalUsd": 2850000,
+        "estimatedAavUsd": 993333,
+        "estimatedAavMethod": "PuckPedia 2026-27 season-specific AAV",
+        "confidenceTier": "SOURCE_VERIFIED",
+        "sources": [
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/elias-pettersson-2"
+          },
+          {
+            "publisher": "NHLPA",
+            "url": "https://www.nhlpa.com/compensation/vancouver-canucks/"
+          }
+        ]
+      },
+      "season": {
+        "seasonKey": "2026-2027",
+        "capHitUsd": 913333,
+        "aavUsd": 993333,
+        "baseSalaryUsd": 850000,
+        "performanceBonusUsd": 80000,
+        "totalSalaryUsd": 850000,
+        "minorsSalaryUsd": 82500,
+        "oneWay": false
+      },
+      "contractSalaryUsd": 850000,
+      "currentLeagueSalaryUsd": 850000,
+      "nhlPayrollImpactUsd": 913333,
+      "salaryBasis": "NHLPA 2026-2027 base salary",
+      "simulationSalaryUsd": 913333,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "2026-27 season cap hit from PuckPedia; NHLPA base salary kept separate",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
     }
   ]
 }

@@ -60,7 +60,12 @@ function verifiedContractCapHitUsd(contract, season, player = null) {
   return { usd: Math.round(total / term), basis: "verified_contract_total_divided_by_term" };
 }
 function actualSalaryFields(currentLeague, contract, season) {
-  const baseRaw = season?.base_salary_usd ?? contract?.nhl_salary_usd ?? null;
+  // A contract total divided by term is an AAV/cap-hit estimate, not annual cash salary.
+  const contractFlags = String(contract?.flags ?? "").toLowerCase();
+  const baseIsDerivedFromAav = contractFlags.split(";").some(flag =>
+    flag.includes("derived:aav_from_total") || flag.includes("derived:base_salary_from_aav")
+  );
+  const baseRaw = baseIsDerivedFromAav ? null : (season?.base_salary_usd ?? contract?.nhl_salary_usd ?? null);
   const minorsRaw = season?.minors_salary_usd ?? contract?.minors_salary_usd ?? null;
   const base = baseRaw == null || baseRaw === "" ? null : Number(baseRaw);
   const minors = minorsRaw == null || minorsRaw === "" ? null : Number(minorsRaw);
@@ -151,11 +156,11 @@ for (const code of codes) {
       const c=selected.c, season=selected.season, key=c.contract_key||c.contractKey;
       const salaryFields = actualSalaryFields("NHL", c, season);
       const capHit = verifiedContractCapHitUsd(c, season, registryPlayer || p);
-      const baseSalaryUsd = season?.base_salary_usd ?? c?.nhl_salary_usd ?? salaryFields.currentLeagueSalaryUsd;
+      const baseSalaryUsd = salaryFields.contractSalaryUsd;
       const seasonOutput = season || capHit.usd != null || baseSalaryUsd != null ? {
         season:SEASON, capHitUsd:season?.cap_hit_usd ?? capHit.usd,
         capHitBasis:season?.cap_hit_usd != null ? "verified_season_cap_hit" : capHit.basis,
-        baseSalaryUsd:season?.base_salary_usd ?? baseSalaryUsd,
+        baseSalaryUsd,
         performanceBonusUsd:season?.performance_bonus_usd??null,
         totalSalaryUsd:season?.total_salary_usd??null,
         minorsSalaryUsd:season?.minors_salary_usd??c?.minors_salary_usd??null,
@@ -301,7 +306,7 @@ for (const registryPlayer of (registryData.players || [])) {
   const contract = selected.c, season = selected.season;
   const salaryFields = actualSalaryFields(registryPlayer.currentLeague, contract, season);
   const capHit = verifiedContractCapHitUsd(contract, season, registryPlayer);
-  const baseSalaryUsd = season?.base_salary_usd ?? contract?.nhl_salary_usd ?? salaryFields.contractSalaryUsd;
+  const baseSalaryUsd = salaryFields.contractSalaryUsd;
   const minorsSalaryUsd = season?.minors_salary_usd ?? contract?.minors_salary_usd ?? null;
   const seasonOutput = season || capHit.usd != null || baseSalaryUsd != null || minorsSalaryUsd != null ? {
     season:SEASON, capHitUsd:season?.cap_hit_usd ?? capHit.usd,

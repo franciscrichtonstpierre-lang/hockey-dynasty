@@ -441,6 +441,8 @@ const output={
     "This is a public dataset snapshot, not legal or payroll advice. Verify important clauses and disputed values against official team announcements."
   ]
 };
+console.log("SALARY COVERAGE 2026-27: " + players.filter(p=>Number(p.currentLeagueSalaryUsd)>0).length + "/" + players.length + " NHL players with salary; NHLPA=" + players.filter(p=>p.salarySource?.publisher==="NHLPA").length + "; MarkerZone=" + players.filter(p=>p.salarySource?.publisher==="MarkerZone").length + "; cap hit=" + players.filter(p=>Number(p.season?.capHitUsd)>0).length + "/" + players.length + "; AAV fields=" + (/aav/i.test(JSON.stringify({players,organizationContracts})) ? "LEAK" : "0") + ".");
+console.log("ORGANIZATION SALARY COVERAGE 2026-27: " + organizationContracts.filter(p=>Number(p.currentLeagueSalaryUsd)>0).length + "/" + organizationContracts.length + " records with current-league salary; NHL payroll impact=" + organizationContracts.filter(p=>Number(p.nhlPayrollImpactUsd)>0).length + ".");
 await writeFile("data/contracts/2026-2027.json",JSON.stringify(output)+"\n","utf8");
 
 const dbSyncDir="data/contracts/db-sync";

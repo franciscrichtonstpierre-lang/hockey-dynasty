@@ -1,6 +1,6 @@
 {
   "season": "2026-2027",
-  "sourceNote": "Manually reconciled contract rows using NHL team announcements and PuckPedia season breakdowns. Signing-bonus fields are intentionally omitted from the simulation. Six additional 2026-27 contracts were reconciled against PuckPedia and club announcements on 2026-11-01. Signing bonuses are excluded from the simulation salary field; performance bonuses remain separately represented. Four additional Anaheim Ducks 2026-27 salary breakdowns reconciled against PuckPedia player contract pages and NHL/club announcements on 2026-11-02; base salary is kept separate from cap hit and signing bonuses are excluded. Eight additional Anaheim 2026-27 base salaries, cap hits and terms were reconciled against PuckPedia player contract breakdowns and NHL club announcements on 2026-11-02; signing bonuses are excluded from the salary field. Twelve Chicago Blackhawks 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary.",
+  "sourceNote": "Manually reconciled contract rows using NHL team announcements and PuckPedia season breakdowns. Signing-bonus fields are intentionally omitted from the simulation. Six additional 2026-27 contracts were reconciled against PuckPedia and club announcements on 2026-11-01. Signing bonuses are excluded from the simulation salary field; performance bonuses remain separately represented. Four additional Anaheim Ducks 2026-27 salary breakdowns reconciled against PuckPedia player contract pages and NHL/club announcements on 2026-11-02; base salary is kept separate from cap hit and signing bonuses are excluded. Eight additional Anaheim 2026-27 base salaries, cap hits and terms were reconciled against PuckPedia player contract breakdowns and NHL club announcements on 2026-11-02; signing bonuses are excluded from the salary field. Twelve Chicago Blackhawks 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Nine Detroit Red Wings 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary.",
   "players": [
     {
       "playerId": 8484168,
@@ -1841,6 +1841,581 @@
         "oneWay": false
       },
       "simulationSalaryUsd": 2750000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8484794,
+      "name": "Michael Brandsegg-Nygård",
+      "teamCode": "DET",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8484794|DET|2024-07",
+        "signingTeam": "DET",
+        "signedAt": "2024-07-11",
+        "signingDateStated": false,
+        "type": "ELC",
+        "termYears": 3,
+        "startSeason": "2024-25",
+        "endSeason": "2026-27",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": null,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "AC",
+        "sourceCount": 2,
+        "conflicts": null,
+        "flags": "derived:span_from_signing_date;player_id_from_roster",
+        "sourceClaimIds": [
+          "cb435e8536fdbdf8",
+          "d9575c3741f24f73"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/news/red-wings-sign-michael-brandsegg-nygard-to-three-year-entry-level-contract",
+            "publisher": "DET (club release on NHL.com)",
+            "publishedAt": "2024-07-11T23:50:20.956Z",
+            "confidenceTier": "A"
+          },
+          {
+            "url": "https://www.espn.com/nhl/transactions/_/date/20240711",
+            "publisher": "ESPN transactions wire",
+            "publishedAt": "2024-07-11T07:00Z",
+            "confidenceTier": "C"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/michael-brandsegg-nygard"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "baseSalaryUsd": 877500,
+        "capHitUsd": 953750,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "minorsSalaryUsd": 85000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 953750,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8478434,
+      "name": "Keegan Kolesar",
+      "teamCode": "DET",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8478434|VGK|2024-12",
+        "signingTeam": "VGK",
+        "signedAt": "2024-12-13",
+        "signingDateStated": false,
+        "type": "extension",
+        "termYears": 3,
+        "startSeason": "2025-26",
+        "endSeason": "2027-28",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": 7500000,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "BC",
+        "sourceCount": 2,
+        "conflicts": null,
+        "flags": "player_id_from_roster",
+        "sourceClaimIds": [
+          "532351d42b6a0876",
+          "73d96b2332256a5a"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/news/keegan-kolesar-signs-contract-with-vegas-golden-knights",
+            "publisher": "NHL.com",
+            "publishedAt": "2024-12-14T03:02:07.507Z",
+            "confidenceTier": "B"
+          },
+          {
+            "url": "https://www.espn.com/nhl/transactions/_/date/20241213",
+            "publisher": "ESPN transactions wire",
+            "publishedAt": "2024-12-13T08:00Z",
+            "confidenceTier": "C"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/keegan-kolesar"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "capHitUsd": 2500000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "baseSalaryUsd": 2362500,
+        "performanceBonusUsd": null,
+        "totalSalaryUsd": null,
+        "minorsSalaryUsd": 2362500,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 2500000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8481077,
+      "name": "John Leonard",
+      "teamCode": "DET",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8481077|DET|2026-04",
+        "signingTeam": "DET",
+        "signedAt": "2026-04-17",
+        "signingDateStated": false,
+        "type": "extension",
+        "termYears": 1,
+        "startSeason": "2026-27",
+        "endSeason": "2026-27",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": 850000,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "AD",
+        "sourceCount": 2,
+        "conflicts": null,
+        "flags": "derived:total_one_year;player_id_from_roster",
+        "sourceClaimIds": [
+          "56adc3138c0c99e6",
+          "d03dd7d83f1b0d61"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/news/red-wings-sign-john-leonard-to-one-year-contract-extension",
+            "publisher": "DET (club release on NHL.com)",
+            "publishedAt": "2026-04-17T00:31:06.178Z",
+            "confidenceTier": "A"
+          },
+          {
+            "url": "https://bsky.app/profile/puckpedia.com/post/3mjnpwrsqnh2f",
+            "publisher": "PuckPedia (public Bluesky post)",
+            "publishedAt": "2026-04-17T01:00:26.902Z",
+            "confidenceTier": "D"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/john-leonard"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "capHitUsd": 850000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "baseSalaryUsd": 850000,
+        "performanceBonusUsd": null,
+        "totalSalaryUsd": null,
+        "minorsSalaryUsd": 850000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 850000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8482802,
+      "name": "Carter Mazur",
+      "teamCode": "DET",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8482802|DET|2026-07",
+        "signingTeam": "DET",
+        "signedAt": "2026-07-01",
+        "signingDateStated": false,
+        "type": "standard",
+        "termYears": 2,
+        "startSeason": "2026-27",
+        "endSeason": "2027-28",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": null,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "A",
+        "sourceCount": 2,
+        "conflicts": null,
+        "flags": "derived:span_from_signing_date;llm:anthropic/claude-haiku-5.5;llm_filled;player_id_from_roster",
+        "sourceClaimIds": [
+          "de86c997d6338467",
+          "1b98afe05126b99b"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/news/red-wings-re-sign-carter-mazur-to-two-year-contract",
+            "publisher": "DET (club release on NHL.com)",
+            "publishedAt": "2026-07-01T16:39:42.084Z",
+            "confidenceTier": "A"
+          },
+          {
+            "url": "https://www.nhl.com/news/i-m-just-excited-for-the-opportunity-mazur-puts-pen-to-paper-on-two-year-contract-with-red-wings",
+            "publisher": "DET (club release on NHL.com)",
+            "publishedAt": "2026-07-13T13:51:00Z",
+            "confidenceTier": "A"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/carter-mazur"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "baseSalaryUsd": 850000,
+        "capHitUsd": 875000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "minorsSalaryUsd": 850000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 875000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8482078,
+      "name": "Lucas Raymond",
+      "teamCode": "DET",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8482078|DET|2024-09",
+        "signingTeam": "DET",
+        "signedAt": "2024-09-16",
+        "signingDateStated": false,
+        "type": "standard",
+        "termYears": 8,
+        "startSeason": "2024-25",
+        "endSeason": "2031-32",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": 64600000,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "BC",
+        "sourceCount": 2,
+        "conflicts": null,
+        "flags": "derived:span_from_signing_date;player_id_from_roster",
+        "sourceClaimIds": [
+          "3d821ca2f0eb33f6",
+          "a02b205f515cb81c"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/news/lucas-raymond-signs-8-year-contract-with-detroit-worth-64-million",
+            "publisher": "NHL.com",
+            "publishedAt": "2024-09-17T16:29:00Z",
+            "confidenceTier": "B"
+          },
+          {
+            "url": "https://www.espn.com/nhl/transactions/_/date/20240916",
+            "publisher": "ESPN transactions wire",
+            "publishedAt": "2024-09-16T07:00Z",
+            "confidenceTier": "C"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/lucas-raymond"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "capHitUsd": 8075000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "baseSalaryUsd": 8075000,
+        "performanceBonusUsd": null,
+        "totalSalaryUsd": null,
+        "minorsSalaryUsd": 8075000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 8075000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8475279,
+      "name": "Ben Chiarot",
+      "teamCode": "DET",
+      "position": "D",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8475279|DET|2026-01",
+        "signingTeam": "DET",
+        "signedAt": "2026-01-28",
+        "signingDateStated": false,
+        "type": "extension",
+        "termYears": 3,
+        "startSeason": "2026-27",
+        "endSeason": "2028-29",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": 11550000,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "AB",
+        "sourceCount": 2,
+        "conflicts": null,
+        "flags": null,
+        "sourceClaimIds": [
+          "d4555a6a4d7981bf",
+          "2b821cd215867e74"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/news/i-really-enjoy-coming-to-the-rink-every-day-chiarot-re-signs-three-year-contract-happy-to-keep-calling-detroit-home",
+            "publisher": "DET (club release on NHL.com)",
+            "publishedAt": "2026-01-28T23:33:00Z",
+            "confidenceTier": "A"
+          },
+          {
+            "url": "https://www.nhl.com/news/ben-chiarot-signs-3-year-contract-with-detroit-red-wings",
+            "publisher": "NHL.com",
+            "publishedAt": "2026-01-28T19:25:00Z",
+            "confidenceTier": "B"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/ben-chiarot"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "baseSalaryUsd": 3850000,
+        "capHitUsd": 3850000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "minorsSalaryUsd": 3850000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 3850000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8483679,
+      "name": "Anton Johansson",
+      "teamCode": "DET",
+      "position": "D",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8483679|DET|2025-03",
+        "signingTeam": "DET",
+        "signedAt": "2025-03-13",
+        "signingDateStated": false,
+        "type": "ELC",
+        "termYears": 3,
+        "startSeason": "2025-26",
+        "endSeason": "2027-28",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": null,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "AC",
+        "sourceCount": 2,
+        "conflicts": null,
+        "flags": "player_id_from_roster",
+        "sourceClaimIds": [
+          "02877e61948b3956",
+          "02823b48b4fc2aa8"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/news/red-wings-sign-defenseman-anton-johansson-to-three-year-entry-level-contract",
+            "publisher": "DET (club release on NHL.com)",
+            "publishedAt": "2025-03-13T18:44:39.727Z",
+            "confidenceTier": "A"
+          },
+          {
+            "url": "https://www.espn.com/nhl/transactions/_/date/20250313",
+            "publisher": "ESPN transactions wire",
+            "publishedAt": "2025-03-13T07:00Z",
+            "confidenceTier": "C"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/anton-johansson"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "baseSalaryUsd": 850000,
+        "capHitUsd": 970000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "minorsSalaryUsd": 82500,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 970000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8481542,
+      "name": "Moritz Seider",
+      "teamCode": "DET",
+      "position": "D",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8481542|DET|2024-09",
+        "signingTeam": "DET",
+        "signedAt": "2024-09-19",
+        "signingDateStated": false,
+        "type": "standard",
+        "termYears": 7,
+        "startSeason": "2024-25",
+        "endSeason": "2030-31",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": null,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "AC",
+        "sourceCount": 2,
+        "conflicts": null,
+        "flags": "derived:span_from_signing_date;player_id_from_roster",
+        "sourceClaimIds": [
+          "227eb8e876d918ca",
+          "fca75731360a4786"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/news/red-wings-re-sign-moritz-seider-to-seven-year-contract",
+            "publisher": "DET (club release on NHL.com)",
+            "publishedAt": "2024-09-19T18:06:41.199Z",
+            "confidenceTier": "A"
+          },
+          {
+            "url": "https://www.espn.com/nhl/transactions/_/date/20240919",
+            "publisher": "ESPN transactions wire",
+            "publishedAt": "2024-09-19T07:00Z",
+            "confidenceTier": "C"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/moritz-seider"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "baseSalaryUsd": 8550000,
+        "capHitUsd": 8550000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "minorsSalaryUsd": 8550000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 8550000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8480193,
+      "name": "Daniil Tarasov",
+      "teamCode": "DET",
+      "position": "G",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8480193|DET|2026-07",
+        "signingTeam": "DET",
+        "signedAt": "2026-07-01",
+        "signingDateStated": false,
+        "type": "standard",
+        "termYears": 1,
+        "startSeason": "2026-27",
+        "endSeason": "2026-27",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": true,
+        "totalUsd": 2000000,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "BD",
+        "sourceCount": 2,
+        "conflicts": null,
+        "flags": "no_trade_protection;player_id_from_roster;start_season_assumed",
+        "sourceClaimIds": [
+          "0152e0c63b026096",
+          "fe630b1ab2bc24de"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/news/viktor-arvidsson-signs-two-year-contract-with-detroit-red-wings",
+            "publisher": "NHL.com",
+            "publishedAt": "2026-07-01T19:30:00Z",
+            "confidenceTier": "B"
+          },
+          {
+            "url": "https://bsky.app/profile/puckpedia.com/post/3mppdtj32yp2a",
+            "publisher": "PuckPedia (public Bluesky post)",
+            "publishedAt": "2026-07-03T01:00:21.423Z",
+            "confidenceTier": "D"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/daniil-tarasov"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "capHitUsd": 2000000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "baseSalaryUsd": 2000000,
+        "performanceBonusUsd": null,
+        "totalSalaryUsd": null,
+        "minorsSalaryUsd": 2000000,
+        "oneWay": true
+      },
+      "simulationSalaryUsd": 2000000,
       "simulationSalaryStatus": "source_verified_manual_override",
       "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
       "sourceDataset": "manual_verified_contract_override",

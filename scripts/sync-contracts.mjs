@@ -192,7 +192,12 @@ const manualOverrides = JSON.parse(await readFile("data/contracts/manual-overrid
 let manualOverridesApplied = 0;
 let organizationOnlyOverrides = 0;
 for (const override of (manualOverrides.players || [])) {
-  const index = players.findIndex(p => Number(p.playerId) === Number(override.playerId));
+  const overrideId = Number(override.playerId);
+  const hasOverrideId = override.playerId != null && Number.isFinite(overrideId) && overrideId > 0;
+  let index = hasOverrideId
+    ? players.findIndex(p => p.playerId != null && Number(p.playerId) === overrideId)
+    : -1;
+  if (index < 0 && override.name) index = players.findIndex(p => norm(p.name) === norm(override.name));
   if (index >= 0) {
     const existing = players[index];
     players[index] = {
@@ -204,12 +209,24 @@ for (const override of (manualOverrides.players || [])) {
       }
     };
     manualOverridesApplied++;
-  } else if (override.scope === "ORGANIZATION_ONLY") {
+  } else if (override.scope === "ORGANIZATION_ONLY" || !hasOverrideId) {
     // AHL players and signed prospects belong in organizationContracts, not the NHL roster.
     organizationOnlyOverrides++;
   } else {
     players.push(override);
     manualOverridesApplied++;
+  }
+}
+const organizationOnlyIds = new Set((manualOverrides.players || [])
+  .filter(p => p.scope === "ORGANIZATION_ONLY" && p.playerId != null && Number(p.playerId) > 0)
+  .map(p => Number(p.playerId)));
+const organizationOnlyNames = new Set((manualOverrides.players || [])
+  .filter(p => p.scope === "ORGANIZATION_ONLY" && p.name)
+  .map(p => norm(p.name)));
+for (let i = players.length - 1; i >= 0; i--) {
+  const p = players[i];
+  if ((p.playerId != null && organizationOnlyIds.has(Number(p.playerId))) || organizationOnlyNames.has(norm(p.name))) {
+    players.splice(i, 1);
   }
 }
 console.log("Manual verified NHL roster overrides: "+manualOverridesApplied+" applied; organization-only overrides reserved for the organization registry: "+organizationOnlyOverrides+".");
@@ -226,7 +243,10 @@ for (const override of (manualOverrides.players || [])) {
     minors_salary_usd: minors,
     one_way: oneWay
   });
-  const index = players.findIndex(p => Number(p.playerId) === Number(override.playerId));
+  const overrideId = Number(override.playerId);
+  const index = override.playerId != null && Number.isFinite(overrideId) && overrideId > 0
+    ? players.findIndex(p => p.playerId != null && Number(p.playerId) === overrideId)
+    : players.findIndex(p => norm(p.name) === norm(override.name));
   if (index >= 0) players[index] = { ...players[index], ...salaryFields };
 }
 
@@ -297,7 +317,9 @@ for (const registryPlayer of (registryData.players || [])) {
 }
 // Preserve explicit coverage for every registry player, including unsigned prospects and players whose public contract cannot be matched.
 
-const manualOverrideByPlayerId = new Map((manualOverrides.players || []).map(p => [Number(p.playerId), p]));
+const manualOverrideByPlayerId = new Map((manualOverrides.players || [])
+  .filter(p => p.playerId != null && Number(p.playerId) > 0)
+  .map(p => [Number(p.playerId), p]));
 const manualOverrideByName = new Map((manualOverrides.players || []).map(p => [norm(p.name), p]));
 let manualNhlOverridesApplied = 0;
 for (const nhlPlayer of players) {
@@ -371,20 +393,55 @@ for (const organizationPlayer of organizationContracts) {
 const coveredRegistryIds = new Set(organizationContracts.map(p => String(p.registryId)));
 const nhlRosterIds = new Set(players.map(p => String(p.playerId)));
 for (const rp of (registryData.players || [])) {
-  if (coveredRegistryIds.has(String(rp.id)) || (rp.nhlPlayerId != null && nhlRosterIds.has(String(rp.nhlPlayerId)))) continue;
-  organizationContracts.push({
-    playerId: rp.nhlPlayerId != null ? Number(rp.nhlPlayerId) : null,
-    registryId: rp.id, name: rp.name,
-    currentLeague: rp.currentLeague || null, currentTeam: rp.currentTeam || null,
-    nhlRightsTeam: rp.nhlRightsTeam || null,
-    ahlAffiliationTeam: rp.ahlAffiliationTeam || null,
-    affiliationSource: rp.affiliationSource || null,
-    affiliationSeason: rp.affiliationSeason || null,
-    affiliationStatus: rp.affiliationStatus || null,
-    contractStatus: rp.nhlPlayerId != null ? "NO_MATCHED_2026_27_CONTRACT" : (rp.currentLeague === "ECHL" ? "ECHL_CONTRACT_LEVEL_UNVERIFIED" : "NO_NHL_PLAYER_ID_SOURCE_UNAVAILABLE"),
-    contract: null, season: null, ...actualSalaryFields(rp.currentLeague, null, null), sourceDataset: "ehlersio/nhl-contracts", license: "CC0-1.0",
-    dataNote: "No verified 2026-27 contract matched. This is not proof that the player has no contract; verify against the player's league/team or official announcement."
-  });
+  if (coveredRegistryIds.has(String(rp.id))) continue;
+  const override = (rp.nhlPlayerId != null && Number(rp.nhlPlayerId) > 0
+    ? manualOverrideByPlayerId.get(Number(rp.nhlPlayerId)) : null) || manualOverrideByName.get(norm(rp.name));
+  if (rp.nhlPlayerId != null && nhlRosterIds.has(String(rp.nhlPlayerId)) && override?.scope !== "ORGANIZATION_ONLY") continue;
+  if (override?.scope === "ORGANIZATION_ONLY") {
+    const base = override.season?.baseSalaryUsd;
+    const minors = override.season?.minorsSalaryUsd;
+    const oneWay = override.season?.oneWay;
+    const salaryFields = actualSalaryFields(rp.currentLeague, {
+      nhl_salary_usd: base, minors_salary_usd: minors, one_way: oneWay
+    }, {
+      base_salary_usd: base, minors_salary_usd: minors, one_way: oneWay
+    });
+    organizationContracts.push({
+      playerId: rp.nhlPlayerId != null ? Number(rp.nhlPlayerId) : null,
+      registryId: rp.id, name: rp.name,
+      currentLeague: rp.currentLeague || null, currentTeam: rp.currentTeam || null,
+      nhlRightsTeam: override.teamCode || rp.nhlRightsTeam || null,
+      ahlAffiliationTeam: rp.ahlAffiliationTeam || null,
+      affiliationSource: rp.affiliationSource || null,
+      affiliationSeason: rp.affiliationSeason || null,
+      affiliationStatus: rp.affiliationStatus || null,
+      contractStatus: override.contractStatus || "MATCHED_MANUAL_SOURCE",
+      contract: override.contract || null,
+      season: {
+        ...(override.season || {}), seasonKey: "2026-2027",
+        capHitUsd: override.season?.capHitUsd ?? null,
+        capHitBasis: override.season?.capHitBasis ?? "verified_manual_override"
+      },
+      ...salaryFields,
+      sourceDataset: override.sourceDataset || "manual_verified_contract_override",
+      license: override.license || "source-linked",
+      dataNote: "Manual contract override linked to the organization registry; current-league salary is distinct from NHL base salary and cap hit."
+    });
+  } else {
+    organizationContracts.push({
+      playerId: rp.nhlPlayerId != null ? Number(rp.nhlPlayerId) : null,
+      registryId: rp.id, name: rp.name,
+      currentLeague: rp.currentLeague || null, currentTeam: rp.currentTeam || null,
+      nhlRightsTeam: rp.nhlRightsTeam || null,
+      ahlAffiliationTeam: rp.ahlAffiliationTeam || null,
+      affiliationSource: rp.affiliationSource || null,
+      affiliationSeason: rp.affiliationSeason || null,
+      affiliationStatus: rp.affiliationStatus || null,
+      contractStatus: rp.nhlPlayerId != null ? "NO_MATCHED_2026_27_CONTRACT" : (rp.currentLeague === "ECHL" ? "ECHL_CONTRACT_LEVEL_UNVERIFIED" : "NO_NHL_PLAYER_ID_SOURCE_UNAVAILABLE"),
+      contract: null, season: null, ...actualSalaryFields(rp.currentLeague, null, null), sourceDataset: "ehlersio/nhl-contracts", license: "CC0-1.0",
+      dataNote: "No verified 2026-27 contract matched. This is not proof that the player has no contract; verify against the player's league/team or official announcement."
+    });
+  }
 }
 // The game does not display AAV. Strip all AAV-derived fields from the published snapshot,
 // including manually reconciled overrides, while retaining base salary and cap hit.

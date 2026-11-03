@@ -13856,7 +13856,8 @@
         "baseSalaryUsd": 877500,
         "capHitUsd": 974167,
         "capHitBasis": "verified_puckpedia_cap_hit",
-        "baseSalaryBasis": "verified_puckpedia_base_salary"
+        "baseSalaryBasis": "verified_puckpedia_base_salary",
+        "minorsSalaryUsd": 85000
       },
       "salarySource": {
         "publisher": "PuckPedia",
@@ -13865,14 +13866,20 @@
         "field": "Base Salary"
       },
       "salaryVerificationStatus": "SOURCE_VERIFIED",
-      "sourceDataset": "manual_puckpedia_base_salary_override",
+      "sourceDataset": "manual_puckpedia_contract_override",
       "capHitSource": {
         "publisher": "PuckPedia",
         "url": "https://puckpedia.com/player/trevor-connelly",
         "season": "2026-2027",
         "field": "Cap Hit"
       },
-      "capHitVerificationStatus": "SOURCE_VERIFIED"
+      "capHitVerificationStatus": "SOURCE_VERIFIED",
+      "minorsSalarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/trevor-connelly",
+        "season": "2026-2027",
+        "field": "Minors Salary"
+      }
     },
     {
       "playerId": 8475343,
@@ -14336,7 +14343,8 @@
         "baseSalaryUsd": 850000,
         "capHitUsd": 850000,
         "capHitBasis": "verified_puckpedia_cap_hit",
-        "baseSalaryBasis": "verified_puckpedia_base_salary"
+        "baseSalaryBasis": "verified_puckpedia_base_salary",
+        "minorsSalaryUsd": 150000
       },
       "salarySource": {
         "publisher": "PuckPedia",
@@ -14352,7 +14360,13 @@
       },
       "salaryVerificationStatus": "SOURCE_VERIFIED",
       "capHitVerificationStatus": "SOURCE_VERIFIED",
-      "sourceDataset": "manual_puckpedia_base_salary_override"
+      "sourceDataset": "manual_puckpedia_contract_override",
+      "minorsSalarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/martin-chromiak",
+        "season": "2026-2027",
+        "field": "Minors Salary"
+      }
     },
     {
       "playerId": 8478550,
@@ -14444,7 +14458,8 @@
         "baseSalaryUsd": 850000,
         "capHitUsd": 850000,
         "capHitBasis": "verified_puckpedia_cap_hit",
-        "baseSalaryBasis": "verified_puckpedia_base_salary"
+        "baseSalaryBasis": "verified_puckpedia_base_salary",
+        "minorsSalaryUsd": 85000
       },
       "salarySource": {
         "publisher": "PuckPedia",
@@ -14460,7 +14475,13 @@
       },
       "salaryVerificationStatus": "SOURCE_VERIFIED",
       "capHitVerificationStatus": "SOURCE_VERIFIED",
-      "sourceDataset": "manual_puckpedia_base_salary_override"
+      "sourceDataset": "manual_puckpedia_contract_override",
+      "minorsSalarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/william-trudeau",
+        "season": "2026-2027",
+        "field": "Minors Salary"
+      }
     },
     {
       "playerId": 8482482,
@@ -14596,8 +14617,2082 @@
       "salaryVerificationStatus": "SOURCE_VERIFIED",
       "capHitVerificationStatus": "SOURCE_VERIFIED",
       "sourceDataset": "manual_puckpedia_base_salary_override"
+    },
+    {
+      "playerId": 0,
+      "name": "Abram Wiebe",
+      "teamCode": "CGY",
+      "season": {
+        "seasonKey": "2026-2027",
+        "baseSalaryUsd": 855000,
+        "minorsSalaryUsd": 82500,
+        "capHitUsd": 950000,
+        "capHitBasis": "verified_puckpedia_cap_hit",
+        "baseSalaryBasis": "verified_puckpedia_base_salary"
+      },
+      "salarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/abram-wiebe",
+        "season": "2026-2027",
+        "field": "Base Salary"
+      },
+      "minorsSalarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/abram-wiebe",
+        "season": "2026-2027",
+        "field": "Minors Salary"
+      },
+      "capHitSource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/abram-wiebe",
+        "season": "2026-2027",
+        "field": "Cap Hit"
+      },
+      "salaryVerificationStatus": "SOURCE_VERIFIED",
+      "capHitVerificationStatus": "SOURCE_VERIFIED",
+      "sourceDataset": "manual_puckpedia_contract_override"
+    },
+    {
+      "playerId": 8484854,
+      "name": "Alfons Freij",
+      "teamCode": "WPG",
+      "season": {
+        "seasonKey": "2026-2027",
+        "baseSalaryUsd": 850000,
+        "minorsSalaryUsd": 85000,
+        "capHitUsd": 965000,
+        "capHitBasis": "verified_puckpedia_cap_hit",
+        "baseSalaryBasis": "verified_puckpedia_base_salary"
+      },
+      "salarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/alfons-freij",
+        "season": "2026-2027",
+        "field": "Base Salary"
+      },
+      "minorsSalarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/alfons-freij",
+        "season": "2026-2027",
+        "field": "Minors Salary"
+      },
+      "capHitSource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/alfons-freij",
+        "season": "2026-2027",
+        "field": "Cap Hit"
+      },
+      "salaryVerificationStatus": "SOURCE_VERIFIED",
+      "capHitVerificationStatus": "SOURCE_VERIFIED",
+      "sourceDataset": "manual_puckpedia_contract_override"
+    },
+    {
+      "playerId": 0,
+      "name": "Anri Ravinskis",
+      "teamCode": "VAN",
+      "season": {
+        "seasonKey": "2026-2027",
+        "baseSalaryUsd": 850000,
+        "minorsSalaryUsd": 85000,
+        "capHitUsd": 947500,
+        "capHitBasis": "verified_puckpedia_cap_hit",
+        "baseSalaryBasis": "verified_puckpedia_base_salary"
+      },
+      "salarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/anri-ravinskis",
+        "season": "2026-2027",
+        "field": "Base Salary"
+      },
+      "minorsSalarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/anri-ravinskis",
+        "season": "2026-2027",
+        "field": "Minors Salary"
+      },
+      "capHitSource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/anri-ravinskis",
+        "season": "2026-2027",
+        "field": "Cap Hit"
+      },
+      "salaryVerificationStatus": "SOURCE_VERIFIED",
+      "capHitVerificationStatus": "SOURCE_VERIFIED",
+      "sourceDataset": "manual_puckpedia_contract_override"
+    },
+    {
+      "playerId": 8482993,
+      "name": "Avery Hayes",
+      "teamCode": "",
+      "season": {
+        "seasonKey": "2026-2027",
+        "baseSalaryUsd": 850000,
+        "minorsSalaryUsd": 85000,
+        "capHitUsd": 905000,
+        "capHitBasis": "verified_puckpedia_cap_hit",
+        "baseSalaryBasis": "verified_puckpedia_base_salary"
+      },
+      "salarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/avery-hayes",
+        "season": "2026-2027",
+        "field": "Base Salary"
+      },
+      "minorsSalarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/avery-hayes",
+        "season": "2026-2027",
+        "field": "Minors Salary"
+      },
+      "capHitSource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/avery-hayes",
+        "season": "2026-2027",
+        "field": "Cap Hit"
+      },
+      "salaryVerificationStatus": "SOURCE_VERIFIED",
+      "capHitVerificationStatus": "SOURCE_VERIFIED",
+      "sourceDataset": "manual_puckpedia_contract_override"
+    },
+    {
+      "playerId": 0,
+      "name": "Ben Danford",
+      "teamCode": "TOR",
+      "season": {
+        "seasonKey": "2026-2027",
+        "baseSalaryUsd": 862000,
+        "minorsSalaryUsd": 85000,
+        "capHitUsd": 936056,
+        "capHitBasis": "verified_puckpedia_cap_hit",
+        "baseSalaryBasis": "verified_puckpedia_base_salary"
+      },
+      "salarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/ben-danford",
+        "season": "2026-2027",
+        "field": "Base Salary"
+      },
+      "minorsSalarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/ben-danford",
+        "season": "2026-2027",
+        "field": "Minors Salary"
+      },
+      "capHitSource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/ben-danford",
+        "season": "2026-2027",
+        "field": "Cap Hit"
+      },
+      "salaryVerificationStatus": "SOURCE_VERIFIED",
+      "capHitVerificationStatus": "SOURCE_VERIFIED",
+      "sourceDataset": "manual_puckpedia_contract_override"
+    },
+    {
+      "playerId": 0,
+      "name": "Blake Smith",
+      "teamCode": "TOR",
+      "season": {
+        "seasonKey": "2026-2027",
+        "baseSalaryUsd": 850000,
+        "minorsSalaryUsd": 85000,
+        "capHitUsd": 962500,
+        "capHitBasis": "verified_puckpedia_cap_hit",
+        "baseSalaryBasis": "verified_puckpedia_base_salary"
+      },
+      "salarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/blake-smith",
+        "season": "2026-2027",
+        "field": "Base Salary"
+      },
+      "minorsSalarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/blake-smith",
+        "season": "2026-2027",
+        "field": "Minors Salary"
+      },
+      "capHitSource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/blake-smith",
+        "season": "2026-2027",
+        "field": "Cap Hit"
+      },
+      "salaryVerificationStatus": "SOURCE_VERIFIED",
+      "capHitVerificationStatus": "SOURCE_VERIFIED",
+      "sourceDataset": "manual_puckpedia_contract_override"
+    },
+    {
+      "playerId": 0,
+      "name": "Brady Martin",
+      "teamCode": "NSH",
+      "season": {
+        "seasonKey": "2026-2027",
+        "baseSalaryUsd": 877500,
+        "minorsSalaryUsd": 85000,
+        "capHitUsd": 974167,
+        "capHitBasis": "verified_puckpedia_cap_hit",
+        "baseSalaryBasis": "verified_puckpedia_base_salary"
+      },
+      "salarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/brady-martin",
+        "season": "2026-2027",
+        "field": "Base Salary"
+      },
+      "minorsSalarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/brady-martin",
+        "season": "2026-2027",
+        "field": "Minors Salary"
+      },
+      "capHitSource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/brady-martin",
+        "season": "2026-2027",
+        "field": "Cap Hit"
+      },
+      "salaryVerificationStatus": "SOURCE_VERIFIED",
+      "capHitVerificationStatus": "SOURCE_VERIFIED",
+      "sourceDataset": "manual_puckpedia_contract_override"
+    },
+    {
+      "playerId": 8484242,
+      "name": "Brayden Yager",
+      "teamCode": "WPG",
+      "season": {
+        "seasonKey": "2026-2027",
+        "baseSalaryUsd": 855000,
+        "minorsSalaryUsd": 82500,
+        "capHitUsd": 940833,
+        "capHitBasis": "verified_puckpedia_cap_hit",
+        "baseSalaryBasis": "verified_puckpedia_base_salary"
+      },
+      "salarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/brayden-yager",
+        "season": "2026-2027",
+        "field": "Base Salary"
+      },
+      "minorsSalarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/brayden-yager",
+        "season": "2026-2027",
+        "field": "Minors Salary"
+      },
+      "capHitSource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/brayden-yager",
+        "season": "2026-2027",
+        "field": "Cap Hit"
+      },
+      "salaryVerificationStatus": "SOURCE_VERIFIED",
+      "capHitVerificationStatus": "SOURCE_VERIFIED",
+      "sourceDataset": "manual_puckpedia_contract_override"
+    },
+    {
+      "playerId": 8484405,
+      "name": "Cam Squires",
+      "teamCode": "NJD",
+      "season": {
+        "seasonKey": "2026-2027",
+        "baseSalaryUsd": 850000,
+        "minorsSalaryUsd": 82500,
+        "capHitUsd": 938333,
+        "capHitBasis": "verified_puckpedia_cap_hit",
+        "baseSalaryBasis": "verified_puckpedia_base_salary"
+      },
+      "salarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/cam-squires",
+        "season": "2026-2027",
+        "field": "Base Salary"
+      },
+      "minorsSalarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/cam-squires",
+        "season": "2026-2027",
+        "field": "Minors Salary"
+      },
+      "capHitSource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/cam-squires",
+        "season": "2026-2027",
+        "field": "Cap Hit"
+      },
+      "salaryVerificationStatus": "SOURCE_VERIFIED",
+      "capHitVerificationStatus": "SOURCE_VERIFIED",
+      "sourceDataset": "manual_puckpedia_contract_override"
+    },
+    {
+      "playerId": 0,
+      "name": "Carter George",
+      "teamCode": "LAK",
+      "season": {
+        "seasonKey": "2026-2027",
+        "baseSalaryUsd": 850000,
+        "minorsSalaryUsd": 85000,
+        "capHitUsd": 929166,
+        "capHitBasis": "verified_puckpedia_cap_hit",
+        "baseSalaryBasis": "verified_puckpedia_base_salary"
+      },
+      "salarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/carter-george",
+        "season": "2026-2027",
+        "field": "Base Salary"
+      },
+      "minorsSalarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/carter-george",
+        "season": "2026-2027",
+        "field": "Minors Salary"
+      },
+      "capHitSource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/carter-george",
+        "season": "2026-2027",
+        "field": "Cap Hit"
+      },
+      "salaryVerificationStatus": "SOURCE_VERIFIED",
+      "capHitVerificationStatus": "SOURCE_VERIFIED",
+      "sourceDataset": "manual_puckpedia_contract_override"
+    },
+    {
+      "playerId": 0,
+      "name": "Charlie Elick",
+      "teamCode": "CBJ",
+      "season": {
+        "seasonKey": "2026-2027",
+        "baseSalaryUsd": 850000,
+        "minorsSalaryUsd": 85000,
+        "capHitUsd": 965000,
+        "capHitBasis": "verified_puckpedia_cap_hit",
+        "baseSalaryBasis": "verified_puckpedia_base_salary"
+      },
+      "salarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/charlie-elick",
+        "season": "2026-2027",
+        "field": "Base Salary"
+      },
+      "minorsSalarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/charlie-elick",
+        "season": "2026-2027",
+        "field": "Minors Salary"
+      },
+      "capHitSource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/charlie-elick",
+        "season": "2026-2027",
+        "field": "Cap Hit"
+      },
+      "salaryVerificationStatus": "SOURCE_VERIFIED",
+      "capHitVerificationStatus": "SOURCE_VERIFIED",
+      "sourceDataset": "manual_puckpedia_contract_override"
+    },
+    {
+      "playerId": 8485019,
+      "name": "Chase Pietila",
+      "teamCode": "PIT",
+      "season": {
+        "seasonKey": "2026-2027",
+        "baseSalaryUsd": 850000,
+        "minorsSalaryUsd": 85000,
+        "capHitUsd": 960000,
+        "capHitBasis": "verified_puckpedia_cap_hit",
+        "baseSalaryBasis": "verified_puckpedia_base_salary"
+      },
+      "salarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/chase-pietila",
+        "season": "2026-2027",
+        "field": "Base Salary"
+      },
+      "minorsSalarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/chase-pietila",
+        "season": "2026-2027",
+        "field": "Minors Salary"
+      },
+      "capHitSource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/chase-pietila",
+        "season": "2026-2027",
+        "field": "Cap Hit"
+      },
+      "salaryVerificationStatus": "SOURCE_VERIFIED",
+      "capHitVerificationStatus": "SOURCE_VERIFIED",
+      "sourceDataset": "manual_puckpedia_contract_override"
+    },
+    {
+      "playerId": 0,
+      "name": "Cole Eiserman",
+      "teamCode": "NYI",
+      "season": {
+        "seasonKey": "2026-2027",
+        "baseSalaryUsd": 922500,
+        "minorsSalaryUsd": 85000,
+        "capHitUsd": 1075000,
+        "capHitBasis": "verified_puckpedia_cap_hit",
+        "baseSalaryBasis": "verified_puckpedia_base_salary"
+      },
+      "salarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/cole-eiserman",
+        "season": "2026-2027",
+        "field": "Base Salary"
+      },
+      "minorsSalarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/cole-eiserman",
+        "season": "2026-2027",
+        "field": "Minors Salary"
+      },
+      "capHitSource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/cole-eiserman",
+        "season": "2026-2027",
+        "field": "Cap Hit"
+      },
+      "salaryVerificationStatus": "SOURCE_VERIFIED",
+      "capHitVerificationStatus": "SOURCE_VERIFIED",
+      "sourceDataset": "manual_puckpedia_contract_override"
+    },
+    {
+      "playerId": 0,
+      "name": "Connor Clattenburg",
+      "teamCode": "EDM",
+      "season": {
+        "seasonKey": "2026-2027",
+        "baseSalaryUsd": 850000,
+        "minorsSalaryUsd": 82500,
+        "capHitUsd": 928333,
+        "capHitBasis": "verified_puckpedia_cap_hit",
+        "baseSalaryBasis": "verified_puckpedia_base_salary"
+      },
+      "salarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/connor-clattenburg",
+        "season": "2026-2027",
+        "field": "Base Salary"
+      },
+      "minorsSalarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/connor-clattenburg",
+        "season": "2026-2027",
+        "field": "Minors Salary"
+      },
+      "capHitSource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/connor-clattenburg",
+        "season": "2026-2027",
+        "field": "Cap Hit"
+      },
+      "salaryVerificationStatus": "SOURCE_VERIFIED",
+      "capHitVerificationStatus": "SOURCE_VERIFIED",
+      "sourceDataset": "manual_puckpedia_contract_override"
+    },
+    {
+      "playerId": 8482074,
+      "name": "Connor Zary",
+      "teamCode": "",
+      "season": {
+        "seasonKey": "2026-2027",
+        "baseSalaryUsd": 3775000,
+        "minorsSalaryUsd": 3775000,
+        "capHitUsd": 3775000,
+        "capHitBasis": "verified_puckpedia_cap_hit",
+        "baseSalaryBasis": "verified_puckpedia_base_salary"
+      },
+      "salarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/connor-zary",
+        "season": "2026-2027",
+        "field": "Base Salary"
+      },
+      "minorsSalarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/connor-zary",
+        "season": "2026-2027",
+        "field": "Minors Salary"
+      },
+      "capHitSource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/connor-zary",
+        "season": "2026-2027",
+        "field": "Cap Hit"
+      },
+      "salaryVerificationStatus": "SOURCE_VERIFIED",
+      "capHitVerificationStatus": "SOURCE_VERIFIED",
+      "sourceDataset": "manual_puckpedia_contract_override"
+    },
+    {
+      "playerId": 0,
+      "name": "Daniil But",
+      "teamCode": "UTA",
+      "season": {
+        "seasonKey": "2026-2027",
+        "baseSalaryUsd": 855000,
+        "minorsSalaryUsd": 82500,
+        "capHitUsd": 972500,
+        "capHitBasis": "verified_puckpedia_cap_hit",
+        "baseSalaryBasis": "verified_puckpedia_base_salary"
+      },
+      "salarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/daniil-but",
+        "season": "2026-2027",
+        "field": "Base Salary"
+      },
+      "minorsSalarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/daniil-but",
+        "season": "2026-2027",
+        "field": "Minors Salary"
+      },
+      "capHitSource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/daniil-but",
+        "season": "2026-2027",
+        "field": "Cap Hit"
+      },
+      "salaryVerificationStatus": "SOURCE_VERIFIED",
+      "capHitVerificationStatus": "SOURCE_VERIFIED",
+      "sourceDataset": "manual_puckpedia_contract_override"
+    },
+    {
+      "playerId": 0,
+      "name": "David Edstrom",
+      "teamCode": "NSH",
+      "season": {
+        "seasonKey": "2026-2027",
+        "baseSalaryUsd": 855000,
+        "minorsSalaryUsd": 82500,
+        "capHitUsd": 909166,
+        "capHitBasis": "verified_puckpedia_cap_hit",
+        "baseSalaryBasis": "verified_puckpedia_base_salary"
+      },
+      "salarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/david-edstrom",
+        "season": "2026-2027",
+        "field": "Base Salary"
+      },
+      "minorsSalarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/david-edstrom",
+        "season": "2026-2027",
+        "field": "Minors Salary"
+      },
+      "capHitSource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/david-edstrom",
+        "season": "2026-2027",
+        "field": "Cap Hit"
+      },
+      "salaryVerificationStatus": "SOURCE_VERIFIED",
+      "capHitVerificationStatus": "SOURCE_VERIFIED",
+      "sourceDataset": "manual_puckpedia_contract_override"
+    },
+    {
+      "playerId": 0,
+      "name": "Devin Kaplan",
+      "teamCode": "PHI",
+      "season": {
+        "seasonKey": "2026-2027",
+        "baseSalaryUsd": 850000,
+        "minorsSalaryUsd": 82500,
+        "capHitUsd": 946667,
+        "capHitBasis": "verified_puckpedia_cap_hit",
+        "baseSalaryBasis": "verified_puckpedia_base_salary"
+      },
+      "salarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/devin-kaplan",
+        "season": "2026-2027",
+        "field": "Base Salary"
+      },
+      "minorsSalarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/devin-kaplan",
+        "season": "2026-2027",
+        "field": "Minors Salary"
+      },
+      "capHitSource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/devin-kaplan",
+        "season": "2026-2027",
+        "field": "Cap Hit"
+      },
+      "salaryVerificationStatus": "SOURCE_VERIFIED",
+      "capHitVerificationStatus": "SOURCE_VERIFIED",
+      "sourceDataset": "manual_puckpedia_contract_override"
+    },
+    {
+      "playerId": 0,
+      "name": "Eddie Genborg",
+      "teamCode": "DET",
+      "season": {
+        "seasonKey": "2026-2027",
+        "baseSalaryUsd": 850000,
+        "minorsSalaryUsd": 85000,
+        "capHitUsd": 997500,
+        "capHitBasis": "verified_puckpedia_cap_hit",
+        "baseSalaryBasis": "verified_puckpedia_base_salary"
+      },
+      "salarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/eddie-genborg",
+        "season": "2026-2027",
+        "field": "Base Salary"
+      },
+      "minorsSalarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/eddie-genborg",
+        "season": "2026-2027",
+        "field": "Minors Salary"
+      },
+      "capHitSource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/eddie-genborg",
+        "season": "2026-2027",
+        "field": "Cap Hit"
+      },
+      "salaryVerificationStatus": "SOURCE_VERIFIED",
+      "capHitVerificationStatus": "SOURCE_VERIFIED",
+      "sourceDataset": "manual_puckpedia_contract_override"
+    },
+    {
+      "playerId": 8484796,
+      "name": "Emil Hemming",
+      "teamCode": "DAL",
+      "season": {
+        "seasonKey": "2026-2027",
+        "baseSalaryUsd": 877500,
+        "minorsSalaryUsd": 85000,
+        "capHitUsd": 941667,
+        "capHitBasis": "verified_puckpedia_cap_hit",
+        "baseSalaryBasis": "verified_puckpedia_base_salary"
+      },
+      "salarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/emil-hemming",
+        "season": "2026-2027",
+        "field": "Base Salary"
+      },
+      "minorsSalarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/emil-hemming",
+        "season": "2026-2027",
+        "field": "Minors Salary"
+      },
+      "capHitSource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/emil-hemming",
+        "season": "2026-2027",
+        "field": "Cap Hit"
+      },
+      "salaryVerificationStatus": "SOURCE_VERIFIED",
+      "capHitVerificationStatus": "SOURCE_VERIFIED",
+      "sourceDataset": "manual_puckpedia_contract_override"
+    },
+    {
+      "playerId": 8484775,
+      "name": "Eriks Mateiko",
+      "teamCode": "WSH",
+      "season": {
+        "seasonKey": "2026-2027",
+        "baseSalaryUsd": 850000,
+        "minorsSalaryUsd": 85000,
+        "capHitUsd": 932500,
+        "capHitBasis": "verified_puckpedia_cap_hit",
+        "baseSalaryBasis": "verified_puckpedia_base_salary"
+      },
+      "salarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/eriks-mateiko",
+        "season": "2026-2027",
+        "field": "Base Salary"
+      },
+      "minorsSalarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/eriks-mateiko",
+        "season": "2026-2027",
+        "field": "Minors Salary"
+      },
+      "capHitSource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/eriks-mateiko",
+        "season": "2026-2027",
+        "field": "Cap Hit"
+      },
+      "salaryVerificationStatus": "SOURCE_VERIFIED",
+      "capHitVerificationStatus": "SOURCE_VERIFIED",
+      "sourceDataset": "manual_puckpedia_contract_override"
+    },
+    {
+      "playerId": 8484198,
+      "name": "Etienne Morin",
+      "teamCode": "NJD",
+      "season": {
+        "seasonKey": "2026-2027",
+        "baseSalaryUsd": 850000,
+        "minorsSalaryUsd": 82500,
+        "capHitUsd": 934166,
+        "capHitBasis": "verified_puckpedia_cap_hit",
+        "baseSalaryBasis": "verified_puckpedia_base_salary"
+      },
+      "salarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/etienne-morin",
+        "season": "2026-2027",
+        "field": "Base Salary"
+      },
+      "minorsSalarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/etienne-morin",
+        "season": "2026-2027",
+        "field": "Minors Salary"
+      },
+      "capHitSource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/etienne-morin",
+        "season": "2026-2027",
+        "field": "Cap Hit"
+      },
+      "salaryVerificationStatus": "SOURCE_VERIFIED",
+      "capHitVerificationStatus": "SOURCE_VERIFIED",
+      "sourceDataset": "manual_puckpedia_contract_override"
+    },
+    {
+      "playerId": 8484206,
+      "name": "Felix Nilsson",
+      "teamCode": "NSH",
+      "season": {
+        "seasonKey": "2026-2027",
+        "baseSalaryUsd": 850000,
+        "minorsSalaryUsd": 82500,
+        "capHitUsd": 1028333,
+        "capHitBasis": "verified_puckpedia_cap_hit",
+        "baseSalaryBasis": "verified_puckpedia_base_salary"
+      },
+      "salarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/felix-nilsson",
+        "season": "2026-2027",
+        "field": "Base Salary"
+      },
+      "minorsSalarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/felix-nilsson",
+        "season": "2026-2027",
+        "field": "Minors Salary"
+      },
+      "capHitSource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/felix-nilsson",
+        "season": "2026-2027",
+        "field": "Cap Hit"
+      },
+      "salaryVerificationStatus": "SOURCE_VERIFIED",
+      "capHitVerificationStatus": "SOURCE_VERIFIED",
+      "sourceDataset": "manual_puckpedia_contract_override"
+    },
+    {
+      "playerId": 8484392,
+      "name": "Felix Unger Sorum",
+      "teamCode": "CAR",
+      "season": {
+        "seasonKey": "2026-2027",
+        "baseSalaryUsd": 850000,
+        "minorsSalaryUsd": 82500,
+        "capHitUsd": 903334,
+        "capHitBasis": "verified_puckpedia_cap_hit",
+        "baseSalaryBasis": "verified_puckpedia_base_salary"
+      },
+      "salarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/felix-unger-sorum",
+        "season": "2026-2027",
+        "field": "Base Salary"
+      },
+      "minorsSalarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/felix-unger-sorum",
+        "season": "2026-2027",
+        "field": "Minors Salary"
+      },
+      "capHitSource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/felix-unger-sorum",
+        "season": "2026-2027",
+        "field": "Cap Hit"
+      },
+      "salaryVerificationStatus": "SOURCE_VERIFIED",
+      "capHitVerificationStatus": "SOURCE_VERIFIED",
+      "sourceDataset": "manual_puckpedia_contract_override"
+    },
+    {
+      "playerId": 8484525,
+      "name": "Finn Harding",
+      "teamCode": "PIT",
+      "season": {
+        "seasonKey": "2026-2027",
+        "baseSalaryUsd": 850000,
+        "minorsSalaryUsd": 85000,
+        "capHitUsd": 955000,
+        "capHitBasis": "verified_puckpedia_cap_hit",
+        "baseSalaryBasis": "verified_puckpedia_base_salary"
+      },
+      "salarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/finn-harding",
+        "season": "2026-2027",
+        "field": "Base Salary"
+      },
+      "minorsSalarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/finn-harding",
+        "season": "2026-2027",
+        "field": "Minors Salary"
+      },
+      "capHitSource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/finn-harding",
+        "season": "2026-2027",
+        "field": "Cap Hit"
+      },
+      "salaryVerificationStatus": "SOURCE_VERIFIED",
+      "capHitVerificationStatus": "SOURCE_VERIFIED",
+      "sourceDataset": "manual_puckpedia_contract_override"
+    },
+    {
+      "playerId": 0,
+      "name": "Gabe Smith",
+      "teamCode": "UTA",
+      "season": {
+        "seasonKey": "2026-2027",
+        "baseSalaryUsd": 850000,
+        "minorsSalaryUsd": 85000,
+        "capHitUsd": 962778,
+        "capHitBasis": "verified_puckpedia_cap_hit",
+        "baseSalaryBasis": "verified_puckpedia_base_salary"
+      },
+      "salarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/gabe-smith",
+        "season": "2026-2027",
+        "field": "Base Salary"
+      },
+      "minorsSalarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/gabe-smith",
+        "season": "2026-2027",
+        "field": "Minors Salary"
+      },
+      "capHitSource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/gabe-smith",
+        "season": "2026-2027",
+        "field": "Cap Hit"
+      },
+      "salaryVerificationStatus": "SOURCE_VERIFIED",
+      "capHitVerificationStatus": "SOURCE_VERIFIED",
+      "sourceDataset": "manual_puckpedia_contract_override"
+    },
+    {
+      "playerId": 0,
+      "name": "Ilya Nabokov",
+      "teamCode": "COL",
+      "season": {
+        "seasonKey": "2026-2027",
+        "baseSalaryUsd": 877500,
+        "minorsSalaryUsd": 85000,
+        "capHitUsd": 975000,
+        "capHitBasis": "verified_puckpedia_cap_hit",
+        "baseSalaryBasis": "verified_puckpedia_base_salary"
+      },
+      "salarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/ilya-nabokov",
+        "season": "2026-2027",
+        "field": "Base Salary"
+      },
+      "minorsSalarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/ilya-nabokov",
+        "season": "2026-2027",
+        "field": "Minors Salary"
+      },
+      "capHitSource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/ilya-nabokov",
+        "season": "2026-2027",
+        "field": "Cap Hit"
+      },
+      "salaryVerificationStatus": "SOURCE_VERIFIED",
+      "capHitVerificationStatus": "SOURCE_VERIFIED",
+      "sourceDataset": "manual_puckpedia_contract_override"
+    },
+    {
+      "playerId": 8483433,
+      "name": "Jack Devine",
+      "teamCode": "FLA",
+      "season": {
+        "seasonKey": "2026-2027",
+        "baseSalaryUsd": 855000,
+        "minorsSalaryUsd": 82500,
+        "capHitUsd": 972500,
+        "capHitBasis": "verified_puckpedia_cap_hit",
+        "baseSalaryBasis": "verified_puckpedia_base_salary"
+      },
+      "salarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/jack-devine",
+        "season": "2026-2027",
+        "field": "Base Salary"
+      },
+      "minorsSalarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/jack-devine",
+        "season": "2026-2027",
+        "field": "Minors Salary"
+      },
+      "capHitSource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/jack-devine",
+        "season": "2026-2027",
+        "field": "Cap Hit"
+      },
+      "salaryVerificationStatus": "SOURCE_VERIFIED",
+      "capHitVerificationStatus": "SOURCE_VERIFIED",
+      "sourceDataset": "manual_puckpedia_contract_override"
+    },
+    {
+      "playerId": 8482090,
+      "name": "Jack Finley",
+      "teamCode": "STL",
+      "season": {
+        "seasonKey": "2026-2027",
+        "baseSalaryUsd": 850000,
+        "minorsSalaryUsd": 850000,
+        "capHitUsd": 875000,
+        "capHitBasis": "verified_puckpedia_cap_hit",
+        "baseSalaryBasis": "verified_puckpedia_base_salary"
+      },
+      "salarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/jack-finley",
+        "season": "2026-2027",
+        "field": "Base Salary"
+      },
+      "minorsSalarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/jack-finley",
+        "season": "2026-2027",
+        "field": "Minors Salary"
+      },
+      "capHitSource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/jack-finley",
+        "season": "2026-2027",
+        "field": "Cap Hit"
+      },
+      "salaryVerificationStatus": "SOURCE_VERIFIED",
+      "capHitVerificationStatus": "SOURCE_VERIFIED",
+      "sourceDataset": "manual_puckpedia_contract_override"
+    },
+    {
+      "playerId": 8483750,
+      "name": "Jackson Dorrington",
+      "teamCode": "NYR",
+      "season": {
+        "seasonKey": "2026-2027",
+        "baseSalaryUsd": 850000,
+        "minorsSalaryUsd": 80000,
+        "capHitUsd": 951667,
+        "capHitBasis": "verified_puckpedia_cap_hit",
+        "baseSalaryBasis": "verified_puckpedia_base_salary"
+      },
+      "salarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/jackson-dorrington",
+        "season": "2026-2027",
+        "field": "Base Salary"
+      },
+      "minorsSalarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/jackson-dorrington",
+        "season": "2026-2027",
+        "field": "Minors Salary"
+      },
+      "capHitSource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/jackson-dorrington",
+        "season": "2026-2027",
+        "field": "Cap Hit"
+      },
+      "salaryVerificationStatus": "SOURCE_VERIFIED",
+      "capHitVerificationStatus": "SOURCE_VERIFIED",
+      "sourceDataset": "manual_puckpedia_contract_override"
+    },
+    {
+      "playerId": 8485142,
+      "name": "Jackson Parsons",
+      "teamCode": "",
+      "season": {
+        "seasonKey": "2026-2027",
+        "baseSalaryUsd": 850000,
+        "minorsSalaryUsd": 85000,
+        "capHitUsd": 929167,
+        "capHitBasis": "verified_puckpedia_cap_hit",
+        "baseSalaryBasis": "verified_puckpedia_base_salary"
+      },
+      "salarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/jackson-parsons",
+        "season": "2026-2027",
+        "field": "Base Salary"
+      },
+      "minorsSalarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/jackson-parsons",
+        "season": "2026-2027",
+        "field": "Minors Salary"
+      },
+      "capHitSource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/jackson-parsons",
+        "season": "2026-2027",
+        "field": "Cap Hit"
+      },
+      "salaryVerificationStatus": "SOURCE_VERIFIED",
+      "capHitVerificationStatus": "SOURCE_VERIFIED",
+      "sourceDataset": "manual_puckpedia_contract_override"
+    },
+    {
+      "playerId": 8484785,
+      "name": "Jacob Battaglia",
+      "teamCode": "NYR",
+      "season": {
+        "seasonKey": "2026-2027",
+        "baseSalaryUsd": 850000,
+        "minorsSalaryUsd": 85000,
+        "capHitUsd": 965000,
+        "capHitBasis": "verified_puckpedia_cap_hit",
+        "baseSalaryBasis": "verified_puckpedia_base_salary"
+      },
+      "salarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/jacob-battaglia",
+        "season": "2026-2027",
+        "field": "Base Salary"
+      },
+      "minorsSalarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/jacob-battaglia",
+        "season": "2026-2027",
+        "field": "Minors Salary"
+      },
+      "capHitSource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/jacob-battaglia",
+        "season": "2026-2027",
+        "field": "Cap Hit"
+      },
+      "salaryVerificationStatus": "SOURCE_VERIFIED",
+      "capHitVerificationStatus": "SOURCE_VERIFIED",
+      "sourceDataset": "manual_puckpedia_contract_override"
+    },
+    {
+      "playerId": 8484430,
+      "name": "Jacob Julien",
+      "teamCode": "WPG",
+      "season": {
+        "seasonKey": "2026-2027",
+        "baseSalaryUsd": 850000,
+        "minorsSalaryUsd": 85000,
+        "capHitUsd": 957500,
+        "capHitBasis": "verified_puckpedia_cap_hit",
+        "baseSalaryBasis": "verified_puckpedia_base_salary"
+      },
+      "salarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/jacob-julien",
+        "season": "2026-2027",
+        "field": "Base Salary"
+      },
+      "minorsSalarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/jacob-julien",
+        "season": "2026-2027",
+        "field": "Minors Salary"
+      },
+      "capHitSource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/jacob-julien",
+        "season": "2026-2027",
+        "field": "Cap Hit"
+      },
+      "salaryVerificationStatus": "SOURCE_VERIFIED",
+      "capHitVerificationStatus": "SOURCE_VERIFIED",
+      "sourceDataset": "manual_puckpedia_contract_override"
+    },
+    {
+      "playerId": 0,
+      "name": "Jakub Dvorak",
+      "teamCode": "LAK",
+      "season": {
+        "seasonKey": "2026-2027",
+        "baseSalaryUsd": 850000,
+        "minorsSalaryUsd": 82500,
+        "capHitUsd": 905000,
+        "capHitBasis": "verified_puckpedia_cap_hit",
+        "baseSalaryBasis": "verified_puckpedia_base_salary"
+      },
+      "salarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/jakub-dvorak",
+        "season": "2026-2027",
+        "field": "Base Salary"
+      },
+      "minorsSalarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/jakub-dvorak",
+        "season": "2026-2027",
+        "field": "Minors Salary"
+      },
+      "capHitSource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/jakub-dvorak",
+        "season": "2026-2027",
+        "field": "Cap Hit"
+      },
+      "salaryVerificationStatus": "SOURCE_VERIFIED",
+      "capHitVerificationStatus": "SOURCE_VERIFIED",
+      "sourceDataset": "manual_puckpedia_contract_override"
+    },
+    {
+      "playerId": 0,
+      "name": "Jared Woolley",
+      "teamCode": "LAK",
+      "season": {
+        "seasonKey": "2026-2027",
+        "baseSalaryUsd": 850000,
+        "minorsSalaryUsd": 85000,
+        "capHitUsd": 958333,
+        "capHitBasis": "verified_puckpedia_cap_hit",
+        "baseSalaryBasis": "verified_puckpedia_base_salary"
+      },
+      "salarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/jared-woolley",
+        "season": "2026-2027",
+        "field": "Base Salary"
+      },
+      "minorsSalarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/jared-woolley",
+        "season": "2026-2027",
+        "field": "Minors Salary"
+      },
+      "capHitSource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/jared-woolley",
+        "season": "2026-2027",
+        "field": "Cap Hit"
+      },
+      "salaryVerificationStatus": "SOURCE_VERIFIED",
+      "capHitVerificationStatus": "SOURCE_VERIFIED",
+      "sourceDataset": "manual_puckpedia_contract_override"
+    },
+    {
+      "playerId": 0,
+      "name": "Jesse Kiiskinen",
+      "teamCode": "DET",
+      "season": {
+        "seasonKey": "2026-2027",
+        "baseSalaryUsd": 855000,
+        "minorsSalaryUsd": 82500,
+        "capHitUsd": 945833,
+        "capHitBasis": "verified_puckpedia_cap_hit",
+        "baseSalaryBasis": "verified_puckpedia_base_salary"
+      },
+      "salarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/jesse-kiiskinen",
+        "season": "2026-2027",
+        "field": "Base Salary"
+      },
+      "minorsSalarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/jesse-kiiskinen",
+        "season": "2026-2027",
+        "field": "Minors Salary"
+      },
+      "capHitSource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/jesse-kiiskinen",
+        "season": "2026-2027",
+        "field": "Cap Hit"
+      },
+      "salaryVerificationStatus": "SOURCE_VERIFIED",
+      "capHitVerificationStatus": "SOURCE_VERIFIED",
+      "sourceDataset": "manual_puckpedia_contract_override"
+    },
+    {
+      "playerId": 8482785,
+      "name": "Justin Robidas",
+      "teamCode": "",
+      "season": {
+        "seasonKey": "2026-2027",
+        "baseSalaryUsd": 850000,
+        "minorsSalaryUsd": 100000,
+        "capHitUsd": 950000,
+        "capHitBasis": "verified_puckpedia_cap_hit",
+        "baseSalaryBasis": "verified_puckpedia_base_salary"
+      },
+      "salarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/justin-robidas",
+        "season": "2026-2027",
+        "field": "Base Salary"
+      },
+      "minorsSalarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/justin-robidas",
+        "season": "2026-2027",
+        "field": "Minors Salary"
+      },
+      "capHitSource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/justin-robidas",
+        "season": "2026-2027",
+        "field": "Cap Hit"
+      },
+      "salaryVerificationStatus": "SOURCE_VERIFIED",
+      "capHitVerificationStatus": "SOURCE_VERIFIED",
+      "sourceDataset": "manual_puckpedia_contract_override"
+    },
+    {
+      "playerId": 8481704,
+      "name": "Juuso Parssinen",
+      "teamCode": "",
+      "season": {
+        "seasonKey": "2026-2027",
+        "baseSalaryUsd": 1300000,
+        "minorsSalaryUsd": 1300000,
+        "capHitUsd": 1250000,
+        "capHitBasis": "verified_puckpedia_cap_hit",
+        "baseSalaryBasis": "verified_puckpedia_base_salary"
+      },
+      "salarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/juuso-parssinen",
+        "season": "2026-2027",
+        "field": "Base Salary"
+      },
+      "minorsSalarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/juuso-parssinen",
+        "season": "2026-2027",
+        "field": "Minors Salary"
+      },
+      "capHitSource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/juuso-parssinen",
+        "season": "2026-2027",
+        "field": "Cap Hit"
+      },
+      "salaryVerificationStatus": "SOURCE_VERIFIED",
+      "capHitVerificationStatus": "SOURCE_VERIFIED",
+      "sourceDataset": "manual_puckpedia_contract_override"
+    },
+    {
+      "playerId": 8484433,
+      "name": "Kaden Hammell",
+      "teamCode": "SEA",
+      "season": {
+        "seasonKey": "2026-2027",
+        "baseSalaryUsd": 850000,
+        "minorsSalaryUsd": 75000,
+        "capHitUsd": 965833,
+        "capHitBasis": "verified_puckpedia_cap_hit",
+        "baseSalaryBasis": "verified_puckpedia_base_salary"
+      },
+      "salarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/kaden-hammell",
+        "season": "2026-2027",
+        "field": "Base Salary"
+      },
+      "minorsSalarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/kaden-hammell",
+        "season": "2026-2027",
+        "field": "Minors Salary"
+      },
+      "capHitSource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/kaden-hammell",
+        "season": "2026-2027",
+        "field": "Cap Hit"
+      },
+      "salaryVerificationStatus": "SOURCE_VERIFIED",
+      "capHitVerificationStatus": "SOURCE_VERIFIED",
+      "sourceDataset": "manual_puckpedia_contract_override"
+    },
+    {
+      "playerId": 0,
+      "name": "Kashawn Aitcheson",
+      "teamCode": "NYI",
+      "season": {
+        "seasonKey": "2026-2027",
+        "baseSalaryUsd": 922500,
+        "minorsSalaryUsd": 85000,
+        "capHitUsd": 1075000,
+        "capHitBasis": "verified_puckpedia_cap_hit",
+        "baseSalaryBasis": "verified_puckpedia_base_salary"
+      },
+      "salarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/kashawn-aitcheson",
+        "season": "2026-2027",
+        "field": "Base Salary"
+      },
+      "minorsSalarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/kashawn-aitcheson",
+        "season": "2026-2027",
+        "field": "Minors Salary"
+      },
+      "capHitSource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/kashawn-aitcheson",
+        "season": "2026-2027",
+        "field": "Cap Hit"
+      },
+      "salaryVerificationStatus": "SOURCE_VERIFIED",
+      "capHitVerificationStatus": "SOURCE_VERIFIED",
+      "sourceDataset": "manual_puckpedia_contract_override"
+    },
+    {
+      "playerId": 8485003,
+      "name": "Kim Saarinen",
+      "teamCode": "SEA",
+      "season": {
+        "seasonKey": "2026-2027",
+        "baseSalaryUsd": 850000,
+        "minorsSalaryUsd": 85000,
+        "capHitUsd": 932500,
+        "capHitBasis": "verified_puckpedia_cap_hit",
+        "baseSalaryBasis": "verified_puckpedia_base_salary"
+      },
+      "salarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/kim-saarinen",
+        "season": "2026-2027",
+        "field": "Base Salary"
+      },
+      "minorsSalarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/kim-saarinen",
+        "season": "2026-2027",
+        "field": "Minors Salary"
+      },
+      "capHitSource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/kim-saarinen",
+        "season": "2026-2027",
+        "field": "Cap Hit"
+      },
+      "salaryVerificationStatus": "SOURCE_VERIFIED",
+      "capHitVerificationStatus": "SOURCE_VERIFIED",
+      "sourceDataset": "manual_puckpedia_contract_override"
+    },
+    {
+      "playerId": 0,
+      "name": "Konnor Smith",
+      "teamCode": "ANA",
+      "season": {
+        "seasonKey": "2026-2027",
+        "baseSalaryUsd": 850000,
+        "minorsSalaryUsd": 80000,
+        "capHitUsd": 955000,
+        "capHitBasis": "verified_puckpedia_cap_hit",
+        "baseSalaryBasis": "verified_puckpedia_base_salary"
+      },
+      "salarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/konnor-smith",
+        "season": "2026-2027",
+        "field": "Base Salary"
+      },
+      "minorsSalarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/konnor-smith",
+        "season": "2026-2027",
+        "field": "Minors Salary"
+      },
+      "capHitSource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/konnor-smith",
+        "season": "2026-2027",
+        "field": "Cap Hit"
+      },
+      "salaryVerificationStatus": "SOURCE_VERIFIED",
+      "capHitVerificationStatus": "SOURCE_VERIFIED",
+      "sourceDataset": "manual_puckpedia_contract_override"
+    },
+    {
+      "playerId": 8484177,
+      "name": "Lenni Hameenaho",
+      "teamCode": "NJD",
+      "season": {
+        "seasonKey": "2026-2027",
+        "baseSalaryUsd": 855000,
+        "minorsSalaryUsd": 82500,
+        "capHitUsd": 972500,
+        "capHitBasis": "verified_puckpedia_cap_hit",
+        "baseSalaryBasis": "verified_puckpedia_base_salary"
+      },
+      "salarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/lenni-hameenaho",
+        "season": "2026-2027",
+        "field": "Base Salary"
+      },
+      "minorsSalarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/lenni-hameenaho",
+        "season": "2026-2027",
+        "field": "Minors Salary"
+      },
+      "capHitSource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/lenni-hameenaho",
+        "season": "2026-2027",
+        "field": "Cap Hit"
+      },
+      "salaryVerificationStatus": "SOURCE_VERIFIED",
+      "capHitVerificationStatus": "SOURCE_VERIFIED",
+      "sourceDataset": "manual_puckpedia_contract_override"
+    },
+    {
+      "playerId": 0,
+      "name": "Loke Johansson",
+      "teamCode": "BOS",
+      "season": {
+        "seasonKey": "2026-2027",
+        "baseSalaryUsd": 850000,
+        "minorsSalaryUsd": 82500,
+        "capHitUsd": 928334,
+        "capHitBasis": "verified_puckpedia_cap_hit",
+        "baseSalaryBasis": "verified_puckpedia_base_salary"
+      },
+      "salarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/loke-johansson",
+        "season": "2026-2027",
+        "field": "Base Salary"
+      },
+      "minorsSalarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/loke-johansson",
+        "season": "2026-2027",
+        "field": "Minors Salary"
+      },
+      "capHitSource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/loke-johansson",
+        "season": "2026-2027",
+        "field": "Cap Hit"
+      },
+      "salaryVerificationStatus": "SOURCE_VERIFIED",
+      "capHitVerificationStatus": "SOURCE_VERIFIED",
+      "sourceDataset": "manual_puckpedia_contract_override"
+    },
+    {
+      "playerId": 8485412,
+      "name": "Lynden Lakovic",
+      "teamCode": "WSH",
+      "season": {
+        "seasonKey": "2026-2027",
+        "baseSalaryUsd": 877500,
+        "minorsSalaryUsd": 85000,
+        "capHitUsd": 974167,
+        "capHitBasis": "verified_puckpedia_cap_hit",
+        "baseSalaryBasis": "verified_puckpedia_base_salary"
+      },
+      "salarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/lynden-lakovic",
+        "season": "2026-2027",
+        "field": "Base Salary"
+      },
+      "minorsSalarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/lynden-lakovic",
+        "season": "2026-2027",
+        "field": "Minors Salary"
+      },
+      "capHitSource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/lynden-lakovic",
+        "season": "2026-2027",
+        "field": "Cap Hit"
+      },
+      "salaryVerificationStatus": "SOURCE_VERIFIED",
+      "capHitVerificationStatus": "SOURCE_VERIFIED",
+      "sourceDataset": "manual_puckpedia_contract_override"
+    },
+    {
+      "playerId": 8484761,
+      "name": "Marek Vanacker",
+      "teamCode": "CHI",
+      "season": {
+        "seasonKey": "2026-2027",
+        "baseSalaryUsd": 877500,
+        "minorsSalaryUsd": 85000,
+        "capHitUsd": 941667,
+        "capHitBasis": "verified_puckpedia_cap_hit",
+        "baseSalaryBasis": "verified_puckpedia_base_salary"
+      },
+      "salarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/marek-vanacker",
+        "season": "2026-2027",
+        "field": "Base Salary"
+      },
+      "minorsSalarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/marek-vanacker",
+        "season": "2026-2027",
+        "field": "Minors Salary"
+      },
+      "capHitSource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/marek-vanacker",
+        "season": "2026-2027",
+        "field": "Cap Hit"
+      },
+      "salaryVerificationStatus": "SOURCE_VERIFIED",
+      "capHitVerificationStatus": "SOURCE_VERIFIED",
+      "sourceDataset": "manual_puckpedia_contract_override"
+    },
+    {
+      "playerId": 0,
+      "name": "Maxim Strbak",
+      "teamCode": "BUF",
+      "season": {
+        "seasonKey": "2026-2027",
+        "baseSalaryUsd": 850000,
+        "minorsSalaryUsd": 82500,
+        "capHitUsd": 1028333,
+        "capHitBasis": "verified_puckpedia_cap_hit",
+        "baseSalaryBasis": "verified_puckpedia_base_salary"
+      },
+      "salarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/maxim-strbak",
+        "season": "2026-2027",
+        "field": "Base Salary"
+      },
+      "minorsSalarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/maxim-strbak",
+        "season": "2026-2027",
+        "field": "Minors Salary"
+      },
+      "capHitSource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/maxim-strbak",
+        "season": "2026-2027",
+        "field": "Cap Hit"
+      },
+      "salaryVerificationStatus": "SOURCE_VERIFIED",
+      "capHitVerificationStatus": "SOURCE_VERIFIED",
+      "sourceDataset": "manual_puckpedia_contract_override"
+    },
+    {
+      "playerId": 0,
+      "name": "Michal Postava",
+      "teamCode": "DET",
+      "season": {
+        "seasonKey": "2026-2027",
+        "baseSalaryUsd": 877500,
+        "minorsSalaryUsd": 85000,
+        "capHitUsd": 975000,
+        "capHitBasis": "verified_puckpedia_cap_hit",
+        "baseSalaryBasis": "verified_puckpedia_base_salary"
+      },
+      "salarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/michal-postava",
+        "season": "2026-2027",
+        "field": "Base Salary"
+      },
+      "minorsSalarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/michal-postava",
+        "season": "2026-2027",
+        "field": "Minors Salary"
+      },
+      "capHitSource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/michal-postava",
+        "season": "2026-2027",
+        "field": "Cap Hit"
+      },
+      "salaryVerificationStatus": "SOURCE_VERIFIED",
+      "capHitVerificationStatus": "SOURCE_VERIFIED",
+      "sourceDataset": "manual_puckpedia_contract_override"
+    },
+    {
+      "playerId": 8484760,
+      "name": "Nathan Villeneuve",
+      "teamCode": "SEA",
+      "season": {
+        "seasonKey": "2026-2027",
+        "baseSalaryUsd": 850000,
+        "minorsSalaryUsd": 85000,
+        "capHitUsd": 965000,
+        "capHitBasis": "verified_puckpedia_cap_hit",
+        "baseSalaryBasis": "verified_puckpedia_base_salary"
+      },
+      "salarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/nathan-villeneuve",
+        "season": "2026-2027",
+        "field": "Base Salary"
+      },
+      "minorsSalarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/nathan-villeneuve",
+        "season": "2026-2027",
+        "field": "Minors Salary"
+      },
+      "capHitSource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/nathan-villeneuve",
+        "season": "2026-2027",
+        "field": "Cap Hit"
+      },
+      "salaryVerificationStatus": "SOURCE_VERIFIED",
+      "capHitVerificationStatus": "SOURCE_VERIFIED",
+      "sourceDataset": "manual_puckpedia_contract_override"
+    },
+    {
+      "playerId": 8484472,
+      "name": "Oiva Keskinen",
+      "teamCode": "CBJ",
+      "season": {
+        "seasonKey": "2026-2027",
+        "baseSalaryUsd": 850000,
+        "minorsSalaryUsd": 82500,
+        "capHitUsd": 960000,
+        "capHitBasis": "verified_puckpedia_cap_hit",
+        "baseSalaryBasis": "verified_puckpedia_base_salary"
+      },
+      "salarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/oiva-keskinen",
+        "season": "2026-2027",
+        "field": "Base Salary"
+      },
+      "minorsSalarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/oiva-keskinen",
+        "season": "2026-2027",
+        "field": "Minors Salary"
+      },
+      "capHitSource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/oiva-keskinen",
+        "season": "2026-2027",
+        "field": "Cap Hit"
+      },
+      "salaryVerificationStatus": "SOURCE_VERIFIED",
+      "capHitVerificationStatus": "SOURCE_VERIFIED",
+      "sourceDataset": "manual_puckpedia_contract_override"
+    },
+    {
+      "playerId": 0,
+      "name": "Otto Salin",
+      "teamCode": "LAK",
+      "season": {
+        "seasonKey": "2026-2027",
+        "baseSalaryUsd": 850000,
+        "minorsSalaryUsd": 82500,
+        "capHitUsd": 956250,
+        "capHitBasis": "verified_puckpedia_cap_hit",
+        "baseSalaryBasis": "verified_puckpedia_base_salary"
+      },
+      "salarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/otto-salin",
+        "season": "2026-2027",
+        "field": "Base Salary"
+      },
+      "minorsSalarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/otto-salin",
+        "season": "2026-2027",
+        "field": "Minors Salary"
+      },
+      "capHitSource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/otto-salin",
+        "season": "2026-2027",
+        "field": "Cap Hit"
+      },
+      "salaryVerificationStatus": "SOURCE_VERIFIED",
+      "capHitVerificationStatus": "SOURCE_VERIFIED",
+      "sourceDataset": "manual_puckpedia_contract_override"
+    },
+    {
+      "playerId": 0,
+      "name": "Radim Mrtka",
+      "teamCode": "BUF",
+      "season": {
+        "seasonKey": "2026-2027",
+        "baseSalaryUsd": 877500,
+        "minorsSalaryUsd": 85000,
+        "capHitUsd": 974167,
+        "capHitBasis": "verified_puckpedia_cap_hit",
+        "baseSalaryBasis": "verified_puckpedia_base_salary"
+      },
+      "salarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/radim-mrtka",
+        "season": "2026-2027",
+        "field": "Base Salary"
+      },
+      "minorsSalarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/radim-mrtka",
+        "season": "2026-2027",
+        "field": "Minors Salary"
+      },
+      "capHitSource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/radim-mrtka",
+        "season": "2026-2027",
+        "field": "Cap Hit"
+      },
+      "salaryVerificationStatus": "SOURCE_VERIFIED",
+      "capHitVerificationStatus": "SOURCE_VERIFIED",
+      "sourceDataset": "manual_puckpedia_contract_override"
+    },
+    {
+      "playerId": 8483918,
+      "name": "Riley Mercer",
+      "teamCode": "",
+      "season": {
+        "seasonKey": "2026-2027",
+        "baseSalaryUsd": 850000,
+        "minorsSalaryUsd": 85000,
+        "capHitUsd": 920000,
+        "capHitBasis": "verified_puckpedia_cap_hit",
+        "baseSalaryBasis": "verified_puckpedia_base_salary"
+      },
+      "salarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/riley-mercer",
+        "season": "2026-2027",
+        "field": "Base Salary"
+      },
+      "minorsSalarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/riley-mercer",
+        "season": "2026-2027",
+        "field": "Minors Salary"
+      },
+      "capHitSource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/riley-mercer",
+        "season": "2026-2027",
+        "field": "Cap Hit"
+      },
+      "salaryVerificationStatus": "SOURCE_VERIFIED",
+      "capHitVerificationStatus": "SOURCE_VERIFIED",
+      "sourceDataset": "manual_puckpedia_contract_override"
+    },
+    {
+      "playerId": 8483487,
+      "name": "Rutger McGroarty",
+      "teamCode": "PIT",
+      "season": {
+        "seasonKey": "2026-2027",
+        "baseSalaryUsd": 855000,
+        "minorsSalaryUsd": 82500,
+        "capHitUsd": 950000,
+        "capHitBasis": "verified_puckpedia_cap_hit",
+        "baseSalaryBasis": "verified_puckpedia_base_salary"
+      },
+      "salarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/rutger-mcgroarty",
+        "season": "2026-2027",
+        "field": "Base Salary"
+      },
+      "minorsSalarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/rutger-mcgroarty",
+        "season": "2026-2027",
+        "field": "Minors Salary"
+      },
+      "capHitSource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/rutger-mcgroarty",
+        "season": "2026-2027",
+        "field": "Cap Hit"
+      },
+      "salaryVerificationStatus": "SOURCE_VERIFIED",
+      "capHitVerificationStatus": "SOURCE_VERIFIED",
+      "sourceDataset": "manual_puckpedia_contract_override"
+    },
+    {
+      "playerId": 8483430,
+      "name": "Ryan Chesley",
+      "teamCode": "WSH",
+      "season": {
+        "seasonKey": "2026-2027",
+        "baseSalaryUsd": 855000,
+        "minorsSalaryUsd": 82500,
+        "capHitUsd": 945833,
+        "capHitBasis": "verified_puckpedia_cap_hit",
+        "baseSalaryBasis": "verified_puckpedia_base_salary"
+      },
+      "salarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/ryan-chesley",
+        "season": "2026-2027",
+        "field": "Base Salary"
+      },
+      "minorsSalarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/ryan-chesley",
+        "season": "2026-2027",
+        "field": "Minors Salary"
+      },
+      "capHitSource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/ryan-chesley",
+        "season": "2026-2027",
+        "field": "Cap Hit"
+      },
+      "salaryVerificationStatus": "SOURCE_VERIFIED",
+      "capHitVerificationStatus": "SOURCE_VERIFIED",
+      "sourceDataset": "manual_puckpedia_contract_override"
+    },
+    {
+      "playerId": 8486009,
+      "name": "Ryden Evers",
+      "teamCode": "SEA",
+      "season": {
+        "seasonKey": "2026-2027",
+        "baseSalaryUsd": 922500,
+        "minorsSalaryUsd": 85000,
+        "capHitUsd": 1075000,
+        "capHitBasis": "verified_puckpedia_cap_hit",
+        "baseSalaryBasis": "verified_puckpedia_base_salary"
+      },
+      "salarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/ryden-evers",
+        "season": "2026-2027",
+        "field": "Base Salary"
+      },
+      "minorsSalarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/ryden-evers",
+        "season": "2026-2027",
+        "field": "Minors Salary"
+      },
+      "capHitSource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/ryden-evers",
+        "season": "2026-2027",
+        "field": "Cap Hit"
+      },
+      "salaryVerificationStatus": "SOURCE_VERIFIED",
+      "capHitVerificationStatus": "SOURCE_VERIFIED",
+      "sourceDataset": "manual_puckpedia_contract_override"
+    },
+    {
+      "playerId": 0,
+      "name": "Sacha Boisvert",
+      "teamCode": "CHI",
+      "season": {
+        "seasonKey": "2026-2027",
+        "baseSalaryUsd": 877500,
+        "minorsSalaryUsd": 85000,
+        "capHitUsd": 977917,
+        "capHitBasis": "verified_puckpedia_cap_hit",
+        "baseSalaryBasis": "verified_puckpedia_base_salary"
+      },
+      "salarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/sacha-boisvert",
+        "season": "2026-2027",
+        "field": "Base Salary"
+      },
+      "minorsSalarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/sacha-boisvert",
+        "season": "2026-2027",
+        "field": "Minors Salary"
+      },
+      "capHitSource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/sacha-boisvert",
+        "season": "2026-2027",
+        "field": "Cap Hit"
+      },
+      "salaryVerificationStatus": "SOURCE_VERIFIED",
+      "capHitVerificationStatus": "SOURCE_VERIFIED",
+      "sourceDataset": "manual_puckpedia_contract_override"
+    },
+    {
+      "playerId": 8482657,
+      "name": "Sebastian Cossa",
+      "teamCode": "UTA",
+      "season": {
+        "seasonKey": "2026-2027",
+        "baseSalaryUsd": 2000000,
+        "minorsSalaryUsd": 2000000,
+        "capHitUsd": 2000000,
+        "capHitBasis": "verified_puckpedia_cap_hit",
+        "baseSalaryBasis": "verified_puckpedia_base_salary"
+      },
+      "salarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/sebastian-cossa",
+        "season": "2026-2027",
+        "field": "Base Salary"
+      },
+      "minorsSalarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/sebastian-cossa",
+        "season": "2026-2027",
+        "field": "Minors Salary"
+      },
+      "capHitSource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/sebastian-cossa",
+        "season": "2026-2027",
+        "field": "Cap Hit"
+      },
+      "salaryVerificationStatus": "SOURCE_VERIFIED",
+      "capHitVerificationStatus": "SOURCE_VERIFIED",
+      "sourceDataset": "manual_puckpedia_contract_override"
+    },
+    {
+      "playerId": 0,
+      "name": "Elton Hermansson",
+      "teamCode": "LAK",
+      "season": {
+        "seasonKey": "2026-2027",
+        "baseSalaryUsd": 922500,
+        "minorsSalaryUsd": 87500,
+        "capHitUsd": 1075000,
+        "capHitBasis": "verified_puckpedia_cap_hit",
+        "baseSalaryBasis": "verified_puckpedia_base_salary"
+      },
+      "salarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/elton-hermansson",
+        "season": "2026-2027",
+        "field": "Base Salary"
+      },
+      "minorsSalarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/elton-hermansson",
+        "season": "2026-2027",
+        "field": "Minors Salary"
+      },
+      "capHitSource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/elton-hermansson",
+        "season": "2026-2027",
+        "field": "Cap Hit"
+      },
+      "salaryVerificationStatus": "SOURCE_VERIFIED",
+      "capHitVerificationStatus": "SOURCE_VERIFIED",
+      "sourceDataset": "manual_puckpedia_contract_override"
+    },
+    {
+      "playerId": 8484935,
+      "name": "Oliver Okuliar",
+      "teamCode": "",
+      "season": {
+        "seasonKey": "2026-2027",
+        "baseSalaryUsd": 850000,
+        "minorsSalaryUsd": 350000,
+        "capHitUsd": 850000,
+        "capHitBasis": "verified_puckpedia_cap_hit",
+        "baseSalaryBasis": "verified_puckpedia_base_salary"
+      },
+      "salarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/oliver-okuliar",
+        "season": "2026-2027",
+        "field": "Base Salary"
+      },
+      "minorsSalarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/oliver-okuliar",
+        "season": "2026-2027",
+        "field": "Minors Salary"
+      },
+      "capHitSource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/oliver-okuliar",
+        "season": "2026-2027",
+        "field": "Cap Hit"
+      },
+      "salaryVerificationStatus": "SOURCE_VERIFIED",
+      "capHitVerificationStatus": "SOURCE_VERIFIED",
+      "sourceDataset": "manual_puckpedia_contract_override"
+    },
+    {
+      "playerId": 0,
+      "name": "Nikita Klepov",
+      "teamCode": "ANA",
+      "season": {
+        "seasonKey": "2026-2027",
+        "baseSalaryUsd": 922500,
+        "minorsSalaryUsd": 87500,
+        "capHitUsd": 1075000,
+        "capHitBasis": "verified_puckpedia_cap_hit",
+        "baseSalaryBasis": "verified_puckpedia_base_salary"
+      },
+      "salarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/nikita-klepov",
+        "season": "2026-2027",
+        "field": "Base Salary"
+      },
+      "minorsSalarySource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/nikita-klepov",
+        "season": "2026-2027",
+        "field": "Minors Salary"
+      },
+      "capHitSource": {
+        "publisher": "PuckPedia",
+        "url": "https://puckpedia.com/player/nikita-klepov",
+        "season": "2026-2027",
+        "field": "Cap Hit"
+      },
+      "salaryVerificationStatus": "SOURCE_VERIFIED",
+      "capHitVerificationStatus": "SOURCE_VERIFIED",
+      "sourceDataset": "manual_puckpedia_contract_override"
     }
   ],
   "updatedAt": "2026-11-03",
-  "notes": "2026-27 base salary excludes signing and performance bonuses. Cap hit is stored separately from base salary and is sourced independently."
+  "notes": "PuckPedia 2026-27 contract schedule: base salary, minors salary, and cap hit are separate; signing/performance bonuses excluded from salary fields."
 }

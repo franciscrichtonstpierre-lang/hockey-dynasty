@@ -1,6 +1,6 @@
 {
   "season": "2026-2027",
-  "sourceNote": "Manually reconciled contract rows using NHL team announcements and PuckPedia season breakdowns. Signing-bonus fields are intentionally omitted from the simulation. Six additional 2026-27 contracts were reconciled against PuckPedia and club announcements on 2026-11-01. Signing bonuses are excluded from the simulation salary field; performance bonuses remain separately represented. Four additional Anaheim Ducks 2026-27 salary breakdowns reconciled against PuckPedia player contract pages and NHL/club announcements on 2026-11-02; base salary is kept separate from cap hit and signing bonuses are excluded. Eight additional Anaheim 2026-27 base salaries, cap hits and terms were reconciled against PuckPedia player contract breakdowns and NHL club announcements on 2026-11-02; signing bonuses are excluded from the salary field. Twelve Chicago Blackhawks 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Nine Detroit Red Wings 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Thirteen Edmonton Oilers 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Nine Florida Panthers 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Twelve New York Rangers 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Eight Washington Capitals 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Rémi Poirier held for affiliation reconciliation after his waiver claim.",
+  "sourceNote": "Manually reconciled contract rows using NHL team announcements and PuckPedia season breakdowns. Signing-bonus fields are intentionally omitted from the simulation. Six additional 2026-27 contracts were reconciled against PuckPedia and club announcements on 2026-11-01. Signing bonuses are excluded from the simulation salary field; performance bonuses remain separately represented. Four additional Anaheim Ducks 2026-27 salary breakdowns reconciled against PuckPedia player contract pages and NHL/club announcements on 2026-11-02; base salary is kept separate from cap hit and signing bonuses are excluded. Eight additional Anaheim 2026-27 base salaries, cap hits and terms were reconciled against PuckPedia player contract breakdowns and NHL club announcements on 2026-11-02; signing bonuses are excluded from the salary field. Twelve Chicago Blackhawks 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Nine Detroit Red Wings 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Thirteen Edmonton Oilers 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Nine Florida Panthers 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Twelve New York Rangers 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Eight Washington Capitals 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Rémi Poirier held for affiliation reconciliation after his waiver claim. Three remaining cap-hit gaps (Patrick Kane, Andreas Englund, Bokondji Imama) reconciled against PuckPedia 2026-27 breakdowns.",
   "players": [
     {
       "playerId": 8484168,
@@ -5070,6 +5070,209 @@
         "oneWay": false
       },
       "simulationSalaryUsd": 5850000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8474141,
+      "name": "Patrick Kane",
+      "teamCode": "CHI",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8474141|CHI|2026-07",
+        "signingTeam": "CHI",
+        "signedAt": "2026-07-23",
+        "signingDateStated": false,
+        "type": "standard",
+        "termYears": 2,
+        "startSeason": "2026-27",
+        "endSeason": "2027-28",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": 16000000,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "ABCD",
+        "sourceCount": 4,
+        "conflicts": null,
+        "flags": "derived:total_from_seasons;player_id_from_roster;start_season_assumed",
+        "sourceClaimIds": [
+          "623b8e6713b04c5a",
+          "8dcad0503ee1cda0",
+          "6dae17bd3c6215f3",
+          "0e4b80667f345884"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/news/release-blackhawks-agree-to-terms-with-forward-patrick-kane-on-two-year-contract",
+            "publisher": "CHI (club release on NHL.com)",
+            "publishedAt": "2026-07-23T12:50:00Z",
+            "confidenceTier": "A"
+          },
+          {
+            "url": "https://www.nhl.com/news/patrick-kane-signs-two-year-contract-with-chicago-blackhawks",
+            "publisher": "NHL.com",
+            "publishedAt": "2026-07-25T17:10:00Z",
+            "confidenceTier": "B"
+          },
+          {
+            "url": "https://www.espn.com/nhl/transactions/_/date/20260723",
+            "publisher": "ESPN transactions wire",
+            "publishedAt": "2026-07-23T07:00Z",
+            "confidenceTier": "C"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/patrick-kane"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "capHitUsd": 8000000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "baseSalaryUsd": 1000000,
+        "performanceBonusUsd": null,
+        "totalSalaryUsd": 9000000,
+        "minorsSalaryUsd": 9000000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 8000000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8477971,
+      "name": "Andreas Englund",
+      "teamCode": "DET",
+      "position": "D",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8477971|CGY|2026-07",
+        "signingTeam": "CGY",
+        "signedAt": "2026-07-01",
+        "signingDateStated": false,
+        "type": "standard",
+        "termYears": 1,
+        "startSeason": "2026-27",
+        "endSeason": "2026-27",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": false,
+        "totalUsd": null,
+        "nhlSalaryUsd": 900000,
+        "minorsSalaryUsd": 425000,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "AD",
+        "sourceCount": 2,
+        "conflicts": null,
+        "flags": "guaranteed:500000;llm:anthropic/claude-haiku-5.5;llm_filled;player_id_from_roster;start_season_assumed",
+        "sourceClaimIds": [
+          "c81621007686dc61",
+          "27ea9e9fe20585c5"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/news/flames-announce-multiple-signings-01-07-26",
+            "publisher": "CGY (club release on NHL.com)",
+            "publishedAt": "2026-07-01T22:15:00Z",
+            "confidenceTier": "A"
+          },
+          {
+            "url": "https://bsky.app/profile/puckpedia.com/post/3mpmtgdrya72n",
+            "publisher": "PuckPedia (public Bluesky post)",
+            "publishedAt": "2026-07-02T01:01:20.329Z",
+            "confidenceTier": "D"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/andreas-englund"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "capHitUsd": 900000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "baseSalaryUsd": 900000,
+        "performanceBonusUsd": null,
+        "totalSalaryUsd": null,
+        "minorsSalaryUsd": 425000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 900000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8478147,
+      "name": "Bokondji Imama",
+      "teamCode": "FLA",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8478147|FLA|2026-07",
+        "signingTeam": "FLA",
+        "signedAt": "2026-07-01",
+        "signingDateStated": false,
+        "type": "standard",
+        "termYears": 1,
+        "startSeason": "2026-27",
+        "endSeason": "2026-27",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": false,
+        "totalUsd": null,
+        "nhlSalaryUsd": 850000,
+        "minorsSalaryUsd": 400000,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "AD",
+        "sourceCount": 2,
+        "conflicts": null,
+        "flags": "guaranteed:450000;player_id_from_roster;start_season_assumed",
+        "sourceClaimIds": [
+          "e2d6541336323fcb",
+          "095ff000222710c4"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/news/florida-panthers-agree-to-terms-with-forward-bokondji-imama-on-a-one-year-two-way-contract",
+            "publisher": "FLA (club release on NHL.com)",
+            "publishedAt": "2026-07-01T23:06:24.585Z",
+            "confidenceTier": "A"
+          },
+          {
+            "url": "https://bsky.app/profile/puckpedia.com/post/3mpn235gxas26",
+            "publisher": "PuckPedia (public Bluesky post)",
+            "publishedAt": "2026-07-02T03:00:20.761Z",
+            "confidenceTier": "D"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/bokondji-imama"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "capHitUsd": 850000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "baseSalaryUsd": 850000,
+        "performanceBonusUsd": null,
+        "totalSalaryUsd": null,
+        "minorsSalaryUsd": 400000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 850000,
       "simulationSalaryStatus": "source_verified_manual_override",
       "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
       "sourceDataset": "manual_verified_contract_override",

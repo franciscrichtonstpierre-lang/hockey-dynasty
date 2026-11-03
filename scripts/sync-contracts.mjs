@@ -325,6 +325,11 @@ function stripAavFields(value) {
   const clean = {};
   for (const [key, child] of Object.entries(value)) {
     if (/aav/i.test(key)) continue;
+    if (key === "flags" && typeof child === "string") {
+      const flags = child.split(";").filter(flag => !/aav/i.test(flag));
+      if (flags.length) clean[key] = flags.join(";");
+      continue;
+    }
     clean[key] = stripAavFields(child);
   }
   return clean;

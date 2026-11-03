@@ -1,9 +1,9 @@
 {
   "season": "2026-2027",
-  "generatedAt": "2026-11-03T04:39:06.485Z",
+  "generatedAt": "2026-11-03T05:15:04.267Z",
   "nhl": {
     "total": 811,
-    "salaryPresent": 731,
+    "salaryPresent": 727,
     "capHitPresent": 744,
     "missingSalary": [
       {
@@ -84,6 +84,13 @@
         "salaryBasis": "salary_not_verified"
       },
       {
+        "playerId": 8479981,
+        "name": "Jonah Gadjovich",
+        "teamCode": "FLA",
+        "capHitUsd": 895000,
+        "salaryBasis": "salary_not_verified"
+      },
+      {
         "playerId": 8476469,
         "name": "Joel Armia",
         "teamCode": "LAK",
@@ -147,10 +154,24 @@
         "salaryBasis": "salary_not_verified"
       },
       {
+        "playerId": 8475752,
+        "name": "Tyler Pitlick",
+        "teamCode": "MIN",
+        "capHitUsd": null,
+        "salaryBasis": "salary_not_verified"
+      },
+      {
         "playerId": 8485702,
         "name": "Maxim Shabanov",
         "teamCode": "MIN",
         "capHitUsd": 1600000,
+        "salaryBasis": "salary_not_verified"
+      },
+      {
+        "playerId": 8479972,
+        "name": "Mason Shaw",
+        "teamCode": "MIN",
+        "capHitUsd": null,
         "salaryBasis": "salary_not_verified"
       },
       {
@@ -291,6 +312,13 @@
         "name": "Logan Stanley",
         "teamCode": "NYI",
         "capHitUsd": null,
+        "salaryBasis": "salary_not_verified"
+      },
+      {
+        "playerId": 8481525,
+        "name": "Matthew Robertson",
+        "teamCode": "NYR",
+        "capHitUsd": 775000,
         "salaryBasis": "salary_not_verified"
       },
       {
@@ -680,13 +708,13 @@
         "playerId": 8475752,
         "name": "Tyler Pitlick",
         "teamCode": "MIN",
-        "salaryUsd": 775000
+        "salaryUsd": null
       },
       {
         "playerId": 8479972,
         "name": "Mason Shaw",
         "teamCode": "MIN",
-        "salaryUsd": 850000
+        "salaryUsd": null
       },
       {
         "playerId": 8483525,
@@ -1179,9 +1207,16 @@
       },
       "FLA": {
         "players": 25,
-        "salaryPresent": 25,
+        "salaryPresent": 24,
         "capHitPresent": 25,
-        "missingSalary": [],
+        "missingSalary": [
+          {
+            "playerId": 8479981,
+            "name": "Jonah Gadjovich",
+            "capHitUsd": 895000,
+            "salaryBasis": "salary_not_verified"
+          }
+        ],
         "missingCapHit": []
       },
       "LAK": {
@@ -1267,7 +1302,7 @@
       },
       "MIN": {
         "players": 27,
-        "salaryPresent": 21,
+        "salaryPresent": 19,
         "capHitPresent": 22,
         "missingSalary": [
           {
@@ -1283,9 +1318,21 @@
             "salaryBasis": "salary_not_verified"
           },
           {
+            "playerId": 8475752,
+            "name": "Tyler Pitlick",
+            "capHitUsd": null,
+            "salaryBasis": "salary_not_verified"
+          },
+          {
             "playerId": 8485702,
             "name": "Maxim Shabanov",
             "capHitUsd": 1600000,
+            "salaryBasis": "salary_not_verified"
+          },
+          {
+            "playerId": 8479972,
+            "name": "Mason Shaw",
+            "capHitUsd": null,
             "salaryBasis": "salary_not_verified"
           },
           {
@@ -1316,12 +1363,12 @@
           {
             "playerId": 8475752,
             "name": "Tyler Pitlick",
-            "salaryUsd": 775000
+            "salaryUsd": null
           },
           {
             "playerId": 8479972,
             "name": "Mason Shaw",
-            "salaryUsd": 850000
+            "salaryUsd": null
           },
           {
             "playerId": 8483525,
@@ -1533,9 +1580,16 @@
       },
       "NYR": {
         "players": 29,
-        "salaryPresent": 29,
+        "salaryPresent": 28,
         "capHitPresent": 29,
-        "missingSalary": [],
+        "missingSalary": [
+          {
+            "playerId": 8481525,
+            "name": "Matthew Robertson",
+            "capHitUsd": 775000,
+            "salaryBasis": "salary_not_verified"
+          }
+        ],
         "missingCapHit": []
       },
       "OTT": {

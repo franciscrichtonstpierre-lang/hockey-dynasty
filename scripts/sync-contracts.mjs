@@ -247,6 +247,34 @@ for (const salaryRecord of (nhlpaSalarySnapshot.players || [])) {
 }
 console.log("NHLPA 2026-27 base salary overrides applied: " + nhlpaSalaryOverridesApplied + ".");
 
+const markerZoneSnapshot = JSON.parse(await readFile("data/contracts/markerzone-salaries-2026-2027.json","utf8"));
+let markerZoneSalaryOverridesApplied = 0;
+for (const salaryRecord of (markerZoneSnapshot.players || [])) {
+  const index = players.findIndex(p => Number(p.playerId) === Number(salaryRecord.playerId));
+  if (index < 0) continue;
+  const player = players[index];
+  const updatedSeason = { ...(player.season || {}), season: "2026-27", baseSalaryUsd: Number(salaryRecord.baseSalaryUsd) };
+  const salaryFields = actualSalaryFields("NHL", {
+    nhl_salary_usd: updatedSeason.baseSalaryUsd,
+    minors_salary_usd: updatedSeason.minorsSalaryUsd,
+    one_way: updatedSeason.oneWay
+  }, {
+    base_salary_usd: updatedSeason.baseSalaryUsd,
+    minors_salary_usd: updatedSeason.minorsSalaryUsd,
+    one_way: updatedSeason.oneWay
+  });
+  players[index] = {
+    ...player,
+    season: updatedSeason,
+    ...salaryFields,
+    salarySource: { publisher: "MarkerZone", url: salaryRecord.sourceUrl, season: "2026-2027" },
+    salaryVerificationStatus: "SOURCE_VERIFIED"
+  };
+  markerZoneSalaryOverridesApplied++;
+}
+console.log("MarkerZone 2026-27 salary overrides applied: " + markerZoneSalaryOverridesApplied + ".");
+
+
 const organizationContracts = [];
 for (const registryPlayer of (registryData.players || [])) {
   if (registryPlayer.currentLeague === "NHL") continue;

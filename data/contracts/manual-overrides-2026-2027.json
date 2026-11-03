@@ -1,6 +1,6 @@
 {
   "season": "2026-2027",
-  "sourceNote": "Manually reconciled contract rows using NHL team announcements and PuckPedia season breakdowns. Signing-bonus fields are intentionally omitted from the simulation. Six additional 2026-27 contracts were reconciled against PuckPedia and club announcements on 2026-11-01. Signing bonuses are excluded from the simulation salary field; performance bonuses remain separately represented. Four additional Anaheim Ducks 2026-27 salary breakdowns reconciled against PuckPedia player contract pages and NHL/club announcements on 2026-11-02; base salary is kept separate from cap hit and signing bonuses are excluded. Eight additional Anaheim 2026-27 base salaries, cap hits and terms were reconciled against PuckPedia player contract breakdowns and NHL club announcements on 2026-11-02; signing bonuses are excluded from the salary field.",
+  "sourceNote": "Manually reconciled contract rows using NHL team announcements and PuckPedia season breakdowns. Signing-bonus fields are intentionally omitted from the simulation. Six additional 2026-27 contracts were reconciled against PuckPedia and club announcements on 2026-11-01. Signing bonuses are excluded from the simulation salary field; performance bonuses remain separately represented. Four additional Anaheim Ducks 2026-27 salary breakdowns reconciled against PuckPedia player contract pages and NHL/club announcements on 2026-11-02; base salary is kept separate from cap hit and signing bonuses are excluded. Eight additional Anaheim 2026-27 base salaries, cap hits and terms were reconciled against PuckPedia player contract breakdowns and NHL club announcements on 2026-11-02; signing bonuses are excluded from the salary field. Twelve Chicago Blackhawks 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary.",
   "players": [
     {
       "playerId": 8484168,
@@ -1074,6 +1074,775 @@
       "simulationSalaryUsd": 913333,
       "simulationSalaryStatus": "source_verified_manual_override",
       "simulationSalaryMethod": "2026-27 season cap hit from PuckPedia; NHLPA base salary kept separate",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8484144,
+      "name": "Connor Bedard",
+      "teamCode": "CHI",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8484144|CHI|2026-07",
+        "signingTeam": "CHI",
+        "signedAt": "2026-07-18",
+        "signingDateStated": false,
+        "type": "extension",
+        "termYears": 5,
+        "startSeason": "2026-27",
+        "endSeason": "2030-31",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": 75000000,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "ABC",
+        "sourceCount": 3,
+        "conflicts": null,
+        "flags": "player_id_from_roster",
+        "sourceClaimIds": [
+          "2527aae0c4986f60",
+          "89523942783d3bbb",
+          "27f2c2bff18ab14c"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/news/release-blackhawks-agree-to-terms-with-forward-connor-bedard-on-five-year-contract-extension",
+            "publisher": "CHI (club release on NHL.com)",
+            "publishedAt": "2026-07-18T20:25:00Z",
+            "confidenceTier": "A"
+          },
+          {
+            "url": "https://www.nhl.com/news/connor-bedard-signs-five-year-contract-with-chicago-blackhawks",
+            "publisher": "NHL.com",
+            "publishedAt": "2026-07-20T17:39:00Z",
+            "confidenceTier": "B"
+          },
+          {
+            "url": "https://www.espn.com/nhl/transactions/_/date/20260718",
+            "publisher": "ESPN transactions wire",
+            "publishedAt": "2026-07-18T07:00Z",
+            "confidenceTier": "C"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/signing/10747"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "capHitUsd": 15000000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "baseSalaryUsd": 7200000,
+        "performanceBonusUsd": null,
+        "totalSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 15000000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8477987,
+      "name": "Ryan Donato",
+      "teamCode": "CHI",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8477987|CHI|2025-06",
+        "signingTeam": "CHI",
+        "signedAt": "2025-06-18",
+        "signingDateStated": false,
+        "type": "extension",
+        "termYears": 4,
+        "startSeason": "2025-26",
+        "endSeason": "2028-29",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": null,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "ABC",
+        "sourceCount": 3,
+        "conflicts": null,
+        "flags": "player_id_from_roster",
+        "sourceClaimIds": [
+          "4757ef6bf7f2e9b1",
+          "eec83a25e36f10fc",
+          "8d7223c589ab21a0"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/news/release-blackhawks-sign-donato-to-four-year-contract-extension",
+            "publisher": "CHI (club release on NHL.com)",
+            "publishedAt": "2025-06-18T21:15:00Z",
+            "confidenceTier": "A"
+          },
+          {
+            "url": "https://www.nhl.com/news/ryan-donato-signs-4-year-contract-with-chicago-blackhawks",
+            "publisher": "NHL.com",
+            "publishedAt": "2025-06-18T21:29:32.882Z",
+            "confidenceTier": "B"
+          },
+          {
+            "url": "https://www.espn.com/nhl/transactions/_/date/20250618",
+            "publisher": "ESPN transactions wire",
+            "publishedAt": "2025-06-18T07:00Z",
+            "confidenceTier": "C"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/ryan-donato"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "baseSalaryUsd": 4250000,
+        "capHitUsd": 4000000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "minorsSalaryUsd": 4250000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 4000000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8485391,
+      "name": "Anton Frondell",
+      "teamCode": "CHI",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8485391|CHI|2026-03",
+        "signingTeam": "CHI",
+        "signedAt": "2026-03-16",
+        "signingDateStated": false,
+        "type": "ELC",
+        "termYears": 3,
+        "startSeason": "2025-26",
+        "endSeason": "2027-28",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": null,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "A",
+        "sourceCount": 1,
+        "conflicts": null,
+        "flags": null,
+        "sourceClaimIds": [
+          "a8b3c790cc0a7b11"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/news/release-blackhawks-sign-sacha-boisvert-to-three-year-entry-level-contract",
+            "publisher": "CHI (club release on NHL.com)",
+            "publishedAt": "2026-03-16T15:00:00Z",
+            "confidenceTier": "A"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/anton-frondell"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "baseSalaryUsd": 877500,
+        "capHitUsd": 986250,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "minorsSalaryUsd": 85000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 986250,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8483450,
+      "name": "Ryan Greene",
+      "teamCode": "CHI",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8483450|CHI|2025-04",
+        "signingTeam": "CHI",
+        "signedAt": "2025-04-13",
+        "signingDateStated": false,
+        "type": "ELC",
+        "termYears": 3,
+        "startSeason": "2024-25",
+        "endSeason": "2026-27",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": null,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "CD",
+        "sourceCount": 2,
+        "conflicts": null,
+        "flags": "player_id_from_roster;start_season_assumed",
+        "sourceClaimIds": [
+          "9d4a97cf9af7c631",
+          "52f2f3ce0c38c72e"
+        ],
+        "sources": [
+          {
+            "url": "https://www.espn.com/nhl/transactions/_/date/20250413",
+            "publisher": "ESPN transactions wire",
+            "publishedAt": "2025-04-13T07:00Z",
+            "confidenceTier": "C"
+          },
+          {
+            "url": "https://bsky.app/profile/puckpedia.com/post/3lmpq7waeq42v",
+            "publisher": "PuckPedia (public Bluesky post)",
+            "publishedAt": "2025-04-13T19:00:15.786Z",
+            "confidenceTier": "D"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/ryan-greene"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "baseSalaryUsd": 855000,
+        "capHitUsd": 950000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "minorsSalaryUsd": 82500,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 950000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8478413,
+      "name": "Jordan Greenway",
+      "teamCode": "CHI",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8478413|BUF|2025-03",
+        "signingTeam": "BUF",
+        "signedAt": "2025-03-05",
+        "signingDateStated": false,
+        "type": "extension",
+        "termYears": 2,
+        "startSeason": "2025-26",
+        "endSeason": "2026-27",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": 8000000,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "ABCD",
+        "sourceCount": 4,
+        "conflicts": null,
+        "flags": "derived:total_from_seasons;player_id_from_roster;start_season_assumed",
+        "sourceClaimIds": [
+          "927364f6e4c01680",
+          "5acc03a7a7db3349",
+          "394bc04893f76c25",
+          "046300e69b757958"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/sabres/news/buffalo-sabres-jordan-greenway-contract-extension",
+            "publisher": "BUF (club release on NHL.com)",
+            "publishedAt": "2025-03-05",
+            "confidenceTier": "A"
+          },
+          {
+            "url": "https://www.nhl.com/news/jordan-greenway-signs-two-year-contract-with-buffalo-sabres",
+            "publisher": "NHL.com",
+            "publishedAt": "2025-03-06T18:04:00Z",
+            "confidenceTier": "B"
+          },
+          {
+            "url": "https://www.espn.com/nhl/transactions/_/date/20250305",
+            "publisher": "ESPN transactions wire",
+            "publishedAt": "2025-03-05T08:00Z",
+            "confidenceTier": "C"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/jordan-greenway"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "capHitUsd": 4000000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "baseSalaryUsd": 4000000,
+        "performanceBonusUsd": null,
+        "totalSalaryUsd": null,
+        "minorsSalaryUsd": 4000000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 4000000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8484390,
+      "name": "Roman Kantserov",
+      "teamCode": "CHI",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8484390|CHI|2026-05",
+        "signingTeam": "CHI",
+        "signedAt": "2026-05-14",
+        "signingDateStated": false,
+        "type": "ELC",
+        "termYears": 3,
+        "startSeason": "2026-27",
+        "endSeason": "2028-29",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": null,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "A",
+        "sourceCount": 1,
+        "conflicts": null,
+        "flags": "derived:span_from_signing_date",
+        "sourceClaimIds": [
+          "bb1fbc0f3428be1b"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/news/release-blackhawks-agree-to-terms-with-roman-kantserov-on-three-year-entry-level-contract",
+            "publisher": "CHI (club release on NHL.com)",
+            "publishedAt": "2026-05-14T18:00:00Z",
+            "confidenceTier": "A"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/roman-kantserov"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "baseSalaryUsd": 922500,
+        "capHitUsd": 1075000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "minorsSalaryUsd": 82500,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 1075000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8478233,
+      "name": "Andrew Mangiapane",
+      "teamCode": "CHI",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8478233|EDM|2025-07",
+        "signingTeam": "EDM",
+        "signedAt": "2025-07-02",
+        "signingDateStated": false,
+        "type": "standard",
+        "termYears": 2,
+        "startSeason": "2025-26",
+        "endSeason": "2026-27",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": 7200000,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "B",
+        "sourceCount": 1,
+        "conflicts": null,
+        "flags": "derived:span_from_signing_date",
+        "sourceClaimIds": [
+          "c95c7b917d96023b"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/news/andrew-mangiapane-signs-2-year-contract-with-edmonton-oilers",
+            "publisher": "NHL.com",
+            "publishedAt": "2025-07-02T17:11:00Z",
+            "confidenceTier": "B"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/andrew-mangiapane"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "capHitUsd": 3600000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "baseSalaryUsd": 1000000,
+        "performanceBonusUsd": null,
+        "totalSalaryUsd": null,
+        "minorsSalaryUsd": 3600000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 3600000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8483493,
+      "name": "Frank Nazar",
+      "teamCode": "CHI",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8483493|CHI|2025-08",
+        "signingTeam": "CHI",
+        "signedAt": "2025-08-21",
+        "signingDateStated": false,
+        "type": "extension",
+        "termYears": 7,
+        "startSeason": "2026-27",
+        "endSeason": "2032-33",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": 46130000,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "AB",
+        "sourceCount": 3,
+        "conflicts": null,
+        "flags": "llm:anthropic/claude-haiku-5.5;llm_filled;player_id_from_roster",
+        "sourceClaimIds": [
+          "a789a253b93e435f",
+          "5a6443f90b953aff",
+          "0b2e20c1f7db902b"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/news/release-blackhawks-sign-frank-nazar-to-seven-year-contract-extension",
+            "publisher": "CHI (club release on NHL.com)",
+            "publishedAt": "2025-08-21T18:00:00Z",
+            "confidenceTier": "A"
+          },
+          {
+            "url": "https://www.nhl.com/news/feature-why-nazar-can-t-imagine-playing-anywhere-but-chicago",
+            "publisher": "CHI (club release on NHL.com)",
+            "publishedAt": "2025-08-28T22:00:00Z",
+            "confidenceTier": "A"
+          },
+          {
+            "url": "https://www.nhl.com/news/frank-nazar-signs-7-year-contract-with-chicago-blackhawks",
+            "publisher": "NHL.com",
+            "publishedAt": "2025-08-22T18:55:00Z",
+            "confidenceTier": "B"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/frank-nazar"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "capHitUsd": 6599991,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "baseSalaryUsd": 9100000,
+        "performanceBonusUsd": null,
+        "totalSalaryUsd": null,
+        "minorsSalaryUsd": 9100000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 6599991,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8482176,
+      "name": "Wyatt Kaiser",
+      "teamCode": "CHI",
+      "position": "D",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8482176|CHI|2025-09",
+        "signingTeam": "CHI",
+        "signedAt": "2025-09-18",
+        "signingDateStated": false,
+        "type": "standard",
+        "termYears": 2,
+        "startSeason": "2025-26",
+        "endSeason": "2026-27",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": 3400000,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "AB",
+        "sourceCount": 2,
+        "conflicts": null,
+        "flags": null,
+        "sourceClaimIds": [
+          "6e4ec8554d895f20",
+          "acd33db08f62bfe9"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/news/release-blackhawks-sign-wyatt-kaiser-to-two-year-contract-extension",
+            "publisher": "CHI (club release on NHL.com)",
+            "publishedAt": "2025-09-18T01:00:00Z",
+            "confidenceTier": "A"
+          },
+          {
+            "url": "https://www.nhl.com/news/wyatt-kaiser-signs-2-year-contract-with-chicago-blackhawks",
+            "publisher": "NHL.com",
+            "publishedAt": "2025-09-18T19:38:00Z",
+            "confidenceTier": "B"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/wyatt-kaiser"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "capHitUsd": 1700000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "baseSalaryUsd": 1700000,
+        "performanceBonusUsd": null,
+        "totalSalaryUsd": null,
+        "minorsSalaryUsd": 1700000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 1700000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8483466,
+      "name": "Kevin Korchinski",
+      "teamCode": "CHI",
+      "position": "D",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8483466|CHI|2026-08",
+        "signingTeam": "CHI",
+        "signedAt": "2026-08-29",
+        "signingDateStated": false,
+        "type": "standard",
+        "termYears": 2,
+        "startSeason": "2026-27",
+        "endSeason": "2027-28",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": null,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "AC",
+        "sourceCount": 2,
+        "conflicts": null,
+        "flags": "player_id_from_roster",
+        "sourceClaimIds": [
+          "a627bfef5ce283fb",
+          "9a0b0a39eb77ecdb"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/news/release-blackhawks-sign-kevin-korchinski-to-two-year-contract",
+            "publisher": "CHI (club release on NHL.com)",
+            "publishedAt": "2026-08-29T21:51:00Z",
+            "confidenceTier": "A"
+          },
+          {
+            "url": "https://www.espn.com/nhl/transactions/_/date/20260829",
+            "publisher": "ESPN transactions wire",
+            "publishedAt": "2026-08-29T07:00Z",
+            "confidenceTier": "C"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/kevin-korchinski"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "baseSalaryUsd": 1250000,
+        "capHitUsd": 1325000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "minorsSalaryUsd": 1250000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 1325000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8484783,
+      "name": "Artyom Levshunov",
+      "teamCode": "CHI",
+      "position": "D",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8484783|CHI|2024-07",
+        "signingTeam": "CHI",
+        "signedAt": "2024-07-06",
+        "signingDateStated": false,
+        "type": "ELC",
+        "termYears": 3,
+        "startSeason": "2024-25",
+        "endSeason": "2026-27",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": null,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "A",
+        "sourceCount": 1,
+        "conflicts": null,
+        "flags": null,
+        "sourceClaimIds": [
+          "ae78f470bd0a3269"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/news/release-blackhawks-sign-artyom-levshunov-to-entry-level-deal",
+            "publisher": "CHI (club release on NHL.com)",
+            "publishedAt": "2024-07-06T22:40:00Z",
+            "confidenceTier": "A"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/artyom-levshunov"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "baseSalaryUsd": 877500,
+        "capHitUsd": 975000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "minorsSalaryUsd": 85000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 975000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8482821,
+      "name": "Arvid Soderblom",
+      "teamCode": "CHI",
+      "position": "G",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8482821|CHI|2025-07",
+        "signingTeam": "CHI",
+        "signedAt": "2025-07-26",
+        "signingDateStated": false,
+        "type": "standard",
+        "termYears": 2,
+        "startSeason": "2025-26",
+        "endSeason": "2026-27",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": 5500000,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "AB",
+        "sourceCount": 2,
+        "conflicts": null,
+        "flags": "arbitration",
+        "sourceClaimIds": [
+          "8f10e72d41619282",
+          "60c7a530a834a6c4"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/news/release-blackhawks-sign-soderblom-to-two-year-contract",
+            "publisher": "CHI (club release on NHL.com)",
+            "publishedAt": "2025-07-26T15:00:00Z",
+            "confidenceTier": "A"
+          },
+          {
+            "url": "https://www.nhl.com/news/arvid-soderblom-signs-2-year-contract-with-chicago-blackhawks",
+            "publisher": "NHL.com",
+            "publishedAt": "2025-07-26T15:11:13.38Z",
+            "confidenceTier": "B"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/arvid-soderblom"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "capHitUsd": 2750000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "baseSalaryUsd": 2500000,
+        "performanceBonusUsd": null,
+        "totalSalaryUsd": null,
+        "minorsSalaryUsd": 2500000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 2750000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
       "sourceDataset": "manual_verified_contract_override",
       "license": "source-linked"
     }

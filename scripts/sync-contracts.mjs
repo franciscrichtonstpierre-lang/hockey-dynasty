@@ -317,6 +317,31 @@ for (const rp of (registryData.players || [])) {
     dataNote: "No verified 2026-27 contract matched. This is not proof that the player has no contract; verify against the player's league/team or official announcement."
   });
 }
+// The game does not display AAV. Strip all AAV-derived fields from the published snapshot,
+// including manually reconciled overrides, while retaining base salary and cap hit.
+function stripAavFields(value) {
+  if (Array.isArray(value)) return value.map(stripAavFields);
+  if (!value || typeof value !== "object") return value;
+  const clean = {};
+  for (const [key, child] of Object.entries(value)) {
+    if (/aav/i.test(key)) continue;
+    clean[key] = stripAavFields(child);
+  }
+  return clean;
+}
+for (let i=0; i<players.length; i++) players[i] = stripAavFields(players[i]);
+for (let i=0; i<organizationContracts.length; i++) organizationContracts[i] = stripAavFields(organizationContracts[i]);
+function assertNoAavFields(value, path="root") {
+  if (Array.isArray(value)) return value.forEach((item,index)=>assertNoAavFields(item, path+"["+index+"]"));
+  if (!value || typeof value !== "object") return;
+  for (const [key, child] of Object.entries(value)) {
+    if (/aav/i.test(key)) throw new Error("AAV field leaked into game snapshot: "+path+"."+key);
+    assertNoAavFields(child, path+"."+key);
+  }
+}
+assertNoAavFields(players, "players");
+assertNoAavFields(organizationContracts, "organizationContracts");
+
 const matchedContracts=players.filter(p=>p.contract!=null).length;
 const salaryRows=players.filter(p=>p.currentLeagueSalaryUsd!=null).length;
 const modelSalaryRows=players.filter(p=>p.simulationSalaryStatus==="provisional_model_estimate"&&Number(p.simulationSalaryUsd)>0).length;

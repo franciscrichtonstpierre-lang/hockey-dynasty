@@ -272,7 +272,7 @@ for (const salaryRecord of (markerZoneSnapshot.players || [])) {
   };
   markerZoneSalaryOverridesApplied++;
 }
-console.log("MarkerZone 2026-27 salary overrides applied: " + markerZoneSalaryOverridesApplied + ".");
+console.log("MarkerZone 2026-27 salary overrides applied: " + markerZoneSalaryOverridesApplied + " from " + markerZoneSnapshot.players.length + " source rows.");
 
 
 const organizationContracts = [];

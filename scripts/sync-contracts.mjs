@@ -391,6 +391,7 @@ for (const rp of (registryData.players || [])) {
 // including manually reconciled overrides, while retaining base salary and cap hit.
 function stripAavFields(value) {
   if (Array.isArray(value)) return value.map(stripAavFields);
+  if (typeof value === "string") return /aav/i.test(value) ? null : value;
   if (!value || typeof value !== "object") return value;
   const clean = {};
   for (const [key, child] of Object.entries(value)) {
@@ -408,6 +409,7 @@ for (let i=0; i<players.length; i++) players[i] = stripAavFields(players[i]);
 for (let i=0; i<organizationContracts.length; i++) organizationContracts[i] = stripAavFields(organizationContracts[i]);
 function assertNoAavFields(value, path="root") {
   if (Array.isArray(value)) return value.forEach((item,index)=>assertNoAavFields(item, path+"["+index+"]"));
+  if (typeof value === "string" && /aav/i.test(value)) throw new Error("AAV text leaked into game snapshot: "+path);
   if (!value || typeof value !== "object") return;
   for (const [key, child] of Object.entries(value)) {
     if (/aav/i.test(key)) throw new Error("AAV field leaked into game snapshot: "+path+"."+key);

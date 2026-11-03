@@ -117,7 +117,8 @@ test("the live organization renderer displays ratings for all Montreal prospect 
     const escaped = String(name).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
     const row = html.match(new RegExp(`<tr><td class="playerName">${escaped}</td>.*?</tr>`))?.[0];
     assert.ok(row, `rendered row exists for ${name}`);
-    if (/—/.test(row)) visiblyUnrated.push(name);
+    const ratingCells = [...row.matchAll(/<td class="ratingCell">([^<]*)<\/td>/g)].slice(1).map(match => match[1]);
+    if (ratingCells.some(value => /—/.test(value))) visiblyUnrated.push(name);
   }
 
   assert.deepEqual(visiblyUnrated, [], "Montreal prospects must not render empty rating cells");

@@ -1,6 +1,6 @@
 {
   "season": "2026-2027",
-  "sourceNote": "Manually reconciled contract rows using NHL team announcements and PuckPedia season breakdowns. Signing-bonus fields are intentionally omitted from the simulation. Six additional 2026-27 contracts were reconciled against PuckPedia and club announcements on 2026-11-01. Signing bonuses are excluded from the simulation salary field; performance bonuses remain separately represented. Four additional Anaheim Ducks 2026-27 salary breakdowns reconciled against PuckPedia player contract pages and NHL/club announcements on 2026-11-02; base salary is kept separate from cap hit and signing bonuses are excluded. Eight additional Anaheim 2026-27 base salaries, cap hits and terms were reconciled against PuckPedia player contract breakdowns and NHL club announcements on 2026-11-02; signing bonuses are excluded from the salary field. Twelve Chicago Blackhawks 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Nine Detroit Red Wings 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary.",
+  "sourceNote": "Manually reconciled contract rows using NHL team announcements and PuckPedia season breakdowns. Signing-bonus fields are intentionally omitted from the simulation. Six additional 2026-27 contracts were reconciled against PuckPedia and club announcements on 2026-11-01. Signing bonuses are excluded from the simulation salary field; performance bonuses remain separately represented. Four additional Anaheim Ducks 2026-27 salary breakdowns reconciled against PuckPedia player contract pages and NHL/club announcements on 2026-11-02; base salary is kept separate from cap hit and signing bonuses are excluded. Eight additional Anaheim 2026-27 base salaries, cap hits and terms were reconciled against PuckPedia player contract breakdowns and NHL club announcements on 2026-11-02; signing bonuses are excluded from the salary field. Twelve Chicago Blackhawks 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Nine Detroit Red Wings 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Thirteen Edmonton Oilers 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary.",
   "players": [
     {
       "playerId": 8484168,
@@ -2416,6 +2416,806 @@
         "oneWay": true
       },
       "simulationSalaryUsd": 2000000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8482703,
+      "name": "Colton Dach",
+      "teamCode": "EDM",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8482703|EDM|2026-07",
+        "signingTeam": "EDM",
+        "signedAt": "2026-07-12",
+        "signingDateStated": false,
+        "type": "extension",
+        "termYears": 2,
+        "startSeason": "2026-27",
+        "endSeason": "2027-28",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": 2400000,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "ABC",
+        "sourceCount": 3,
+        "conflicts": null,
+        "flags": "derived:span_after_expired_contract;derived:span_from_signing_date;player_id_from_roster",
+        "sourceClaimIds": [
+          "a9f1b85e95cfb077",
+          "1a84fc854f498084",
+          "e33249d744f55c69"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/news/release-oilers-re-sign-colton-dach-to-two-year-contract",
+            "publisher": "EDM (club release on NHL.com)",
+            "publishedAt": "2026-07-12T18:23:55.506Z",
+            "confidenceTier": "A"
+          },
+          {
+            "url": "https://www.nhl.com/news/colton-dach-signs-two-year-contract-with-edmonton-oilers",
+            "publisher": "NHL.com",
+            "publishedAt": "2026-07-12T18:36:51.585Z",
+            "confidenceTier": "B"
+          },
+          {
+            "url": "https://www.espn.com/nhl/transactions/_/date/20260712",
+            "publisher": "ESPN transactions wire",
+            "publishedAt": "2026-07-12T07:00Z",
+            "confidenceTier": "C"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/colton-dach"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "capHitUsd": 1200000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "baseSalaryUsd": 1200000,
+        "performanceBonusUsd": null,
+        "totalSalaryUsd": null,
+        "minorsSalaryUsd": 1200000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 1200000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8477934,
+      "name": "Leon Draisaitl",
+      "teamCode": "EDM",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8477934|EDM|2024-09",
+        "signingTeam": "EDM",
+        "signedAt": "2024-09-03",
+        "signingDateStated": false,
+        "type": "extension",
+        "termYears": 8,
+        "startSeason": "2025-26",
+        "endSeason": "2032-33",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": 112000000,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "BC",
+        "sourceCount": 2,
+        "conflicts": null,
+        "flags": "derived:span_from_signing_date;player_id_from_roster",
+        "sourceClaimIds": [
+          "69102f07bd89b690",
+          "593384daa5d85559"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/news/leon-draisaitl-signs-eight-year-contract-with-edmonton-oilers",
+            "publisher": "NHL.com",
+            "publishedAt": "2024-09-03T18:22:00Z",
+            "confidenceTier": "B"
+          },
+          {
+            "url": "https://www.espn.com/nhl/transactions/_/date/20240903",
+            "publisher": "ESPN transactions wire",
+            "publishedAt": "2024-09-03T07:00Z",
+            "confidenceTier": "C"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/leon-draisaitl"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "capHitUsd": 14000000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "baseSalaryUsd": 1000000,
+        "performanceBonusUsd": null,
+        "totalSalaryUsd": null,
+        "minorsSalaryUsd": 16500000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 14000000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8480029,
+      "name": "Alex Formenton",
+      "teamCode": "EDM",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8480029|EDM|2026-09",
+        "signingTeam": "EDM",
+        "signedAt": "2026-09-09",
+        "signingDateStated": false,
+        "type": "standard",
+        "termYears": 1,
+        "startSeason": "2026-27",
+        "endSeason": "2026-27",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": 850000,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "AC",
+        "sourceCount": 2,
+        "conflicts": null,
+        "flags": "derived:span_from_signing_date;derived:total_one_year;player_id_from_roster",
+        "sourceClaimIds": [
+          "ddcc16705c2dbd4d",
+          "fff1ba75e641b21d"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/news/release-oilers-sign-alex-formenton-to-one-year-contract",
+            "publisher": "EDM (club release on NHL.com)",
+            "publishedAt": "2026-09-09T14:55:47.528Z",
+            "confidenceTier": "A"
+          },
+          {
+            "url": "https://www.espn.com/nhl/transactions/_/date/20260909",
+            "publisher": "ESPN transactions wire",
+            "publishedAt": "2026-09-09T07:00Z",
+            "confidenceTier": "C"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/alex-formenton"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "capHitUsd": 850000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "baseSalaryUsd": 850000,
+        "performanceBonusUsd": null,
+        "totalSalaryUsd": null,
+        "minorsSalaryUsd": 850000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 850000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8479365,
+      "name": "Trent Frederic",
+      "teamCode": "EDM",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8479365|EDM|2025-06",
+        "signingTeam": "EDM",
+        "signedAt": "2025-06-27",
+        "signingDateStated": false,
+        "type": "standard",
+        "termYears": 8,
+        "startSeason": "2025-26",
+        "endSeason": "2032-33",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": 30800000,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "B",
+        "sourceCount": 1,
+        "conflicts": null,
+        "flags": "derived:span_from_signing_date",
+        "sourceClaimIds": [
+          "58e2e57597bccc08"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/news/trent-frederic-signs-eight-year-contract-with-edmonton-oilers",
+            "publisher": "NHL.com",
+            "publishedAt": "2025-06-27T17:47:00Z",
+            "confidenceTier": "B"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/trent-frederic"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "capHitUsd": 3850000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "baseSalaryUsd": 2550000,
+        "performanceBonusUsd": null,
+        "totalSalaryUsd": null,
+        "minorsSalaryUsd": 4050000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 3850000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8480842,
+      "name": "Filip Hallander",
+      "teamCode": "EDM",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8480842|PIT|2025-04",
+        "signingTeam": "PIT",
+        "signedAt": "2025-04-29",
+        "signingDateStated": false,
+        "type": "standard",
+        "termYears": 2,
+        "startSeason": "2025-26",
+        "endSeason": "2026-27",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": null,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "A",
+        "sourceCount": 1,
+        "conflicts": null,
+        "flags": null,
+        "sourceClaimIds": [
+          "4987bcf504bbf1af"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/news/penguins-sign-forward-filip-hallander-to-a-two-year-contract",
+            "publisher": "PIT (club release on NHL.com)",
+            "publishedAt": "2025-04-29T14:41:11.418Z",
+            "confidenceTier": "A"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/filip-hallander"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "baseSalaryUsd": 850000,
+        "capHitUsd": 850000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "minorsSalaryUsd": 850000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 850000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8483455,
+      "name": "Isaac Howard",
+      "teamCode": "EDM",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8483455|EDM|2025-07",
+        "signingTeam": "EDM",
+        "signedAt": "2025-07-09",
+        "signingDateStated": false,
+        "type": "ELC",
+        "termYears": 3,
+        "startSeason": "2025-26",
+        "endSeason": "2027-28",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": null,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "A",
+        "sourceCount": 1,
+        "conflicts": null,
+        "flags": null,
+        "sourceClaimIds": [
+          "6e7ce5ebed581581"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/oilers/news/release-oilers-acquire-howard-from-lightning",
+            "publisher": "EDM (club release on NHL.com)",
+            "publishedAt": "2025-07-09",
+            "confidenceTier": "A"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/isaac-howard"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "baseSalaryUsd": 855000,
+        "capHitUsd": 972500,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "minorsSalaryUsd": 82500,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 972500,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8478472,
+      "name": "Mathieu Joseph",
+      "teamCode": "EDM",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8478472|EDM|2026-07",
+        "signingTeam": "EDM",
+        "signedAt": "2026-07-04",
+        "signingDateStated": false,
+        "type": "standard",
+        "termYears": 1,
+        "startSeason": "2026-27",
+        "endSeason": "2026-27",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": true,
+        "totalUsd": null,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "D",
+        "sourceCount": 1,
+        "conflicts": null,
+        "flags": "player_id_from_roster;start_season_assumed",
+        "sourceClaimIds": [
+          "f6a931b4af512eea"
+        ],
+        "sources": [
+          {
+            "url": "https://bsky.app/profile/puckpedia.com/post/3mprucg55pd25",
+            "publisher": "PuckPedia (public Bluesky post)",
+            "publishedAt": "2026-07-04T01:00:21.010Z",
+            "confidenceTier": "D"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/mathieu-joseph"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "baseSalaryUsd": 1000000,
+        "capHitUsd": 1000000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "minorsSalaryUsd": 1000000,
+        "oneWay": true
+      },
+      "simulationSalaryUsd": 1000000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8481617,
+      "name": "Vasily Podkolzin",
+      "teamCode": "EDM",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8481617|EDM|2025-09",
+        "signingTeam": "EDM",
+        "signedAt": "2025-09-23",
+        "signingDateStated": false,
+        "type": "extension",
+        "termYears": 3,
+        "startSeason": "2026-27",
+        "endSeason": "2028-29",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": 8850000,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "BD",
+        "sourceCount": 2,
+        "conflicts": null,
+        "flags": "first_name_from_link;player_id_from_roster;start_season_assumed;surname_only",
+        "sourceClaimIds": [
+          "e12c0879896d8f69",
+          "ffb055ce993d4f79"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/news/vasily-podkolzin-signs-3-year-contract-with-edmonton-oilers",
+            "publisher": "NHL.com",
+            "publishedAt": "2025-09-23T16:21:35.516Z",
+            "confidenceTier": "B"
+          },
+          {
+            "url": "https://bsky.app/profile/puckpedia.com/post/3lzk4yjegdb2a",
+            "publisher": "PuckPedia (public Bluesky post)",
+            "publishedAt": "2025-09-24T00:00:18.781Z",
+            "confidenceTier": "D"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/vasily-podkolzin"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "capHitUsd": 2950000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "baseSalaryUsd": 1950000,
+        "performanceBonusUsd": null,
+        "totalSalaryUsd": null,
+        "minorsSalaryUsd": 2950000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 2950000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8475218,
+      "name": "Mattias Ekholm",
+      "teamCode": "EDM",
+      "position": "D",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8475218|EDM|2025-10",
+        "signingTeam": "EDM",
+        "signedAt": "2025-10-08",
+        "signingDateStated": false,
+        "type": "standard",
+        "termYears": 3,
+        "startSeason": "2026-27",
+        "endSeason": "2028-29",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": 12000000,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "B",
+        "sourceCount": 1,
+        "conflicts": null,
+        "flags": null,
+        "sourceClaimIds": [
+          "1807a95dd30b0c61"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/news/mattias-ekholm-signs-3-year-contract-with-edmonton-oilers",
+            "publisher": "NHL.com",
+            "publishedAt": "2025-10-08T17:54:00Z",
+            "confidenceTier": "B"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/mattias-ekholm"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "baseSalaryUsd": 2000000,
+        "capHitUsd": 4000000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "minorsSalaryUsd": 4000000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 4000000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8482166,
+      "name": "Shakir Mukhamadullin",
+      "teamCode": "EDM",
+      "position": "D",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8482166|EDM|2026-07",
+        "signingTeam": "EDM",
+        "signedAt": "2026-07-04",
+        "signingDateStated": false,
+        "type": "standard",
+        "termYears": 2,
+        "startSeason": "2026-27",
+        "endSeason": "2027-28",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": 3500000,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "BC",
+        "sourceCount": 2,
+        "conflicts": null,
+        "flags": "derived:span_from_signing_date;player_id_from_roster",
+        "sourceClaimIds": [
+          "98fa3f0c8156a3db",
+          "0960f0ed2202f09c"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/news/shakir-mukhamadullin-spencer-stastney-each-sign-with-edmonton-oilers",
+            "publisher": "NHL.com",
+            "publishedAt": "2026-07-05T21:18:15.657Z",
+            "confidenceTier": "B"
+          },
+          {
+            "url": "https://www.espn.com/nhl/transactions/_/date/20260704",
+            "publisher": "ESPN transactions wire",
+            "publishedAt": "2026-07-04T07:00Z",
+            "confidenceTier": "C"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/shakir-mukhamadullin"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "capHitUsd": 1750000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "baseSalaryUsd": 1550000,
+        "performanceBonusUsd": null,
+        "totalSalaryUsd": null,
+        "minorsSalaryUsd": 1750000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 1750000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8476473,
+      "name": "Connor Murphy",
+      "teamCode": "EDM",
+      "position": "D",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8476473|EDM|2026-06",
+        "signingTeam": "EDM",
+        "signedAt": "2026-06-22",
+        "signingDateStated": false,
+        "type": "standard",
+        "termYears": 5,
+        "startSeason": "2026-27",
+        "endSeason": "2030-31",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": 20500000,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "ABC",
+        "sourceCount": 3,
+        "conflicts": null,
+        "flags": "derived:span_from_signing_date;player_id_from_roster",
+        "sourceClaimIds": [
+          "f86f1ac5e26987c2",
+          "d4bf190b827c8c6e",
+          "e6077ee3a7632ab6"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/news/release-oilers-sign-connor-murphy-to-five-year-contract",
+            "publisher": "EDM (club release on NHL.com)",
+            "publishedAt": "2026-06-22T16:27:35.168Z",
+            "confidenceTier": "A"
+          },
+          {
+            "url": "https://www.nhl.com/news/connor-murphy-signs-5-year-contract-with-edmonton-oilers",
+            "publisher": "NHL.com",
+            "publishedAt": "2026-06-22T22:07:00Z",
+            "confidenceTier": "B"
+          },
+          {
+            "url": "https://www.espn.com/nhl/transactions/_/date/20260622",
+            "publisher": "ESPN transactions wire",
+            "publishedAt": "2026-06-22T07:00Z",
+            "confidenceTier": "C"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/connor-murphy"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "capHitUsd": 4100000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "baseSalaryUsd": 2600000,
+        "performanceBonusUsd": null,
+        "totalSalaryUsd": null,
+        "minorsSalaryUsd": 4100000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 4100000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8478013,
+      "name": "Jake Walman",
+      "teamCode": "EDM",
+      "position": "D",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8478013|EDM|2025-10",
+        "signingTeam": "EDM",
+        "signedAt": "2025-10-06",
+        "signingDateStated": false,
+        "type": "standard",
+        "termYears": 7,
+        "startSeason": "2026-27",
+        "endSeason": "2032-33",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": 49000000,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "B",
+        "sourceCount": 1,
+        "conflicts": null,
+        "flags": null,
+        "sourceClaimIds": [
+          "dab860248617e7eb"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/news/jake-walman-signs-seven-year-contract-with-edmonton-oilers",
+            "publisher": "NHL.com",
+            "publishedAt": "2025-10-06T18:16:31.82Z",
+            "confidenceTier": "B"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/jake-walman"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "capHitUsd": 7000000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "baseSalaryUsd": 2500000,
+        "performanceBonusUsd": null,
+        "totalSalaryUsd": null,
+        "minorsSalaryUsd": 7240000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 7000000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8475883,
+      "name": "Frederik Andersen",
+      "teamCode": "EDM",
+      "position": "G",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8475883|EDM|2026-07",
+        "signingTeam": "EDM",
+        "signedAt": "2026-07-02",
+        "signingDateStated": false,
+        "type": "standard",
+        "termYears": 1,
+        "startSeason": "2026-27",
+        "endSeason": "2026-27",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": 2800000,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "B",
+        "sourceCount": 1,
+        "conflicts": null,
+        "flags": "derived:span_from_signing_date",
+        "sourceClaimIds": [
+          "99d080e427298003"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/news/frederik-andersen-signs-one-year-contract-with-edmonton-oilers",
+            "publisher": "NHL.com",
+            "publishedAt": "2026-07-02T00:53:22.101Z",
+            "confidenceTier": "B"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/frederik-andersen"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "baseSalaryUsd": 1000000,
+        "capHitUsd": 1000000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "minorsSalaryUsd": 1000000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 1000000,
       "simulationSalaryStatus": "source_verified_manual_override",
       "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
       "sourceDataset": "manual_verified_contract_override",

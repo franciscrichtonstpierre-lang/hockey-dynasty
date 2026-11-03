@@ -285,6 +285,37 @@ h1 .team-brand-logo,h2 .team-brand-logo,h3 .team-brand-logo,.lineupHero .team-br
  .rosterTable .team-brand-logo{width:20px!important;height:20px!important}
 }
 
+/* Mobile roster: toutes les colonnes visibles sans bande de défilement */
+@media(max-width:600px){
+ .rosterScroll{display:block!important;width:100%!important;max-width:100%!important;overflow-x:hidden!important;overflow-y:visible!important;padding:0!important}
+ .rosterScroll::-webkit-scrollbar{display:none!important;height:0!important}
+ .rosterTable{display:table!important;width:100%!important;min-width:0!important;max-width:100%!important;table-layout:fixed!important;zoom:1!important;border-collapse:collapse!important;font-size:7px!important;white-space:nowrap!important}
+ .rosterTable thead{display:table-header-group!important}
+ .rosterTable tbody{display:table-row-group!important}
+ .rosterTable tr{display:table-row!important;margin:0!important;padding:0!important;border:0!important}
+ .rosterTable th,.rosterTable td{display:table-cell!important;position:static!important;inset:auto!important;min-width:0!important;max-width:none!important;padding:3px 0!important;overflow:hidden!important;text-overflow:clip!important;white-space:nowrap!important;font-size:7px!important;line-height:1.1!important;text-align:center!important}
+ .rosterTable th:nth-child(1),.rosterTable td:nth-child(1){width:13%!important;text-align:left!important}
+ .rosterTable th:nth-child(2),.rosterTable td:nth-child(2){width:2.5%!important}
+ .rosterTable th:nth-child(3),.rosterTable td:nth-child(3){width:4%!important}
+ .rosterTable th:nth-child(4),.rosterTable td:nth-child(4){width:4%!important}
+ .rosterTable th:nth-child(5),.rosterTable td:nth-child(5){width:2.5%!important}
+ .rosterTable th:nth-child(6),.rosterTable td:nth-child(6){width:2.5%!important}
+ .rosterTable th:nth-child(7),.rosterTable td:nth-child(7){width:2.5%!important}
+ .rosterTable th:nth-child(8),.rosterTable td:nth-child(8){width:8%!important}
+ .rosterTable th:nth-child(9),.rosterTable td:nth-child(9){width:2.5%!important}
+ .rosterTable th:nth-child(n+10):nth-child(-n+25),.rosterTable td:nth-child(n+10):nth-child(-n+25){width:3.3%!important}
+ .rosterTable th:last-child,.rosterTable td:last-child{width:4%!important}
+ .rosterTable .playerName{position:static!important;width:auto!important;min-width:0!important;max-width:none!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important;font-size:7px!important}
+ .rosterTable .ratingCell{width:auto!important;min-width:0!important;padding-left:0!important;padding-right:0!important;font-size:7px!important;font-weight:700!important}
+ .rosterTable .quickContractCell,.rosterTable thead th:last-child{position:static!important;width:auto!important;min-width:0!important;padding:1px 0!important}
+ .rosterTable .quickContractPencil{width:15px!important;min-width:15px!important;height:17px!important;min-height:17px!important;padding:0!important}
+ .rosterTable .quickContractPencilIcon{width:11px!important;height:11px!important}
+ .rosterTable .rosterCopyCell,.rosterTable .rosterLogoCell,.rosterTable .rosterActionsCell{min-width:0!important;padding:1px 0!important}
+ .rosterTable .rosterCopyButton,.rosterTable .rosterMiniAction{width:13px!important;min-width:13px!important;height:15px!important;min-height:15px!important;padding:0!important;margin:0!important}
+ .rosterTable .rosterCopyButton svg,.rosterTable .rosterMiniAction svg{width:10px!important;height:10px!important}
+ .rosterTable .team-brand-logo{width:15px!important;height:15px!important}
+}
+
 </style><style>#uhmGateway{max-width:750px;margin:24px auto}body.uhmGate #app,body.uhmGate #accountPanel,body.uhmGate #message,body.uhmGate #uhmMenuButton{display:none!important}body.uhmGame #uhmGateway,body.uhmGame #accountPanel{display:none!important}</style></head><body><header><div class="uhmHeader"><div><h1>🏒 ULTIMATE HOCKEY MANAGER</h1><small>Bureau du DG • v0.7 • Saison de démonstration 2026–2027</small></div><button id="uhmMenuButton" class="uhmMenuButton" type="button" onclick="toggleUhmMenu(true)" aria-controls="uhmOverlay" aria-expanded="false">☰ Menu</button></div></header><main><section id="uhmGateway" class="card"></section><section id="accountPanel" class="card" style="margin-bottom:12px"></section><div id="uhmOverlay" class="uhmOverlay" hidden onclick="if(event.target===this)toggleUhmMenu(false)"><aside class="uhmDrawer" role="dialog" aria-modal="true" aria-label="Navigation UHM"><div class="uhmDrawerTop"><strong>☰ Sections UHM</strong><button type="button" onclick="toggleUhmMenu(false)" aria-label="Fermer le menu">✕</button></div><div id="uhmMenuSections"></div></aside></div><nav id="nav" hidden></nav><div id="subnav" hidden></div><div id="message"></div><div id="app"></div></main><footer>Prototype indépendant. Les cotes de repli et les scores simulés sont provisoires. Les ligues en ligne nécessitent une configuration Supabase valide; certaines données de jeu restent sauvegardées localement.<div style="text-align:center;margin:8px 0 18px"><a href="./world-data-import.html" style="color:#d9edf9;font-size:12px">Importation des données mondiales (propriétaire UHM)</a></div></footer><script src="./performance.js?v=20261101"></script><script src="./rating-presentation.js?v=20261102-2"></script><script>
 const teams=["Anaheim Ducks","Boston Bruins","Buffalo Sabres","Calgary Flames","Carolina Hurricanes","Chicago Blackhawks","Colorado Avalanche","Columbus Blue Jackets","Dallas Stars","Detroit Red Wings","Edmonton Oilers","Florida Panthers","Los Angeles Kings","Minnesota Wild","Montréal Canadiens","Nashville Predators","New Jersey Devils","New York Islanders","New York Rangers","Ottawa Senators","Philadelphia Flyers","Pittsburgh Penguins","San Jose Sharks","Seattle Kraken","St. Louis Blues","Tampa Bay Lightning","Toronto Maple Leafs","Utah Mammoth","Vancouver Canucks","Vegas Golden Knights","Washington Capitals","Winnipeg Jets"];
 const players=[["Nick Suzuki","C",89,92],["Cole Caufield","AD",87,91],["Juraj Slafkovský","AG",84,92],["Ivan Demidov","AD",82,96],["Kirby Dach","C",78,85],["Alex Newhook","AG",79,84],["Brendan Gallagher","AD",76,76],["Josh Anderson","AD",76,77],["Jake Evans","C",78,79],["Oliver Kapanen","C",75,84],["Lane Hutson","D",87,95],["Kaiden Guhle","D",82,88],["Mike Matheson","D",82,83],["Arber Xhekaj","D",76,82],["Alexandre Carrier","D",79,80],["Samuel Montembeault","G",82,85],["Jakub Dobeš","G",77,86]];

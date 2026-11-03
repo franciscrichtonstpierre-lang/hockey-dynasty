@@ -221,7 +221,7 @@ for (const override of (manualOverrides.players || [])) {
 
 const nhlpaSalarySnapshot = JSON.parse(await readFile("data/contracts/nhlpa-salaries-2026-2027.json","utf8"));
 let nhlpaSalaryOverridesApplied = 0;
-for (const salaryRecord of (nhlpaSalarySnapshot.players || [])) {
+for (const salaryRecord of (nhlpaSalarySnapshot.players || []).filter(record => ["BOS","BUF","VAN"].includes(record.teamCode))) {
   const index = players.findIndex(p => Number(p.playerId) === Number(salaryRecord.playerId));
   if (index < 0) continue;
   const player = players[index];

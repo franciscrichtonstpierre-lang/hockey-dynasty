@@ -1,19 +1,19 @@
 {
   "season": "2026-2027",
-  "generatedAt": "2026-11-03T12:41:39.481Z",
+  "generatedAt": "2026-11-03T12:49:00.098Z",
   "nhl": {
-    "total": 863,
-    "salaryPresent": 863,
-    "verifiedSalaryPresent": 863,
+    "total": 871,
+    "salaryPresent": 871,
+    "verifiedSalaryPresent": 871,
     "salaryBasisCounts": {
-      "verified_nhl_base_salary": 863
+      "verified_nhl_base_salary": 871
     },
-    "capHitPresent": 863,
-    "verifiedCapHitPresent": 863,
+    "capHitPresent": 871,
+    "verifiedCapHitPresent": 871,
     "capHitBasisCounts": {
       "verified_manual_override": 159,
       "verified_season_cap_hit": 429,
-      "verified_puckpedia_season_cap_hit": 165,
+      "verified_puckpedia_season_cap_hit": 173,
       "verified_puckpedia_cap_hit": 103,
       "verified_contract_total_divided_by_term": 7
     },
@@ -63,9 +63,9 @@
         "missingCapHit": []
       },
       "CHI": {
-        "players": 26,
-        "salaryPresent": 26,
-        "capHitPresent": 26,
+        "players": 27,
+        "salaryPresent": 27,
+        "capHitPresent": 27,
         "missingSalary": [],
         "missingCapHit": []
       },
@@ -126,9 +126,9 @@
         "missingCapHit": []
       },
       "NJD": {
-        "players": 27,
-        "salaryPresent": 27,
-        "capHitPresent": 27,
+        "players": 28,
+        "salaryPresent": 28,
+        "capHitPresent": 28,
         "missingSalary": [],
         "missingCapHit": []
       },
@@ -147,9 +147,9 @@
         "missingCapHit": []
       },
       "NYR": {
-        "players": 32,
-        "salaryPresent": 32,
-        "capHitPresent": 32,
+        "players": 35,
+        "salaryPresent": 35,
+        "capHitPresent": 35,
         "missingSalary": [],
         "missingCapHit": []
       },
@@ -189,9 +189,9 @@
         "missingCapHit": []
       },
       "STL": {
-        "players": 29,
-        "salaryPresent": 29,
-        "capHitPresent": 29,
+        "players": 30,
+        "salaryPresent": 30,
+        "capHitPresent": 30,
         "missingSalary": [],
         "missingCapHit": []
       },
@@ -238,9 +238,9 @@
         "missingCapHit": []
       },
       "WSH": {
-        "players": 30,
-        "salaryPresent": 30,
-        "capHitPresent": 30,
+        "players": 32,
+        "salaryPresent": 32,
+        "capHitPresent": 32,
         "missingSalary": [],
         "missingCapHit": []
       }
@@ -249,64 +249,7 @@
   "organization": {
     "total": 2553,
     "matchedContracts": 438,
-    "salaryPresent": 430,
-    "matchedMissingSalary": [
-      {
-        "playerId": 8484858,
-        "name": "Anthony (AJ) Spellacy",
-        "teamCode": null,
-        "currentLeague": "AHL",
-        "contract": "8484858|CHI|2025-01"
-      },
-      {
-        "playerId": 8477380,
-        "name": "Jonny Brodzinski",
-        "teamCode": null,
-        "currentLeague": "AHL",
-        "contract": "8477380|WSH|2026-07"
-      },
-      {
-        "playerId": 8482623,
-        "name": "Josh Dunne",
-        "teamCode": null,
-        "currentLeague": "AHL",
-        "contract": "8482623|WSH|2026-07"
-      },
-      {
-        "playerId": 8477573,
-        "name": "Nathan Walker",
-        "teamCode": null,
-        "currentLeague": "AHL",
-        "contract": "8477573|STL|2025-09"
-      },
-      {
-        "playerId": 8477484,
-        "name": "Spencer Martin",
-        "teamCode": null,
-        "currentLeague": "AHL",
-        "contract": "8477484|NYR|2025-11"
-      },
-      {
-        "playerId": 8479390,
-        "name": "Taylor Raddysh",
-        "teamCode": null,
-        "currentLeague": "OTHER",
-        "contract": "8479390|NYR|2025-07"
-      },
-      {
-        "playerId": 8480001,
-        "name": "Urho Vaakanainen",
-        "teamCode": null,
-        "currentLeague": "AHL",
-        "contract": "8480001|NYR|2025-03"
-      },
-      {
-        "playerId": 8481609,
-        "name": "Vladislav Kolyachonok",
-        "teamCode": null,
-        "currentLeague": "AHL",
-        "contract": "8481609|NJD|2026-09"
-      }
-    ]
+    "salaryPresent": 438,
+    "matchedMissingSalary": []
   }
 }

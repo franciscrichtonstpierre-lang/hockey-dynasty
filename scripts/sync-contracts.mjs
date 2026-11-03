@@ -339,6 +339,45 @@ for (const registryPlayer of (registryData.players || [])) {
 
 const manualOverrideByPlayerId = new Map((manualOverrides.players || []).map(p => [Number(p.playerId), p]));
 const manualOverrideByName = new Map((manualOverrides.players || []).map(p => [norm(p.name), p]));
+let manualNhlOverridesApplied = 0;
+for (const nhlPlayer of players) {
+  const override = manualOverrideByPlayerId.get(Number(nhlPlayer.playerId)) || manualOverrideByName.get(norm(nhlPlayer.name));
+  if (!override || override.season?.baseSalaryUsd == null) continue;
+  const base = override.season.baseSalaryUsd;
+  const minors = override.season.minorsSalaryUsd;
+  const oneWay = override.season.oneWay;
+  const salaryFields = actualSalaryFields("NHL", {
+    nhl_salary_usd: base,
+    minors_salary_usd: minors,
+    one_way: oneWay
+  }, {
+    base_salary_usd: base,
+    minors_salary_usd: minors,
+    one_way: oneWay
+  });
+  Object.assign(nhlPlayer, {
+    contractStatus: override.contractStatus || nhlPlayer.contractStatus,
+    contract: override.contract || nhlPlayer.contract,
+    season: {
+      ...(nhlPlayer.season || {}),
+      ...(override.season || {}),
+      seasonKey: "2026-2027",
+      capHitUsd: override.season?.capHitUsd ?? nhlPlayer.season?.capHitUsd ?? null,
+      capHitBasis: override.season?.capHitBasis ?? "verified_manual_override"
+    },
+    ...salaryFields,
+    salarySource: {
+      publisher: override.contract?.sources?.[0]?.publisher || "PuckPedia",
+      url: override.contract?.sources?.[0]?.url || null,
+      season: "2026-2027"
+    },
+    salaryVerificationStatus: "SOURCE_VERIFIED",
+    sourceDataset: override.sourceDataset || "manual_verified_contract_override",
+    license: override.license || "source-linked"
+  });
+  manualNhlOverridesApplied++;
+}
+console.log("NHL manual verified contract overrides applied: " + manualNhlOverridesApplied + ".");
 for (const organizationPlayer of organizationContracts) {
   const override = manualOverrideByPlayerId.get(Number(organizationPlayer.playerId)) || manualOverrideByName.get(norm(organizationPlayer.name));
   if (!override) continue;

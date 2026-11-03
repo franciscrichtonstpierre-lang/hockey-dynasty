@@ -553,17 +553,23 @@ function effectifUniquePlayers(players,excluded=new Set()){const seenNames=new S
 function effectifContractForPlayer(p,teamCode){const cd=window.hdContractCache||{};const contracts=[...(cd.players||[]),...(cd.organizationContracts||[])];const id=String(p.id||p.playerId||p.player_id||"");const name=effectifNameKey(p);const sameOrg=c=>(!c.teamCode||c.teamCode===teamCode)&&(!c.nhlRightsTeam||c.nhlRightsTeam===teamCode);const contractName=c=>c.name||c.playerName||c.payload?.name||c.payload?.playerName||c.payload?.mergedAliasContractPayload?.name||c.mergedAliasContractPayload?.name||"";return contracts.find(c=>String(c.playerId??c.nhlPlayerId??c.id??"")===id&&sameOrg(c))||contracts.find(c=>effectifNameKey({name:contractName(c)})===name&&sameOrg(c));}
 function quickContractCanManage(teamCode){if(!activeOnlineLeagueId)return true;return !!activeOnlineManagerTeamCode&&activeOnlineManagerTeamCode===String(teamCode||"").toUpperCase()}
 function quickOfferButton(p,kind,teamCode,c){
- if(!quickContractCanManage(teamCode))return "";
- const rights=String(p.nhlRightsTeam||p.rightsTeam||p.rightsTeamCode||p.nhlTeamCode||(["LAH","Espoirs"].includes(kind)?teamCode:""));
- if(kind==="Espoirs"&&rights!==teamCode)return "";
- const status=String(c?.verificationStatus||c?.verification_status||c?.contractStatus||c?.payload?.contractStatus||c?.payload?.mergedAliasContractPayload?.contractStatus||"").toUpperCase();
- const unsigned=["UNSIGNED","UNSIGNED_PROSPECT","NO_CONTRACT","RIGHTS_ONLY","UNSIGNED_NO_ORG_CONTRACT"].includes(status)||c?.isSigned===false||c?.underContract===false;
- const rawEnd=c?.contract?.endSeason??c?.endSeason??c?.contractEndSeason??c?.contractEndYear??c?.payload?.contract?.endSeason??"";
- const endText=String(rawEnd).trim();
- const years=endText.match(/20\d{2}/g)||[];
+ const code=String(teamCode||"").toUpperCase();
+ if(!quickContractCanManage(code))return "";
+ const rights=String(p.nhlRightsTeam||p.rightsTeam||p.rightsTeamCode||p.nhlTeamCode||p.nhl_rights_team||(["LAH","Espoirs"].includes(kind)?code:"")).toUpperCase();
+ if(kind==="Espoirs"&&rights!==code)return "";
+ const status=String(c?.verificationStatus||c?.verification_status||c?.contractStatus||c?.contract_status||c?.payload?.contractStatus||c?.payload?.mergedAliasContractPayload?.contractStatus||"").toUpperCase();
+ const unsignedStatuses=["UNSIGNED","UNSIGNED_PROSPECT","NO_CONTRACT","RIGHTS_ONLY","UNSIGNED_NO_ORG_CONTRACT","FREE_AGENT","UNCONTRACTED"];
+ const explicitUnsigned=unsignedStatuses.includes(status)||c?.isSigned===false||c?.underContract===false||c?.hasContract===false;
+ const contract=c?.contract||c?.payload?.contract||c?.payload?.mergedAliasContractPayload?.contract||{};
+ const season=c?.season||c?.payload?.season||c?.payload?.mergedAliasContractPayload?.season||{};
+ const salaryValues=[season.baseSalaryUsd,season.minorsSalaryUsd,contract.nhlSalaryUsd,contract.minorsSalaryUsd,c?.baseSalaryUsd,c?.minorsSalaryUsd,c?.minors_salary_usd,c?.salaryUsd,c?.salary,c?.payload?.season?.baseSalaryUsd,c?.payload?.season?.minorsSalaryUsd,c?.payload?.mergedAliasContractPayload?.season?.baseSalaryUsd];
+ const hasSalary=salaryValues.some(v=>v!==null&&v!==undefined&&v!==""&&Number(v)>0);
+ const rawEnd=contract.endSeason??c?.endSeason??c?.contractEndSeason??c?.contractEndYear??c?.payload?.contract?.endSeason??"";
+ const endText=String(rawEnd).trim(),years=endText.match(/20\\d{2}/g)||[];
  const endYear=years.length?Number(years[years.length-1]):Number(endText);
  const currentYear=Number(S.season)||2026;
- const hasContract=!!c&&!unsigned;
+ const hasTerm=!!(rawEnd||contract.termYears||contract.term_years||c?.termYears);
+ const hasContract=!!c&&!explicitUnsigned&&(hasSalary||hasTerm);
  const oneYear=hasContract&&Number.isFinite(endYear)&&(endYear===currentYear||endYear===currentYear+1);
  if(hasContract&&!oneYear)return "";
  const key=uhmPlayerKey(p);

@@ -484,6 +484,36 @@ const output={
 };
 console.log("SALARY COVERAGE 2026-27: " + players.filter(p=>Number(p.currentLeagueSalaryUsd)>0).length + "/" + players.length + " NHL players with salary; NHLPA=" + players.filter(p=>p.salarySource?.publisher==="NHLPA").length + "; MarkerZone=" + players.filter(p=>p.salarySource?.publisher==="MarkerZone").length + "; cap hit=" + players.filter(p=>Number(p.season?.capHitUsd)>0).length + "/" + players.length + "; AAV fields=" + (/aav/i.test(JSON.stringify({players,organizationContracts})) ? "LEAK" : "0") + ".");
 console.log("ORGANIZATION SALARY COVERAGE 2026-27: " + organizationContracts.filter(p=>Number(p.currentLeagueSalaryUsd)>0).length + "/" + organizationContracts.length + " records with current-league salary; NHL payroll impact=" + organizationContracts.filter(p=>Number(p.nhlPayrollImpactUsd)>0).length + ".");
+const salaryCoverageByTeam = {};
+for (const teamCode of [...new Set(players.map(p=>p.teamCode).filter(Boolean))].sort()) {
+  const teamPlayers = players.filter(p=>p.teamCode===teamCode);
+  salaryCoverageByTeam[teamCode] = {
+    players: teamPlayers.length,
+    salaryPresent: teamPlayers.filter(p=>Number(p.currentLeagueSalaryUsd)>0).length,
+    capHitPresent: teamPlayers.filter(p=>Number(p.season?.capHitUsd)>0).length,
+    missingSalary: teamPlayers.filter(p=>!(Number(p.currentLeagueSalaryUsd)>0)).map(p=>({playerId:p.playerId,name:p.name,capHitUsd:p.season?.capHitUsd??null,salaryBasis:p.salaryBasis??null})),
+    missingCapHit: teamPlayers.filter(p=>!(Number(p.season?.capHitUsd)>0)).map(p=>({playerId:p.playerId,name:p.name,salaryUsd:p.currentLeagueSalaryUsd??null}))
+  };
+}
+const salaryCoverageAudit = {
+  season: "2026-2027",
+  generatedAt: new Date().toISOString(),
+  nhl: {
+    total: players.length,
+    salaryPresent: players.filter(p=>Number(p.currentLeagueSalaryUsd)>0).length,
+    capHitPresent: players.filter(p=>Number(p.season?.capHitUsd)>0).length,
+    missingSalary: players.filter(p=>!(Number(p.currentLeagueSalaryUsd)>0)).map(p=>({playerId:p.playerId,name:p.name,teamCode:p.teamCode,capHitUsd:p.season?.capHitUsd??null,salaryBasis:p.salaryBasis??null})),
+    missingCapHit: players.filter(p=>!(Number(p.season?.capHitUsd)>0)).map(p=>({playerId:p.playerId,name:p.name,teamCode:p.teamCode,salaryUsd:p.currentLeagueSalaryUsd??null})),
+    byTeam: salaryCoverageByTeam
+  },
+  organization: {
+    total: organizationContracts.length,
+    matchedContracts: organizationContracts.filter(p=>Boolean(p.contract)).length,
+    salaryPresent: organizationContracts.filter(p=>Number(p.currentLeagueSalaryUsd)>0).length,
+    matchedMissingSalary: organizationContracts.filter(p=>Boolean(p.contract)&&!(Number(p.currentLeagueSalaryUsd)>0)).map(p=>({playerId:p.playerId,name:p.name,teamCode:p.nhlRightsTeam??p.teamCode??null,currentLeague:p.currentLeague??null,contract:p.contract?.contractKey??null}))
+  }
+};
+await writeFile("data/contracts/salary-coverage-2026-2027.json",JSON.stringify(salaryCoverageAudit,null,2)+"\n","utf8");
 await writeFile("data/contracts/2026-2027.json",JSON.stringify(output)+"\n","utf8");
 
 const dbSyncDir="data/contracts/db-sync";

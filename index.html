@@ -150,6 +150,53 @@ h1 .team-brand-logo,h2 .team-brand-logo,h3 .team-brand-logo,.lineupHero .team-br
 
 .rosterTable .playerName{width:210px;min-width:210px;max-width:210px;white-space:normal;overflow-wrap:anywhere;word-break:break-word;position:sticky;left:0;z-index:2;background:#102a40}
 .rosterTable .playerName small{display:block;white-space:normal;overflow-wrap:anywhere;word-break:break-word;line-height:1.35;margin-top:4px}
+
+/* Mobile roster: cartes à deux rangées de cotes, sans couper les chiffres */
+@media(max-width:600px){
+ .rosterScroll{overflow:visible!important;width:100%;max-width:100%;height:auto}
+ .rosterTable{display:block!important;width:100%!important;min-width:0!important;table-layout:auto!important;zoom:1!important;font-size:12px!important;white-space:normal!important}
+ .rosterTable thead{display:none!important}
+ .rosterTable tbody{display:block!important;width:100%!important}
+ .rosterTable tbody tr{display:grid!important;grid-template-columns:repeat(8,minmax(0,1fr));gap:4px;padding:9px!important;margin:0 0 9px;border:1px solid #35546d;border-radius:9px;background:#102940;min-width:0}
+ .rosterTable tbody td{display:block!important;position:static!important;inset:auto!important;width:auto!important;min-width:0!important;max-width:none!important;padding:5px 2px!important;margin:0!important;overflow:visible!important;text-overflow:clip!important;white-space:normal!important;text-align:center!important;font-size:11px!important;line-height:1.2!important;border:1px solid #29465e!important;border-radius:5px;background:#0a1b2b!important}
+ .rosterTable tbody td.playerName{grid-column:1/-1;grid-row:1;text-align:left!important;font-size:14px!important;font-weight:800;padding:7px!important;background:#183b56!important;overflow-wrap:anywhere}
+ .rosterTable tbody td:nth-child(2){grid-column:1;grid-row:2}
+ .rosterTable tbody td:nth-child(3){grid-column:2;grid-row:2}
+ .rosterTable tbody td:nth-child(4){grid-column:3/5;grid-row:2}
+ .rosterTable tbody td:nth-child(5){grid-column:1;grid-row:3}
+ .rosterTable tbody td:nth-child(6){grid-column:2;grid-row:3}
+ .rosterTable tbody td:nth-child(7){grid-column:3;grid-row:3}
+ .rosterTable tbody td:nth-child(8){grid-column:4/7;grid-row:3}
+ .rosterTable tbody td:nth-child(9){grid-column:7/9;grid-row:3}
+ .rosterTable tbody td:nth-child(n+10):nth-child(-n+17){grid-row:4}
+ .rosterTable tbody td:nth-child(n+18):nth-child(-n+25){grid-row:5}
+ .rosterTable tbody td:nth-child(n+10):nth-child(-n+25){font-size:13px!important;font-weight:800;font-variant-numeric:tabular-nums;padding:7px 1px!important}
+ .rosterTable tbody td:nth-child(10){grid-column:1}.rosterTable tbody td:nth-child(11){grid-column:2}
+ .rosterTable tbody td:nth-child(12){grid-column:3}.rosterTable tbody td:nth-child(13){grid-column:4}
+ .rosterTable tbody td:nth-child(14){grid-column:5}.rosterTable tbody td:nth-child(15){grid-column:6}
+ .rosterTable tbody td:nth-child(16){grid-column:7}.rosterTable tbody td:nth-child(17){grid-column:8}
+ .rosterTable tbody td:nth-child(18){grid-column:1}.rosterTable tbody td:nth-child(19){grid-column:2}
+ .rosterTable tbody td:nth-child(20){grid-column:3}.rosterTable tbody td:nth-child(21){grid-column:4}
+ .rosterTable tbody td:nth-child(22){grid-column:5}.rosterTable tbody td:nth-child(23){grid-column:6}
+ .rosterTable tbody td:nth-child(24){grid-column:7}.rosterTable tbody td:nth-child(25){grid-column:8}
+ .rosterTable tbody td:nth-child(n+10):nth-child(-n+25):before{display:block;font-size:8px;font-weight:700;color:#a9c3d6;margin-bottom:3px}
+ .rosterTable tbody td:nth-child(10):before{content:"FI"}.rosterTable tbody td:nth-child(11):before{content:"SH"}
+ .rosterTable tbody td:nth-child(12):before{content:"PL"}.rosterTable tbody td:nth-child(13):before{content:"ST"}
+ .rosterTable tbody td:nth-child(14):before{content:"CH"}.rosterTable tbody td:nth-child(15):before{content:"PO"}
+ .rosterTable tbody td:nth-child(16):before{content:"HI"}.rosterTable tbody td:nth-child(17):before{content:"SK"}
+ .rosterTable tbody td:nth-child(18):before{content:"EN"}.rosterTable tbody td:nth-child(19):before{content:"PE"}
+ .rosterTable tbody td:nth-child(20):before{content:"FA"}.rosterTable tbody td:nth-child(21):before{content:"LE"}
+ .rosterTable tbody td:nth-child(22):before{content:"SR"}.rosterTable tbody td:nth-child(23):before{content:"OFF"}
+ .rosterTable tbody td:nth-child(24):before{content:"DEF"}.rosterTable tbody td:nth-child(25):before{content:"OA"}
+ .rosterTable tbody td.quickContractCell{grid-column:8;grid-row:6;position:static!important;z-index:1;background:#183c58!important;border:1px solid #80a9c5!important}
+ .rosterTable .quickContractPencil{width:100%!important;min-width:0!important;height:34px!important;min-height:34px!important;padding:4px!important}
+ .rosterTable .quickContractPencilIcon{width:18px;height:18px}
+ .rosterTable .rosterCopyButton,.rosterTable .rosterMiniAction{width:100%!important;min-width:0!important;height:30px!important;min-height:30px!important;padding:4px!important;margin:0!important}
+ .rosterTable .rosterCopyButton svg,.rosterTable .rosterMiniAction svg{width:16px;height:16px}
+ .rosterTable .team-brand-logo{width:20px;height:20px}
+ .rosterTable tbody tr:hover td{background:#0a1b2b!important}
+}
+
 </style><style>#uhmGateway{max-width:750px;margin:24px auto}body.uhmGate #app,body.uhmGate #accountPanel,body.uhmGate #message,body.uhmGate #uhmMenuButton{display:none!important}body.uhmGame #uhmGateway,body.uhmGame #accountPanel{display:none!important}</style></head><body><header><div class="uhmHeader"><div><h1>🏒 ULTIMATE HOCKEY MANAGER</h1><small>Bureau du DG • v0.7 • Saison de démonstration 2026–2027</small></div><button id="uhmMenuButton" class="uhmMenuButton" type="button" onclick="toggleUhmMenu(true)" aria-controls="uhmOverlay" aria-expanded="false">☰ Menu</button></div></header><main><section id="uhmGateway" class="card"></section><section id="accountPanel" class="card" style="margin-bottom:12px"></section><div id="uhmOverlay" class="uhmOverlay" hidden onclick="if(event.target===this)toggleUhmMenu(false)"><aside class="uhmDrawer" role="dialog" aria-modal="true" aria-label="Navigation UHM"><div class="uhmDrawerTop"><strong>☰ Sections UHM</strong><button type="button" onclick="toggleUhmMenu(false)" aria-label="Fermer le menu">✕</button></div><div id="uhmMenuSections"></div></aside></div><nav id="nav" hidden></nav><div id="subnav" hidden></div><div id="message"></div><div id="app"></div></main><footer>Prototype indépendant. Les cotes de repli et les scores simulés sont provisoires. Les ligues en ligne nécessitent une configuration Supabase valide; certaines données de jeu restent sauvegardées localement.<div style="text-align:center;margin:8px 0 18px"><a href="./world-data-import.html" style="color:#d9edf9;font-size:12px">Importation des données mondiales (propriétaire UHM)</a></div></footer><script src="./performance.js?v=20261101"></script><script src="./rating-presentation.js?v=20261102-2"></script><script>
 const teams=["Anaheim Ducks","Boston Bruins","Buffalo Sabres","Calgary Flames","Carolina Hurricanes","Chicago Blackhawks","Colorado Avalanche","Columbus Blue Jackets","Dallas Stars","Detroit Red Wings","Edmonton Oilers","Florida Panthers","Los Angeles Kings","Minnesota Wild","Montréal Canadiens","Nashville Predators","New Jersey Devils","New York Islanders","New York Rangers","Ottawa Senators","Philadelphia Flyers","Pittsburgh Penguins","San Jose Sharks","Seattle Kraken","St. Louis Blues","Tampa Bay Lightning","Toronto Maple Leafs","Utah Mammoth","Vancouver Canucks","Vegas Golden Knights","Washington Capitals","Winnipeg Jets"];
 const players=[["Nick Suzuki","C",89,92],["Cole Caufield","AD",87,91],["Juraj Slafkovský","AG",84,92],["Ivan Demidov","AD",82,96],["Kirby Dach","C",78,85],["Alex Newhook","AG",79,84],["Brendan Gallagher","AD",76,76],["Josh Anderson","AD",76,77],["Jake Evans","C",78,79],["Oliver Kapanen","C",75,84],["Lane Hutson","D",87,95],["Kaiden Guhle","D",82,88],["Mike Matheson","D",82,83],["Arber Xhekaj","D",76,82],["Alexandre Carrier","D",79,80],["Samuel Montembeault","G",82,85],["Jakub Dobeš","G",77,86]];

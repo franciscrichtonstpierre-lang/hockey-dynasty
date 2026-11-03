@@ -341,6 +341,7 @@ function assertNoAavFields(value, path="root") {
 }
 assertNoAavFields(players, "players");
 assertNoAavFields(organizationContracts, "organizationContracts");
+console.log("Published contract snapshot: AAV fields excluded; base salary and cap hit remain separate.");
 
 const matchedContracts=players.filter(p=>p.contract!=null).length;
 const salaryRows=players.filter(p=>p.currentLeagueSalaryUsd!=null).length;

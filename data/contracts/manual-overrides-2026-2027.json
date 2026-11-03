@@ -1,6 +1,6 @@
 {
   "season": "2026-2027",
-  "sourceNote": "Manually reconciled contract rows using NHL team announcements and PuckPedia season breakdowns. Signing-bonus fields are intentionally omitted from the simulation. Six additional 2026-27 contracts were reconciled against PuckPedia and club announcements on 2026-11-01. Signing bonuses are excluded from the simulation salary field; performance bonuses remain separately represented. Four additional Anaheim Ducks 2026-27 salary breakdowns reconciled against PuckPedia player contract pages and NHL/club announcements on 2026-11-02; base salary is kept separate from cap hit and signing bonuses are excluded. Eight additional Anaheim 2026-27 base salaries, cap hits and terms were reconciled against PuckPedia player contract breakdowns and NHL club announcements on 2026-11-02; signing bonuses are excluded from the salary field. Twelve Chicago Blackhawks 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Nine Detroit Red Wings 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Thirteen Edmonton Oilers 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Nine Florida Panthers 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Twelve New York Rangers 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Eight Washington Capitals 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Rémi Poirier held for affiliation reconciliation after his waiver claim. Three remaining cap-hit gaps (Patrick Kane, Andreas Englund, Bokondji Imama) reconciled against PuckPedia 2026-27 breakdowns. Twelve San Jose Sharks 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary.",
+  "sourceNote": "Manually reconciled contract rows using NHL team announcements and PuckPedia season breakdowns. Signing-bonus fields are intentionally omitted from the simulation. Six additional 2026-27 contracts were reconciled against PuckPedia and club announcements on 2026-11-01. Signing bonuses are excluded from the simulation salary field; performance bonuses remain separately represented. Four additional Anaheim Ducks 2026-27 salary breakdowns reconciled against PuckPedia player contract pages and NHL/club announcements on 2026-11-02; base salary is kept separate from cap hit and signing bonuses are excluded. Eight additional Anaheim 2026-27 base salaries, cap hits and terms were reconciled against PuckPedia player contract breakdowns and NHL club announcements on 2026-11-02; signing bonuses are excluded from the salary field. Twelve Chicago Blackhawks 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Nine Detroit Red Wings 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Thirteen Edmonton Oilers 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Nine Florida Panthers 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Twelve New York Rangers 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Eight Washington Capitals 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Rémi Poirier held for affiliation reconciliation after his waiver claim. Three remaining cap-hit gaps (Patrick Kane, Andreas Englund, Bokondji Imama) reconciled against PuckPedia 2026-27 breakdowns. Twelve San Jose Sharks 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Two remaining New York Rangers cap-hit gaps (Noah Laba and Scott Morrow) reconciled against PuckPedia 2026-27 breakdowns.",
   "players": [
     {
       "playerId": 8484168,
@@ -6006,6 +6006,150 @@
         "oneWay": false
       },
       "simulationSalaryUsd": 2000000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8483690,
+      "name": "Noah Laba",
+      "teamCode": "NYR",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8483690|NYR|2025-03",
+        "signingTeam": "NYR",
+        "signedAt": "2025-03-18",
+        "signingDateStated": false,
+        "type": "ELC",
+        "termYears": 2,
+        "startSeason": "2025-26",
+        "endSeason": "2026-27",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": false,
+        "totalUsd": null,
+        "nhlSalaryUsd": 775000,
+        "minorsSalaryUsd": 82500,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "ACD",
+        "sourceCount": 3,
+        "conflicts": null,
+        "flags": "derived:start_next_season;derived:two_way_from_minors;player_id_from_roster",
+        "sourceClaimIds": [
+          "47fe6a1de632fc02",
+          "a7e9c093690f99ea",
+          "9c097f92d7e51358"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/news/rangers-agree-to-terms-with-noah-laba",
+            "publisher": "NYR (club release on NHL.com)",
+            "publishedAt": "2025-03-18T18:29:31.022Z",
+            "confidenceTier": "A"
+          },
+          {
+            "url": "https://www.espn.com/nhl/transactions/_/date/20250318",
+            "publisher": "ESPN transactions wire",
+            "publishedAt": "2025-03-18T07:00Z",
+            "confidenceTier": "C"
+          },
+          {
+            "url": "https://bsky.app/profile/puckpedia.com/post/3lkork5r3ai26",
+            "publisher": "PuckPedia (public Bluesky post)",
+            "publishedAt": "2025-03-18T23:00:49.964Z",
+            "confidenceTier": "D"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/noah-laba"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "capHitUsd": 945000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "baseSalaryUsd": 850000,
+        "performanceBonusUsd": null,
+        "totalSalaryUsd": null,
+        "minorsSalaryUsd": 82500,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 945000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8482666,
+      "name": "Scott Morrow",
+      "teamCode": "NYR",
+      "position": "D",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8482666|NYR|2026-08",
+        "signingTeam": "NYR",
+        "signedAt": "2026-08-18",
+        "signingDateStated": false,
+        "type": "extension",
+        "termYears": 1,
+        "startSeason": "2026-27",
+        "endSeason": "2026-27",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": false,
+        "totalUsd": null,
+        "nhlSalaryUsd": 850000,
+        "minorsSalaryUsd": 125000,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "ACD",
+        "sourceCount": 3,
+        "conflicts": null,
+        "flags": "derived:span_after_expired_contract;derived:span_from_signing_date;player_id_from_roster",
+        "sourceClaimIds": [
+          "f5372041b6570045",
+          "8558f712bc346335",
+          "7838c8154645ff28"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/news/rangers-agree-to-terms-with-scott-morrow",
+            "publisher": "NYR (club release on NHL.com)",
+            "publishedAt": "2026-08-19T14:34:00Z",
+            "confidenceTier": "A"
+          },
+          {
+            "url": "https://www.espn.com/nhl/transactions/_/date/20260818",
+            "publisher": "ESPN transactions wire",
+            "publishedAt": "2026-08-18T07:00Z",
+            "confidenceTier": "C"
+          },
+          {
+            "url": "https://thehockeynews.com/nhl/new-york-rangers/latest-news/rangers-re-sign-scott-morrow-to-one-year-contract-extension",
+            "publisher": "The Hockey News",
+            "publishedAt": "2026-08-19",
+            "confidenceTier": "D"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/scott-morrow"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "capHitUsd": 850000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "baseSalaryUsd": 850000,
+        "performanceBonusUsd": null,
+        "totalSalaryUsd": null,
+        "minorsSalaryUsd": 125000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 850000,
       "simulationSalaryStatus": "source_verified_manual_override",
       "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
       "sourceDataset": "manual_verified_contract_override",

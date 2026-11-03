@@ -1,6 +1,6 @@
 {
   "season": "2026-2027",
-  "sourceNote": "Manually reconciled contract rows using NHL team announcements and PuckPedia season breakdowns. Signing-bonus fields are intentionally omitted from the simulation. Six additional 2026-27 contracts were reconciled against PuckPedia and club announcements on 2026-11-01. Signing bonuses are excluded from the simulation salary field; performance bonuses remain separately represented. Four additional Anaheim Ducks 2026-27 salary breakdowns reconciled against PuckPedia player contract pages and NHL/club announcements on 2026-11-02; base salary is kept separate from cap hit and signing bonuses are excluded. Eight additional Anaheim 2026-27 base salaries, cap hits and terms were reconciled against PuckPedia player contract breakdowns and NHL club announcements on 2026-11-02; signing bonuses are excluded from the salary field. Twelve Chicago Blackhawks 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Nine Detroit Red Wings 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Thirteen Edmonton Oilers 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Nine Florida Panthers 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Twelve New York Rangers 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Eight Washington Capitals 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Rémi Poirier held for affiliation reconciliation after his waiver claim. Three remaining cap-hit gaps (Patrick Kane, Andreas Englund, Bokondji Imama) reconciled against PuckPedia 2026-27 breakdowns. Twelve San Jose Sharks 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Two remaining New York Rangers cap-hit gaps (Noah Laba and Scott Morrow) reconciled against PuckPedia 2026-27 breakdowns. Libor Hajek 2026-27 base salary, minor salary and cap hit reconciled against PuckPedia. Rémi Poirier updated to Washington after the Nov 1, 2026 trade; 2026-27 base salary, AHL minors salary and cap hit sourced from PuckPedia. Eleven Calgary and Carolina 2026-27 base salary and cap-hit records reconciled against PuckPedia, including correction of Jackson Blake and Seth Jarvis cap hits. Three Anaheim Ducks 2026-27 salary and cap-hit records reconciled against PuckPedia.",
+  "sourceNote": "Manually reconciled contract rows using NHL team announcements and PuckPedia season breakdowns. Signing-bonus fields are intentionally omitted from the simulation. Six additional 2026-27 contracts were reconciled against PuckPedia and club announcements on 2026-11-01. Signing bonuses are excluded from the simulation salary field; performance bonuses remain separately represented. Four additional Anaheim Ducks 2026-27 salary breakdowns reconciled against PuckPedia player contract pages and NHL/club announcements on 2026-11-02; base salary is kept separate from cap hit and signing bonuses are excluded. Eight additional Anaheim 2026-27 base salaries, cap hits and terms were reconciled against PuckPedia player contract breakdowns and NHL club announcements on 2026-11-02; signing bonuses are excluded from the salary field. Twelve Chicago Blackhawks 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Nine Detroit Red Wings 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Thirteen Edmonton Oilers 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Nine Florida Panthers 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Twelve New York Rangers 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Eight Washington Capitals 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Rémi Poirier held for affiliation reconciliation after his waiver claim. Three remaining cap-hit gaps (Patrick Kane, Andreas Englund, Bokondji Imama) reconciled against PuckPedia 2026-27 breakdowns. Twelve San Jose Sharks 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Two remaining New York Rangers cap-hit gaps (Noah Laba and Scott Morrow) reconciled against PuckPedia 2026-27 breakdowns. Libor Hajek 2026-27 base salary, minor salary and cap hit reconciled against PuckPedia. Rémi Poirier updated to Washington after the Nov 1, 2026 trade; 2026-27 base salary, AHL minors salary and cap hit sourced from PuckPedia. Eleven Calgary and Carolina 2026-27 base salary and cap-hit records reconciled against PuckPedia, including correction of Jackson Blake and Seth Jarvis cap hits. Three Anaheim Ducks 2026-27 salary and cap-hit records reconciled against PuckPedia. Nine Colorado Avalanche 2026-27 base salary and cap-hit records reconciled against PuckPedia, including all roster gaps and the T.J. Hughes cap hit.",
   "players": [
     {
       "playerId": 8484168,
@@ -7167,6 +7167,588 @@
         "oneWay": false
       },
       "simulationSalaryUsd": 850000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8480448,
+      "name": "Parker Kelly",
+      "teamCode": "COL",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8480448|COL|2025-07",
+        "signingTeam": "COL",
+        "signedAt": "2025-07-01",
+        "signingDateStated": false,
+        "type": "standard",
+        "termYears": 4,
+        "startSeason": "2025-26",
+        "endSeason": "2028-29",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": 6800000,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "D",
+        "sourceCount": 1,
+        "conflicts": null,
+        "flags": "derived:span_from_signing_date",
+        "sourceClaimIds": [
+          "ee4983d33ea793c5"
+        ],
+        "sources": [
+          {
+            "url": "https://denversports.com/nhl/colorado-avalanche/retain-kelly-four",
+            "publisher": "DenverSports.com",
+            "publishedAt": "2025-07-01",
+            "confidenceTier": "D"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/parker-kelly"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "baseSalaryUsd": 2000000,
+        "capHitUsd": 1700000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "minorsSalaryUsd": 2000000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 1700000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8482742,
+      "name": "Zachary L'Heureux",
+      "teamCode": "COL",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8482742|NSH|2026-03",
+        "signingTeam": "NSH",
+        "signedAt": "2026-03-18",
+        "signingDateStated": false,
+        "type": "standard",
+        "termYears": 2,
+        "startSeason": "2025-26",
+        "endSeason": "2026-27",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": 1750000,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "AC",
+        "sourceCount": 2,
+        "conflicts": null,
+        "flags": "derived:span_from_signing_date;player_id_from_roster",
+        "sourceClaimIds": [
+          "d7cbfeac38870520",
+          "9e7559a9fdd2a73a"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/news/predators-sign-zachary-l-heureux-to-two-year-1-75-million-contract-2026-03-18",
+            "publisher": "NSH (club release on NHL.com)",
+            "publishedAt": "2026-03-18T19:00:00Z",
+            "confidenceTier": "A"
+          },
+          {
+            "url": "https://www.espn.com/nhl/transactions/_/date/20260318",
+            "publisher": "ESPN transactions wire",
+            "publishedAt": "2026-03-18T07:00Z",
+            "confidenceTier": "C"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/zachary-lheureux"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "capHitUsd": 875000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "baseSalaryUsd": 850000,
+        "performanceBonusUsd": null,
+        "totalSalaryUsd": null,
+        "minorsSalaryUsd": 850000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 875000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8481186,
+      "name": "Logan O'Connor",
+      "teamCode": "COL",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8481186|COL|2024-09",
+        "signingTeam": "COL",
+        "signedAt": "2024-09-23",
+        "signingDateStated": false,
+        "type": "extension",
+        "termYears": 6,
+        "startSeason": "2025-26",
+        "endSeason": "2030-31",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": 15000000,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "BCD",
+        "sourceCount": 3,
+        "conflicts": null,
+        "flags": "llm:anthropic/claude-haiku-5.5;llm_filled;player_id_from_roster",
+        "sourceClaimIds": [
+          "4e7384fc03e0f41a",
+          "4c206fbfb5f88c5b",
+          "8e79d7b4323ce588"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/news/colorado-avalanche-logan-o-connor-signs-six-year-contract",
+            "publisher": "NHL.com",
+            "publishedAt": "2024-09-23T23:03:00Z",
+            "confidenceTier": "B"
+          },
+          {
+            "url": "https://www.espn.com/nhl/transactions/_/date/20240923",
+            "publisher": "ESPN transactions wire",
+            "publishedAt": "2024-09-23T07:00Z",
+            "confidenceTier": "C"
+          },
+          {
+            "url": "https://www.dailyfaceoff.com/news/avalanche-sign-logan-oconnor-to-six-year-15-million-contract-extension",
+            "publisher": "Daily Faceoff",
+            "publishedAt": "2024-09-23",
+            "confidenceTier": "D"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/logan-oconnor"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "capHitUsd": 2500000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "baseSalaryUsd": 2250000,
+        "performanceBonusUsd": null,
+        "totalSalaryUsd": null,
+        "minorsSalaryUsd": 2250000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 2500000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8482768,
+      "name": "Fedor Svechkov",
+      "teamCode": "COL",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8482768|NSH|2026-03",
+        "signingTeam": "NSH",
+        "signedAt": "2026-03-23",
+        "signingDateStated": false,
+        "type": "standard",
+        "termYears": 2,
+        "startSeason": "2025-26",
+        "endSeason": "2026-27",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": 2500000,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "AC",
+        "sourceCount": 2,
+        "conflicts": null,
+        "flags": "derived:span_from_signing_date;player_id_from_roster",
+        "sourceClaimIds": [
+          "919eb9ad1d8fb948",
+          "062e1749e472f369"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/news/predators-sign-fedor-svechkov-to-two-year-2-5-million-contract-2026-03-23",
+            "publisher": "NSH (club release on NHL.com)",
+            "publishedAt": "2026-03-23T19:00:00Z",
+            "confidenceTier": "A"
+          },
+          {
+            "url": "https://www.espn.com/nhl/transactions/_/date/20260323",
+            "publisher": "ESPN transactions wire",
+            "publishedAt": "2026-03-23T07:00Z",
+            "confidenceTier": "C"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/fedor-svechkov"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "capHitUsd": 1250000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "baseSalaryUsd": 1250000,
+        "performanceBonusUsd": null,
+        "totalSalaryUsd": null,
+        "minorsSalaryUsd": 1250000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 1250000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8484258,
+      "name": "Sam Malinski",
+      "teamCode": "COL",
+      "position": "D",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8484258|COL|2026-07",
+        "signingTeam": "COL",
+        "signedAt": "2026-07-27",
+        "signingDateStated": false,
+        "type": "extension",
+        "termYears": 4,
+        "startSeason": "2026-27",
+        "endSeason": "2029-30",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": null,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "A",
+        "sourceCount": 1,
+        "conflicts": null,
+        "flags": null,
+        "sourceClaimIds": [
+          "5c40033e342b5933"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/news/sam-malinski-2025-26-season-recap",
+            "publisher": "COL (club release on NHL.com)",
+            "publishedAt": "2026-07-27T14:00:17.536Z",
+            "confidenceTier": "A"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/sam-malinski"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "baseSalaryUsd": 5500000,
+        "capHitUsd": 4750000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "minorsSalaryUsd": 5500000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 4750000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8476312,
+      "name": "Josh Manson",
+      "teamCode": "COL",
+      "position": "D",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8476312|COL|2025-07",
+        "signingTeam": "COL",
+        "signedAt": "2025-07-10",
+        "signingDateStated": false,
+        "type": "extension",
+        "termYears": 2,
+        "startSeason": "2026-27",
+        "endSeason": "2027-28",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": null,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "BCD",
+        "sourceCount": 3,
+        "conflicts": null,
+        "flags": "player_id_from_roster;start_season_assumed",
+        "sourceClaimIds": [
+          "630044fadf3601bd",
+          "29530712cb4ea742",
+          "64780deefa290350"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/news/josh-manson-signs-2-year-contract-with-colorado-avalanche",
+            "publisher": "NHL.com",
+            "publishedAt": "2025-07-10T21:24:07.79Z",
+            "confidenceTier": "B"
+          },
+          {
+            "url": "https://www.espn.com/nhl/transactions/_/date/20250710",
+            "publisher": "ESPN transactions wire",
+            "publishedAt": "2025-07-10T07:00Z",
+            "confidenceTier": "C"
+          },
+          {
+            "url": "https://bsky.app/profile/puckpedia.com/post/3ltnnegox6q2x",
+            "publisher": "PuckPedia (public Bluesky post)",
+            "publishedAt": "2025-07-11T01:00:07.967Z",
+            "confidenceTier": "D"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/josh-manson"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "baseSalaryUsd": 3950000,
+        "capHitUsd": 3950000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "minorsSalaryUsd": 3950000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 3950000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8479387,
+      "name": "Keaton Middleton",
+      "teamCode": "COL",
+      "position": "D",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8479387|COL|2025-01",
+        "signingTeam": "COL",
+        "signedAt": "2025-01-02",
+        "signingDateStated": false,
+        "type": "extension",
+        "termYears": 2,
+        "startSeason": "2025-26",
+        "endSeason": "2026-27",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": null,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "C",
+        "sourceCount": 1,
+        "conflicts": null,
+        "flags": "derived:span_from_signing_date;player_id_from_roster",
+        "sourceClaimIds": [
+          "9f0258a63888d4bd"
+        ],
+        "sources": [
+          {
+            "url": "https://www.espn.com/nhl/transactions/_/date/20250102",
+            "publisher": "ESPN transactions wire",
+            "publishedAt": "2025-01-02T08:00Z",
+            "confidenceTier": "C"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/keaton-middleton"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "baseSalaryUsd": 850000,
+        "capHitUsd": 850000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "minorsSalaryUsd": 850000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 850000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8478406,
+      "name": "Mackenzie Blackwood",
+      "teamCode": "COL",
+      "position": "G",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8478406|COL|2024-12",
+        "signingTeam": "COL",
+        "signedAt": "2024-12-27",
+        "signingDateStated": false,
+        "type": "extension",
+        "termYears": 5,
+        "startSeason": "2025-26",
+        "endSeason": "2029-30",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": null,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "BCD",
+        "sourceCount": 3,
+        "conflicts": null,
+        "flags": "player_id_from_roster",
+        "sourceClaimIds": [
+          "13d597f543c51712",
+          "7c1efd127574a99a",
+          "8eb2a1da4cae4ea9"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/news/mackenzie-blackwood-signs-5-year-deal-with-colorado",
+            "publisher": "NHL.com",
+            "publishedAt": "2024-12-28T16:33:00Z",
+            "confidenceTier": "B"
+          },
+          {
+            "url": "https://www.espn.com/nhl/transactions/_/date/20241227",
+            "publisher": "ESPN transactions wire",
+            "publishedAt": "2024-12-27T08:00Z",
+            "confidenceTier": "C"
+          },
+          {
+            "url": "https://www.espn.com/nhl/story/_/id/43183197/avalanche-sign-mackenzie-blackwood-5-year-extension",
+            "publisher": "ESPN",
+            "publishedAt": "2024-12-27",
+            "confidenceTier": "D"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/mackenzie-blackwood"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "baseSalaryUsd": 4250000,
+        "capHitUsd": 5250000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "minorsSalaryUsd": 5250000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 5250000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8486171,
+      "name": "T.J. Hughes",
+      "teamCode": "COL",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8486171|COL|2026-04",
+        "signingTeam": "COL",
+        "signedAt": "2026-04-11",
+        "signingDateStated": false,
+        "type": "ELC",
+        "termYears": 1,
+        "startSeason": "2026-27",
+        "endSeason": "2026-27",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": null,
+        "nhlSalaryUsd": 850000,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "ACD",
+        "sourceCount": 3,
+        "conflicts": null,
+        "flags": "performance_bonuses;player_id_from_roster",
+        "sourceClaimIds": [
+          "68aa48d2900db3a0",
+          "30637e1989919fd8",
+          "aa49cac41a74b161"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/avalanche/news/avalanche-signs-t-j-hughes",
+            "publisher": "COL (club release on NHL.com)",
+            "publishedAt": "2026-04-11",
+            "confidenceTier": "A"
+          },
+          {
+            "url": "https://www.espn.com/nhl/transactions/_/date/20260411",
+            "publisher": "ESPN transactions wire",
+            "publishedAt": "2026-04-11T07:00Z",
+            "confidenceTier": "C"
+          },
+          {
+            "url": "https://mgoblue.com/news/2026/4/11/ice-hockey-avalanche-sign-hughes-to-entry-level-contract",
+            "publisher": "Michigan Athletics",
+            "publishedAt": "2026-04-11",
+            "confidenceTier": "D"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/tj-hughes"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "capHitUsd": 952500,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "baseSalaryUsd": 850000,
+        "performanceBonusUsd": null,
+        "totalSalaryUsd": null,
+        "minorsSalaryUsd": 85000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 952500,
       "simulationSalaryStatus": "source_verified_manual_override",
       "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
       "sourceDataset": "manual_verified_contract_override",

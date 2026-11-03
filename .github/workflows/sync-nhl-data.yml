@@ -4,7 +4,6 @@ on:
   push:
     paths:
       - ".github/workflows/sync-nhl-data.yml"
-      - "index.html"
       - "scripts/sync-ahl-data.mjs"
       - "scripts/sync-ahl-player-stats.mjs"
       - "scripts/sync-cross-league-player-stats.mjs"
@@ -21,10 +20,6 @@ on:
       - "scripts/build-player-registry.mjs"
       - "scripts/enrich-nhl-player-bios.mjs"
       - "scripts/sync-future-draft-prospects.mjs"
-      - "scripts/sync-contracts.mjs"
-      - "data/contracts/2026-2027.json"
-      - "data/contracts/manual-overrides-2026-2027.json"
-      - "data/contracts/db-sync/**"
       - "scripts/sync-draft-picks.mjs"
       - "scripts/validate-database.mjs"
       - "scripts/check-inline-js.mjs"

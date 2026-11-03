@@ -488,7 +488,7 @@ function quickOfferButton(p,kind,teamCode,c){
  const key=String(p.nhlPlayerId??p.playerId??p.id??p.player_id??"");
  if(!key)return "";
  const target=kind==="Espoirs"?"prospect":"roster";
- return '<button type="button" class="quickContractPencil" title="Proposer un contrat" aria-label="Proposer un contrat" onclick="quickOpenContractOffer(\\''+encodeURIComponent(key)+'\\',\\''+target+'\\')">✏️</button>';
+ return '<button type="button" class="quickContractPencil" title="Proposer un contrat" aria-label="Proposer un contrat" onclick="quickOpenContractOffer(&quot;'+encodeURIComponent(key)+'&quot;,&quot;'+target+'&quot;)">✏️</button>';
 }
 function quickOpenContractOffer(encodedKey,kind){
  const key=decodeURIComponent(encodedKey||"");

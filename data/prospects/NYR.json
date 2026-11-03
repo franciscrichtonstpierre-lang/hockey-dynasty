@@ -2,8 +2,8 @@
   "teamCode": "NYR",
   "source": "https://api-web.nhle.com/v1/prospects/NYR",
   "sourceType": "NHL Web API + source-labelled supplemental pipeline",
-  "syncedUTC": "2026-11-02T03:32:37.037Z",
-  "count": 53,
+  "syncedUTC": "2026-11-03T02:56:51.249Z",
+  "count": 54,
   "prospects": [
     {
       "id": 8486295,
@@ -181,29 +181,6 @@
       "birthStateProvince": {
         "default": "Ontario"
       },
-      "positionGroup": "forwards"
-    },
-    {
-      "id": 8482877,
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/NYR/8482877.png",
-      "firstName": {
-        "default": "Jaroslav"
-      },
-      "lastName": {
-        "default": "Chmelar"
-      },
-      "sweaterNumber": 49,
-      "positionCode": "R",
-      "shootsCatches": "R",
-      "heightInInches": 77,
-      "weightInPounds": 238,
-      "heightInCentimeters": 196,
-      "weightInKilograms": 108,
-      "birthDate": "2003-07-20",
-      "birthCity": {
-        "default": "Nove Mesto nad Metuji"
-      },
-      "birthCountry": "CZE",
       "positionGroup": "forwards"
     },
     {
@@ -531,6 +508,32 @@
         "default": "Hameenlinna"
       },
       "birthCountry": "FIN",
+      "positionGroup": "forwards"
+    },
+    {
+      "id": 8479390,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/NYR/8479390.png",
+      "firstName": {
+        "default": "Taylor"
+      },
+      "lastName": {
+        "default": "Raddysh"
+      },
+      "sweaterNumber": 14,
+      "positionCode": "R",
+      "shootsCatches": "R",
+      "heightInInches": 74,
+      "weightInPounds": 205,
+      "heightInCentimeters": 188,
+      "weightInKilograms": 93,
+      "birthDate": "1998-02-18",
+      "birthCity": {
+        "default": "Caledon"
+      },
+      "birthCountry": "CAN",
+      "birthStateProvince": {
+        "default": "Ontario"
+      },
       "positionGroup": "forwards"
     },
     {
@@ -1255,6 +1258,21 @@
       "draftYear": 2022,
       "draftRound": 4,
       "draftOverall": 111,
+      "rightsStatus": "secondary_snapshot_recheck_required",
+      "source": "https://hockeyinsights.ca/team-pipeline/new-york-rangers/",
+      "sourceUpdatedAt": "2026-09-28",
+      "verificationStatus": "secondary_snapshot_recheck_required"
+    },
+    {
+      "fullName": "Jaroslav Chmelar",
+      "positionCode": "RW",
+      "age": 23,
+      "currentLeague": "NHL",
+      "currentTeam": null,
+      "nhlRightsTeam": "NYR",
+      "draftYear": 2021,
+      "draftRound": 5,
+      "draftOverall": 144,
       "rightsStatus": "secondary_snapshot_recheck_required",
       "source": "https://hockeyinsights.ca/team-pipeline/new-york-rangers/",
       "sourceUpdatedAt": "2026-09-28",

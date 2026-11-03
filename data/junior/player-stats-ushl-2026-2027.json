@@ -4,7 +4,7 @@
   "season": "2026-2027",
   "seasonId": "91",
   "source": "Official USHL HockeyTech / LeagueStat public player statistics feed",
-  "syncedAt": "2026-11-02T03:33:01.755Z",
+  "syncedAt": "2026-11-03T02:57:13.756Z",
   "endpoints": {
     "skaters": "https://lscluster.hockeytech.com/feed/index.php?feed=statviewfeed&key=e828f89b243dc43f&client_code=ushl&league_id=1&site_id=0&lang=en&view=players&season=91&team=all&limit=1000",
     "goalies": "https://lscluster.hockeytech.com/feed/index.php?feed=statviewfeed&key=e828f89b243dc43f&client_code=ushl&league_id=1&site_id=0&lang=en&view=players&season=91&team=all&limit=1000&position=goalies"
@@ -259,8 +259,8 @@
       "games_played": "13",
       "game_winning_goals": "2",
       "goals": "6",
-      "shots": "44",
-      "shooting_percentage": "13.6",
+      "shots": "46",
+      "shooting_percentage": "13.0",
       "assists": "11",
       "points": "17",
       "points_per_game": "1.31",
@@ -342,7 +342,7 @@
       "assists": "7",
       "points": "15",
       "points_per_game": "1.07",
-      "plus_minus": "0",
+      "plus_minus": "-1",
       "penalty_minutes": "2",
       "penalty_minutes_per_game": "0.14",
       "power_play_goals": "2",
@@ -405,6 +405,32 @@
       "rank": 15
     },
     {
+      "player_id": "11285",
+      "name": "Arsienii Voroteliak",
+      "active": "1",
+      "position": "F",
+      "rookie": "0",
+      "jersey_number": "17",
+      "team_code": "DBQ",
+      "games_played": "14",
+      "game_winning_goals": "0",
+      "goals": "5",
+      "shots": "27",
+      "shooting_percentage": "18.5",
+      "assists": "10",
+      "points": "15",
+      "points_per_game": "1.07",
+      "plus_minus": "8",
+      "penalty_minutes": "12",
+      "penalty_minutes_per_game": "0.86",
+      "power_play_goals": "0",
+      "power_play_assists": "1",
+      "short_handed_goals": "0",
+      "short_handed_assists": "0",
+      "shootout_goals": "0",
+      "rank": 16
+    },
+    {
       "player_id": "11277",
       "name": "Max Lind",
       "active": "1",
@@ -428,7 +454,7 @@
       "short_handed_goals": "1",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 16
+      "rank": 17
     },
     {
       "player_id": "11411",
@@ -454,7 +480,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 17
+      "rank": 18
     },
     {
       "player_id": "11333",
@@ -480,7 +506,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 18
+      "rank": 19
     },
     {
       "player_id": "11273",
@@ -506,7 +532,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 19
+      "rank": 20
     },
     {
       "player_id": "10759",
@@ -532,7 +558,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 20
+      "rank": 21
     },
     {
       "player_id": "10955",
@@ -555,32 +581,6 @@
       "penalty_minutes_per_game": "0.67",
       "power_play_goals": "2",
       "power_play_assists": "5",
-      "short_handed_goals": "0",
-      "short_handed_assists": "0",
-      "shootout_goals": "0",
-      "rank": 21
-    },
-    {
-      "player_id": "11285",
-      "name": "Arsienii Voroteliak",
-      "active": "1",
-      "position": "F",
-      "rookie": "0",
-      "jersey_number": "17",
-      "team_code": "DBQ",
-      "games_played": "14",
-      "game_winning_goals": "0",
-      "goals": "5",
-      "shots": "27",
-      "shooting_percentage": "18.5",
-      "assists": "9",
-      "points": "14",
-      "points_per_game": "1.00",
-      "plus_minus": "8",
-      "penalty_minutes": "12",
-      "penalty_minutes_per_game": "0.86",
-      "power_play_goals": "0",
-      "power_play_assists": "1",
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
@@ -795,6 +795,32 @@
       "rank": 30
     },
     {
+      "player_id": "10938",
+      "name": "Ryland Rooney",
+      "active": "1",
+      "position": "F",
+      "rookie": "0",
+      "jersey_number": "9",
+      "team_code": "SF",
+      "games_played": "16",
+      "game_winning_goals": "0",
+      "goals": "2",
+      "shots": "50",
+      "shooting_percentage": "4.0",
+      "assists": "10",
+      "points": "12",
+      "points_per_game": "0.75",
+      "plus_minus": "4",
+      "penalty_minutes": "2",
+      "penalty_minutes_per_game": "0.13",
+      "power_play_goals": "0",
+      "power_play_assists": "3",
+      "short_handed_goals": "0",
+      "short_handed_assists": "0",
+      "shootout_goals": "0",
+      "rank": 31
+    },
+    {
       "player_id": "10996",
       "name": "Sal Viviano",
       "active": "1",
@@ -805,8 +831,8 @@
       "games_played": "13",
       "game_winning_goals": "0",
       "goals": "8",
-      "shots": "30",
-      "shooting_percentage": "26.7",
+      "shots": "29",
+      "shooting_percentage": "27.6",
       "assists": "3",
       "points": "11",
       "points_per_game": "0.85",
@@ -818,7 +844,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 31
+      "rank": 32
     },
     {
       "player_id": "11392",
@@ -844,7 +870,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 32
+      "rank": 33
     },
     {
       "player_id": "9956",
@@ -862,7 +888,7 @@
       "assists": "5",
       "points": "11",
       "points_per_game": "0.92",
-      "plus_minus": "-3",
+      "plus_minus": "-2",
       "penalty_minutes": "10",
       "penalty_minutes_per_game": "0.83",
       "power_play_goals": "1",
@@ -870,7 +896,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 33
+      "rank": 34
     },
     {
       "player_id": "10302",
@@ -896,7 +922,7 @@
       "short_handed_goals": "1",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 34
+      "rank": 35
     },
     {
       "player_id": "10367",
@@ -922,7 +948,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 35
+      "rank": 36
     },
     {
       "player_id": "10540",
@@ -948,7 +974,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 36
+      "rank": 37
     },
     {
       "player_id": "11233",
@@ -974,59 +1000,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 37
-    },
-    {
-      "player_id": "11360",
-      "name": "Evan Jones",
-      "active": "1",
-      "position": "D",
-      "rookie": "0",
-      "jersey_number": "16",
-      "team_code": "SC",
-      "games_played": "14",
-      "game_winning_goals": "0",
-      "goals": "2",
-      "shots": "22",
-      "shooting_percentage": "9.1",
-      "assists": "9",
-      "points": "11",
-      "points_per_game": "0.79",
-      "plus_minus": "2",
-      "penalty_minutes": "8",
-      "penalty_minutes_per_game": "0.57",
-      "power_play_goals": "1",
-      "power_play_assists": "6",
-      "short_handed_goals": "0",
-      "short_handed_assists": "0",
-      "shootout_goals": "0",
       "rank": 38
-    },
-    {
-      "player_id": "10938",
-      "name": "Ryland Rooney",
-      "active": "1",
-      "position": "F",
-      "rookie": "0",
-      "jersey_number": "9",
-      "team_code": "SF",
-      "games_played": "16",
-      "game_winning_goals": "0",
-      "goals": "2",
-      "shots": "50",
-      "shooting_percentage": "4.0",
-      "assists": "9",
-      "points": "11",
-      "points_per_game": "0.69",
-      "plus_minus": "4",
-      "penalty_minutes": "2",
-      "penalty_minutes_per_game": "0.13",
-      "power_play_goals": "0",
-      "power_play_assists": "3",
-      "short_handed_goals": "0",
-      "short_handed_assists": "0",
-      "shootout_goals": "0",
-      "rank": 39
     },
     {
       "player_id": "10551",
@@ -1052,7 +1026,7 @@
       "short_handed_goals": "1",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 40
+      "rank": 39
     },
     {
       "player_id": "10874",
@@ -1078,7 +1052,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 41
+      "rank": 40
     },
     {
       "player_id": "10957",
@@ -1091,8 +1065,8 @@
       "games_played": "12",
       "game_winning_goals": "0",
       "goals": "6",
-      "shots": "35",
-      "shooting_percentage": "17.1",
+      "shots": "37",
+      "shooting_percentage": "16.2",
       "assists": "4",
       "points": "10",
       "points_per_game": "0.83",
@@ -1104,7 +1078,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 42
+      "rank": 41
     },
     {
       "player_id": "10469",
@@ -1130,7 +1104,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 43
+      "rank": 42
     },
     {
       "player_id": "10366",
@@ -1156,7 +1130,7 @@
       "short_handed_goals": "1",
       "short_handed_assists": "0",
       "shootout_goals": "1",
-      "rank": 44
+      "rank": 43
     },
     {
       "player_id": "11385",
@@ -1182,7 +1156,7 @@
       "short_handed_goals": "1",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 45
+      "rank": 44
     },
     {
       "player_id": "11288",
@@ -1208,7 +1182,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 46
+      "rank": 45
     },
     {
       "player_id": "10901",
@@ -1234,7 +1208,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 47
+      "rank": 46
     },
     {
       "player_id": "11005",
@@ -1260,7 +1234,7 @@
       "short_handed_goals": "2",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 48
+      "rank": 47
     },
     {
       "player_id": "10936",
@@ -1286,7 +1260,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 49
+      "rank": 48
     },
     {
       "player_id": "11167",
@@ -1309,6 +1283,32 @@
       "penalty_minutes_per_game": "0.18",
       "power_play_goals": "1",
       "power_play_assists": "0",
+      "short_handed_goals": "0",
+      "short_handed_assists": "0",
+      "shootout_goals": "0",
+      "rank": 49
+    },
+    {
+      "player_id": "11360",
+      "name": "Evan Jones",
+      "active": "1",
+      "position": "D",
+      "rookie": "0",
+      "jersey_number": "16",
+      "team_code": "SC",
+      "games_played": "14",
+      "game_winning_goals": "0",
+      "goals": "2",
+      "shots": "22",
+      "shooting_percentage": "9.1",
+      "assists": "8",
+      "points": "10",
+      "points_per_game": "0.71",
+      "plus_minus": "1",
+      "penalty_minutes": "8",
+      "penalty_minutes_per_game": "0.57",
+      "power_play_goals": "1",
+      "power_play_assists": "6",
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
@@ -1585,8 +1585,8 @@
       "games_played": "12",
       "game_winning_goals": "1",
       "goals": "2",
-      "shots": "25",
-      "shooting_percentage": "8.0",
+      "shots": "26",
+      "shooting_percentage": "7.7",
       "assists": "7",
       "points": "9",
       "points_per_game": "0.75",
@@ -1627,6 +1627,58 @@
       "rank": 62
     },
     {
+      "player_id": "10816",
+      "name": "Caz Carlson",
+      "active": "1",
+      "position": "F",
+      "rookie": "0",
+      "jersey_number": "92",
+      "team_code": "FGO",
+      "games_played": "14",
+      "game_winning_goals": "0",
+      "goals": "2",
+      "shots": "22",
+      "shooting_percentage": "9.1",
+      "assists": "7",
+      "points": "9",
+      "points_per_game": "0.64",
+      "plus_minus": "6",
+      "penalty_minutes": "10",
+      "penalty_minutes_per_game": "0.71",
+      "power_play_goals": "1",
+      "power_play_assists": "2",
+      "short_handed_goals": "0",
+      "short_handed_assists": "1",
+      "shootout_goals": "0",
+      "rank": 63
+    },
+    {
+      "player_id": "10962",
+      "name": "Kristopher Richards",
+      "active": "1",
+      "position": "D",
+      "rookie": "0",
+      "jersey_number": "26",
+      "team_code": "DBQ",
+      "games_played": "13",
+      "game_winning_goals": "0",
+      "goals": "1",
+      "shots": "19",
+      "shooting_percentage": "5.3",
+      "assists": "8",
+      "points": "9",
+      "points_per_game": "0.69",
+      "plus_minus": "7",
+      "penalty_minutes": "38",
+      "penalty_minutes_per_game": "2.92",
+      "power_play_goals": "0",
+      "power_play_assists": "0",
+      "short_handed_goals": "0",
+      "short_handed_assists": "0",
+      "shootout_goals": "0",
+      "rank": 64
+    },
+    {
       "player_id": "10649",
       "name": "Dallas Potter",
       "active": "1",
@@ -1650,7 +1702,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 63
+      "rank": 65
     },
     {
       "player_id": "10848",
@@ -1676,7 +1728,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 64
+      "rank": 66
     },
     {
       "player_id": "10817",
@@ -1702,7 +1754,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 65
+      "rank": 67
     },
     {
       "player_id": "10436",
@@ -1728,7 +1780,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 66
+      "rank": 68
     },
     {
       "player_id": "11286",
@@ -1754,7 +1806,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 67
+      "rank": 69
     },
     {
       "player_id": "11400",
@@ -1780,7 +1832,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 68
+      "rank": 70
     },
     {
       "player_id": "11244",
@@ -1806,7 +1858,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 69
+      "rank": 71
     },
     {
       "player_id": "11125",
@@ -1832,7 +1884,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 70
+      "rank": 72
     },
     {
       "player_id": "11042",
@@ -1858,7 +1910,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 71
+      "rank": 73
     },
     {
       "player_id": "11337",
@@ -1884,7 +1936,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 72
+      "rank": 74
     },
     {
       "player_id": "10956",
@@ -1910,7 +1962,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 73
+      "rank": 75
     },
     {
       "player_id": "10335",
@@ -1936,7 +1988,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 74
+      "rank": 76
     },
     {
       "player_id": "10890",
@@ -1962,7 +2014,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 75
+      "rank": 77
     },
     {
       "player_id": "11518",
@@ -1988,7 +2040,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 76
+      "rank": 78
     },
     {
       "player_id": "10461",
@@ -2014,7 +2066,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 77
+      "rank": 79
     },
     {
       "player_id": "11112",
@@ -2040,7 +2092,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 78
+      "rank": 80
     },
     {
       "player_id": "11219",
@@ -2066,7 +2118,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 79
+      "rank": 81
     },
     {
       "player_id": "11331",
@@ -2092,33 +2144,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 80
-    },
-    {
-      "player_id": "10816",
-      "name": "Caz Carlson",
-      "active": "1",
-      "position": "F",
-      "rookie": "0",
-      "jersey_number": "92",
-      "team_code": "FGO",
-      "games_played": "14",
-      "game_winning_goals": "0",
-      "goals": "2",
-      "shots": "22",
-      "shooting_percentage": "9.1",
-      "assists": "6",
-      "points": "8",
-      "points_per_game": "0.57",
-      "plus_minus": "6",
-      "penalty_minutes": "10",
-      "penalty_minutes_per_game": "0.71",
-      "power_play_goals": "1",
-      "power_play_assists": "2",
-      "short_handed_goals": "0",
-      "short_handed_assists": "1",
-      "shootout_goals": "0",
-      "rank": 81
+      "rank": 82
     },
     {
       "player_id": "11305",
@@ -2141,32 +2167,6 @@
       "penalty_minutes_per_game": "1.55",
       "power_play_goals": "0",
       "power_play_assists": "3",
-      "short_handed_goals": "0",
-      "short_handed_assists": "0",
-      "shootout_goals": "0",
-      "rank": 82
-    },
-    {
-      "player_id": "10962",
-      "name": "Kristopher Richards",
-      "active": "1",
-      "position": "D",
-      "rookie": "0",
-      "jersey_number": "26",
-      "team_code": "DBQ",
-      "games_played": "13",
-      "game_winning_goals": "0",
-      "goals": "1",
-      "shots": "19",
-      "shooting_percentage": "5.3",
-      "assists": "7",
-      "points": "8",
-      "points_per_game": "0.62",
-      "plus_minus": "7",
-      "penalty_minutes": "38",
-      "penalty_minutes_per_game": "2.92",
-      "power_play_goals": "0",
-      "power_play_assists": "0",
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
@@ -2589,6 +2589,32 @@
       "rank": 99
     },
     {
+      "player_id": "11063",
+      "name": "Noah Mannausau",
+      "active": "1",
+      "position": "D",
+      "rookie": "0",
+      "jersey_number": "23",
+      "team_code": "SF",
+      "games_played": "16",
+      "game_winning_goals": "0",
+      "goals": "2",
+      "shots": "29",
+      "shooting_percentage": "6.9",
+      "assists": "5",
+      "points": "7",
+      "points_per_game": "0.44",
+      "plus_minus": "5",
+      "penalty_minutes": "8",
+      "penalty_minutes_per_game": "0.50",
+      "power_play_goals": "0",
+      "power_play_assists": "1",
+      "short_handed_goals": "0",
+      "short_handed_assists": "0",
+      "shootout_goals": "0",
+      "rank": 100
+    },
+    {
       "player_id": "11249",
       "name": "Leland Dulac",
       "active": "1",
@@ -2612,7 +2638,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "1",
-      "rank": 100
+      "rank": 101
     },
     {
       "player_id": "11399",
@@ -2638,7 +2664,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 101
+      "rank": 102
     },
     {
       "player_id": "11269",
@@ -2664,7 +2690,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 102
+      "rank": 103
     },
     {
       "player_id": "10723",
@@ -2690,7 +2716,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 103
+      "rank": 104
     },
     {
       "player_id": "10632",
@@ -2716,7 +2742,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 104
+      "rank": 105
     },
     {
       "player_id": "11147",
@@ -2742,7 +2768,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 105
+      "rank": 106
     },
     {
       "player_id": "11371",
@@ -2768,7 +2794,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 106
+      "rank": 107
     },
     {
       "player_id": "10999",
@@ -2794,7 +2820,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 107
+      "rank": 108
     },
     {
       "player_id": "10280",
@@ -2820,7 +2846,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 108
+      "rank": 109
     },
     {
       "player_id": "11395",
@@ -2846,7 +2872,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 109
+      "rank": 110
     },
     {
       "player_id": "11013",
@@ -2872,7 +2898,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 110
+      "rank": 111
     },
     {
       "player_id": "11142",
@@ -2898,7 +2924,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 111
+      "rank": 112
     },
     {
       "player_id": "11092",
@@ -2924,7 +2950,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 112
+      "rank": 113
     },
     {
       "player_id": "10991",
@@ -2950,7 +2976,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 113
+      "rank": 114
     },
     {
       "player_id": "11027",
@@ -2976,7 +3002,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 114
+      "rank": 115
     },
     {
       "player_id": "11479",
@@ -3002,7 +3028,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 115
+      "rank": 116
     },
     {
       "player_id": "11387",
@@ -3028,7 +3054,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "1",
       "shootout_goals": "0",
-      "rank": 116
+      "rank": 117
     },
     {
       "player_id": "11217",
@@ -3054,7 +3080,7 @@
       "short_handed_goals": "1",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 117
+      "rank": 118
     },
     {
       "player_id": "10112",
@@ -3080,7 +3106,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 118
+      "rank": 119
     },
     {
       "player_id": "10912",
@@ -3106,7 +3132,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 119
+      "rank": 120
     },
     {
       "player_id": "10347",
@@ -3132,7 +3158,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 120
+      "rank": 121
     },
     {
       "player_id": "10802",
@@ -3158,7 +3184,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 121
+      "rank": 122
     },
     {
       "player_id": "11116",
@@ -3184,7 +3210,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 122
+      "rank": 123
     },
     {
       "player_id": "9929",
@@ -3197,40 +3223,14 @@
       "games_played": "13",
       "game_winning_goals": "2",
       "goals": "2",
-      "shots": "26",
-      "shooting_percentage": "7.7",
+      "shots": "25",
+      "shooting_percentage": "8.0",
       "assists": "4",
       "points": "6",
       "points_per_game": "0.46",
       "plus_minus": "1",
       "penalty_minutes": "4",
       "penalty_minutes_per_game": "0.31",
-      "power_play_goals": "0",
-      "power_play_assists": "1",
-      "short_handed_goals": "0",
-      "short_handed_assists": "0",
-      "shootout_goals": "0",
-      "rank": 123
-    },
-    {
-      "player_id": "11063",
-      "name": "Noah Mannausau",
-      "active": "1",
-      "position": "D",
-      "rookie": "0",
-      "jersey_number": "23",
-      "team_code": "SF",
-      "games_played": "16",
-      "game_winning_goals": "0",
-      "goals": "2",
-      "shots": "29",
-      "shooting_percentage": "6.9",
-      "assists": "4",
-      "points": "6",
-      "points_per_game": "0.38",
-      "plus_minus": "5",
-      "penalty_minutes": "8",
-      "penalty_minutes_per_game": "0.50",
       "power_play_goals": "0",
       "power_play_assists": "1",
       "short_handed_goals": "0",
@@ -3421,6 +3421,32 @@
       "rank": 131
     },
     {
+      "player_id": "10959",
+      "name": "Lincoln Krizizke",
+      "active": "1",
+      "position": "D",
+      "rookie": "0",
+      "jersey_number": "21",
+      "team_code": "DBQ",
+      "games_played": "14",
+      "game_winning_goals": "0",
+      "goals": "0",
+      "shots": "31",
+      "shooting_percentage": "0.0",
+      "assists": "6",
+      "points": "6",
+      "points_per_game": "0.43",
+      "plus_minus": "-3",
+      "penalty_minutes": "10",
+      "penalty_minutes_per_game": "0.71",
+      "power_play_goals": "0",
+      "power_play_assists": "2",
+      "short_handed_goals": "0",
+      "short_handed_assists": "0",
+      "shootout_goals": "0",
+      "rank": 132
+    },
+    {
       "player_id": "11506",
       "name": "Carter Morris",
       "active": "1",
@@ -3444,7 +3470,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 132
+      "rank": 133
     },
     {
       "player_id": "11444",
@@ -3470,7 +3496,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 133
+      "rank": 134
     },
     {
       "player_id": "11511",
@@ -3496,7 +3522,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 134
+      "rank": 135
     },
     {
       "player_id": "10604",
@@ -3522,7 +3548,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "1",
-      "rank": 135
+      "rank": 136
     },
     {
       "player_id": "9996",
@@ -3548,7 +3574,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 136
+      "rank": 137
     },
     {
       "player_id": "10975",
@@ -3574,7 +3600,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 137
+      "rank": 138
     },
     {
       "player_id": "11241",
@@ -3600,7 +3626,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 138
+      "rank": 139
     },
     {
       "player_id": "10336",
@@ -3626,7 +3652,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "1",
       "shootout_goals": "0",
-      "rank": 139
+      "rank": 140
     },
     {
       "player_id": "10642",
@@ -3652,7 +3678,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 140
+      "rank": 141
     },
     {
       "player_id": "10459",
@@ -3678,7 +3704,7 @@
       "short_handed_goals": "2",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 141
+      "rank": 142
     },
     {
       "player_id": "11270",
@@ -3704,7 +3730,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 142
+      "rank": 143
     },
     {
       "player_id": "11229",
@@ -3730,7 +3756,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 143
+      "rank": 144
     },
     {
       "player_id": "11445",
@@ -3756,7 +3782,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 144
+      "rank": 145
     },
     {
       "player_id": "10588",
@@ -3782,7 +3808,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "1",
-      "rank": 145
+      "rank": 146
     },
     {
       "player_id": "11196",
@@ -3808,7 +3834,7 @@
       "short_handed_goals": "1",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 146
+      "rank": 147
     },
     {
       "player_id": "10764",
@@ -3834,7 +3860,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 147
+      "rank": 148
     },
     {
       "player_id": "11338",
@@ -3860,7 +3886,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 148
+      "rank": 149
     },
     {
       "player_id": "11443",
@@ -3886,7 +3912,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 149
+      "rank": 150
     },
     {
       "player_id": "11297",
@@ -3912,7 +3938,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 150
+      "rank": 151
     },
     {
       "player_id": "11422",
@@ -3925,8 +3951,8 @@
       "games_played": "13",
       "game_winning_goals": "0",
       "goals": "2",
-      "shots": "25",
-      "shooting_percentage": "8.0",
+      "shots": "27",
+      "shooting_percentage": "7.4",
       "assists": "3",
       "points": "5",
       "points_per_game": "0.38",
@@ -3938,7 +3964,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 151
+      "rank": 152
     },
     {
       "player_id": "11431",
@@ -3964,7 +3990,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 152
+      "rank": 153
     },
     {
       "player_id": "10523",
@@ -3990,7 +4016,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 153
+      "rank": 154
     },
     {
       "player_id": "11496",
@@ -4016,7 +4042,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 154
+      "rank": 155
     },
     {
       "player_id": "11053",
@@ -4042,7 +4068,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 155
+      "rank": 156
     },
     {
       "player_id": "11526",
@@ -4068,7 +4094,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 156
+      "rank": 157
     },
     {
       "player_id": "10870",
@@ -4094,7 +4120,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 157
+      "rank": 158
     },
     {
       "player_id": "11018",
@@ -4120,7 +4146,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 158
+      "rank": 159
     },
     {
       "player_id": "10784",
@@ -4146,7 +4172,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 159
+      "rank": 160
     },
     {
       "player_id": "10694",
@@ -4172,7 +4198,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 160
+      "rank": 161
     },
     {
       "player_id": "11465",
@@ -4198,7 +4224,59 @@
       "short_handed_goals": "0",
       "short_handed_assists": "1",
       "shootout_goals": "0",
-      "rank": 161
+      "rank": 162
+    },
+    {
+      "player_id": "11361",
+      "name": "Camden Alemond",
+      "active": "1",
+      "position": "F",
+      "rookie": "0",
+      "jersey_number": "19",
+      "team_code": "SC",
+      "games_played": "14",
+      "game_winning_goals": "0",
+      "goals": "0",
+      "shots": "15",
+      "shooting_percentage": "0.0",
+      "assists": "5",
+      "points": "5",
+      "points_per_game": "0.36",
+      "plus_minus": "-6",
+      "penalty_minutes": "4",
+      "penalty_minutes_per_game": "0.29",
+      "power_play_goals": "0",
+      "power_play_assists": "1",
+      "short_handed_goals": "0",
+      "short_handed_assists": "0",
+      "shootout_goals": "0",
+      "rank": 163
+    },
+    {
+      "player_id": "10987",
+      "name": "Nathaniel Poole",
+      "active": "1",
+      "position": "D",
+      "rookie": "0",
+      "jersey_number": "4",
+      "team_code": "SC",
+      "games_played": "14",
+      "game_winning_goals": "0",
+      "goals": "0",
+      "shots": "3",
+      "shooting_percentage": "0.0",
+      "assists": "5",
+      "points": "5",
+      "points_per_game": "0.36",
+      "plus_minus": "4",
+      "penalty_minutes": "17",
+      "penalty_minutes_per_game": "1.21",
+      "power_play_goals": "0",
+      "power_play_assists": "0",
+      "short_handed_goals": "0",
+      "short_handed_assists": "1",
+      "shootout_goals": "0",
+      "rank": 164
     },
     {
       "player_id": "11495",
@@ -4224,7 +4302,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 162
+      "rank": 165
     },
     {
       "player_id": "10093",
@@ -4250,7 +4328,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 163
+      "rank": 166
     },
     {
       "player_id": "10282",
@@ -4276,7 +4354,7 @@
       "short_handed_goals": "3",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 164
+      "rank": 167
     },
     {
       "player_id": "10369",
@@ -4302,7 +4380,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 165
+      "rank": 168
     },
     {
       "player_id": "11497",
@@ -4328,7 +4406,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 166
+      "rank": 169
     },
     {
       "player_id": "11454",
@@ -4354,7 +4432,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 167
+      "rank": 170
     },
     {
       "player_id": "10808",
@@ -4380,7 +4458,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 168
+      "rank": 171
     },
     {
       "player_id": "11004",
@@ -4406,7 +4484,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 169
+      "rank": 172
     },
     {
       "player_id": "11313",
@@ -4432,7 +4510,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 170
+      "rank": 173
     },
     {
       "player_id": "11028",
@@ -4458,7 +4536,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 171
+      "rank": 174
     },
     {
       "player_id": "11056",
@@ -4484,7 +4562,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 172
+      "rank": 175
     },
     {
       "player_id": "11490",
@@ -4510,7 +4588,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 173
+      "rank": 176
     },
     {
       "player_id": "11087",
@@ -4536,7 +4614,7 @@
       "short_handed_goals": "1",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 174
+      "rank": 177
     },
     {
       "player_id": "10927",
@@ -4562,7 +4640,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 175
+      "rank": 178
     },
     {
       "player_id": "11321",
@@ -4588,7 +4666,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 176
+      "rank": 179
     },
     {
       "player_id": "11064",
@@ -4614,7 +4692,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 177
+      "rank": 180
     },
     {
       "player_id": "10997",
@@ -4640,7 +4718,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 178
+      "rank": 181
     },
     {
       "player_id": "11209",
@@ -4666,7 +4744,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 179
+      "rank": 182
     },
     {
       "player_id": "11349",
@@ -4692,7 +4770,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 180
+      "rank": 183
     },
     {
       "player_id": "10879",
@@ -4718,7 +4796,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "1",
       "shootout_goals": "0",
-      "rank": 181
+      "rank": 184
     },
     {
       "player_id": "11002",
@@ -4744,7 +4822,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 182
+      "rank": 185
     },
     {
       "player_id": "11094",
@@ -4770,7 +4848,7 @@
       "short_handed_goals": "1",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 183
+      "rank": 186
     },
     {
       "player_id": "10276",
@@ -4796,7 +4874,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 184
+      "rank": 187
     },
     {
       "player_id": "11232",
@@ -4822,7 +4900,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 185
+      "rank": 188
     },
     {
       "player_id": "10925",
@@ -4848,7 +4926,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 186
+      "rank": 189
     },
     {
       "player_id": "11390",
@@ -4874,7 +4952,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 187
+      "rank": 190
     },
     {
       "player_id": "11095",
@@ -4900,7 +4978,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 188
+      "rank": 191
     },
     {
       "player_id": "10591",
@@ -4926,7 +5004,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "1",
       "shootout_goals": "0",
-      "rank": 189
+      "rank": 192
     },
     {
       "player_id": "10915",
@@ -4952,7 +5030,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 190
+      "rank": 193
     },
     {
       "player_id": "10951",
@@ -4978,7 +5056,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 191
+      "rank": 194
     },
     {
       "player_id": "11418",
@@ -4991,7 +5069,7 @@
       "games_played": "13",
       "game_winning_goals": "0",
       "goals": "0",
-      "shots": "16",
+      "shots": "17",
       "shooting_percentage": "0.0",
       "assists": "4",
       "points": "4",
@@ -5004,59 +5082,7 @@
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
-      "rank": 192
-    },
-    {
-      "player_id": "11361",
-      "name": "Camden Alemond",
-      "active": "1",
-      "position": "F",
-      "rookie": "0",
-      "jersey_number": "19",
-      "team_code": "SC",
-      "games_played": "14",
-      "game_winning_goals": "0",
-      "goals": "0",
-      "shots": "15",
-      "shooting_percentage": "0.0",
-      "assists": "4",
-      "points": "4",
-      "points_per_game": "0.29",
-      "plus_minus": "-6",
-      "penalty_minutes": "4",
-      "penalty_minutes_per_game": "0.29",
-      "power_play_goals": "0",
-      "power_play_assists": "1",
-      "short_handed_goals": "0",
-      "short_handed_assists": "0",
-      "shootout_goals": "0",
-      "rank": 193
-    },
-    {
-      "player_id": "10959",
-      "name": "Lincoln Krizizke",
-      "active": "1",
-      "position": "D",
-      "rookie": "0",
-      "jersey_number": "21",
-      "team_code": "DBQ",
-      "games_played": "14",
-      "game_winning_goals": "0",
-      "goals": "0",
-      "shots": "31",
-      "shooting_percentage": "0.0",
-      "assists": "4",
-      "points": "4",
-      "points_per_game": "0.29",
-      "plus_minus": "-3",
-      "penalty_minutes": "10",
-      "penalty_minutes_per_game": "0.71",
-      "power_play_goals": "0",
-      "power_play_assists": "2",
-      "short_handed_goals": "0",
-      "short_handed_assists": "0",
-      "shootout_goals": "0",
-      "rank": 194
+      "rank": 195
     },
     {
       "player_id": "10783",
@@ -5081,32 +5107,6 @@
       "power_play_assists": "0",
       "short_handed_goals": "0",
       "short_handed_assists": "0",
-      "shootout_goals": "0",
-      "rank": 195
-    },
-    {
-      "player_id": "10987",
-      "name": "Nathaniel Poole",
-      "active": "1",
-      "position": "D",
-      "rookie": "0",
-      "jersey_number": "4",
-      "team_code": "SC",
-      "games_played": "14",
-      "game_winning_goals": "0",
-      "goals": "0",
-      "shots": "3",
-      "shooting_percentage": "0.0",
-      "assists": "4",
-      "points": "4",
-      "points_per_game": "0.29",
-      "plus_minus": "3",
-      "penalty_minutes": "17",
-      "penalty_minutes_per_game": "1.21",
-      "power_play_goals": "0",
-      "power_play_assists": "0",
-      "short_handed_goals": "0",
-      "short_handed_assists": "1",
       "shootout_goals": "0",
       "rank": 196
     },
@@ -7066,8 +7066,8 @@
       "active": "1",
       "position": "F",
       "rookie": "0",
-      "jersey_number": "21",
-      "team_code": "OMA",
+      "jersey_number": "0",
+      "team_code": "CHI",
       "games_played": "10",
       "game_winning_goals": "0",
       "goals": "0",
@@ -7175,7 +7175,7 @@
       "games_played": "12",
       "game_winning_goals": "0",
       "goals": "0",
-      "shots": "12",
+      "shots": "13",
       "shooting_percentage": "0.0",
       "assists": "2",
       "points": "2",
@@ -7409,7 +7409,7 @@
       "games_played": "13",
       "game_winning_goals": "0",
       "goals": "0",
-      "shots": "14",
+      "shots": "15",
       "shooting_percentage": "0.0",
       "assists": "2",
       "points": "2",
@@ -7518,7 +7518,7 @@
       "assists": "0",
       "points": "1",
       "points_per_game": "0.50",
-      "plus_minus": "1",
+      "plus_minus": "0",
       "penalty_minutes": "2",
       "penalty_minutes_per_game": "1.00",
       "power_play_goals": "0",
@@ -8605,7 +8605,7 @@
       "games_played": "8",
       "game_winning_goals": "0",
       "goals": "0",
-      "shots": "1",
+      "shots": "0",
       "shooting_percentage": "0.0",
       "assists": "1",
       "points": "1",
@@ -12008,8 +12008,8 @@
       "team_code": "DBQ",
       "games_played": "2",
       "minutes_played": 119,
-      "shots": "53",
-      "save_percentage": "0.887",
+      "shots": "60",
+      "save_percentage": "0.900",
       "goals_against": "6",
       "shutouts": "0",
       "wins": "1",

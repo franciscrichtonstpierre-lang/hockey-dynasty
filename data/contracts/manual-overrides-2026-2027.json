@@ -1,6 +1,6 @@
 {
   "season": "2026-2027",
-  "sourceNote": "Manually reconciled contract rows using NHL team announcements and PuckPedia season breakdowns. Signing-bonus fields are intentionally omitted from the simulation. Six additional 2026-27 contracts were reconciled against PuckPedia and club announcements on 2026-11-01. Signing bonuses are excluded from the simulation salary field; performance bonuses remain separately represented. Four additional Anaheim Ducks 2026-27 salary breakdowns reconciled against PuckPedia player contract pages and NHL/club announcements on 2026-11-02; base salary is kept separate from cap hit and signing bonuses are excluded. Eight additional Anaheim 2026-27 base salaries, cap hits and terms were reconciled against PuckPedia player contract breakdowns and NHL club announcements on 2026-11-02; signing bonuses are excluded from the salary field. Twelve Chicago Blackhawks 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Nine Detroit Red Wings 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Thirteen Edmonton Oilers 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary.",
+  "sourceNote": "Manually reconciled contract rows using NHL team announcements and PuckPedia season breakdowns. Signing-bonus fields are intentionally omitted from the simulation. Six additional 2026-27 contracts were reconciled against PuckPedia and club announcements on 2026-11-01. Signing bonuses are excluded from the simulation salary field; performance bonuses remain separately represented. Four additional Anaheim Ducks 2026-27 salary breakdowns reconciled against PuckPedia player contract pages and NHL/club announcements on 2026-11-02; base salary is kept separate from cap hit and signing bonuses are excluded. Eight additional Anaheim 2026-27 base salaries, cap hits and terms were reconciled against PuckPedia player contract breakdowns and NHL club announcements on 2026-11-02; signing bonuses are excluded from the salary field. Twelve Chicago Blackhawks 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Nine Detroit Red Wings 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Thirteen Edmonton Oilers 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Nine Florida Panthers 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary.",
   "players": [
     {
       "playerId": 8484168,
@@ -3216,6 +3216,582 @@
         "oneWay": false
       },
       "simulationSalaryUsd": 1000000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8477935,
+      "name": "Sam Bennett",
+      "teamCode": "FLA",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8477935|FLA|2025-06",
+        "signingTeam": "FLA",
+        "signedAt": "2025-06-29",
+        "signingDateStated": false,
+        "type": "standard",
+        "termYears": 8,
+        "startSeason": "2025-26",
+        "endSeason": "2032-33",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": 64000000,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "B",
+        "sourceCount": 2,
+        "conflicts": null,
+        "flags": "derived:span_from_signing_date",
+        "sourceClaimIds": [
+          "d750a8940e1d459f",
+          "7402785bb86c427c"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/news/panthers-gm-focused-on-deals-for-ekblad-and-marchand",
+            "publisher": "NHL.com",
+            "publishedAt": "2025-06-29T00:24:49.8Z",
+            "confidenceTier": "B"
+          },
+          {
+            "url": "https://www.nhl.com/news/aaron-ekblad-signs-eight-year-contract-to-remain-with-panthers",
+            "publisher": "NHL.com",
+            "publishedAt": "2025-07-01T17:31:00Z",
+            "confidenceTier": "B"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/sam-bennett"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "capHitUsd": 8000000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "baseSalaryUsd": 1000000,
+        "performanceBonusUsd": null,
+        "totalSalaryUsd": null,
+        "minorsSalaryUsd": 10200000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 8000000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8474189,
+      "name": "Lars Eller",
+      "teamCode": "FLA",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8474189|FLA|2026-07",
+        "signingTeam": "FLA",
+        "signedAt": "2026-07-01",
+        "signingDateStated": false,
+        "type": "standard",
+        "termYears": 1,
+        "startSeason": "2026-27",
+        "endSeason": "2026-27",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": 850000,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "AD",
+        "sourceCount": 2,
+        "conflicts": null,
+        "flags": "performance_bonuses",
+        "sourceClaimIds": [
+          "8b91aa18da1b16a4",
+          "828e4cccdb0fa022"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/news/florida-panthers-agree-to-terms-with-forward-lars-eller-on-a-one-year-contract",
+            "publisher": "FLA (club release on NHL.com)",
+            "publishedAt": "2026-07-01T22:15:00Z",
+            "confidenceTier": "A"
+          },
+          {
+            "url": "https://www.cbssports.com/fantasy/hockey/news/panthers-lars-eller-gets-one-year-deal-from-florida/",
+            "publisher": "CBS Sports",
+            "publishedAt": "2026-07-01",
+            "confidenceTier": "D"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/lars-eller"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "baseSalaryUsd": 850000,
+        "capHitUsd": 850000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "minorsSalaryUsd": 850000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 850000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8477903,
+      "name": "Garnet Hathaway",
+      "teamCode": "FLA",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8477903|PHI|2024-07",
+        "signingTeam": "PHI",
+        "signedAt": "2024-07-01",
+        "signingDateStated": true,
+        "type": "extension",
+        "termYears": 2,
+        "startSeason": "2025-26",
+        "endSeason": "2026-27",
+        "expiryStatus": "UFA",
+        "boughtOut": false,
+        "oneWay": true,
+        "totalUsd": 4800000,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "E",
+        "sourceCount": 1,
+        "conflicts": null,
+        "flags": "derived:one_way_from_minors_salary;player_id_from_roster",
+        "sourceClaimIds": [
+          "5ae307afa9cd881b"
+        ],
+        "sources": [
+          {
+            "url": "https://web.archive.org/web/20240701232052/https://www.capfriendly.com/players/garnet-hathaway",
+            "publisher": "CapFriendly (Internet Archive snapshot)",
+            "publishedAt": "2024-07-01T23:20:52+00:00",
+            "confidenceTier": "E"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/garnet-hathaway"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "capHitUsd": 2400000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "baseSalaryUsd": 2100000,
+        "performanceBonusUsd": 0,
+        "totalSalaryUsd": null,
+        "minorsSalaryUsd": 2100000,
+        "oneWay": true
+      },
+      "simulationSalaryUsd": 2400000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8473419,
+      "name": "Brad Marchand",
+      "teamCode": "FLA",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8473419|FLA|2025-07",
+        "signingTeam": "FLA",
+        "signedAt": "2025-07-01",
+        "signingDateStated": false,
+        "type": "standard",
+        "termYears": 6,
+        "startSeason": "2025-26",
+        "endSeason": "2030-31",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": 31500000,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "B",
+        "sourceCount": 1,
+        "conflicts": null,
+        "flags": "derived:span_from_signing_date",
+        "sourceClaimIds": [
+          "83aee530b49cc7da"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/news/brad-marchand-signs-6-year-contract-with-florida-panthers",
+            "publisher": "NHL.com",
+            "publishedAt": "2025-07-01T20:40:00Z",
+            "confidenceTier": "B"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/brad-marchand"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "baseSalaryUsd": 1000000,
+        "capHitUsd": 5250000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "minorsSalaryUsd": 6000000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 5250000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8477933,
+      "name": "Sam Reinhart",
+      "teamCode": "FLA",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8477933|FLA|2024-06",
+        "signingTeam": "FLA",
+        "signedAt": "2024-06-30",
+        "signingDateStated": true,
+        "type": "extension",
+        "termYears": 8,
+        "startSeason": "2024-25",
+        "endSeason": "2031-32",
+        "expiryStatus": "UFA",
+        "boughtOut": false,
+        "oneWay": true,
+        "totalUsd": 69000000,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "E",
+        "sourceCount": 1,
+        "conflicts": null,
+        "flags": "derived:one_way_from_minors_salary;player_id_from_roster",
+        "sourceClaimIds": [
+          "500747103d53b7fc"
+        ],
+        "sources": [
+          {
+            "url": "https://web.archive.org/web/20240701222408/https://www.capfriendly.com/players/sam-reinhart",
+            "publisher": "CapFriendly (Internet Archive snapshot)",
+            "publishedAt": "2024-07-01T22:24:08+00:00",
+            "confidenceTier": "E"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/sam-reinhart"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "capHitUsd": 8625000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "baseSalaryUsd": 1000000,
+        "performanceBonusUsd": 0,
+        "totalSalaryUsd": null,
+        "minorsSalaryUsd": 9500000,
+        "oneWay": true
+      },
+      "simulationSalaryUsd": 8625000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8477409,
+      "name": "Carter Verhaeghe",
+      "teamCode": "FLA",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8477409|FLA|2024-10",
+        "signingTeam": "FLA",
+        "signedAt": "2024-10-08",
+        "signingDateStated": false,
+        "type": "extension",
+        "termYears": 8,
+        "startSeason": "2025-26",
+        "endSeason": "2032-33",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": 56000000,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "ABD",
+        "sourceCount": 3,
+        "conflicts": null,
+        "flags": null,
+        "sourceClaimIds": [
+          "cc1c6ebd9b3e8704",
+          "503e5bccd8c771ad",
+          "f67f290d3ec8668e"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/news/florida-panthers-agree-to-terms-with-forward-carter-verhaeghe-on-eight-year-contract-extension",
+            "publisher": "FLA (club release on NHL.com)",
+            "publishedAt": "2024-10-09T02:55:36.795Z",
+            "confidenceTier": "A"
+          },
+          {
+            "url": "https://www.nhl.com/news/florida-panthers-sign-carter-verhaeghe-to-eight-year-contract",
+            "publisher": "NHL.com",
+            "publishedAt": "2024-10-09T03:35:00Z",
+            "confidenceTier": "B"
+          },
+          {
+            "url": "https://www.espn.com/nhl/story/_/id/41690892/carter-verhaeghe-panthers-agree-8-year-56m-deal",
+            "publisher": "ESPN",
+            "publishedAt": "2024-10-08",
+            "confidenceTier": "D"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/carter-verhaeghe"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "capHitUsd": 7000000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "baseSalaryUsd": 1000000,
+        "performanceBonusUsd": null,
+        "totalSalaryUsd": null,
+        "minorsSalaryUsd": 8000000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 7000000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8475462,
+      "name": "Radko Gudas",
+      "teamCode": "FLA",
+      "position": "D",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8475462|FLA|2026-07",
+        "signingTeam": "FLA",
+        "signedAt": "2026-07-01",
+        "signingDateStated": false,
+        "type": "standard",
+        "termYears": 6,
+        "startSeason": "2026-27",
+        "endSeason": "2031-32",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": 9000000,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "ABD",
+        "sourceCount": 3,
+        "conflicts": null,
+        "flags": "attributed_report",
+        "sourceClaimIds": [
+          "ae765cce6139ea1c",
+          "f41548fb749295c4",
+          "714444842bbccda5"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/news/florida-panthers-agree-to-terms-with-defenseman-radko-gudas-on-a-six-year-contract",
+            "publisher": "FLA (club release on NHL.com)",
+            "publishedAt": "2026-07-01T18:30:00Z",
+            "confidenceTier": "A"
+          },
+          {
+            "url": "https://www.nhl.com/news/radko-gudas-signs-6-year-contract-with-florida-panthers",
+            "publisher": "NHL.com",
+            "publishedAt": "2026-07-03T13:47:00Z",
+            "confidenceTier": "B"
+          },
+          {
+            "url": "https://www.tsn.ca/nhl/article/panthers-give-veteran-defenceman-gudas-to-six-year-9-million-deal/",
+            "publisher": "TSN",
+            "publishedAt": "2026-07-01",
+            "confidenceTier": "D"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/radko-gudas"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "baseSalaryUsd": 850000,
+        "capHitUsd": 1500000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "minorsSalaryUsd": 1500000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 1500000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8478859,
+      "name": "Niko Mikkola",
+      "teamCode": "FLA",
+      "position": "D",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8478859|FLA|2025-10",
+        "signingTeam": "FLA",
+        "signedAt": "2025-10-02",
+        "signingDateStated": false,
+        "type": "extension",
+        "termYears": 8,
+        "startSeason": "2026-27",
+        "endSeason": "2033-34",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": 40000000,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "ABD",
+        "sourceCount": 3,
+        "conflicts": null,
+        "sourceClaimIds": [
+          "0813bcee5548dddb",
+          "7c0590aeae36807b",
+          "8ca1fc03e760be01"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/news/florida-panthers-agree-to-terms-with-defenseman-niko-mikkola-on-an-eight-year-contract-extension",
+            "publisher": "FLA (club release on NHL.com)",
+            "publishedAt": "2025-10-02T14:00:00Z",
+            "confidenceTier": "A"
+          },
+          {
+            "url": "https://www.nhl.com/news/niko-mikkola-signs-8-year-contract-with-florida-panthers",
+            "publisher": "NHL.com",
+            "publishedAt": "2025-10-02T14:09:26.834Z",
+            "confidenceTier": "B"
+          },
+          {
+            "url": "https://www.sportsnet.ca/nhl/article/panthers-sign-niko-mikkola-to-eight-year-contract-extension/",
+            "publisher": "Sportsnet",
+            "publishedAt": "2025-10-02",
+            "confidenceTier": "D"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/niko-mikkola"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "capHitUsd": 5000000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "baseSalaryUsd": 1000000,
+        "performanceBonusUsd": null,
+        "totalSalaryUsd": null,
+        "minorsSalaryUsd": 6500000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 5000000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8474593,
+      "name": "Jacob Markstrom",
+      "teamCode": "FLA",
+      "position": "G",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8474593|NJD|2025-11",
+        "signingTeam": "NJD",
+        "signedAt": "2025-11-02",
+        "signingDateStated": false,
+        "type": "extension",
+        "termYears": 2,
+        "startSeason": "2026-27",
+        "endSeason": "2027-28",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": 12000000,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "AB",
+        "sourceCount": 2,
+        "conflicts": null,
+        "flags": null,
+        "sourceClaimIds": [
+          "35cec042ed57a818",
+          "b2bccd264b4aa333"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/news/markstrom-extends-with-devils-solidifying-bond-with-allen-in-net-feature-11-1-25",
+            "publisher": "NJD (club release on NHL.com)",
+            "publishedAt": "2025-11-03T17:56:00Z",
+            "confidenceTier": "A"
+          },
+          {
+            "url": "https://www.nhl.com/news/jacob-markstrom-signs-two-year-contract-with-new-jersey-devils",
+            "publisher": "NHL.com",
+            "publishedAt": "2025-11-02T03:35:00Z",
+            "confidenceTier": "B"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/jacob-markstrom"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "baseSalaryUsd": 4500000,
+        "capHitUsd": 6000000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "minorsSalaryUsd": 6000000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 6000000,
       "simulationSalaryStatus": "source_verified_manual_override",
       "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
       "sourceDataset": "manual_verified_contract_override",

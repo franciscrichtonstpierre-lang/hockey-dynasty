@@ -190,6 +190,7 @@ for (const code of codes) {
 }
 const manualOverrides = JSON.parse(await readFile("data/contracts/manual-overrides-2026-2027.json","utf8"));
 let manualOverridesApplied = 0;
+let organizationOnlyOverrides = 0;
 for (const override of (manualOverrides.players || [])) {
   const index = players.findIndex(p => Number(p.playerId) === Number(override.playerId));
   if (index >= 0) {
@@ -202,10 +203,16 @@ for (const override of (manualOverrides.players || [])) {
         capHitBasis: override.season?.capHitBasis ?? existing.season?.capHitBasis ?? null
       }
     };
-  } else players.push(override);
-  manualOverridesApplied++;
+    manualOverridesApplied++;
+  } else if (override.scope === "ORGANIZATION_ONLY") {
+    // AHL players and signed prospects belong in organizationContracts, not the NHL roster.
+    organizationOnlyOverrides++;
+  } else {
+    players.push(override);
+    manualOverridesApplied++;
+  }
 }
-console.log("Manual verified contract overrides: "+manualOverridesApplied+" applied.");
+console.log("Manual verified NHL roster overrides: "+manualOverridesApplied+" applied; organization-only overrides reserved for the organization registry: "+organizationOnlyOverrides+".");
 for (const override of (manualOverrides.players || [])) {
   const base = override.season?.baseSalaryUsd;
   const minors = override.season?.minorsSalaryUsd;

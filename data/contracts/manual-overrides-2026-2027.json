@@ -1,6 +1,6 @@
 {
   "season": "2026-2027",
-  "sourceNote": "Manually reconciled contract rows using NHL team announcements and PuckPedia season breakdowns. Signing-bonus fields are intentionally omitted from the simulation. Six additional 2026-27 contracts were reconciled against PuckPedia and club announcements on 2026-11-01. Signing bonuses are excluded from the simulation salary field; performance bonuses remain separately represented. Four additional Anaheim Ducks 2026-27 salary breakdowns reconciled against PuckPedia player contract pages and NHL/club announcements on 2026-11-02; base salary is kept separate from cap hit and signing bonuses are excluded. Eight additional Anaheim 2026-27 base salaries, cap hits and terms were reconciled against PuckPedia player contract breakdowns and NHL club announcements on 2026-11-02; signing bonuses are excluded from the salary field. Twelve Chicago Blackhawks 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Nine Detroit Red Wings 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Thirteen Edmonton Oilers 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Nine Florida Panthers 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Twelve New York Rangers 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Eight Washington Capitals 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Rémi Poirier held for affiliation reconciliation after his waiver claim. Three remaining cap-hit gaps (Patrick Kane, Andreas Englund, Bokondji Imama) reconciled against PuckPedia 2026-27 breakdowns. Twelve San Jose Sharks 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Two remaining New York Rangers cap-hit gaps (Noah Laba and Scott Morrow) reconciled against PuckPedia 2026-27 breakdowns. Libor Hajek 2026-27 base salary, minor salary and cap hit reconciled against PuckPedia. Rémi Poirier updated to Washington after the Nov 1, 2026 trade; 2026-27 base salary, AHL minors salary and cap hit sourced from PuckPedia. Eleven Calgary and Carolina 2026-27 base salary and cap-hit records reconciled against PuckPedia, including correction of Jackson Blake and Seth Jarvis cap hits. Three Anaheim Ducks 2026-27 salary and cap-hit records reconciled against PuckPedia. Nine Colorado Avalanche 2026-27 base salary and cap-hit records reconciled against PuckPedia, including all roster gaps and the T.J. Hughes cap hit. Nine Dallas Stars 2026-27 base salary and cap-hit records reconciled against PuckPedia, including signing-bonus distinctions for Lindell and Oettinger. Nine Montréal Canadiens 2026-27 base salary and cap-hit records reconciled against PuckPedia, with signing bonuses excluded from base salary. Nine Pittsburgh Penguins 2026-27 salary and cap-hit records reconciled against PuckPedia. Sidney Crosby and Erik Karlsson base salaries corrected to exclude signing bonuses.",
+  "sourceNote": "Manually reconciled contract rows using NHL team announcements and PuckPedia season breakdowns. Signing-bonus fields are intentionally omitted from the simulation. Six additional 2026-27 contracts were reconciled against PuckPedia and club announcements on 2026-11-01. Signing bonuses are excluded from the simulation salary field; performance bonuses remain separately represented. Four additional Anaheim Ducks 2026-27 salary breakdowns reconciled against PuckPedia player contract pages and NHL/club announcements on 2026-11-02; base salary is kept separate from cap hit and signing bonuses are excluded. Eight additional Anaheim 2026-27 base salaries, cap hits and terms were reconciled against PuckPedia player contract breakdowns and NHL club announcements on 2026-11-02; signing bonuses are excluded from the salary field. Twelve Chicago Blackhawks 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Nine Detroit Red Wings 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Thirteen Edmonton Oilers 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Nine Florida Panthers 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Twelve New York Rangers 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Eight Washington Capitals 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Rémi Poirier held for affiliation reconciliation after his waiver claim. Three remaining cap-hit gaps (Patrick Kane, Andreas Englund, Bokondji Imama) reconciled against PuckPedia 2026-27 breakdowns. Twelve San Jose Sharks 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Two remaining New York Rangers cap-hit gaps (Noah Laba and Scott Morrow) reconciled against PuckPedia 2026-27 breakdowns. Libor Hajek 2026-27 base salary, minor salary and cap hit reconciled against PuckPedia. Rémi Poirier updated to Washington after the Nov 1, 2026 trade; 2026-27 base salary, AHL minors salary and cap hit sourced from PuckPedia. Eleven Calgary and Carolina 2026-27 base salary and cap-hit records reconciled against PuckPedia, including correction of Jackson Blake and Seth Jarvis cap hits. Three Anaheim Ducks 2026-27 salary and cap-hit records reconciled against PuckPedia. Nine Colorado Avalanche 2026-27 base salary and cap-hit records reconciled against PuckPedia, including all roster gaps and the T.J. Hughes cap hit. Nine Dallas Stars 2026-27 base salary and cap-hit records reconciled against PuckPedia, including signing-bonus distinctions for Lindell and Oettinger. Nine Montréal Canadiens 2026-27 base salary and cap-hit records reconciled against PuckPedia, with signing bonuses excluded from base salary. Nine Pittsburgh Penguins 2026-27 salary and cap-hit records reconciled against PuckPedia. Sidney Crosby and Erik Karlsson base salaries corrected to exclude signing bonuses. Nine Toronto Maple Leafs 2026-27 base salary and cap-hit records reconciled against PuckPedia, excluding signing bonuses from base salary.",
   "players": [
     {
       "playerId": 8484168,
@@ -9450,6 +9450,563 @@
       "simulationSalaryUsd": 936110,
       "simulationSalaryStatus": "source_verified_manual_override",
       "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonuses excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8479968,
+      "name": "Vinni Lettieri",
+      "teamCode": "TOR",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8479968|TOR|2026-07",
+        "signingTeam": "TOR",
+        "signedAt": "2026-07-03",
+        "signingDateStated": false,
+        "type": "standard",
+        "termYears": 1,
+        "startSeason": "2026-27",
+        "endSeason": "2026-27",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": true,
+        "totalUsd": null,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "CD",
+        "sourceCount": 2,
+        "conflicts": null,
+        "flags": "multi_player_story;player_id_from_roster;start_season_assumed",
+        "sourceClaimIds": [
+          "b7bc15e4791c6574",
+          "f54a6be2f5dc406c"
+        ],
+        "sources": [
+          {
+            "url": "https://www.espn.com/nhl/transactions/_/date/20260703",
+            "publisher": "ESPN transactions wire",
+            "publishedAt": "2026-07-03T07:00Z",
+            "confidenceTier": "C"
+          },
+          {
+            "url": "https://bsky.app/profile/puckpedia.com/post/3mpr4tgxbuc2g",
+            "publisher": "PuckPedia (public Bluesky post)",
+            "publishedAt": "2026-07-03T18:00:22.488Z",
+            "confidenceTier": "D"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/vinni-lettieri"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "baseSalaryUsd": 850000,
+        "capHitUsd": 850000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "minorsSalaryUsd": 850000,
+        "oneWay": true
+      },
+      "simulationSalaryUsd": 850000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8480893,
+      "name": "Kirill Marchenko",
+      "teamCode": "TOR",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8480893|CBJ|2024-07",
+        "signingTeam": "CBJ",
+        "signedAt": "2024-07-28",
+        "signingDateStated": false,
+        "type": "standard",
+        "termYears": 3,
+        "startSeason": "2024-25",
+        "endSeason": "2026-27",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": 11550000,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "AB",
+        "sourceCount": 2,
+        "conflicts": null,
+        "flags": null,
+        "sourceClaimIds": [
+          "f23c2ba5871ce28a",
+          "91f3c972b9a84250"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/news/blue-jackets-sign-kirill-marchenko-to-three-year-contract",
+            "publisher": "CBJ (club release on NHL.com)",
+            "publishedAt": "2024-07-28T13:00:00Z",
+            "confidenceTier": "A"
+          },
+          {
+            "url": "https://www.nhl.com/news/kirill-marchenko-signs-3-year-deal-with-columbus",
+            "publisher": "NHL.com",
+            "publishedAt": "2024-07-28T13:33:42.342Z",
+            "confidenceTier": "B"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/kirill-marchenko"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "capHitUsd": 3850000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "baseSalaryUsd": 3975000,
+        "performanceBonusUsd": null,
+        "totalSalaryUsd": null,
+        "minorsSalaryUsd": 3975000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 3850000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8486067,
+      "name": "Gavin McKenna",
+      "teamCode": "TOR",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8486067|TOR|2026-07",
+        "signingTeam": "TOR",
+        "signedAt": "2026-07-03",
+        "signingDateStated": false,
+        "type": "ELC",
+        "termYears": 3,
+        "startSeason": "2026-27",
+        "endSeason": "2028-29",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": null,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "CD",
+        "sourceCount": 2,
+        "conflicts": null,
+        "flags": "player_id_from_roster",
+        "sourceClaimIds": [
+          "ffee0300907122e7",
+          "e1c1c0938e667b1c"
+        ],
+        "sources": [
+          {
+            "url": "https://www.espn.com/nhl/transactions/_/date/20260703",
+            "publisher": "ESPN transactions wire",
+            "publishedAt": "2026-07-03T07:00Z",
+            "confidenceTier": "C"
+          },
+          {
+            "url": "https://thehockeynews.com/nhl/toronto-maple-leafs/latest-news/maple-leafs-sign-gavin-mckenna-to-bonus-filled-entry-level-contract",
+            "publisher": "The Hockey News",
+            "publishedAt": "2026-07-03",
+            "confidenceTier": "D"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/gavin-mckenna"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "baseSalaryUsd": 922500,
+        "capHitUsd": 1075000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "minorsSalaryUsd": 87500,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 1075000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8475166,
+      "name": "John Tavares",
+      "teamCode": "TOR",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8475166|TOR|2025-06",
+        "signingTeam": "TOR",
+        "signedAt": "2025-06-27",
+        "signingDateStated": false,
+        "type": "standard",
+        "termYears": 4,
+        "startSeason": "2025-26",
+        "endSeason": "2028-29",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": 17520000,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "BC",
+        "sourceCount": 2,
+        "conflicts": null,
+        "flags": "derived:span_from_signing_date;player_id_from_roster",
+        "sourceClaimIds": [
+          "e69593f7ad87835f",
+          "9d46f178b6080a91"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/news/john-tavares-signs-4-year-contract-extension-with-toronto-maple-leafs",
+            "publisher": "NHL.com",
+            "publishedAt": "2025-06-27T17:25:00Z",
+            "confidenceTier": "B"
+          },
+          {
+            "url": "https://www.espn.com/nhl/transactions/_/date/20250627",
+            "publisher": "ESPN transactions wire",
+            "publishedAt": "2025-06-27T07:00Z",
+            "confidenceTier": "C"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/john-tavares"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "baseSalaryUsd": 1000000,
+        "capHitUsd": 4389280,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "minorsSalaryUsd": 5000000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 4389280,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8483565,
+      "name": "Nick Blankenburg",
+      "teamCode": "TOR",
+      "position": "D",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "nick blankenburg|TOR|2026-09",
+        "signingTeam": "TOR",
+        "signedAt": "2026-09-27",
+        "signingDateStated": false,
+        "type": "standard",
+        "termYears": 1,
+        "startSeason": "2026-27",
+        "endSeason": "2026-27",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": null,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "CD",
+        "sourceCount": 2,
+        "conflicts": null,
+        "flags": "expected_not_final;player_id_from_roster;start_season_assumed",
+        "sourceClaimIds": [
+          "38170ef2ae2a271c",
+          "1c5a5ccddbe01002"
+        ],
+        "sources": [
+          {
+            "url": "https://www.espn.com/nhl/transactions/_/date/20260927",
+            "publisher": "ESPN transactions wire",
+            "publishedAt": "2026-09-27T07:00Z",
+            "confidenceTier": "C"
+          },
+          {
+            "url": "https://bsky.app/profile/puckpedia.com/post/3mwjexgp6de2a",
+            "publisher": "PuckPedia (public Bluesky post)",
+            "publishedAt": "2026-09-27T18:00:49.858Z",
+            "confidenceTier": "D"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/nick-blankenburg"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "baseSalaryUsd": 1400000,
+        "capHitUsd": 1400000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "minorsSalaryUsd": 1400000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 1400000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8475171,
+      "name": "Oliver Ekman-Larsson",
+      "teamCode": "TOR",
+      "position": "D",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8475171|TOR|2024-11",
+        "signingTeam": "TOR",
+        "signedAt": "2024-11-13",
+        "signingDateStated": false,
+        "type": "standard",
+        "termYears": 4,
+        "startSeason": "2024-25",
+        "endSeason": "2027-28",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": null,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "B",
+        "sourceCount": 1,
+        "conflicts": null,
+        "flags": "derived:span_from_signing_date;llm:anthropic/claude-haiku-5.5;llm_filled",
+        "sourceClaimIds": [
+          "ceddf04725e29c17"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/news/oliver-ekman-larsson-feels-fortunate-entering-1000th-game",
+            "publisher": "NHL.com",
+            "publishedAt": "2024-11-13T05:00:00Z",
+            "confidenceTier": "B"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/oliver-ekman-larsson"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "baseSalaryUsd": 1500000,
+        "capHitUsd": 3500000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "minorsSalaryUsd": 3000000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 3500000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8476931,
+      "name": "Jake McCabe",
+      "teamCode": "TOR",
+      "position": "D",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8476931|TOR|2024-10",
+        "signingTeam": "TOR",
+        "signedAt": "2024-10-28",
+        "signingDateStated": false,
+        "type": "standard",
+        "termYears": 5,
+        "startSeason": "2025-26",
+        "endSeason": "2029-30",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": 22550000,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "BC",
+        "sourceCount": 2,
+        "conflicts": null,
+        "flags": "player_id_from_roster",
+        "sourceClaimIds": [
+          "c13255b6f86d7219",
+          "8af6cbcbd21431af"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/news/jake-mccabe-signs-five-year-contract-with-toronto-maple-leafs",
+            "publisher": "NHL.com",
+            "publishedAt": "2024-10-28T18:42:00Z",
+            "confidenceTier": "B"
+          },
+          {
+            "url": "https://www.espn.com/nhl/transactions/_/date/20241028",
+            "publisher": "ESPN transactions wire",
+            "publishedAt": "2024-10-28T07:00Z",
+            "confidenceTier": "C"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/jake-mccabe"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "capHitUsd": 4513102,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "baseSalaryUsd": 1000000,
+        "performanceBonusUsd": null,
+        "totalSalaryUsd": null,
+        "minorsSalaryUsd": 5500000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 4513102,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8478178,
+      "name": "Darren Raddysh",
+      "teamCode": "TOR",
+      "position": "D",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8478178|TOR|2026-07",
+        "signingTeam": "TOR",
+        "signedAt": "2026-07-02",
+        "signingDateStated": false,
+        "type": "standard",
+        "termYears": 8,
+        "startSeason": "2026-27",
+        "endSeason": "2033-34",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": null,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "B",
+        "sourceCount": 2,
+        "conflicts": null,
+        "flags": "derived:span_from_signing_date",
+        "sourceClaimIds": [
+          "6056b72c0af9ffbb",
+          "df210a92ee2828a4"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/news/brandon-duhaime-signs-three-year-contract-with-toronto-maple-leafs",
+            "publisher": "NHL.com",
+            "publishedAt": "2026-07-02T14:10:45.069Z",
+            "confidenceTier": "B"
+          },
+          {
+            "url": "https://www.nhl.com/news/sergei-bobrovsky-signs-three-year-contract-with-toronto-maple-leafs",
+            "publisher": "NHL.com",
+            "publishedAt": "2026-07-03T15:47:00Z",
+            "confidenceTier": "B"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/darren-raddysh"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "baseSalaryUsd": 1000000,
+        "capHitUsd": 8500000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "minorsSalaryUsd": 11000000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 8500000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8483546,
+      "name": "Marshall Rifai",
+      "teamCode": "TOR",
+      "position": "D",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8483546|TOR|2024-08",
+        "signingTeam": "TOR",
+        "signedAt": "2024-08-30",
+        "signingDateStated": false,
+        "type": "extension",
+        "termYears": 2,
+        "startSeason": "2025-26",
+        "endSeason": "2026-27",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": null,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "C",
+        "sourceCount": 1,
+        "conflicts": null,
+        "flags": "derived:span_from_signing_date;player_id_from_roster",
+        "sourceClaimIds": [
+          "f3af3f7353521a24"
+        ],
+        "sources": [
+          {
+            "url": "https://www.espn.com/nhl/transactions/_/date/20240830",
+            "publisher": "ESPN transactions wire",
+            "publishedAt": "2024-08-30T07:00Z",
+            "confidenceTier": "C"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/marshall-rifai"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "baseSalaryUsd": 850000,
+        "capHitUsd": 850000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "minorsSalaryUsd": 850000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 850000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
       "sourceDataset": "manual_verified_contract_override",
       "license": "source-linked"
     }

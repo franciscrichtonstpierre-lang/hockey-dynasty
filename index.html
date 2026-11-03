@@ -479,13 +479,17 @@ function effectifContractForPlayer(p,teamCode){const cd=window.hdContractCache||
 function quickOfferButton(p,kind,teamCode,c){
  const rights=String(p.nhlRightsTeam||p.rightsTeam||p.rightsTeamCode||p.nhlTeamCode||"");
  if(kind==="Espoirs"&&rights!==teamCode)return "";
- const status=String(c?.verificationStatus||c?.verification_status||c?.contractStatus||"").toUpperCase();
+ const status=String(c?.verificationStatus||c?.verification_status||c?.contractStatus||c?.payload?.contractStatus||c?.payload?.mergedAliasContractPayload?.contractStatus||"").toUpperCase();
  const unsigned=["UNSIGNED","UNSIGNED_PROSPECT","NO_CONTRACT","RIGHTS_ONLY","UNSIGNED_NO_ORG_CONTRACT"].includes(status)||c?.isSigned===false||c?.underContract===false;
- const end=Number(c?.contract?.endSeason??c?.endSeason??c?.contractEndSeason??c?.contractEndYear);
+ const rawEnd=c?.contract?.endSeason??c?.endSeason??c?.contractEndSeason??c?.contractEndYear??c?.payload?.contract?.endSeason??"";
+ const endText=String(rawEnd).trim();
+ const years=endText.match(/20\\d{2}/g)||[];
+ const endYear=years.length?Number(years[years.length-1]):Number(endText);
+ const currentYear=Number(S.season)||2026;
  const hasContract=!!c&&!unsigned;
- const oneYear=hasContract&&Number.isFinite(end)&&end===Number(S.season)+1;
+ const oneYear=hasContract&&Number.isFinite(endYear)&&(endYear===currentYear||endYear===currentYear+1);
  if(hasContract&&!oneYear)return "";
- const key=String(p.nhlPlayerId??p.playerId??p.id??p.player_id??"");
+ const key=String(p.nhlPlayerId??p.playerId??p.player_id??p.id??"");
  if(!key)return "";
  const target=kind==="Espoirs"?"prospect":"roster";
  return '<button type="button" class="quickContractPencil" title="Proposer un contrat" aria-label="Proposer un contrat" onclick="quickOpenContractOffer(&quot;'+encodeURIComponent(key)+'&quot;,&quot;'+target+'&quot;)">✏️</button>';

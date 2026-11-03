@@ -1264,7 +1264,7 @@ function installHdTableSorting(){
   const previous=th.dataset.hdSort||"";
   const numeric=rows.map(row=>row.cells[index].textContent.trim()).filter(v=>v!=="—"&&v!=="-"&&v!=="");
   const isNumeric=numeric.length>0&&numeric.every(v=>{const n=Number(v.replace(/[\\s,$%]/g,"").replace(",", "."));return Number.isFinite(n)});
-  const direction=previous==="desc"?"asc":previous==="asc"?(isNumeric?"desc":"asc"):(isNumeric?"desc":"asc");
+  const direction=previous==="desc"?"asc":previous==="asc"?"desc":(isNumeric?"desc":"asc");
   table.querySelectorAll("thead th[data-hd-sort]").forEach(cell=>{delete cell.dataset.hdSort;cell.removeAttribute("aria-sort")});
   th.dataset.hdSort=direction;th.setAttribute("aria-sort",direction==="asc"?"ascending":"descending");
   const value=row=>row.cells[index].textContent.trim();

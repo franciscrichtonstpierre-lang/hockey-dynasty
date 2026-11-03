@@ -357,7 +357,7 @@ for (const nhlPlayer of players) {
   });
   Object.assign(nhlPlayer, {
     contractStatus: override.contractStatus || nhlPlayer.contractStatus,
-    contract: override.contract || nhlPlayer.contract,
+    contract: { ...(nhlPlayer.contract || {}), ...(override.contract || {}) },
     season: {
       ...(nhlPlayer.season || {}),
       ...(override.season || {}),
@@ -394,9 +394,9 @@ for (const organizationPlayer of organizationContracts) {
     one_way: oneWay
   });
   Object.assign(organizationPlayer, {
-    contractStatus: override.contractStatus,
+    contractStatus: override.contractStatus || organizationPlayer.contractStatus,
     nhlRightsTeam: override.teamCode || organizationPlayer.nhlRightsTeam || null,
-    contract: override.contract,
+    contract: { ...(organizationPlayer.contract || {}), ...(override.contract || {}) },
     season: {
       ...(organizationPlayer.season || {}), ...(override.season || {}),
       capHitUsd: override.season?.capHitUsd ?? organizationPlayer.season?.capHitUsd ?? null,

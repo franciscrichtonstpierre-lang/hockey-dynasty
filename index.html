@@ -559,10 +559,14 @@ function closeQuickContractModal(){
  if(modal)modal.remove();
  window.UHM_QUICK_CONTRACT_TARGET=null;
 }
-function quickOpenContractOffer(encodedKey,kind,encodedName){
+async function quickOpenContractOffer(encodedKey,kind,encodedName){
  const requestedKey=decodeURIComponent(encodedKey||"");
  const requestedName=decodeURIComponent(encodedName||"");
  if(!quickContractCanManage(codes[S.team])){msg("Seul le DG auquel cette organisation est attribuée peut proposer un contrat.");return;}
+ if(!contractRegistryCache){
+  try{const response=await fetch("./data/players/registry.json?"+Date.now(),{cache:"no-store"});if(!response.ok)throw Error("registre indisponible");const data=await response.json();contractRegistryCache=Array.isArray(data.players)?data.players:[];await loadLeaguePlayerOverrides();contractRegistryCache=applyLeaguePlayerOverridesToRows(contractRegistryCache);}
+  catch(error){msg("Impossible de charger le registre des joueurs. Réessaie.");return;}
+ }
  const targetKind=kind==="prospect"?"prospect":"roster";
  const norm=n=>String(n||"").normalize("NFD").replace(/[\\u0300-\\u036f]/g,"").toLocaleLowerCase("fr").replace(/[^a-z0-9]+/g," ").trim();
  const rows=contractRegistryCache||[];

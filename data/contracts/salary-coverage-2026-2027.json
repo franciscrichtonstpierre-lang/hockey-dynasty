@@ -1,10 +1,22 @@
 {
   "season": "2026-2027",
-  "generatedAt": "2026-11-03T05:31:55.002Z",
+  "generatedAt": "2026-11-03T05:35:48.716Z",
   "nhl": {
     "total": 811,
     "salaryPresent": 811,
+    "verifiedSalaryPresent": 811,
+    "salaryBasisCounts": {
+      "verified_nhl_base_salary": 811
+    },
     "capHitPresent": 811,
+    "verifiedCapHitPresent": 811,
+    "capHitBasisCounts": {
+      "verified_manual_override": 160,
+      "verified_season_cap_hit": 430,
+      "verified_puckpedia_season_cap_hit": 145,
+      "verified_puckpedia_cap_hit": 69,
+      "verified_contract_total_divided_by_term": 7
+    },
     "missingSalary": [],
     "missingCapHit": [],
     "byTeam": {

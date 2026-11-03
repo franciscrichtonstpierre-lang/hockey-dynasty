@@ -187,8 +187,17 @@ const manualOverrides = JSON.parse(await readFile("data/contracts/manual-overrid
 let manualOverridesApplied = 0;
 for (const override of (manualOverrides.players || [])) {
   const index = players.findIndex(p => Number(p.playerId) === Number(override.playerId));
-  if (index >= 0) players[index] = { ...players[index], ...override };
-  else players.push(override);
+  if (index >= 0) {
+    const existing = players[index];
+    players[index] = {
+      ...existing, ...override,
+      season: {
+        ...(existing.season || {}), ...(override.season || {}),
+        capHitUsd: override.season?.capHitUsd ?? existing.season?.capHitUsd ?? null,
+        capHitBasis: override.season?.capHitBasis ?? existing.season?.capHitBasis ?? null
+      }
+    };
+  } else players.push(override);
   manualOverridesApplied++;
 }
 console.log("Manual verified contract overrides: "+manualOverridesApplied+" applied.");
@@ -320,7 +329,11 @@ for (const organizationPlayer of organizationContracts) {
   Object.assign(organizationPlayer, {
     contractStatus: override.contractStatus,
     contract: override.contract,
-    season: override.season,
+    season: {
+      ...(organizationPlayer.season || {}), ...(override.season || {}),
+      capHitUsd: override.season?.capHitUsd ?? organizationPlayer.season?.capHitUsd ?? null,
+      capHitBasis: override.season?.capHitBasis ?? organizationPlayer.season?.capHitBasis ?? null
+    },
     ...salaryFields,
     sourceDataset: override.sourceDataset || "manual_verified_contract_override",
     license: override.license || "source-linked",

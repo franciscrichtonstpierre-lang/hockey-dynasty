@@ -150,7 +150,7 @@ for (const code of codes) {
       }
       const c=selected.c, season=selected.season, key=c.contract_key||c.contractKey;
       const salaryFields = actualSalaryFields("NHL", c, season);
-      const capHit = verifiedContractCapHitUsd(c, season, registryPlayer);
+      const capHit = verifiedContractCapHitUsd(c, season, registryPlayer || p);
       const baseSalaryUsd = season?.base_salary_usd ?? c?.nhl_salary_usd ?? salaryFields.currentLeagueSalaryUsd;
       const seasonOutput = season || capHit.usd != null || baseSalaryUsd != null ? {
         season:SEASON, capHitUsd:season?.cap_hit_usd ?? capHit.usd,

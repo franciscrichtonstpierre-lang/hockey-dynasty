@@ -1,6 +1,6 @@
 {
   "season": "2026-2027",
-  "sourceNote": "Manually reconciled contract rows using NHL team announcements and PuckPedia season breakdowns. Signing-bonus fields are intentionally omitted from the simulation. Six additional 2026-27 contracts were reconciled against PuckPedia and club announcements on 2026-11-01. Signing bonuses are excluded from the simulation salary field; performance bonuses remain separately represented. Four additional Anaheim Ducks 2026-27 salary breakdowns reconciled against PuckPedia player contract pages and NHL/club announcements on 2026-11-02; base salary is kept separate from cap hit and signing bonuses are excluded. Eight additional Anaheim 2026-27 base salaries, cap hits and terms were reconciled against PuckPedia player contract breakdowns and NHL club announcements on 2026-11-02; signing bonuses are excluded from the salary field. Twelve Chicago Blackhawks 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Nine Detroit Red Wings 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Thirteen Edmonton Oilers 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Nine Florida Panthers 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary.",
+  "sourceNote": "Manually reconciled contract rows using NHL team announcements and PuckPedia season breakdowns. Signing-bonus fields are intentionally omitted from the simulation. Six additional 2026-27 contracts were reconciled against PuckPedia and club announcements on 2026-11-01. Signing bonuses are excluded from the simulation salary field; performance bonuses remain separately represented. Four additional Anaheim Ducks 2026-27 salary breakdowns reconciled against PuckPedia player contract pages and NHL/club announcements on 2026-11-02; base salary is kept separate from cap hit and signing bonuses are excluded. Eight additional Anaheim 2026-27 base salaries, cap hits and terms were reconciled against PuckPedia player contract breakdowns and NHL club announcements on 2026-11-02; signing bonuses are excluded from the salary field. Twelve Chicago Blackhawks 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Nine Detroit Red Wings 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Thirteen Edmonton Oilers 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Nine Florida Panthers 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Twelve New York Rangers 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary.",
   "players": [
     {
       "playerId": 8484168,
@@ -3792,6 +3792,770 @@
         "oneWay": false
       },
       "simulationSalaryUsd": 6000000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8477416,
+      "name": "Oliver Bjorkstrand",
+      "teamCode": "NYR",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8477416|NYR|2026-07",
+        "signingTeam": "NYR",
+        "signedAt": "2026-07-01",
+        "signingDateStated": false,
+        "type": "standard",
+        "termYears": 1,
+        "startSeason": "2026-27",
+        "endSeason": "2026-27",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": 4500000,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "AD",
+        "sourceCount": 2,
+        "conflicts": null,
+        "flags": "attributed_report;derived:span_from_signing_date;player_id_from_roster",
+        "sourceClaimIds": [
+          "7466573e01105612",
+          "483b5268d5a6c014"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/news/rangers-agree-to-terms-with-oliver-bjorkstrand",
+            "publisher": "NYR (club release on NHL.com)",
+            "publishedAt": "2026-07-01T21:30:39.181Z",
+            "confidenceTier": "A"
+          },
+          {
+            "url": "https://www.dailyfaceoff.com/news/oliver-bjorkstrand-new-york-rangers-one-year-contract-signing-free-agency",
+            "publisher": "Daily Faceoff",
+            "publishedAt": "2026-07-01",
+            "confidenceTier": "D"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/oliver-bjorkstrand"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "capHitUsd": 4500000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "baseSalaryUsd": 4500000,
+        "performanceBonusUsd": null,
+        "totalSalaryUsd": null,
+        "minorsSalaryUsd": 4500000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 4500000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8481604,
+      "name": "Pavel Dorofeyev",
+      "teamCode": "NYR",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8481604|NYR|2026-06",
+        "signingTeam": "NYR",
+        "signedAt": "2026-06-30",
+        "signingDateStated": false,
+        "type": "standard",
+        "termYears": 7,
+        "startSeason": "2026-27",
+        "endSeason": "2032-33",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": 77000000,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "AB",
+        "sourceCount": 2,
+        "conflicts": null,
+        "flags": "derived:span_from_signing_date;player_id_from_roster",
+        "sourceClaimIds": [
+          "4f0b06843180251c",
+          "8802431ba8d765c5"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/news/rangers-agree-to-terms-with-pavel-dorofeyev",
+            "publisher": "NYR (club release on NHL.com)",
+            "publishedAt": "2026-06-30T21:17:07.526Z",
+            "confidenceTier": "A"
+          },
+          {
+            "url": "https://www.nhl.com/news/pavel-dorofeyev-signs-7-year-contract-with-new-york-rangers",
+            "publisher": "NHL.com",
+            "publishedAt": "2026-06-30T21:10:08.001Z",
+            "confidenceTier": "B"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/pavel-dorofeyev"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "capHitUsd": 11000000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "baseSalaryUsd": 1000000,
+        "performanceBonusUsd": null,
+        "totalSalaryUsd": null,
+        "minorsSalaryUsd": 14000000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 11000000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8476822,
+      "name": "Luke Glendening",
+      "teamCode": "NYR",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "luke glendening|NYR|2026-10",
+        "signingTeam": "NYR",
+        "signedAt": "2026-10-22",
+        "signingDateStated": false,
+        "type": "standard",
+        "termYears": 1,
+        "startSeason": "2026-27",
+        "endSeason": "2026-27",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": true,
+        "totalUsd": 850000,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "ABD",
+        "sourceCount": 3,
+        "conflicts": null,
+        "flags": "player_id_from_roster;start_season_assumed",
+        "sourceClaimIds": [
+          "45b641659e119a15",
+          "fe2c9242a8ed25e9",
+          "3213d2d5694aec24"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/news/rangers-agree-to-terms-with-luke-glendening",
+            "publisher": "NYR (club release on NHL.com)",
+            "publishedAt": "2026-10-22T22:00:06.054Z",
+            "confidenceTier": "A"
+          },
+          {
+            "url": "https://www.nhl.com/news/luke-glendening-signs-one-year-deal-with-new-york-rangers",
+            "publisher": "NHL.com",
+            "publishedAt": "2026-10-22T22:33:19.364Z",
+            "confidenceTier": "B"
+          },
+          {
+            "url": "https://bsky.app/profile/puckpedia.com/post/3myirev7piv2n",
+            "publisher": "PuckPedia (public Bluesky post)",
+            "publishedAt": "2026-10-22T23:00:49.702Z",
+            "confidenceTier": "D"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/luke-glendening"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "baseSalaryUsd": 850000,
+        "capHitUsd": 850000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "minorsSalaryUsd": 850000,
+        "oneWay": true
+      },
+      "simulationSalaryUsd": 850000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8481789,
+      "name": "Tye Kartye",
+      "teamCode": "NYR",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8481789|SEA|2025-07",
+        "signingTeam": "SEA",
+        "signedAt": "2025-07-05",
+        "signingDateStated": false,
+        "type": "standard",
+        "termYears": 2,
+        "startSeason": "2025-26",
+        "endSeason": "2026-27",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": null,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "A",
+        "sourceCount": 1,
+        "conflicts": null,
+        "flags": "derived:span_from_signing_date",
+        "sourceClaimIds": [
+          "4da7c508f31b01ad"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/news/seattle-kraken-sign-forward-tye-kartye-to-a-two-year-contract-pr",
+            "publisher": "SEA (club release on NHL.com)",
+            "publishedAt": "2025-07-05T18:34:45.052Z",
+            "confidenceTier": "A"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/tye-kartye"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "baseSalaryUsd": 1250000,
+        "capHitUsd": 1250000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "minorsSalaryUsd": 1250000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 1250000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8482109,
+      "name": "Alexis Lafrenière",
+      "teamCode": "NYR",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8482109|NYR|2024-10",
+        "signingTeam": "NYR",
+        "signedAt": "2024-10-27",
+        "signingDateStated": false,
+        "type": "standard",
+        "termYears": 7,
+        "startSeason": "2024-25",
+        "endSeason": "2030-31",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": 52150000,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "B",
+        "sourceCount": 1,
+        "conflicts": null,
+        "flags": "derived:span_from_signing_date",
+        "sourceClaimIds": [
+          "02f2fd542d796ab2"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/news/alexis-lafreniere-signs-7-year-contract-with-new-york-rangers",
+            "publisher": "NHL.com",
+            "publishedAt": "2024-10-27T02:25:00Z",
+            "confidenceTier": "B"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/alexis-lafreniere"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "capHitUsd": 7450000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "baseSalaryUsd": 5500000,
+        "performanceBonusUsd": null,
+        "totalSalaryUsd": null,
+        "minorsSalaryUsd": 7500000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 7450000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8484210,
+      "name": "Gabe Perreault",
+      "teamCode": "NYR",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8484210|NYR|2025-03",
+        "signingTeam": "NYR",
+        "signedAt": "2025-03-31",
+        "signingDateStated": false,
+        "type": "ELC",
+        "termYears": 3,
+        "startSeason": "2024-25",
+        "endSeason": "2026-27",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": null,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "AC",
+        "sourceCount": 2,
+        "conflicts": null,
+        "flags": "derived:span_from_signing_date;player_id_from_roster",
+        "sourceClaimIds": [
+          "b8a74aedb53901a9",
+          "d7feff64969c6a99"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/news/rangers-agree-to-terms-with-gabe-perreault",
+            "publisher": "NYR (club release on NHL.com)",
+            "publishedAt": "2025-03-31T21:00:02.82Z",
+            "confidenceTier": "A"
+          },
+          {
+            "url": "https://www.espn.com/nhl/transactions/_/date/20250331",
+            "publisher": "ESPN transactions wire",
+            "publishedAt": "2025-03-31T07:00Z",
+            "confidenceTier": "C"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/gabe-perreault"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "baseSalaryUsd": 855000,
+        "capHitUsd": 941667,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "minorsSalaryUsd": 82500,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 941667,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8482460,
+      "name": "Matt Rempe",
+      "teamCode": "NYR",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8482460|NYR|2025-06",
+        "signingTeam": "NYR",
+        "signedAt": "2025-06-18",
+        "signingDateStated": false,
+        "type": "standard",
+        "termYears": 2,
+        "startSeason": "2025-26",
+        "endSeason": "2026-27",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": 1950000,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "BC",
+        "sourceCount": 2,
+        "conflicts": null,
+        "flags": "derived:span_from_signing_date;player_id_from_roster",
+        "sourceClaimIds": [
+          "517b74b1dd3fe9d9",
+          "22a73d2c13214561"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/news/matt-rempe-signs-2-year-contract-with-new-york-rangers",
+            "publisher": "NHL.com",
+            "publishedAt": "2025-06-18T14:44:30.915Z",
+            "confidenceTier": "B"
+          },
+          {
+            "url": "https://www.espn.com/nhl/transactions/_/date/20250618",
+            "publisher": "ESPN transactions wire",
+            "publishedAt": "2025-06-18T07:00Z",
+            "confidenceTier": "C"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/matt-rempe"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "capHitUsd": 975000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "baseSalaryUsd": 975000,
+        "performanceBonusUsd": null,
+        "totalSalaryUsd": null,
+        "minorsSalaryUsd": 975000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 975000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8480009,
+      "name": "Eeli Tolvanen",
+      "teamCode": "NYR",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8480009|NYR|2026-09",
+        "signingTeam": "NYR",
+        "signedAt": "2026-09-01",
+        "signingDateStated": false,
+        "type": "standard",
+        "termYears": 1,
+        "startSeason": "2026-27",
+        "endSeason": "2026-27",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": 1500000,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "ABCD",
+        "sourceCount": 4,
+        "conflicts": null,
+        "flags": "player_id_from_roster;start_season_assumed",
+        "sourceClaimIds": [
+          "d57747c760ff49ed",
+          "73f2fba99e27ff48",
+          "780362c9a1222ff3",
+          "65cc22b348eaa66c"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/news/rangers-agree-to-terms-with-eeli-tolvanen",
+            "publisher": "NYR (club release on NHL.com)",
+            "publishedAt": "2026-09-02T14:00:00Z",
+            "confidenceTier": "A"
+          },
+          {
+            "url": "https://www.nhl.com/news/eeli-tolvanen-signs-1-year-deal-with-new-york-rangers",
+            "publisher": "NHL.com",
+            "publishedAt": "2026-09-02T14:17:01.37Z",
+            "confidenceTier": "B"
+          },
+          {
+            "url": "https://www.espn.com/nhl/transactions/_/date/20260901",
+            "publisher": "ESPN transactions wire",
+            "publishedAt": "2026-09-01T07:00Z",
+            "confidenceTier": "C"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/eeli-tolvanen"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "capHitUsd": 1500000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "baseSalaryUsd": 1500000,
+        "performanceBonusUsd": null,
+        "totalSalaryUsd": null,
+        "minorsSalaryUsd": 1500000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 1500000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8478882,
+      "name": "Vladislav Gavrikov",
+      "teamCode": "NYR",
+      "position": "D",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8478882|CAR|2025-07",
+        "signingTeam": "CAR",
+        "signedAt": "2025-07-02",
+        "signingDateStated": false,
+        "type": "standard",
+        "termYears": 7,
+        "startSeason": "2025-26",
+        "endSeason": "2031-32",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": 49000000,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "B",
+        "sourceCount": 1,
+        "conflicts": null,
+        "flags": "derived:span_from_signing_date",
+        "sourceClaimIds": [
+          "a7383cbc33b75995"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/news/k-andre-miller-traded-to-hurricanes-by-rangers-signs-eight-year-contract",
+            "publisher": "NHL.com",
+            "publishedAt": "2025-07-02T14:48:00Z",
+            "confidenceTier": "B"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/vladislav-gavrikov"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "capHitUsd": 7000000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "baseSalaryUsd": 1000000,
+        "performanceBonusUsd": null,
+        "totalSalaryUsd": null,
+        "minorsSalaryUsd": 9000000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 7000000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8485957,
+      "name": "Alberts Smits",
+      "teamCode": "NYR",
+      "position": "D",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8485957|NYR|2026-07",
+        "signingTeam": "NYR",
+        "signedAt": "2026-07-15",
+        "signingDateStated": false,
+        "type": "ELC",
+        "termYears": 3,
+        "startSeason": "2026-27",
+        "endSeason": "2028-29",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": null,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "A",
+        "sourceCount": 1,
+        "conflicts": null,
+        "flags": "derived:span_from_signing_date;player_id_from_roster",
+        "sourceClaimIds": [
+          "6638c4698cf02529"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/news/rangers-agree-to-terms-with-alberts-smits",
+            "publisher": "NYR (club release on NHL.com)",
+            "publishedAt": "2026-07-15T20:16:17.356Z",
+            "confidenceTier": "A"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/alberts-smits"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "baseSalaryUsd": 922500,
+        "capHitUsd": 1075000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "minorsSalaryUsd": 87500,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 1075000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8476914,
+      "name": "Joonas Korpisalo",
+      "teamCode": "NYR",
+      "position": "G",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8476914|OTT|2023-07",
+        "signingTeam": "OTT",
+        "signedAt": "2023-07-01",
+        "signingDateStated": true,
+        "type": "standard",
+        "termYears": 5,
+        "startSeason": "2023-24",
+        "endSeason": "2027-28",
+        "expiryStatus": "UFA",
+        "boughtOut": false,
+        "oneWay": true,
+        "totalUsd": 20000000,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "CE",
+        "sourceCount": 2,
+        "conflicts": null,
+        "flags": "derived:one_way_from_minors_salary;player_id_from_roster",
+        "sourceClaimIds": [
+          "b1a63cc7ad4de685",
+          "86b8d034a409bac2"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/news/ottawa-senators-sign-joonas-korpisalo-to-5-year-contract-344850288",
+            "publisher": "NHL.com",
+            "publishedAt": "2023-07-02T17:12:52Z",
+            "confidenceTier": "C"
+          },
+          {
+            "url": "https://web.archive.org/web/20240609204513/https://www.capfriendly.com/players/joonas-korpisalo",
+            "publisher": "CapFriendly (Internet Archive snapshot)",
+            "publishedAt": "2024-06-09T20:45:13+00:00",
+            "confidenceTier": "E"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/joonas-korpisalo"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "capHitUsd": 4000000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "baseSalaryUsd": 3500000,
+        "performanceBonusUsd": 0,
+        "totalSalaryUsd": null,
+        "minorsSalaryUsd": 3500000,
+        "oneWay": true
+      },
+      "simulationSalaryUsd": 4000000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8473503,
+      "name": "James Reimer",
+      "teamCode": "NYR",
+      "position": "G",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8473503|NYR|2026-10",
+        "signingTeam": "NYR",
+        "signedAt": "2026-10-25",
+        "signingDateStated": false,
+        "type": "standard",
+        "termYears": 1,
+        "startSeason": "2026-27",
+        "endSeason": "2026-27",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": 850000,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "ABC",
+        "sourceCount": 3,
+        "conflicts": null,
+        "flags": "derived:span_from_signing_date;player_id_from_roster",
+        "sourceClaimIds": [
+          "b1738b3e337d4cbd",
+          "efa0d85f6f6a024f",
+          "bfe9273e802df51b"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/news/rangers-agree-to-terms-with-james-reimer",
+            "publisher": "NYR (club release on NHL.com)",
+            "publishedAt": "2026-10-25T16:00:22.129Z",
+            "confidenceTier": "A"
+          },
+          {
+            "url": "https://www.nhl.com/news/new-york-rangers-sign-james-reimer-to-one-year-contract",
+            "publisher": "NHL.com",
+            "publishedAt": "2026-10-26T15:37:00Z",
+            "confidenceTier": "B"
+          },
+          {
+            "url": "https://www.espn.com/nhl/transactions/_/date/20261025",
+            "publisher": "ESPN transactions wire",
+            "publishedAt": "2026-10-25T07:00Z",
+            "confidenceTier": "C"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/james-reimer"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "baseSalaryUsd": 850000,
+        "capHitUsd": 850000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "minorsSalaryUsd": 850000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 850000,
       "simulationSalaryStatus": "source_verified_manual_override",
       "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
       "sourceDataset": "manual_verified_contract_override",

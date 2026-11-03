@@ -328,6 +328,7 @@ for (const organizationPlayer of organizationContracts) {
   });
   Object.assign(organizationPlayer, {
     contractStatus: override.contractStatus,
+    nhlRightsTeam: override.teamCode || organizationPlayer.nhlRightsTeam || null,
     contract: override.contract,
     season: {
       ...(organizationPlayer.season || {}), ...(override.season || {}),

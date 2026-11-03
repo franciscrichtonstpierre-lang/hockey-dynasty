@@ -44,6 +44,21 @@ const sourceInfo = c => {
     publishedAt: s.published_at || null, confidenceTier: s.confidence_tier || null
   })).filter(s => s.url);
 };
+function verifiedContractCapHitUsd(contract, season, player = null) {
+  const sourced = Number(season?.cap_hit_usd ?? season?.capHitUsd);
+  if (Number.isFinite(sourced) && sourced > 0) return { usd: Math.round(sourced), basis: "verified_season_cap_hit" };
+  const type = String(contract?.contract_type ?? contract?.type ?? "").toLowerCase();
+  const tier = String(contract?.best_tier ?? contract?.confidenceTier ?? "").toUpperCase();
+  const total = Number(contract?.total_usd ?? contract?.totalUsd);
+  const term = Number(contract?.term_years ?? contract?.termYears);
+  // For standard/extension SPCs, the NHL cap hit is the verified total contract
+  // value divided by its term. Exclude ELCs and 35+ deals where performance
+  // bonuses can make the cap charge differ from the guaranteed contract amount.
+  if (!/^(standard|extension)$/.test(type) || !["A", "B"].includes(tier)) return { usd: null, basis: null };
+  if (player && ageFor(player) >= 35) return { usd: null, basis: null };
+  if (!Number.isFinite(total) || total <= 0 || !Number.isInteger(term) || term <= 0) return { usd: null, basis: null };
+  return { usd: Math.round(total / term), basis: "verified_contract_total_divided_by_term" };
+}
 function actualSalaryFields(currentLeague, contract, season) {
   const baseRaw = season?.base_salary_usd ?? contract?.nhl_salary_usd ?? null;
   const minorsRaw = season?.minors_salary_usd ?? contract?.minors_salary_usd ?? null;
@@ -134,6 +149,18 @@ for (const code of codes) {
         continue;
       }
       const c=selected.c, season=selected.season, key=c.contract_key||c.contractKey;
+      const salaryFields = actualSalaryFields("NHL", c, season);
+      const capHit = verifiedContractCapHitUsd(c, season, registryPlayer);
+      const baseSalaryUsd = season?.base_salary_usd ?? c?.nhl_salary_usd ?? salaryFields.currentLeagueSalaryUsd;
+      const seasonOutput = season || capHit.usd != null || baseSalaryUsd != null ? {
+        season:SEASON, capHitUsd:season?.cap_hit_usd ?? capHit.usd,
+        capHitBasis:season?.cap_hit_usd != null ? "verified_season_cap_hit" : capHit.basis,
+        baseSalaryUsd:season?.base_salary_usd ?? baseSalaryUsd,
+        performanceBonusUsd:season?.performance_bonus_usd??null,
+        totalSalaryUsd:season?.total_salary_usd??null,
+        minorsSalaryUsd:season?.minors_salary_usd??c?.minors_salary_usd??null,
+        oneWay:season?.one_way??c?.one_way??null
+      } : null;
       const salaryEstimate = simulationSalaryEstimate(registryPlayer,c,season);
       players.push({
         playerId:id, name, teamCode:code, position:group==="goalies"?"G":group==="defensemen"?"D":"F",
@@ -147,13 +174,8 @@ for (const code of codes) {
           conflicts:c.conflicts||null, flags:c.flags||null, sourceClaimIds:String(c.claim_ids||"").split(";").filter(Boolean),
           sources:sourceInfo(c)
         },
-        season:season ? {
-          season:SEASON, capHitUsd:season.cap_hit_usd??null,
-          baseSalaryUsd:season.base_salary_usd??null, performanceBonusUsd:season.performance_bonus_usd??null,
-          totalSalaryUsd:season.total_salary_usd??null,
-          minorsSalaryUsd:season.minors_salary_usd??null, oneWay:season.one_way??null
-        } : null,
-        ...actualSalaryFields("NHL", c, season),
+        season:seasonOutput,
+        ...salaryFields,
         simulationSalaryUsd:salaryEstimate.usd, simulationSalaryStatus:salaryEstimate.status,
         simulationSalaryMethod:salaryEstimate.method,
         sourceDataset:"ehlersio/nhl-contracts", license:"CC0-1.0"
@@ -240,6 +262,16 @@ for (const registryPlayer of (registryData.players || [])) {
   const selected = active[0];
   if (!selected) continue;
   const contract = selected.c, season = selected.season;
+  const salaryFields = actualSalaryFields(registryPlayer.currentLeague, contract, season);
+  const capHit = verifiedContractCapHitUsd(contract, season, registryPlayer);
+  const baseSalaryUsd = season?.base_salary_usd ?? contract?.nhl_salary_usd ?? salaryFields.contractSalaryUsd;
+  const minorsSalaryUsd = season?.minors_salary_usd ?? contract?.minors_salary_usd ?? null;
+  const seasonOutput = season || capHit.usd != null || baseSalaryUsd != null || minorsSalaryUsd != null ? {
+    season:SEASON, capHitUsd:season?.cap_hit_usd ?? capHit.usd,
+    capHitBasis:season?.cap_hit_usd != null ? "verified_season_cap_hit" : capHit.basis,
+    baseSalaryUsd, totalSalaryUsd:season?.total_salary_usd??null,
+    minorsSalaryUsd, oneWay:season?.one_way??contract?.one_way??null
+  } : null;
   organizationContracts.push({
     playerId:Number.isFinite(id) ? id : null, registryId:registryPlayer.id, name:registryPlayer.name,
     currentLeague:registryPlayer.currentLeague || null, currentTeam:registryPlayer.currentTeam || null,
@@ -261,12 +293,8 @@ for (const registryPlayer of (registryData.players || [])) {
       sourceClaimIds:String(contract.claim_ids||"").split(";").filter(Boolean),
       sources:sourceInfo(contract)
     },
-    season:season ? {
-      season:SEASON, capHitUsd:season.cap_hit_usd??null,
-      baseSalaryUsd:season.base_salary_usd??null, totalSalaryUsd:season.total_salary_usd??null,
-      minorsSalaryUsd:season.minors_salary_usd??null, oneWay:season.one_way??null
-    } : null,
-    ...actualSalaryFields(registryPlayer.currentLeague, contract, season),
+    season:seasonOutput,
+    ...salaryFields,
     sourceDataset:"ehlersio/nhl-contracts", license:"CC0-1.0"
   });
 }

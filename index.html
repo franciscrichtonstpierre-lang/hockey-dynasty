@@ -531,6 +531,7 @@ async function simulate(){
  const trainingResult=hdApplyTrainingPeriod(selectedRoster,selectedDays,n,startDate);
  S.day+=selectedDays;
  const development=await developPlayers(selectedDays,startDate);
+ await preloadUhmCoachData();
  const trainingDevelopment=hdApplyTrainingDevelopment(selectedRoster,selectedDays,selectedCode,startDate);
  let ahlTrainingDevelopment={gains:0,trained:0},prospectTrainingDevelopment={gains:0,trained:0};
  try{const groups=await hdLoadOrganizationTrainingGroups(selectedCode);ahlTrainingDevelopment=hdApplyTrainingDevelopment(groups.ahl,selectedDays,selectedCode,startDate,"AHL");prospectTrainingDevelopment=hdApplyTrainingDevelopment(groups.prospects,selectedDays,selectedCode,startDate,"AHL");}catch(e){console.warn("Développement LAH/espoirs non appliqué",e);}

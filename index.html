@@ -751,9 +751,9 @@ if(membershipError)throw membershipError;
 // An assigned GM enters directly. The commissioner always sees the commissioner workspace.
 if(membership&&!isOwner){const savedTeamIndex=codes.indexOf(membership.team_code)>=0?codes.indexOf(membership.team_code):(membership.team_id===null||membership.team_id===undefined?-1:Number(membership.team_id));if(Number.isInteger(savedTeamIndex)&&savedTeamIndex>=0&&savedTeamIndex<teams.length){S.team=savedTeamIndex;save();try{const savedSection=localStorage.getItem("uhmLastSection")||"Mon équipe",savedTab=localStorage.getItem("uhmLastTab")||"Statut organisation";if(subpages[savedSection])section=savedSection;if((subpages[section]||[]).includes(savedTab))tab=savedTab;else tab=(subpages[section]||["Statut organisation"])[0]}catch(e){section="Mon équipe";tab="Statut organisation"}uhmShowStage("game");return}}
 if(isOwner){
- // Keep the commissioner local team in sync with the team assigned to this account in the active league.
- const commissionerTeamIndex=membership?(codes.indexOf(membership.team_code)>=0?codes.indexOf(membership.team_code):(membership.team_id===null||membership.team_id===undefined?-1:Number(membership.team_id))):-1;
- if(Number.isInteger(commissionerTeamIndex)&&commissionerTeamIndex>=0&&commissionerTeamIndex<teams.length){S.team=commissionerTeamIndex;save();}
+ // The commissioner is also the Montréal GM unless an explicit team assignment exists.
+ const commissionerTeamIndex=membership?(codes.indexOf(membership.team_code)>=0?codes.indexOf(membership.team_code):(membership.team_id===null||membership.team_id===undefined?-1:Number(membership.team_id))):codes.indexOf("MTL");
+ if(Number.isInteger(commissionerTeamIndex)&&commissionerTeamIndex>=0&&commissionerTeamIndex<teams.length){S.team=commissionerTeamIndex;activeOnlineManagerTeamCode=String(codes[commissionerTeamIndex]||"MTL").toUpperCase();save();}
  try{const savedSection=localStorage.getItem("uhmLastSection")||"Mon équipe",savedTab=localStorage.getItem("uhmLastTab")||"Statut organisation";if(subpages[savedSection])section=savedSection;if((subpages[section]||[]).includes(savedTab))tab=savedTab;else tab=(subpages[section]||["Statut organisation"])[0]}catch(e){section="Mon équipe";tab="Statut organisation"}
  uhmShowStage("game");return;
 }

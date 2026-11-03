@@ -1,1 +1,487 @@
-{"season":"2026-2027","players":[]}
+{
+  "season": "2026-2027",
+  "sourceNote": "Verified 2026-27 salary schedules for signed AHL players. Base salary, minor salary and cap hit stored separately; signing bonuses excluded from base salary.",
+  "players": [
+    {
+      "playerId": 8484767,
+      "name": "Lucas Pettersson",
+      "teamCode": "ANA",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "manual-8484767-2026-27",
+        "signingTeam": "ANA",
+        "type": "Entry Level Contract",
+        "termYears": 3,
+        "startSeason": "2025-26",
+        "endSeason": "2028-29",
+        "expiryStatus": "RFA",
+        "boughtOut": false,
+        "oneWay": false,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "sources": [
+          {
+            "publisher": "CapWages",
+            "url": "https://capwages.com/players/lucas-pettersson"
+          }
+        ]
+      },
+      "season": {
+        "seasonKey": "2026-2027",
+        "capHitUsd": 962700,
+        "baseSalaryUsd": 850000,
+        "minorsSalaryUsd": 85000,
+        "totalSalaryUsd": 850000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 962700,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "2026-27 cap hit; base and minor salary stored separately; signing bonuses excluded",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8484859,
+      "name": "Stian Solberg",
+      "teamCode": "ANA",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "manual-8484859-2026-27",
+        "signingTeam": "ANA",
+        "type": "Entry Level Contract",
+        "termYears": 3,
+        "startSeason": "2024-25",
+        "endSeason": "2028-29",
+        "expiryStatus": "RFA",
+        "boughtOut": false,
+        "oneWay": false,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "sources": [
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/stian-solberg"
+          }
+        ]
+      },
+      "season": {
+        "seasonKey": "2026-2027",
+        "capHitUsd": 941667,
+        "baseSalaryUsd": 877500,
+        "minorsSalaryUsd": 85000,
+        "totalSalaryUsd": 877500,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 941667,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "2026-27 cap hit; base and minor salary stored separately; signing bonuses excluded",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8482690,
+      "name": "Ayrton Martino",
+      "teamCode": "DAL",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "manual-8482690-2026-27",
+        "signingTeam": "DAL",
+        "type": "Entry Level Contract",
+        "termYears": 2,
+        "startSeason": "2025-26",
+        "endSeason": "2026-27",
+        "expiryStatus": "RFA",
+        "boughtOut": false,
+        "oneWay": false,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "sources": [
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/ayrton-martino"
+          }
+        ]
+      },
+      "season": {
+        "seasonKey": "2026-2027",
+        "capHitUsd": 942500,
+        "baseSalaryUsd": 850000,
+        "minorsSalaryUsd": 80000,
+        "totalSalaryUsd": 850000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 942500,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "2026-27 cap hit; base and minor salary stored separately; signing bonuses excluded",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8482888,
+      "name": "Bryce Montgomery",
+      "teamCode": "CAR",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "manual-8482888-2026-27",
+        "signingTeam": "CAR",
+        "type": "Entry Level Contract",
+        "termYears": 3,
+        "startSeason": "2024-25",
+        "endSeason": "2026-27",
+        "expiryStatus": "RFA",
+        "boughtOut": false,
+        "oneWay": false,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "sources": [
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/bryce-montgomery"
+          }
+        ]
+      },
+      "season": {
+        "seasonKey": "2026-2027",
+        "capHitUsd": 854910,
+        "baseSalaryUsd": 854910,
+        "minorsSalaryUsd": 55000,
+        "totalSalaryUsd": 854910,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 854910,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "2026-27 cap hit; base and minor salary stored separately; signing bonuses excluded",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8482923,
+      "name": "Taige Harding",
+      "teamCode": "CHI",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "manual-8482923-2026-27",
+        "signingTeam": "CHI",
+        "type": "Entry Level Contract",
+        "termYears": 2,
+        "startSeason": "2025-26",
+        "endSeason": "2026-27",
+        "expiryStatus": "RFA",
+        "boughtOut": false,
+        "oneWay": false,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "sources": [
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/taige-harding"
+          }
+        ]
+      },
+      "season": {
+        "seasonKey": "2026-2027",
+        "capHitUsd": 930000,
+        "baseSalaryUsd": 850000,
+        "minorsSalaryUsd": 80000,
+        "totalSalaryUsd": 850000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 930000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "2026-27 cap hit; base and minor salary stored separately; signing bonuses excluded",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8484224,
+      "name": "Gracyn Sawchyn",
+      "teamCode": "FLA",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "manual-8484224-2026-27",
+        "signingTeam": "FLA",
+        "type": "Entry Level Contract",
+        "termYears": 3,
+        "startSeason": "2024-25",
+        "endSeason": "2027-28",
+        "expiryStatus": "RFA",
+        "boughtOut": false,
+        "oneWay": false,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "sources": [
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/gracyn-sawchyn"
+          }
+        ]
+      },
+      "season": {
+        "seasonKey": "2026-2027",
+        "capHitUsd": 934166,
+        "baseSalaryUsd": 850000,
+        "minorsSalaryUsd": 82500,
+        "totalSalaryUsd": 850000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 934166,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "2026-27 cap hit; base and minor salary stored separately; signing bonuses excluded",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8485071,
+      "name": "Hunter St. Martin",
+      "teamCode": "FLA",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "manual-8485071-2026-27",
+        "signingTeam": "FLA",
+        "type": "Entry Level Contract",
+        "termYears": 3,
+        "startSeason": "2024-25",
+        "endSeason": "2027-28",
+        "expiryStatus": "RFA",
+        "boughtOut": false,
+        "oneWay": false,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "sources": [
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/hunter-st-martin"
+          }
+        ]
+      },
+      "season": {
+        "seasonKey": "2026-2027",
+        "capHitUsd": 928889,
+        "baseSalaryUsd": 850000,
+        "minorsSalaryUsd": 85000,
+        "totalSalaryUsd": 850000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 928889,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "2026-27 cap hit; base and minor salary stored separately; signing bonuses excluded",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8484533,
+      "name": "Tyler Thorpe",
+      "teamCode": "MTL",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "manual-8484533-2026-27",
+        "signingTeam": "MTL",
+        "type": "Entry Level Contract",
+        "termYears": 3,
+        "startSeason": "2025-26",
+        "endSeason": "2027-28",
+        "expiryStatus": "RFA",
+        "boughtOut": false,
+        "oneWay": false,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "sources": [
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/tyler-thorpe"
+          }
+        ]
+      },
+      "season": {
+        "seasonKey": "2026-2027",
+        "capHitUsd": 968333,
+        "baseSalaryUsd": 850000,
+        "minorsSalaryUsd": 85000,
+        "totalSalaryUsd": 850000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 968333,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "2026-27 cap hit; base and minor salary stored separately; signing bonuses excluded",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8484412,
+      "name": "Joey Willis",
+      "teamCode": "NSH",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "manual-8484412-2026-27",
+        "signingTeam": "NSH",
+        "type": "Entry Level Contract",
+        "termYears": 3,
+        "startSeason": "2025-26",
+        "endSeason": "2027-28",
+        "expiryStatus": "RFA",
+        "boughtOut": false,
+        "oneWay": false,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "sources": [
+          {
+            "publisher": "The Stanley Cap",
+            "url": "https://thestanleycap.com/players/joey-willis-8484412"
+          }
+        ]
+      },
+      "season": {
+        "seasonKey": "2026-2027",
+        "capHitUsd": 960000,
+        "baseSalaryUsd": 850000,
+        "minorsSalaryUsd": 82500,
+        "totalSalaryUsd": 850000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 960000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "2026-27 cap hit; base and minor salary stored separately; signing bonuses excluded",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8482861,
+      "name": "Vincent Iorio",
+      "teamCode": "NYR",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "manual-8482861-2026-27",
+        "signingTeam": "NYR",
+        "type": "Entry Level Contract",
+        "termYears": 1,
+        "startSeason": "2026-27",
+        "endSeason": "2026-27",
+        "expiryStatus": "RFA",
+        "boughtOut": false,
+        "oneWay": false,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "sources": [
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/vincent-iorio"
+          }
+        ]
+      },
+      "season": {
+        "seasonKey": "2026-2027",
+        "capHitUsd": 850000,
+        "baseSalaryUsd": 850000,
+        "minorsSalaryUsd": 125000,
+        "totalSalaryUsd": 850000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 850000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "2026-27 cap hit; base and minor salary stored separately; signing bonuses excluded",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8484427,
+      "name": "Mikhail Ilyin",
+      "teamCode": "PIT",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "manual-8484427-2026-27",
+        "signingTeam": "PIT",
+        "type": "Entry Level Contract",
+        "termYears": 3,
+        "startSeason": "2025-26",
+        "endSeason": "2027-28",
+        "expiryStatus": "RFA",
+        "boughtOut": false,
+        "oneWay": false,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "sources": [
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/mikhail-ye-ilyin"
+          }
+        ]
+      },
+      "season": {
+        "seasonKey": "2026-2027",
+        "capHitUsd": 951667,
+        "baseSalaryUsd": 850000,
+        "minorsSalaryUsd": 82500,
+        "totalSalaryUsd": 850000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 951667,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "2026-27 cap hit; base and minor salary stored separately; signing bonuses excluded",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8484869,
+      "name": "Tanner Howe",
+      "teamCode": "PIT",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "manual-8484869-2026-27",
+        "signingTeam": "PIT",
+        "type": "Entry Level Contract",
+        "termYears": 3,
+        "startSeason": "2024-25",
+        "endSeason": "2028-29",
+        "expiryStatus": "RFA",
+        "boughtOut": false,
+        "oneWay": false,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "sources": [
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/tanner-howe"
+          }
+        ]
+      },
+      "season": {
+        "seasonKey": "2026-2027",
+        "capHitUsd": 929166,
+        "baseSalaryUsd": 850000,
+        "minorsSalaryUsd": 85000,
+        "totalSalaryUsd": 850000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 929166,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "2026-27 cap hit; base and minor salary stored separately; signing bonuses excluded",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8483684,
+      "name": "Tyson Jugnauth",
+      "teamCode": "SEA",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "manual-8483684-2026-27",
+        "signingTeam": "SEA",
+        "type": "Entry Level Contract",
+        "termYears": 3,
+        "startSeason": "2025-26",
+        "endSeason": "2027-28",
+        "expiryStatus": "RFA",
+        "boughtOut": false,
+        "oneWay": false,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "sources": [
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/tyson-jugnauth"
+          }
+        ]
+      },
+      "season": {
+        "seasonKey": "2026-2027",
+        "capHitUsd": 972500,
+        "baseSalaryUsd": 855000,
+        "minorsSalaryUsd": 82500,
+        "totalSalaryUsd": 855000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 972500,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "2026-27 cap hit; base and minor salary stored separately; signing bonuses excluded",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    }
+  ]
+}

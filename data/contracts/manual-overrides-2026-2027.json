@@ -1,6 +1,6 @@
 {
   "season": "2026-2027",
-  "sourceNote": "Manually reconciled contract rows using NHL team announcements and PuckPedia season breakdowns. Signing-bonus fields are intentionally omitted from the simulation. Six additional 2026-27 contracts were reconciled against PuckPedia and club announcements on 2026-11-01. Signing bonuses are excluded from the simulation salary field; performance bonuses remain separately represented. Four additional Anaheim Ducks 2026-27 salary breakdowns reconciled against PuckPedia player contract pages and NHL/club announcements on 2026-11-02; base salary is kept separate from cap hit and signing bonuses are excluded. Eight additional Anaheim 2026-27 base salaries, cap hits and terms were reconciled against PuckPedia player contract breakdowns and NHL club announcements on 2026-11-02; signing bonuses are excluded from the salary field. Twelve Chicago Blackhawks 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Nine Detroit Red Wings 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Thirteen Edmonton Oilers 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Nine Florida Panthers 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Twelve New York Rangers 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Eight Washington Capitals 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Rémi Poirier held for affiliation reconciliation after his waiver claim. Three remaining cap-hit gaps (Patrick Kane, Andreas Englund, Bokondji Imama) reconciled against PuckPedia 2026-27 breakdowns. Twelve San Jose Sharks 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Two remaining New York Rangers cap-hit gaps (Noah Laba and Scott Morrow) reconciled against PuckPedia 2026-27 breakdowns. Libor Hajek 2026-27 base salary, minor salary and cap hit reconciled against PuckPedia. Rémi Poirier updated to Washington after the Nov 1, 2026 trade; 2026-27 base salary, AHL minors salary and cap hit sourced from PuckPedia. Eleven Calgary and Carolina 2026-27 base salary and cap-hit records reconciled against PuckPedia, including correction of Jackson Blake and Seth Jarvis cap hits. Three Anaheim Ducks 2026-27 salary and cap-hit records reconciled against PuckPedia. Nine Colorado Avalanche 2026-27 base salary and cap-hit records reconciled against PuckPedia, including all roster gaps and the T.J. Hughes cap hit. Nine Dallas Stars 2026-27 base salary and cap-hit records reconciled against PuckPedia, including signing-bonus distinctions for Lindell and Oettinger.",
+  "sourceNote": "Manually reconciled contract rows using NHL team announcements and PuckPedia season breakdowns. Signing-bonus fields are intentionally omitted from the simulation. Six additional 2026-27 contracts were reconciled against PuckPedia and club announcements on 2026-11-01. Signing bonuses are excluded from the simulation salary field; performance bonuses remain separately represented. Four additional Anaheim Ducks 2026-27 salary breakdowns reconciled against PuckPedia player contract pages and NHL/club announcements on 2026-11-02; base salary is kept separate from cap hit and signing bonuses are excluded. Eight additional Anaheim 2026-27 base salaries, cap hits and terms were reconciled against PuckPedia player contract breakdowns and NHL club announcements on 2026-11-02; signing bonuses are excluded from the salary field. Twelve Chicago Blackhawks 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Nine Detroit Red Wings 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Thirteen Edmonton Oilers 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Nine Florida Panthers 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Twelve New York Rangers 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Eight Washington Capitals 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Rémi Poirier held for affiliation reconciliation after his waiver claim. Three remaining cap-hit gaps (Patrick Kane, Andreas Englund, Bokondji Imama) reconciled against PuckPedia 2026-27 breakdowns. Twelve San Jose Sharks 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Two remaining New York Rangers cap-hit gaps (Noah Laba and Scott Morrow) reconciled against PuckPedia 2026-27 breakdowns. Libor Hajek 2026-27 base salary, minor salary and cap hit reconciled against PuckPedia. Rémi Poirier updated to Washington after the Nov 1, 2026 trade; 2026-27 base salary, AHL minors salary and cap hit sourced from PuckPedia. Eleven Calgary and Carolina 2026-27 base salary and cap-hit records reconciled against PuckPedia, including correction of Jackson Blake and Seth Jarvis cap hits. Three Anaheim Ducks 2026-27 salary and cap-hit records reconciled against PuckPedia. Nine Colorado Avalanche 2026-27 base salary and cap-hit records reconciled against PuckPedia, including all roster gaps and the T.J. Hughes cap hit. Nine Dallas Stars 2026-27 base salary and cap-hit records reconciled against PuckPedia, including signing-bonus distinctions for Lindell and Oettinger. Nine Montréal Canadiens 2026-27 base salary and cap-hit records reconciled against PuckPedia, with signing bonuses excluded from base salary.",
   "players": [
     {
       "playerId": 8484168,
@@ -8346,6 +8346,588 @@
         "oneWay": false
       },
       "simulationSalaryUsd": 8250000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8481523,
+      "name": "Kirby Dach",
+      "teamCode": "MTL",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8481523|MTL|2026-07",
+        "signingTeam": "MTL",
+        "signedAt": "2026-07-16",
+        "signingDateStated": false,
+        "type": "standard",
+        "termYears": 1,
+        "startSeason": "2026-27",
+        "endSeason": "2026-27",
+        "expiryStatus": "UFA",
+        "boughtOut": false,
+        "oneWay": true,
+        "totalUsd": 3600000,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "ABCD",
+        "sourceCount": 4,
+        "conflicts": null,
+        "flags": "arbitration;cap_hit_unlabeled;player_id_from_roster;start_season_assumed",
+        "sourceClaimIds": [
+          "0223f8ed91e9d8bd",
+          "546cef101cae1239",
+          "b492857cb8f41122",
+          "24c399d8930cd932"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/news/one-year-contract-for-kirby-dach-july-16-2026",
+            "publisher": "MTL (club release on NHL.com)",
+            "publishedAt": "2026-07-16T21:00:00Z",
+            "confidenceTier": "A"
+          },
+          {
+            "url": "https://www.nhl.com/news/kirby-dach-signs-1-year-contract-with-montreal-canadiens",
+            "publisher": "NHL.com",
+            "publishedAt": "2026-07-16T21:15:00Z",
+            "confidenceTier": "B"
+          },
+          {
+            "url": "https://www.espn.com/nhl/transactions/_/date/20260716",
+            "publisher": "ESPN transactions wire",
+            "publishedAt": "2026-07-16T07:00Z",
+            "confidenceTier": "C"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/kirby-dach"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "capHitUsd": 3600000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "baseSalaryUsd": 3600000,
+        "performanceBonusUsd": null,
+        "totalSalaryUsd": null,
+        "minorsSalaryUsd": 3600000,
+        "oneWay": true
+      },
+      "simulationSalaryUsd": 3600000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8484984,
+      "name": "Ivan Demidov",
+      "teamCode": "MTL",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8484984|MTL|2025-04",
+        "signingTeam": "MTL",
+        "signedAt": "2025-04-08",
+        "signingDateStated": false,
+        "type": "ELC",
+        "termYears": 3,
+        "startSeason": "2024-25",
+        "endSeason": "2026-27",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": null,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "C",
+        "sourceCount": 1,
+        "conflicts": null,
+        "flags": "derived:span_from_signing_date;player_id_from_roster",
+        "sourceClaimIds": [
+          "9b53fd4f2f354026"
+        ],
+        "sources": [
+          {
+            "url": "https://www.espn.com/nhl/transactions/_/date/20250408",
+            "publisher": "ESPN transactions wire",
+            "publishedAt": "2025-04-08T07:00Z",
+            "confidenceTier": "C"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/ivan-demidov"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "baseSalaryUsd": 877500,
+        "capHitUsd": 940833,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "minorsSalaryUsd": 85000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 940833,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8482775,
+      "name": "Oliver Kapanen",
+      "teamCode": "MTL",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8482775|MTL|2024-07",
+        "signingTeam": "MTL",
+        "signedAt": "2024-07-04",
+        "signingDateStated": false,
+        "type": "ELC",
+        "termYears": 3,
+        "startSeason": "2024-25",
+        "endSeason": "2026-27",
+        "expiryStatus": "RFA",
+        "boughtOut": false,
+        "oneWay": false,
+        "totalUsd": null,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "E",
+        "sourceCount": 1,
+        "conflicts": null,
+        "flags": "performance_bonuses;player_id_from_roster;signing_date_unknown;term_is_remaining_seasons;two_way_minors_salary_shown;unconfirmed",
+        "sourceClaimIds": [
+          "7183a3cdbe6bbfad"
+        ],
+        "sources": [
+          {
+            "url": "https://web.archive.org/web/20240704224504/https://www.capfriendly.com/teams/canadiens",
+            "publisher": "CapFriendly (Internet Archive snapshot)",
+            "publishedAt": "2024-07-04T22:45:04+00:00",
+            "confidenceTier": "E"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/oliver-kapanen"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "capHitUsd": 942500,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "baseSalaryUsd": 850000,
+        "performanceBonusUsd": 850000,
+        "totalSalaryUsd": null,
+        "minorsSalaryUsd": 80000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 942500,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8480865,
+      "name": "Noah Dobson",
+      "teamCode": "MTL",
+      "position": "D",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8480865|NYI|2025-06",
+        "signingTeam": "NYI",
+        "signedAt": "2025-06-28",
+        "signingDateStated": false,
+        "type": "standard",
+        "termYears": 8,
+        "startSeason": "2025-26",
+        "endSeason": "2032-33",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": null,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "D",
+        "sourceCount": 1,
+        "conflicts": null,
+        "flags": "player_id_from_roster;season_breakdown_incomplete;start_season_assumed;unparsed_item",
+        "sourceClaimIds": [
+          "c6e31f1d3fa20d4b"
+        ],
+        "sources": [
+          {
+            "url": "https://bsky.app/profile/puckpedia.com/post/3lsmxckbjke2p",
+            "publisher": "PuckPedia (public Bluesky post)",
+            "publishedAt": "2025-06-28T01:00:10.638Z",
+            "confidenceTier": "D"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/noah-dobson"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "capHitUsd": 9500000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "baseSalaryUsd": 1000000,
+        "performanceBonusUsd": null,
+        "totalSalaryUsd": null,
+        "minorsSalaryUsd": 12000000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 9500000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8482087,
+      "name": "Kaiden Guhle",
+      "teamCode": "MTL",
+      "position": "D",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8482087|MTL|2024-07",
+        "signingTeam": "MTL",
+        "signedAt": "2024-07-31",
+        "signingDateStated": false,
+        "type": "extension",
+        "termYears": 6,
+        "startSeason": "2025-26",
+        "endSeason": "2030-31",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": 33300000,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "ABC",
+        "sourceCount": 3,
+        "conflicts": null,
+        "flags": "player_id_from_roster",
+        "sourceClaimIds": [
+          "869983d8fb868a15",
+          "7615340413b4e53a",
+          "31809c90e28236a4"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/news/six-year-contract-extension-for-kaiden-guhle-july-31",
+            "publisher": "MTL (club release on NHL.com)",
+            "publishedAt": "2024-07-31T13:00:00Z",
+            "confidenceTier": "A"
+          },
+          {
+            "url": "https://www.nhl.com/news/kaiden-guhle-signs-six-year-contract-with-montreal-canadiens",
+            "publisher": "NHL.com",
+            "publishedAt": "2024-07-31T13:15:33.195Z",
+            "confidenceTier": "B"
+          },
+          {
+            "url": "https://www.espn.com/nhl/transactions/_/date/20240731",
+            "publisher": "ESPN transactions wire",
+            "publishedAt": "2024-07-31T07:00Z",
+            "confidenceTier": "C"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/kaiden-guhle"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "capHitUsd": 5550000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "baseSalaryUsd": 5250000,
+        "performanceBonusUsd": null,
+        "totalSalaryUsd": null,
+        "minorsSalaryUsd": 5250000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 5550000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8483457,
+      "name": "Lane Hutson",
+      "teamCode": "MTL",
+      "position": "D",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8483457|MTL|2025-10",
+        "signingTeam": "MTL",
+        "signedAt": "2025-10-13",
+        "signingDateStated": false,
+        "type": "extension",
+        "termYears": 8,
+        "startSeason": "2026-27",
+        "endSeason": "2033-34",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": 70800000,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "ABC",
+        "sourceCount": 4,
+        "conflicts": null,
+        "flags": "llm:anthropic/claude-haiku-5.5;llm_filled;player_id_from_roster",
+        "sourceClaimIds": [
+          "b568552a8929bbde",
+          "be4dee23db61cf40",
+          "f8067942618c86ba",
+          "889c042cc2f46d81"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/news/eight-year-contract-extension-for-lane-hutson-oct-13-2025",
+            "publisher": "MTL (club release on NHL.com)",
+            "publishedAt": "2025-10-13T14:20:00Z",
+            "confidenceTier": "A"
+          },
+          {
+            "url": "https://www.nhl.com/news/lane-hutson-signs-8-year-contract-extension-with-montreal-canadiens",
+            "publisher": "NHL.com",
+            "publishedAt": "2025-10-13T16:19:00Z",
+            "confidenceTier": "B"
+          },
+          {
+            "url": "https://www.nhl.com/news/montreal-canadiens-show-lane-hutson-love-after-new-contract",
+            "publisher": "NHL.com",
+            "publishedAt": "2025-10-13T17:36:00Z",
+            "confidenceTier": "B"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/lane-hutson"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "capHitUsd": 8850000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "baseSalaryUsd": 1000000,
+        "performanceBonusUsd": null,
+        "totalSalaryUsd": null,
+        "minorsSalaryUsd": 12000000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 8850000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8482964,
+      "name": "Arber Xhekaj",
+      "teamCode": "MTL",
+      "position": "D",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8482964|MTL|2026-09",
+        "signingTeam": "MTL",
+        "signedAt": "2026-09-12",
+        "signingDateStated": false,
+        "type": "standard",
+        "termYears": 1,
+        "startSeason": "2026-27",
+        "endSeason": "2026-27",
+        "expiryStatus": "RFA",
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": 1500000,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "ABD",
+        "sourceCount": 4,
+        "conflicts": null,
+        "flags": "llm:anthropic/claude-haiku-5.5;llm_filled;player_id_from_roster;start_season_assumed",
+        "sourceClaimIds": [
+          "7a3b4dc4e437c93d",
+          "a42b53e2ba41bc20",
+          "2dbc684e8840e0dc",
+          "2e869786bb3695f0"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/news/one-year-contract-for-arber-xhekaj-sept-15-2026",
+            "publisher": "MTL (club release on NHL.com)",
+            "publishedAt": "2026-09-15T21:00:00Z",
+            "confidenceTier": "A"
+          },
+          {
+            "url": "https://www.nhl.com/news/chris-kreider-signs-with-montreal-canadiens-after-anaheim-ducks-terminate-contract",
+            "publisher": "NHL.com",
+            "publishedAt": "2026-09-12T21:34:44.78Z",
+            "confidenceTier": "B"
+          },
+          {
+            "url": "https://www.nhl.com/news/alex-newhook-signs-four-year-contract-with-montreal-canadiens",
+            "publisher": "NHL.com",
+            "publishedAt": "2026-09-15T21:46:43.121Z",
+            "confidenceTier": "B"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/arber-xhekaj"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "capHitUsd": 1500000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "baseSalaryUsd": 1500000,
+        "performanceBonusUsd": null,
+        "totalSalaryUsd": null,
+        "minorsSalaryUsd": 1500000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 1500000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8482487,
+      "name": "Jakub Dobes",
+      "teamCode": "MTL",
+      "position": "G",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8482487|MTL|2025-07",
+        "signingTeam": "MTL",
+        "signedAt": "2025-07-01",
+        "signingDateStated": false,
+        "type": "standard",
+        "termYears": 2,
+        "startSeason": "2025-26",
+        "endSeason": "2026-27",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": 1930000,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "D",
+        "sourceCount": 1,
+        "conflicts": null,
+        "flags": "describes_earlier_contract;signed_at_from_first_season;signing_date_unknown",
+        "sourceClaimIds": [
+          "86900b897154bad1"
+        ],
+        "sources": [
+          {
+            "url": "https://www.tsn.ca/nhl/article/canadiens-sign-g-dobes-to-three-year-contract-extension/",
+            "publisher": "TSN",
+            "publishedAt": "2026-07-02",
+            "confidenceTier": "D"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/jakub-dobes"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "baseSalaryUsd": 900000,
+        "capHitUsd": 965000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "minorsSalaryUsd": 900000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 965000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8484170,
+      "name": "Jacob Fowler",
+      "teamCode": "MTL",
+      "position": "G",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8484170|MTL|2025-04",
+        "signingTeam": "MTL",
+        "signedAt": "2025-04-04",
+        "signingDateStated": false,
+        "type": "ELC",
+        "termYears": 3,
+        "startSeason": "2025-26",
+        "endSeason": "2027-28",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": null,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "AC",
+        "sourceCount": 2,
+        "conflicts": null,
+        "flags": "player_id_from_roster",
+        "sourceClaimIds": [
+          "c34d063f417b3d25",
+          "81b6e86ab54b3cf1"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/news/three-year-entry-level-contract-for-jacob-fowler",
+            "publisher": "MTL (club release on NHL.com)",
+            "publishedAt": "2025-04-04T14:30:00Z",
+            "confidenceTier": "A"
+          },
+          {
+            "url": "https://www.espn.com/nhl/transactions/_/date/20250404",
+            "publisher": "ESPN transactions wire",
+            "publishedAt": "2025-04-04T07:00Z",
+            "confidenceTier": "C"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/jacob-fowler"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "baseSalaryUsd": 855000,
+        "capHitUsd": 945833,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "minorsSalaryUsd": 82500,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 945833,
       "simulationSalaryStatus": "source_verified_manual_override",
       "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
       "sourceDataset": "manual_verified_contract_override",

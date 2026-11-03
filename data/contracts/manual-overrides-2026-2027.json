@@ -1,6 +1,6 @@
 {
   "season": "2026-2027",
-  "sourceNote": "Manually reconciled contract rows using NHL team announcements and PuckPedia season breakdowns. Signing-bonus fields are intentionally omitted from the simulation. Six additional 2026-27 contracts were reconciled against PuckPedia and club announcements on 2026-11-01. Signing bonuses are excluded from the simulation salary field; performance bonuses remain separately represented. Four additional Anaheim Ducks 2026-27 salary breakdowns reconciled against PuckPedia player contract pages and NHL/club announcements on 2026-11-02; base salary is kept separate from cap hit and signing bonuses are excluded. Eight additional Anaheim 2026-27 base salaries, cap hits and terms were reconciled against PuckPedia player contract breakdowns and NHL club announcements on 2026-11-02; signing bonuses are excluded from the salary field. Twelve Chicago Blackhawks 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Nine Detroit Red Wings 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Thirteen Edmonton Oilers 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Nine Florida Panthers 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Twelve New York Rangers 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Eight Washington Capitals 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Rémi Poirier held for affiliation reconciliation after his waiver claim. Three remaining cap-hit gaps (Patrick Kane, Andreas Englund, Bokondji Imama) reconciled against PuckPedia 2026-27 breakdowns. Twelve San Jose Sharks 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Two remaining New York Rangers cap-hit gaps (Noah Laba and Scott Morrow) reconciled against PuckPedia 2026-27 breakdowns. Libor Hajek 2026-27 base salary, minor salary and cap hit reconciled against PuckPedia. Rémi Poirier updated to Washington after the Nov 1, 2026 trade; 2026-27 base salary, AHL minors salary and cap hit sourced from PuckPedia.",
+  "sourceNote": "Manually reconciled contract rows using NHL team announcements and PuckPedia season breakdowns. Signing-bonus fields are intentionally omitted from the simulation. Six additional 2026-27 contracts were reconciled against PuckPedia and club announcements on 2026-11-01. Signing bonuses are excluded from the simulation salary field; performance bonuses remain separately represented. Four additional Anaheim Ducks 2026-27 salary breakdowns reconciled against PuckPedia player contract pages and NHL/club announcements on 2026-11-02; base salary is kept separate from cap hit and signing bonuses are excluded. Eight additional Anaheim 2026-27 base salaries, cap hits and terms were reconciled against PuckPedia player contract breakdowns and NHL club announcements on 2026-11-02; signing bonuses are excluded from the salary field. Twelve Chicago Blackhawks 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Nine Detroit Red Wings 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Thirteen Edmonton Oilers 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Nine Florida Panthers 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Twelve New York Rangers 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Eight Washington Capitals 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Rémi Poirier held for affiliation reconciliation after his waiver claim. Three remaining cap-hit gaps (Patrick Kane, Andreas Englund, Bokondji Imama) reconciled against PuckPedia 2026-27 breakdowns. Twelve San Jose Sharks 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Two remaining New York Rangers cap-hit gaps (Noah Laba and Scott Morrow) reconciled against PuckPedia 2026-27 breakdowns. Libor Hajek 2026-27 base salary, minor salary and cap hit reconciled against PuckPedia. Rémi Poirier updated to Washington after the Nov 1, 2026 trade; 2026-27 base salary, AHL minors salary and cap hit sourced from PuckPedia. Eleven Calgary and Carolina 2026-27 base salary and cap-hit records reconciled against PuckPedia, including correction of Jackson Blake and Seth Jarvis cap hits.",
   "players": [
     {
       "playerId": 8484168,
@@ -6284,6 +6284,707 @@
       "simulationSalaryUsd": 850000,
       "simulationSalaryStatus": "source_verified_manual_override",
       "simulationSalaryMethod": "PuckPedia 2026-27 base salary, minors salary and cap hit; current NHL rights confirmed by Nov 1 2026 trade",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8484154,
+      "name": "Jonathan Castagna",
+      "teamCode": "CGY",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8484154|CGY|2026-03",
+        "signingTeam": "CGY",
+        "signedAt": "2026-03-30",
+        "signingDateStated": false,
+        "type": "ELC",
+        "termYears": 3,
+        "startSeason": "2025-26",
+        "endSeason": "2027-28",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": null,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "A",
+        "sourceCount": 1,
+        "conflicts": null,
+        "flags": "derived:span_from_signing_date;player_id_from_roster",
+        "sourceClaimIds": [
+          "1ab45c85849e5323"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/news/flames-sign-jonathan-castagna",
+            "publisher": "CGY (club release on NHL.com)",
+            "publishedAt": "2026-03-30T21:49:00Z",
+            "confidenceTier": "A"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/jonathan-castagna"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "baseSalaryUsd": 922500,
+        "capHitUsd": 1075000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "minorsSalaryUsd": 82500,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 1075000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8484860,
+      "name": "Matvei Gridin",
+      "teamCode": "CGY",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8484860|CGY|2024-07",
+        "signingTeam": "CGY",
+        "signedAt": "2024-07-05",
+        "signingDateStated": false,
+        "type": "ELC",
+        "termYears": 3,
+        "startSeason": "2024-25",
+        "endSeason": "2026-27",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": null,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "A",
+        "sourceCount": 1,
+        "conflicts": null,
+        "flags": "derived:span_from_signing_date",
+        "sourceClaimIds": [
+          "7099565b73803143"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/news/flames-sign-gridin-to-entry-level-contract",
+            "publisher": "CGY (club release on NHL.com)",
+            "publishedAt": "2024-07-05T17:58:23.748Z",
+            "confidenceTier": "A"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/matvei-gridin"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "baseSalaryUsd": 877500,
+        "capHitUsd": 953750,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "minorsSalaryUsd": 85000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 953750,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8482747,
+      "name": "Brennan Othmann",
+      "teamCode": "CGY",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8482747|CGY|2026-09",
+        "signingTeam": "CGY",
+        "signedAt": "2026-09-18",
+        "signingDateStated": false,
+        "type": "standard",
+        "termYears": 1,
+        "startSeason": "2026-27",
+        "endSeason": "2026-27",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": false,
+        "totalUsd": null,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "CD",
+        "sourceCount": 2,
+        "conflicts": null,
+        "flags": "derived:span_from_signing_date;player_id_from_roster",
+        "sourceClaimIds": [
+          "1513d9532ff3bc42",
+          "1a086c4d0cfce01e"
+        ],
+        "sources": [
+          {
+            "url": "https://www.espn.com/nhl/transactions/_/date/20260918",
+            "publisher": "ESPN transactions wire",
+            "publishedAt": "2026-09-18T07:00Z",
+            "confidenceTier": "C"
+          },
+          {
+            "url": "https://sports.yahoo.com/articles/flames-sign-brennan-othmann-one-174521033.html",
+            "publisher": "Yahoo Sports",
+            "publishedAt": "2026-09-18",
+            "confidenceTier": "D"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/brennan-othmann"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "baseSalaryUsd": 975000,
+        "capHitUsd": 975000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "minorsSalaryUsd": 220000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 975000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8481028,
+      "name": "Martin Pospisil",
+      "teamCode": "CGY",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8481028|CGY|2025-07",
+        "signingTeam": "CGY",
+        "signedAt": "2025-07-30",
+        "signingDateStated": false,
+        "type": "standard",
+        "termYears": 3,
+        "startSeason": "2026-27",
+        "endSeason": "2028-29",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": 7500000,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "B",
+        "sourceCount": 1,
+        "conflicts": null,
+        "flags": null,
+        "sourceClaimIds": [
+          "bc52e456a78ac456"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/news/martin-pospisil-gets-3-year-contract-with-calgary-flames",
+            "publisher": "NHL.com",
+            "publishedAt": "2025-07-30T19:45:51.447Z",
+            "confidenceTier": "B"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/martin-pospisil"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "capHitUsd": 2500000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "baseSalaryUsd": 2500000,
+        "performanceBonusUsd": null,
+        "totalSalaryUsd": null,
+        "minorsSalaryUsd": 2500000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 2500000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8483495,
+      "name": "Simon Nemec",
+      "teamCode": "CGY",
+      "position": "D",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8483495|CGY|2026-07",
+        "signingTeam": "CGY",
+        "signedAt": "2026-07-06",
+        "signingDateStated": false,
+        "type": "standard",
+        "termYears": 5,
+        "startSeason": "2026-27",
+        "endSeason": "2030-31",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": 36250000,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "ABC",
+        "sourceCount": 3,
+        "conflicts": null,
+        "flags": "derived:span_from_signing_date;player_id_from_roster",
+        "sourceClaimIds": [
+          "e83cfc022e66b343",
+          "ba2bdaba2a719e4e",
+          "2b13739111be453c"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/news/flames-sign-defenceman-simon-nemec-06-07-26",
+            "publisher": "CGY (club release on NHL.com)",
+            "publishedAt": "2026-07-06T18:04:30.859Z",
+            "confidenceTier": "A"
+          },
+          {
+            "url": "https://www.nhl.com/news/simon-nemec-signs-5-year-contract-with-calgary-flames",
+            "publisher": "NHL.com",
+            "publishedAt": "2026-07-06T18:51:00Z",
+            "confidenceTier": "B"
+          },
+          {
+            "url": "https://www.espn.com/nhl/transactions/_/date/20260706",
+            "publisher": "ESPN transactions wire",
+            "publishedAt": "2026-07-06T07:00Z",
+            "confidenceTier": "C"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/simon-nemec"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "capHitUsd": 7250000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "baseSalaryUsd": 5750000,
+        "performanceBonusUsd": null,
+        "totalSalaryUsd": null,
+        "minorsSalaryUsd": 7750000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 7250000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8484768,
+      "name": "Zayne Parekh",
+      "teamCode": "CGY",
+      "position": "D",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8484768|CGY|2024-07",
+        "signingTeam": "CGY",
+        "signedAt": "2024-07-05",
+        "signingDateStated": false,
+        "type": "ELC",
+        "termYears": 3,
+        "startSeason": "2024-25",
+        "endSeason": "2026-27",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": null,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "AC",
+        "sourceCount": 2,
+        "conflicts": null,
+        "flags": "derived:span_from_signing_date;multi_player_story;player_id_from_roster",
+        "sourceClaimIds": [
+          "6b347df8585f29fd",
+          "afb7f572662b6adb"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/news/flames-sign-parekh-to-entry-level-contract",
+            "publisher": "CGY (club release on NHL.com)",
+            "publishedAt": "2024-07-05T17:55:36.147Z",
+            "confidenceTier": "A"
+          },
+          {
+            "url": "https://www.espn.com/nhl/transactions/_/date/20240705",
+            "publisher": "ESPN transactions wire",
+            "publishedAt": "2024-07-05T07:00Z",
+            "confidenceTier": "C"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/zayne-parekh"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "baseSalaryUsd": 877500,
+        "capHitUsd": 953750,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "minorsSalaryUsd": 85000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 953750,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8482809,
+      "name": "Jackson Blake",
+      "teamCode": "CAR",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8482809|CAR|2025-07",
+        "signingTeam": "CAR",
+        "signedAt": "2025-07-25",
+        "signingDateStated": false,
+        "type": "standard",
+        "termYears": 8,
+        "startSeason": "2026-27",
+        "endSeason": "2033-34",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": 45000000,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "B",
+        "sourceCount": 2,
+        "conflicts": null,
+        "flags": null,
+        "sourceClaimIds": [
+          "aa1c346ac76adca7",
+          "3b305038b2c94910"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/news/jackson-blake-signs-8-year-contract-with-carolina-hurricanes",
+            "publisher": "NHL.com",
+            "publishedAt": "2025-07-25T02:52:00Z",
+            "confidenceTier": "B"
+          },
+          {
+            "url": "https://www.nhl.com/news/jackson-blake-rewarded-with-8-year-contract-by-carolina-hurricanes",
+            "publisher": "NHL.com",
+            "publishedAt": "2025-07-30T18:24:48.111Z",
+            "confidenceTier": "B"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/jackson-blake"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "capHitUsd": 5117002,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "baseSalaryUsd": 1000000,
+        "performanceBonusUsd": null,
+        "totalSalaryUsd": null,
+        "minorsSalaryUsd": 7500000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 5117002,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8482093,
+      "name": "Seth Jarvis",
+      "teamCode": "CAR",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8482093|CAR|2024-09",
+        "signingTeam": "CAR",
+        "signedAt": "2024-08-31",
+        "signingDateStated": false,
+        "type": "standard",
+        "termYears": 8,
+        "startSeason": "2024-25",
+        "endSeason": "2031-32",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": 63200000,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "BC",
+        "sourceCount": 2,
+        "conflicts": null,
+        "flags": "derived:span_from_signing_date;player_id_from_roster",
+        "sourceClaimIds": [
+          "a586812e7ac0f2a4",
+          "3f7e79d4eee43080"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/news/seth-jarvis-signs-eight-year-contract-with-carolina-hurricanes",
+            "publisher": "NHL.com",
+            "publishedAt": "2024-09-04T17:35:00Z",
+            "confidenceTier": "B"
+          },
+          {
+            "url": "https://www.espn.com/nhl/transactions/_/date/20240831",
+            "publisher": "ESPN transactions wire",
+            "publishedAt": "2024-08-31T07:00Z",
+            "confidenceTier": "C"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/seth-jarvis"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "capHitUsd": 7420087,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "baseSalaryUsd": 4250000,
+        "performanceBonusUsd": null,
+        "totalSalaryUsd": null,
+        "minorsSalaryUsd": 8250000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 7420087,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8480762,
+      "name": "Eric Robinson",
+      "teamCode": "CAR",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8480762|CAR|2025-06",
+        "signingTeam": "CAR",
+        "signedAt": "2025-06-20",
+        "signingDateStated": false,
+        "type": "standard",
+        "termYears": 4,
+        "startSeason": "2025-26",
+        "endSeason": "2028-29",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": 6800000,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "BCD",
+        "sourceCount": 3,
+        "conflicts": null,
+        "flags": "player_id_from_roster;season_breakdown_incomplete;start_season_assumed;team_unmapped:#CauseChaos;unit_assumed",
+        "sourceClaimIds": [
+          "c5bc5bea4b8834b1",
+          "05a2030fa4b285b0",
+          "4c5bba3c5eff8169"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/news/carolina-hurricanes-sign-eric-robinson-to-four-year-contract",
+            "publisher": "NHL.com",
+            "publishedAt": "2025-06-20T23:58:00Z",
+            "confidenceTier": "B"
+          },
+          {
+            "url": "https://www.espn.com/nhl/transactions/_/date/20250620",
+            "publisher": "ESPN transactions wire",
+            "publishedAt": "2025-06-20T07:00Z",
+            "confidenceTier": "C"
+          },
+          {
+            "url": "https://bsky.app/profile/puckpedia.com/post/3ls2mlz7c2c2o",
+            "publisher": "PuckPedia (public Bluesky post)",
+            "publishedAt": "2025-06-20T18:00:41.839Z",
+            "confidenceTier": "D"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/eric-robinson"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "capHitUsd": 1700000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "baseSalaryUsd": 1700000,
+        "performanceBonusUsd": null,
+        "totalSalaryUsd": null,
+        "minorsSalaryUsd": 1700000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 1700000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8482100,
+      "name": "Alexander Nikishin",
+      "teamCode": "CAR",
+      "position": "D",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8482100|CAR|2026-10",
+        "signingTeam": "CAR",
+        "signedAt": "2026-10-25",
+        "signingDateStated": false,
+        "type": "standard",
+        "termYears": 1,
+        "startSeason": "2026-27",
+        "endSeason": "2026-27",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": 3000000,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "ABCD",
+        "sourceCount": 4,
+        "conflicts": null,
+        "flags": "player_id_from_roster;surname_only",
+        "sourceClaimIds": [
+          "4a43ecb3551b3fad",
+          "bc2f11b3fe3bc335",
+          "aaea8e045abe9699",
+          "6e6d2867b327dcd9"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/news/canes-sign-nikishin-to-one-year-contract",
+            "publisher": "CAR (club release on NHL.com)",
+            "publishedAt": "2026-10-25T21:00:00Z",
+            "confidenceTier": "A"
+          },
+          {
+            "url": "https://www.nhl.com/news/alexander-nikishin-one-year-contract-with-carolina-hurricanes",
+            "publisher": "NHL.com",
+            "publishedAt": "2026-10-27T14:39:00Z",
+            "confidenceTier": "B"
+          },
+          {
+            "url": "https://www.espn.com/nhl/transactions/_/date/20261025",
+            "publisher": "ESPN transactions wire",
+            "publishedAt": "2026-10-25T07:00Z",
+            "confidenceTier": "C"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/alexander-nikishin"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "capHitUsd": 3000000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "baseSalaryUsd": 3000000,
+        "performanceBonusUsd": null,
+        "totalSalaryUsd": 3000000,
+        "minorsSalaryUsd": 3000000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 3000000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8479976,
+      "name": "Juuso Välimäki",
+      "teamCode": "CAR",
+      "position": "D",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8479976|CAR|2026-06",
+        "signingTeam": "CAR",
+        "signedAt": "2026-06-24",
+        "signingDateStated": false,
+        "type": "standard",
+        "termYears": 1,
+        "startSeason": "2026-27",
+        "endSeason": "2026-27",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": null,
+        "totalUsd": 900000,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "A",
+        "sourceCount": 1,
+        "conflicts": null,
+        "flags": "player_id_from_roster",
+        "sourceClaimIds": [
+          "3eee96495790f295"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/news/canes-sign-juuso-valimaki-to-one-year-contract",
+            "publisher": "CAR (club release on NHL.com)",
+            "publishedAt": "2026-06-24T22:45:37.46Z",
+            "confidenceTier": "A"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/juuso-valimaki"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "capHitUsd": 900000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "baseSalaryUsd": 900000,
+        "performanceBonusUsd": null,
+        "totalSalaryUsd": 900000,
+        "minorsSalaryUsd": 900000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 900000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded from base salary",
       "sourceDataset": "manual_verified_contract_override",
       "license": "source-linked"
     }

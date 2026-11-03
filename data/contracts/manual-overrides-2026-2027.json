@@ -1,6 +1,6 @@
 {
   "season": "2026-2027",
-  "sourceNote": "Manually reconciled contract rows using NHL team announcements and PuckPedia season breakdowns. Signing-bonus fields are intentionally omitted from the simulation. Six additional 2026-27 contracts were reconciled against PuckPedia and club announcements on 2026-11-01. Signing bonuses are excluded from the simulation salary field; performance bonuses remain separately represented. Four additional Anaheim Ducks 2026-27 salary breakdowns reconciled against PuckPedia player contract pages and NHL/club announcements on 2026-11-02; base salary is kept separate from cap hit and signing bonuses are excluded. Eight additional Anaheim 2026-27 base salaries, cap hits and terms were reconciled against PuckPedia player contract breakdowns and NHL club announcements on 2026-11-02; signing bonuses are excluded from the salary field. Twelve Chicago Blackhawks 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Nine Detroit Red Wings 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Thirteen Edmonton Oilers 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Nine Florida Panthers 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Twelve New York Rangers 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Eight Washington Capitals 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Rémi Poirier held for affiliation reconciliation after his waiver claim. Three remaining cap-hit gaps (Patrick Kane, Andreas Englund, Bokondji Imama) reconciled against PuckPedia 2026-27 breakdowns. Twelve San Jose Sharks 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Two remaining New York Rangers cap-hit gaps (Noah Laba and Scott Morrow) reconciled against PuckPedia 2026-27 breakdowns. Libor Hajek 2026-27 base salary, minor salary and cap hit reconciled against PuckPedia.",
+  "sourceNote": "Manually reconciled contract rows using NHL team announcements and PuckPedia season breakdowns. Signing-bonus fields are intentionally omitted from the simulation. Six additional 2026-27 contracts were reconciled against PuckPedia and club announcements on 2026-11-01. Signing bonuses are excluded from the simulation salary field; performance bonuses remain separately represented. Four additional Anaheim Ducks 2026-27 salary breakdowns reconciled against PuckPedia player contract pages and NHL/club announcements on 2026-11-02; base salary is kept separate from cap hit and signing bonuses are excluded. Eight additional Anaheim 2026-27 base salaries, cap hits and terms were reconciled against PuckPedia player contract breakdowns and NHL club announcements on 2026-11-02; signing bonuses are excluded from the salary field. Twelve Chicago Blackhawks 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Nine Detroit Red Wings 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Thirteen Edmonton Oilers 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Nine Florida Panthers 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Twelve New York Rangers 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Eight Washington Capitals 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Rémi Poirier held for affiliation reconciliation after his waiver claim. Three remaining cap-hit gaps (Patrick Kane, Andreas Englund, Bokondji Imama) reconciled against PuckPedia 2026-27 breakdowns. Twelve San Jose Sharks 2026-27 base salaries and cap hits reconciled against PuckPedia player contract breakdowns on 2026-11-02; signing bonuses excluded from base salary. Two remaining New York Rangers cap-hit gaps (Noah Laba and Scott Morrow) reconciled against PuckPedia 2026-27 breakdowns. Libor Hajek 2026-27 base salary, minor salary and cap hit reconciled against PuckPedia. Rémi Poirier updated to Washington after the Nov 1, 2026 trade; 2026-27 base salary, AHL minors salary and cap hit sourced from PuckPedia.",
   "players": [
     {
       "playerId": 8484168,
@@ -6217,6 +6217,73 @@
       "simulationSalaryUsd": 850000,
       "simulationSalaryStatus": "source_verified_manual_override",
       "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; minors salary separate",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8482465,
+      "name": "Rémi Poirier",
+      "teamCode": "WSH",
+      "position": "G",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8482465|DAL|2025-06",
+        "signingTeam": "DAL",
+        "signedAt": "2025-06-16",
+        "signingDateStated": false,
+        "type": "standard",
+        "termYears": 2,
+        "startSeason": "2025-26",
+        "endSeason": "2026-27",
+        "expiryStatus": null,
+        "boughtOut": false,
+        "oneWay": false,
+        "totalUsd": null,
+        "nhlSalaryUsd": null,
+        "minorsSalaryUsd": null,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "tiers": "AC",
+        "sourceCount": 2,
+        "conflicts": null,
+        "flags": "player_id_from_roster",
+        "sourceClaimIds": [
+          "f6cc57b62b2e6fc2",
+          "44f6a9f3819abc84"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nhl.com/news/dallas-stars-sign-goaltender-remi-poirier-to-two-year-two-way-contract-061625",
+            "publisher": "DAL (club release on NHL.com)",
+            "publishedAt": "2025-06-16T21:30:00Z",
+            "confidenceTier": "A"
+          },
+          {
+            "url": "https://www.espn.com/nhl/transactions/_/date/20250616",
+            "publisher": "ESPN transactions wire",
+            "publishedAt": "2025-06-16T07:00Z",
+            "confidenceTier": "C"
+          },
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/remi-poirier"
+          },
+          {
+            "publisher": "NHL.com",
+            "url": "https://www.nhl.com/capitals/news/topic/press-releases/capitals-acquire-remi-poirier-from-new-jersey"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "baseSalaryUsd": 850000,
+        "capHitUsd": 850000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "minorsSalaryUsd": 135000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 850000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary, minors salary and cap hit; current NHL rights confirmed by Nov 1 2026 trade",
       "sourceDataset": "manual_verified_contract_override",
       "license": "source-linked"
     }

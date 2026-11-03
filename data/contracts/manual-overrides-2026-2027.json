@@ -10255,6 +10255,215 @@
       "simulationSalaryMethod": "PuckPedia 2026-27 base salary, minor salary and cap hit; minor salary applies while playing AHL",
       "sourceDataset": "manual_verified_contract_override",
       "license": "source-linked"
+    },
+    {
+      "playerId": 8483731,
+      "name": "Alex Bump",
+      "teamCode": "PHI",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "manual-alex-bump-2025-2028",
+        "signingTeam": "PHI",
+        "signedAt": "2025-04-15",
+        "type": "Entry Level Contract",
+        "termYears": 3,
+        "startSeason": "2025-26",
+        "endSeason": "2027-28",
+        "expiryStatus": "RFA",
+        "boughtOut": false,
+        "oneWay": false,
+        "totalUsd": 2895000,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "sources": [
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/alex-bump"
+          }
+        ]
+      },
+      "season": {
+        "seasonKey": "2026-2027",
+        "capHitUsd": 972500,
+        "baseSalaryUsd": 855000,
+        "performanceBonusUsd": 500000,
+        "totalSalaryUsd": 855000,
+        "minorsSalaryUsd": 82500,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 972500,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8485383,
+      "name": "Jake O'Brien",
+      "teamCode": "SEA",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "manual-jake-obrien-2025-2029",
+        "signingTeam": "SEA",
+        "signedAt": "2025-07-04",
+        "type": "Entry Level Contract",
+        "termYears": 3,
+        "startSeason": "2025-26",
+        "endSeason": "2028-29",
+        "expiryStatus": "RFA",
+        "boughtOut": false,
+        "oneWay": false,
+        "totalUsd": 3020000,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "sources": [
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/jake-obrien"
+          }
+        ]
+      },
+      "season": {
+        "seasonKey": "2026-2027",
+        "capHitUsd": 974167,
+        "baseSalaryUsd": 877500,
+        "performanceBonusUsd": 1000000,
+        "totalSalaryUsd": 877500,
+        "minorsSalaryUsd": 85000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 974167,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary, minor salary and cap hit; signing bonus excluded",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8483733,
+      "name": "Nikita Grebenkin",
+      "teamCode": "PHI",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "manual-nikita-grebenkin-2026-2028",
+        "signingTeam": "PHI",
+        "signedAt": "2026-08-06",
+        "type": "Standard Contract",
+        "termYears": 2,
+        "startSeason": "2026-27",
+        "endSeason": "2027-28",
+        "expiryStatus": "RFA",
+        "boughtOut": false,
+        "oneWay": false,
+        "totalUsd": 2200000,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "sources": [
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/NIKITA-GREBYONKIN"
+          }
+        ]
+      },
+      "season": {
+        "seasonKey": "2026-2027",
+        "capHitUsd": 1100000,
+        "baseSalaryUsd": 1000000,
+        "performanceBonusUsd": 0,
+        "totalSalaryUsd": 1000000,
+        "minorsSalaryUsd": 1000000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 1100000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary, minor salary and cap hit",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8475188,
+      "name": "Brayden McNabb",
+      "teamCode": "VGK",
+      "position": "D",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "manual-brayden-mcnabb-2025-2028",
+        "signingTeam": "VGK",
+        "signedAt": "2024-11-15",
+        "type": "Standard Contract",
+        "termYears": 3,
+        "startSeason": "2025-26",
+        "endSeason": "2027-28",
+        "expiryStatus": "UFA",
+        "boughtOut": false,
+        "oneWay": false,
+        "totalUsd": 10950000,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "sources": [
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/brayden-mcnabb"
+          },
+          {
+            "publisher": "LivingHockey",
+            "url": "https://livinghockey.com/contracts/players/brayden-mcnabb"
+          }
+        ]
+      },
+      "season": {
+        "seasonKey": "2026-2027",
+        "capHitUsd": 3650000,
+        "baseSalaryUsd": 3500000,
+        "performanceBonusUsd": 0,
+        "totalSalaryUsd": 3500000,
+        "minorsSalaryUsd": 3500000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 3650000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia/LivingHockey 2026-27 base salary and cap hit; signing bonus excluded",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8483752,
+      "name": "Dominic James",
+      "teamCode": "TBL",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "manual-dominic-james-2025-2027",
+        "signingTeam": "TBL",
+        "signedAt": "2025-09-20",
+        "type": "Entry Level Contract",
+        "termYears": 2,
+        "startSeason": "2025-26",
+        "endSeason": "2026-27",
+        "expiryStatus": "RFA",
+        "boughtOut": false,
+        "oneWay": false,
+        "totalUsd": 1820000,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "sources": [
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/dominic-james"
+          }
+        ]
+      },
+      "season": {
+        "seasonKey": "2026-2027",
+        "capHitUsd": 910000,
+        "baseSalaryUsd": 850000,
+        "performanceBonusUsd": 27500,
+        "totalSalaryUsd": 850000,
+        "minorsSalaryUsd": 85000,
+        "oneWay": false
+      },
+      "simulationSalaryUsd": 910000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 base salary, minor salary and cap hit; signing bonus excluded",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
     }
   ]
 }

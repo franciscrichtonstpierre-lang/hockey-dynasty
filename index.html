@@ -519,7 +519,7 @@ async function simulate(){
  const development=await developPlayers(selectedDays,startDate);
  S.history=S.history.slice(-60);save();render();
  const scheduleMessage=fallbackUsed?"Calendrier officiel indisponible pour cette période; adversaires de secours utilisés.":scheduleAvailable?"Calendrier officiel NHL utilisé.":"Calendrier NHL indisponible; vérifier la connexion.";
- msg(n+" match(s) simulé(s) sur "+selectedDays+" jour(s)"+(otGames?", dont "+otGames+" en prolongation":"")+". "+scheduleMessage+" "+(development.improved?development.improved+" joueur(s) ont progressé.":"Développement enregistré.")+" "+(development.retired?development.retired+" retraite(s) enregistrée(s).":"Aucune retraite cette période.")+" Développement global : "+development.players+" joueurs suivis.");
+ msg(n+" match(s) simulé(s) sur "+selectedDays+" jour(s)"+(otGames?", dont "+otGames+" en prolongation":"")+". "+scheduleMessage+" Entraînement : fatigue moyenne "+trainingResult.averageFatigue+"/100, "+trainingResult.injuries+" blessure(s), "+trainingResult.recovered+" retour(s) au jeu. "+(development.improved?development.improved+" joueur(s) ont progressé.":"Développement enregistré.")+" "+(development.retired?development.retired+" retraite(s) enregistrée(s).":"Aucune retraite cette période.")+" Développement global : "+development.players+" joueurs suivis.");
 }
 
 function newSeason(){if(!hdIsCommissionerSession())return msg("Seul le commissaire connecté de la ligue peut commencer une nouvelle saison.");if(!confirm("Remettre les statistiques de saison à zéro? Les choix et échanges seront conservés."))return;S.season++;S.day=S.w=S.l=S.otl=S.gf=S.ga=0;S.history=[];save();render();msg("Nouvelle saison commencée.")}

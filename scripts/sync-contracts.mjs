@@ -224,61 +224,9 @@ for (const override of (manualOverrides.players || [])) {
 }
 
 
-const nhlpaSalarySnapshot = JSON.parse(await readFile("data/contracts/nhlpa-salaries-2026-2027.json","utf8"));
-let nhlpaSalaryOverridesApplied = 0;
-for (const salaryRecord of (nhlpaSalarySnapshot.players || []).filter(record => ["BOS","BUF","VAN"].includes(record.teamCode))) {
-  const index = players.findIndex(p => Number(p.playerId) === Number(salaryRecord.playerId));
-  if (index < 0) continue;
-  const player = players[index];
-  const existingSeason = player.season || {};
-  const updatedSeason = { ...existingSeason, season: "2026-27", baseSalaryUsd: Number(salaryRecord.baseSalaryUsd) };
-  const salaryFields = actualSalaryFields("NHL", {
-    nhl_salary_usd: updatedSeason.baseSalaryUsd,
-    minors_salary_usd: updatedSeason.minorsSalaryUsd,
-    one_way: updatedSeason.oneWay
-  }, {
-    base_salary_usd: updatedSeason.baseSalaryUsd,
-    minors_salary_usd: updatedSeason.minorsSalaryUsd,
-    one_way: updatedSeason.oneWay
-  });
-  players[index] = {
-    ...player,
-    season: updatedSeason,
-    ...salaryFields,
-    salarySource: { publisher: "NHLPA", url: salaryRecord.sourceUrl, season: "2026-2027" },
-    salaryVerificationStatus: "SOURCE_VERIFIED"
-  };
-  nhlpaSalaryOverridesApplied++;
-}
-console.log("NHLPA 2026-27 base salary overrides applied: " + nhlpaSalaryOverridesApplied + ".");
-
-const markerZoneSnapshot = JSON.parse(await readFile("data/contracts/markerzone-salaries-2026-2027.json","utf8"));
-let markerZoneSalaryOverridesApplied = 0;
-for (const salaryRecord of (markerZoneSnapshot.players || [])) {
-  const index = players.findIndex(p => Number(p.playerId) === Number(salaryRecord.playerId));
-  if (index < 0) continue;
-  const player = players[index];
-  const updatedSeason = { ...(player.season || {}), season: "2026-27", baseSalaryUsd: Number(salaryRecord.baseSalaryUsd) };
-  const salaryFields = actualSalaryFields("NHL", {
-    nhl_salary_usd: updatedSeason.baseSalaryUsd,
-    minors_salary_usd: updatedSeason.minorsSalaryUsd,
-    one_way: updatedSeason.oneWay
-  }, {
-    base_salary_usd: updatedSeason.baseSalaryUsd,
-    minors_salary_usd: updatedSeason.minorsSalaryUsd,
-    one_way: updatedSeason.oneWay
-  });
-  players[index] = {
-    ...player,
-    season: updatedSeason,
-    ...salaryFields,
-    salarySource: { publisher: "MarkerZone", url: salaryRecord.sourceUrl, season: "2026-2027" },
-    salaryVerificationStatus: "SOURCE_VERIFIED"
-  };
-  markerZoneSalaryOverridesApplied++;
-}
-console.log("MarkerZone 2026-27 salary overrides applied: " + markerZoneSalaryOverridesApplied + " from " + markerZoneSnapshot.players.length + " source rows; source file refreshed 2026-11-02; unverified rows excluded.");
-
+// NHLPA and MarkerZone compensation tables can include signing bonuses.
+// They are not imported as base salary; use sourced annual base salary instead.
+console.log("NHLPA/MarkerZone reported compensation excluded from base-salary fields.");
 
 const organizationContracts = [];
 for (const registryPlayer of (registryData.players || [])) {

@@ -1,6 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { RATING_ATTRIBUTES } from "../scripts/lib/player-ratings.mjs";
+import { parseNCAAPlayerStats } from "../scripts/lib/ncaa-stat-feed.mjs";
 import { createLeagueStatIndex, estimatePlayerRatings, matchLeagueStats, matchStatIndex, statNameKey } from "../scripts/lib/cross-league-rating-model.mjs";
 
 test("uses a unique official league-stat match when the profile omits its current league", () => {
@@ -21,6 +22,21 @@ test("does not guess a league when an identical name occurs in multiple official
   const whl = createLeagueStatIndex({ league:"WHL", source:"official WHL stats", season:"2026-2027", skaters:[{...row,player_id:88}], goalies:[] });
   const matched = matchStatIndex({ name:"Ambiguous Prospect", currentLeague:"UNKNOWN", position:"F" }, new Map([["OHL",ohl],["WHL",whl]]));
   assert.equal(matched.row, null);
+});
+
+test("parses official NCAA skater statistics and excludes goalie rows", () => {
+  const html = `
+    <table><tr><th>Rk</th><th>Name</th><th>Team</th><th>Pos.</th><th>Yr</th><th>GP</th><th>G</th><th>A</th><th>PTS</th><th>Pt/Gm</th><th>PIM</th><th>Shots</th><th>GWG</th><th>PPG</th><th>SHG</th><th>+/-</th></tr>
+    <tr><td>1</td><td><a>Michael Hage</a></td><td>Michigan</td><td>F</td><td>Jr</td><td>9</td><td>4</td><td>16</td><td>20</td><td>2.22</td><td>0</td><td>34</td><td>1</td><td>1</td><td>0</td><td>14</td></tr>
+    <tr><td>2</td><td><a>Ty Hanson</a></td><td>Minnesota-Duluth</td><td>D</td><td>Jr</td><td>10</td><td>8</td><td>6</td><td>14</td><td>1.40</td><td>0</td><td>35</td><td>2</td><td>3</td><td>1</td><td>9</td></tr>
+    <tr><td>3</td><td><a>Goalie Name</a></td><td>Michigan</td><td>G</td><td>Fr</td><td>4</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+    </table>`;
+  const rows = parseNCAAPlayerStats(html);
+  assert.equal(rows.length, 2);
+  assert.equal(rows[0].name, "Michael Hage");
+  assert.equal(rows[0].points, 20);
+  assert.equal(rows[0].plus_minus, 14);
+  assert.equal(rows[1].position, "D");
 });
 
 test("normalizes surname-first junior feed names without weakening exact matching", () => {

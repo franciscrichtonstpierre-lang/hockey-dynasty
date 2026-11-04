@@ -131,6 +131,7 @@
     return {
       schemaVersion: 2,
       position,
+      peakAge: Math.round(numberOr(prior.peakAge, estimatedPeakAge(player, position))),
       disposition,
       rngState,
       abilityAttributes,
@@ -144,15 +145,19 @@
     };
   }
 
-  function ageGrowthFactor(age) {
-    if (age < 18) return 1.12;
-    if (age < 20) return 1;
-    if (age < 22) return .84;
-    if (age < 24) return .66;
-    if (age < 26) return .43;
-    if (age < 28) return .24;
-    if (age < 30) return .1;
-    if (age < 32) return .035;
+  function estimatedPeakAge(player, position) {
+    const ranges = { F: [24, 27], D: [25, 29], G: [27, 31] };
+    const range = ranges[position] || ranges.F;
+    return range[0] + (hashSeed(playerId(player) + ":peak-age") % (range[1] - range[0] + 1));
+  }
+
+  function ageGrowthFactor(age, peakAge) {
+    if (age < peakAge - 6) return 1.12;
+    if (age < peakAge - 3) return 1;
+    if (age < peakAge - 1) return .78;
+    if (age < peakAge + 2) return .48;
+    if (age < peakAge + 4) return .22;
+    if (age < 32) return .05;
     return 0;
   }
 
@@ -197,7 +202,7 @@
     for (let day = 0; day < days; day++) {
       const currentDate = new Date(start.getTime() + day * 86400000);
       const age = ageAt(player, currentDate);
-      const ageFactor = ageGrowthFactor(age);
+      const ageFactor = ageGrowthFactor(age, state.peakAge);
       const injuryFactor = day < injuredDays ? .28 : 1;
       const overall = ratings.OA;
       const potential = clamp(numberOr(player?.potential, numberOr(player?.potentialEstimate, overall)), overall, 99);

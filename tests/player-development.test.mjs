@@ -113,7 +113,7 @@ test("older players can regress after their development peak", () => {
     ...player,
     id: "nhl:8470099",
     birthDate: null,
-    age: 38,
+    age: 34,
     overall: 68,
     potential: 91
   };

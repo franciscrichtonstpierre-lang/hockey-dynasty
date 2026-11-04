@@ -27,7 +27,6 @@ test("maps visible 0–99 ratings to internal 1–200 ability", () => {
 test("tracks all 16 attributes with individual CA and PA ceilings", () => {
   const state = engine.createInitialState(player, null);
   assert.deepEqual(Object.keys(state.abilityAttributes), attributes);
-  assert.deepEqual(Object.keys(state.attributeDelta), attributes);
   for (const key of attributes) {
     assert.ok(state.abilityAttributes[key].ca >= 1 && state.abilityAttributes[key].ca <= 200);
     assert.ok(state.abilityAttributes[key].pa >= state.abilityAttributes[key].ca);

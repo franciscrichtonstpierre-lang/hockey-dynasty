@@ -28,3 +28,11 @@ Apply one consistent 0–99 player-rating framework to all 32 NHL organizations,
 - Before/after diff and outlier report.
 - Passing automated test report.
 - Reversible rollout log and backup reference.
+
+
+## Global FI and goalie OA rules (2026-11-04 update)
+- FI is Fighting only and is excluded from the OA formula for every skater and goalie, across NHL, AHL, junior, NCAA and European records.
+- FI must be based on explicit fight-related evidence. Penalty minutes, body size, toughness reputation, and position are not substitutes for fight data. With no evidence, use a conservative low default and low confidence.
+- Goalies retain all 16 existing card fields. Their non-FI attributes are estimated from goalie-specific performance indicators (save percentage, goals-against average, workload/games played, wins and shutouts) mapped to the shared card fields. Their OA is calculated from the non-FI attributes only.
+- The shared card labels are retained to avoid changing the UI schema. A future UI enhancement may add goalie-specific labels/tooltips, but must not add/remove/rename fields without approval.
+- These code changes are on the calibration branch only. No production roster batch has been run.

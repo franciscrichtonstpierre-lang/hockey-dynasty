@@ -21,8 +21,13 @@ const statsFiles = [
   "data/europe/player-stats-shl-2026-2027.json",
   "data/europe/player-stats-shl-2025-2026.json",
   "data/junior/player-stats-ohl-2026-2027.json",
+  "data/junior/player-stats-ohl-2025-2026.json", 
   "data/junior/player-stats-whl-2026-2027.json",
+  "data/junior/player-stats-whl-2025-2026.json", 
   "data/junior/player-stats-qmjhl-2026-2027.json",
+  "data/junior/player-stats-qmjhl-2025-2026.json", 
+  "data/junior/player-stats-ushl-2026-2027.json"
+  "data/junior/player-stats-ushl-2025-2026.json",
   "data/junior/player-stats-ushl-2026-2027.json"
 ];
 const statsIndexes = new Map();

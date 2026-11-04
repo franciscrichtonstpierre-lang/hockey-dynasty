@@ -108,7 +108,7 @@
 
     for (const attribute of ATTRIBUTES) {
       const old = previousAbilities[attribute];
-      const oldDelta = numberOr(legacyAttributeDelta[attribute], legacyDelta);
+      const oldDelta = legacyDelta + numberOr(legacyAttributeDelta[attribute], 0);
       const effectiveRating = clamp(ratings[attribute] + oldDelta, 0, 99);
       const ca = old && Number.isFinite(Number(old.ca))
         ? clamp(Math.round(Number(old.ca)), 1, 200)
@@ -131,7 +131,7 @@
     return {
       schemaVersion: 2,
       position,
-      peakAge: Math.round(numberOr(prior.peakAge, estimatedPeakAge(player, position))),
+      peakAge: clamp(Math.round(numberOr(prior.peakAge, estimatedPeakAge(player, position))), 18, 35),
       disposition,
       rngState,
       abilityAttributes,

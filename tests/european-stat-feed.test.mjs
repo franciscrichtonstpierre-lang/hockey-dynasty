@@ -17,7 +17,7 @@ test("normalizes Liiga goalie statistics", () => {
   const rows = normalizeLiigaGoalies([{ player_id:456, first_name:"Test", last_name:"Goalie", played_games:14, saves:380, save_percentage:"91.2", goals_against_average:"2.31", gk_wins:8, shut_out:2 }]);
   assert.equal(rows.length,1);
   assert.equal(rows[0].position,"G");
-  assert.equal(rows[0].save_percentage,"91.2");
+  assert.equal(rows[0].save_percentage,91.2);
   assert.equal(rows[0].shutouts,2);
 });
 
@@ -27,6 +27,6 @@ test("normalizes SHL player and goalie summary fields", () => {
   assert.equal(skaters[0].name,"SHL Skater");
   assert.equal(skaters[0].points,16);
   assert.equal(goalies[0].name,"SHL Goalie");
-  assert.equal(goalies[0].save_percentage,"92.1");
+  assert.equal(goalies[0].save_percentage,92.1);
   assert.equal(goalies[0].shutouts,1);
 });

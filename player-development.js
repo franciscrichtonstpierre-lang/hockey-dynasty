@@ -193,6 +193,8 @@
     const facilitiesFactor = .84 + facilities / 325;
     const usageFactor = .74 + iceTime / 78;
     const performanceFactor = .9 + performance / 500;
+    const determinationFactor = .86 + ratings.PE / 450;
+    const leadershipFactor = .95 + ratings.LE / 1000;
     const injuredDays = clamp(Math.round(numberOr(opts.injuredDays, 0)), 0, days);
     let gains = 0;
     let regressions = 0;
@@ -204,8 +206,8 @@
       const age = ageAt(player, currentDate);
       const ageFactor = ageGrowthFactor(age, state.peakAge);
       const injuryFactor = day < injuredDays ? .28 : 1;
-      const overall = ratings.OA;
-      const potential = clamp(numberOr(player?.potential, numberOr(player?.potentialEstimate, overall)), overall, 99);
+      const overall = abilityToVisible(state.abilityAttributes.OA.ca);
+      const potential = abilityToVisible(state.abilityAttributes.OA.pa);
       const retirementChance = annualRetirementChance(age, overall, potential);
       if (retirementChance > 0 && random(state) < 1 - Math.pow(1 - retirementChance, 1 / 365)) {
         retired = true;
@@ -242,7 +244,7 @@
           : 0);
         const trainingBonus = focusWeight * .008 * intensityFactor * coachFactor;
         const naturalGrowth = .012 * ageFactor * gapFactor * state.disposition
-          * coachFactor * facilitiesFactor * usageFactor * performanceFactor;
+          * coachFactor * facilitiesFactor * usageFactor * performanceFactor * determinationFactor * leadershipFactor;
         const goalieAdjustment = isGoalie && ["FI", "SH", "PL", "FA"].includes(attribute) ? .72 : 1;
         const dailyNoise = .7 + random(state) * .6;
         ability.progress += (naturalGrowth + trainingBonus) * injuryFactor * goalieAdjustment * dailyNoise;
@@ -271,8 +273,13 @@
     for (const attribute of ATTRIBUTES) {
       const base = numberOr(source[attribute], null);
       if (base == null) continue;
-      const delta = numberOr(specific[attribute], legacyDelta);
-      output[attribute] = clamp(Math.round(base + delta), 0, 99);
+      const ability = dev.abilityAttributes?.[attribute];
+      if (ability && Number.isFinite(Number(ability.ca))) {
+        output[attribute] = abilityToVisible(ability.ca);
+      } else {
+        const delta = legacyDelta + numberOr(specific[attribute], 0);
+        output[attribute] = clamp(Math.round(base + delta), 0, 99);
+      }
     }
     return output;
   }

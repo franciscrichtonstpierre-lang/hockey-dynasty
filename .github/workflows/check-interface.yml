@@ -5,6 +5,8 @@ on:
     paths:
       - ".github/workflows/check-interface.yml"
       - "index.html"
+      - "player-development.js"
+      - "tests/player-development.test.mjs"
       - "scripts/check-inline-js.mjs"
   workflow_dispatch:
 
@@ -21,5 +23,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "22"
+      - name: Vérifier la syntaxe du moteur de développement
+        run: node --check player-development.js
+      - name: Tester le moteur de développement
+        run: node --test tests/player-development.test.mjs
       - name: Vérifier la syntaxe JavaScript intégrée
         run: node scripts/check-inline-js.mjs

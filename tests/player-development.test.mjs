@@ -146,8 +146,8 @@ test("application changes only the 16 visible ratings and keeps them within 0–
 test("calculates OA from the 15 attributes with position-specific weights", () => {
   const ratings = Object.fromEntries(attributes.map(key => [key, 70]));
   ratings.OA = 99;
-  ratings.SH = 95;
-  ratings.PO = 95;
+  ratings.SH = 99;
+  ratings.PO = 40;
   const forward = engine.calculateOverall(ratings, "F");
   const defender = engine.calculateOverall(ratings, "D");
   assert.ok(forward > 70);

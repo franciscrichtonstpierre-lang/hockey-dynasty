@@ -16,6 +16,24 @@ test("uses a unique official league-stat match when the profile omits its curren
   assert.ok(result.metadata.source.includes("official OHL stats"));
 });
 
+test("uses unique non-NHL league statistics for an NHL prospect with no NHL sample", () => {
+  const row = { player_id:91, name:"NHL Prospect Without NHL Stats", position:"F", games_played:16, goals:7, assists:10, points:17, shots:44, plus_minus:3, penalty_minutes:8 };
+  const ohl = createLeagueStatIndex({ league:"OHL", source:"official OHL stats", season:"2026-2027", skaters:[row], goalies:[] });
+  const player = { name:"NHL Prospect Without NHL Stats", currentLeague:"NHL", position:"F" };
+  assert.equal(matchStatIndex(player,new Map([["OHL",ohl]])).row,null);
+  const matched = matchStatIndex(player,new Map([["OHL",ohl]]),{allowCrossLeague:true});
+  assert.equal(matched.index,ohl);
+  assert.equal(matched.row.player_id,91);
+});
+
+test("does not use an ambiguous cross-league match for an NHL prospect", () => {
+  const row = { player_id:91, name:"Ambiguous NHL Prospect", position:"F", games_played:16, goals:7, assists:10, points:17 };
+  const ohl = createLeagueStatIndex({ league:"OHL", source:"official OHL stats", season:"2026-2027", skaters:[row], goalies:[] });
+  const whl = createLeagueStatIndex({ league:"WHL", source:"official WHL stats", season:"2026-2027", skaters:[{...row,player_id:92}], goalies:[] });
+  const matched = matchStatIndex({ name:"Ambiguous NHL Prospect", currentLeague:"NHL", position:"F" },new Map([["OHL",ohl],["WHL",whl]]),{allowCrossLeague:true});
+  assert.equal(matched.row,null);
+});
+
 test("uses prior-season statistics only when current-season statistics have no player row", () => {
   const oldRow = { player_id:88, name:"Historical Sample Player", position:"F", games_played:42, goals:18, assists:21, points:39, shots:90, plus_minus:5, penalty_minutes:12 };
   const current = createLeagueStatIndex({ league:"AHL", source:"current AHL stats", season:"2026-2027", skaters:[], goalies:[] });

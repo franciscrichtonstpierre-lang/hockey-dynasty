@@ -96,6 +96,28 @@ for (const player of registry.players || []) {
   if (!exact(player.attributes)) throw new Error(`Invalid 16-rating card for ${player.name} (${player.id}).`);
 }
 
+// Apply explicitly source-reviewed potential ceilings after the age-growth fallback.
+const potentialOverrides = await readJson("data/potential-scouting-overrides.json", { players:{} });
+let potentialOverridesApplied = 0;
+for (const player of registry.players || []) {
+  const override = potentialOverrides.players?.[player.id];
+  if (!override) continue;
+  if (!Number.isInteger(override.potential) || override.potential < 0 || override.potential > 99 || !override.source || !override.rationale) {
+    throw new Error(`Invalid source-reviewed potential override for ${player.name}.`);
+  }
+  player.potential = override.potential;
+  player.potentialEstimate = override.potential;
+  player.potentialStatus = "scouting_source_reviewed_estimate";
+  player.potentialEstimateMethod = "manual_source_review_2026-11-04";
+  player.potentialSource = override.source;
+  player.potentialConfidence = override.confidence || "medium";
+  player.potentialRationale = override.rationale;
+  player.potentialReviewRequired = false;
+  player.potentialReviewResolution = "manual_source_review_2026-11-04";
+  potentialOverridesApplied++;
+}
+console.log(`Source-reviewed potential overrides applied: ${potentialOverridesApplied}.`);
+
 // Apply owner-approved calibration anchors after statistical/profile estimates.
 const calibrationOverrides = await readJson("data/ratings-calibration-overrides.json", { players:{} });
 for (const player of registry.players || []) {

@@ -200,7 +200,11 @@ export function estimatePlayerRatings(player, statRow, statIndex, existingRating
   // Body measurements are descriptive metadata, not skating/strength grades.
   const sizeScore = 0.5;
   const modeled = {
-    FI:clamp(overall + (isForward ? 1 : position === "D" ? -2 : 0) + (assists - 0.5) * 12),
+    // FI means Fighting. It is a standalone attribute and is never an input to OA.
+    // Only explicit fighting evidence may raise it; penalty minutes alone are not fights.
+    FI:clamp(numeric(row || player, "fightingSkill", "fightRating", "fightsPerSeason", "fightingMajors") > 0
+      ? numeric(row || player, "fightingSkill", "fightRating", "fightsPerSeason", "fightingMajors")
+      : 20),
     SH:clamp(overall + (goals - 0.5) * 22 + (isForward ? 3 : position === "D" ? -5 : 0) - (isGoalie ? 18 : 0)),
     PL:clamp(overall + (assists - 0.5) * 22 + (isForward ? 2 : position === "D" ? -2 : 0) - (isGoalie ? 18 : 0)),
     ST:clamp(overall + (sizeScore - 0.5) * 22 + (position === "D" ? 3 : 0)),
@@ -232,7 +236,7 @@ export function estimatePlayerRatings(player, statRow, statIndex, existingRating
     metadata:{
       source:sources.join(" | ") || "Hockey Dynasty profile model; no external rating source",
       confidence, sampleConfidence, sampleSize, status,
-      method:"cross_league_profile_model_v2_no_salary_size_or_draft_shortcuts",
+      method:"cross_league_profile_model_v3_fighting_isolated_from_oa",
       evidence,
       modeledAttributes:modeledFields,
       ratedAttributes:RATING_ATTRIBUTES.slice(),

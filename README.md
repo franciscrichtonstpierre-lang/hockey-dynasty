@@ -30,7 +30,7 @@ Saison cible : **2026–2027**. Ce dépôt contient l’application et les insta
 - Le moteur accumule les effets jour par jour et applique le résultat à la fin des blocs de simulation de **7, 14 ou 28 jours**. Le résultat est cohérent entre un bloc de 28 jours et quatre blocs de 7 jours, toutes choses égales par ailleurs.
 - Âge, écart au potentiel, entraînement, intensité, entraîneurs, installations, temps de glace, rendement et blessures influencent le développement. Les joueurs peuvent stagner, progresser ou régresser; le PA demeure un plafond et non une promesse.
 - Le CA/PA et la progression de chaque attribut restent internes. Les potentiels estimés demeurent identifiés comme estimations et ne deviennent pas des potentiels source-vérifiés.
-- Dans une ligue en ligne, les états de développement sont enregistrés dans le payload des fiches `league_player_overrides`, lisibles par les membres et modifiables par le commissaire selon les politiques RLS existantes. Hors ligne, l’état est conservé dans la sauvegarde locale.
+- Dans une ligue en ligne, les états de développement sont enregistrés dans `league_game_states.state.playerDevelopment`, partagés avec les membres de la ligue par les politiques RLS existantes. Les modifications de joueurs et leurs droits restent séparés dans `league_player_overrides`. Hors ligne, l’état est conservé dans la sauvegarde locale.
 - `tests/player-development.test.mjs` — tests de l’échelle CA/PA, des plafonds individuels, de la cohérence 28 jours / 4 × 7 jours et de l’effet des blessures.
 
 ## Principes de données

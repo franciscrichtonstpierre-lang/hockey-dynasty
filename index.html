@@ -549,7 +549,6 @@ function hdDevelopmentTeamCode(p){
  for(const value of candidates){const code=String(value||"").trim().toUpperCase();if(/^[A-Z]{3}$/.test(code)&&Array.isArray(codes)&&codes.includes(code))return code}
  return "";
 }
-function hdDevelopmentDbPlayerId(p){return uhmDbPlayerId(p)}
 function hdDevelopmentCoachProfile(teamCode,league,focus){
  let staff=[];
  try{staff=ensureCoachDatabase().filter(c=>String(c.teamCode||c.team||"").toUpperCase()===String(teamCode||"").toUpperCase()&&String(c.league||"NHL").toUpperCase()===String(league||"NHL").toUpperCase()&&!["available","fired"].includes(String(c.status||c.employmentStatus||"employed").toLowerCase()))}catch(e){}
@@ -581,7 +580,6 @@ async function developPlayers(days,asOf){
  let improved=0,retired=0,regressions=0,trainingGains=0,trainingPlayers=0,ownCoachTotal=0,ownCoachCount=0,ownCoaches=0;
  const selectedCode=codes[S.team];
  const coachCache=new Map();
- const changedPlayers=[];
  for(const p of players){
   const id=String(p.id||p.playerId||"");
   const key=hdCanonicalPlayerId(id);
@@ -601,39 +599,44 @@ async function developPlayers(days,asOf){
   if(result.retired)retired++;
   regressions+=result.regressions||0;
   if(ownTeam){ownCoachTotal+=coach.coachSkill;ownCoachCount++;ownCoaches=Math.max(ownCoaches,coach.coaches);trainingGains+=result.trainingGains||0;if((result.trainingGains||0)>0)trainingPlayers++}
-  if(result.state)changedPlayers.push(p);
  }
- const summary={players:players.length,improved,retired,regressions,trainingGains,trainingPlayers,coachSkill:ownCoachCount?Math.round(ownCoachTotal/ownCoachCount):0,coaches:ownCoaches,changedPlayers};
- window.hdDevelopmentSummary={...summary,changedPlayers:undefined};
+ const summary={players:players.length,improved,retired,regressions,trainingGains,trainingPlayers,coachSkill:ownCoachCount?Math.round(ownCoachTotal/ownCoachCount):0,coaches:ownCoaches};
+ window.hdDevelopmentSummary=summary;
  return summary;
 }
-async function hdPersistPlayerDevelopment(players){
+async function hdLoadSharedPlayerDevelopment(force=false){
+ if(!activeOnlineLeagueId||!authClient||!signedInUser)return {loaded:0,localOnly:true};
+ if(S.developmentLeagueId&&S.developmentLeagueId!==activeOnlineLeagueId){S.development={};S.retiredPlayers={};}
+ S.developmentLeagueId=activeOnlineLeagueId;
+ const {data,error}=await authClient.from("league_game_states").select("state,revision").eq("league_id",activeOnlineLeagueId).maybeSingle();
+ if(error)throw error;
+ const remote=data?.state?.playerDevelopment;
+ if(!remote)return {loaded:0,localOnly:false,revision:Number(data?.revision)||0};
+ let loaded=0;
+ for(const [key,remoteState] of Object.entries(remote.development||{})){
+  const local=S.development?.[key];
+  if(!local||String(remoteState?.lastUpdated||"")>=String(local.lastUpdated||"")){S.development[key]=remoteState;loaded++}
+ }
+ S.retiredPlayers={...(remote.retiredPlayers||{}),...(S.retiredPlayers||{})};
+ S.developmentSyncRevision=Number(data?.revision)||0;
+ return {loaded,localOnly:false,revision:S.developmentSyncRevision};
+}
+async function hdPersistSharedPlayerDevelopment(){
  if(!activeOnlineLeagueId||!authClient||!signedInUser)return {saved:0,localOnly:true};
- const rows=[];
- for(const p of players||[]){
-  const dbId=hdDevelopmentDbPlayerId(p);if(!dbId)continue;
-  const key=hdCanonicalPlayerId(p.id||p.playerId);
-  const development=S.development[key];if(!development)continue;
-  const existing=UHM_PLAYER_OVERRIDES_BY_ID.get(dbId);
-  const payload={...(existing?.payload||{}),attributes:p.attributes||existing?.payload?.attributes||{},development};
-  rows.push({
-   league_id:activeOnlineLeagueId,player_id:dbId,season:"2026-2027",
-   team_code:existing?.team_code||hdDevelopmentTeamCode(p)||null,
-   league_code:existing?.league_code||p.currentLeague||p.league||null,
-   nhl_rights_team:existing?.nhl_rights_team||p.nhlRightsTeam||p.rightsTeam||null,
-   full_name:existing?.full_name||p.name||p.fullName||"Joueur",
-   overall:existing?.overall??p.overall??p.attributes?.OA??null,
-   potential:existing?.potential??p.potential??p.potentialEstimate??null,
-   payload,updated_by:signedInUser.id
-  });
- }
- for(let offset=0;offset<rows.length;offset+=125){
-  const batch=rows.slice(offset,offset+125);
-  const {error}=await authClient.from("league_player_overrides").upsert(batch,{onConflict:"league_id,player_id"});
-  if(error)throw error;
-  for(const row of batch)UHM_PLAYER_OVERRIDES_BY_ID.set(String(row.player_id),row);
- }
- return {saved:rows.length,localOnly:false};
+ const {data,error}=await authClient.from("league_game_states").select("state,revision").eq("league_id",activeOnlineLeagueId).maybeSingle();
+ if(error)throw error;
+ const existingState=data?.state&&typeof data.state==="object"?data.state:{};
+ const revision=(Number(data?.revision)||0)+1;
+ const nextState={...existingState,playerDevelopment:{
+  schemaVersion:2,updatedAt:new Date().toISOString(),
+  development:S.development||{},retiredPlayers:S.retiredPlayers||{}
+ }};
+ const {error:saveError}=await authClient.from("league_game_states").upsert({
+  league_id:activeOnlineLeagueId,state:nextState,revision,updated_by:signedInUser.id
+ },{onConflict:"league_id"});
+ if(saveError)throw saveError;
+ S.developmentSyncRevision=revision;
+ return {saved:Object.keys(S.development||{}).length,localOnly:false,revision};
 }
 async function hdLoadOrganizationTrainingGroups(teamCode){
  await loadRatings();
@@ -658,6 +661,7 @@ async function simulate(){
  let selectedRoster=null;
  try{selectedRoster=await fetchRosterData(selectedCode);window.hdRosterCache=[...(selectedRoster.forwards||[]),...(selectedRoster.defensemen||[]),...(selectedRoster.goalies||[])];}catch(e){window.hdRosterCache=[];}
  await loadRatings(true);
+ await hdLoadSharedPlayerDevelopment(true);
  const startDate=new Date(Date.UTC(Number(S.season)||2026,9,7));
  startDate.setUTCDate(startDate.getUTCDate()+Math.max(0,Number(S.day)||0));
  const endDate=new Date(startDate);endDate.setUTCDate(endDate.getUTCDate()+selectedDays);
@@ -736,10 +740,10 @@ async function simulate(){
  await preloadUhmCoachData();
  const development=await developPlayers(selectedDays,startDate);
  let developmentSync={saved:0,localOnly:true};
- try{developmentSync=await hdPersistPlayerDevelopment(development.changedPlayers)}catch(e){console.warn("Synchronisation du développement échouée",e);}
+ try{developmentSync=await hdPersistSharedPlayerDevelopment()}catch(e){developmentSync={saved:0,localOnly:true,error:e?.message||String(e)};console.warn("Synchronisation du développement échouée",e);}
  S.history=S.history.slice(-60);save();render();
  const scheduleMessage=fallbackUsed?"Calendrier officiel indisponible pour cette période; adversaires de secours utilisés.":scheduleAvailable?"Calendrier officiel NHL utilisé.":"Calendrier NHL indisponible; vérifier la connexion.";
- const syncMessage=developmentSync.localOnly?"Développement conservé sur cet appareil.":"Développement partagé synchronisé pour "+developmentSync.saved+" joueurs.";
+ const syncMessage=developmentSync.error?"Synchronisation en ligne échouée; développement conservé localement ("+developmentSync.error+").":developmentSync.localOnly?"Développement conservé sur cet appareil.":"Développement partagé synchronisé pour "+developmentSync.saved+" joueurs.";
  msg(n+" match(s) simulé(s) sur "+selectedDays+" jour(s)"+(otGames?", dont "+otGames+" en prolongation":"")+". "+scheduleMessage+" Entraînement : fatigue moyenne "+trainingResult.averageFatigue+"/100, "+trainingResult.injuries+" blessure(s), "+trainingResult.recovered+" retour(s) au jeu. "+(development.improved?development.improved+" joueur(s) ont progressé.":"Développement enregistré.")+" "+(development.regressions?development.regressions+" baisse(s) d'attribut liée(s) à l'âge.":"Aucune régression cette période.")+" "+(development.retired?development.retired+" retraite(s) enregistrée(s).":"Aucune retraite cette période.")+" Développement global : "+development.players+" joueurs suivis. Entraînement : "+development.trainingGains+" progression(s) d'attribut chez "+development.trainingPlayers+" joueur(s); personnel de développement moyen "+development.coachSkill+"/99 ("+development.coaches+" entraîneur(s) évalué(s)). "+syncMessage);
 }
 

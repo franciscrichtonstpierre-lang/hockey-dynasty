@@ -9,6 +9,9 @@ on:
       - "scripts/export-registry-index.mjs"
       - "data/ahl/player-stats-2026-2027.json"
       - "data/echl/player-stats-2026-2027.json"
+      - "data/ahl/player-stats-2025-2026.json"
+      - "data/echl/player-stats-2025-2026.json"
+      - "data/europe/**"
       - "data/ncaa/**"
       - "data/junior/player-stats-*.json"
       - "tests/**"
@@ -18,6 +21,9 @@ on:
     - cron: "17 8 * * *"
 permissions:
   contents: write
+concurrency:
+  group: hockey-dynasty-data-sync-${{ github.ref }}
+  cancel-in-progress: false
 jobs:
   ratings:
     runs-on: ubuntu-latest
@@ -43,5 +49,7 @@ jobs:
             echo "Ratings unchanged"
           else
             git commit -m "Refresh shared cross-league player ratings"
+            git fetch origin main
+            git rebase origin/main
             git push
           fi

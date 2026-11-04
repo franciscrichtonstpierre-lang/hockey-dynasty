@@ -100,6 +100,16 @@ test("injuries slow development without erasing stored ability", () => {
   for (const key of attributes) assert.ok(injured.abilityAttributes[key].ca >= 1);
 });
 
+
+test("applies each attribute's current ability to its visible 0–99 rating", () => {
+  const state = engine.createInitialState(player, null);
+  const key = "FI";
+  state.abilityAttributes[key].ca = engine.visibleToAbility(81);
+  const result = engine.applyToRatings(player.attributes, state);
+  assert.equal(result[key], 81);
+  assert.equal(result.SH, engine.abilityToVisible(state.abilityAttributes.SH.ca));
+});
+
 test("application changes only the 16 visible ratings and keeps them within 0–99", () => {
   const initial = engine.createInitialState(player, null);
   const advanced = engine.advancePlayer(player, initial, { days: 28, asOf: start, training }).state;

@@ -25,9 +25,10 @@
         "OA": 78
       },
       "ratingStatus": "manual_pilot_calibration_owner_reference",
-      "ratingSource": "Owner-approved pilot calibration; NHL statistical references remain documented separately",
-      "ratingConfidence": "manual_calibration_anchor",
-      "ratingMethod": "owner_approved_pilot_anchor_v1"
+      "ratingSource": "NHL Stats REST regular-season player statistics; owner-approved pilot adjustment",
+      "ratingConfidence": "very_low",
+      "ratingMethod": "owner_approved_pilot_anchor_v1",
+      "potentialStatus": "provisional_model_estimate"
     },
     "8486067": {
       "name": "Gavin McKenna",
@@ -52,9 +53,10 @@
         "OA": 75
       },
       "ratingStatus": "manual_pilot_calibration_owner_reference",
-      "ratingSource": "Owner-approved pilot calibration; profile/statistical references remain documented separately",
-      "ratingConfidence": "manual_calibration_anchor",
-      "ratingMethod": "owner_approved_pilot_anchor_v1"
+      "ratingSource": "https://hockeyinsights.ca/team-pipeline/toronto-maple-leafs/",
+      "ratingConfidence": "very_low",
+      "ratingMethod": "owner_approved_pilot_anchor_v1",
+      "potentialStatus": "provisional_model_estimate"
     }
   }
 }

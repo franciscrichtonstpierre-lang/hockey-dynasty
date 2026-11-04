@@ -37,6 +37,27 @@ await save(
   "data/europe/player-stats-liiga-2026-2027.json"
 );
 
+const priorLiigaBase = "https://liiga.fi/api/v2/players/stats/summed/2026/2026/runkosarja/true";
+try {
+  const [priorSkaterRaw, priorGoalieRaw] = await Promise.all([
+    get(`${priorLiigaBase}?dataType=basicStats`),
+    get(`${priorLiigaBase}?dataType=basicStatsGk`)
+  ]);
+  const priorSkaters = normalizeLiigaSkaters(priorSkaterRaw);
+  const priorGoalies = normalizeLiigaGoalies(priorGoalieRaw);
+  if (priorSkaters.length >= 50 && priorGoalies.length >= 8) {
+    await save(
+      "LIIGA", "2025-2026", priorSkaters, priorGoalies,
+      "Official Liiga API v2 previous-season regular-season statistics",
+      "data/europe/player-stats-liiga-2025-2026.json"
+    );
+  } else {
+    console.warn("Liiga 2025-26: previous-season feed incomplete; no fallback file written.");
+  }
+} catch (error) {
+  console.warn(`Liiga 2025-26 previous-season feed unavailable: ${error.message}`);
+}
+
 const shlBase = "https://www.shl.se/api/statistics-v2/stats-info";
 let shlSeason = null, shlSkaters = [], shlGoalies = [];
 for (const candidate of [2027, 2026]) {

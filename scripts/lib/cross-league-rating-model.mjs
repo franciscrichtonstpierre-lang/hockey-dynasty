@@ -275,7 +275,7 @@ export function estimatePlayerPotential(player, overall = player?.overall) {
   };
 }
 
-export function matchStatIndex(player, indexes) {
+export function matchStatIndex(player, indexes, { allowCrossLeague = false } = {}) {
   const league = leagueKey(player?.currentLeague || player?.league);
   const preferred = indexes.get(league);
   const preferredList = Array.isArray(preferred) ? preferred : preferred ? [preferred] : [];
@@ -286,7 +286,7 @@ export function matchStatIndex(player, indexes) {
   // NHL prospect and secondary roster feeds often omit the player's current
   // league. Search every official feed by exact normalized name/ID, but accept
   // a fallback only when exactly one league has an unambiguous player match.
-  if (!["UNKNOWN", "OTHER"].includes(league)) return { index:preferredList[0] || null, row:null };
+  if (!["UNKNOWN", "OTHER"].includes(league) && !allowCrossLeague) return { index:preferredList[0] || null, row:null };
   const matches = [];
   for (const [key, value] of indexes.entries()) {
     if (key === league) continue;

@@ -9,6 +9,7 @@ on:
       - "scripts/export-registry-index.mjs"
       - "data/ahl/player-stats-2026-2027.json"
       - "data/echl/player-stats-2026-2027.json"
+      - "data/ncaa/**"
       - "data/junior/player-stats-*.json"
       - "tests/**"
       - ".github/workflows/refresh-ratings.yml"

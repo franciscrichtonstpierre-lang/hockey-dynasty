@@ -6,6 +6,12 @@ on:
       - ".github/workflows/check-interface.yml"
       - "index.html"
       - "player-development.js"
+      - "player-source-matching.js"
+      - "roster-import.js"
+      - "nhl-roster-adapter.js"
+      - "tests/player-source-matching.test.mjs"
+      - "tests/roster-import.test.mjs"
+      - "tests/nhl-roster-adapter.test.mjs"
       - "tests/player-development.test.mjs"
       - "scripts/check-inline-js.mjs"
   workflow_dispatch:
@@ -27,5 +33,13 @@ jobs:
         run: node --check player-development.js
       - name: Tester le moteur de développement
         run: node --test tests/player-development.test.mjs
+      - name: Tester le rapprochement des joueurs
+        run: node --test tests/player-source-matching.test.mjs
+      - name: Tester la normalisation des effectifs
+        run: node --test tests/roster-import.test.mjs
+      - name: Tester l’adaptateur NHL
+        run: node --test tests/nhl-roster-adapter.test.mjs
+      - name: Vérifier les modules de données joueurs
+        run: node --check player-source-matching.js && node --check roster-import.js && node --check nhl-roster-adapter.js
       - name: Vérifier la syntaxe JavaScript intégrée
         run: node scripts/check-inline-js.mjs

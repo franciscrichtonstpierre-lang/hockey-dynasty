@@ -119,8 +119,7 @@
       abilityAttributes[attribute] = {
         ca,
         pa,
-        progress: Math.max(0, numberOr(old?.progress, 0)),
-        regressionProgress: Math.max(0, numberOr(old?.regressionProgress, 0))
+        progress: Math.max(0, numberOr(old?.progress, numberOr(old?.regressionProgress, 0)))
       };
     }
 
@@ -136,8 +135,6 @@
       disposition,
       rngState,
       abilityAttributes,
-      delta: 0,
-      experienceDays: Math.max(0, numberOr(prior.experienceDays, numberOr(prior.experience, 0))),
       currentAbility: Math.round(ATTRIBUTES.reduce((sum, key) => sum + abilityAttributes[key].ca, 0) / ATTRIBUTES.length),
       potentialAbility: Math.round(ATTRIBUTES.reduce((sum, key) => sum + abilityAttributes[key].pa, 0) / ATTRIBUTES.length),
       potentialSource: player?.potentialStatus || (player?.potential != null ? "unverified" : "estimated_from_current_rating"),
@@ -221,10 +218,10 @@
           const physicalWeight = ["SK", "EN", "ST", "HI", "SR"].includes(attribute) ? 1.35
             : ["FI", "SH", "PL", "CH", "PO", "DEF", "OFF"].includes(attribute) ? .82 : .48;
           const regressionRate = .00135 * (age - 31) * physicalWeight * state.disposition;
-          ability.regressionProgress += regressionRate * (.7 + random(state) * .6);
-          while (ability.regressionProgress >= 1 && ability.ca > 1) {
+          ability.progress += regressionRate * (.7 + random(state) * .6);
+          while (ability.progress >= 1 && ability.ca > 1) {
             ability.ca--;
-            ability.regressionProgress -= 1;
+            ability.progress -= 1;
             regressions++;
           }
           continue;
@@ -252,7 +249,6 @@
           if (trainingBonus > 0) trainingGains++;
         }
       }
-      state.experienceDays += 1;
     }
 
     state.currentAbility = Math.round(ATTRIBUTES.reduce((sum, key) => sum + state.abilityAttributes[key].ca, 0) / ATTRIBUTES.length);

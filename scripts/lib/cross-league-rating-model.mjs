@@ -309,10 +309,12 @@ export function matchStatIndex(player, indexes, { allowCrossLeague = false } = {
   const league = leagueKey(player?.currentLeague || player?.league);
   const preferred = indexes.get(league);
   const preferredList = Array.isArray(preferred) ? preferred : preferred ? [preferred] : [];
+  const preferredMatches = [];
   for (const index of preferredList) {
     const row = matchLeagueStats(player, index);
-    if (row) return { index, row };
+    if (row) preferredMatches.push({ index, row });
   }
+  if (preferredMatches.length) return { ...preferredMatches[0], additionalMatches:preferredMatches.slice(1) };
   // NHL prospect and secondary roster feeds often omit the player's current
   // league. Search every official feed by exact normalized name/ID, but accept
   // a fallback only when exactly one league has an unambiguous player match.
@@ -321,12 +323,12 @@ export function matchStatIndex(player, indexes, { allowCrossLeague = false } = {
   for (const [key, value] of indexes.entries()) {
     if (key === league) continue;
     const list = Array.isArray(value) ? value : [value];
-    let found = null;
+    const found = [];
     for (const index of list) {
       const row = matchLeagueStats(player, index);
-      if (row) { found = { index, row }; break; }
+      if (row) found.push({ index, row });
     }
-    if (found) matches.push(found);
+    if (found.length) matches.push({ ...found[0], additionalMatches:found.slice(1) });
   }
   return matches.length === 1 ? matches[0] : { index:preferredList[0] || null, row:null };
 }

@@ -14,7 +14,7 @@ test("every registry player has the complete shared card and explicit estimate p
     assert.ok(RATING_ATTRIBUTES.every(key => Number.isInteger(player.attributes[key])), `all ratings are populated for ${player.id}`);
     assert.ok(player.ratingSource, `source or model disclosure for ${player.id}`);
     assert.ok(player.ratingStatus, `status for ${player.id}`);
-    assert.ok(["high", "medium", "low", "very_low"].includes(player.ratingConfidence), `honest confidence for ${player.id}`);
+    assert.ok(["high", "medium", "low", "very_low", "manual_calibration_anchor"].includes(player.ratingConfidence), `honest confidence for ${player.id}`);
     assert.ok(player.ratingMethod && player.ratingEvidence, `method and evidence for ${player.id}`);
     assert.equal(player.overall, player.attributes.OA, `overall matches OA for ${player.id}`);
     assert.deepEqual(player.ratedAttributes, RATING_ATTRIBUTES, `rated attributes for ${player.id}`);

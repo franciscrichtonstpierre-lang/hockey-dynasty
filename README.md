@@ -40,3 +40,28 @@ Saison cible : **2026–2027**. Ce dépôt contient l’application et les insta
 - Le potentiel est séparé des 16 attributs. Le champ `potential` reste réservé aux valeurs source-vérifiées; `potentialEstimate` est une estimation provisoire calculée séparément à partir de la cote actuelle et d’une tranche d’âge. Le dernier audit n’a trouvé aucune cote de potentiel source-vérifiée.
 - Les salaires, contrats, conditions de choix, propriétaires de choix et cotes non confirmés ne sont pas fabriqués.
 - La publication automatique est bloquée si la vérification JavaScript ou l’audit final échoue. Une synchronisation réussie ne remplace pas la lecture des résultats de l’audit; les données estimées restent distinctes des données vérifiées.
+
+## Références externes pour les cotes et potentiels
+
+La base doit distinguer les faits vérifiables, les notes de jeux vidéo et les estimations Hockey Dynasty. La hiérarchie de référence est la suivante :
+
+1. **EA SPORTS NHL 27 (source officielle)** : utiliser les notes publiques de joueurs et les attributs publiés par EA comme point d'ancrage comparatif lorsqu'ils existent. Conserver la valeur originale, la date de consultation, l'URL, la saison/édition et le nom exact de l'attribut EA. Les attributs EA qui n'ont pas d'équivalent direct dans FI/SH/PL/ST/CH/PO/HI/SK/EN/PE/FA/LE/SR/OFF/DEF ne doivent pas être forcés dans une mauvaise colonne.
+2. **Statistiques et profils officiels des ligues** : API NHL, NHL EDGE lorsqu'une mesure est publiée, statistiques AHL/CHL/NCAA/Europe et profils officiels pour identité, âge, position, équipe et production. Ces données aident à estimer les cotes de simulation, mais ne sont pas des notes de dépistage.
+3. **Rapports de dépistage et bases de prospects reconnues** : utiliser plusieurs évaluations indépendantes et datées pour le potentiel et les qualités des espoirs (par exemple rapports de dépistage publics, listes de classement et profils détaillés). Enregistrer chaque source séparément; ne jamais convertir mécaniquement un rang en potentiel certain.
+4. **Autres bases de données et analyses publiques** : sources secondaires uniquement, avec date et niveau de confiance, pour recouper ou combler les champs non couverts.
+
+### Règles d'intégration
+- Le potentiel (PA) et la constance (CON) sont des paramètres de simulation Hockey Dynasty distincts des notes NHL 27. NHL 27 ne publie pas de potentiel de carrière EHM ni de constance équivalente : ces champs ne doivent donc jamais être copiés ou présentés comme des valeurs EA.
+- Un potentiel estimé doit rester marqué `estimated`; un potentiel vérifié doit avoir une source explicite et une date. Le rang de repêchage, l'âge ou la réputation ne suffisent jamais seuls à fixer un PA.
+- Les notes EA servent d'ancrage pour les attributs comparables et le niveau actuel, pas de plafond de progression. La progression future est calculée par le moteur CA/PA, le développement, le temps de glace, les blessures, l'entraînement et la constance.
+- Chaque valeur importée doit conserver `source`, `sourceUrl`, `sourceCheckedAt`, `sourceEdition`, `sourceAttribute`, `confidence` et `status`. Garder la note brute EA séparée de la note normalisée Hockey Dynasty.
+- En cas de conflit entre deux sources, conserver les deux observations et choisir la valeur de simulation par une règle documentée; ne jamais écraser silencieusement une valeur vérifiée.
+- Respecter les conditions d'utilisation et les droits de redistribution des sources. Ne pas aspirer ni redistribuer des bases propriétaires complètes sans autorisation; importer les données publiques permises et les références nécessaires à l'audit.
+
+Sources de référence à consulter :
+- [EA SPORTS NHL 27 — cotes officielles](https://www.ea.com/games/nhl/ratings)
+- [EA SPORTS NHL 27 — guide officiel des attributs](https://help.ea.com/en/articles/nhl/nhl-attributes-guide/)
+- [NHL Stats](https://api.nhle.com/)
+- [Elite Prospects](https://www.eliteprospects.com/)
+- [HockeyProspecting](https://hockeyprospecting.com/)
+- [Daily Faceoff — prospect rankings](https://www.dailyfaceoff.com/)

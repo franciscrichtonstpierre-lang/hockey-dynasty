@@ -11,8 +11,8 @@ const registry = await readJson("data/players/registry.json");
 const ratings = await readJson("data/ratings.json");
 const statsFiles = [
   "data/ahl/player-stats-2026-2027.json",
-  "data/echl/player-stats-2026-2027.json",
   "data/ahl/player-stats-2025-2026.json",
+  "data/echl/player-stats-2026-2027.json",
   "data/echl/player-stats-2025-2026.json",
   "data/ncaa/player-stats-2026-2027.json",
   "data/ncaa/player-stats-2025-2026.json",
@@ -21,14 +21,13 @@ const statsFiles = [
   "data/europe/player-stats-shl-2026-2027.json",
   "data/europe/player-stats-shl-2025-2026.json",
   "data/junior/player-stats-ohl-2026-2027.json",
-  "data/junior/player-stats-ohl-2025-2026.json", 
+  "data/junior/player-stats-ohl-2025-2026.json",
   "data/junior/player-stats-whl-2026-2027.json",
-  "data/junior/player-stats-whl-2025-2026.json", 
+  "data/junior/player-stats-whl-2025-2026.json",
   "data/junior/player-stats-qmjhl-2026-2027.json",
-  "data/junior/player-stats-qmjhl-2025-2026.json", 
-  "data/junior/player-stats-ushl-2026-2027.json"
-  "data/junior/player-stats-ushl-2025-2026.json",
-  "data/junior/player-stats-ushl-2026-2027.json"
+  "data/junior/player-stats-qmjhl-2025-2026.json",
+  "data/junior/player-stats-ushl-2026-2027.json",
+  "data/junior/player-stats-ushl-2025-2026.json"
 ];
 const statsIndexes = new Map();
 for (const path of statsFiles) {

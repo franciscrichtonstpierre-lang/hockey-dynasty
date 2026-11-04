@@ -141,6 +141,7 @@
       potentialSource: player?.potentialStatus || (player?.potential != null ? "unverified" : "estimated_from_current_rating"),
       potentialIsEstimated: !["source_verified", "verified"].includes(String(player?.potentialStatus || "").toLowerCase()),
       lastUpdated: prior.lastUpdated || null,
+      updatedAt: prior.updatedAt || null,
       retired: !!prior.retired,
       retiredOn: prior.retiredOn || null
     };
@@ -262,6 +263,7 @@
     state.currentAbility = Math.round(state.abilityAttributes.reduce((sum, node) => sum + node[0], 0) / ATTRIBUTES.length);
     state.potentialAbility = Math.round(state.abilityAttributes.reduce((sum, node) => sum + node[1], 0) / ATTRIBUTES.length);
     state.lastUpdated = end.toISOString().slice(0, 10);
+    state.updatedAt = end.toISOString();
     return { state, gains, regressions, trainingGains, retired };
   }
 

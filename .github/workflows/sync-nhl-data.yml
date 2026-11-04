@@ -8,6 +8,7 @@ on:
       - "scripts/sync-ahl-player-stats.mjs"
       - "scripts/sync-cross-league-player-stats.mjs"
       - "scripts/apply-player-ratings.mjs"
+      - "scripts/lib/cross-league-rating-model.mjs"
       - "scripts/lib/player-ratings.mjs"
       - "scripts/export-registry-index.mjs"
       - "scripts/sync-echl-data.mjs"

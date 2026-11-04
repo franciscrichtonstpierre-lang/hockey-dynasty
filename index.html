@@ -604,22 +604,30 @@ async function developPlayers(days,asOf){
  window.hdDevelopmentSummary=summary;
  return summary;
 }
+let hdSharedDevelopmentLoadedLeagueId=null,hdSharedDevelopmentLoadedAt=0,hdSharedDevelopmentLoadPromise=null;
 async function hdLoadSharedPlayerDevelopment(force=false){
- if(!activeOnlineLeagueId||!authClient||!signedInUser)return {loaded:0,localOnly:true};
+ if(!activeOnlineLeagueId||!authClient||!signedInUser){hdSharedDevelopmentLoadedLeagueId=null;hdSharedDevelopmentLoadedAt=0;return {loaded:0,localOnly:true};}
  if(S.developmentLeagueId&&S.developmentLeagueId!==activeOnlineLeagueId){S.development={};S.retiredPlayers={};}
  S.developmentLeagueId=activeOnlineLeagueId;
- const {data,error}=await authClient.from("league_game_states").select("state,revision").eq("league_id",activeOnlineLeagueId).maybeSingle();
- if(error)throw error;
- const remote=data?.state?.playerDevelopment;
- if(!remote)return {loaded:0,localOnly:false,revision:Number(data?.revision)||0};
- let loaded=0;
- for(const [key,remoteState] of Object.entries(remote.development||{})){
-  const local=S.development?.[key];
-  if(!local||String(remoteState?.lastUpdated||"")>=String(local.lastUpdated||"")){S.development[key]=remoteState;loaded++}
- }
- S.retiredPlayers={...(remote.retiredPlayers||{}),...(S.retiredPlayers||{})};
- S.developmentSyncRevision=Number(data?.revision)||0;
- return {loaded,localOnly:false,revision:S.developmentSyncRevision};
+ if(!force&&hdSharedDevelopmentLoadedLeagueId===activeOnlineLeagueId&&Date.now()-hdSharedDevelopmentLoadedAt<30000)return {loaded:0,localOnly:false,cached:true};
+ if(hdSharedDevelopmentLoadPromise)return hdSharedDevelopmentLoadPromise;
+ hdSharedDevelopmentLoadPromise=(async()=>{
+  const {data,error}=await authClient.from("league_game_states").select("state,revision").eq("league_id",activeOnlineLeagueId).maybeSingle();
+  if(error)throw error;
+  const remote=data?.state?.playerDevelopment;
+  let loaded=0;
+  if(remote){
+   for(const [key,remoteState] of Object.entries(remote.development||{})){
+    const local=S.development?.[key];
+    if(!local||String(remoteState?.lastUpdated||"")>=String(local.lastUpdated||"")){S.development[key]=remoteState;loaded++}
+   }
+   S.retiredPlayers={...(remote.retiredPlayers||{}),...(S.retiredPlayers||{})};
+  }
+  S.developmentSyncRevision=Number(data?.revision)||0;
+  hdSharedDevelopmentLoadedLeagueId=activeOnlineLeagueId;hdSharedDevelopmentLoadedAt=Date.now();
+  return {loaded,localOnly:false,revision:S.developmentSyncRevision};
+ })();
+ try{return await hdSharedDevelopmentLoadPromise}finally{hdSharedDevelopmentLoadPromise=null}
 }
 async function hdPersistSharedPlayerDevelopment(){
  if(!activeOnlineLeagueId||!authClient||!signedInUser)return {saved:0,localOnly:true};
@@ -635,7 +643,7 @@ async function hdPersistSharedPlayerDevelopment(){
   league_id:activeOnlineLeagueId,state:nextState,revision,updated_by:signedInUser.id
  },{onConflict:"league_id"});
  if(saveError)throw saveError;
- S.developmentSyncRevision=revision;
+ S.developmentSyncRevision=revision;hdSharedDevelopmentLoadedLeagueId=activeOnlineLeagueId;hdSharedDevelopmentLoadedAt=Date.now();
  return {saved:Object.keys(S.development||{}).length,localOnly:false,revision};
 }
 async function hdLoadOrganizationTrainingGroups(teamCode){
@@ -661,7 +669,6 @@ async function simulate(){
  let selectedRoster=null;
  try{selectedRoster=await fetchRosterData(selectedCode);window.hdRosterCache=[...(selectedRoster.forwards||[]),...(selectedRoster.defensemen||[]),...(selectedRoster.goalies||[])];}catch(e){window.hdRosterCache=[];}
  await loadRatings(true);
- await hdLoadSharedPlayerDevelopment(true);
  const startDate=new Date(Date.UTC(Number(S.season)||2026,9,7));
  startDate.setUTCDate(startDate.getUTCDate()+Math.max(0,Number(S.day)||0));
  const endDate=new Date(startDate);endDate.setUTCDate(endDate.getUTCDate()+selectedDays);
@@ -759,7 +766,7 @@ let hdRatingsLoadPromise=null;
 let hdRegistryById=new Map(),hdRegistryByNhlId=new Map(),hdRegistryByAhlId=new Map(),hdRegistryByName=new Map();
 const ratingNameKey=value=>String(value||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLocaleLowerCase("fr").replace(/[^a-z0-9]+/g," ").trim();
 async function fetchRatingRegistry(){const nonce=Date.now(),urls=["./data/players/registry-index/ratings-lookup.json?v="+nonce,"https://raw.githubusercontent.com/franciscrichtonstpierre-lang/hockey-dynasty/main/data/players/registry-index/ratings-lookup.json?v="+nonce,"https://cdn.jsdelivr.net/gh/franciscrichtonstpierre-lang/hockey-dynasty@main/data/players/registry-index/ratings-lookup.json?v="+nonce];let lastError=null;for(const url of urls){try{const response=await fetch(url,{cache:"no-store"});if(!response.ok)throw Error("HTTP "+response.status);const data=await response.json();if(!Array.isArray(data.players)||!data.players.length)throw Error("Index des cotes vide");return data}catch(error){lastError=error}}throw lastError||Error("Index des cotes introuvable")}
-async function loadRatings(forceOverrides=false){if(activeOnlineLeagueId&&authClient&&signedInUser&&typeof loadLeaguePlayerOverrides==="function")await loadLeaguePlayerOverrides(!!forceOverrides);if(hdRatingsLoaded&&hdRegistryRatingsLoaded)return;if(hdRatingsLoadPromise)return hdRatingsLoadPromise;hdRatingsLoadPromise=(async()=>{const loads=await Promise.allSettled([hdRatingsLoaded?Promise.resolve(null):fetch("./data/ratings.json?"+Date.now(),{cache:"no-store"}).then(r=>r.ok?r.json():null),hdRegistryRatingsLoaded?Promise.resolve(null):fetchRatingRegistry()]);if(loads[0].status==="fulfilled"&&loads[0].value){const d=loads[0].value;hdRatings=d.players||{};hdRatingMetadata=d.playerMetadata||{};hdRatingsLoaded=true}if(loads[1].status==="fulfilled"&&loads[1].value){hdRegistryById.clear();hdRegistryByNhlId.clear();hdRegistryByAhlId.clear();hdRegistryByName.clear();for(const player of loads[1].value.players||[]){if(player.id)hdRegistryById.set(String(player.id),player);if(player.nhlPlayerId!=null)hdRegistryByNhlId.set(String(player.nhlPlayerId),player);const ahlId=String(player.id||"").match(/^ahl:(.+)$/i)?.[1];if(ahlId)hdRegistryByAhlId.set(ahlId,player);const key=ratingNameKey(player.name);if(key){const group=hdRegistryByName.get(key)||[];group.push(player);hdRegistryByName.set(key,group)}}hdRegistryRatingsLoaded=true}})();try{await hdRatingsLoadPromise}finally{hdRatingsLoadPromise=null}}
+async function loadRatings(forceOverrides=false){if(activeOnlineLeagueId&&authClient&&signedInUser&&typeof loadLeaguePlayerOverrides==="function")await loadLeaguePlayerOverrides(!!forceOverrides);if(activeOnlineLeagueId&&authClient&&signedInUser&&typeof hdLoadSharedPlayerDevelopment==="function")await hdLoadSharedPlayerDevelopment(!!forceOverrides);if(hdRatingsLoaded&&hdRegistryRatingsLoaded)return;if(hdRatingsLoadPromise)return hdRatingsLoadPromise;hdRatingsLoadPromise=(async()=>{const loads=await Promise.allSettled([hdRatingsLoaded?Promise.resolve(null):fetch("./data/ratings.json?"+Date.now(),{cache:"no-store"}).then(r=>r.ok?r.json():null),hdRegistryRatingsLoaded?Promise.resolve(null):fetchRatingRegistry()]);if(loads[0].status==="fulfilled"&&loads[0].value){const d=loads[0].value;hdRatings=d.players||{};hdRatingMetadata=d.playerMetadata||{};hdRatingsLoaded=true}if(loads[1].status==="fulfilled"&&loads[1].value){hdRegistryById.clear();hdRegistryByNhlId.clear();hdRegistryByAhlId.clear();hdRegistryByName.clear();for(const player of loads[1].value.players||[]){if(player.id)hdRegistryById.set(String(player.id),player);if(player.nhlPlayerId!=null)hdRegistryByNhlId.set(String(player.nhlPlayerId),player);const ahlId=String(player.id||"").match(/^ahl:(.+)$/i)?.[1];if(ahlId)hdRegistryByAhlId.set(ahlId,player);const key=ratingNameKey(player.name);if(key){const group=hdRegistryByName.get(key)||[];group.push(player);hdRegistryByName.set(key,group)}}hdRegistryRatingsLoaded=true}})();try{await hdRatingsLoadPromise}finally{hdRatingsLoadPromise=null}}
 function registryRatingForPlayer(player,kind="",teamCode="") {const rawId=String(player?.id||player?.playerId||player?.player_id||"");if(kind==="LAH"){const ahl=hdRegistryByAhlId.get(rawId);if(ahl)return ahl}if(/^\d+$/.test(rawId)){const byNhl=hdRegistryByNhlId.get(rawId);if(byNhl)return byNhl}const byId=hdRegistryById.get(rawId)||hdRegistryById.get(/^ahl:/i.test(rawId)?rawId:"nhl:"+rawId);if(byId)return byId;const full=player?.name||player?.fullName||[player?.firstName?.default||player?.firstName||player?.first_name||"",player?.lastName?.default||player?.lastName||player?.last_name||""].join(" ").trim();let eligible=hdRegistryByName.get(ratingNameKey(full))||[];const team=teamCode||player?.nhlRightsTeam||player?.rightsTeam||player?.nhlTeamCode||"";if(team){const sameTeam=eligible.filter(x=>x.nhlRightsTeam===team);if(sameTeam.length)eligible=sameTeam;const exactFallback=eligible.filter(x=>x.prospectFallback&&x.nhlRightsTeam===team);if(exactFallback.length===1)return exactFallback[0]}if(kind==="LAH"){const ahl=eligible.filter(x=>x.currentLeague==="AHL");if(ahl.length)eligible=ahl}else{const league=String(player?.currentLeague||player?.league||player?.leagueName||"").toUpperCase();if(league){const sameLeague=eligible.filter(x=>String(x.currentLeague||"").toUpperCase()===league);if(sameLeague.length)eligible=sameLeague}}if(eligible.length===1)return eligible[0];const rawPos=String(player?.positionCode||player?.position||player?.position_code||"").toUpperCase();const group=value=>/^(G|GOALIE|GOALTENDER)$/.test(value)?"G":/^(D|DEFENSE|DEFENCEMAN|DEFENSEMAN)$/.test(value)?"D":/^(F|C|L|R|LW|RW|W|FORWARD|CENTRE|CENTER)$/.test(value)?"F":"";const pos=group(rawPos);if(pos){const samePos=eligible.filter(x=>String(x.position||"").toUpperCase()===pos);if(samePos.length)eligible=samePos}return eligible.length===1?eligible[0]:null}
 function applyDevelopment(id,r,player){let source=r;const override=player&&typeof uhmDbPlayerId==="function"&&typeof UHM_PLAYER_OVERRIDES_BY_ID!=="undefined"?UHM_PLAYER_OVERRIDES_BY_ID.get(uhmDbPlayerId(player)):null;if(override?.payload?.attributes)source=override.payload.attributes;const dev=S.development?.[String(id)]||S.development?.[hdCanonicalPlayerId(String(id))]||{};if(window.HDPlayerDevelopment)return HDPlayerDevelopment.applyToRatings(source,dev);const delta=Number(dev.delta||0),specific=dev.attributeDelta||{};if(!delta&&!Object.keys(specific).length)return source;const out={...source};for(const k of ["FI","SH","PL","ST","CH","PO","HI","SK","EN","PE","FA","LE","SR","OFF","DEF","OA"]){if(Number.isFinite(Number(out[k])))out[k]=Math.max(0,Math.min(99,Number(out[k])+delta+(Number(specific[k])||0)))}return out}
 function playerAttributes(p){const id=String(p.id||p.playerId||p.nhlPlayerId||"");const match=typeof registryRatingForPlayer==="function"?registryRatingForPlayer(p,String(p.currentLeague||p.league||"").toUpperCase()==="AHL"?"LAH":"",p.nhlRightsTeam||p.rightsTeam):null;const source=(id?hdRatings[id]:null)||match?.attributes||p.attributes||{};return applyDevelopment(String(match?.id||id),{...source},match||p)}

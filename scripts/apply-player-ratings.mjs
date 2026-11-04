@@ -108,9 +108,10 @@ for (const player of registry.players || []) {
   if (player.nhlPlayerId == null || player.currentLeague !== "NHL") continue;
   const id = String(player.nhlPlayerId);
   directSourceRatings[id] = player.attributes;
+  const fightingMajors = directMetadata[id]?.fightingMajors ?? null;
   directMetadata[id] = {
     source:player.ratingSource, status:player.ratingStatus, confidence:player.ratingConfidence,
-    sampleConfidence:player.ratingSampleConfidence || null, sampleSize:player.ratingSampleSize ?? null,
+    sampleConfidence:player.ratingSampleConfidence || null, sampleSize:player.ratingSampleSize ?? null, fightingMajors,
     ratedAttributes:player.ratedAttributes, modeledAttributes:player.ratingModeledAttributes || [],
     method:player.ratingMethod, evidence:player.ratingEvidence, position:player.detailedPosition || player.position || null,
     season:ratings.season || "2026-2027"

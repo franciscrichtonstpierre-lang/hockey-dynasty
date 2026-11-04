@@ -629,6 +629,22 @@ async function hdLoadSharedPlayerDevelopment(force=false){
  })();
  try{return await hdSharedDevelopmentLoadPromise}finally{hdSharedDevelopmentLoadPromise=null}
 }
+async function hdResetSharedPlayerDevelopmentForPlayer(player){
+ if(!activeOnlineLeagueId||!authClient||!signedInUser)return;
+ const key=hdCanonicalPlayerId(player?.id||player?.playerId||player?.registryId);if(!key)return;
+ const {data,error}=await authClient.from("league_game_states").select("state,revision").eq("league_id",activeOnlineLeagueId).maybeSingle();
+ if(error)throw error;
+ const existingState=data?.state&&typeof data.state==="object"?data.state:{};
+ const playerDevelopment=existingState.playerDevelopment||{};
+ const development={...(playerDevelopment.development||{})};
+ if(!Object.prototype.hasOwnProperty.call(development,key)){hdSharedDevelopmentLoadedAt=0;return;}
+ delete development[key];
+ const state={...existingState,playerDevelopment:{...playerDevelopment,development,updatedAt:new Date().toISOString()}};
+ const revision=(Number(data?.revision)||0)+1;
+ const {error:saveError}=await authClient.from("league_game_states").upsert({league_id:activeOnlineLeagueId,state,revision,updated_by:signedInUser.id},{onConflict:"league_id"});
+ if(saveError)throw saveError;
+ S.developmentSyncRevision=revision;hdSharedDevelopmentLoadedAt=0;
+}
 async function hdPersistSharedPlayerDevelopment(){
  if(!activeOnlineLeagueId||!authClient||!signedInUser)return {saved:0,localOnly:true};
  const {data,error}=await authClient.from("league_game_states").select("state,revision").eq("league_id",activeOnlineLeagueId).maybeSingle();
@@ -1384,7 +1400,7 @@ async function commSavePlayer(){
   const record={league_id:activeOnlineLeagueId,player_id:dbPlayerId,season:"2026-2027",team_code:p.code||p.teamCode||null,league_code:patch.league??p.league??null,nhl_rights_team:patch.rightsTeam??p.rightsTeam??null,full_name:patch.name??p.name,overall:patch.overall??p.overall??null,potential:patch.potential??p.potential??null,payload:mergedPayload,updated_by:signedInUser.id};
   const {error}=await authClient.from("league_player_overrides").upsert(record,{onConflict:"league_id,player_id"});
   if(error){if(status)status.textContent="Fiche enregistrée localement, mais synchronisation Supabase échouée : "+(error.message||"erreur inconnue");}
-  else{UHM_PLAYER_OVERRIDES_BY_ID.set(dbPlayerId,record);if(status)status.textContent="Fiche enregistrée et synchronisée dans la ligue. Les autres DG peuvent consulter cette modification.";}
+  else{UHM_PLAYER_OVERRIDES_BY_ID.set(dbPlayerId,record);if(ratingsEdited){try{await hdResetSharedPlayerDevelopmentForPlayer(p)}catch(resetError){if(status)status.textContent="Fiche enregistrée, mais remise à zéro du développement échouée : "+(resetError.message||"erreur inconnue");commSearchPlayers();return}}if(status)status.textContent="Fiche enregistrée et synchronisée dans la ligue. Les autres DG peuvent consulter cette modification.";}
  }else if(status)status.textContent="Fiche enregistrée sur cet appareil. En mode hors ligne, exporte les données pour transférer cette modification.";
  commSearchPlayers();
 }

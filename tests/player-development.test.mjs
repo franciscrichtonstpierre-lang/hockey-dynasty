@@ -62,6 +62,12 @@ test("migrates existing overall and attribute-specific development deltas", () =
   assert.equal(legacy.schemaVersion, 2);
 });
 
+test("higher consistency improves a player's development disposition", () => {
+  const low = engine.createInitialState({ ...player, id: "same-prospect", CON: 45 }, null);
+  const high = engine.createInitialState({ ...player, id: "same-prospect", CON: 95 }, null);
+  assert.ok(high.disposition > low.disposition);
+});
+
 test("assigns a position-specific individual peak age", () => {
   const forward = engine.createInitialState({ ...player, position: "F" }, null);
   const defender = engine.createInitialState({ ...player, id: "nhl:8470002", position: "D" }, null);

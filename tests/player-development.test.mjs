@@ -163,3 +163,16 @@ test("applyToRatings replaces stored OA with the calculated positional overall",
   assert.equal(result.OA, engine.calculateOverall(result, "F"));
   assert.notEqual(result.OA, 99);
 });
+
+test("excludes derived OA from aggregate current and potential ability", () => {
+  const state = engine.createInitialState(player, null);
+  const skillNodes = state.abilityAttributes.slice(0, attributes.length - 1);
+  const expectedCurrent = Math.round(skillNodes.reduce((sum, node) => sum + node[0], 0) / skillNodes.length);
+  const expectedPotential = Math.round(skillNodes.reduce((sum, node) => sum + node[1], 0) / skillNodes.length);
+  assert.equal(state.currentAbility, expectedCurrent);
+  assert.equal(state.potentialAbility, expectedPotential);
+  const advanced = engine.advancePlayer(player, state, { days: 14, asOf: start, training }).state;
+  const advancedSkills = advanced.abilityAttributes.slice(0, attributes.length - 1);
+  assert.equal(advanced.currentAbility, Math.round(advancedSkills.reduce((sum, node) => sum + node[0], 0) / advancedSkills.length));
+  assert.equal(advanced.potentialAbility, Math.round(advancedSkills.reduce((sum, node) => sum + node[1], 0) / advancedSkills.length));
+});

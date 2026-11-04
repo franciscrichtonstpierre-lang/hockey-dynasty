@@ -24,15 +24,22 @@
     "source": "string",
     "sourceUpdatedAt": "ISO-8601|null",
     "attributes": {
-      "skating": "0-99|null",
-      "shooting": "0-99|null",
-      "passing": "0-99|null",
-      "puckControl": "0-99|null",
-      "defense": "0-99|null",
-      "physical": "0-99|null",
-      "hockeyIQ": "0-99|null",
-      "faceoffs": "0-99|null",
-      "goaltending": "0-99|null"
+      "FI": "0-99|null",
+      "SH": "0-99|null",
+      "PL": "0-99|null",
+      "ST": "0-99|null",
+      "CH": "0-99|null",
+      "PO": "0-99|null",
+      "HI": "0-99|null",
+      "SK": "0-99|null",
+      "EN": "0-99|null",
+      "PE": "0-99|null",
+      "FA": "0-99|null",
+      "LE": "0-99|null",
+      "SR": "0-99|null",
+      "OFF": "0-99|null",
+      "DEF": "0-99|null",
+      "OA": "0-99|null"
     },
     "overall": "0-99|null",
     "potential": "0-99|null",
@@ -42,7 +49,8 @@
       "capHit": "number|null",
       "yearsRemaining": "number|null",
       "expiryType": "RFA|UFA|null"
-    }
+    },
+    "development": "Per-player hidden development state: internal current/potential ability 1-200 for each of the 16 visible attributes, per-attribute progress, deterministic development seed, last updated date, and retirement status. Stored per league in league_player_overrides.payload."
   },
   "draftPick": {
     "pickId": "string stable",
@@ -60,7 +68,9 @@
     "Séparer le club où joue le joueur de l'équipe NHL qui détient ses droits.",
     "Ne jamais inventer une cote globale, des attributs, un potentiel, un contrat ou des droits.",
     "Conserver la provenance et la date de mise à jour de chaque import.",
-    "Les effectifs NHL, les joueurs AHL, les espoirs hors Amérique du Nord et les choix de repêchage sont des ensembles distincts à réconcilier."
+    "Les effectifs NHL, les joueurs AHL, les espoirs hors Amérique du Nord et les choix de repêchage sont des ensembles distincts à réconcilier.",
+    "Keep hidden current ability and potential ability on a 1-200 scale per visible attribute; do not expose them as the public 0-99 ratings.",
+    "Accumulate player development by day and apply changes at the end of the selected 7, 14, or 28 day simulation block."
   ],
   "coach": {
     "coachId": "string — identifiant stable",

@@ -40,3 +40,15 @@ Saison cible : **2026–2027**. Ce dépôt contient l’application et les insta
 - Le potentiel est séparé des 16 attributs. Le champ `potential` reste réservé aux valeurs source-vérifiées; `potentialEstimate` est une estimation provisoire calculée séparément à partir de la cote actuelle et d’une tranche d’âge. Le dernier audit n’a trouvé aucune cote de potentiel source-vérifiée.
 - Les salaires, contrats, conditions de choix, propriétaires de choix et cotes non confirmés ne sont pas fabriqués.
 - La publication automatique est bloquée si la vérification JavaScript ou l’audit final échoue. Une synchronisation réussie ne remplace pas la lecture des résultats de l’audit; les données estimées restent distinctes des données vérifiées.
+
+## Rapprochement des identités et observations externes
+
+- `player-source-matching.js` associe les observations externes à un joueur interne en privilégiant les identifiants stables (ID NHL, ID Elite Prospects ou ID externe).
+- En l'absence d'identifiant, le module utilise le nom normalisé (accents et suffixes neutralisés), puis la date de naissance et la position lorsqu'elles sont disponibles.
+- Une correspondance incertaine est retournée comme `ambiguous` : aucun joueur n'est choisi automatiquement et aucun doublon n'est fusionné.
+- Les observations de sources différentes sont conservées séparément. Si deux valeurs normalisées divergent pour un même joueur et attribut, le statut devient `conflicting` et aucune valeur n'est proposée comme vérité.
+- Les notes NHL 27 sont ancrées sur le portail officiel EA [NHL 27 Player Ratings](https://www.ea.com/games/nhl/ratings). EA expose notamment OVR, ACL, SPD, DEK, PAS, SLP et WSP; seules les correspondances sémantiques validées sont converties vers les attributs Hockey Dynasty. Le OVR EA n'écrase jamais l'OA calculé par Hockey Dynasty.
+- Le portail officiel EA confirme la publication des notes NHL 27 et leur calendrier de révélations; les notes doivent être importées avec leur édition et date de consultation. Les notes EA ne fournissent pas le PA EHM ni la constance.
+- Les sources de dépistage et statistiques restent des observations indépendantes. Les estimations de potentiel A/B/C restent explicitement des estimations de modèle tant qu'une source de dépistage n'appuie pas le jugement.
+
+Tests du rapprochement : `tests/player-source-matching.test.mjs`.

@@ -88,7 +88,7 @@ for (const player of registry.players || []) {
   player.overall = override.overall;
   player.potential = override.potential;
   player.potentialEstimate = override.potential;
-  player.potentialStatus = "owner_approved_pilot_anchor";
+  player.potentialStatus = override.potentialStatus || "provisional_model_estimate";
   player.ratingSource = override.ratingSource;
   player.ratingConfidence = override.ratingConfidence;
   player.ratingStatus = override.ratingStatus;

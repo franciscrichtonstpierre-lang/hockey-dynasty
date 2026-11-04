@@ -50,7 +50,7 @@ for (const player of registry.players || []) {
   const directMeta = playerId ? directMetadata[playerId] : null;
   const hasNhlStatistics = directMeta?.evidence === "nhl_player_statistics" || /NHL Stats REST/i.test(directMeta?.source || "");
   const match = matchStatIndex(player, statsIndexes, {
-    allowCrossLeague: String(player.currentLeague || player.league || "").toUpperCase() === "NHL" && !hasNhlStatistics
+    allowCrossLeague: ["NHL","EUROPE"].includes(String(player.currentLeague || player.league || "").toUpperCase()) && !hasNhlStatistics
   });
   const statRow = match.row;
   const statIndex = match.index;

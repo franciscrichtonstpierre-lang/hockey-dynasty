@@ -187,8 +187,7 @@ export function estimatePlayerRatings(player, statRow, statIndex, existingRating
   const stat = statsProfile(player, statRow, statIndex);
   const hasKnownOverall = existing.OA != null || (player?.overall != null && player?.overall !== "" && Number.isFinite(Number(player.overall)));
   const overall = hasKnownOverall ? profileBase : (stat?.score ?? profileBase);
-  const size = sizeSignal(player);
-  const rank = rankSignal(player);
+
   // Without performance/scouting evidence, do not translate draft rank into
   // invented offensive skill. Keep the estimate neutral and low-confidence.
   const attack = stat?.attack ?? 0.5;
@@ -197,7 +196,7 @@ export function estimatePlayerRatings(player, statRow, statIndex, existingRating
   const assists = stat?.assists ?? attack;
   const points = stat?.points ?? attack;
   const shots = stat?.shots ?? (0.45 * attack + 0.55 * goals);
-  const discipline = stat?.discipline ?? (0.5 + size * 0.05);
+  const discipline = stat?.discipline ?? 0.5;
   const durability = stat?.durability ?? (playerAge(player) > 25 ? 0.58 : 0.45);
   const isForward = position === "F";
   const isGoalie = position === "G";
@@ -240,7 +239,7 @@ export function estimatePlayerRatings(player, statRow, statIndex, existingRating
   attributes.OA = calculatedOa;
   const sources = [...new Set([statIndex?.source, player?.source, player?.supplementalSource, player?.bioSourceUrl].filter(value => typeof value === "string" && value.trim()))];
   const modeledFields = RATING_ATTRIBUTES.filter(key => existing[key] == null);
-  const evidence = statRow ? "league_statistics" : rank.kind ? rank.kind : (sizeSignal(player) !== 0.5 || player?.shootsCatches) ? "biographical_player_profile" : "minimal_player_profile";
+  const evidence = statRow ? "league_statistics" : "minimal_player_profile";
   const confidence = statRow ? "low" : evidence === "minimal_player_profile" ? "very_low" : "very_low";
   const status = statRow ? "model_estimate_from_league_statistics" : evidence === "minimal_player_profile" ? "minimal_profile_model_estimate" : "model_estimate_from_player_profile";
   const sampleSize = stat?.games ?? null;

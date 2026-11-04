@@ -162,3 +162,19 @@ test("application changes only the 16 visible ratings and keeps them within 0–
   assert.deepEqual(Object.keys(result), attributes);
   for (const key of attributes) assert.ok(result[key] >= 0 && result[key] <= 99);
 });
+
+test("classifies scouting tiers from Superstar through F without imposing a hard ceiling", () => {
+  const cases = [
+    [97, "SUPERSTAR"], [92, "A"], [85, "B"], [80, "C"],
+    [75, "D"], [68, "E"], [58, "F"]
+  ];
+  for (const [potential, expected] of cases) {
+    assert.equal(engine.classifyDevelopmentTier({ potential }).key, expected);
+  }
+  assert.equal(engine.classifyDevelopmentTier({ potential: 83, developmentTier: "B" }).key, "B");
+  const highB = engine.createInitialState({ ...player, id: "high-b", potential: 83, CON: 90 }, null);
+  assert.equal(highB.developmentTier, "B");
+  assert.ok(ability(highB, "SH")[1] >= ability(highB, "SH")[0]);
+  assert.equal(highB.schemaVersion, 3);
+});
+

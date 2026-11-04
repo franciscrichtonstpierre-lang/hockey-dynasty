@@ -132,7 +132,9 @@
       .35 + consistency / 100 * .85 + dispositionJitter), .55, 1.35);
 
     return {
-      schemaVersion: 2,
+      schemaVersion: 3,
+      developmentTier: classifyDevelopmentTier(player).key,
+      developmentTierLabel: classifyDevelopmentTier(player).label,
       position,
       peakAge: clamp(Math.round(numberOr(prior.peakAge, estimatedPeakAge(player, position))), 18, 35),
       disposition,
@@ -147,6 +149,25 @@
       retired: !!prior.retired,
       retiredOn: prior.retiredOn || null
     };
+  }
+
+  // Scouting tiers describe a player's projected ceiling; they are not fixed caps.
+  const DEVELOPMENT_TIERS = Object.freeze([
+    { key: "SUPERSTAR", label: "Superstar", minPotential: 95 },
+    { key: "A", label: "A", minPotential: 90 },
+    { key: "B", label: "B", minPotential: 83 },
+    { key: "C", label: "C", minPotential: 78 },
+    { key: "D", label: "D", minPotential: 72 },
+    { key: "E", label: "E", minPotential: 65 },
+    { key: "F", label: "F", minPotential: 0 }
+  ]);
+
+  function classifyDevelopmentTier(player) {
+    const explicit = String(player?.developmentTier || player?.prospectTier || "").trim().toUpperCase();
+    const chosen = DEVELOPMENT_TIERS.find(tier => tier.key === explicit || tier.label.toUpperCase() === explicit);
+    if (chosen) return chosen;
+    const potential = clamp(numberOr(player?.potential, numberOr(player?.potentialEstimate, numberOr(player?.overall ?? player?.OA, 50))), 0, 99);
+    return DEVELOPMENT_TIERS.find(tier => potential >= tier.minPotential) || DEVELOPMENT_TIERS[DEVELOPMENT_TIERS.length - 1];
   }
 
   function estimatedPeakAge(player, position) {
@@ -327,6 +348,8 @@
 
   root.HDPlayerDevelopment = Object.freeze({
     ATTRIBUTES,
+    DEVELOPMENT_TIERS,
+    classifyDevelopmentTier,
     visibleToAbility,
     abilityToVisible,
     createInitialState,

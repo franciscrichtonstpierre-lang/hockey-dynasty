@@ -218,8 +218,12 @@ export function estimatePlayerRatings(player, statRow, statIndex, existingRating
     DEF:isGoalie ? clamp(35 + assists * 50) : clamp(42 + defense * 45 + (position === "D" ? 4 : 0)),
     OA:overall
   };
-  const attributes = Object.fromEntries(RATING_ATTRIBUTES.map(key => [key, existing[key] ?? modeled[key]]));
-  attributes.OA = existing.OA ?? modeled.OA;
+  // OA is always recalculated from the 14 hockey attributes below.
+  // FI (Fighting) is intentionally excluded from every position's OA.
+  const oaWeights = { SH:0.08, PL:0.08, ST:0.05, CH:0.08, PO:0.10, HI:0.05, SK:0.06, EN:0.08, PE:0.08, FA:0.03, LE:0.05, SR:0.08, OFF:0.10, DEF:0.08 };
+  const attributes = Object.fromEntries(RATING_ATTRIBUTES.map(key => [key, key === "FI" ? (existing.FI ?? modeled.FI) : (existing[key] ?? modeled[key])]));
+  const weightedOA = Object.entries(oaWeights).reduce((sum, [key, weight]) => sum + attributes[key] * weight, 0) / Object.values(oaWeights).reduce((sum, weight) => sum + weight, 0);
+  attributes.OA = clamp(weightedOA);
   const sources = [...new Set([statIndex?.source, player?.source, player?.supplementalSource, player?.bioSourceUrl].filter(value => typeof value === "string" && value.trim()))];
   const modeledFields = RATING_ATTRIBUTES.filter(key => existing[key] == null);
   const evidence = statRow ? "league_statistics" : rank.kind ? rank.kind : (sizeSignal(player) !== 0.5 || player?.shootsCatches) ? "biographical_player_profile" : "minimal_player_profile";

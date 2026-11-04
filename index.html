@@ -549,15 +549,7 @@ function hdDevelopmentTeamCode(p){
  for(const value of candidates){const code=String(value||"").trim().toUpperCase();if(/^[A-Z]{3}$/.test(code)&&Array.isArray(codes)&&codes.includes(code))return code}
  return "";
 }
-function hdDevelopmentDbPlayerId(p){
- const raw=String(p?.id||p?.playerId||"").trim();
- if(/^nhl:/i.test(raw))return "NHL-"+raw.slice(4);
- if(/^ahl:/i.test(raw))return "AHL-"+raw.slice(4);
- if(/^(NHL|AHL|REG)-/i.test(raw))return raw.toUpperCase();
- if(p?.nhlPlayerId!=null)return "NHL-"+String(p.nhlPlayerId);
- if(String(p?.currentLeague||p?.league||"").toUpperCase()==="AHL")return "AHL-"+raw;
- return raw?"REG-"+raw:"";
-}
+function hdDevelopmentDbPlayerId(p){return uhmDbPlayerId(p)}
 function hdDevelopmentCoachProfile(teamCode,league,focus){
  let staff=[];
  try{staff=ensureCoachDatabase().filter(c=>String(c.teamCode||c.team||"").toUpperCase()===String(teamCode||"").toUpperCase()&&String(c.league||"NHL").toUpperCase()===String(league||"NHL").toUpperCase()&&!["available","fired"].includes(String(c.status||c.employmentStatus||"employed").toLowerCase()))}catch(e){}
@@ -1326,11 +1318,15 @@ function commSearchPlayers(){const sel=el("commPlayerSelect"),q=(el("commPlayerQ
 function commLoadPlayer(){const sel=el("commPlayerSelect"),box=el("commPlayerForm");if(!sel||!box)return;commSelectedPlayerId=sel.value;const p=(playerDirectoryCache||[]).find(x=>(x.playerId||x.id||x.name)===commSelectedPlayerId);if(!p){box.innerHTML="";return}const attrs=[["FI","Mises au jeu"],["SH","Tir"],["PL","Passe"],["ST","Force"],["CH","Mise en échec"],["PO","Positionnement"],["HI","Robustesse"],["SK","Patinage"],["EN","Endurance"],["PE","Discipline"],["FA","Agressivité"],["LE","Leadership"],["SR","Résilience"],["OFF","Attaque"],["DEF","Défense"]];const longNames={FI:"faceoffs",SH:"shooting",PL:"passing",ST:"strength",CH:"checking",PO:"positioning",HI:"hitting",SK:"skating",EN:"endurance",PE:"discipline",FA:"aggression",LE:"leadership",SR:"resilience",OFF:"offense",DEF:"defense"};const field=(label,key,value,type="text")=>'<label style="display:block;margin:8px 0">'+label+'<input data-pfield="'+key+'" type="'+type+'" min="'+(type==="number"?0:"")+'" max="'+(type==="number"?99:"")+'" value="'+esc(value==null?"":value)+'" style="display:block;width:100%;padding:9px;background:#0b2033;color:white;border:1px solid #41627d;border-radius:7px"></label>';box.innerHTML='<div class="grid">'+field("Nom","name",p.name)+field("Équipe des droits LNH (code)","rightsTeam",p.rightsTeam)+field("Ligue actuelle","league",p.league)+field("Équipe actuelle","currentTeam",p.currentTeam)+field("Potentiel vérifié / modifiable (0–99)","potential",p.potential,"number")+(p.potentialEstimate!=null?'<p class="muted">Potentiel estimé par le modèle : '+p.potentialEstimate+' (provisoire, non vérifié).</p>':"")+field("Cote globale (0–99)","overall",p.overall,"number")+attrs.map(([key,label])=>field(label,"attr_"+key,p.attributes?.[key]??p.attributes?.[longNames[key]],"number")).join("")+'</div><button type="button" onclick="commSavePlayer()">Enregistrer la fiche joueur</button><p id="commPlayerStatus" class="muted"></p>'}
 function uhmDbPlayerId(p){
  const raw=String(p?.playerId||p?.id||p?.registryId||"").trim();
- if(/^NHL-/i.test(raw)||/^AHL-/i.test(raw)||/^REG-/i.test(raw))return raw.toUpperCase();
+ if(/^(NHL|AHL|REG)-/i.test(raw))return raw.toUpperCase();
  if(/^nhl:/i.test(raw))return "NHL-"+raw.slice(4);
  if(/^ahl:/i.test(raw))return "AHL-"+raw.slice(4);
  if(!raw)return "";
- return String(p?.league||p?.currentLeague||"").toUpperCase()==="AHL"?"AHL-"+raw:"NHL-"+raw;
+ if(p?.nhlPlayerId!=null)return "NHL-"+String(p.nhlPlayerId);
+ const league=String(p?.league||p?.currentLeague||"").toUpperCase();
+ if(league==="NHL")return "NHL-"+raw;
+ if(league==="AHL")return "AHL-"+raw;
+ return "REG-"+raw;
 }
 let UHM_PLAYER_OVERRIDES_BY_ID=new Map();
 function applyLeaguePlayerOverridesToRows(rows){
@@ -1339,7 +1335,7 @@ function applyLeaguePlayerOverridesToRows(rows){
   const row=UHM_PLAYER_OVERRIDES_BY_ID.get(uhmDbPlayerId(p));if(!row)return p;
   const payload=row.payload||{},baseAttributes=payload.attributes||p.attributes;
   const rawId=String(row.player_id).replace(/^(NHL|AHL|REG)-/i,""),key=hdCanonicalPlayerId(rawId);
-  const development=payload.development||S.development?.[key];
+  const development=S.development?.[key]||payload.development;
   const effective=development&&window.HDPlayerDevelopment?HDPlayerDevelopment.applyToRatings(baseAttributes||{},development):baseAttributes;
   return {...p,...payload,name:row.full_name||payload.name||p.name,fullName:row.full_name||payload.name||p.fullName,rightsTeam:row.nhl_rights_team||p.rightsTeam,nhlRightsTeam:row.nhl_rights_team||p.nhlRightsTeam,league:row.league_code||p.league,currentLeague:row.league_code||p.currentLeague,currentTeam:payload.currentTeam||p.currentTeam,overall:effective?.OA??row.overall??p.overall,potential:row.potential??p.potential,attributes:baseAttributes,development};
  });
@@ -1372,10 +1368,11 @@ async function commSavePlayer(){
  const status=el("commPlayerStatus");
  if(activeOnlineLeagueId){
   if(!dbPlayerId||!signedInUser){if(status)status.textContent="Modification locale seulement : identifiant ou session en ligne manquant.";commSearchPlayers();return}
-  const record={league_id:activeOnlineLeagueId,player_id:dbPlayerId,season:"2026-2027",team_code:p.code||p.teamCode||null,league_code:patch.league??p.league??null,nhl_rights_team:patch.rightsTeam??p.rightsTeam??null,full_name:patch.name??p.name,overall:patch.overall??p.overall??null,potential:patch.potential??p.potential??null,payload:{...(UHM_PLAYER_OVERRIDES_BY_ID.get(dbPlayerId)?.payload||{}),...patch,currentTeam:patch.currentTeam??p.currentTeam??null},updated_by:signedInUser.id};
+  const mergedPayload={...(UHM_PLAYER_OVERRIDES_BY_ID.get(dbPlayerId)?.payload||{}),...patch,currentTeam:patch.currentTeam??p.currentTeam??null};if(ratingsEdited)delete mergedPayload.development;
+  const record={league_id:activeOnlineLeagueId,player_id:dbPlayerId,season:"2026-2027",team_code:p.code||p.teamCode||null,league_code:patch.league??p.league??null,nhl_rights_team:patch.rightsTeam??p.rightsTeam??null,full_name:patch.name??p.name,overall:patch.overall??p.overall??null,potential:patch.potential??p.potential??null,payload:mergedPayload,updated_by:signedInUser.id};
   const {error}=await authClient.from("league_player_overrides").upsert(record,{onConflict:"league_id,player_id"});
   if(error){if(status)status.textContent="Fiche enregistrée localement, mais synchronisation Supabase échouée : "+(error.message||"erreur inconnue");}
-  else if(status)status.textContent="Fiche enregistrée et synchronisée dans la ligue. Les autres DG peuvent consulter cette modification.";
+  else{UHM_PLAYER_OVERRIDES_BY_ID.set(dbPlayerId,record);if(status)status.textContent="Fiche enregistrée et synchronisée dans la ligue. Les autres DG peuvent consulter cette modification.";}
  }else if(status)status.textContent="Fiche enregistrée sur cet appareil. En mode hors ligne, exporte les données pour transférer cette modification.";
  commSearchPlayers();
 }

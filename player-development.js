@@ -108,21 +108,20 @@
       ? prior.abilityAttributes : {};
     const abilityAttributes = {};
 
-    for (const attribute of ATTRIBUTES) {
-      const old = previousAbilities[attribute];
+    for (const [index, attribute] of ATTRIBUTES.entries()) {
+      const old = Array.isArray(previousAbilities) ? previousAbilities[index] : previousAbilities[attribute];
+      const oldCa = Array.isArray(old) ? old[0] : old?.ca;
+      const oldPa = Array.isArray(old) ? old[1] : old?.pa;
+      const oldProgress = Array.isArray(old) ? old[2] : old?.progress;
       const oldDelta = legacyDelta + numberOr(legacyAttributeDelta[attribute], 0);
       const effectiveRating = clamp(ratings[attribute] + oldDelta, 0, 99);
-      const ca = old && Number.isFinite(Number(old.ca))
-        ? clamp(Math.round(Number(old.ca)), 1, 200)
+      const ca = old && Number.isFinite(Number(oldCa))
+        ? clamp(Math.round(Number(oldCa)), 1, 200)
         : visibleToAbility(effectiveRating);
-      const pa = old && Number.isFinite(Number(old.pa))
-        ? Math.max(ca, clamp(Math.round(Number(old.pa)), 1, 200))
+      const pa = old && Number.isFinite(Number(oldPa))
+        ? Math.max(ca, clamp(Math.round(Number(oldPa)), 1, 200))
         : Math.max(ca, initialPotentialCap(attribute, player, effectiveRating, overall, potential, position));
-      abilityAttributes[attribute] = {
-        ca,
-        pa,
-        progress: Math.max(0, numberOr(old?.progress, numberOr(old?.regressionProgress, 0)))
-      };
+      abilityAttributes[index] = [ca, pa, Math.max(0, numberOr(oldProgress, numberOr(old?.regressionProgress, 0)))];
     }
 
     const priorSeed = Number(prior.rngState);
@@ -137,8 +136,8 @@
       disposition,
       rngState,
       abilityAttributes,
-      currentAbility: Math.round(ATTRIBUTES.reduce((sum, key) => sum + abilityAttributes[key].ca, 0) / ATTRIBUTES.length),
-      potentialAbility: Math.round(ATTRIBUTES.reduce((sum, key) => sum + abilityAttributes[key].pa, 0) / ATTRIBUTES.length),
+      currentAbility: Math.round(abilityAttributes.reduce((sum, node) => sum + node[0], 0) / ATTRIBUTES.length),
+      potentialAbility: Math.round(abilityAttributes.reduce((sum, node) => sum + node[1], 0) / ATTRIBUTES.length),
       potentialSource: player?.potentialStatus || (player?.potential != null ? "unverified" : "estimated_from_current_rating"),
       potentialIsEstimated: !["source_verified", "verified"].includes(String(player?.potentialStatus || "").toLowerCase()),
       lastUpdated: prior.lastUpdated || null,
@@ -208,8 +207,8 @@
       const age = ageAt(player, currentDate);
       const ageFactor = ageGrowthFactor(age, state.peakAge);
       const injuryFactor = day < injuredDays ? .28 : 1;
-      const overall = abilityToVisible(state.abilityAttributes.OA.ca);
-      const potential = abilityToVisible(state.abilityAttributes.OA.pa);
+      const overall = abilityToVisible(state.abilityAttributes[ATTRIBUTES.indexOf("OA")][0]);
+      const potential = abilityToVisible(state.abilityAttributes[ATTRIBUTES.indexOf("OA")][1]);
       const retirementChance = annualRetirementChance(age, overall, potential);
       if (retirementChance > 0 && random(state) < 1 - Math.pow(1 - retirementChance, 1 / 365)) {
         retired = true;
@@ -222,7 +221,7 @@
       const pool = FOCUS_POOLS[playerFocus] || FOCUS_POOLS["Équilibré"];
       const balanced = playerFocus === "Équilibré";
       for (const attribute of ATTRIBUTES) {
-        const ability = state.abilityAttributes[attribute];
+        const ability = state.abilityAttributes[ATTRIBUTES.indexOf(attribute)];
         if (age >= 32) {
           const physicalWeight = ["SK", "EN", "ST", "HI", "SR"].includes(attribute) ? 1.35
             : ["FI", "SH", "PL", "CH", "PO", "DEF", "OFF"].includes(attribute) ? .82 : .48;
@@ -260,8 +259,8 @@
       }
     }
 
-    state.currentAbility = Math.round(ATTRIBUTES.reduce((sum, key) => sum + state.abilityAttributes[key].ca, 0) / ATTRIBUTES.length);
-    state.potentialAbility = Math.round(ATTRIBUTES.reduce((sum, key) => sum + state.abilityAttributes[key].pa, 0) / ATTRIBUTES.length);
+    state.currentAbility = Math.round(state.abilityAttributes.reduce((sum, node) => sum + node[0], 0) / ATTRIBUTES.length);
+    state.potentialAbility = Math.round(state.abilityAttributes.reduce((sum, node) => sum + node[1], 0) / ATTRIBUTES.length);
     state.lastUpdated = end.toISOString().slice(0, 10);
     return { state, gains, regressions, trainingGains, retired };
   }
@@ -275,15 +274,26 @@
     for (const attribute of ATTRIBUTES) {
       const base = numberOr(source[attribute], null);
       if (base == null) continue;
-      const ability = dev.abilityAttributes?.[attribute];
-      if (ability && Number.isFinite(Number(ability.ca))) {
-        output[attribute] = abilityToVisible(ability.ca);
+      const ability = Array.isArray(dev.abilityAttributes)
+        ? dev.abilityAttributes[ATTRIBUTES.indexOf(attribute)]
+        : dev.abilityAttributes?.[attribute];
+      const currentAbility = Array.isArray(ability) ? ability[0] : ability?.ca;
+      if (ability && Number.isFinite(Number(currentAbility))) {
+        output[attribute] = abilityToVisible(currentAbility);
       } else {
         const delta = legacyDelta + numberOr(specific[attribute], 0);
         output[attribute] = clamp(Math.round(base + delta), 0, 99);
       }
     }
     return output;
+  }
+
+  function visibleRatingFor(state, attribute) {
+    const index = ATTRIBUTES.indexOf(attribute);
+    if (index < 0) return null;
+    const node = Array.isArray(state?.abilityAttributes) ? state.abilityAttributes[index] : state?.abilityAttributes?.[attribute];
+    const ca = Array.isArray(node) ? node[0] : node?.ca;
+    return Number.isFinite(Number(ca)) ? abilityToVisible(ca) : null;
   }
 
   function createInitialState(player, previous) {
@@ -297,6 +307,7 @@
     createInitialState,
     advancePlayer,
     applyToRatings,
+    visibleRatingFor,
     ageAt
   });
 })(typeof globalThis !== "undefined" ? globalThis : this);

@@ -43,3 +43,60 @@ test("a profile-only estimate is explicitly marked very low confidence", () => {
   assert.equal(result.metadata.evidence, "minimal_player_profile");
   assert.ok(result.metadata.source.includes("https://club.example/roster"));
 });
+
+
+test("salary, cap hit, body measurements, and draft rank do not inflate profile ability", () => {
+  const plain = estimatePlayerRatings({ name:"Prospect A", currentLeague:"NHL", position:"F", age:19 });
+  const decorated = estimatePlayerRatings({
+    name:"Prospect A", currentLeague:"NHL", position:"F", age:19,
+    annualSalary:15000000, previousCapHit:15000000,
+    heightCm:203, weightKg:115, draftOverall:1, prospectRank:1
+  });
+  assert.deepEqual(decorated.attributes, plain.attributes);
+  assert.equal(plain.metadata.confidence, "very_low");
+  assert.ok(plain.metadata.method.includes("v4_fighting_excluded_goalie_complete_attributes"));
+});
+
+
+test("FI is Fighting, stays independent, and never changes OA", () => {
+  const lowFight = estimatePlayerRatings(
+    { name:"Cole Caufield", currentLeague:"NHL", position:"F", age:25 },
+    null, null,
+    { FI:10, OA:88 }
+  );
+  const highFight = estimatePlayerRatings(
+    { name:"Cole Caufield", currentLeague:"NHL", position:"F", age:25 },
+    null, null,
+    { FI:90, OA:88 }
+  );
+  assert.equal(lowFight.attributes.FI, 10);
+  assert.equal(highFight.attributes.FI, 90);
+  assert.equal(lowFight.attributes.OA, 88);
+  assert.equal(highFight.attributes.OA, 88);
+});
+
+
+test("FI never contributes to calculated OA when no stored OA exists", () => {
+  const low = estimatePlayerRatings({ name:"Player Low FI", currentLeague:"NHL", position:"F", age:25, fightingSkill:5 });
+  const high = estimatePlayerRatings({ name:"Player High FI", currentLeague:"NHL", position:"F", age:25, fightingSkill:95 });
+  assert.equal(low.attributes.FI, 5);
+  assert.equal(high.attributes.FI, 95);
+  assert.equal(low.attributes.OA, high.attributes.OA);
+});
+
+test("goalies receive all 16 attributes and a calculated OA from goalie-specific statistics", () => {
+  const rows = [
+    { player_id:1, name:"Goalie One", position:"G", games_played:45, wins:30, save_percentage:0.925, goals_against_average:2.20, shutouts:5 },
+    { player_id:2, name:"Goalie Two", position:"G", games_played:45, wins:15, save_percentage:0.895, goals_against_average:3.10, shutouts:1 }
+  ];
+  const index = createLeagueStatIndex({ league:"NHL", source:"official goalie stats", season:"2026-2027", skaters:[], goalies:rows });
+  const strong = estimatePlayerRatings({ name:"Goalie One", currentLeague:"NHL", position:"G", age:25 }, rows[0], index);
+  const weak = estimatePlayerRatings({ name:"Goalie Two", currentLeague:"NHL", position:"G", age:25 }, rows[1], index);
+  for (const result of [strong, weak]) {
+    assert.deepEqual(Object.keys(result.attributes), RATING_ATTRIBUTES);
+    assert.ok(RATING_ATTRIBUTES.every(key => Number.isInteger(result.attributes[key]) && result.attributes[key] >= 0 && result.attributes[key] <= 99));
+    assert.ok(RATING_ATTRIBUTES.filter(key => key !== "FI" && key !== "OA").every(key => result.attributes[key] != null));
+    assert.ok(Number.isInteger(result.attributes.OA));
+  }
+  assert.ok(strong.attributes.OA > weak.attributes.OA);
+});

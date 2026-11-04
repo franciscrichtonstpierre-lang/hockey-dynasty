@@ -570,7 +570,7 @@ function developOnePlayer(p,days,asOf,training){
  const performance=Number(p.performanceRating??p.recentPerformance??p.form??50);
  const result=HDPlayerDevelopment.advancePlayer(p,previous,{days,asOf,training,iceTime,performance,injuredDays:Number(condition.injuredDaysLastPeriod)||0});
  S.development[key]=result.state;if(id!==key)delete S.development[id];
- if(result.retired)S.retiredPlayers[key]={id:key,name:p.name||p.fullName||"Joueur",league:p.currentLeague||"Inconnue",team:p.currentTeam||null,age:hdPlayerAge(p,asOf),overall:window.HDPlayerDevelopment.abilityToVisible(result.state.abilityAttributes.OA.ca),retiredOn:result.state.retiredOn};
+ if(result.retired)S.retiredPlayers[key]={id:key,name:p.name||p.fullName||"Joueur",league:p.currentLeague||"Inconnue",team:p.currentTeam||null,age:hdPlayerAge(p,new Date(result.state.retiredOn+"T00:00:00Z")),overall:window.HDPlayerDevelopment.abilityToVisible(result.state.abilityAttributes.OA.ca),retiredOn:result.state.retiredOn};
  return {improved:result.gains>0,retired:result.retired,gains:result.gains,regressions:result.regressions,trainingGains:result.trainingGains,state:result.state};
 }
 async function developPlayers(days,asOf){

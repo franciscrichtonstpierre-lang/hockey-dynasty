@@ -6,6 +6,8 @@ on:
       - ".github/workflows/check-interface.yml"
       - "index.html"
       - "player-development.js"
+      - "player-source-matching.js"
+      - "tests/player-source-matching.test.mjs"
       - "tests/player-development.test.mjs"
       - "scripts/check-inline-js.mjs"
   workflow_dispatch:
@@ -27,5 +29,9 @@ jobs:
         run: node --check player-development.js
       - name: Tester le moteur de développement
         run: node --test tests/player-development.test.mjs
+      - name: Vérifier le rapprochement des joueurs et les conflits de sources
+        run: node --test tests/player-source-matching.test.mjs
+      - name: Vérifier la syntaxe du module de rapprochement
+        run: node --check player-source-matching.js
       - name: Vérifier la syntaxe JavaScript intégrée
         run: node scripts/check-inline-js.mjs

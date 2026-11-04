@@ -285,7 +285,7 @@ export function matchStatIndex(player, indexes) {
   // NHL prospect and secondary roster feeds often omit the player's current
   // league. Search every official feed by exact normalized name/ID, but accept
   // a fallback only when exactly one league has an unambiguous player match.
-  if (league !== "UNKNOWN") return { index:preferred || null, row:null };
+  if (!["UNKNOWN", "OTHER"].includes(league)) return { index:preferred || null, row:null };
   const matches = [];
   for (const [key, index] of indexes.entries()) {
     if (key === league) continue;

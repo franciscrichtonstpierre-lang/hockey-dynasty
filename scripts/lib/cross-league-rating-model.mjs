@@ -129,7 +129,7 @@ function sizeSignal(player) {
 function profileOverall(player, existing, league) {
   const position = positionGroup(player);
   const current = normalizeRatings(existing);
-  const knownOa = current.OA ?? player?.overall;
+  const knownOa = player?.overall;
   if (knownOa != null && knownOa !== "" && Number.isFinite(Number(knownOa))) return clamp(Number(knownOa));
   const base = LEAGUE_BASE[league] ?? 53;
   // Current ability must not be inflated by draft pedigree, body measurements,

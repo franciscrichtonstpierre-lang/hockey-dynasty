@@ -222,6 +222,7 @@
       const pool = FOCUS_POOLS[playerFocus] || FOCUS_POOLS["Équilibré"];
       const balanced = playerFocus === "Équilibré";
       for (const attribute of ATTRIBUTES) {
+        if (attribute === "OA") continue; // OA is derived, not independently trained.
         const ability = state.abilityAttributes[ATTRIBUTES.indexOf(attribute)];
         if (age >= 32) {
           const physicalWeight = ["SK", "EN", "ST", "HI", "SR"].includes(attribute) ? 1.35
@@ -267,6 +268,24 @@
     return { state, gains, regressions, trainingGains, retired };
   }
 
+  // OA is derived from the 15 skill attributes; it is never trained independently.
+  function calculateOverall(ratings, position) {
+    const source = ratings && typeof ratings === "object" ? ratings : {};
+    const rawPosition = String(position || "F").toUpperCase();
+    const group = ["F", "D", "G"].includes(rawPosition) ? rawPosition : "F";
+    const weights = POSITION_WEIGHTS[group];
+    const keys = ATTRIBUTES.filter(key => key !== "OA");
+    let weighted = 0;
+    let totalWeight = 0;
+    for (const key of keys) {
+      const value = numberOr(source[key], null);
+      if (value == null) continue;
+      const weight = weights[key] ?? 1;
+      weighted += clamp(value, 0, 99) * weight;
+      totalWeight += weight;
+    }
+    return totalWeight > 0 ? clamp(Math.round(weighted / totalWeight), 0, 99) : null;
+  }
   function applyToRatings(ratings, state) {
     const source = ratings && typeof ratings === "object" ? ratings : {};
     const dev = state && typeof state === "object" ? state : {};
@@ -287,6 +306,8 @@
         output[attribute] = clamp(Math.round(base + delta), 0, 99);
       }
     }
+    const derivedOverall = calculateOverall(output, dev.position || source.position || source.positionCode);
+    if (derivedOverall != null) output.OA = derivedOverall;
     return output;
   }
 
@@ -310,6 +331,7 @@
     advancePlayer,
     applyToRatings,
     visibleRatingFor,
+    calculateOverall,
     ageAt
   });
 })(typeof globalThis !== "undefined" ? globalThis : this);

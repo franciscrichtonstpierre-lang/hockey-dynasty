@@ -105,7 +105,6 @@
     const previousAbilities = prior.abilityAttributes && typeof prior.abilityAttributes === "object"
       ? prior.abilityAttributes : {};
     const abilityAttributes = {};
-    const attributeDelta = {};
 
     for (const attribute of ATTRIBUTES) {
       const old = previousAbilities[attribute];
@@ -123,7 +122,6 @@
         progress: Math.max(0, numberOr(old?.progress, 0)),
         regressionProgress: Math.max(0, numberOr(old?.regressionProgress, 0))
       };
-      attributeDelta[attribute] = abilityToVisible(ca) - ratings[attribute];
     }
 
     const priorSeed = Number(prior.rngState);
@@ -138,7 +136,6 @@
       disposition,
       rngState,
       abilityAttributes,
-      attributeDelta,
       delta: 0,
       experienceDays: Math.max(0, numberOr(prior.experienceDays, numberOr(prior.experience, 0))),
       currentAbility: Math.round(ATTRIBUTES.reduce((sum, key) => sum + abilityAttributes[key].ca, 0) / ATTRIBUTES.length),
@@ -258,9 +255,6 @@
       state.experienceDays += 1;
     }
 
-    for (const attribute of ATTRIBUTES) {
-      state.attributeDelta[attribute] = abilityToVisible(state.abilityAttributes[attribute].ca) - ratings[attribute];
-    }
     state.currentAbility = Math.round(ATTRIBUTES.reduce((sum, key) => sum + state.abilityAttributes[key].ca, 0) / ATTRIBUTES.length);
     state.potentialAbility = Math.round(ATTRIBUTES.reduce((sum, key) => sum + state.abilityAttributes[key].pa, 0) / ATTRIBUTES.length);
     state.lastUpdated = end.toISOString().slice(0, 10);

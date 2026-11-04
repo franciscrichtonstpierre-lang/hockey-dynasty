@@ -106,7 +106,7 @@
     const legacyAttributeDelta = prior.attributeDelta && typeof prior.attributeDelta === "object" ? prior.attributeDelta : {};
     const previousAbilities = prior.abilityAttributes && typeof prior.abilityAttributes === "object"
       ? prior.abilityAttributes : {};
-    const abilityAttributes = {};
+    const abilityAttributes = [];
 
     for (const [index, attribute] of ATTRIBUTES.entries()) {
       const old = Array.isArray(previousAbilities) ? previousAbilities[index] : previousAbilities[attribute];

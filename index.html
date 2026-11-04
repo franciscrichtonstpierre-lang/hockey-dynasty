@@ -225,6 +225,71 @@ h1 .team-brand-logo,h2 .team-brand-logo,h3 .team-brand-logo,.lineupHero .team-br
  .rosterTable .quickContractPencilIcon{width:17px!important;height:17px!important}
 }
 </style>
+
+<style id="uhm-responsive-alignment-v1">
+/* Base commune : alignement stable sur Android, tablette et ordinateur */
+:root{color-scheme:dark}
+html{width:100%;min-width:320px;scrollbar-gutter:stable}
+body{width:100%;min-width:320px;overflow-x:hidden;-webkit-text-size-adjust:100%;text-rendering:optimizeLegibility}
+#app,main,#accountPanel,#message{min-width:0;max-width:100%}
+main{width:min(100% - 32px,1180px);margin-inline:auto;padding:16px 0 28px}
+h1,h2,h3,h4,p,label,small{overflow-wrap:anywhere}
+h2{line-height:1.2;margin:18px 0 14px}
+h3{line-height:1.3}
+.card,.tile,.trade-side-card,.lineGroup{min-width:0}
+.card{padding:clamp(12px,2vw,18px);margin-bottom:14px}
+.grid,.cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;align-items:start}
+button,select,input,textarea{max-width:100%;font:inherit}
+button,select,input{min-height:42px}
+button{line-height:1.25;white-space:normal;overflow-wrap:anywhere}
+input,select,textarea{min-width:0}
+.controls{align-items:center}
+.controls>*{min-width:0}
+table{max-width:100%}
+.rosterScroll,[style*="overflow-x:auto"]{overscroll-behavior-x:contain}
+nav{grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+nav button{min-width:0;min-height:46px;line-height:1.2}
+#subnav{align-items:stretch}
+#subnav button{min-height:40px}
+.trade-side-card{height:100%}
+.trade-side-card label{line-height:1.35}
+.trade-side-card select{min-height:42px}
+@media(min-width:900px){
+ main{padding-top:22px}
+ .cols{gap:16px}
+ .card{padding:18px}
+ nav{gap:10px}
+}
+@media(max-width:699px){
+ main{width:calc(100% - 20px);padding:10px 0 22px}
+ header{padding:13px 12px}
+ header h1{font-size:clamp(17px,5vw,22px);line-height:1.2}
+ header small{font-size:10px;line-height:1.35}
+ .grid,.cols{grid-template-columns:minmax(0,1fr);gap:10px}
+ .card{padding:12px;border-radius:10px}
+ nav{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;padding:8px 0}
+ nav button{font-size:12px;padding:9px 6px;min-height:44px}
+ #subnav{gap:6px;padding:7px!important}
+ #subnav button{flex:1 1 auto;min-width:calc(50% - 6px);font-size:12px}
+ .controls{display:flex;flex-wrap:wrap;width:100%}
+ .controls button,.controls select{flex:1 1 145px}
+ .row{align-items:flex-start}
+ .item{align-items:flex-start;flex-wrap:wrap}
+ .trade-side-card{padding:11px}
+ .trade-side-card #tradeOfferMine label,.trade-side-card #tradeOfferTheirs label,
+ .trade-side-card #tradePicksMine label,.trade-side-card #tradePicksTheirs label{
+  grid-template-columns:minmax(70px,84px) minmax(0,1fr)!important;gap:8px!important
+ }
+}
+@media(max-width:380px){
+ main{width:calc(100% - 14px)}
+ .trade-side-card #tradeOfferMine label,.trade-side-card #tradeOfferTheirs label,
+ .trade-side-card #tradePicksMine label,.trade-side-card #tradePicksTheirs label{
+  grid-template-columns:minmax(0,1fr)!important;gap:4px!important
+ }
+ nav button{font-size:11px;padding:8px 4px}
+}
+</style>
 </head><body><header><div class="uhmHeader"><div><h1>🏒 ULTIMATE HOCKEY MANAGER</h1><small>Bureau du DG • v0.7 • Saison de démonstration 2026–2027</small></div><button id="uhmMenuButton" class="uhmMenuButton" type="button" onclick="toggleUhmMenu(true)" aria-controls="uhmOverlay" aria-expanded="false">☰ Menu</button></div></header><main><section id="uhmGateway" class="card"></section><section id="accountPanel" class="card" style="margin-bottom:12px"></section><div id="uhmOverlay" class="uhmOverlay" hidden onclick="if(event.target===this)toggleUhmMenu(false)"><aside class="uhmDrawer" role="dialog" aria-modal="true" aria-label="Navigation UHM"><div class="uhmDrawerTop"><strong>☰ Sections UHM</strong><button type="button" onclick="toggleUhmMenu(false)" aria-label="Fermer le menu">✕</button></div><div id="uhmMenuSections"></div></aside></div><nav id="nav" hidden></nav><div id="subnav" hidden></div><div id="message"></div><div id="app"></div></main><footer>Prototype indépendant. Les cotes de repli et les scores simulés sont provisoires. Les ligues en ligne nécessitent une configuration Supabase valide; certaines données de jeu restent sauvegardées localement.<div style="text-align:center;margin:8px 0 18px"><a href="./world-data-import.html" style="color:#d9edf9;font-size:12px">Importation des données mondiales (propriétaire UHM)</a></div></footer><script src="./performance.js?v=20261101"></script><script src="./rating-presentation.js?v=20261102-2"></script><script>
 const teams=["Anaheim Ducks","Boston Bruins","Buffalo Sabres","Calgary Flames","Carolina Hurricanes","Chicago Blackhawks","Colorado Avalanche","Columbus Blue Jackets","Dallas Stars","Detroit Red Wings","Edmonton Oilers","Florida Panthers","Los Angeles Kings","Minnesota Wild","Montréal Canadiens","Nashville Predators","New Jersey Devils","New York Islanders","New York Rangers","Ottawa Senators","Philadelphia Flyers","Pittsburgh Penguins","San Jose Sharks","Seattle Kraken","St. Louis Blues","Tampa Bay Lightning","Toronto Maple Leafs","Utah Mammoth","Vancouver Canucks","Vegas Golden Knights","Washington Capitals","Winnipeg Jets"];
 const players=[["Nick Suzuki","C",89,92],["Cole Caufield","AD",87,91],["Juraj Slafkovský","AG",84,92],["Ivan Demidov","AD",82,96],["Kirby Dach","C",78,85],["Alex Newhook","AG",79,84],["Brendan Gallagher","AD",76,76],["Josh Anderson","AD",76,77],["Jake Evans","C",78,79],["Oliver Kapanen","C",75,84],["Lane Hutson","D",87,95],["Kaiden Guhle","D",82,88],["Mike Matheson","D",82,83],["Arber Xhekaj","D",76,82],["Alexandre Carrier","D",79,80],["Samuel Montembeault","G",82,85],["Jakub Dobeš","G",77,86]];

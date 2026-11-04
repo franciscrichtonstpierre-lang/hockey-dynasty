@@ -8,7 +8,7 @@ test("uses a unique official league-stat match when the profile omits its curren
   const row = { player_id:77, name:"Prospect Cross League", position:"F", games_played:18, goals:8, assists:11, points:19, shots:52, plus_minus:4, penalty_minutes:6 };
   const ohl = createLeagueStatIndex({ league:"OHL", source:"official OHL stats", season:"2026-2027", skaters:[row], goalies:[] });
   const q = createLeagueStatIndex({ league:"QMJHL", source:"official QMJHL stats", season:"2026-2027", skaters:[], goalies:[] });
-  const matched = matchStatIndex({ name:"Prospect Cross League", currentLeague:"UNKNOWN", position:"F" }, new Map([["OHL",ohl],["QMJHL",q]]));
+  const matched = matchStatIndex({ name:"Prospect Cross League", position:"F" }, new Map([["OHL",ohl],["QMJHL",q]]));
   assert.equal(matched.index, ohl);
   assert.equal(matched.row.player_id, 77);
   const result = estimatePlayerRatings({ name:"Prospect Cross League", currentLeague:"UNKNOWN", position:"F", age:18 }, matched.row, matched.index);
@@ -20,7 +20,7 @@ test("does not guess a league when an identical name occurs in multiple official
   const row = { player_id:77, name:"Ambiguous Prospect", position:"F", games_played:18, goals:8, assists:11, points:19 };
   const ohl = createLeagueStatIndex({ league:"OHL", source:"official OHL stats", season:"2026-2027", skaters:[row], goalies:[] });
   const whl = createLeagueStatIndex({ league:"WHL", source:"official WHL stats", season:"2026-2027", skaters:[{...row,player_id:88}], goalies:[] });
-  const matched = matchStatIndex({ name:"Ambiguous Prospect", currentLeague:"UNKNOWN", position:"F" }, new Map([["OHL",ohl],["WHL",whl]]));
+  const matched = matchStatIndex({ name:"Ambiguous Prospect", position:"OTHER", positionCode:"F" }, new Map([["OHL",ohl],["WHL",whl]]));
   assert.equal(matched.row, null);
 });
 

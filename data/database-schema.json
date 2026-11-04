@@ -50,7 +50,7 @@
       "yearsRemaining": "number|null",
       "expiryType": "RFA|UFA|null"
     },
-    "development": "Per-player hidden development state: internal current/potential ability 1-200 for each of the 16 visible attributes, per-attribute progress, deterministic development seed, last updated date, and retirement status. Stored per league in league_player_overrides.payload."
+    "development": "Per-player hidden development state: internal current/potential ability 1-200 for each of the 16 visible attributes, per-attribute progress, deterministic development seed, individual peak age, last updated date, and retirement status. Stored per league in league_game_states.state.playerDevelopment."
   },
   "draftPick": {
     "pickId": "string stable",

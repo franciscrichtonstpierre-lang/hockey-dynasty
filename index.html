@@ -565,8 +565,9 @@ function developOnePlayer(p,days,asOf,training){
  if(!window.HDPlayerDevelopment)throw Error("Moteur de développement indisponible.");
  const key=hdCanonicalPlayerId(id),previous=S.development[key]||S.development[id]||null;
  const condition=S.playerCondition?.[id]||S.playerCondition?.[key]||{};
- const toi=Number(p.toiPerGame||p.averageTimeOnIce||p.timeOnIcePerGame||p.avgToi||0);
- const iceTime=toi>0?(toi>100?toi/60:toi):Math.max(8,Math.min(24,5+(Number(p.overall)||55)*.2));
+ const toiValue=p.toiPerGame??p.averageTimeOnIce??p.timeOnIcePerGame??p.avgToi;
+ const toi=Number(toiValue);
+ const iceTime=toiValue!=null&&Number.isFinite(toi)?Math.max(0,Math.min(40,toi>100?toi/60:toi)):Math.max(8,Math.min(24,5+(Number(p.overall)||55)*.2));
  const performance=Number(p.performanceRating??p.recentPerformance??p.form??50);
  const result=HDPlayerDevelopment.advancePlayer(p,previous,{days,asOf,training,iceTime,performance,injuredDays:Number(condition.injuredDaysLastPeriod)||0});
  S.development[key]=result.state;if(id!==key)delete S.development[id];
@@ -593,7 +594,7 @@ async function developPlayers(days,asOf){
   const cacheKey=teamCode+":"+trainingLeague+":"+focus;
   if(!coachCache.has(cacheKey))coachCache.set(cacheKey,hdDevelopmentCoachProfile(teamCode,trainingLeague,focus));
   const coach=coachCache.get(cacheKey);
-  const training={focus,goalieFocus:ownTeam?(S.training?.goalie||"Normale"):"Équilibré",intensity:ownTeam?(S.training?.intensity||"Normale"):"Normale",coachSkill:coach.coachSkill,facilities:Number(p.facilitiesRating)||50};
+  const training={focus,goalieFocus:ownTeam?(S.training?.goalie||"Normale"):"Équilibré",intensity:ownTeam?(S.training?.intensity||"Normale"):"Normale",coachSkill:coach.coachSkill,facilities:p.facilitiesRating==null?50:Number(p.facilitiesRating)};
   const result=developOnePlayer(p,days,asOf,training);
   if(result.improved)improved++;
   if(result.retired)retired++;

@@ -179,6 +179,36 @@ function statsProfile(player, row, index) {
   return { goalie:false, games, sampleWeight, score:statOverall, goals:goalPct, assists:assistPct, points:pointPct, shots:shotPct, plusMinus:plusPct, discipline:disciplinePct, durability:gamesPct, attack, defense };
 }
 
+export function combineLeagueStatRows(currentRow, previousRow) {
+  if (!currentRow || !previousRow) return currentRow || previousRow || null;
+  const currentGames = Math.max(0,numeric(currentRow,"games_played","gamesPlayed","GP"));
+  const previousGames = Math.max(0,numeric(previousRow,"games_played","gamesPlayed","GP"));
+  const totalGames = currentGames + previousGames;
+  if (!totalGames) return currentRow;
+  const combined = { ...previousRow, ...currentRow, games_played:totalGames };
+  for (const fields of [
+    ["goals","G"],["assists","A"],["points","PTS"],["shots","SOG","shots_on_goal"],
+    ["plus_minus","plusMinus"],["penalty_minutes","pim"],["wins","W"],["saves","SV"],
+    ["shots_against","shotsAgainst"],["goals_against","GA"],["shutouts","SO"]
+  ]) {
+    const key = fields[0];
+    const total = numeric(currentRow,...fields) + numeric(previousRow,...fields);
+    if (currentRow[key] != null || previousRow[key] != null || key === "points") combined[key] = total;
+  }
+  const goalie = currentRow.save_percentage != null || previousRow.save_percentage != null ||
+    currentRow.savePctg != null || previousRow.savePctg != null;
+  if (goalie) {
+    const shotsAgainst = numeric(currentRow,"shots_against","shotsAgainst") + numeric(previousRow,"shots_against","shotsAgainst");
+    const saves = numeric(currentRow,"saves","SV") + numeric(previousRow,"saves","SV");
+    combined.save_percentage = shotsAgainst > 0 ? saves / shotsAgainst * 100 :
+      (numeric(currentRow,"save_percentage","savePctg") * currentGames + numeric(previousRow,"save_percentage","savePctg") * previousGames) / totalGames;
+    combined.goals_against_average = (numeric(currentRow,"goals_against_average","gaa") * currentGames +
+      numeric(previousRow,"goals_against_average","gaa") * previousGames) / totalGames;
+  }
+  combined.games_played = totalGames;
+  return combined;
+}
+
 export function estimatePlayerRatings(player, statRow, statIndex, existingRatings = null) {
   const league = leagueKey(player?.currentLeague || player?.league);
   const position = positionGroup(player);

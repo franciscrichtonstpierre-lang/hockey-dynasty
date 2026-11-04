@@ -18,6 +18,20 @@ const player = {
 const start = new Date("2026-10-07T00:00:00Z");
 const training = { focus: "Développement des jeunes", intensity: "Normale", coachSkill: 78, facilities: 65 };
 
+test("calculates overall from individual attributes with position-specific weights", () => {
+  const ratings = Object.fromEntries(attributes.map(key => [key, 70]));
+  ratings.SH = 90;
+  ratings.DEF = 50;
+  ratings.OA = 12; // stored OA must not override the calculated value
+  const forward = engine.calculateOverall(ratings, "F");
+  const defender = engine.calculateOverall(ratings, "D");
+  assert.ok(forward > defender);
+  const state = engine.createInitialState({ ...player, position: "F" }, null);
+  const applied = engine.applyToRatings(ratings, state);
+  assert.equal(applied.OA, engine.calculateOverall(applied, "F"));
+  assert.notEqual(applied.OA, 12);
+});
+
 test("maps visible 0–99 ratings to internal 1–200 ability", () => {
   assert.equal(engine.visibleToAbility(0), 1);
   assert.equal(engine.visibleToAbility(99), 200);

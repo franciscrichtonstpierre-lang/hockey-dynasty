@@ -9,6 +9,7 @@ on:
       - "scripts/sync-cross-league-player-stats.mjs"
       - "scripts/sync-ncaa-player-stats.mjs"
       - "scripts/sync-european-player-stats.mjs"
+      - "scripts/sync-prior-season-player-stats.mjs"
       - "scripts/lib/european-stat-feed.mjs"
       - "scripts/lib/ncaa-stat-feed.mjs"
       - "data/ncaa/**"
@@ -79,6 +80,10 @@ jobs:
         env:
           UHM_AHL_SEASON_ID: "94"
         run: node scripts/sync-ahl-player-stats.mjs
+      - name: Ajouter les statistiques AHL et ECHL 2025-26 comme solution de repli
+        if: always()
+        continue-on-error: true
+        run: node scripts/sync-prior-season-player-stats.mjs
       - name: Synchroniser les 30 effectifs ECHL
         if: always()
         continue-on-error: true

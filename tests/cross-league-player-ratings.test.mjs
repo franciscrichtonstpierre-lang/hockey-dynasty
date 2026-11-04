@@ -71,8 +71,8 @@ test("FI is Fighting, stays independent, and never changes OA", () => {
   );
   assert.equal(lowFight.attributes.FI, 10);
   assert.equal(highFight.attributes.FI, 90);
-  assert.equal(lowFight.attributes.OA, 88);
-  assert.equal(highFight.attributes.OA, 88);
+  assert.equal(lowFight.attributes.OA, highFight.attributes.OA);
+  assert.notEqual(lowFight.attributes.OA, 88); // stale imported OA must be recomputed
 });
 
 
@@ -99,4 +99,15 @@ test("goalies receive all 16 attributes and a calculated OA from goalie-specific
     assert.ok(Number.isInteger(result.attributes.OA));
   }
   assert.ok(strong.attributes.OA > weak.attributes.OA);
+});
+
+
+test("OA uses normalized weights across exactly 14 non-FI attributes", () => {
+  const result = estimatePlayerRatings({
+    name:"OA normalization", currentLeague:"NHL", position:"F", age:25
+  }, null, null, {
+    FI:99, SH:80, PL:80, ST:80, CH:80, PO:80, HI:80, SK:80,
+    EN:80, PE:80, FA:80, LE:80, SR:80, OFF:80, DEF:80, OA:5
+  });
+  assert.equal(result.attributes.OA, 80);
 });

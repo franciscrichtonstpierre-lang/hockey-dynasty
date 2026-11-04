@@ -848,6 +848,7 @@ let membershipError=null;
 let membershipResult=await authClient.from("league_members").select("team_id,team_code,role").eq("league_id",id).eq("user_id",signedInUser.id).maybeSingle();
 membership=membershipResult.data;membershipError=membershipResult.error;activeOnlineManagerTeamCode=String(membership?.team_code||"").toUpperCase();
 if(membershipError)throw membershipError;
+await loadLeaguePlayerOverrides();await loadLeagueTradePicks();await loadLeagueSalaryRetentions();
 // An assigned GM enters directly. The commissioner always sees the commissioner workspace.
 if(membership&&!isOwner){const savedTeamIndex=codes.indexOf(membership.team_code)>=0?codes.indexOf(membership.team_code):(membership.team_id===null||membership.team_id===undefined?-1:Number(membership.team_id));if(Number.isInteger(savedTeamIndex)&&savedTeamIndex>=0&&savedTeamIndex<teams.length){S.team=savedTeamIndex;save();if(restoreSameLeaguePage&&restoreLeagueTab){tab=restoreLeagueTab;section=restoreLeagueSection||Object.keys(subpages).find(k=>(subpages[k]||[]).includes(tab))||"Mon équipe"}else{section="Mon équipe";tab="Accueil"};try{localStorage.setItem("uhmLastSection",section);localStorage.setItem("uhmLastTab",tab)}catch(e){}uhmShowStage("game");return}}
 const assignedTeamIndex=membership?(codes.indexOf(membership.team_code)>=0?codes.indexOf(membership.team_code):(membership.team_id===null||membership.team_id===undefined?-1:Number(membership.team_id))):-1;
@@ -1210,6 +1211,8 @@ async function loadLeaguePlayerOverrides(){
  const {data,error}=await authClient.from("league_player_overrides").select("*").eq("league_id",activeOnlineLeagueId).eq("season","2026-2027");
  if(error)throw error;
  UHM_PLAYER_OVERRIDES_BY_ID=new Map((data||[]).map(row=>[String(row.player_id),row]));
+ if(!S.playerAssignments||typeof S.playerAssignments!=="object")S.playerAssignments={};
+ for(const row of (data||[])){const player=(contractRegistryCache||[]).find(p=>uhmDbPlayerId(p)===String(row.player_id))||(playerDirectoryCache||[]).find(p=>uhmDbPlayerId(p)===String(row.player_id));if(!player)continue;const ownerCode=String(row.league_code||"").toUpperCase()==="NHL"?(row.team_code||row.nhl_rights_team):(row.nhl_rights_team||row.team_code);if(ownerCode)S.playerAssignments[tradePlayerKey(player)]={teamCode:ownerCode,league:String(row.league_code||"")};}
  if(Array.isArray(playerDirectoryCache))playerDirectoryCache=applyLeaguePlayerOverridesToRows(playerDirectoryCache);
  if(Array.isArray(contractRegistryCache))contractRegistryCache=applyLeaguePlayerOverridesToRows(contractRegistryCache);
 }

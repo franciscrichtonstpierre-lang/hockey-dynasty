@@ -12,6 +12,7 @@ const ratings = await readJson("data/ratings.json");
 const statsFiles = [
   "data/ahl/player-stats-2026-2027.json",
   "data/echl/player-stats-2026-2027.json",
+  "data/ncaa/player-stats-2026-2027.json",
   "data/junior/player-stats-ohl-2026-2027.json",
   "data/junior/player-stats-whl-2026-2027.json",
   "data/junior/player-stats-qmjhl-2026-2027.json",

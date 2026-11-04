@@ -595,7 +595,7 @@ async function developPlayers(days,asOf){
   const cacheKey=teamCode+":"+trainingLeague+":"+focus;
   if(!coachCache.has(cacheKey))coachCache.set(cacheKey,hdDevelopmentCoachProfile(teamCode,trainingLeague,focus));
   const coach=coachCache.get(cacheKey);
-  const training={focus,intensity:ownTeam?(S.training?.intensity||"Normale"):"Normale",coachSkill:coach.coachSkill,facilities:Number(p.facilitiesRating)||50};
+  const training={focus,goalieFocus:ownTeam?(S.training?.goalie||"Normale"):"Équilibré",intensity:ownTeam?(S.training?.intensity||"Normale"):"Normale",coachSkill:coach.coachSkill,facilities:Number(p.facilitiesRating)||50};
   const result=developOnePlayer(p,days,asOf,training);
   if(result.improved)improved++;
   if(result.retired)retired++;

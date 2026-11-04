@@ -1341,6 +1341,8 @@ function applyLeaguePlayerOverridesToRows(rows){
 }
 async function loadLeaguePlayerOverrides(force=false){
  if(!activeOnlineLeagueId||!authClient||!signedInUser){UHM_PLAYER_OVERRIDES_BY_ID=new Map();hdPlayerOverridesLoadedLeagueId=null;hdPlayerOverridesLoadedAt=0;return;}
+ if(S.developmentLeagueId&&S.developmentLeagueId!==activeOnlineLeagueId){S.development={};S.retiredPlayers={};UHM_PLAYER_OVERRIDES_BY_ID=new Map();hdPlayerOverridesLoadedLeagueId=null;hdPlayerOverridesLoadedAt=0;}
+ S.developmentLeagueId=activeOnlineLeagueId;
  if(!force&&hdPlayerOverridesLoadedLeagueId===activeOnlineLeagueId&&Date.now()-hdPlayerOverridesLoadedAt<30000)return;
  const data=[];for(let offset=0;;offset+=1000){const page=await authClient.from("league_player_overrides").select("*").eq("league_id",activeOnlineLeagueId).eq("season","2026-2027").order("player_id",{ascending:true}).range(offset,offset+999);if(page.error)throw page.error;data.push(...(page.data||[]));if(!page.data||page.data.length<1000)break;}
  UHM_PLAYER_OVERRIDES_BY_ID=new Map(data.map(row=>[String(row.player_id),row]));hdPlayerOverridesLoadedLeagueId=activeOnlineLeagueId;hdPlayerOverridesLoadedAt=Date.now();

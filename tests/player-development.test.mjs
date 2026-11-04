@@ -142,3 +142,24 @@ test("application changes only the 16 visible ratings and keeps them within 0–
   assert.deepEqual(Object.keys(result), attributes);
   for (const key of attributes) assert.ok(result[key] >= 0 && result[key] <= 99);
 });
+
+test("calculates OA from the 15 attributes with position-specific weights", () => {
+  const ratings = Object.fromEntries(attributes.map(key => [key, 70]));
+  ratings.OA = 99;
+  ratings.SH = 95;
+  ratings.PO = 95;
+  const forward = engine.calculateOverall(ratings, "F");
+  const defender = engine.calculateOverall(ratings, "D");
+  assert.ok(forward > 70);
+  assert.ok(defender > 70);
+  assert.notEqual(forward, defender);
+});
+
+test("applyToRatings replaces stored OA with the calculated positional overall", () => {
+  const state = engine.createInitialState(player, null);
+  state.position = "F";
+  const ratings = { ...player.attributes, OA: 99 };
+  const result = engine.applyToRatings(ratings, state);
+  assert.equal(result.OA, engine.calculateOverall(result, "F"));
+  assert.notEqual(result.OA, 99);
+});

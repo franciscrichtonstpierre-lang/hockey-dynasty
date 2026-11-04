@@ -35,6 +35,27 @@ test("tracks all 16 attributes with individual CA and PA ceilings", () => {
   assert.equal(state.potentialIsEstimated, true);
 });
 
+
+test("migrates existing overall and attribute-specific development deltas", () => {
+  const legacy = engine.createInitialState(player, {
+    delta: 2,
+    attributeDelta: { SH: 3 },
+    experience: 14
+  });
+  assert.equal(engine.abilityToVisible(legacy.abilityAttributes.FI.ca), player.attributes.FI + 2);
+  assert.equal(engine.abilityToVisible(legacy.abilityAttributes.SH.ca), player.attributes.SH + 5);
+  assert.equal(legacy.schemaVersion, 2);
+});
+
+test("assigns a position-specific individual peak age", () => {
+  const forward = engine.createInitialState({ ...player, position: "F" }, null);
+  const defender = engine.createInitialState({ ...player, id: "nhl:8470002", position: "D" }, null);
+  const goalie = engine.createInitialState({ ...player, id: "nhl:8470003", position: "G" }, null);
+  assert.ok(forward.peakAge >= 24 && forward.peakAge <= 27);
+  assert.ok(defender.peakAge >= 25 && defender.peakAge <= 29);
+  assert.ok(goalie.peakAge >= 27 && goalie.peakAge <= 31);
+});
+
 test("development is accumulated over days and never exceeds an attribute PA", () => {
   let state = engine.createInitialState(player, null);
   for (let block = 0; block < 12; block++) {

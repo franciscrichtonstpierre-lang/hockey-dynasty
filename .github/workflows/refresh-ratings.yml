@@ -17,11 +17,6 @@ on:
     - cron: "17 8 * * *"
 permissions:
   contents: write
-
-# Serialize generated-data commits with the NHL/AHL/ECHL sync workflow.
-concurrency:
-  group: hockey-dynasty-data-sync-${{ github.ref }}
-  cancel-in-progress: false
 jobs:
   ratings:
     runs-on: ubuntu-latest

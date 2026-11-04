@@ -2,8 +2,8 @@
   "teamCode": "WSH",
   "source": "https://api-web.nhle.com/v1/prospects/WSH",
   "sourceType": "NHL Web API + source-labelled supplemental pipeline",
-  "syncedUTC": "2026-11-03T09:13:18.688Z",
-  "count": 37,
+  "syncedUTC": "2026-11-04T21:33:23.211Z",
+  "count": 38,
   "prospects": [
     {
       "id": 8477380,
@@ -666,6 +666,32 @@
       "birthCountry": "USA",
       "birthStateProvince": {
         "default": "Oregon"
+      },
+      "positionGroup": "defensemen"
+    },
+    {
+      "id": 8475795,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/WSH/8475795.png",
+      "firstName": {
+        "default": "Dylan"
+      },
+      "lastName": {
+        "default": "McIlrath"
+      },
+      "sweaterNumber": 52,
+      "positionCode": "D",
+      "shootsCatches": "R",
+      "heightInInches": 77,
+      "weightInPounds": 245,
+      "heightInCentimeters": 196,
+      "weightInKilograms": 111,
+      "birthDate": "1992-04-20",
+      "birthCity": {
+        "default": "Winnipeg"
+      },
+      "birthCountry": "CAN",
+      "birthStateProvince": {
+        "default": "Manitoba"
       },
       "positionGroup": "defensemen"
     },

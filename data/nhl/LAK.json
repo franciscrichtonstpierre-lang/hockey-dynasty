@@ -73,6 +73,31 @@
       "birthCountry": "SVK"
     },
     {
+      "id": 8483675,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/LAK/8483675.png",
+      "firstName": {
+        "default": "Kenny"
+      },
+      "lastName": {
+        "default": "Connors"
+      },
+      "sweaterNumber": 34,
+      "positionCode": "C",
+      "shootsCatches": "L",
+      "heightInInches": 73,
+      "weightInPounds": 199,
+      "heightInCentimeters": 185,
+      "weightInKilograms": 90,
+      "birthDate": "2003-03-10",
+      "birthCity": {
+        "default": "Glen Mills"
+      },
+      "birthCountry": "USA",
+      "birthStateProvince": {
+        "default": "PA"
+      }
+    },
+    {
       "id": 8477942,
       "headshot": "https://assets.nhle.com/mugs/nhl/20262027/LAK/8477942.png",
       "firstName": {
@@ -336,31 +361,6 @@
       }
     },
     {
-      "id": 8483406,
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/LAK/8483406.png",
-      "firstName": {
-        "default": "Taylor"
-      },
-      "lastName": {
-        "default": "Ward"
-      },
-      "sweaterNumber": 17,
-      "positionCode": "R",
-      "shootsCatches": "R",
-      "heightInInches": 74,
-      "weightInPounds": 215,
-      "heightInCentimeters": 188,
-      "weightInKilograms": 98,
-      "birthDate": "1998-03-31",
-      "birthCity": {
-        "default": "Kelowna"
-      },
-      "birthCountry": "CAN",
-      "birthStateProvince": {
-        "default": "BC"
-      }
-    },
-    {
       "id": 8475692,
       "headshot": "https://assets.nhle.com/mugs/nhl/20262027/LAK/8475692.png",
       "firstName": {
@@ -618,5 +618,5 @@
   ],
   "_sourceSeason": "20262027",
   "_sourceUrl": "https://api-web.nhle.com/v1/roster/LAK/20262027",
-  "_syncedAt": "2026-11-03T09:13:15.748Z"
+  "_syncedAt": "2026-11-04T21:33:20.957Z"
 }

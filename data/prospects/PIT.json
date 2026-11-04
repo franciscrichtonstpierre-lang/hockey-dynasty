@@ -2,7 +2,7 @@
   "teamCode": "PIT",
   "source": "https://api-web.nhle.com/v1/prospects/PIT",
   "sourceType": "NHL Web API + source-labelled supplemental pipeline",
-  "syncedUTC": "2026-11-03T09:13:17.351Z",
+  "syncedUTC": "2026-11-04T21:33:22.159Z",
   "count": 48,
   "prospects": [
     {
@@ -636,31 +636,6 @@
       "positionGroup": "defensemen"
     },
     {
-      "id": 8486169,
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/PIT/8486169.png",
-      "firstName": {
-        "default": "Jake"
-      },
-      "lastName": {
-        "default": "Livanavage"
-      },
-      "sweaterNumber": 57,
-      "positionCode": "D",
-      "heightInInches": 71,
-      "weightInPounds": 190,
-      "heightInCentimeters": 180,
-      "weightInKilograms": 86,
-      "birthDate": "2004-05-06",
-      "birthCity": {
-        "default": "Gilbert"
-      },
-      "birthCountry": "USA",
-      "birthStateProvince": {
-        "default": "Arizona"
-      },
-      "positionGroup": "defensemen"
-    },
-    {
       "id": 8483503,
       "headshot": "https://assets.nhle.com/mugs/nhl/20252026/PIT/8483503.png",
       "firstName": {
@@ -1064,6 +1039,21 @@
       "draftYear": 2023,
       "draftRound": 7,
       "draftOverall": 223,
+      "rightsStatus": "secondary_snapshot_recheck_required",
+      "source": "https://hockeyinsights.ca/team-pipeline/pittsburgh-penguins/",
+      "sourceUpdatedAt": "2026-09-28",
+      "verificationStatus": "secondary_snapshot_recheck_required"
+    },
+    {
+      "fullName": "Jake Livanavage",
+      "positionCode": "LD",
+      "age": 22,
+      "currentLeague": "NCAA",
+      "currentTeam": null,
+      "nhlRightsTeam": "PIT",
+      "draftYear": null,
+      "draftRound": null,
+      "draftOverall": null,
       "rightsStatus": "secondary_snapshot_recheck_required",
       "source": "https://hockeyinsights.ca/team-pipeline/pittsburgh-penguins/",
       "sourceUpdatedAt": "2026-09-28",

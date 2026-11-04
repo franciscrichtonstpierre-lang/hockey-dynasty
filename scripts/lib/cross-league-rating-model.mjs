@@ -130,16 +130,12 @@ function profileOverall(player, existing, league) {
   const knownOa = current.OA ?? player?.overall;
   if (knownOa != null && knownOa !== "" && Number.isFinite(Number(knownOa))) return clamp(Number(knownOa));
   const base = LEAGUE_BASE[league] ?? 53;
-  const rank = rankSignal(player);
+  // Current ability must not be inflated by draft pedigree, body measurements,
+  // salary, or cap hit. Those are not direct measures of on-ice skill.
   const age = playerAge(player);
-  const pickOffset = rank.score == null ? 0 : (rank.score - 60) * 0.32;
   const maturity = age > 0 ? (age < 18 ? -3 : age < 21 ? -1 : age < 25 ? 1 : age < 31 ? 2 : 0) : 0;
-  const size = sizeSignal(player);
-  const sizeOffset = (size - 0.5) * (position === "G" ? 5 : position === "D" ? 4 : 2);
-  const previousCapHit = numeric(player, "previousCapHit", "previousSalary", "annualSalary");
-  const salarySignal = previousCapHit > 0 ? Math.max(-4, Math.min(6, (Math.log10(previousCapHit) - 6) * 3)) : 0;
   const leagueSignal = (LEAGUE_BASE[league] ?? 53) - 55;
-  return clamp(base + pickOffset + maturity + sizeOffset + salarySignal + leagueSignal * 0.2);
+  return clamp(base + maturity + leagueSignal * 0.2);
 }
 
 function statsProfile(player, row, index) {
@@ -189,7 +185,9 @@ export function estimatePlayerRatings(player, statRow, statIndex, existingRating
   const overall = hasKnownOverall ? profileBase : (stat?.score ?? profileBase);
   const size = sizeSignal(player);
   const rank = rankSignal(player);
-  const attack = stat?.attack ?? (rank.score == null ? 0.5 : Math.max(0.05, Math.min(0.95, 0.5 + (rank.score - 60) / 80)));
+  // Without performance/scouting evidence, do not translate draft rank into
+  // invented offensive skill. Keep the estimate neutral and low-confidence.
+  const attack = stat?.attack ?? 0.5;
   const defense = stat?.defense ?? (position === "D" ? 0.62 : position === "G" ? 0.7 : 0.48);
   const goals = stat?.goals ?? attack;
   const assists = stat?.assists ?? attack;
@@ -199,7 +197,8 @@ export function estimatePlayerRatings(player, statRow, statIndex, existingRating
   const durability = stat?.durability ?? (playerAge(player) > 25 ? 0.58 : 0.45);
   const isForward = position === "F";
   const isGoalie = position === "G";
-  const sizeScore = 0.5 + (size - 0.5) * 0.8;
+  // Body measurements are descriptive metadata, not skating/strength grades.
+  const sizeScore = 0.5;
   const modeled = {
     FI:clamp(overall + (isForward ? 1 : position === "D" ? -2 : 0) + (assists - 0.5) * 12),
     SH:clamp(overall + (goals - 0.5) * 22 + (isForward ? 3 : position === "D" ? -5 : 0) - (isGoalie ? 18 : 0)),
@@ -212,7 +211,7 @@ export function estimatePlayerRatings(player, statRow, statIndex, existingRating
     EN:clamp(overall + (durability - 0.5) * 14),
     PE:clamp(overall + (discipline - 0.5) * 14),
     FA:clamp(overall + (isForward ? 1 : position === "D" ? -3 : 0) + (position === "F" && player?.detailedPosition === "C" ? 4 : 0)),
-    LE:clamp(overall + (durability - 0.5) * 9 + (rank.score != null ? 1 : 0)),
+    LE:clamp(overall + (durability - 0.5) * 9),
     SR:clamp(overall + (durability - 0.5) * 13 + (defense - 0.5) * 5),
     OFF:clamp(40 + attack * 48 + (isForward ? 3 : -3) - (isGoalie ? 18 : 0)),
     DEF:clamp(42 + defense * 45 + (position === "D" || isGoalie ? 4 : 0)),
@@ -233,7 +232,7 @@ export function estimatePlayerRatings(player, statRow, statIndex, existingRating
     metadata:{
       source:sources.join(" | ") || "Hockey Dynasty profile model; no external rating source",
       confidence, sampleConfidence, sampleSize, status,
-      method:"cross_league_profile_model_v1",
+      method:"cross_league_profile_model_v2_no_salary_size_or_draft_shortcuts",
       evidence,
       modeledAttributes:modeledFields,
       ratedAttributes:RATING_ATTRIBUTES.slice(),
@@ -250,7 +249,7 @@ export function estimatePlayerPotential(player, overall = player?.overall) {
   return {
     value:clamp(current + growth),
     status:"provisional_model_estimate",
-    method:"current_overall_plus_age_growth_band_v2; not source-verified"
+    method:"age_and_evidence_based_projection_v3; provisional_not_source_verified"
   };
 }
 

@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hockey-dynasty.local/schemas/rating-source-observation.schema.json",
+  "title": "Observation de cote externe",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "playerId",
+    "sourceType",
+    "sourceName",
+    "sourceUrl",
+    "sourceCheckedAt",
+    "sourceEdition",
+    "attribute",
+    "rawValue",
+    "confidence",
+    "status"
+  ],
+  "properties": {
+    "playerId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sourceType": {
+      "enum": [
+        "ea_nhl_game",
+        "league_statistics",
+        "official_player_profile",
+        "scouting_report",
+        "prospect_ranking",
+        "secondary_database"
+      ]
+    },
+    "sourceName": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sourceUrl": {
+      "type": "string",
+      "format": "uri"
+    },
+    "sourceCheckedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "sourceEdition": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "attribute": {
+      "type": "string",
+      "minLength": 1
+    },
+    "rawValue": {
+      "type": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "normalizedHdValue": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 99
+    },
+    "confidence": {
+      "enum": [
+        "very_low",
+        "low",
+        "medium",
+        "high",
+        "verified"
+      ]
+    },
+    "status": {
+      "enum": [
+        "verified",
+        "estimated",
+        "unverified",
+        "conflicting",
+        "not_available"
+      ]
+    },
+    "notes": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  }
+}

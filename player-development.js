@@ -157,7 +157,7 @@
   }
 
   function annualRetirementChance(age, overall, potential) {
-    const rates = { 35:.025, 36:.04, 37:.075, 38:.13, 39:.22, 40:.34, 41:.48, 42:.62 };
+    const rates = { 35:.08, 36:.14, 37:.24, 38:.38, 39:.53, 40:.68, 41:.78, 42:.86 };
     if (age < 35) return 0;
     let chance = rates[Math.floor(age)] ?? .75;
     if (overall < 65) chance *= 1 + (65 - overall) / 40;
@@ -209,7 +209,7 @@
         break;
       }
 
-      const playerFocus = state.position === "G" && FOCUS_POOLS[goalieFocus] ? goalieFocus : focus;
+      const playerFocus = state.position === "G" ? (FOCUS_POOLS[goalieFocus] ? goalieFocus : "Équilibré") : focus;
       const pool = FOCUS_POOLS[playerFocus] || FOCUS_POOLS["Équilibré"];
       const balanced = playerFocus === "Équilibré";
       for (const attribute of ATTRIBUTES) {

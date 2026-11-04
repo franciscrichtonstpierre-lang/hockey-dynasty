@@ -4,10 +4,10 @@ import { findPlayerRows, parseJsonp, validatePlayerRows } from "./lib/ahl-stat-f
 
 const configs = [
   { code:"ECHL", folder:"echl", seasonFile:"data/echl/teams.json", client:"echl", key:"2c2b89ea7345cae8", leagueId:"1", siteId:"0", base:"https://lscluster.hockeytech.com/feed/index.php", minSkaters:200, minGoalies:20 },
-  { code:"OHL", folder:"junior", client:"ohl", key:"f1aa699db3d81487", leagueId:"1", siteId:"1", base:"https://lscluster.hockeytech.com/feed/index.php", minSkaters:100, minGoalies:10 },
-  { code:"WHL", folder:"junior", client:"whl", key:"f1aa699db3d81487", leagueId:"7", siteId:"0", base:"https://lscluster.hockeytech.com/feed/index.php", minSkaters:100, minGoalies:10 },
-  { code:"QMJHL", folder:"junior", seasonId:"214", client:"lhjmq", key:"f322673b6bcae299", leagueId:"6", siteId:"0", base:"https://cluster.leaguestat.com/feed/index.php", minSkaters:100, minGoalies:10 },
-  { code:"USHL", folder:"junior", client:"ushl", key:"e828f89b243dc43f", leagueId:"1", siteId:"0", base:"https://lscluster.hockeytech.com/feed/index.php", minSkaters:100, minGoalies:10 }
+  { code:"OHL", folder:"junior", priorSeasonId:"87", client:"ohl", key:"f1aa699db3d81487", leagueId:"1", siteId:"1", base:"https://lscluster.hockeytech.com/feed/index.php", minSkaters:100, minGoalies:10 },
+  { code:"WHL", folder:"junior", priorSeasonId:"294", client:"whl", key:"f1aa699db3d81487", leagueId:"7", siteId:"0", base:"https://lscluster.hockeytech.com/feed/index.php", minSkaters:100, minGoalies:10 },
+  { code:"QMJHL", folder:"junior", seasonId:"214", priorSeasonId:"213", client:"lhjmq", key:"f322673b6bcae299", leagueId:"6", siteId:"0", base:"https://cluster.leaguestat.com/feed/index.php", minSkaters:100, minGoalies:10 },
+  { code:"USHL", folder:"junior", priorSeasonId:"90", client:"ushl", key:"e828f89b243dc43f", leagueId:"1", siteId:"0", base:"https://lscluster.hockeytech.com/feed/index.php", minSkaters:100, minGoalies:10 }
 ];
 
 const bioData = JSON.parse(await readFile("data/players/junior-bio-enrichment.json", "utf8"));
@@ -52,4 +52,26 @@ for (const cfg of configs) {
   const target = cfg.code === "ECHL" ? `data/${cfg.folder}/player-stats-2026-2027.json` : `data/${cfg.folder}/player-stats-${cfg.code.toLowerCase()}-2026-2027.json`;
   await writeFile(target, JSON.stringify(payload, null, 2) + "\n", "utf8");
   console.log(`${cfg.code}: ${skaters.length} patineurs, ${goalies.length} gardiens (saison ${seasonId}).`);
+  if (cfg.code !== "ECHL") {
+    const priorSeasonId = String(cfg.priorSeasonId || (Number(seasonId) - 1));
+    try {
+      const priorSkaterUrl = endpoint(cfg, priorSeasonId);
+      const priorGoalieUrl = endpoint(cfg, priorSeasonId, { position:"goalies" });
+      const [priorSkaterPayload, priorGoaliePayload] = await Promise.all([get(priorSkaterUrl), get(priorGoalieUrl)]);
+      const priorSkaters = validatePlayerRows(uniqueRows(findPlayerRows(priorSkaterPayload)), { minimum:cfg.minSkaters, kind:`${cfg.code} prior-season skater` });
+      const priorGoalies = validatePlayerRows(uniqueRows(findPlayerRows(priorGoaliePayload)), { minimum:cfg.minGoalies, kind:`${cfg.code} prior-season goalie` });
+      const priorPayload = {
+        schemaVersion:1, league:cfg.code, season:"2025-2026", seasonId:priorSeasonId,
+        source:`Official ${cfg.code} HockeyTech / LeagueStat public player statistics feed (2025-26)`,
+        syncedAt:new Date().toISOString(), endpoints:{skaters:priorSkaterUrl,goalies:priorGoalieUrl},
+        counts:{skaters:priorSkaters.length,goalies:priorGoalies.length}, skaters:priorSkaters, goalies:priorGoalies,
+        notes:["Previous-season statistics are used only when no current-season player row exists.", "Historical statistical estimates are not scouting grades."]
+      };
+      const priorTarget = `data/junior/player-stats-${cfg.code.toLowerCase()}-2025-2026.json`;
+      await writeFile(priorTarget, JSON.stringify(priorPayload,null,2)+"\n","utf8");
+      console.log(`${cfg.code} prior-season stats: ${priorSkaters.length} skaters, ${priorGoalies.length} goalies (season ${priorSeasonId}).`);
+    } catch (error) {
+      console.warn(`${cfg.code} 2025-26 fallback unavailable: ${error.message}`);
+    }
+  }
 }

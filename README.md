@@ -24,6 +24,15 @@ Saison cible : **2026–2027**. Ce dépôt contient l’application et les insta
 - `scripts/sync-contracts.mjs` — contrats, salaires par saison et clauses à partir de [ehlersio/nhl-contracts](https://github.com/ehlersio/nhl-contracts), sous licence CC0-1.0.
 - `scripts/validate-database.mjs` — audit strict de couverture, salaires utilisables, doublons, listes d’espoirs, personnel LNH/LAH et propriétaires de choix. La dernière exécution passe; les cotes de potentiel et certains montants restent clairement marqués comme estimations.
 
+## Moteur de développement des joueurs
+
+- `player-development.js` — moteur de progression inspiré de la logique CA/PA d’EHM. Chaque joueur possède un CA et un PA internes de 1 à 200 pour chacun des 16 attributs FI, SH, PL, ST, CH, PO, HI, SK, EN, PE, FA, LE, SR, OFF, DEF et OA; les effectifs continuent d’afficher les notes de 0 à 99.
+- Le moteur accumule les effets jour par jour et applique le résultat à la fin des blocs de simulation de **7, 14 ou 28 jours**. Le résultat est cohérent entre un bloc de 28 jours et quatre blocs de 7 jours, toutes choses égales par ailleurs.
+- Âge, écart au potentiel, entraînement, intensité, entraîneurs, installations, temps de glace, rendement et blessures influencent le développement. Les joueurs peuvent stagner, progresser ou régresser; le PA demeure un plafond et non une promesse.
+- Le CA/PA et la progression de chaque attribut restent internes. Les potentiels estimés demeurent identifiés comme estimations et ne deviennent pas des potentiels source-vérifiés.
+- Dans une ligue en ligne, les états de développement sont enregistrés dans le payload des fiches `league_player_overrides`, lisibles par les membres et modifiables par le commissaire selon les politiques RLS existantes. Hors ligne, l’état est conservé dans la sauvegarde locale.
+- `tests/player-development.test.mjs` — tests de l’échelle CA/PA, des plafonds individuels, de la cohérence 28 jours / 4 × 7 jours et de l’effet des blessures.
+
 ## Principes de données
 
 - Aucun droit LNH n’est déduit uniquement de l’affiliation LAH.

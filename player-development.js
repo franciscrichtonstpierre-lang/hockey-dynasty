@@ -80,7 +80,9 @@
         return Math.max(0, (date.getTime() - birth.getTime()) / 31557600000);
       }
     }
-    return Math.max(0, numberOr(player?.age, 27));
+    const referenceDate = new Date("2026-10-07T00:00:00Z");
+    const elapsedYears = (date.getTime() - referenceDate.getTime()) / 31557600000;
+    return Math.max(0, numberOr(player?.age, 27) + elapsedYears);
   }
 
   function initialPotentialCap(attribute, player, base, overall, potential, position) {

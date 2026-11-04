@@ -56,3 +56,21 @@ test("salary, cap hit, body measurements, and draft rank do not inflate profile 
   assert.equal(plain.metadata.confidence, "very_low");
   assert.ok(plain.metadata.method.includes("v2_no_salary_size_or_draft_shortcuts"));
 });
+
+
+test("FI is Fighting, stays independent, and never changes OA", () => {
+  const lowFight = estimatePlayerRatings(
+    { name:"Cole Caufield", currentLeague:"NHL", position:"F", age:25 },
+    null, null,
+    { FI:10, OA:88 }
+  );
+  const highFight = estimatePlayerRatings(
+    { name:"Cole Caufield", currentLeague:"NHL", position:"F", age:25 },
+    null, null,
+    { FI:90, OA:88 }
+  );
+  assert.equal(lowFight.attributes.FI, 10);
+  assert.equal(highFight.attributes.FI, 90);
+  assert.equal(lowFight.attributes.OA, 88);
+  assert.equal(highFight.attributes.OA, 88);
+});

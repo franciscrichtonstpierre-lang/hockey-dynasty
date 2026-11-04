@@ -26,7 +26,10 @@ for (const path of statsFiles) {
   let data = null;
   try { data = await readJson(path); }
   catch (error) { if (error.code !== "ENOENT") throw error; }
-  if (data) statsIndexes.set(data.league, createLeagueStatIndex(data));
+  if (data) {
+    if (!statsIndexes.has(data.league)) statsIndexes.set(data.league, []);
+    statsIndexes.get(data.league).push(createLeagueStatIndex(data));
+  }
 }
 const directSourceRatings = ratings.players || {};
 const directMetadata = ratings.playerMetadata || {};

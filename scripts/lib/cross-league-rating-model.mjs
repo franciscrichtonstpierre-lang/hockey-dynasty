@@ -201,21 +201,21 @@ export function estimatePlayerRatings(player, statRow, statIndex, existingRating
   const isGoalie = position === "G";
   const sizeScore = 0.5 + (size - 0.5) * 0.8;
   const modeled = {
-    FI:clamp(overall + (isForward ? 1 : position === "D" ? -2 : 0) + (assists - 0.5) * 12),
-    SH:clamp(overall + (goals - 0.5) * 22 + (isForward ? 3 : position === "D" ? -5 : 0) - (isGoalie ? 18 : 0)),
-    PL:clamp(overall + (assists - 0.5) * 22 + (isForward ? 2 : position === "D" ? -2 : 0) - (isGoalie ? 18 : 0)),
-    ST:clamp(overall + (sizeScore - 0.5) * 22 + (position === "D" ? 3 : 0)),
-    CH:clamp(overall + (defense - 0.5) * 18 + (position === "D" ? 4 : -1)),
-    PO:clamp(overall + (defense - 0.5) * 16 + (isGoalie ? 7 : 0)),
-    HI:clamp(overall + (sizeScore - 0.5) * 24 + (position === "D" ? 4 : 0)),
-    SK:clamp(overall + (points - 0.5) * 10 - (sizeScore - 0.5) * 5),
-    EN:clamp(overall + (durability - 0.5) * 14),
-    PE:clamp(overall + (discipline - 0.5) * 14),
-    FA:clamp(overall + (isForward ? 1 : position === "D" ? -3 : 0) + (position === "F" && player?.detailedPosition === "C" ? 4 : 0)),
-    LE:clamp(overall + (durability - 0.5) * 9 + (rank.score != null ? 1 : 0)),
-    SR:clamp(overall + (durability - 0.5) * 13 + (defense - 0.5) * 5),
-    OFF:clamp(40 + attack * 48 + (isForward ? 3 : -3) - (isGoalie ? 18 : 0)),
-    DEF:clamp(42 + defense * 45 + (position === "D" || isGoalie ? 4 : 0)),
+    FI:clamp((numeric(statRow, "fightingSkill", "fightRating") || numeric(player, "fightingSkill", "fightRating") || (numeric(statRow, "fightingMajors", "fightsPerSeason", "fights") || numeric(player, "fightingMajors", "fightsPerSeason", "fights")) * 12 || 10)),
+    SH:isGoalie ? clamp(35 + goals * 48) : clamp(overall + (goals - 0.5) * 22 + (isForward ? 3 : position === "D" ? -5 : 0)),
+    PL:isGoalie ? clamp(35 + assists * 45) : clamp(overall + (assists - 0.5) * 22 + (isForward ? 2 : position === "D" ? -2 : 0)),
+    ST:isGoalie ? clamp(35 + shots * 44) : clamp(overall + (sizeScore - 0.5) * 22 + (position === "D" ? 3 : 0)),
+    CH:isGoalie ? clamp(35 + durability * 48) : clamp(overall + (defense - 0.5) * 18 + (position === "D" ? 4 : -1)),
+    PO:isGoalie ? clamp(35 + assists * 48) : clamp(overall + (defense - 0.5) * 16),
+    HI:isGoalie ? clamp(35 + goals * 48) : clamp(overall + (sizeScore - 0.5) * 24 + (position === "D" ? 4 : 0)),
+    SK:isGoalie ? clamp(35 + points * 44) : clamp(overall + (points - 0.5) * 10 - (sizeScore - 0.5) * 5),
+    EN:isGoalie ? clamp(35 + durability * 48) : clamp(overall + (durability - 0.5) * 14),
+    PE:isGoalie ? clamp(35 + discipline * 46) : clamp(overall + (discipline - 0.5) * 14),
+    FA:isGoalie ? clamp(35 + durability * 44) : clamp(overall + (isForward ? 1 : position === "D" ? -3 : 0) + (position === "F" && player?.detailedPosition === "C" ? 4 : 0)),
+    LE:isGoalie ? clamp(35 + durability * 46) : clamp(overall + (durability - 0.5) * 9 + (rank.score != null ? 1 : 0)),
+    SR:isGoalie ? clamp(35 + goals * 48) : clamp(overall + (durability - 0.5) * 13 + (defense - 0.5) * 5),
+    OFF:isGoalie ? clamp(35 + goals * 45) : clamp(40 + attack * 48 + (isForward ? 3 : -3)),
+    DEF:isGoalie ? clamp(35 + assists * 50) : clamp(42 + defense * 45 + (position === "D" ? 4 : 0)),
     OA:overall
   };
   const attributes = Object.fromEntries(RATING_ATTRIBUTES.map(key => [key, existing[key] ?? modeled[key]]));

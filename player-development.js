@@ -126,8 +126,10 @@
 
     const priorSeed = Number(prior.rngState);
     const rngState = Number.isFinite(priorSeed) && priorSeed !== 0 ? priorSeed >>> 0 : hashSeed(id + ":development");
+    const consistency = clamp(numberOr(player?.consistency ?? player?.CON, 70), 0, 100);
+    const dispositionJitter = ((hashSeed(id + ":disposition") % 10001) / 10000) * .16 - .08;
     const disposition = clamp(numberOr(prior.disposition,
-      .72 + ((hashSeed(id + ":disposition") % 10001) / 10000) * .56), .55, 1.35);
+      .35 + consistency / 100 * .85 + dispositionJitter), .55, 1.35);
 
     return {
       schemaVersion: 2,

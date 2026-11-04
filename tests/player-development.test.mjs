@@ -43,7 +43,7 @@ test("development is accumulated over days and never exceeds an attribute PA", (
   }
   for (const key of attributes) {
     assert.ok(state.abilityAttributes[key].ca <= state.abilityAttributes[key].pa, key);
-    assert.ok(Number.isFinite(state.attributeDelta[key]), key);
+    assert.ok(Number.isFinite(state.abilityAttributes[key].progress), key);
   }
 });
 

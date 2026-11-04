@@ -22,7 +22,11 @@ test("every generated NHL rating has exactly the shared schema and individual pr
   assert.ok(data.playerMetadata);
   for (const [id, ratings] of Object.entries(data.players)) {
     assert.deepEqual(Object.keys(ratings), RATING_ATTRIBUTES, `attribute keys for ${id}`);
-    if (data.playerMetadata[id]?.status !== "manual_pilot_calibration_owner_reference") assert.equal(ratings.FI, 10, `FI must stay at the conservative default until fighting-specific data exists for ${id}`);
+    if (data.playerMetadata[id]?.status !== "manual_pilot_calibration_owner_reference") {
+      const fights = Number(data.playerMetadata[id]?.fightingMajors || 0);
+      const expectedFI = fights > 0 ? Math.max(0, Math.min(99, Math.round(20 + Math.min(79, fights * 12)))) : 10;
+      assert.equal(ratings.FI, expectedFI, `FI must reflect fighting-specific evidence only for ${id}`);
+    }
     assert.ok(!("POT" in ratings), `potential is separate for ${id}`);
     const metadata = data.playerMetadata[id];
     assert.ok(metadata?.source, `source for ${id}`);

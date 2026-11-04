@@ -125,7 +125,7 @@ test("the live organization renderer displays ratings for all Montreal prospect 
 });
 
 test("the organization roster loader waits for and retries the shared ratings registry", () => {
-  const loader = sourceLine("async function loadRatings()");
+  const loader = sourceLine("async function loadRatings(forceOverrides=false)");
   const registryFetcher = sourceLine("async function fetchRatingRegistry()");
   const organizationLoader = sourceLine("async function loadOrganizationEffectifExtras(");
 

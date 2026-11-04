@@ -8,6 +8,8 @@ on:
       - "player-development.js"
       - "player-source-matching.js"
       - "roster-import.js"
+      - "nhl-roster-adapter.js"
+      - "tests/nhl-roster-adapter.test.mjs"
       - "tests/roster-import.test.mjs"
       - "tests/player-source-matching.test.mjs"
       - "tests/player-development.test.mjs"
@@ -39,5 +41,9 @@ jobs:
         run: node --test tests/roster-import.test.mjs
       - name: Vérifier la syntaxe du module d’importation
         run: node --check roster-import.js
+      - name: Vérifier l’adaptateur des effectifs NHL
+        run: node --test tests/nhl-roster-adapter.test.mjs
+      - name: Vérifier la syntaxe de l’adaptateur NHL
+        run: node --check nhl-roster-adapter.js
       - name: Vérifier la syntaxe JavaScript intégrée
         run: node scripts/check-inline-js.mjs

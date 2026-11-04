@@ -2,7 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { RATING_ATTRIBUTES } from "../scripts/lib/player-ratings.mjs";
 import { parseNCAAPlayerStats } from "../scripts/lib/ncaa-stat-feed.mjs";
-import { createLeagueStatIndex, estimatePlayerRatings, matchLeagueStats, matchStatIndex, statNameKey } from "../scripts/lib/cross-league-rating-model.mjs";
+import { combineLeagueStatRows, createLeagueStatIndex, estimatePlayerRatings, matchLeagueStats, matchStatIndex, statNameKey } from "../scripts/lib/cross-league-rating-model.mjs";
 
 test("uses a unique official league-stat match when the profile omits its current league", () => {
   const row = { player_id:77, name:"Prospect Cross League", position:"F", games_played:18, goals:8, assists:11, points:19, shots:52, plus_minus:4, penalty_minutes:6 };
@@ -32,6 +32,29 @@ test("does not use an ambiguous cross-league match for an NHL prospect", () => {
   const whl = createLeagueStatIndex({ league:"WHL", source:"official WHL stats", season:"2026-2027", skaters:[{...row,player_id:92}], goalies:[] });
   const matched = matchStatIndex({ name:"Ambiguous NHL Prospect", currentLeague:"NHL", position:"F" },new Map([["OHL",ohl],["WHL",whl]]),{allowCrossLeague:true});
   assert.equal(matched.row,null);
+});
+
+test("combines short current-season skater samples with prior-season totals", () => {
+  const current = { games_played:8, goals:4, assists:5, points:9, shots:30, plus_minus:2, penalty_minutes:4 };
+  const previous = { games_played:40, goals:12, assists:18, points:30, shots:110, plus_minus:6, penalty_minutes:20 };
+  const combined = combineLeagueStatRows(current,previous);
+  assert.equal(combined.games_played,48);
+  assert.equal(combined.goals,16);
+  assert.equal(combined.assists,23);
+  assert.equal(combined.points,39);
+  assert.equal(combined.shots,140);
+});
+
+test("combines goalie saves and shots before recalculating save percentage", () => {
+  const current = { games_played:5, saves:130, shots_against:140, save_percentage:92.86, goals_against_average:2.0, wins:3, shutouts:1 };
+  const previous = { games_played:30, saves:780, shots_against:840, save_percentage:92.86, goals_against_average:2.4, wins:16, shutouts:2 };
+  const combined = combineLeagueStatRows(current,previous);
+  assert.equal(combined.games_played,35);
+  assert.equal(combined.saves,910);
+  assert.equal(combined.shots_against,980);
+  assert.ok(Math.abs(combined.save_percentage - 92.857) < 0.01);
+  assert.equal(combined.wins,19);
+  assert.equal(combined.shutouts,3);
 });
 
 test("uses prior-season statistics only when current-season statistics have no player row", () => {

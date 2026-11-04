@@ -278,19 +278,25 @@ export function estimatePlayerPotential(player, overall = player?.overall) {
 export function matchStatIndex(player, indexes) {
   const league = leagueKey(player?.currentLeague || player?.league);
   const preferred = indexes.get(league);
-  if (preferred) {
-    const row = matchLeagueStats(player, preferred);
-    if (row) return { index:preferred, row };
+  const preferredList = Array.isArray(preferred) ? preferred : preferred ? [preferred] : [];
+  for (const index of preferredList) {
+    const row = matchLeagueStats(player, index);
+    if (row) return { index, row };
   }
   // NHL prospect and secondary roster feeds often omit the player's current
   // league. Search every official feed by exact normalized name/ID, but accept
   // a fallback only when exactly one league has an unambiguous player match.
-  if (!["UNKNOWN", "OTHER"].includes(league)) return { index:preferred || null, row:null };
+  if (!["UNKNOWN", "OTHER"].includes(league)) return { index:preferredList[0] || null, row:null };
   const matches = [];
-  for (const [key, index] of indexes.entries()) {
+  for (const [key, value] of indexes.entries()) {
     if (key === league) continue;
-    const row = matchLeagueStats(player, index);
-    if (row) matches.push({ index, row });
+    const list = Array.isArray(value) ? value : [value];
+    let found = null;
+    for (const index of list) {
+      const row = matchLeagueStats(player, index);
+      if (row) { found = { index, row }; break; }
+    }
+    if (found) matches.push(found);
   }
-  return matches.length === 1 ? matches[0] : { index:preferred || null, row:null };
+  return matches.length === 1 ? matches[0] : { index:preferredList[0] || null, row:null };
 }

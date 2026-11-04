@@ -48,13 +48,15 @@ for (const player of registry.players || []) {
   const playerId = player.nhlPlayerId == null ? null : String(player.nhlPlayerId);
   const direct = playerId ? directSourceRatings[playerId] : null;
   const directMeta = playerId ? directMetadata[playerId] : null;
-  const match = matchStatIndex(player, statsIndexes);
+  const hasNhlStatistics = directMeta?.evidence === "nhl_player_statistics" || /NHL Stats REST/i.test(directMeta?.source || "");
+  const match = matchStatIndex(player, statsIndexes, {
+    allowCrossLeague: String(player.currentLeague || player.league || "").toUpperCase() === "NHL" && !hasNhlStatistics
+  });
   const statRow = match.row;
   const statIndex = match.index;
   // Prefer a player's current-league season over an older NHL season. Never
   // treat values produced by an earlier model run as source ratings.
   const useCurrentLeagueStats = Boolean(statRow && statIndex?.league !== "NHL");
-  const hasNhlStatistics = directMeta?.evidence === "nhl_player_statistics" || /NHL Stats REST/i.test(directMeta?.source || "");
   const useNhlStats = Boolean(direct && !useCurrentLeagueStats && hasNhlStatistics);
   const directMissing = direct ? RATING_ATTRIBUTES.filter(key => direct[key] == null) : [];
   const modelPlayer = useNhlStats ? player : { ...player, overall:null, attributes:null };

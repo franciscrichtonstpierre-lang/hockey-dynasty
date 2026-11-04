@@ -48,19 +48,22 @@ for (const candidate of [2027, 2026]) {
     console.warn(`SHL skater feed unavailable for season ${candidate}: ${error.message}`);
   }
 }
-if (!shlSeason) throw new Error("SHL: no complete skater statistics season available.");
-for (const module of ["goalies_summary", "goalies"]) {
-  try {
-    const raw = await get(`${shlBase}/${module}?count=1000&season=${shlSeason}&gameType=regular`);
-    const rows = normalizeShlGoalies(raw);
-    if (rows.length >= 8) { shlGoalies = rows; break; }
-  } catch (error) {
-    console.warn(`SHL goalie module ${module} unavailable: ${error.message}`);
+if (!shlSeason) {
+  console.warn("SHL: public stats endpoint unavailable from this runner; retaining profile estimates for SHL players.");
+} else {
+  for (const module of ["goalies_summary", "goalies"]) {
+    try {
+      const raw = await get(`${shlBase}/${module}?count=1000&season=${shlSeason}&gameType=regular`);
+      const rows = normalizeShlGoalies(raw);
+      if (rows.length >= 8) { shlGoalies = rows; break; }
+    } catch (error) {
+      console.warn(`SHL goalie module ${module} unavailable: ${error.message}`);
+    }
   }
+  const shlSeasonLabel = shlSeason === 2027 ? "2026-2027" : "2025-2026";
+  await save(
+    "SHL", shlSeasonLabel, shlSkaters, shlGoalies,
+    `Official SHL statistics-v2 regular-season player statistics (season ${shlSeason})`,
+    `data/europe/player-stats-shl-${shlSeasonLabel}.json`, 0
+  );
 }
-const shlSeasonLabel = shlSeason === 2027 ? "2026-2027" : "2025-2026";
-await save(
-  "SHL", shlSeasonLabel, shlSkaters, shlGoalies,
-  `Official SHL statistics-v2 regular-season player statistics (season ${shlSeason})`,
-  `data/europe/player-stats-shl-${shlSeasonLabel}.json`, 0
-);

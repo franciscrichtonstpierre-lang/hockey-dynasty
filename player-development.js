@@ -130,7 +130,6 @@
 
     return {
       schemaVersion: 2,
-      playerId: id,
       position,
       disposition,
       rngState,
@@ -191,7 +190,6 @@
     const usageFactor = .74 + iceTime / 78;
     const performanceFactor = .9 + performance / 500;
     const injuredDays = clamp(Math.round(numberOr(opts.injuredDays, 0)), 0, days);
-    const ageAtStart = ageAt(player, start);
     let gains = 0;
     let regressions = 0;
     let trainingGains = 0;

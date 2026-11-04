@@ -274,6 +274,7 @@
     const specific = dev.attributeDelta && typeof dev.attributeDelta === "object" ? dev.attributeDelta : {};
     const output = { ...source };
     for (const attribute of ATTRIBUTES) {
+      if (attribute === "OA") continue;
       const base = numberOr(source[attribute], null);
       if (base == null) continue;
       const ability = Array.isArray(dev.abilityAttributes)
@@ -287,6 +288,9 @@
         output[attribute] = clamp(Math.round(base + delta), 0, 99);
       }
     }
+    const calculatedOverall = calculateOverall(output, dev.position || "F");
+    if (calculatedOverall != null) output.OA = calculatedOverall;
+    else if (numberOr(source.OA, null) != null) output.OA = clamp(Math.round(numberOr(source.OA, 0) + legacyDelta + numberOr(specific.OA, 0)), 0, 99);
     return output;
   }
 
@@ -296,6 +300,23 @@
     const node = Array.isArray(state?.abilityAttributes) ? state.abilityAttributes[index] : state?.abilityAttributes?.[attribute];
     const ca = Array.isArray(node) ? node[0] : node?.ca;
     return Number.isFinite(Number(ca)) ? abilityToVisible(ca) : null;
+  }
+
+  function calculateOverall(ratings, position) {
+    const group = ["G", "D", "F"].includes(String(position || "").toUpperCase())
+      ? String(position).toUpperCase() : "F";
+    const weights = POSITION_WEIGHTS[group];
+    let weighted = 0;
+    let totalWeight = 0;
+    for (const attribute of ATTRIBUTES) {
+      if (attribute === "OA") continue;
+      const value = numberOr(ratings?.[attribute], null);
+      if (value == null) continue;
+      const weight = weights[attribute] ?? 1;
+      weighted += clamp(value, 0, 99) * weight;
+      totalWeight += weight;
+    }
+    return totalWeight ? clamp(Math.round(weighted / totalWeight), 0, 99) : null;
   }
 
   function createInitialState(player, previous) {
@@ -310,6 +331,7 @@
     advancePlayer,
     applyToRatings,
     visibleRatingFor,
+    calculateOverall,
     ageAt
   });
 })(typeof globalThis !== "undefined" ? globalThis : this);

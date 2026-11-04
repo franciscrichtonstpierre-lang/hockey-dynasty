@@ -1,0 +1,86 @@
+import test from "node:test";
+import assert from "node:assert/strict";
+import "../player-development.js";
+
+const engine = globalThis.HDPlayerDevelopment;
+const attributes = engine.ATTRIBUTES;
+const player = {
+  id: "nhl:8470001",
+  name: "Prospect Test",
+  birthDate: "2007-06-15",
+  position: "F",
+  overall: 68,
+  potential: 91,
+  potentialStatus: "provisional_model_estimate",
+  attributes: Object.fromEntries(attributes.map((key, index) => [key, 55 + (index % 12)]))
+};
+const start = new Date("2026-10-07T00:00:00Z");
+const training = { focus: "Développement des jeunes", intensity: "Normale", coachSkill: 78, facilities: 65 };
+
+test("maps visible 0–99 ratings to internal 1–200 ability", () => {
+  assert.equal(engine.visibleToAbility(0), 1);
+  assert.equal(engine.visibleToAbility(99), 200);
+  assert.equal(engine.abilityToVisible(1), 0);
+  assert.equal(engine.abilityToVisible(200), 99);
+});
+
+test("tracks all 16 attributes with individual CA and PA ceilings", () => {
+  const state = engine.createInitialState(player, null);
+  assert.deepEqual(Object.keys(state.abilityAttributes), attributes);
+  assert.deepEqual(Object.keys(state.attributeDelta), attributes);
+  for (const key of attributes) {
+    assert.ok(state.abilityAttributes[key].ca >= 1 && state.abilityAttributes[key].ca <= 200);
+    assert.ok(state.abilityAttributes[key].pa >= state.abilityAttributes[key].ca);
+    assert.ok(state.abilityAttributes[key].pa <= 200);
+  }
+  assert.equal(state.potentialIsEstimated, true);
+});
+
+test("development is accumulated over days and never exceeds an attribute PA", () => {
+  let state = engine.createInitialState(player, null);
+  for (let block = 0; block < 12; block++) {
+    const date = new Date(start.getTime() + block * 28 * 86400000);
+    state = engine.advancePlayer(player, state, { days: 28, asOf: date, training }).state;
+  }
+  for (const key of attributes) {
+    assert.ok(state.abilityAttributes[key].ca <= state.abilityAttributes[key].pa, key);
+    assert.ok(Number.isFinite(state.attributeDelta[key]), key);
+  }
+});
+
+test("28 days at once equals four consecutive 7-day blocks", () => {
+  const initial = engine.createInitialState(player, null);
+  const oneBlock = engine.advancePlayer(player, structuredClone(initial), {
+    days: 28, asOf: start, training
+  }).state;
+  let fourBlocks = structuredClone(initial);
+  for (let block = 0; block < 4; block++) {
+    const date = new Date(start.getTime() + block * 7 * 86400000);
+    fourBlocks = engine.advancePlayer(player, fourBlocks, {
+      days: 7, asOf: date, training
+    }).state;
+  }
+  assert.deepEqual(fourBlocks, oneBlock);
+});
+
+test("injuries slow development without erasing stored ability", () => {
+  const initial = engine.createInitialState(player, null);
+  const healthy = engine.advancePlayer(player, structuredClone(initial), {
+    days: 28, asOf: start, training, injuredDays: 0
+  }).state;
+  const injured = engine.advancePlayer(player, structuredClone(initial), {
+    days: 28, asOf: start, training, injuredDays: 28
+  }).state;
+  const healthyProgress = attributes.reduce((sum, key) => sum + healthy.abilityAttributes[key].progress, 0);
+  const injuredProgress = attributes.reduce((sum, key) => sum + injured.abilityAttributes[key].progress, 0);
+  assert.ok(injuredProgress < healthyProgress);
+  for (const key of attributes) assert.ok(injured.abilityAttributes[key].ca >= 1);
+});
+
+test("application changes only the 16 visible ratings and keeps them within 0–99", () => {
+  const initial = engine.createInitialState(player, null);
+  const advanced = engine.advancePlayer(player, initial, { days: 28, asOf: start, training }).state;
+  const result = engine.applyToRatings(player.attributes, advanced);
+  assert.deepEqual(Object.keys(result), attributes);
+  for (const key of attributes) assert.ok(result[key] >= 0 && result[key] <= 99);
+});

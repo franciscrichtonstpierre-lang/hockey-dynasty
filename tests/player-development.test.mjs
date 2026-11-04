@@ -4,6 +4,7 @@ import "../player-development.js";
 
 const engine = globalThis.HDPlayerDevelopment;
 const attributes = engine.ATTRIBUTES;
+const ability = (state, key) => state.abilityAttributes[attributes.indexOf(key)];
 const player = {
   id: "nhl:8470001",
   name: "Prospect Test",
@@ -26,11 +27,11 @@ test("maps visible 0–99 ratings to internal 1–200 ability", () => {
 
 test("tracks all 16 attributes with individual CA and PA ceilings", () => {
   const state = engine.createInitialState(player, null);
-  assert.deepEqual(Object.keys(state.abilityAttributes), attributes);
+  assert.equal(state.abilityAttributes.length, attributes.length);
   for (const key of attributes) {
-    assert.ok(state.abilityAttributes[key].ca >= 1 && state.abilityAttributes[key].ca <= 200);
-    assert.ok(state.abilityAttributes[key].pa >= state.abilityAttributes[key].ca);
-    assert.ok(state.abilityAttributes[key].pa <= 200);
+    assert.ok(ability(state, key)[0] >= 1 && ability(state, key)[0] <= 200);
+    assert.ok(ability(state, key)[1] >= state.abilityAttributes[key].ca);
+    assert.ok(ability(state, key)[1] <= 200);
   }
   assert.equal(state.potentialIsEstimated, true);
 });
@@ -42,8 +43,8 @@ test("migrates existing overall and attribute-specific development deltas", () =
     attributeDelta: { SH: 3 },
     experience: 14
   });
-  assert.equal(engine.abilityToVisible(legacy.abilityAttributes.FI.ca), player.attributes.FI + 2);
-  assert.equal(engine.abilityToVisible(legacy.abilityAttributes.SH.ca), player.attributes.SH + 5);
+  assert.equal(engine.abilityToVisible(ability(legacy, "FI")[0]), player.attributes.FI + 2);
+  assert.equal(engine.abilityToVisible(ability(legacy, "SH")[0]), player.attributes.SH + 5);
   assert.equal(legacy.schemaVersion, 2);
 });
 
@@ -64,7 +65,7 @@ test("development is accumulated over days and never exceeds an attribute PA", (
   }
   for (const key of attributes) {
     assert.ok(state.abilityAttributes[key].ca <= state.abilityAttributes[key].pa, key);
-    assert.ok(Number.isFinite(state.abilityAttributes[key].progress), key);
+    assert.ok(Number.isFinite(ability(state, key)[2]), key);
   }
 });
 
@@ -92,9 +93,9 @@ test("injuries slow development without erasing stored ability", () => {
     days: 28, asOf: start, training, injuredDays: 28
   }).state;
   const totalProgress = state => attributes.reduce((sum, key) => {
-    const initialAbility = initial.abilityAttributes[key].ca;
+    const initialAbility = ability(initial, key)[0];
     const current = state.abilityAttributes[key];
-    return sum + (current.ca - initialAbility) + current.progress;
+    return sum + (current[0] - initialAbility) + current[2];
   }, 0);
   assert.ok(totalProgress(injured) < totalProgress(healthy));
   for (const key of attributes) assert.ok(injured.abilityAttributes[key].ca >= 1);
@@ -104,10 +105,10 @@ test("injuries slow development without erasing stored ability", () => {
 test("applies each attribute's current ability to its visible 0–99 rating", () => {
   const state = engine.createInitialState(player, null);
   const key = "FI";
-  state.abilityAttributes[key].ca = engine.visibleToAbility(81);
+  ability(state, key)[0] = engine.visibleToAbility(81);
   const result = engine.applyToRatings(player.attributes, state);
   assert.equal(result[key], 81);
-  assert.equal(result.SH, engine.abilityToVisible(state.abilityAttributes.SH.ca));
+  assert.equal(result.SH, engine.abilityToVisible(ability(state, "SH")[0]));
 });
 
 test("application changes only the 16 visible ratings and keeps them within 0–99", () => {

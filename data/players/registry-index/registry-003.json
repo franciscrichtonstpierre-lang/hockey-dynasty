@@ -451,7 +451,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 62,
       "ratingStatus": "sample_adjusted_statistical_estimate_with_profile_completion",
       "potentialStatus": "provisional_model_estimate",
@@ -1590,7 +1592,7 @@
         "PE": 79,
         "FA": 80,
         "LE": 80,
-        "SR": 81,
+        "SR": 80,
         "OFF": 84,
         "DEF": 80,
         "OA": 82
@@ -1698,7 +1700,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 62,
       "ratingStatus": "sample_adjusted_statistical_estimate_with_profile_completion",
       "potentialStatus": "provisional_model_estimate",
@@ -1839,7 +1843,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 80,
       "ratingStatus": "sample_adjusted_statistical_estimate_with_profile_completion",
       "potentialStatus": "provisional_model_estimate",
@@ -3131,7 +3137,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 62,
       "ratingStatus": "sample_adjusted_statistical_estimate_with_profile_completion",
       "potentialStatus": "provisional_model_estimate",
@@ -4028,7 +4036,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 73,
       "ratingStatus": "sample_adjusted_statistical_estimate_with_profile_completion",
       "potentialStatus": "provisional_model_estimate",
@@ -4090,7 +4100,13 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FI",
+        "SH",
+        "PL",
+        "FA",
+        "OFF"
+      ],
       "potential": 82,
       "ratingStatus": "sample_adjusted_statistical_estimate_with_profile_completion",
       "potentialStatus": "provisional_model_estimate",
@@ -4214,7 +4230,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 71,
       "ratingStatus": "sample_adjusted_statistical_estimate_with_profile_completion",
       "potentialStatus": "provisional_model_estimate",
@@ -4391,24 +4409,24 @@
       "currentTeam": "Arizona State",
       "nhlRightsTeam": "OTT",
       "draftYear": 2022,
-      "overall": 73,
+      "overall": 72,
       "attributes": {
         "FI": 10,
-        "SH": 68,
-        "PL": 69,
-        "ST": 75,
-        "CH": 77,
-        "PO": 73,
-        "HI": 76,
-        "SK": 72,
-        "EN": 75,
-        "PE": 69,
-        "FA": 69,
-        "LE": 74,
-        "SR": 75,
-        "OFF": 71,
-        "DEF": 75,
-        "OA": 73
+        "SH": 67,
+        "PL": 68,
+        "ST": 74,
+        "CH": 76,
+        "PO": 72,
+        "HI": 75,
+        "SK": 71,
+        "EN": 74,
+        "PE": 68,
+        "FA": 68,
+        "LE": 73,
+        "SR": 74,
+        "OFF": 70,
+        "DEF": 74,
+        "OA": 72
       },
       "ratingSource": "https://www.collegehockeyinc.com/conferences/national/natplayer27.php | https://api-web.nhle.com/v1/prospects/OTT | https://hockeyinsights.ca/team-pipeline/ottawa-senators/ | https://www.collegehockeynews.com/reports/roster/Arizona-State/61",
       "ratingConfidence": "low",
@@ -4452,7 +4470,7 @@
         "DEF",
         "OA"
       ],
-      "potential": 85,
+      "potential": 84,
       "ratingStatus": "model_estimate_from_league_statistics",
       "potentialStatus": "provisional_model_estimate",
       "age": 22,
@@ -5066,7 +5084,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 67,
       "ratingStatus": "sample_adjusted_statistical_estimate_with_profile_completion",
       "potentialStatus": "provisional_model_estimate",
@@ -5585,7 +5605,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 53,
       "ratingStatus": "sample_adjusted_statistical_estimate_with_profile_completion",
       "potentialStatus": "provisional_model_estimate",
@@ -6008,7 +6030,13 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FI",
+        "SH",
+        "PL",
+        "FA",
+        "OFF"
+      ],
       "potential": 77,
       "ratingStatus": "sample_adjusted_statistical_estimate_with_profile_completion",
       "potentialStatus": "provisional_model_estimate",
@@ -6307,7 +6335,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 78,
       "ratingStatus": "sample_adjusted_statistical_estimate_with_profile_completion",
       "potentialStatus": "provisional_model_estimate",
@@ -6764,7 +6794,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 69,
       "ratingStatus": "sample_adjusted_statistical_estimate_with_profile_completion",
       "potentialStatus": "provisional_model_estimate",
@@ -7187,7 +7219,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 46,
       "ratingStatus": "sample_adjusted_statistical_estimate_with_profile_completion",
       "potentialStatus": "provisional_model_estimate",
@@ -10392,7 +10426,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 66,
       "ratingStatus": "sample_adjusted_statistical_estimate_with_profile_completion",
       "potentialStatus": "provisional_model_estimate",
@@ -11086,7 +11122,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 69,
       "ratingStatus": "sample_adjusted_statistical_estimate_with_profile_completion",
       "potentialStatus": "provisional_model_estimate",
@@ -11938,7 +11976,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 53,
       "ratingStatus": "sample_adjusted_statistical_estimate_with_profile_completion",
       "potentialStatus": "provisional_model_estimate",
@@ -12079,7 +12119,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 53,
       "ratingStatus": "sample_adjusted_statistical_estimate_with_profile_completion",
       "potentialStatus": "provisional_model_estimate",
@@ -12256,29 +12298,29 @@
       "currentTeam": "Harvard",
       "nhlRightsTeam": "PHI",
       "draftYear": 2024,
-      "overall": 71,
+      "overall": 60,
       "attributes": {
         "FI": 10,
-        "SH": 77,
-        "PL": 72,
-        "ST": 71,
-        "CH": 69,
-        "PO": 70,
-        "HI": 71,
-        "SK": 72,
-        "EN": 70,
-        "PE": 71,
-        "FA": 76,
-        "LE": 70,
-        "SR": 70,
-        "OFF": 73,
-        "DEF": 70,
-        "OA": 71
+        "SH": 62,
+        "PL": 61,
+        "ST": 59,
+        "CH": 58,
+        "PO": 59,
+        "HI": 59,
+        "SK": 59,
+        "EN": 58,
+        "PE": 59,
+        "FA": 64,
+        "LE": 59,
+        "SR": 58,
+        "OFF": 61,
+        "DEF": 59,
+        "OA": 60
       },
-      "ratingSource": "https://www.collegehockeyinc.com/conferences/national/natplayer27.php | https://hockeyinsights.ca/team-pipeline/philadelphia-flyers/ | https://www.collegehockeynews.com/reports/roster/Harvard/22",
-      "ratingConfidence": "low",
-      "ratingSampleConfidence": "low",
-      "ratingSampleSize": 2,
+      "ratingSource": "https://hockeyinsights.ca/team-pipeline/philadelphia-flyers/ | https://www.collegehockeynews.com/reports/roster/Harvard/22",
+      "ratingConfidence": "very_low",
+      "ratingSampleConfidence": null,
+      "ratingSampleSize": null,
       "ratedAttributes": [
         "FI",
         "SH",
@@ -12298,7 +12340,7 @@
         "OA"
       ],
       "ratingMethod": "cross_league_profile_model_v5_derived_off_def_fighting_excluded_goalie_complete_attributes",
-      "ratingEvidence": "league_statistics",
+      "ratingEvidence": "minimal_player_profile",
       "ratingModeledAttributes": [
         "FI",
         "SH",
@@ -12317,8 +12359,8 @@
         "DEF",
         "OA"
       ],
-      "potential": 87,
-      "ratingStatus": "model_estimate_from_league_statistics",
+      "potential": 76,
+      "ratingStatus": "minimal_profile_model_estimate",
       "potentialStatus": "provisional_model_estimate",
       "age": 20,
       "nationality": null,
@@ -14968,7 +15010,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 64,
       "ratingStatus": "sample_adjusted_statistical_estimate_with_profile_completion",
       "potentialStatus": "provisional_model_estimate",
@@ -15109,7 +15153,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 62,
       "ratingStatus": "sample_adjusted_statistical_estimate_with_profile_completion",
       "potentialStatus": "provisional_model_estimate",
@@ -15329,7 +15375,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 79,
       "ratingStatus": "sample_adjusted_statistical_estimate_with_profile_completion",
       "potentialStatus": "provisional_model_estimate",
@@ -15391,7 +15439,13 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FI",
+        "SH",
+        "PL",
+        "FA",
+        "OFF"
+      ],
       "potential": 82,
       "ratingStatus": "sample_adjusted_statistical_estimate_with_profile_completion",
       "potentialStatus": "provisional_model_estimate",
@@ -15690,7 +15744,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 57,
       "ratingStatus": "sample_adjusted_statistical_estimate_with_profile_completion",
       "potentialStatus": "provisional_model_estimate",
@@ -15752,7 +15808,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 68,
       "ratingStatus": "sample_adjusted_statistical_estimate_with_profile_completion",
       "potentialStatus": "provisional_model_estimate",
@@ -16099,7 +16157,7 @@
         "SK": 63,
         "EN": 58,
         "PE": 57,
-        "FA": 63,
+        "FA": 60,
         "LE": 56,
         "SR": 63,
         "OFF": 60,
@@ -16130,7 +16188,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 75,
       "ratingStatus": "sample_adjusted_statistical_estimate_with_profile_completion",
       "potentialStatus": "provisional_model_estimate",
@@ -16350,7 +16410,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 61,
       "ratingStatus": "sample_adjusted_statistical_estimate_with_profile_completion",
       "potentialStatus": "provisional_model_estimate",
@@ -16412,7 +16474,13 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FI",
+        "SH",
+        "PL",
+        "FA",
+        "OFF"
+      ],
       "potential": 81,
       "ratingStatus": "sample_adjusted_statistical_estimate_with_profile_completion",
       "potentialStatus": "provisional_model_estimate",
@@ -16711,7 +16779,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 64,
       "ratingStatus": "sample_adjusted_statistical_estimate_with_profile_completion",
       "potentialStatus": "provisional_model_estimate",
@@ -17484,7 +17554,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 63,
       "ratingStatus": "sample_adjusted_statistical_estimate_with_profile_completion",
       "potentialStatus": "provisional_model_estimate",
@@ -17704,7 +17776,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 70,
       "ratingStatus": "sample_adjusted_statistical_estimate_with_profile_completion",
       "potentialStatus": "provisional_model_estimate",
@@ -17766,7 +17840,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 84,
       "ratingStatus": "sample_adjusted_statistical_estimate_with_profile_completion",
       "potentialStatus": "provisional_model_estimate",
@@ -17907,7 +17983,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 67,
       "ratingStatus": "sample_adjusted_statistical_estimate_with_profile_completion",
       "potentialStatus": "provisional_model_estimate",
@@ -18048,7 +18126,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 73,
       "ratingStatus": "sample_adjusted_statistical_estimate_with_profile_completion",
       "potentialStatus": "provisional_model_estimate",
@@ -18505,7 +18585,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 74,
       "ratingStatus": "sample_adjusted_statistical_estimate_with_profile_completion",
       "potentialStatus": "provisional_model_estimate",
@@ -18725,7 +18807,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 60,
       "ratingStatus": "sample_adjusted_statistical_estimate_with_profile_completion",
       "potentialStatus": "provisional_model_estimate",
@@ -18928,7 +19012,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 64,
       "ratingStatus": "sample_adjusted_statistical_estimate_with_profile_completion",
       "potentialStatus": "provisional_model_estimate",
@@ -20256,24 +20342,24 @@
       "currentTeam": "Boston University",
       "nhlRightsTeam": "TBL",
       "draftYear": 2023,
-      "overall": 80,
+      "overall": 81,
       "attributes": {
         "FI": 10,
-        "SH": 81,
-        "PL": 84,
-        "ST": 77,
-        "CH": 79,
-        "PO": 80,
-        "HI": 77,
-        "SK": 79,
-        "EN": 80,
-        "PE": 77,
-        "FA": 78,
-        "LE": 79,
-        "SR": 81,
-        "OFF": 81,
-        "DEF": 79,
-        "OA": 80
+        "SH": 82,
+        "PL": 85,
+        "ST": 78,
+        "CH": 80,
+        "PO": 81,
+        "HI": 78,
+        "SK": 80,
+        "EN": 81,
+        "PE": 78,
+        "FA": 79,
+        "LE": 80,
+        "SR": 82,
+        "OFF": 82,
+        "DEF": 80,
+        "OA": 81
       },
       "ratingSource": "https://www.collegehockeyinc.com/conferences/national/natplayer27.php | https://api-web.nhle.com/v1/prospects/TBL | https://hockeyinsights.ca/team-pipeline/tampa-bay-lightning/ | https://www.collegehockeynews.com/reports/roster/Boston-University/10",
       "ratingConfidence": "low",
@@ -20317,7 +20403,7 @@
         "DEF",
         "OA"
       ],
-      "potential": 88,
+      "potential": 89,
       "ratingStatus": "model_estimate_from_league_statistics",
       "potentialStatus": "provisional_model_estimate",
       "age": 23,
@@ -21845,7 +21931,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 72,
       "ratingStatus": "sample_adjusted_statistical_estimate_with_profile_completion",
       "potentialStatus": "provisional_model_estimate",
@@ -22522,7 +22610,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 61,
       "ratingStatus": "sample_adjusted_statistical_estimate_with_profile_completion",
       "potentialStatus": "provisional_model_estimate",
@@ -23058,7 +23148,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 78,
       "ratingStatus": "sample_adjusted_statistical_estimate_with_profile_completion",
       "potentialStatus": "provisional_model_estimate",
@@ -23673,7 +23765,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 77,
       "ratingStatus": "sample_adjusted_statistical_estimate_with_profile_completion",
       "potentialStatus": "provisional_model_estimate",
@@ -24130,7 +24224,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 58,
       "ratingStatus": "sample_adjusted_statistical_estimate_with_profile_completion",
       "potentialStatus": "provisional_model_estimate",
@@ -24587,7 +24683,13 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FI",
+        "SH",
+        "PL",
+        "FA",
+        "OFF"
+      ],
       "potential": 88,
       "ratingStatus": "sample_adjusted_statistical_estimate_with_profile_completion",
       "potentialStatus": "provisional_model_estimate",
@@ -25202,7 +25304,13 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FI",
+        "SH",
+        "PL",
+        "FA",
+        "OFF"
+      ],
       "potential": 77,
       "ratingStatus": "sample_adjusted_statistical_estimate_with_profile_completion",
       "potentialStatus": "provisional_model_estimate",
@@ -25264,7 +25372,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 57,
       "ratingStatus": "sample_adjusted_statistical_estimate_with_profile_completion",
       "potentialStatus": "provisional_model_estimate",
@@ -25704,7 +25814,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 71,
       "ratingStatus": "sample_adjusted_statistical_estimate_with_profile_completion",
       "potentialStatus": "provisional_model_estimate",
@@ -26319,7 +26431,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 66,
       "ratingStatus": "sample_adjusted_statistical_estimate_with_profile_completion",
       "potentialStatus": "provisional_model_estimate",
@@ -26618,7 +26732,13 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FI",
+        "SH",
+        "PL",
+        "FA",
+        "OFF"
+      ],
       "potential": 79,
       "ratingStatus": "sample_adjusted_statistical_estimate_with_profile_completion",
       "potentialStatus": "provisional_model_estimate",
@@ -26996,7 +27116,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 51,
       "ratingStatus": "sample_adjusted_statistical_estimate_with_profile_completion",
       "potentialStatus": "provisional_model_estimate",
@@ -27058,7 +27180,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 66,
       "ratingStatus": "sample_adjusted_statistical_estimate_with_profile_completion",
       "potentialStatus": "provisional_model_estimate",
@@ -27718,7 +27842,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 72,
       "ratingStatus": "sample_adjusted_statistical_estimate_with_profile_completion",
       "potentialStatus": "provisional_model_estimate",
@@ -27938,7 +28064,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 67,
       "ratingStatus": "sample_adjusted_statistical_estimate_with_profile_completion",
       "potentialStatus": "provisional_model_estimate",
@@ -28158,7 +28286,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 60,
       "ratingStatus": "sample_adjusted_statistical_estimate_with_profile_completion",
       "potentialStatus": "provisional_model_estimate",
@@ -28299,7 +28429,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 72,
       "ratingStatus": "sample_adjusted_statistical_estimate_with_profile_completion",
       "potentialStatus": "provisional_model_estimate",
@@ -28440,7 +28572,13 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FI",
+        "SH",
+        "PL",
+        "FA",
+        "OFF"
+      ],
       "potential": 84,
       "ratingStatus": "sample_adjusted_statistical_estimate_with_profile_completion",
       "potentialStatus": "provisional_model_estimate",
@@ -28818,7 +28956,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 85,
       "ratingStatus": "sample_adjusted_statistical_estimate_with_profile_completion",
       "potentialStatus": "provisional_model_estimate",
@@ -29117,7 +29257,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 65,
       "ratingStatus": "sample_adjusted_statistical_estimate_with_profile_completion",
       "potentialStatus": "provisional_model_estimate",
@@ -29258,7 +29400,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 79,
       "ratingStatus": "sample_adjusted_statistical_estimate_with_profile_completion",
       "potentialStatus": "provisional_model_estimate",
@@ -29794,7 +29938,13 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FI",
+        "SH",
+        "PL",
+        "FA",
+        "OFF"
+      ],
       "potential": 84,
       "ratingStatus": "sample_adjusted_statistical_estimate_with_profile_completion",
       "potentialStatus": "provisional_model_estimate",
@@ -30488,7 +30638,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 65,
       "ratingStatus": "sample_adjusted_statistical_estimate_with_profile_completion",
       "potentialStatus": "provisional_model_estimate",
@@ -30973,7 +31125,7 @@
         "CH": 75,
         "PO": 76,
         "HI": 74,
-        "SK": 75,
+        "SK": 74,
         "EN": 77,
         "PE": 75,
         "FA": 75,
@@ -31086,7 +31238,13 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FI",
+        "SH",
+        "PL",
+        "FA",
+        "OFF"
+      ],
       "potential": 75,
       "ratingStatus": "sample_adjusted_statistical_estimate_with_profile_completion",
       "potentialStatus": "provisional_model_estimate",
@@ -31464,7 +31622,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 64,
       "ratingStatus": "sample_adjusted_statistical_estimate_with_profile_completion",
       "potentialStatus": "provisional_model_estimate",
@@ -31526,7 +31686,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 76,
       "ratingStatus": "sample_adjusted_statistical_estimate_with_profile_completion",
       "potentialStatus": "provisional_model_estimate",
@@ -31746,7 +31908,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 62,
       "ratingStatus": "sample_adjusted_statistical_estimate_with_profile_completion",
       "potentialStatus": "provisional_model_estimate",
@@ -31844,24 +32008,24 @@
       "currentTeam": "Quinnipiac",
       "nhlRightsTeam": "TBL",
       "draftYear": 2024,
-      "overall": 75,
+      "overall": 74,
       "attributes": {
         "FI": 10,
-        "SH": 71,
-        "PL": 74,
-        "ST": 77,
-        "CH": 79,
-        "PO": 75,
-        "HI": 78,
-        "SK": 75,
-        "EN": 75,
-        "PE": 71,
-        "FA": 71,
-        "LE": 75,
-        "SR": 75,
-        "OFF": 74,
-        "DEF": 77,
-        "OA": 75
+        "SH": 70,
+        "PL": 73,
+        "ST": 76,
+        "CH": 78,
+        "PO": 74,
+        "HI": 77,
+        "SK": 74,
+        "EN": 74,
+        "PE": 70,
+        "FA": 70,
+        "LE": 74,
+        "SR": 74,
+        "OFF": 73,
+        "DEF": 76,
+        "OA": 74
       },
       "ratingSource": "https://www.collegehockeyinc.com/conferences/national/natplayer27.php | https://hockeyinsights.ca/team-pipeline/tampa-bay-lightning/ | https://www.collegehockeynews.com/reports/roster/Quinnipiac/47",
       "ratingConfidence": "low",
@@ -31905,7 +32069,7 @@
         "DEF",
         "OA"
       ],
-      "potential": 91,
+      "potential": 90,
       "ratingStatus": "model_estimate_from_league_statistics",
       "potentialStatus": "provisional_model_estimate",
       "age": 20,
@@ -32045,7 +32209,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 66,
       "ratingStatus": "sample_adjusted_statistical_estimate_with_profile_completion",
       "potentialStatus": "provisional_model_estimate",
@@ -32344,7 +32510,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 67,
       "ratingStatus": "sample_adjusted_statistical_estimate_with_profile_completion",
       "potentialStatus": "provisional_model_estimate",
@@ -32406,7 +32574,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 66,
       "ratingStatus": "sample_adjusted_statistical_estimate_with_profile_completion",
       "potentialStatus": "provisional_model_estimate",
@@ -32705,7 +32875,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 61,
       "ratingStatus": "sample_adjusted_statistical_estimate_with_profile_completion",
       "potentialStatus": "provisional_model_estimate",
@@ -33066,7 +33238,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 78,
       "ratingStatus": "sample_adjusted_statistical_estimate_with_profile_completion",
       "potentialStatus": "provisional_model_estimate",
@@ -33207,7 +33381,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 67,
       "ratingStatus": "sample_adjusted_statistical_estimate_with_profile_completion",
       "potentialStatus": "provisional_model_estimate",
@@ -33314,7 +33490,7 @@
         "CH": 71,
         "PO": 72,
         "HI": 72,
-        "SK": 73,
+        "SK": 72,
         "EN": 75,
         "PE": 73,
         "FA": 73,
@@ -34375,7 +34551,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 61,
       "ratingStatus": "sample_adjusted_statistical_estimate_with_profile_completion",
       "potentialStatus": "provisional_model_estimate",
@@ -34894,7 +35072,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 48,
       "ratingStatus": "sample_adjusted_statistical_estimate_with_profile_completion",
       "potentialStatus": "provisional_model_estimate",
@@ -35035,7 +35215,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 55,
       "ratingStatus": "sample_adjusted_statistical_estimate_with_profile_completion",
       "potentialStatus": "provisional_model_estimate",
@@ -35729,7 +35911,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 60,
       "ratingStatus": "sample_adjusted_statistical_estimate_with_profile_completion",
       "potentialStatus": "provisional_model_estimate",
@@ -35748,29 +35932,29 @@
       "currentTeam": "Connecticut",
       "nhlRightsTeam": "CBJ",
       "draftYear": 2025,
-      "overall": 76,
+      "overall": 60,
       "attributes": {
         "FI": 10,
-        "SH": 81,
-        "PL": 79,
-        "ST": 74,
-        "CH": 72,
-        "PO": 73,
-        "HI": 74,
-        "SK": 76,
-        "EN": 77,
-        "PE": 75,
-        "FA": 79,
-        "LE": 76,
-        "SR": 77,
-        "OFF": 78,
-        "DEF": 73,
-        "OA": 76
+        "SH": 62,
+        "PL": 61,
+        "ST": 59,
+        "CH": 58,
+        "PO": 59,
+        "HI": 59,
+        "SK": 59,
+        "EN": 58,
+        "PE": 59,
+        "FA": 64,
+        "LE": 59,
+        "SR": 58,
+        "OFF": 61,
+        "DEF": 59,
+        "OA": 60
       },
-      "ratingSource": "https://www.collegehockeyinc.com/conferences/national/natplayer27.php | https://hockeyinsights.ca/team-pipeline/columbus-blue-jackets/ | https://www.collegehockeynews.com/reports/roster/Connecticut/17",
-      "ratingConfidence": "low",
-      "ratingSampleConfidence": "low",
-      "ratingSampleSize": 8,
+      "ratingSource": "https://hockeyinsights.ca/team-pipeline/columbus-blue-jackets/ | https://www.collegehockeynews.com/reports/roster/Connecticut/17",
+      "ratingConfidence": "very_low",
+      "ratingSampleConfidence": null,
+      "ratingSampleSize": null,
       "ratedAttributes": [
         "FI",
         "SH",
@@ -35790,7 +35974,7 @@
         "OA"
       ],
       "ratingMethod": "cross_league_profile_model_v5_derived_off_def_fighting_excluded_goalie_complete_attributes",
-      "ratingEvidence": "league_statistics",
+      "ratingEvidence": "minimal_player_profile",
       "ratingModeledAttributes": [
         "FI",
         "SH",
@@ -35809,8 +35993,8 @@
         "DEF",
         "OA"
       ],
-      "potential": 92,
-      "ratingStatus": "model_estimate_from_league_statistics",
+      "potential": 76,
+      "ratingStatus": "minimal_profile_model_estimate",
       "potentialStatus": "provisional_model_estimate",
       "age": 19,
       "nationality": null,
@@ -35949,7 +36133,13 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FI",
+        "SH",
+        "PL",
+        "FA",
+        "OFF"
+      ],
       "potential": 82,
       "ratingStatus": "sample_adjusted_statistical_estimate_with_profile_completion",
       "potentialStatus": "provisional_model_estimate",
@@ -36152,7 +36342,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 72,
       "ratingStatus": "sample_adjusted_statistical_estimate_with_profile_completion",
       "potentialStatus": "provisional_model_estimate",
@@ -36293,7 +36485,13 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FI",
+        "SH",
+        "PL",
+        "FA",
+        "OFF"
+      ],
       "potential": 88,
       "ratingStatus": "sample_adjusted_statistical_estimate_with_profile_completion",
       "potentialStatus": "provisional_model_estimate",
@@ -36812,7 +37010,13 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FI",
+        "SH",
+        "PL",
+        "FA",
+        "OFF"
+      ],
       "potential": 85,
       "ratingStatus": "sample_adjusted_statistical_estimate_with_profile_completion",
       "potentialStatus": "provisional_model_estimate",
@@ -37427,7 +37631,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 83,
       "ratingStatus": "sample_adjusted_statistical_estimate_with_profile_completion",
       "potentialStatus": "provisional_model_estimate",
@@ -37709,7 +37915,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 77,
       "ratingStatus": "sample_adjusted_statistical_estimate_with_profile_completion",
       "potentialStatus": "provisional_model_estimate",

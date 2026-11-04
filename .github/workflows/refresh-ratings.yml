@@ -7,13 +7,6 @@ on:
       - "scripts/lib/cross-league-rating-model.mjs"
       - "scripts/lib/player-ratings.mjs"
       - "scripts/export-registry-index.mjs"
-      - "data/ahl/player-stats-2026-2027.json"
-      - "data/echl/player-stats-2026-2027.json"
-      - "data/ahl/player-stats-2025-2026.json"
-      - "data/echl/player-stats-2025-2026.json"
-      - "data/europe/**"
-      - "data/ncaa/**"
-      - "data/junior/player-stats-*.json"
       - "tests/**"
       - ".github/workflows/refresh-ratings.yml"
   workflow_dispatch:
@@ -40,16 +33,8 @@ jobs:
         run: node scripts/export-registry-index.mjs
       - name: Test complete shared player ratings
         run: node --test tests/*.test.mjs
-      - name: Commit refreshed ratings
+      - name: Verify generated rating files
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/ratings.json data/free-agents/2026-2027.json data/players/registry.json data/players/registry-index
-          if git diff --cached --quiet; then
-            echo "Ratings unchanged"
-          else
-            git commit -m "Refresh shared cross-league player ratings"
-            git fetch origin main
-            git rebase origin/main
-            git push
-          fi
+          test -s data/ratings.json
+          test -s data/players/registry.json
+          test -s data/players/registry-index/manifest.json

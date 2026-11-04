@@ -30,7 +30,7 @@ test("tracks all 16 attributes with individual CA and PA ceilings", () => {
   assert.equal(state.abilityAttributes.length, attributes.length);
   for (const key of attributes) {
     assert.ok(ability(state, key)[0] >= 1 && ability(state, key)[0] <= 200);
-    assert.ok(ability(state, key)[1] >= state.abilityAttributes[key].ca);
+    assert.ok(ability(state, key)[1] >= ability(state, key)[0]);
     assert.ok(ability(state, key)[1] <= 200);
   }
   assert.equal(state.potentialIsEstimated, true);
@@ -64,7 +64,7 @@ test("development is accumulated over days and never exceeds an attribute PA", (
     state = engine.advancePlayer(player, state, { days: 28, asOf: date, training }).state;
   }
   for (const key of attributes) {
-    assert.ok(state.abilityAttributes[key].ca <= state.abilityAttributes[key].pa, key);
+    assert.ok(ability(state, key)[0] <= ability(state, key)[1], key);
     assert.ok(Number.isFinite(ability(state, key)[2]), key);
   }
 });
@@ -94,11 +94,11 @@ test("injuries slow development without erasing stored ability", () => {
   }).state;
   const totalProgress = state => attributes.reduce((sum, key) => {
     const initialAbility = ability(initial, key)[0];
-    const current = state.abilityAttributes[key];
+    const current = ability(state, key);
     return sum + (current[0] - initialAbility) + current[2];
   }, 0);
   assert.ok(totalProgress(injured) < totalProgress(healthy));
-  for (const key of attributes) assert.ok(injured.abilityAttributes[key].ca >= 1);
+  for (const key of attributes) assert.ok(ability(injured, key)[0] >= 1);
 });
 
 

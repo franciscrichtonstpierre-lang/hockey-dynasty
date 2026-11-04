@@ -2,8 +2,8 @@
   "teamCode": "PHI",
   "source": "https://api-web.nhle.com/v1/prospects/PHI",
   "sourceType": "NHL Web API + source-labelled supplemental pipeline",
-  "syncedUTC": "2026-11-04T21:33:22.161Z",
-  "count": 38,
+  "syncedUTC": "2026-11-04T21:59:09.081Z",
+  "count": 39,
   "prospects": [
     {
       "id": 8484142,
@@ -708,6 +708,21 @@
       "draftYear": null,
       "draftRound": null,
       "draftOverall": null,
+      "rightsStatus": "secondary_snapshot_recheck_required",
+      "source": "https://hockeyinsights.ca/team-pipeline/philadelphia-flyers/",
+      "sourceUpdatedAt": "2026-09-28",
+      "verificationStatus": "secondary_snapshot_recheck_required"
+    },
+    {
+      "fullName": "David Goyette",
+      "positionCode": "C",
+      "age": 22,
+      "currentLeague": "AHL",
+      "currentTeam": null,
+      "nhlRightsTeam": null,
+      "draftYear": 2022,
+      "draftRound": 2,
+      "draftOverall": 61,
       "rightsStatus": "secondary_snapshot_recheck_required",
       "source": "https://hockeyinsights.ca/team-pipeline/philadelphia-flyers/",
       "sourceUpdatedAt": "2026-09-28",

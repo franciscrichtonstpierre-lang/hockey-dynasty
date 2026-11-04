@@ -2,8 +2,8 @@
   "teamCode": "WSH",
   "source": "https://api-web.nhle.com/v1/prospects/WSH",
   "sourceType": "NHL Web API + source-labelled supplemental pipeline",
-  "syncedUTC": "2026-11-04T21:33:23.211Z",
-  "count": 38,
+  "syncedUTC": "2026-11-04T21:59:10.201Z",
+  "count": 39,
   "prospects": [
     {
       "id": 8477380,
@@ -893,6 +893,21 @@
       "draftYear": 2026,
       "draftRound": 7,
       "draftOverall": 208,
+      "rightsStatus": "secondary_snapshot_recheck_required",
+      "source": "https://hockeyinsights.ca/team-pipeline/washington-capitals/",
+      "sourceUpdatedAt": "2026-09-28",
+      "verificationStatus": "secondary_snapshot_recheck_required"
+    },
+    {
+      "fullName": "Brian McFadden",
+      "positionCode": "D",
+      "age": 18,
+      "currentLeague": "USHL",
+      "currentTeam": null,
+      "nhlRightsTeam": null,
+      "draftYear": 2026,
+      "draftRound": 5,
+      "draftOverall": 144,
       "rightsStatus": "secondary_snapshot_recheck_required",
       "source": "https://hockeyinsights.ca/team-pipeline/washington-capitals/",
       "sourceUpdatedAt": "2026-09-28",

@@ -2,8 +2,8 @@
   "teamCode": "WPG",
   "source": "https://api-web.nhle.com/v1/prospects/WPG",
   "sourceType": "NHL Web API + source-labelled supplemental pipeline",
-  "syncedUTC": "2026-11-04T21:33:23.261Z",
-  "count": 34,
+  "syncedUTC": "2026-11-04T21:59:10.321Z",
+  "count": 35,
   "prospects": [
     {
       "id": 8484143,
@@ -743,6 +743,21 @@
       "draftYear": 2025,
       "draftRound": 7,
       "draftOverall": 220,
+      "rightsStatus": "secondary_snapshot_recheck_required",
+      "source": "https://hockeyinsights.ca/team-pipeline/winnipeg-jets/",
+      "sourceUpdatedAt": "2026-09-28",
+      "verificationStatus": "secondary_snapshot_recheck_required"
+    },
+    {
+      "fullName": "Alexander Command",
+      "positionCode": "C",
+      "age": 18,
+      "currentLeague": "SHL",
+      "currentTeam": null,
+      "nhlRightsTeam": null,
+      "draftYear": 2026,
+      "draftRound": 1,
+      "draftOverall": 12,
       "rightsStatus": "secondary_snapshot_recheck_required",
       "source": "https://hockeyinsights.ca/team-pipeline/winnipeg-jets/",
       "sourceUpdatedAt": "2026-09-28",

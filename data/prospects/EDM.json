@@ -2,8 +2,8 @@
   "teamCode": "EDM",
   "source": "https://api-web.nhle.com/v1/prospects/EDM",
   "sourceType": "NHL Web API + source-labelled supplemental pipeline",
-  "syncedUTC": "2026-11-04T21:33:20.977Z",
-  "count": 36,
+  "syncedUTC": "2026-11-04T21:59:07.482Z",
+  "count": 37,
   "prospects": [
     {
       "id": 8482202,
@@ -641,6 +641,21 @@
       "currentLeague": "Czechia",
       "currentTeam": null,
       "nhlRightsTeam": "EDM",
+      "draftYear": null,
+      "draftRound": null,
+      "draftOverall": null,
+      "rightsStatus": "secondary_snapshot_recheck_required",
+      "source": "https://hockeyinsights.ca/team-pipeline/edmonton-oilers/",
+      "sourceUpdatedAt": "2026-09-28",
+      "verificationStatus": "secondary_snapshot_recheck_required"
+    },
+    {
+      "fullName": "Josh Samanski",
+      "positionCode": "C/LW",
+      "age": 24,
+      "currentLeague": "NHL",
+      "currentTeam": null,
+      "nhlRightsTeam": null,
       "draftYear": null,
       "draftRound": null,
       "draftOverall": null,

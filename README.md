@@ -52,3 +52,15 @@ Saison cible : **2026–2027**. Ce dépôt contient l’application et les insta
 - Les sources de dépistage et statistiques restent des observations indépendantes. Les estimations de potentiel A/B/C restent explicitement des estimations de modèle tant qu'une source de dépistage n'appuie pas le jugement.
 
 Tests du rapprochement : `tests/player-source-matching.test.mjs`.
+
+## Import de joueurs et normalisation des effectifs
+
+`roster-import.js` fournit une couche d'import commune pour les effectifs NHL, AHL et les bassins de prospects :
+- normalise le nom, la date de naissance, la position, l'équipe et la ligue;
+- accepte les 15 attributs entraînables FI, SH, PL, ST, CH, PO, HI, SK, EN, PE, FA, LE, SR, OFF et DEF;
+- garde OA comme valeur dérivée (l'OA fourni par une source externe n'écrase jamais le calcul Hockey Dynasty);
+- conserve la provenance, l'édition et la date de collecte;
+- marque les fiches complètes ou partielles;
+- laisse POT et CON non vérifiés lorsqu'aucune source spécifique ne les documente. Une estimation de dépistage doit être accompagnée de sa source et rester distincte d'une valeur officielle.
+
+L'importeur normalise des lignes déjà obtenues depuis une source autorisée; il ne télécharge pas automatiquement les bases de données EA ou de fournisseurs tiers et ne contourne pas leurs conditions d'utilisation. Les imports réels doivent être faits à partir d'exports ou d'API autorisés, avec un lot NHL, un lot AHL et des lots séparés par ligue de développement. Les tests sont dans `tests/roster-import.test.mjs`.

@@ -74,6 +74,12 @@ test("28 days at once equals four consecutive 7-day blocks", () => {
   const oneBlock = engine.advancePlayer(player, structuredClone(initial), {
     days: 28, asOf: start, training
   }).state;
+  let twoBlocks = structuredClone(initial);
+  for (let block = 0; block < 2; block++) {
+    const date = new Date(start.getTime() + block * 14 * 86400000);
+    twoBlocks = engine.advancePlayer(player, twoBlocks, { days: 14, asOf: date, training }).state;
+  }
+  assert.deepEqual(twoBlocks, oneBlock);
   let fourBlocks = structuredClone(initial);
   for (let block = 0; block < 4; block++) {
     const date = new Date(start.getTime() + block * 7 * 86400000);
@@ -101,6 +107,24 @@ test("injuries slow development without erasing stored ability", () => {
   for (const key of attributes) assert.ok(ability(injured, key)[0] >= 1);
 });
 
+
+test("older players can regress after their development peak", () => {
+  const veteran = {
+    ...player,
+    id: "nhl:8470099",
+    birthDate: null,
+    age: 38,
+    overall: 68,
+    potential: 91
+  };
+  let state = engine.createInitialState(veteran, null);
+  const initial = structuredClone(state);
+  for (let block = 0; block < 13; block++) {
+    const date = new Date(start.getTime() + block * 28 * 86400000);
+    state = engine.advancePlayer(veteran, state, { days: 28, asOf: date, training }).state;
+  }
+  assert.ok(attributes.some(key => ability(state, key)[0] < ability(initial, key)[0]));
+});
 
 test("applies each attribute's current ability to its visible 0–99 rating", () => {
   const state = engine.createInitialState(player, null);

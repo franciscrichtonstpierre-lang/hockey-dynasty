@@ -70,9 +70,12 @@ test("injuries slow development without erasing stored ability", () => {
   const injured = engine.advancePlayer(player, structuredClone(initial), {
     days: 28, asOf: start, training, injuredDays: 28
   }).state;
-  const healthyProgress = attributes.reduce((sum, key) => sum + healthy.abilityAttributes[key].progress, 0);
-  const injuredProgress = attributes.reduce((sum, key) => sum + injured.abilityAttributes[key].progress, 0);
-  assert.ok(injuredProgress < healthyProgress);
+  const totalProgress = state => attributes.reduce((sum, key) => {
+    const initialAbility = initial.abilityAttributes[key].ca;
+    const current = state.abilityAttributes[key];
+    return sum + (current.ca - initialAbility) + current.progress;
+  }, 0);
+  assert.ok(totalProgress(injured) < totalProgress(healthy));
   for (const key of attributes) assert.ok(injured.abilityAttributes[key].ca >= 1);
 });
 

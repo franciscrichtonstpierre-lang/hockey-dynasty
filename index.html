@@ -127,7 +127,23 @@ h1 .team-brand-logo,h2 .team-brand-logo,h3 .team-brand-logo,.lineupHero .team-br
 @media(max-width:390px){.lineupPlayerGrid{grid-template-columns:minmax(0,1fr)}}
 
 .rosterTable .playerName{width:210px;min-width:210px;max-width:210px;white-space:normal;overflow-wrap:anywhere;word-break:break-word;position:sticky;left:0;z-index:2;background:#102a40}
-.rosterTable .playerName small{display:block;white-space:normal;overflow-wrap:anywhere;word-break:break-word;line-height:1.35;margin-top:4px}</style><style>#uhmGateway{max-width:750px;margin:24px auto}body.uhmGate #app,body.uhmGate #accountPanel,body.uhmGate #message,body.uhmGate #uhmMenuButton{display:none!important}body.uhmGame #uhmGateway,body.uhmGame #accountPanel{display:none!important}</style><style>
+.rosterTable .playerName small{display:block;white-space:normal;overflow-wrap:anywhere;word-break:break-word;line-height:1.35;margin-top:4px}
+/* Transactions: aligner uniformément les libellés et champs de chaque côté. */
+.trade-side-card #tradeOfferMine,
+.trade-side-card #tradeOfferTheirs,
+.trade-side-card #tradePicksMine,
+.trade-side-card #tradePicksTheirs{display:grid;gap:9px;}
+.trade-side-card #tradeOfferMine label,
+.trade-side-card #tradeOfferTheirs label,
+.trade-side-card #tradePicksMine label,
+.trade-side-card #tradePicksTheirs label{display:grid;grid-template-columns:minmax(76px,92px) minmax(0,1fr);align-items:center;gap:10px;margin:0;min-width:0;}
+.trade-side-card #tradeOfferMine select,
+.trade-side-card #tradeOfferTheirs select,
+.trade-side-card #tradePicksMine select,
+.trade-side-card #tradePicksTheirs select{display:block;width:100%;min-width:0;max-width:100%;box-sizing:border-box;margin:0;}
+.trade-side-card{min-width:0;box-sizing:border-box;}
+@media(max-width:600px){.trade-side-card #tradeOfferMine label,.trade-side-card #tradeOfferTheirs label,.trade-side-card #tradePicksMine label,.trade-side-card #tradePicksTheirs label{grid-template-columns:76px minmax(0,1fr);gap:8px;}}
+</style><style>#uhmGateway{max-width:750px;margin:24px auto}body.uhmGate #app,body.uhmGate #accountPanel,body.uhmGate #message,body.uhmGate #uhmMenuButton{display:none!important}body.uhmGame #uhmGateway,body.uhmGame #accountPanel{display:none!important}</style><style>
 /* Tableau d’effectif mobile : cotes lisibles et défilement horizontal */
 @media (max-width:600px){
  .rosterScroll{

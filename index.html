@@ -617,9 +617,16 @@ async function hdLoadSharedPlayerDevelopment(force=false){
   const remote=data?.state?.playerDevelopment;
   let loaded=0;
   if(remote){
+   for(const [key,resetAt] of Object.entries(remote.resetPlayers||{})){
+    const local=S.development?.[key];if(!local)continue;
+    const localStamp=local.updatedAt|| (local.lastUpdated?local.lastUpdated+"T00:00:00.000Z":"");
+    if(!localStamp||String(localStamp)<=String(resetAt))delete S.development[key];
+   }
    for(const [key,remoteState] of Object.entries(remote.development||{})){
     const local=S.development?.[key];
-    if(!local||String(remoteState?.lastUpdated||"")>=String(local.lastUpdated||"")){S.development[key]=remoteState;loaded++}
+    const remoteStamp=remoteState?.updatedAt||remoteState?.lastUpdated||"";
+    const localStamp=local?.updatedAt||local?.lastUpdated||"";
+    if(!local||String(remoteStamp)>=String(localStamp)){S.development[key]=remoteState;loaded++}
    }
    S.retiredPlayers={...(remote.retiredPlayers||{}),...(S.retiredPlayers||{})};
   }
@@ -637,9 +644,9 @@ async function hdResetSharedPlayerDevelopmentForPlayer(player){
  const existingState=data?.state&&typeof data.state==="object"?data.state:{};
  const playerDevelopment=existingState.playerDevelopment||{};
  const development={...(playerDevelopment.development||{})};
- if(!Object.prototype.hasOwnProperty.call(development,key)){hdSharedDevelopmentLoadedAt=0;return;}
  delete development[key];
- const state={...existingState,playerDevelopment:{...playerDevelopment,development,updatedAt:new Date().toISOString()}};
+ const resetPlayers={...(playerDevelopment.resetPlayers||{}),[key]:new Date().toISOString()};
+ const state={...existingState,playerDevelopment:{...playerDevelopment,development,resetPlayers,updatedAt:new Date().toISOString()}};
  const revision=(Number(data?.revision)||0)+1;
  const {error:saveError}=await authClient.from("league_game_states").upsert({league_id:activeOnlineLeagueId,state,revision,updated_by:signedInUser.id},{onConflict:"league_id"});
  if(saveError)throw saveError;
@@ -650,10 +657,11 @@ async function hdPersistSharedPlayerDevelopment(){
  const {data,error}=await authClient.from("league_game_states").select("state,revision").eq("league_id",activeOnlineLeagueId).maybeSingle();
  if(error)throw error;
  const existingState=data?.state&&typeof data.state==="object"?data.state:{};
+ const existingDevelopment=existingState.playerDevelopment||{};
  const revision=(Number(data?.revision)||0)+1;
  const nextState={...existingState,playerDevelopment:{
   schemaVersion:2,updatedAt:new Date().toISOString(),
-  development:S.development||{},retiredPlayers:S.retiredPlayers||{}
+  development:S.development||{},retiredPlayers:S.retiredPlayers||{},resetPlayers:existingDevelopment.resetPlayers||{}
  }};
  const {error:saveError}=await authClient.from("league_game_states").upsert({
   league_id:activeOnlineLeagueId,state:nextState,revision,updated_by:signedInUser.id

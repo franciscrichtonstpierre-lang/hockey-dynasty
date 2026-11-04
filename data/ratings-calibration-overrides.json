@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "description": "Explicit pilot calibration anchors agreed with the Hockey Dynasty project owner. FI is excluded from OA; all OA values are recomputed from the 14 non-FI attributes.",
+  "players": {
+    "8476981": {
+      "name": "Josh Anderson",
+      "overall": 78,
+      "potential": 78,
+      "attributes": {
+        "FI": 64,
+        "SH": 76,
+        "PL": 75,
+        "ST": 79,
+        "CH": 83,
+        "PO": 78,
+        "HI": 83,
+        "SK": 71,
+        "EN": 78,
+        "PE": 81,
+        "FA": 55,
+        "LE": 79,
+        "SR": 79,
+        "OFF": 74,
+        "DEF": 85,
+        "OA": 78
+      },
+      "ratingStatus": "manual_pilot_calibration_owner_reference",
+      "ratingSource": "Owner-approved pilot calibration; NHL statistical references remain documented separately",
+      "ratingConfidence": "manual_calibration_anchor",
+      "ratingMethod": "owner_approved_pilot_anchor_v1"
+    },
+    "8486067": {
+      "name": "Gavin McKenna",
+      "overall": 75,
+      "potential": 97,
+      "attributes": {
+        "FI": 10,
+        "SH": 82,
+        "PL": 81,
+        "ST": 79,
+        "CH": 78,
+        "PO": 79,
+        "HI": 79,
+        "SK": 79,
+        "EN": 78,
+        "PE": 79,
+        "FA": 80,
+        "LE": 79,
+        "SR": 78,
+        "OFF": 57,
+        "DEF": 52,
+        "OA": 75
+      },
+      "ratingStatus": "manual_pilot_calibration_owner_reference",
+      "ratingSource": "Owner-approved pilot calibration; profile/statistical references remain documented separately",
+      "ratingConfidence": "manual_calibration_anchor",
+      "ratingMethod": "owner_approved_pilot_anchor_v1"
+    }
+  }
+}

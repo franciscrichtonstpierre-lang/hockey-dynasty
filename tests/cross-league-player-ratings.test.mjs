@@ -54,7 +54,7 @@ test("salary, cap hit, body measurements, and draft rank do not inflate profile 
   });
   assert.deepEqual(decorated.attributes, plain.attributes);
   assert.equal(plain.metadata.confidence, "very_low");
-  assert.ok(plain.metadata.method.includes("v4_fighting_excluded_goalie_complete_attributes"));
+  assert.ok(plain.metadata.method.includes("v5_derived_off_def_fighting_excluded_goalie_complete_attributes"));
 });
 
 

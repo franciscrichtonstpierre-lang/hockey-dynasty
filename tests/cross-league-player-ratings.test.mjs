@@ -3,6 +3,26 @@ import assert from "node:assert/strict";
 import { RATING_ATTRIBUTES } from "../scripts/lib/player-ratings.mjs";
 import { createLeagueStatIndex, estimatePlayerRatings, matchLeagueStats, matchStatIndex, statNameKey } from "../scripts/lib/cross-league-rating-model.mjs";
 
+test("uses a unique official league-stat match when the profile omits its current league", () => {
+  const row = { player_id:77, name:"Prospect Cross League", position:"F", games_played:18, goals:8, assists:11, points:19, shots:52, plus_minus:4, penalty_minutes:6 };
+  const ohl = createLeagueStatIndex({ league:"OHL", source:"official OHL stats", season:"2026-2027", skaters:[row], goalies:[] });
+  const q = createLeagueStatIndex({ league:"QMJHL", source:"official QMJHL stats", season:"2026-2027", skaters:[], goalies:[] });
+  const matched = matchStatIndex({ name:"Prospect Cross League", currentLeague:"UNKNOWN", position:"F" }, new Map([["OHL",ohl],["QMJHL",q]]));
+  assert.equal(matched.index, ohl);
+  assert.equal(matched.row.player_id, 77);
+  const result = estimatePlayerRatings({ name:"Prospect Cross League", currentLeague:"UNKNOWN", position:"F", age:18 }, matched.row, matched.index);
+  assert.equal(result.metadata.evidence, "league_statistics");
+  assert.ok(result.metadata.source.includes("official OHL stats"));
+});
+
+test("does not guess a league when an identical name occurs in multiple official feeds", () => {
+  const row = { player_id:77, name:"Ambiguous Prospect", position:"F", games_played:18, goals:8, assists:11, points:19 };
+  const ohl = createLeagueStatIndex({ league:"OHL", source:"official OHL stats", season:"2026-2027", skaters:[row], goalies:[] });
+  const whl = createLeagueStatIndex({ league:"WHL", source:"official WHL stats", season:"2026-2027", skaters:[{...row,player_id:88}], goalies:[] });
+  const matched = matchStatIndex({ name:"Ambiguous Prospect", currentLeague:"UNKNOWN", position:"F" }, new Map([["OHL",ohl],["WHL",whl]]));
+  assert.equal(matched.row, null);
+});
+
 test("normalizes surname-first junior feed names without weakening exact matching", () => {
   assert.equal(statNameKey("Veilleux, Philippe"), statNameKey("Philippe Veilleux"));
   const index = createLeagueStatIndex({ league:"QMJHL", source:"https://league.example/stats", season:"2026-2027", skaters:[{ player_id:12, name:"Veilleux, Philippe", position:"F", games_played:30, goals:12, assists:18, points:30, shots:70, plus_minus:8, penalty_minutes:14 }], goalies:[] });

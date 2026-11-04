@@ -1,6 +1,6 @@
 // Completes the shared 16-rating card for every registry and free-agent player.
 import { readFile, writeFile } from "node:fs/promises";
-import { createLeagueStatIndex, estimatePlayerPotential, estimatePlayerRatings, matchStatIndex, statNameKey } from "./lib/cross-league-rating-model.mjs";
+import { combineLeagueStatRows, createLeagueStatIndex, estimatePlayerPotential, estimatePlayerRatings, matchStatIndex, statNameKey } from "./lib/cross-league-rating-model.mjs";
 import { RATING_ATTRIBUTES } from "./lib/player-ratings.mjs";
 
 async function readJson(path, fallback = null) {
@@ -52,8 +52,20 @@ for (const player of registry.players || []) {
   const match = matchStatIndex(player, statsIndexes, {
     allowCrossLeague: ["NHL","EUROPE"].includes(String(player.currentLeague || player.league || "").toUpperCase()) && !hasNhlStatistics
   });
-  const statRow = match.row;
-  const statIndex = match.index;
+  let statRow = match.row;
+  let statIndex = match.index;
+  if (statRow && match.additionalMatches?.length) {
+    const currentGames = Number(statRow.games_played ?? statRow.gamesPlayed ?? statRow.GP ?? 0);
+    if (currentGames > 0 && currentGames < 10) {
+      const prior = match.additionalMatches[0];
+      statRow = combineLeagueStatRows(statRow,prior.row);
+      statIndex = {
+        ...statIndex,
+        season:`${prior.index.season} + ${statIndex.season}`,
+        source:`${statIndex.source}; previous-season fallback: ${prior.index.source}`
+      };
+    }
+  }
   // Prefer a player's current-league season over an older NHL season. Never
   // treat values produced by an earlier model run as source ratings.
   const useCurrentLeagueStats = Boolean(statRow && statIndex?.league !== "NHL");

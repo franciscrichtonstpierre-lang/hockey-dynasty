@@ -59,7 +59,7 @@ test("migrates existing overall and attribute-specific development deltas", () =
   });
   assert.equal(engine.abilityToVisible(ability(legacy, "FI")[0]), player.attributes.FI + 2);
   assert.equal(engine.abilityToVisible(ability(legacy, "SH")[0]), player.attributes.SH + 5);
-  assert.equal(legacy.schemaVersion, 2);
+  assert.equal(legacy.schemaVersion, 3);
 });
 
 test("higher consistency improves a player's development disposition", () => {

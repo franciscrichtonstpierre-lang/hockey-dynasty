@@ -653,11 +653,11 @@ function hdApplyTrainingPeriod(roster,days,gameCount,asOf){if(!S.playerCondition
 function hdConditionedGameRating(p,position){const id=String(p.id||p.playerId||p.nhlPlayerId||"");const c=S.playerCondition?.[id];if(c&&(c.injuryDays||0)>0)return null;const r=gameRatings({...p,pos:position});if(!r.available)return r;const fatigue=Math.max(0,Math.min(100,Number(c?.fatigue)||0)),penalty=fatigue*.055;return {...r,off:Math.max(20,r.off-penalty),def:Math.max(20,r.def-penalty),ov:Math.max(20,r.ov-penalty)}}
 async function simulate(){
  if(!hdIsCommissionerSession()){msg("Seul le commissaire connecté de la ligue peut lancer la simulation.");return}
- const selectedDays=[1,7,14,28].includes(Number(el('simulationDays')?.value))?Number(el('simulationDays').value):14;
+ const selectedDays=[7,14,28].includes(Number(el('simulationDays')?.value))?Number(el('simulationDays').value):14;
  const selectedCode=codes[S.team];
  let selectedRoster=null;
  try{selectedRoster=await fetchRosterData(selectedCode);window.hdRosterCache=[...(selectedRoster.forwards||[]),...(selectedRoster.defensemen||[]),...(selectedRoster.goalies||[])];}catch(e){window.hdRosterCache=[];}
- await loadRatings();
+ await loadRatings(true);
  const startDate=new Date(Date.UTC(Number(S.season)||2026,9,7));
  startDate.setUTCDate(startDate.getUTCDate()+Math.max(0,Number(S.day)||0));
  const endDate=new Date(startDate);endDate.setUTCDate(endDate.getUTCDate()+selectedDays);
@@ -734,7 +734,6 @@ async function simulate(){
  const trainingResult=hdApplyTrainingPeriod(selectedRoster,selectedDays,n,startDate);
  S.day+=selectedDays;
  await preloadUhmCoachData();
- if(activeOnlineLeagueId&&authClient&&signedInUser)await loadLeaguePlayerOverrides();
  const development=await developPlayers(selectedDays,startDate);
  let developmentSync={saved:0,localOnly:true};
  try{developmentSync=await hdPersistPlayerDevelopment(development.changedPlayers)}catch(e){console.warn("Synchronisation du développement échouée",e);}

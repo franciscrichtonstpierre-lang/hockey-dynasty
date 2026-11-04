@@ -177,10 +177,9 @@
     const ratings = baseRatings(player);
     const training = opts.training || {};
     const focus = String(training.focus || "Équilibré");
+    const goalieFocus = String(training.goalieFocus || "Équilibré");
     const intensity = String(training.intensity || "Normale");
     const intensityFactor = intensity === "Légère" ? .76 : intensity === "Élevée" ? 1.22 : 1;
-    const pool = FOCUS_POOLS[focus] || FOCUS_POOLS["Équilibré"];
-    const balanced = focus === "Équilibré";
     const coachSkill = clamp(numberOr(training.coachSkill, 50), 0, 99);
     const facilities = clamp(numberOr(training.facilities, 50), 0, 99);
     const iceTime = clamp(numberOr(opts.iceTime, 18), 0, 40);
@@ -210,6 +209,9 @@
         break;
       }
 
+      const playerFocus = state.position === "G" && FOCUS_POOLS[goalieFocus] ? goalieFocus : focus;
+      const pool = FOCUS_POOLS[playerFocus] || FOCUS_POOLS["Équilibré"];
+      const balanced = playerFocus === "Équilibré";
       for (const attribute of ATTRIBUTES) {
         const ability = state.abilityAttributes[attribute];
         if (age >= 32) {
@@ -229,10 +231,10 @@
         if (gap <= 0 || ageFactor <= 0 || injuryFactor <= 0) continue;
         const gapFactor = clamp(gap / 28, .08, 1);
         const isGoalie = state.position === "G";
-        const focusEligible = !(focus === "Développement des jeunes" && age > 23);
-        const focusWeight = focusEligible
+        const focusEligible = !(playerFocus === "Développement des jeunes" && age > 23);
+        const focusWeight = playerFocus === "Récupération" ? 0 : (focusEligible
           ? (pool.includes(attribute) ? 1 : (balanced ? .48 : .08))
-          : 0;
+          : 0);
         const trainingBonus = focusWeight * .008 * intensityFactor * coachFactor;
         const naturalGrowth = .012 * ageFactor * gapFactor * state.disposition
           * coachFactor * facilitiesFactor * usageFactor * performanceFactor;

@@ -43,3 +43,16 @@ test("a profile-only estimate is explicitly marked very low confidence", () => {
   assert.equal(result.metadata.evidence, "minimal_player_profile");
   assert.ok(result.metadata.source.includes("https://club.example/roster"));
 });
+
+
+test("salary, cap hit, body measurements, and draft rank do not inflate profile ability", () => {
+  const plain = estimatePlayerRatings({ name:"Prospect A", currentLeague:"NHL", position:"F", age:19 });
+  const decorated = estimatePlayerRatings({
+    name:"Prospect A", currentLeague:"NHL", position:"F", age:19,
+    annualSalary:15000000, previousCapHit:15000000,
+    heightCm:203, weightKg:115, draftOverall:1, prospectRank:1
+  });
+  assert.deepEqual(decorated.attributes, plain.attributes);
+  assert.equal(plain.metadata.confidence, "very_low");
+  assert.ok(plain.metadata.method.includes("v2_no_salary_size_or_draft_shortcuts"));
+});

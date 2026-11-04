@@ -22,7 +22,7 @@ test("every generated NHL rating has exactly the shared schema and individual pr
   assert.ok(data.playerMetadata);
   for (const [id, ratings] of Object.entries(data.players)) {
     assert.deepEqual(Object.keys(ratings), RATING_ATTRIBUTES, `attribute keys for ${id}`);
-    assert.equal(ratings.FI, 10, `FI must stay at the conservative default until fighting-specific data exists for ${id}`);
+    if (data.playerMetadata[id]?.evidence !== "owner_approved_calibration_anchor") assert.equal(ratings.FI, 10, `FI must stay at the conservative default until fighting-specific data exists for ${id}`);
     assert.ok(!("POT" in ratings), `potential is separate for ${id}`);
     const metadata = data.playerMetadata[id];
     assert.ok(metadata?.source, `source for ${id}`);

@@ -226,16 +226,16 @@
           const physicalWeight = ["SK", "EN", "ST", "HI", "SR"].includes(attribute) ? 1.35
             : ["FI", "SH", "PL", "CH", "PO", "DEF", "OFF"].includes(attribute) ? .82 : .48;
           const regressionRate = .00135 * (age - 31) * physicalWeight * state.disposition;
-          ability.progress += regressionRate * (.7 + random(state) * .6);
-          while (ability.progress >= 1 && ability.ca > 1) {
-            ability.ca--;
-            ability.progress -= 1;
+          ability[2] += regressionRate * (.7 + random(state) * .6);
+          while (ability[2] >= 1 && ability[0] > 1) {
+            ability[0]--;
+            ability[2] -= 1;
             regressions++;
           }
           continue;
         }
 
-        const gap = ability.pa - ability.ca;
+        const gap = ability[1] - ability[0];
         if (gap <= 0 || ageFactor <= 0 || injuryFactor <= 0) continue;
         const gapFactor = clamp(gap / 28, .08, 1);
         const isGoalie = state.position === "G";
@@ -248,11 +248,11 @@
           * coachFactor * facilitiesFactor * usageFactor * performanceFactor * determinationFactor * leadershipFactor;
         const goalieAdjustment = isGoalie && ["FI", "SH", "PL", "FA"].includes(attribute) ? .72 : 1;
         const dailyNoise = .7 + random(state) * .6;
-        ability.progress += (naturalGrowth + trainingBonus) * injuryFactor * goalieAdjustment * dailyNoise;
+        ability[2] += (naturalGrowth + trainingBonus) * injuryFactor * goalieAdjustment * dailyNoise;
 
-        while (ability.progress >= 1 && ability.ca < ability.pa) {
-          ability.ca++;
-          ability.progress -= 1;
+        while (ability[2] >= 1 && ability[0] < ability[1]) {
+          ability[0]++;
+          ability[2] -= 1;
           gains++;
           if (trainingBonus > 0) trainingGains++;
         }

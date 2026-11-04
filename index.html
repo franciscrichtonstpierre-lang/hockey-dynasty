@@ -786,15 +786,15 @@ let membershipResult=await authClient.from("league_members").select("team_id,tea
 membership=membershipResult.data;membershipError=membershipResult.error;activeOnlineManagerTeamCode=String(membership?.team_code||"").toUpperCase();
 if(membershipError)throw membershipError;
 // An assigned GM enters directly. The commissioner always sees the commissioner workspace.
-if(membership&&!isOwner){const savedTeamIndex=codes.indexOf(membership.team_code)>=0?codes.indexOf(membership.team_code):(membership.team_id===null||membership.team_id===undefined?-1:Number(membership.team_id));if(Number.isInteger(savedTeamIndex)&&savedTeamIndex>=0&&savedTeamIndex<teams.length){S.team=savedTeamIndex;save();try{const savedSection=localStorage.getItem("uhmLastSection")||"Mon équipe",savedTab=localStorage.getItem("uhmLastTab")||"Statut organisation";if(subpages[savedSection])section=savedSection;if((subpages[section]||[]).includes(savedTab))tab=savedTab;else tab=(subpages[section]||["Statut organisation"])[0]}catch(e){section="Mon équipe";tab="Statut organisation"}uhmShowStage("game");return}}
+if(membership&&!isOwner){const savedTeamIndex=codes.indexOf(membership.team_code)>=0?codes.indexOf(membership.team_code):(membership.team_id===null||membership.team_id===undefined?-1:Number(membership.team_id));if(Number.isInteger(savedTeamIndex)&&savedTeamIndex>=0&&savedTeamIndex<teams.length){S.team=savedTeamIndex;save();section="Mon équipe";tab="Accueil";try{localStorage.setItem("uhmLastSection",section);localStorage.setItem("uhmLastTab",tab)}catch(e){}uhmShowStage("game");return}}
 const assignedTeamIndex=membership?(codes.indexOf(membership.team_code)>=0?codes.indexOf(membership.team_code):(membership.team_id===null||membership.team_id===undefined?-1:Number(membership.team_id))):-1;
 if(isOwner&&!openAdmin&&membership&&Number.isInteger(assignedTeamIndex)&&assignedTeamIndex>=0&&assignedTeamIndex<teams.length){
  S.team=assignedTeamIndex;activeOnlineManagerTeamCode=String(codes[assignedTeamIndex]||"").toUpperCase();save();
- try{const savedSection=localStorage.getItem("uhmLastSection")||"Mon équipe",savedTab=localStorage.getItem("uhmLastTab")||"Statut organisation";if(subpages[savedSection])section=savedSection;if((subpages[section]||[]).includes(savedTab))tab=savedTab;else tab=(subpages[section]||["Statut organisation"])[0]}catch(e){section="Mon équipe";tab="Statut organisation"}
+ section="Mon équipe";tab="Accueil";try{localStorage.setItem("uhmLastSection",section);localStorage.setItem("uhmLastTab",tab)}catch(e){}
  uhmShowStage("game");return;
 }
 if(!isOwner&&(!membership||!Number.isInteger(assignedTeamIndex)||assignedTeamIndex<0||assignedTeamIndex>=teams.length)){
- section="Mon équipe";tab="Effectif";
+ section="Mon équipe";tab="Accueil";
  try{localStorage.setItem("uhmLastSection",section);localStorage.setItem("uhmLastTab",tab)}catch(e){}
  uhmShowStage("game");return;
 }

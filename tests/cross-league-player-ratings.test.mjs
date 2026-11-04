@@ -16,6 +16,15 @@ test("uses a unique official league-stat match when the profile omits its curren
   assert.ok(result.metadata.source.includes("official OHL stats"));
 });
 
+test("uses prior-season statistics only when current-season statistics have no player row", () => {
+  const oldRow = { player_id:88, name:"Historical Sample Player", position:"F", games_played:42, goals:18, assists:21, points:39, shots:90, plus_minus:5, penalty_minutes:12 };
+  const current = createLeagueStatIndex({ league:"AHL", source:"current AHL stats", season:"2026-2027", skaters:[], goalies:[] });
+  const previous = createLeagueStatIndex({ league:"AHL", source:"previous AHL stats", season:"2025-2026", skaters:[oldRow], goalies:[] });
+  const matched = matchStatIndex({ name:"Historical Sample Player", currentLeague:"AHL", position:"F" }, new Map([["AHL",[current,previous]]]));
+  assert.equal(matched.index.season,"2025-2026");
+  assert.equal(matched.row.player_id,88);
+});
+
 test("does not guess a league when an identical name occurs in multiple official feeds", () => {
   const row = { player_id:77, name:"Ambiguous Prospect", position:"F", games_played:18, goals:8, assists:11, points:19 };
   const ohl = createLeagueStatIndex({ league:"OHL", source:"official OHL stats", season:"2026-2027", skaters:[row], goalies:[] });

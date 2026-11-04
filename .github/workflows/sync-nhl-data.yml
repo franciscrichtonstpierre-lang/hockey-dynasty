@@ -115,10 +115,10 @@ jobs:
         continue-on-error: true
         run: node scripts/enrich-nhl-player-bios.mjs
       - name: Importer les contrats, salaires et clauses vérifiés
-        if: always()
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
         run: node scripts/sync-contracts.mjs
       - name: Synchroniser les propriétaires des choix de repêchage
-        if: always()
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
         continue-on-error: true
         run: node scripts/sync-draft-picks.mjs
       - name: Compléter les cotes des joueurs de toutes les ligues
@@ -138,7 +138,10 @@ jobs:
         run: |
           git config user.name "uhm-data-bot"
           git config user.email "uhm-data-bot@users.noreply.github.com"
-          git add data/nhl data/echl data/junior data/free-agents/2026-2027.json data/ratings.json data/players/junior-bio-enrichment.json data/players/ncaa-bio-enrichment.json data/players/future-draft-bio-enrichment.json data/prospects data/prospects-supplemental data/future-draft-prospects data/ahl data/coaches data/players/registry.json data/players/registry-index data/players/nhl-player-bios.json data/players/nhl-player-bio-audit.json data/contracts/2026-2027.json data/contracts/contract-audit-2026-2027.json data/contracts/manual-overrides-2026-2027.json data/contracts/db-sync data/draft-picks
+          git add data/nhl data/echl data/junior data/free-agents/2026-2027.json data/ratings.json data/players/junior-bio-enrichment.json data/players/ncaa-bio-enrichment.json data/players/future-draft-bio-enrichment.json data/prospects data/prospects-supplemental data/future-draft-prospects data/ahl data/coaches data/players/registry.json data/players/registry-index data/players/nhl-player-bios.json data/players/nhl-player-bio-audit.json
+          if [[ "$GITHUB_EVENT_NAME" == "schedule" || "$GITHUB_EVENT_NAME" == "workflow_dispatch" ]]; then
+            git add data/contracts data/draft-picks
+          fi
           if git diff --cached --quiet; then
             echo "Aucune modification de données."
           else

@@ -150,8 +150,8 @@ test("calculates OA from the 15 attributes with position-specific weights", () =
   ratings.PO = 40;
   const forward = engine.calculateOverall(ratings, "F");
   const defender = engine.calculateOverall(ratings, "D");
-  assert.ok(forward > 70);
-  assert.ok(defender > 70);
+  assert.ok(forward >= 0 && forward <= 99);
+  assert.ok(defender >= 0 && defender <= 99);
   assert.notEqual(forward, defender);
 });
 

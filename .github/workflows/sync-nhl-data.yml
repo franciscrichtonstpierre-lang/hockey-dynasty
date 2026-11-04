@@ -8,7 +8,6 @@ on:
       - "scripts/sync-ahl-player-stats.mjs"
       - "scripts/sync-cross-league-player-stats.mjs"
       - "scripts/apply-player-ratings.mjs"
-      - "scripts/lib/cross-league-rating-model.mjs"
       - "scripts/lib/player-ratings.mjs"
       - "scripts/export-registry-index.mjs"
       - "scripts/sync-echl-data.mjs"
@@ -115,7 +114,7 @@ jobs:
         continue-on-error: true
         run: node scripts/enrich-nhl-player-bios.mjs
       - name: Importer les contrats, salaires et clauses vérifiés
-        if: always()
+        if: always() && (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch')
         run: node scripts/sync-contracts.mjs
       - name: Synchroniser les propriétaires des choix de repêchage
         if: always()

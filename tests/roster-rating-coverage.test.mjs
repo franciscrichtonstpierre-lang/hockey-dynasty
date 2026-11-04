@@ -101,7 +101,9 @@ test("the live organization renderer displays ratings for all Montreal prospect 
     hdRatings: {},
     playerAttributes: player => Object.fromEntries(RATING_ATTRIBUTES.map(attribute => [attribute, player.attributes?.[attribute] ?? null])),
     esc: value => String(value ?? ""),
-    rosterTeamLogo: code => `<span>${String(code || "")}</span>`
+    rosterTeamLogo: code => `<span>${String(code || "")}</span>`,
+    rosterActionButtons: () => "",
+    quickOfferButton: () => ""
   });
   new Script(`${sourceLine("function renderRatedDevelopmentTable(")}\nglobalThis.renderRatedDevelopmentTable = renderRatedDevelopmentTable;`, {
     filename: "index.html:renderRatedDevelopmentTable"

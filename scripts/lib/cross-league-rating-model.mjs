@@ -86,7 +86,9 @@ export function createLeagueStatIndex(payload) {
     pim: list.map(row => numeric(row, "penalty_minutes", "pim") / Math.max(1, numeric(row, "games_played", "gamesPlayed", "GP"))),
     games: list.map(row => numeric(row, "games_played", "gamesPlayed", "GP")),
     save: list.map(row => numeric(row, "save_percentage", "savePctg", "savePercentage")),
-    gaa: list.map(row => numeric(row, "goals_against_average", "goalsAgainstAverage", "gaa"))
+    gaa: list.map(row => numeric(row, "goals_against_average", "goalsAgainstAverage", "gaa")),
+    wins: list.map(row => numeric(row, "wins", "W")),
+    shutouts: list.map(row => numeric(row, "shutouts", "SO"))
   });
   return { league:payload?.league || "UNKNOWN", source:payload?.source || null, season:payload?.season || null, byId, byName, skaters:distribution(skaters), goalies:distribution(goalies) };
 }
@@ -130,16 +132,12 @@ function profileOverall(player, existing, league) {
   const knownOa = current.OA ?? player?.overall;
   if (knownOa != null && knownOa !== "" && Number.isFinite(Number(knownOa))) return clamp(Number(knownOa));
   const base = LEAGUE_BASE[league] ?? 53;
-  const rank = rankSignal(player);
+  // Current ability must not be inflated by draft pedigree, body measurements,
+  // salary, or cap hit. Those are not direct measures of on-ice skill.
   const age = playerAge(player);
-  const pickOffset = rank.score == null ? 0 : (rank.score - 60) * 0.32;
   const maturity = age > 0 ? (age < 18 ? -3 : age < 21 ? -1 : age < 25 ? 1 : age < 31 ? 2 : 0) : 0;
-  const size = sizeSignal(player);
-  const sizeOffset = (size - 0.5) * (position === "G" ? 5 : position === "D" ? 4 : 2);
-  const previousCapHit = numeric(player, "previousCapHit", "previousSalary", "annualSalary");
-  const salarySignal = previousCapHit > 0 ? Math.max(-4, Math.min(6, (Math.log10(previousCapHit) - 6) * 3)) : 0;
   const leagueSignal = (LEAGUE_BASE[league] ?? 53) - 55;
-  return clamp(base + pickOffset + maturity + sizeOffset + salarySignal + leagueSignal * 0.2);
+  return clamp(base + maturity + leagueSignal * 0.2);
 }
 
 function statsProfile(player, row, index) {
@@ -155,7 +153,9 @@ function statsProfile(player, row, index) {
     const svPct = centered(percentile(distributions.save, sv), sampleWeight);
     const gaaPct = centered(percentile(distributions.gaa, gaa, true), sampleWeight);
     const gpPct = centered(percentile(distributions.games, games), sampleWeight);
-    return { goalie:true, games, sampleWeight, score:clamp(42 + svPct * 28 + gaaPct * 17 + gpPct * 10), goals:svPct, assists:gaaPct, points:svPct, shots:svPct, plusMinus:gaaPct, discipline:gpPct, durability:gpPct };
+    const winsPct = centered(percentile(distributions.wins, numeric(row, "wins", "W")), sampleWeight);
+    const shutoutsPct = centered(percentile(distributions.shutouts, numeric(row, "shutouts", "SO")), sampleWeight);
+    return { goalie:true, games, sampleWeight, score:clamp(40 + svPct * 32 + gaaPct * 20 + gpPct * 4 + winsPct * 3 + shutoutsPct), save:svPct, goalsAgainst:gaaPct, workload:gpPct, wins:winsPct, shutouts:shutoutsPct, goals:svPct, assists:gaaPct, points:svPct, shots:svPct, plusMinus:gaaPct, discipline:gpPct, durability:gpPct };
   }
   const gp = Math.max(1, games);
   const rates = {
@@ -187,46 +187,59 @@ export function estimatePlayerRatings(player, statRow, statIndex, existingRating
   const stat = statsProfile(player, statRow, statIndex);
   const hasKnownOverall = existing.OA != null || (player?.overall != null && player?.overall !== "" && Number.isFinite(Number(player.overall)));
   const overall = hasKnownOverall ? profileBase : (stat?.score ?? profileBase);
-  const size = sizeSignal(player);
-  const rank = rankSignal(player);
-  const attack = stat?.attack ?? (rank.score == null ? 0.5 : Math.max(0.05, Math.min(0.95, 0.5 + (rank.score - 60) / 80)));
+
+  // Without performance/scouting evidence, do not translate draft rank into
+  // invented offensive skill. Keep the estimate neutral and low-confidence.
+  const attack = stat?.attack ?? 0.5;
   const defense = stat?.defense ?? (position === "D" ? 0.62 : position === "G" ? 0.7 : 0.48);
   const goals = stat?.goals ?? attack;
   const assists = stat?.assists ?? attack;
   const points = stat?.points ?? attack;
   const shots = stat?.shots ?? (0.45 * attack + 0.55 * goals);
-  const discipline = stat?.discipline ?? (0.5 + size * 0.05);
+  const discipline = stat?.discipline ?? 0.5;
   const durability = stat?.durability ?? (playerAge(player) > 25 ? 0.58 : 0.45);
   const isForward = position === "F";
   const isGoalie = position === "G";
-  const sizeScore = 0.5 + (size - 0.5) * 0.8;
+  // Body measurements are descriptive metadata, not skating/strength grades.
+  const sizeScore = 0.5;
+  const fightEvidence = statRow || player || {};
+  const directFightRating = numeric(fightEvidence, "fightingSkill", "fightRating");
+  const fightCount = numeric(fightEvidence, "fightsPerSeason", "fightingMajors", "fights");
+  const goalieSave = stat?.goalie ? stat.save : 0.5;
+  const goalieGaa = stat?.goalie ? stat.goalsAgainst : 0.5;
+  const goalieWorkload = stat?.goalie ? stat.workload : 0.5;
+  const goalieWins = stat?.goalie ? stat.wins : 0.5;
+  const goalieShutouts = stat?.goalie ? stat.shutouts : 0.5;
   const modeled = {
-    FI:clamp((numeric(statRow, "fightingSkill", "fightRating") || numeric(player, "fightingSkill", "fightRating") || (numeric(statRow, "fightingMajors", "fightsPerSeason", "fights") || numeric(player, "fightingMajors", "fightsPerSeason", "fights")) * 12 || 10)),
-    SH:isGoalie ? clamp(35 + goals * 48) : clamp(overall + (goals - 0.5) * 22 + (isForward ? 3 : position === "D" ? -5 : 0)),
-    PL:isGoalie ? clamp(35 + assists * 45) : clamp(overall + (assists - 0.5) * 22 + (isForward ? 2 : position === "D" ? -2 : 0)),
-    ST:isGoalie ? clamp(35 + shots * 44) : clamp(overall + (sizeScore - 0.5) * 22 + (position === "D" ? 3 : 0)),
-    CH:isGoalie ? clamp(35 + durability * 48) : clamp(overall + (defense - 0.5) * 18 + (position === "D" ? 4 : -1)),
-    PO:isGoalie ? clamp(35 + assists * 48) : clamp(overall + (defense - 0.5) * 16),
-    HI:isGoalie ? clamp(35 + goals * 48) : clamp(overall + (sizeScore - 0.5) * 24 + (position === "D" ? 4 : 0)),
-    SK:isGoalie ? clamp(35 + points * 44) : clamp(overall + (points - 0.5) * 10 - (sizeScore - 0.5) * 5),
-    EN:isGoalie ? clamp(35 + durability * 48) : clamp(overall + (durability - 0.5) * 14),
-    PE:isGoalie ? clamp(35 + discipline * 46) : clamp(overall + (discipline - 0.5) * 14),
-    FA:isGoalie ? clamp(35 + durability * 44) : clamp(overall + (isForward ? 1 : position === "D" ? -3 : 0) + (position === "F" && player?.detailedPosition === "C" ? 4 : 0)),
-    LE:isGoalie ? clamp(35 + durability * 46) : clamp(overall + (durability - 0.5) * 9 + (rank.score != null ? 1 : 0)),
-    SR:isGoalie ? clamp(35 + goals * 48) : clamp(overall + (durability - 0.5) * 13 + (defense - 0.5) * 5),
-    OFF:isGoalie ? clamp(35 + goals * 45) : clamp(40 + attack * 48 + (isForward ? 3 : -3)),
-    DEF:isGoalie ? clamp(35 + assists * 50) : clamp(42 + defense * 45 + (position === "D" ? 4 : 0)),
+    // FI is Fighting only; it is independent of OA and never inferred from PIM.
+    FI:clamp(directFightRating > 0 ? directFightRating : fightCount > 0 ? 20 + Math.min(79, fightCount * 12) : 10),
+    SH:clamp(isGoalie ? 35 + goalieSave * 48 : overall + (goals - 0.5) * 22 + (isForward ? 3 : position === "D" ? -5 : 0)),
+    PL:clamp(isGoalie ? 35 + goalieGaa * 45 : overall + (assists - 0.5) * 22 + (isForward ? 2 : position === "D" ? -2 : 0)),
+    ST:clamp(isGoalie ? 35 + goalieSave * 42 : overall + (sizeScore - 0.5) * 22 + (position === "D" ? 3 : 0)),
+    CH:clamp(isGoalie ? 35 + goalieWorkload * 48 : overall + (defense - 0.5) * 18 + (position === "D" ? 4 : -1)),
+    PO:clamp(isGoalie ? 35 + goalieGaa * 48 : overall + (defense - 0.5) * 16),
+    HI:clamp(isGoalie ? 35 + goalieShutouts * 48 : overall + (sizeScore - 0.5) * 24 + (position === "D" ? 4 : 0)),
+    SK:clamp(isGoalie ? 35 + goalieWorkload * 44 : overall + (points - 0.5) * 10 - (sizeScore - 0.5) * 5),
+    EN:clamp(isGoalie ? 35 + goalieWorkload * 48 : overall + (durability - 0.5) * 14),
+    PE:clamp(isGoalie ? 35 + goalieSave * 46 : overall + (discipline - 0.5) * 14),
+    FA:clamp(isGoalie ? 35 + goalieWins * 44 : overall + (isForward ? 1 : position === "D" ? -3 : 0) + (position === "F" && player?.detailedPosition === "C" ? 4 : 0)),
+    LE:clamp(isGoalie ? 35 + goalieWins * 46 : overall + (durability - 0.5) * 9),
+    SR:clamp(isGoalie ? 35 + goalieShutouts * 48 : overall + (durability - 0.5) * 13 + (defense - 0.5) * 5),
+    OFF:clamp(isGoalie ? 35 + goalieSave * 45 : 40 + attack * 48 + (isForward ? 3 : -3)),
+    DEF:clamp(isGoalie ? 35 + goalieGaa * 50 : 42 + defense * 45 + (position === "D" ? 4 : 0)),
     OA:overall
   };
-  // OA is always recalculated from the 14 hockey attributes below.
-  // FI (Fighting) is intentionally excluded from every position's OA.
+  // Goalies still receive all 16 card attributes; these are goalie-specific
+  // performance proxies mapped onto the shared card fields. FI stays separate.
   const oaWeights = { SH:0.08, PL:0.08, ST:0.05, CH:0.08, PO:0.10, HI:0.05, SK:0.06, EN:0.08, PE:0.08, FA:0.03, LE:0.05, SR:0.08, OFF:0.10, DEF:0.08 };
-  const attributes = Object.fromEntries(RATING_ATTRIBUTES.map(key => [key, key === "FI" ? (existing.FI ?? modeled.FI) : (existing[key] ?? modeled[key])]));
-  const weightedOA = Object.entries(oaWeights).reduce((sum, [key, weight]) => sum + attributes[key] * weight, 0) / Object.values(oaWeights).reduce((sum, weight) => sum + weight, 0);
-  attributes.OA = clamp(weightedOA);
+  const attributes = Object.fromEntries(RATING_ATTRIBUTES.map(key => [key, existing[key] ?? modeled[key]]));
+  const oaWeightTotal = Object.values(oaWeights).reduce((sum, weight) => sum + weight, 0);
+  const calculatedOa = clamp(Object.entries(oaWeights).reduce((sum, [key, weight]) => sum + attributes[key] * weight, 0) / oaWeightTotal);
+  // Never preserve a stale imported OA: it is always derived from the 14 non-FI attributes.
+  attributes.OA = calculatedOa;
   const sources = [...new Set([statIndex?.source, player?.source, player?.supplementalSource, player?.bioSourceUrl].filter(value => typeof value === "string" && value.trim()))];
   const modeledFields = RATING_ATTRIBUTES.filter(key => existing[key] == null);
-  const evidence = statRow ? "league_statistics" : rank.kind ? rank.kind : (sizeSignal(player) !== 0.5 || player?.shootsCatches) ? "biographical_player_profile" : "minimal_player_profile";
+  const evidence = statRow ? "league_statistics" : "minimal_player_profile";
   const confidence = statRow ? "low" : evidence === "minimal_player_profile" ? "very_low" : "very_low";
   const status = statRow ? "model_estimate_from_league_statistics" : evidence === "minimal_player_profile" ? "minimal_profile_model_estimate" : "model_estimate_from_player_profile";
   const sampleSize = stat?.games ?? null;
@@ -237,7 +250,7 @@ export function estimatePlayerRatings(player, statRow, statIndex, existingRating
     metadata:{
       source:sources.join(" | ") || "Hockey Dynasty profile model; no external rating source",
       confidence, sampleConfidence, sampleSize, status,
-      method:"cross_league_profile_model_v1",
+      method:"cross_league_profile_model_v4_fighting_excluded_goalie_complete_attributes",
       evidence,
       modeledAttributes:modeledFields,
       ratedAttributes:RATING_ATTRIBUTES.slice(),
@@ -254,7 +267,7 @@ export function estimatePlayerPotential(player, overall = player?.overall) {
   return {
     value:clamp(current + growth),
     status:"provisional_model_estimate",
-    method:"current_overall_plus_age_growth_band_v2; not source-verified"
+    method:"age_and_evidence_based_projection_v3; provisional_not_source_verified"
   };
 }
 

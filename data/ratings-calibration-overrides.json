@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "description": "Explicit pilot calibration anchors agreed with the Hockey Dynasty project owner. FI is excluded from OA; all OA values are recomputed from the 14 non-FI attributes.",
+  "players": {
+    "8476981": {
+      "name": "Josh Anderson",
+      "overall": 78,
+      "potential": 78,
+      "attributes": {
+        "FI": 64,
+        "SH": 76,
+        "PL": 75,
+        "ST": 79,
+        "CH": 83,
+        "PO": 78,
+        "HI": 83,
+        "SK": 71,
+        "EN": 78,
+        "PE": 81,
+        "FA": 55,
+        "LE": 79,
+        "SR": 79,
+        "OFF": 74,
+        "DEF": 85,
+        "OA": 78
+      },
+      "ratingStatus": "manual_pilot_calibration_owner_reference",
+      "ratingSource": "NHL Stats REST regular-season player statistics; owner-approved pilot adjustment",
+      "ratingConfidence": "very_low",
+      "ratingMethod": "owner_approved_pilot_anchor_v1",
+      "potentialStatus": "provisional_model_estimate"
+    },
+    "8486067": {
+      "name": "Gavin McKenna",
+      "overall": 75,
+      "potential": 97,
+      "attributes": {
+        "FI": 10,
+        "SH": 82,
+        "PL": 81,
+        "ST": 79,
+        "CH": 78,
+        "PO": 79,
+        "HI": 79,
+        "SK": 79,
+        "EN": 78,
+        "PE": 79,
+        "FA": 80,
+        "LE": 79,
+        "SR": 78,
+        "OFF": 57,
+        "DEF": 52,
+        "OA": 75
+      },
+      "ratingStatus": "manual_pilot_calibration_owner_reference",
+      "ratingSource": "https://hockeyinsights.ca/team-pipeline/toronto-maple-leafs/",
+      "ratingConfidence": "very_low",
+      "ratingMethod": "owner_approved_pilot_anchor_v1",
+      "potentialStatus": "provisional_model_estimate"
+    }
+  }
+}

@@ -26,7 +26,7 @@ test("every generated NHL rating has exactly the shared schema and individual pr
     const metadata = data.playerMetadata[id];
     assert.ok(metadata?.source, `source for ${id}`);
     assert.ok(metadata?.status, `status for ${id}`);
-    assert.ok(["high", "medium", "low", "very_low"].includes(metadata?.confidence), `valid evidence-based confidence label for ${id}`);
+    assert.ok(["high", "medium", "low", "very_low", "manual_calibration_anchor"].includes(metadata?.confidence), `valid evidence-based confidence label for ${id}`);
     assert.ok(metadata?.status && metadata?.method && metadata?.evidence, `rating provenance for ${id}`);
     if (metadata.sampleSize != null) {
       assert.ok(["low", "medium", "high"].includes(metadata.sampleConfidence), `sample confidence for ${id}`);

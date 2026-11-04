@@ -136,8 +136,9 @@
       disposition,
       rngState,
       abilityAttributes,
-      currentAbility: Math.round(abilityAttributes.reduce((sum, node) => sum + node[0], 0) / ATTRIBUTES.length),
-      potentialAbility: Math.round(abilityAttributes.reduce((sum, node) => sum + node[1], 0) / ATTRIBUTES.length),
+      // OA is a derived display value, not an independently developed ability.
+      currentAbility: Math.round(abilityAttributes.slice(0, ATTRIBUTES.length - 1).reduce((sum, node) => sum + node[0], 0) / (ATTRIBUTES.length - 1)),
+      potentialAbility: Math.round(abilityAttributes.slice(0, ATTRIBUTES.length - 1).reduce((sum, node) => sum + node[1], 0) / (ATTRIBUTES.length - 1)),
       potentialSource: player?.potentialStatus || (player?.potential != null ? "unverified" : "estimated_from_current_rating"),
       potentialIsEstimated: !["source_verified", "verified"].includes(String(player?.potentialStatus || "").toLowerCase()),
       lastUpdated: prior.lastUpdated || null,
@@ -261,8 +262,9 @@
       }
     }
 
-    state.currentAbility = Math.round(state.abilityAttributes.reduce((sum, node) => sum + node[0], 0) / ATTRIBUTES.length);
-    state.potentialAbility = Math.round(state.abilityAttributes.reduce((sum, node) => sum + node[1], 0) / ATTRIBUTES.length);
+    // Keep aggregate CA/PA based on the 15 trainable skills, excluding derived OA.
+    state.currentAbility = Math.round(state.abilityAttributes.slice(0, ATTRIBUTES.length - 1).reduce((sum, node) => sum + node[0], 0) / (ATTRIBUTES.length - 1));
+    state.potentialAbility = Math.round(state.abilityAttributes.slice(0, ATTRIBUTES.length - 1).reduce((sum, node) => sum + node[1], 0) / (ATTRIBUTES.length - 1));
     state.lastUpdated = end.toISOString().slice(0, 10);
     state.updatedAt = end.toISOString();
     return { state, gains, regressions, trainingGains, retired };

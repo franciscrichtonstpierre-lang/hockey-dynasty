@@ -233,6 +233,10 @@ export function estimatePlayerRatings(player, statRow, statIndex, existingRating
   // performance proxies mapped onto the shared card fields. FI stays separate.
   const oaWeights = { SH:0.08, PL:0.08, ST:0.05, CH:0.08, PO:0.10, HI:0.05, SK:0.06, EN:0.08, PE:0.08, FA:0.03, LE:0.05, SR:0.08, OFF:0.10, DEF:0.08 };
   const attributes = Object.fromEntries(RATING_ATTRIBUTES.map(key => [key, existing[key] ?? modeled[key]]));
+  // OFF and DEF are derived card attributes, never independent imported ratings.
+  // Keep the shared 0-99 scale by averaging their three component attributes.
+  attributes.OFF = clamp((attributes.SH + attributes.PL + attributes.ST) / 3);
+  attributes.DEF = clamp((attributes.CH + attributes.PO + attributes.HI) / 3);
   const oaWeightTotal = Object.values(oaWeights).reduce((sum, weight) => sum + weight, 0);
   const calculatedOa = clamp(Object.entries(oaWeights).reduce((sum, [key, weight]) => sum + attributes[key] * weight, 0) / oaWeightTotal);
   // Never preserve a stale imported OA: it is always derived from the 14 non-FI attributes.
@@ -250,7 +254,7 @@ export function estimatePlayerRatings(player, statRow, statIndex, existingRating
     metadata:{
       source:sources.join(" | ") || "Hockey Dynasty profile model; no external rating source",
       confidence, sampleConfidence, sampleSize, status,
-      method:"cross_league_profile_model_v4_fighting_excluded_goalie_complete_attributes",
+      method:"cross_league_profile_model_v5_derived_off_def_fighting_excluded_goalie_complete_attributes",
       evidence,
       modeledAttributes:modeledFields,
       ratedAttributes:RATING_ATTRIBUTES.slice(),

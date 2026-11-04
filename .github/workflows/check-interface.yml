@@ -7,6 +7,8 @@ on:
       - "index.html"
       - "player-development.js"
       - "player-source-matching.js"
+      - "roster-import.js"
+      - "tests/roster-import.test.mjs"
       - "tests/player-source-matching.test.mjs"
       - "tests/player-development.test.mjs"
       - "scripts/check-inline-js.mjs"
@@ -33,5 +35,9 @@ jobs:
         run: node --test tests/player-source-matching.test.mjs
       - name: Vérifier la syntaxe du module de rapprochement
         run: node --check player-source-matching.js
+      - name: Vérifier les imports de joueurs et les validations de données
+        run: node --test tests/roster-import.test.mjs
+      - name: Vérifier la syntaxe du module d’importation
+        run: node --check roster-import.js
       - name: Vérifier la syntaxe JavaScript intégrée
         run: node scripts/check-inline-js.mjs

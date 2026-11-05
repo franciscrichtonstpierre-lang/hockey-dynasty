@@ -86,6 +86,60 @@ export function normalizeShlGoalies(payload) {
 }
 export const extractRows = firstRows;
 
+function shlHtmlTableRows(html, minimumCells) {
+  const rows = [];
+  for (const [, rowHtml] of String(html).matchAll(/<tr\\b[^>]*>([\\s\\S]*?)<\\/tr>/gi)) {
+    const cells = [...rowHtml.matchAll(/<t[dh]\\b[^>]*>([\\s\\S]*?)<\\/t[dh]>/gi)].map(match => match[1]);
+    if (cells.length < minimumCells) continue;
+    const playerName = htmlText(cells[1] || "");
+    if (!playerName || /^spelare$/i.test(playerName) || /^player$/i.test(playerName)) continue;
+    const number = index => {
+      const raw = htmlText(cells[index] || "").replace(/,/g, ".").replace(/^\\./, "0.");
+      if (!raw || raw === "-" || raw === "—") return 0;
+      const parsed = Number(raw);
+      return Number.isFinite(parsed) ? parsed : 0;
+    };
+    const slug = playerName.normalize("NFD").replace(/[\\u0300-\\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+    rows.push({ player_id:"shlhtml:"+slug, name:playerName, number });
+  }
+  return rows;
+}
+
+export function normalizeShlHtmlSkaters(html) {
+  return shlHtmlTableRows(html, 7).map(row => ({
+    player_id:row.player_id,
+    name:row.name,
+    position:null,
+    games_played:row.number(3),
+    points:row.number(4),
+    goals:row.number(5),
+    assists:row.number(6),
+    penalty_minutes:row.number(7),
+    power_play_goals:row.number(9),
+    shots:row.number(10),
+    hits:row.number(11),
+    blocked_shots:row.number(12),
+    plus_minus:row.number(15)
+  })).filter(row => row.name && row.games_played > 0);
+}
+
+export function normalizeShlHtmlGoalies(html) {
+  return shlHtmlTableRows(html, 14).map(row => ({
+    player_id:row.player_id,
+    name:row.name,
+    position:"G",
+    saves:row.number(3),
+    save_percentage:row.number(4),
+    games_played:row.number(5),
+    goals_against:row.number(7),
+    goals_against_average:row.number(8),
+    wins:row.number(9),
+    shutouts:row.number(12),
+    minutes_played:htmlText(row.number(13))
+  })).filter(row => row.name && row.games_played > 0);
+}
+
+
 
 function htmlText(fragment) {
   return String(fragment)

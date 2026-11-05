@@ -84,7 +84,7 @@ for (const owner of teams) {
         if (row.conditional) {
           observed.delete(key);
           pick.currentOwner = null;
-          pick.status = "excluded_conditional";
+          pick.status = "excluded";
           pick.verified = false;
           pick.conditions = null;
           pick.conditionsVerified = false;
@@ -168,11 +168,11 @@ try {
       pick.verificationNote="Aucun propriétaire officiel confirmé; en attente du snapshot secondaire courant.";
     }
     if(pick.verified===true&&teams.includes(pick.currentOwner))continue;
-    if(pick.status==="excluded_conditional"||/conflit/i.test(pick.note||""))continue;
+    if(pick.status==="excluded"||/conflit/i.test(pick.note||""))continue;
     const row=snapshotByKey.get(`${pick.year}-${pick.round}-${pick.originalTeam}`);
     if(!row||row.conflict)continue;
     if(row.conditional){
-      pick.currentOwner=null;pick.status="excluded_conditional";pick.verified=false;
+      pick.currentOwner=null;pick.status="excluded";pick.verified=false;
       pick.source=row.source||"Hockey Insights / PuckPedia snapshot";pick.sourceUpdatedAt=row.snapshotDate||null;
       pick.conditions=null;pick.conditionsVerified=false;pick.acquiredVia=null;
       pick.verificationNote="Choix conditionnel exclu du registre jouable selon la règle du projet.";
@@ -263,8 +263,6 @@ for (const [pickId, resolution] of manualConditionResolutions) {
     currentOwner: resolution.owner,
     status: "active",
     verified: true,
-    conditions: null,
-    conditionsVerified: true,
     source: resolution.source,
     sourceUpdatedAt: stamp,
     acquiredVia: resolution.note,
@@ -295,10 +293,8 @@ for (const pickId of blockedConditionalPickIds) {
   if (!pick) throw new Error("Conditional slot is missing: " + pickId);
   Object.assign(pick, {
     currentOwner: null,
-    status: "excluded_conditional",
+    status: "excluded",
     verified: false,
-    conditions: null,
-    conditionsVerified: false,
     acquiredVia: null,
     source: pick.source || "Excluded by Hockey Dynasty rules",
     sourceUpdatedAt: stamp,
@@ -310,21 +306,21 @@ for (const pick of database.picks) {
 }
 
 const expected = teams.length * years.length * 7;
-const excludedConditional = database.picks.filter(p=>p.status==="excluded_conditional").length;
-const playableExpected = expected-excludedConditional;
+const excludedSlots = database.picks.filter(p=>p.status==="excluded").length;
+const playableExpected = expected-excludedSlots;
 const verified = database.picks.filter(p=>p.verified===true&&p.source&&teams.includes(p.currentOwner)).length;
 const provisional = database.picks.filter(p=>p.status==="provisional_snapshot"&&p.verified===false&&teams.includes(p.currentOwner)).length;
-const unresolved = database.picks.filter(p=>p.status!=="excluded_conditional"&&
+const unresolved = database.picks.filter(p=>p.status!=="excluded"&&
   !(p.verified===true&&teams.includes(p.currentOwner))&&
   !(p.status==="provisional_snapshot"&&p.verified===false&&teams.includes(p.currentOwner))).length;
-const unverifiedConditions = database.picks.filter(p=>p.status==="conditional"&&p.conditionsVerified!==true).length;
+
 database.source = "Official NHL Future Draft Picks pages + Hockey Insights/PuckPedia snapshot reconciled against the official 2026-27 NHL trade tracker through 2026-10-30";
 database.lastSyncAt = stamp;
-const documentedBlocked = database.picks.filter(p=>p.status==="excluded_conditional"&&p.conditionTermsDocumented===true).length;
+const documentedBlocked = database.picks.filter(p=>p.status==="excluded"&&p.conditionTermsDocumented===true).length;
 const sourceReviewRequired = excludedConditional-documentedBlocked;
-database.syncSummary = {pagesFetched,totalPages:teams.length,rowsParsed,updated,conflicts,snapshotVerifiedOwners,tradeOverridesApplied,provisionalOwners:provisional,excludedConditional,unresolved,unverifiedConditions,activeVerified:verified,manualConditionResolutions:manualConditionResolutions.size,documentedBlocked,sourceReviewRequired,resolvedConditionalThisPass:[...manualConditionResolutions.keys()],errors};
+database.syncSummary = {pagesFetched,totalPages:teams.length,rowsParsed,updated,conflicts,snapshotVerifiedOwners,tradeOverridesApplied,provisionalOwners:provisional,excludedSlots,unresolved,activeVerified:verified,manualConditionResolutions:manualConditionResolutions.size,documentedBlocked,sourceReviewRequired,resolvedConditionalThisPass:[...manualConditionResolutions.keys()],errors};
 database.conditionalAuditStatus = "NOT_SUPPORTED_BY_DESIGN";
 database.status = database.picks.length===expected && verified===playableExpected && provisional===0 && unresolved===0 && unverifiedConditions===0 && conflicts===0 ? "complete" : "incomplete";
 await writeFile(file,JSON.stringify(database,null,2)+"\n","utf8");
-console.log(`Draft picks sync: ${pagesFetched}/${teams.length} NHL pages; ${updated} official slots updated; ${verified}/${playableExpected} verified owners; ${snapshotVerifiedOwners} snapshot owners reconciled; ${tradeOverridesApplied} official trade overrides; ${excludedConditional} conditional picks excluded; ${unresolved} unresolved; ${unverifiedConditions} conditional terms unverified; ${conflicts+snapshotConflicts} conflicts.`);
+console.log(`Draft picks sync: ${pagesFetched}/${teams.length} NHL pages; ${updated} official slots updated; ${verified}/${playableExpected} verified owners; ${snapshotVerifiedOwners} snapshot owners reconciled; ${tradeOverridesApplied} official trade overrides; ${excludedSlots} non-playable slots excluded; ${unresolved} unresolved; ; ${conflicts+snapshotConflicts} conflicts.`);
 if (errors.length) console.log("Pages needing follow-up: "+errors.join(" | "));

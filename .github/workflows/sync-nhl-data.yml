@@ -13,6 +13,7 @@ on:
       - "scripts/lib/european-stat-feed.mjs"
       - "scripts/lib/ncaa-stat-feed.mjs"
       - "data/ncaa/**"
+      - "data/europe/**"
       - "scripts/apply-player-ratings.mjs"
       - "scripts/build-ratings.mjs"
       - "scripts/lib/player-ratings.mjs"

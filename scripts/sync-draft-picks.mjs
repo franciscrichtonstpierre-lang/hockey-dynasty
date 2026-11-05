@@ -147,7 +147,7 @@ try {
       snapshotByKey.set(key,row);
     }
   }
-  // Reconcile every future-pick trade listed after the 2026-09-28 snapshot in the official NHL tracker.
+  // Reconcile future-pick trades listed after the 2026-09-28 snapshot in the official NHL tracker.
   const officialTradeTrackerUrl="https://www.nhl.com/news/topic/trade-coverage/2026-27-nhl-trades";
   const officialTradeOverrides=new Map([
     ["2027-2-TOR",{owner:"CBJ",note:"2026-09-28 : Toronto a cédé son choix de 2e ronde 2027 à Columbus."}],
@@ -201,12 +201,8 @@ try {
 }
 
 
-/*
- * Manual condition resolutions are applied after automated NHL-page parsing.
- * This prevents stale "conditional" labels on team pages from re-blocking
- * picks whose trade/pick records show that the condition has resolved.
- */
-const manualConditionResolutions = new Map([
+/* Manual owner clarifications applied after automated NHL-page parsing. */
+const manualOwnerResolutions = new Map([
   ["2027-R1-FLA", {
     owner:"CHI",
     source:"https://puckpedia.com/trade/934",
@@ -256,7 +252,7 @@ const manualConditionResolutions = new Map([
     verificationNote:"PuckPedia's individual Boston 2028 third-round pick page says Boston owns it and it has not been traded; the NHL release separately documents New York's conditional third-round pick."
   }]
 ]);
-for (const [pickId, resolution] of manualConditionResolutions) {
+for (const [pickId, resolution] of manualOwnerResolutions) {
   const pick = database.picks.find(p => p.pickId === pickId);
   if (!pick) throw new Error(`Manual resolved pick is missing: ${pickId}`);
   Object.assign(pick, {
@@ -270,7 +266,7 @@ for (const [pickId, resolution] of manualConditionResolutions) {
   });
 }
 
-const blockedConditionalPickIds = [
+const excludedPickSlots = [
   "2027-R1-COL","2027-R1-VGK",
   "2027-R2-COL","2027-R2-CBJ","2027-R2-MIN","2027-R2-WPG",
   "2027-R3-TOR","2027-R3-UTA",
@@ -280,7 +276,7 @@ const blockedConditionalPickIds = [
 ];
 // Les choix conditionnels ne sont pas des actifs du jeu. Les emplacements
 // concernés restent uniquement comme placeholders non jouables pour l'audit.
-for (const pickId of blockedConditionalPickIds) {
+for (const pickId of excludedPickSlots) {
   const pick = database.picks.find(p => p.pickId === pickId);
   if (!pick) throw new Error("Conditional slot is missing: " + pickId);
   Object.assign(pick, {
@@ -308,7 +304,7 @@ const unresolved = database.picks.filter(p=>p.status!=="excluded"&&
 
 database.source = "Official NHL Future Draft Picks pages + Hockey Insights/PuckPedia snapshot reconciled against the official 2026-27 NHL trade tracker through 2026-10-30";
 database.lastSyncAt = stamp;
-database.syncSummary = {pagesFetched,totalPages:teams.length,rowsParsed,updated,conflicts,snapshotVerifiedOwners,tradeOverridesApplied,provisionalOwners:provisional,excludedSlots,unresolved,activeVerified:verified,manualOwnerResolutions:manualConditionResolutions.size,errors};
+database.syncSummary = {pagesFetched,totalPages:teams.length,rowsParsed,updated,conflicts,snapshotVerifiedOwners,tradeOverridesApplied,provisionalOwners:provisional,excludedSlots,unresolved,activeVerified:verified,manualOwnerResolutions:manualOwnerResolutions.size,errors};
 database.status = database.picks.length===expected && verified===playableExpected && provisional===0 && unresolved===0 && conflicts===0 ? "complete" : "incomplete";
 await writeFile(file,JSON.stringify(database,null,2)+"\n","utf8");
 console.log(`Draft picks sync: ${pagesFetched}/${teams.length} NHL pages; ${updated} official slots updated; ${verified}/${playableExpected} verified owners; ${snapshotVerifiedOwners} snapshot owners reconciled; ${tradeOverridesApplied} official trade overrides; ${excludedSlots} non-playable slots excluded; ${unresolved} unresolved; ${conflicts+snapshotConflicts} conflicts.`);

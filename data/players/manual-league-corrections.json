@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "season": "2026-2027",
   "verifiedAt": "2026-11-01",
-  "notes": "Source-backed corrections for legacy prospect records whose current league/team fields were missing in older organization lists. These entries do not infer NHL rights unless a source explicitly identifies the rights holder. Birth-date-only corrections are applied by exact player name when unambiguous; they do not infer league, current team, or NHL rights.",
+  "notes": "Source-backed corrections for legacy prospect records whose current league/team fields were missing in older organization lists. These entries do not infer NHL rights unless a source explicitly identifies the rights holder. Birth-date-only corrections are applied by exact player name when unambiguous; they do not infer league, current team, or NHL rights. Additional 2026-27 current-team corrections added from official NCAA, NHL affiliate and AHL roster sources.",
   "players": [
     {
       "name": "Alexander Alexeyev",
@@ -3863,6 +3863,37 @@
       "shootsCatches": "L",
       "nhlRightsTeam": "NYR",
       "playerId": "nhl:8485443"
+    },
+    {
+      "name": "Adam Benak",
+      "aliases": [
+        "Adam Benák"
+      ],
+      "currentTeam": "Western Michigan University",
+      "currentLeague": "NCAA",
+      "nhlRightsTeam": "MIN",
+      "position": "F",
+      "birthDate": "2007-04-10",
+      "source": "https://wmubroncos.com/sports/mens-ice-hockey/roster/adam-ben-k/16071",
+      "note": "Le roster officiel 2026-27 de Western Michigan le liste comme attaquant freshman; l'article officiel du 4 novembre 2026 confirme son activité NCAA et ses statistiques de début de saison. Minnesota demeure son détenteur de droits NHL."
+    },
+    {
+      "name": "Adam Gajan",
+      "currentTeam": "Indy Fuel",
+      "currentLeague": "ECHL",
+      "nhlRightsTeam": "CHI",
+      "position": "G",
+      "source": "https://icehogs.com/roster",
+      "note": "La page officielle des Rockford IceHogs le place dans la section Assigned to the Indy Fuel; la transaction NHL 2026-27 confirme son passage par l'organisation Chicago/Rockford."
+    },
+    {
+      "name": "Quentin Musty",
+      "currentTeam": "San Jose Barracuda",
+      "currentLeague": "AHL",
+      "nhlRightsTeam": "SJS",
+      "position": "LW",
+      "source": "https://www.eliteprospects.com/team/18741/san-jose-barracuda",
+      "note": "Le roster 2026-27 du San Jose Barracuda le liste dans l'effectif AHL; statut blessé indiqué, mais club actuel identifié."
     }
   ],
   "sourceNote": "Manual corrections are source-linked and do not infer NHL rights without a verified rights holder. Current club assignments, league labels, physical profile fields and expired-rights clearances reconciled on 2026-11-01."

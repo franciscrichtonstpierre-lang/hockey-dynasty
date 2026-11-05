@@ -114,6 +114,9 @@ jobs:
       - name: Synchroniser les statistiques individuelles NCAA
         if: always()
         run: node scripts/sync-ncaa-player-stats.mjs
+      - name: Vérifier la syntaxe du connecteur européen
+        if: always()
+        run: node --check scripts/sync-european-player-stats.mjs
       - name: Synchroniser les statistiques européennes SHL et Liiga
         if: always()
         continue-on-error: true

@@ -1,5 +1,6 @@
 // Import verified NHL contract claims and per-season salary structure from the CC0 nhl-contracts dataset.
 import { readFile, writeFile, mkdir } from "node:fs/promises";
+import { simulationSalaryEstimate } from "./lib/contract-salary-estimate.mjs";
 
 const BASE = "https://github.com/ehlersio/nhl-contracts/releases/download/contracts";
 const SEASON = "2026-27";
@@ -95,26 +96,6 @@ function ageFor(player) {
   }
   return Number.isFinite(Number(player?.age)) && Number(player.age)>=18 ? Number(player.age) : 27;
 }
-function simulationSalaryEstimate(registryPlayer, contract, season) {
-  const cap=Number(season?.cap_hit_usd);
-  if (season?.cap_hit_usd!=null && Number.isFinite(cap) && cap>0) {
-    return {usd:Math.round(cap),status:"verified_cap_hit",method:"source_2026_27_season_cap_hit"};
-  }
-  const overall=Number(registryPlayer?.overall);
-  const oa=Number.isFinite(overall)?Math.max(0,Math.min(99,overall)):55;
-  const age=ageFor(registryPlayer);
-  let amount=775000;
-  if(age<=22) amount=oa>=80?950000:oa>=70?925000:850000;
-  else if(oa>=90) amount=11500000;
-  else if(oa>=85) amount=9000000;
-  else if(oa>=80) amount=7000000;
-  else if(oa>=75) amount=5000000;
-  else if(oa>=70) amount=3500000;
-  else if(oa>=65) amount=2200000;
-  else if(oa>=60) amount=1300000;
-  else if(oa>=55) amount=950000;
-  return {usd:amount,status:"provisional_model_estimate",method:"overall_age_band_v1_not_a_verified_contract_or_cap_hit"};
-}
 const players = [];
 for (const code of codes) {
   const data = JSON.parse(await readFile(`data/nhl/${code}.json`, "utf8"));
@@ -141,7 +122,7 @@ for (const code of codes) {
         });
       const selected = active[0] || null;
       if (!selected) {
-        const salaryEstimate = simulationSalaryEstimate(registryPlayer,null,null);
+        const salaryEstimate = simulationSalaryEstimate(registryPlayer,null,null,ageFor(registryPlayer));
         players.push({
           playerId:id, name, teamCode:code, position:group==="goalies"?"G":group==="defensemen"?"D":"F",
           contractStatus:gap ? "GAP_REPORTED_BY_SOURCE" : "NO_MATCHED_2026_27_CONTRACT",
@@ -166,7 +147,7 @@ for (const code of codes) {
         minorsSalaryUsd:season?.minors_salary_usd??c?.minors_salary_usd??null,
         oneWay:season?.one_way??c?.one_way??null
       } : null;
-      const salaryEstimate = simulationSalaryEstimate(registryPlayer,c,season);
+      const salaryEstimate = simulationSalaryEstimate(registryPlayer,c,season,ageFor(registryPlayer));
       players.push({
         playerId:id, name, teamCode:code, position:group==="goalies"?"G":group==="defensemen"?"D":"F",
         contractStatus:selected.season ? "MATCHED" : "MATCHED_CONTRACT_NO_SEASON_ROW", contract:{

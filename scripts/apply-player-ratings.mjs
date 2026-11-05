@@ -80,7 +80,11 @@ for (const player of registry.players || []) {
   player.attributes = result.attributes;
   player.overall = result.overall;
   if (!(["source_verified", "verified"].includes(player.potentialStatus))) {
-    const potential = estimatePlayerPotential(player, player.overall);
+    const potential = estimatePlayerPotential({
+      ...player,
+      potentialStats:statRow || null,
+      potentialLeague:statIndex?.league || player.currentLeague
+    }, player.overall);
     player.potential = potential.value;
     player.potentialEstimate = potential.value;
     player.potentialStatus = potential.status;

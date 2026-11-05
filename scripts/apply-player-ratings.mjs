@@ -51,7 +51,10 @@ for (const player of registry.players || []) {
   const directMeta = playerId ? directMetadata[playerId] : null;
   const hasNhlStatistics = directMeta?.evidence === "nhl_player_statistics" || /NHL Stats REST/i.test(directMeta?.source || "");
   const match = matchStatIndex(player, statsIndexes, {
-    allowCrossLeague: ["NHL","EUROPE"].includes(String(player.currentLeague || player.league || "").toUpperCase()) && !hasNhlStatistics
+    // The preferred league feed is always tried first. If it has no match,
+    // allow a unique current-season match from another official league; this
+    // also handles loans and stale rights-team league labels without guessing.
+    allowCrossLeague: !hasNhlStatistics
   });
   let statRow = match.row;
   let statIndex = match.index;

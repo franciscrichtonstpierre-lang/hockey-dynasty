@@ -2,11 +2,11 @@
   "schemaVersion": 1,
   "league": "SHL",
   "season": "2026-2027",
-  "source": "Elite Prospects 2026-27 SHL regular-season player table; partial manual snapshot taken 2026-11-04 because SHL API returned empty bodies and Elite Prospects blocked automated runner requests (HTTP 403).",
+  "source": "Elite Prospects 2026-27 SHL regular-season player table; partial manual snapshot taken 2026-11-04 because SHL API returned empty bodies and Elite Prospects blocked automated runner requests (HTTP 403). Supplemented 2026-11-05 with official SHL athlete-profile season statistics for Zeb Forsfjäll and Melker Thelin.",
   "syncedAt": "2026-11-04",
   "counts": {
-    "skaters": 27,
-    "goalies": 0
+    "skaters": 28,
+    "goalies": 1
   },
   "skaters": [
     {
@@ -310,9 +310,37 @@
       "penalty_minutes": 0,
       "plus_minus": 0,
       "source_name": "Vashek Blanár"
+    },
+    {
+      "player_id": "shl-profile-zeb-forsfjall",
+      "name": "Zeb Forsfjäll",
+      "position": "F",
+      "games_played": 14,
+      "goals": 1,
+      "assists": 0,
+      "points": 1,
+      "penalty_minutes": 4,
+      "plus_minus": 1
     }
   ],
-  "goalies": [],
+  "goalies": [
+    {
+      "player_id": "shl-profile-melker-thelin",
+      "name": "Melker Thelin",
+      "position": "G",
+      "games_played": 14,
+      "games_started": 7,
+      "goals_against": 7,
+      "goals_against_average": 0.99,
+      "saves": 166,
+      "save_percentage": 95.95,
+      "wins": 7,
+      "ties": 0,
+      "losses": 0,
+      "shutouts": 3,
+      "minutes_played": "425:00"
+    }
+  ],
   "notes": [
     "Partial source-backed snapshot: only players explicitly found in the published 2026-27 SHL table are included.",
     "Statistics are not scouting grades and support labelled model estimates only.",

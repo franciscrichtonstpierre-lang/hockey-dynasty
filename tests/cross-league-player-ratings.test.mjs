@@ -197,3 +197,30 @@ test("OA uses normalized weights across exactly 14 non-FI attributes", () => {
   });
   assert.equal(result.attributes.OA, 80);
 });
+
+
+test("matches abbreviated and expanded first names only on a unique surname-initial-position key", () => {
+  const row = { player_id:401, name:"Jeffrey JP Hurlbert", position:"F", games_played:68, goals:42, assists:55, points:97 };
+  const index = createLeagueStatIndex({ league:"WHL", source:"official WHL stats", season:"2025-2026", skaters:[row], goalies:[] });
+  const matched = matchLeagueStats({ name:"J.P. Hurlbert", currentLeague:"WHL", position:"F" }, index);
+  assert.equal(matched, row);
+});
+
+test("does not guess between players sharing the same first initial and surname", () => {
+  const rows = [
+    { player_id:501, name:"John Smith", position:"F", games_played:30, goals:10, assists:10, points:20 },
+    { player_id:502, name:"James Smith", position:"F", games_played:30, goals:8, assists:9, points:17 }
+  ];
+  const index = createLeagueStatIndex({ league:"OHL", source:"official OHL stats", season:"2026-2027", skaters:rows, goalies:[] });
+  assert.equal(matchLeagueStats({ name:"J. Smith", currentLeague:"OHL", position:"F" }, index), null);
+});
+
+test("uses position to disambiguate first-initial and surname matches when exactly one remains", () => {
+  const rows = [
+    { player_id:601, name:"Jordan Brown", position:"D", games_played:30, goals:4, assists:12, points:16 },
+    { player_id:602, name:"Jack Brown", position:"F", games_played:30, goals:12, assists:14, points:26 }
+  ];
+  const index = createLeagueStatIndex({ league:"OHL", source:"official OHL stats", season:"2026-2027", skaters:rows, goalies:[] });
+  const matched = matchLeagueStats({ name:"J. Brown", currentLeague:"OHL", position:"F" }, index);
+  assert.equal(matched, rows[1]);
+});

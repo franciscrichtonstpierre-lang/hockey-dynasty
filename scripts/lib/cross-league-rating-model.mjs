@@ -323,11 +323,22 @@ export function estimatePlayerPotential(player, overall = player?.overall) {
   const current = Number(overall);
   if (!Number.isFinite(current)) return { value:null, status:"unavailable", method:"no_current_overall" };
   const age = playerAge(player);
-  const growth = age > 0 ? (age <= 18 ? 20 : age <= 20 ? 16 : age <= 22 ? 12 : age <= 24 ? 8 : age <= 26 ? 4 : age <= 29 ? 1 : 0) : 0;
+  const growth = age > 0
+    ? (age <= 17 ? 22 : age === 18 ? 20 : age === 19 ? 17 : age === 20 ? 14 :
+      age === 21 ? 11 : age === 22 ? 8 : age === 23 ? 6 : age === 24 ? 4 :
+      age === 25 ? 2 : age <= 27 ? 1 : 0)
+    : 6;
+  const rank = rankSignal(player);
+  const rankWeight = age > 0 && age <= 18 ? 0.24 : age <= 21 && age > 0 ? 0.18 : age <= 24 && age > 0 ? 0.10 : 0;
+  const rankAdjustment = rank.score == null ? 0 : Math.max(0, rank.score - current) * rankWeight;
   return {
-    value:clamp(current + growth),
+    value:clamp(Math.max(current, current + growth + rankAdjustment)),
     status:"provisional_model_estimate",
-    method:"age_and_evidence_based_projection_v3; provisional_not_source_verified"
+    method:rank.score == null
+      ? "age_curve_current_ability_projection_v4; provisional_not_source_verified"
+      : "age_curve_current_ability_and_draft_rank_projection_v4; provisional_not_source_verified",
+    evidence:rank.kind || "current_ability_and_age",
+    confidence:rank.score == null ? "very_low" : "low"
   };
 }
 

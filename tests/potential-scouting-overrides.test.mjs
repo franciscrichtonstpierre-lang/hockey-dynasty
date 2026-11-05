@@ -17,6 +17,7 @@ test("every source-reviewed potential override is applied and documented", () =>
     const player = byId.get(id);
     assert.ok(player, `missing player ${id}`);
     assert.equal(player.potential,override.potential);
+    assert.ok(override.potential >= Number(player.overall || 0), `potential must not be below OA for ${id}`);
     assert.equal(player.potentialStatus,"scouting_source_reviewed_estimate");
     assert.equal(player.potentialReviewRequired,false);
     assert.equal(player.potentialSource,override.source);

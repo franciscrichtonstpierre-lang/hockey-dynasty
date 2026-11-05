@@ -1,6 +1,6 @@
 // Synchronize public SHL and Liiga regular-season player statistics for 2026-27.
 import { mkdir, readFile, writeFile } from "node:fs/promises";
-import { normalizeLiigaGoalies, normalizeLiigaSkaters, normalizeShlGoalies, normalizeShlSkaters, normalizeEliteProspectsShlGoalies, normalizeEliteProspectsShlSkaters, normalizeAllsvenskanGoalies, normalizeAllsvenskanSkaters } from "./lib/european-stat-feed.mjs";
+import { normalizeLiigaGoalies, normalizeLiigaSkaters, normalizeShlGoalies, normalizeShlSkaters, normalizeShlHtmlSkaters, normalizeShlHtmlGoalies, normalizeEliteProspectsShlGoalies, normalizeEliteProspectsShlSkaters, normalizeAllsvenskanGoalies, normalizeAllsvenskanSkaters } from "./lib/european-stat-feed.mjs";
 
 const season = "2026-2027";
 async function get(url) {
@@ -134,8 +134,57 @@ if (shlSeason) {
     `data/europe/player-stats-shl-${shlSeasonLabel}.json`, 0
   );
 } else {
-  console.warn("SHL official API empty from GitHub runner; trying Elite Prospects public season tables.");
-  const epBase = "https://www.eliteprospects.com/league/shl/stats/2026-2027";
+  console.warn("SHL official API empty from GitHub runner; trying the official SHL public statistics pages.");
+  async function getShlPage(url) {
+    const response = await fetch(url, {
+      headers:{
+        "User-Agent":"Mozilla/5.0 (compatible; Hockey-Dynasty-data-sync/1.0; +https://github.com/franciscrichtonstpierre-lang/hockey-dynasty)",
+        "Accept":"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+        "Accept-Language":"sv-SE,sv;q=0.9,en;q=0.8",
+        "Referer":"https://www.shl.se/game-stats/players"
+      },
+      signal:AbortSignal.timeout(25000)
+    });
+    if (!response.ok) throw new Error("HTTP " + response.status);
+    const html = await response.text();
+    if (!html.trim()) throw new Error("empty HTML response");
+    return html;
+  }
+  let pageSkaters = [];
+  for (const url of [
+    "https://www.shl.se/game-stats/players/summary?count=1000&moduleType=summary&state=active",
+    "https://www.shl.se/game-stats/players?count=1000"
+  ]) {
+    try {
+      pageSkaters = normalizeShlHtmlSkaters(await getShlPage(url));
+      console.log("Official SHL skater page parsed: " + pageSkaters.length + " rows.");
+      if (pageSkaters.length >= 50) break;
+    } catch (error) {
+      console.warn("Official SHL skater page unavailable: " + error.message);
+    }
+  }
+  let pageGoalies = [];
+  for (const url of [
+    "https://www.shl.se/game-stats/goalkeepers/summary?count=1000&moduleType=summary&state=active",
+    "https://www.shl.se/game-stats/goalkeepers?count=1000"
+  ]) {
+    try {
+      pageGoalies = normalizeShlHtmlGoalies(await getShlPage(url));
+      console.log("Official SHL goalie page parsed: " + pageGoalies.length + " rows.");
+      if (pageGoalies.length >= 8) break;
+    } catch (error) {
+      console.warn("Official SHL goalie page unavailable: " + error.message);
+    }
+  }
+  if (pageSkaters.length >= 50 && pageGoalies.length >= 8) {
+    await save(
+      "SHL", "2026-2027", pageSkaters, pageGoalies,
+      "Official SHL 2026-27 public player and goalkeeper statistics pages (HTML table fallback)",
+      "data/europe/player-stats-shl-2026-2027.json", 8
+    );
+  } else {
+    console.warn("Official SHL pages incomplete (" + pageSkaters.length + " skaters, " + pageGoalies.length + " goalies); trying Elite Prospects public season tables.");
+    const epBase = "https://www.eliteprospects.com/league/shl/stats/2026-2027";
   const epSkaters = [];
   for (let page = 1; page <= 5; page++) {
     const url = page === 1 ? epBase : epBase + "?page=" + page;
@@ -189,6 +238,7 @@ if (shlSeason) {
       );
     } else {
       throw new Error("SHL feeds incomplete: " + epSkaters.length + " skaters, " + epGoalies.length + " goalies; no verified fallback snapshot exists.");
+    }
     }
   }
 }

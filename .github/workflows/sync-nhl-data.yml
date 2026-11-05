@@ -39,6 +39,7 @@ on:
       - "data/potential-scouting-overrides.json"
       - "data/contracts/manual-overrides-2026-2027.json"
       - "tests/potential-scouting-overrides.test.mjs"
+      - "tests/contract-salary-estimate.test.mjs"
       - "data/junior/**"
       - "data/free-agents/2026-2027.json"
   workflow_dispatch:

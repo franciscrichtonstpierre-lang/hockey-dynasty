@@ -7,6 +7,7 @@ on:
       - "scripts/lib/cross-league-rating-model.mjs"
       - "scripts/lib/player-ratings.mjs"
       - "scripts/export-registry-index.mjs"
+      - "data/europe/**"
       - "tests/**"
       - ".github/workflows/refresh-ratings.yml"
   workflow_dispatch:

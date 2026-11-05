@@ -137,7 +137,8 @@ jobs:
         continue-on-error: true
         run: node scripts/enrich-nhl-player-bios.mjs
       - name: Importer les contrats, salaires et clauses vérifiés
-        if: always() && (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && contains(github.event.head_commit.message, 'contrat')))
+        if: always()
+        continue-on-error: true
         run: node scripts/sync-contracts.mjs
       - name: Synchroniser les propriétaires des choix de repêchage
         if: always()

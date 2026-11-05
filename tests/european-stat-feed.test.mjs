@@ -2,7 +2,8 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import {
   normalizeLiigaGoalies, normalizeLiigaSkaters, normalizeShlGoalies, normalizeShlSkaters,
-  normalizeEliteProspectsShlGoalies, normalizeEliteProspectsShlSkaters
+  normalizeEliteProspectsShlGoalies, normalizeEliteProspectsShlSkaters,
+  normalizeAllsvenskanGoalies, normalizeAllsvenskanSkaters
 } from "../scripts/lib/european-stat-feed.mjs";
 
 test("normalizes Liiga skater statistics to the shared league-stat schema", () => {
@@ -52,4 +53,29 @@ test("normalizes Elite Prospects SHL goalie table rows", () => {
   assert.equal(rows[0].save_percentage,93.2);
   assert.equal(rows[0].saves,247);
   assert.equal(rows[0].goals_against,18);
+});
+
+
+test("normalizes official HockeyAllsvenskan skater statistics", () => {
+  const raw = {data:[
+    {player_name:"Oskar Kvist",team_statnet_id:"MODO",gp:12,g:5,a:7,tp:12,pim:8,plus_minus:4,sog:31},
+    {player_name:"Elias Pettersson",team_statnet_id:"AIK",gp:9,g:2,a:4,tp:6,pim:2,plus_minus:-1,sog:18}
+  ]};
+  const rows = normalizeAllsvenskanSkaters(raw);
+  assert.equal(rows.length,2);
+  assert.equal(rows[0].name,"Oskar Kvist");
+  assert.equal(rows[0].games_played,12);
+  assert.equal(rows[0].points,12);
+  assert.equal(rows[0].player_id,"ha:oskar-kvist");
+});
+
+test("normalizes official HockeyAllsvenskan goalie statistics", () => {
+  const raw = {data:[
+    {player_name:"Robin Christoffersson",gp:10,svs:280,svs_perc:93.98,ga:18,gaa:1.8,w:7,l:2,so:2}
+  ]};
+  const rows = normalizeAllsvenskanGoalies(raw);
+  assert.equal(rows.length,1);
+  assert.equal(rows[0].position,"G");
+  assert.equal(rows[0].save_percentage,93.98);
+  assert.equal(rows[0].wins,7);
 });

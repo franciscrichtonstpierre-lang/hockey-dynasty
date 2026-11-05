@@ -1,5 +1,5 @@
 // Synchronize public SHL and Liiga regular-season player statistics for 2026-27.
-import { mkdir, writeFile } from "node:fs/promises";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { normalizeLiigaGoalies, normalizeLiigaSkaters, normalizeShlGoalies, normalizeShlSkaters, normalizeEliteProspectsShlGoalies, normalizeEliteProspectsShlSkaters } from "./lib/european-stat-feed.mjs";
 
 const season = "2026-2027";
@@ -135,6 +135,21 @@ if (shlSeason) {
       "data/europe/player-stats-shl-2026-2027.json", 8
     );
   } else {
-    throw new Error("SHL feeds incomplete: " + epSkaters.length + " skaters, " + epGoalies.length + " goalies; no replacement file written.");
+    let retained = null;
+    try {
+      retained = JSON.parse(await readFile("data/europe/player-stats-shl-2026-2027.json", "utf8"));
+    } catch {}
+    const isAuditablePartialSnapshot = retained?.league === "SHL" &&
+      retained?.season === "2026-2027" &&
+      Array.isArray(retained?.skaters) && retained.skaters.length > 0 &&
+      String(retained?.source || "").includes("partial manual snapshot");
+    if (isAuditablePartialSnapshot) {
+      console.warn(
+        "SHL automated sources remain blocked; retaining the auditable partial snapshot (" +
+        retained.skaters.length + " skaters, " + (retained.goalies?.length || 0) + " goalies)."
+      );
+    } else {
+      throw new Error("SHL feeds incomplete: " + epSkaters.length + " skaters, " + epGoalies.length + " goalies; no verified fallback snapshot exists.");
+    }
   }
 }

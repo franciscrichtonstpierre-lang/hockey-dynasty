@@ -167,7 +167,21 @@ jobs:
             echo "Aucune modification de données."
           else
             git commit -m "Synchroniser les effectifs LNH, LAH et espoirs"
-            git fetch origin main
-            git -c rebase.autoStash=true rebase -X theirs origin/main
-            git push origin HEAD:main
+            for attempt in 1 2 3 4 5; do
+              git fetch origin main
+              if ! git -c rebase.autoStash=true rebase -X theirs origin/main; then
+                git rebase --abort || true
+                echo "Rebase concurrent impossible, nouvelle tentative $attempt/5."
+                sleep $((attempt * 2))
+                continue
+              fi
+              if git push origin HEAD:main; then
+                echo "Données publiées après $attempt tentative(s)."
+                exit 0
+              fi
+              echo "Push concurrent, nouvelle tentative $attempt/5."
+              sleep $((attempt * 2))
+            done
+            echo "Échec de publication après 5 tentatives."
+            exit 1
           fi

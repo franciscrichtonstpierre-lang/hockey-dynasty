@@ -6,13 +6,13 @@ Saison cible : **2026–2027**. Ce dépôt contient l’application et les insta
 
 **Dernier audit automatisé : réussi.** Les contrôles de couverture, d’identifiants, d’attributs, de salaires utilisables, de personnel et de choix de repêchage passent.
 
-- **LNH :** 32/32 fichiers d’effectifs valides, 800 joueurs.
-- **LAH :** 32/32 fichiers d’effectifs valides, 809 joueurs.
+- **LNH :** 32/32 fichiers d’effectifs valides, 793 joueurs.
+- **LAH :** 32/32 fichiers d’effectifs valides, 808 joueurs.
 - **Registre central :** 3 334 fiches, avec 16 attributs sur chaque fiche. Le dernier audit du registre signale quatre ligues inconnues. Les potentiels sont distincts des attributs : 319 profils ont une estimation révisée manuellement à partir de sources publiques et documentée avec justification et confiance; 3 015 restent des estimations de modèle. Aucune de ces valeurs n'est présentée comme un potentiel officiel publié par une ligue.
-- **Espoirs d’organisation :** 32/32 fichiers non vides, environ 1 326 profils dans le dernier export. Les profils sans correspondance centrale sont conservés comme estimations de très faible confiance. Les droits et ligues inconnus ne doivent pas être déduits de l'affiliation. **Prochains repêchages :** les listes 2027–2029 restent des projections et ne sont pas des sélections officielles.
+- **ECHL :** 30/30 équipes indexées, 781 joueurs. **Espoirs d’organisation :** 32/32 fichiers non vides, 1 326 profils. Les profils sans correspondance centrale sont conservés comme estimations de très faible confiance. Les droits et ligues inconnus ne doivent pas être déduits de l'affiliation. **Prochains repêchages :** 132 profils (88 en 2027, 37 en 2028, 7 en 2029); ces listes restent des projections et ne sont pas des sélections officielles.
 - **Contrats :** le dernier audit de synchronisation confirme 799/799 contrats NHL appariés avec une source; les données saisonnières sont présentes pour 738 dossiers. Les estimations de salaire de simulation restent étiquetées séparément des montants officiels.
 - **Entraîneurs LNH :** 32 équipes et 158 fiches. **Personnel LAH :** 32 équipes et 159 fiches dans `data/coaches/ahl-2026-2027.json`. Les 32 équipes de chaque ligue ont un entraîneur-chef et des adjoints; les cotes de simulation sont présentes, mais ne doivent pas être confondues avec des évaluations de dépistage source-vérifiées.
-- **Choix de repêchage :** le registre énumère **672 emplacements de base** (32 équipes × 7 rondes × 3 années : 2027–2029). **655 propriétaires sont vérifiés, 17 choix conditionnels sont exclus et aucun propriétaire ne reste non attribué.** Le registre passe l’audit.
+- **Choix de repêchage :** le registre énumère **672 emplacements de base** (32 équipes × 7 rondes × 3 années : 2027–2029). **655 propriétaires sont vérifiés, 17 emplacements non jouables sont exclus et aucun propriétaire ne reste non attribué.** Le registre passe l’audit.
 
 ## Synchronisation et audit
 

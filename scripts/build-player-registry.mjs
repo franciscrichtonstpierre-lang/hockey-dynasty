@@ -578,8 +578,12 @@ for(const result of pipelineJsonResults){
       if((!match.currentLeague||match.currentLeague==="UNKNOWN"||replaceGenericEurope||replaceGenericOther)&&league!=="UNKNOWN"){
         match.currentLeague=league;match.leagueResolution="hockey_insights_team_prospects_snapshot";changed=true;
         if(currentTeam)match.currentTeam=currentTeam;
-      }else if(match.currentLeague===league&&!match.currentTeam&&currentTeam){
-        match.currentTeam=currentTeam;changed=true;
+      }else if(match.currentLeague===league&&currentTeam&&!["NHL","AHL"].includes(league)&&nameKey(match.currentTeam)!==nameKey(currentTeam)){
+        // The per-club Hockey Insights export is the playing-team source for prospects;
+        // correct stale NHL rights-owner names, but never overwrite NHL/AHL roster membership.
+        match.currentTeam=currentTeam;
+        match.teamResolution="hockey_insights_team_prospects_snapshot";
+        changed=true;
       }
       if(!match.birthDate&&birthDate){match.birthDate=birthDate;changed=true;}
       if(!match.position&&position){match.position=position;changed=true;}

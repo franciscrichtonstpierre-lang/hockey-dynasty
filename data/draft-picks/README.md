@@ -1,16 +1,10 @@
 # Registre des choix de repêchage NHL 2027–2029
 
-Le fichier `2027-2029.json` conserve les 672 emplacements de base (32 équipes × 7 rondes × 3 années) pour auditer les choix réguliers.
+Le registre conserve les 672 emplacements de base (32 équipes × 7 rondes × 3 années). **Hockey Dynasty ne gère aucun choix conditionnel.** Seuls les choix fermes dont le propriétaire est confirmé sont des actifs échangeables. Les 17 emplacements dont le propriétaire dépend d'une condition ou ne peut pas être confirmé sont marqués `excluded`, sans propriétaire, et ne sont pas chargés dans les inventaires ni dans les propositions d'échange.
 
-**Règle du jeu : les choix conditionnels sont éliminés.** Hockey Dynasty ne gère aucune protection, aucun choix « meilleur de », aucun transfert conditionnel, aucune conversion vers une autre année ou ronde et aucune mécanique de résolution de condition.
+Aucune protection, clause, condition, sélection « meilleur de deux » ou transfert contingent n'est simulé. Un choix qui n'est pas un actif ferme reste simplement indisponible.
 
-Les emplacements d'origine concernés peuvent rester dans le registre technique avec le statut `excluded_conditional`, mais ce sont uniquement des placeholders non jouables :
-- ils ne sont pas chargés dans l'interface;
-- ils ne sont pas des actifs d'équipe;
-- ils ne peuvent pas être échangés, attribués ou sélectionnés;
-- aucune condition ni aucun bénéficiaire conditionnel n'est conservé dans la fiche.
-
-## Modèle d'une fiche de choix régulier
+## Modèle d'une fiche échangeable
 
 ```json
 {
@@ -21,21 +15,21 @@ Les emplacements d'origine concernés peuvent rester dans le registre technique 
   "currentOwner": "VAN",
   "status": "active",
   "verified": true,
-  "conditions": null,
-  "acquiredVia": "Échange vérifié",
+  "acquiredVia": "Échange confirmé",
   "source": "https://...",
   "sourceUpdatedAt": "2026-10-30T00:00:00Z"
 }
 ```
 
 - `originalTeam` est le club auquel le choix appartenait initialement.
-- `currentOwner` est le club qui détient le choix ferme.
-- Les choix réguliers peuvent être actifs, perdus, provisoires ou non vérifiés.
-- Un choix conditionnel ne doit jamais être transformé en actif à partir d'une supposition. Il reste un placeholder exclu.
+- `currentOwner` est le club qui détient actuellement le droit; il ne doit pas être déduit du rang projeté.
+- `status` accepte `active`, `forfeited`, `provisional_snapshot`, `unverified` ou `excluded`.
+- Un choix `excluded` n'a aucun propriétaire jouable et ne peut pas être échangé.
+- Les champs de conditions ne font pas partie du modèle de données.
 
-## Contrôles
+## Contrôles de complétude
 
-L'audit vérifie les 672 emplacements d'origine, les propriétaires des choix réguliers et les transferts documentés. Les placeholders conditionnels sont exclus du nombre de choix jouables.
+L'audit exige les 672 emplacements de base et une propriété vérifiée pour chaque choix échangeable. Les emplacements exclus ne sont pas proposés au directeur général et ne peuvent pas être transférés par le moteur de transaction.
 
 ## Sources
 

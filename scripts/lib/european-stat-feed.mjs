@@ -85,3 +85,76 @@ export function normalizeShlGoalies(payload) {
   })).filter(row => row.name && row.player_id != null);
 }
 export const extractRows = firstRows;
+
+
+function htmlText(fragment) {
+  return String(fragment)
+    .replace(/<(script|style)\b[^>]*>[\s\S]*?<\/\1>/gi, " ")
+    .replace(/<img\b[^>]*>/gi, " ")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/&nbsp;|&#160;/gi, " ")
+    .replace(/&amp;/gi, "&")
+    .replace(/&quot;/gi, '"')
+    .replace(/&#39;|&apos;/gi, "'")
+    .replace(/&lt;/gi, "<")
+    .replace(/&gt;/gi, ">")
+    .replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(Number(n)))
+    .replace(/&#x([0-9a-f]+);/gi, (_, n) => String.fromCodePoint(parseInt(n, 16)))
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function eliteProspectsRows(html) {
+  const rows = [];
+  for (const [, rowHtml] of String(html).matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/gi)) {
+    const cells = [...rowHtml.matchAll(/<t[dh]\b[^>]*>([\s\S]*?)<\/t[dh]>/gi)].map(match => match[1]);
+    if (cells.length < 8) continue;
+    const rank = Number(htmlText(cells[0]).replace(/\D/g, ""));
+    if (!Number.isInteger(rank) || rank < 1) continue;
+    const playerCell = cells[1] || "";
+    const rawName = htmlText(playerCell);
+    const positionMatch = rawName.match(/\(([^()]*)\)\s*$/);
+    const playerName = rawName.replace(/\s*\([^()]*\)\s*$/, "").trim();
+    if (!playerName) continue;
+    const href = playerCell.match(/<a\b[^>]*href=["']([^"']+)["']/i)?.[1] || "";
+    const slug = href.split("?")[0].split("/").filter(Boolean).pop() || playerName.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-");
+    const number = index => {
+      const raw = htmlText(cells[index] || "").replace(/,/g, "").replace(/^\./, "0.");
+      if (!raw || raw === "-" || raw === "—") return 0;
+      const parsed = Number(raw);
+      return Number.isFinite(parsed) ? parsed : 0;
+    };
+    rows.push({ rank, player_id:"ep:"+slug, name:playerName, position:positionMatch?.[1] || null, number });
+  }
+  return rows;
+}
+
+export function normalizeEliteProspectsShlSkaters(html) {
+  return eliteProspectsRows(html).map(row => ({
+    player_id:row.player_id,
+    name:row.name,
+    position:/\bD\b/i.test(row.position || "") ? "D" : "F",
+    games_played:row.number(3),
+    goals:row.number(4),
+    assists:row.number(5),
+    points:row.number(6),
+    penalty_minutes:row.number(8),
+    plus_minus:row.number(9)
+  }));
+}
+
+export function normalizeEliteProspectsShlGoalies(html) {
+  return eliteProspectsRows(html).map(row => ({
+    player_id:row.player_id,
+    name:row.name,
+    position:"G",
+    games_played:row.number(3),
+    goals_against_average:row.number(4),
+    save_percentage:row.number(5) * 100,
+    wins:row.number(6),
+    losses:row.number(7),
+    shutouts:row.number(9),
+    saves:row.number(11),
+    goals_against:row.number(12)
+  }));
+}

@@ -18,6 +18,7 @@ const statsFiles = [
   "data/ncaa/player-stats-2025-2026.json",
   "data/europe/player-stats-liiga-2026-2027.json",
   "data/europe/player-stats-liiga-2025-2026.json",
+  "data/europe/player-stats-allsvenskan-2026-2027.json",
   "data/europe/player-stats-shl-2026-2027.json",
   "data/europe/player-stats-shl-2025-2026.json",
   "data/junior/player-stats-ohl-2026-2027.json",

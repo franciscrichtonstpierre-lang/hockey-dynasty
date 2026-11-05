@@ -1,6 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
+import { estimatePlayerPotential } from "../scripts/lib/cross-league-rating-model.mjs";
 
 const overrides = JSON.parse(await readFile("data/potential-scouting-overrides.json","utf8")).players;
 const registry = JSON.parse(await readFile("data/players/registry.json","utf8"));
@@ -22,4 +23,22 @@ test("every source-reviewed potential override is applied and documented", () =>
     assert.ok(player.potentialRationale);
     assert.ok(player.potentialEstimateMethod.includes("manual_source_review"));
   }
+});
+
+test("young skater production raises projected potential", () => {
+  const low = estimatePlayerPotential({age:19,position:"F",currentLeague:"OHL",potentialStats:{games_played:30,points:12}},65);
+  const high = estimatePlayerPotential({age:19,position:"F",currentLeague:"OHL",potentialStats:{games_played:30,points:54}},65);
+  assert.ok(high.value > low.value);
+  assert.match(high.method,/projection_v5/);
+});
+test("production evidence does not inflate older players", () => {
+  const a = estimatePlayerPotential({age:29,position:"F",currentLeague:"NHL"},80);
+  const b = estimatePlayerPotential({age:29,position:"F",currentLeague:"NHL",potentialStats:{games_played:30,points:50}},80);
+  assert.equal(a.value,b.value);
+});
+test("young goalie potential recognizes official savePctg", () => {
+  const a = estimatePlayerPotential({age:20,position:"G",currentLeague:"AHL",potentialStats:{games_played:20,savePctg:0.895}},65);
+  const b = estimatePlayerPotential({age:20,position:"G",currentLeague:"AHL",potentialStats:{games_played:20,savePctg:0.920}},65);
+  assert.ok(b.value > a.value);
+  assert.match(b.evidence,/goalie_save_percentage/);
 });

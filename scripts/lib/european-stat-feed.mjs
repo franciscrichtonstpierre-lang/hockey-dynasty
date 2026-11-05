@@ -88,18 +88,18 @@ export const extractRows = firstRows;
 
 function shlHtmlTableRows(html, minimumCells) {
   const rows = [];
-  for (const [, rowHtml] of String(html).matchAll(/<tr\\b[^>]*>([\\s\\S]*?)<\\/tr>/gi)) {
-    const cells = [...rowHtml.matchAll(/<t[dh]\\b[^>]*>([\\s\\S]*?)<\\/t[dh]>/gi)].map(match => match[1]);
+  for (const [, rowHtml] of String(html).matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/gi)) {
+    const cells = [...rowHtml.matchAll(/<t[dh]\b[^>]*>([\s\S]*?)<\/t[dh]>/gi)].map(match => match[1]);
     if (cells.length < minimumCells) continue;
     const playerName = htmlText(cells[1] || "");
     if (!playerName || /^spelare$/i.test(playerName) || /^player$/i.test(playerName)) continue;
     const number = index => {
-      const raw = htmlText(cells[index] || "").replace(/,/g, ".").replace(/^\\./, "0.");
+      const raw = htmlText(cells[index] || "").replace(/,/g, ".").replace(/^\./, "0.");
       if (!raw || raw === "-" || raw === "—") return 0;
       const parsed = Number(raw);
       return Number.isFinite(parsed) ? parsed : 0;
     };
-    const slug = playerName.normalize("NFD").replace(/[\\u0300-\\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+    const slug = playerName.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
     rows.push({ player_id:"shlhtml:"+slug, name:playerName, number });
   }
   return rows;

@@ -35,7 +35,8 @@ test("every generated NHL rating has exactly the shared schema and individual pr
     assert.ok(metadata?.status && metadata?.method && metadata?.evidence, `rating provenance for ${id}`);
     if (metadata.sampleSize != null) {
       assert.ok(["low", "medium", "high"].includes(metadata.sampleConfidence), `sample confidence for ${id}`);
-      assert.ok(Number.isInteger(metadata.sampleSize) && metadata.sampleSize > 0, `sample size for ${id}`);
+      assert.ok(Number.isInteger(metadata.sampleSize) && metadata.sampleSize >= 0, `sample size for ${id}`);
+      if (metadata.sampleSize === 0) assert.equal(metadata.sampleConfidence, "low", `zero-game sample must have low confidence for ${id}`);
     } else assert.equal(metadata.sampleConfidence, null, `no sample confidence without a sample for ${id}`);
     assert.ok(RATING_ATTRIBUTES.every(key => Number.isInteger(ratings[key]) && ratings[key] >= 0 && ratings[key] <= 99), `complete rating range for ${id}`);
     assert.deepEqual(metadata.ratedAttributes, RATING_ATTRIBUTES, `rated attributes for ${id}`);

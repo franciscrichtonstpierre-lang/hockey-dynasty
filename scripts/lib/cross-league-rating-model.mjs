@@ -93,15 +93,41 @@ export function createLeagueStatIndex(payload) {
   return { league:payload?.league || "UNKNOWN", source:payload?.source || null, season:payload?.season || null, byId, byName, skaters:distribution(skaters), goalies:distribution(goalies) };
 }
 
+const nameSignature = value => {
+  const parts = statNameKey(value).split(" ").filter(Boolean);
+  while (["jr","sr","ii","iii","iv"].includes(parts.at(-1))) parts.pop();
+  if (parts.length < 2) return null;
+  return { initial:parts[0][0], last:parts.at(-1) };
+};
+
 export function matchLeagueStats(player, index) {
   if (!index) return null;
   const id = parseNameId(player);
   if (id && index.byId.has(id)) return index.byId.get(id);
   const candidates = index.byName.get(statNameKey(player?.name)) || [];
   if (candidates.length === 1) return candidates[0];
+  const position = positionGroup(player);
   if (candidates.length > 1) {
-    const position = positionGroup(player);
     const matching = candidates.filter(row => (positionGroup({ position:row.position || row.positionCode }) === position));
+    if (matching.length === 1) return matching[0];
+  }
+
+  // Official feeds sometimes abbreviate or expand first names (e.g. "J.P.
+  // Hurlbert" vs "Jeffrey JP Hurlbert"). Accept only a unique first-initial +
+  // full-surname match, with a compatible position; never guess among twins.
+  const signature = nameSignature(player?.name);
+  if (!signature || signature.last.length < 4) return null;
+  const rows = [...new Set([...index.byName.values()].flat())];
+  const signatureMatches = rows.filter(row => {
+    const candidate = nameSignature(row.name ?? row.full_name ?? row.shortname);
+    return candidate && candidate.initial === signature.initial && candidate.last === signature.last;
+  });
+  if (signatureMatches.length === 1) {
+    const candidatePosition = positionGroup({ position:signatureMatches[0].position || signatureMatches[0].positionCode });
+    return position === "U" || candidatePosition === "U" || candidatePosition === position ? signatureMatches[0] : null;
+  }
+  if (signatureMatches.length > 1 && position !== "U") {
+    const matching = signatureMatches.filter(row => positionGroup({ position:row.position || row.positionCode }) === position);
     if (matching.length === 1) return matching[0];
   }
   return null;

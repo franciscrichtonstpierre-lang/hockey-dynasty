@@ -1,10 +1,16 @@
-# Base des choix de repêchage NHL 2027–2029
+# Registre des choix de repêchage NHL 2027–2029
 
-Le fichier `2027-2029.json` est le registre canonique des 672 emplacements de base (32 équipes × 7 rondes × 3 années). Au dernier rapprochement, **655 choix sont actifs avec propriétaire vérifié et 17 choix conditionnels restent exclus du registre jouable**. Huit dossiers ont été clarifiés depuis le premier audit : 2027 R1 FLA → CHI, 2027 R1 TOR → COL, 2027 R7 CAR → PHI, 2028 R2 EDM → CHI, 2027 R1 TBL → SEA, 2028 R1 VGK → VGK, 2028 R4 LAK → LAK et 2028 R3 BOS → BOS. Pour le choix des Kings, la condition Panarin est résolue et non satisfaite : le choix n'a donc pas été transféré. Le choix 2028 R3 NYR reste bloqué séparément comme choix conditionnel vers Boston.
+Le fichier `2027-2029.json` conserve les 672 emplacements de base (32 équipes × 7 rondes × 3 années) pour auditer les choix réguliers.
 
-Les 17 choix encore bloqués ont maintenant tous une condition ou une chaîne de propriété documentée. Ils conservent `currentOwner: null` afin de ne pas les rendre échangeables par erreur. Le registre jouable est complet pour les choix fermes; les 17 conditions restent bloquées jusqu'à ce que leur résultat ou leur propriétaire final soit connu.
+**Règle du jeu : les choix conditionnels sont éliminés.** Hockey Dynasty ne gère aucune protection, aucun choix « meilleur de », aucun transfert conditionnel, aucune conversion vers une autre année ou ronde et aucune mécanique de résolution de condition.
 
-## Modèle d'une fiche
+Les emplacements d'origine concernés peuvent rester dans le registre technique avec le statut `excluded_conditional`, mais ce sont uniquement des placeholders non jouables :
+- ils ne sont pas chargés dans l'interface;
+- ils ne sont pas des actifs d'équipe;
+- ils ne peuvent pas être échangés, attribués ou sélectionnés;
+- aucune condition ni aucun bénéficiaire conditionnel n'est conservé dans la fiche.
+
+## Modèle d'une fiche de choix régulier
 
 ```json
 {
@@ -16,29 +22,25 @@ Les 17 choix encore bloqués ont maintenant tous une condition ou une chaîne de
   "status": "active",
   "verified": true,
   "conditions": null,
-  "acquiredVia": "Échange du 26 juin 2024",
+  "acquiredVia": "Échange vérifié",
   "source": "https://...",
   "sourceUpdatedAt": "2026-10-30T00:00:00Z"
 }
 ```
 
 - `originalTeam` est le club auquel le choix appartenait initialement.
-- `currentOwner` est le club qui détient actuellement le droit; il ne doit pas être déduit du rang projeté au repêchage.
-- `status` peut être `active`, `forfeited`, `provisional_snapshot`, `unverified` ou `excluded_conditional`. Un choix perdu doit être conservé comme emplacement historique vérifié, avec `currentOwner: null`.
-- `conditions` reste `null` dans le registre jouable. Le texte de condition et les bénéficiaires éventuels sont conservés dans les métadonnées d'audit (`conditionText`, `conditionalBeneficiary`, `conditionalSelectionGroup`).
-- `conditionReviewStatus` distingue les conditions documentées mais toujours bloquées (`DOCUMENTED_BLOCKED`) des dossiers qui nécessitent encore une source (`SOURCE_REVIEW_REQUIRED`).
-- `verified` ne peut être vrai qu'après vérification des sources et de l'état des conditions. Les choix conditionnels non résolus restent exclus et sans propriétaire jouable.
+- `currentOwner` est le club qui détient le choix ferme.
+- Les choix réguliers peuvent être actifs, perdus, provisoires ou non vérifiés.
+- Un choix conditionnel ne doit jamais être transformé en actif à partir d'une supposition. Il reste un placeholder exclu.
 
-## Contrôles de complétude
+## Contrôles
 
-L'audit exige un emplacement de base pour chacune des 32 équipes, des 7 rondes et des années 2027, 2028 et 2029 (672 emplacements), puis une vérification de chaque propriétaire ou forfait. Une base contenant des conditions non résolues reste en état partiel, même si tous les emplacements de base sont présents.
+L'audit vérifie les 672 emplacements d'origine, les propriétaires des choix réguliers et les transferts documentés. Les placeholders conditionnels sont exclus du nombre de choix jouables.
 
-## Sources à croiser
+## Sources
 
 - [Pro Sports Transactions — 2027](https://www.prosportstransactions.com/hockey/DraftTrades/Years/2027.htm)
 - [Pro Sports Transactions — 2028](https://www.prosportstransactions.com/hockey/DraftTrades/Years/2028.htm)
 - [Pro Sports Transactions — 2029](https://www.prosportstransactions.com/hockey/DraftTrades/Years/2029.htm)
 - [Suivi officiel des échanges NHL 2026–2027](https://www.nhl.com/news/topic/trade-coverage/2026-27-nhl-trades)
 - [PuckPedia Draft](https://puckpedia.com/draft)
-
-Les sources peuvent diverger ou afficher des conditions qui ne sont pas encore résolues. En cas de divergence, consigner la fiche comme non vérifiée plutôt que d'inventer le propriétaire. Les choix conditionnels restent exclus du registre jouable jusqu'à ce qu'un choix ferme puisse être attribué.

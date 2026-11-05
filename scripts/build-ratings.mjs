@@ -24,6 +24,7 @@ const toiSeconds=p=>{const v=p?.timeOnIcePerGame??p?.avgToi??p?.timeOnIce; if(ty
 // Small NHL samples should not rate above established stars based on a hot streak.
 const stabilized=(total,g,prior=24)=>total/(g+prior);
 const ppg=p=>stabilized(n(p,"points"),games(p)), gpg=p=>stabilized(n(p,"goals"),games(p)), apg=p=>stabilized(n(p,"assists"),games(p));
+// Preserve true zero-game samples as null in provenance; never invent a positive sample count.
 const sample=p=>Math.min(1,Math.sqrt(games(p)/55));
 const centered=(v,w)=>.5+(v-.5)*w;
 const rates={ppg:skaters.map(ppg),gpg:skaters.map(gpg),apg:skaters.map(apg),toi:skaters.map(toiSeconds),shots:skaters.map(p=>n(p,"shots")/games(p)),plus:skaters.map(p=>n(p,"plusMinus")/Math.sqrt(games(p))),save:goalies.map(p=>n(p,"savePctg","savePercentage")),gaa:goalies.map(p=>n(p,"goalsAgainstAverage","gaa"))};

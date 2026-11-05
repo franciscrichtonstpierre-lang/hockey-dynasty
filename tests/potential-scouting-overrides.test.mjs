@@ -50,3 +50,13 @@ test("young goalie potential recognizes official savePctg", () => {
   assert.ok(b.value > a.value);
   assert.match(b.evidence,/goalie_save_percentage/);
 });
+
+test("verified birth date overrides a stale imported age", () => {
+  const birthDate = new Date();
+  birthDate.setUTCFullYear(birthDate.getUTCFullYear() - 18);
+  const date = birthDate.toISOString().slice(0,10);
+  const fromBirthDate = estimatePlayerPotential({age:20,birthDate:date,position:"F"},65);
+  const fromStaleAge = estimatePlayerPotential({age:20,position:"F"},65);
+  assert.equal(fromBirthDate.value,85);
+  assert.equal(fromStaleAge.value,79);
+});

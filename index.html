@@ -939,7 +939,7 @@ async function loadPlayerDirectory(){
         league:league==="UNKNOWN"?"Ligue à confirmer":league,currentTeam,rightsTeam,birthDate:p.birthDate||null,
         nationality:p.nationality||null,shootsCatches:p.shootsCatches||null,heightCm:p.heightCm||null,
         weightKg:p.weightKg||null,sweaterNumber:p.sweaterNumber||null,overall:p.overall??null,
-        potential:p.potential??null,potentialEstimate:p.potentialEstimate??null,potentialStatus:p.potentialStatus||null,attributes:p.attributes||null,source:p.source||"data/players/registry.json",
+        potential:p.potential??null,potentialEstimate:p.potentialEstimate??null,potentialStatus:p.potentialStatus||null,potentialEstimateMethod:p.potentialEstimateMethod||null,potentialSource:p.potentialSource||null,potentialConfidence:p.potentialConfidence||null,potentialRationale:p.potentialRationale||null,potentialReviewRequired:p.potentialReviewRequired??null,attributes:p.attributes||null,source:p.source||"data/players/registry.json",
         ratingStatus:p.ratingStatus||null,ratingSource:p.ratingSource||null,ratingConfidence:p.ratingConfidence||null,ratingSampleConfidence:p.ratingSampleConfidence||null,ratingSampleSize:p.ratingSampleSize??null,ratedAttributes:p.ratedAttributes||[]};
       }).filter(p=>p.name);
       try{
@@ -958,7 +958,7 @@ async function loadPlayerDirectory(){
           code:codes.includes(String(f.nhlRightsTeam||"").toUpperCase())?String(f.nhlRightsTeam).toUpperCase():"",
           pos:f.position||"F",kind:pro,league,currentTeam:null,rightsTeam:f.nhlRightsTeam||null,
           previousTeam:f.previousTeam||null,birthDate:f.birthDate||null,overall:f.overall??null,potential:f.potential??null,
-          potentialEstimate:f.potentialEstimate??null,potentialStatus:f.potentialStatus||null,attributes:f.attributes||null,
+          potentialEstimate:f.potentialEstimate??null,potentialStatus:f.potentialStatus||null,potentialEstimateMethod:f.potentialEstimateMethod||null,potentialSource:f.potentialSource||null,potentialConfidence:f.potentialConfidence||null,potentialRationale:f.potentialRationale||null,potentialReviewRequired:f.potentialReviewRequired??null,attributes:f.attributes||null,
           source:f.source||"data/free-agents/2026-2027.json",ratingStatus:f.ratingStatus||null,ratingSource:f.ratingSource||null,ratingConfidence:f.ratingConfidence||null,ratingSampleConfidence:f.ratingSampleConfidence||null,ratingSampleSize:f.ratingSampleSize??null,ratedAttributes:f.ratedAttributes||[],
           verificationStatus:f.verificationStatus||null,availabilityConfidence:f.availabilityConfidence||null});
          known.add(key);

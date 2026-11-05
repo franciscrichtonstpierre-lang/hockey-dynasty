@@ -30,7 +30,10 @@ test("every registry player has the complete shared card and explicit estimate p
   for (const player of registry.players) {
     assert.ok(Number.isInteger(player.potential) && player.potential >= 0 && player.potential <= 99, `separate potential estimate for ${player.id}`);
     assert.equal(player.potential, player.potentialEstimate, `potential estimate is labelled consistently for ${player.id}`);
-    assert.equal(player.potentialStatus, "provisional_model_estimate", `potential confidence status for ${player.id}`);
+    assert.ok(["provisional_model_estimate", "scouting_source_reviewed_estimate"].includes(player.potentialStatus), `potential confidence status for ${player.id}`);
+    if (player.potentialStatus === "scouting_source_reviewed_estimate") {
+      assert.ok(player.potentialSource && player.potentialRationale, `source-reviewed potential provenance for ${player.id}`);
+    }
   }
 });
 

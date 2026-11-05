@@ -71,7 +71,7 @@ const shlBase = "https://www.shl.se/api/statistics-v2/stats-info";
 let shlSeason = null, shlSkaters = [], shlGoalies = [];
 for (const candidate of [2027, 2026]) {
   try {
-    const raw = await get(`${shlBase}/players_summary?count=1000&season=${candidate}&gameType=regular&masterSiteInstanceId=shl1_shl`);
+    const raw = await get(`${shlBase}/players_summary?count=1000&season=${candidate}&gameType=regular`);
     const rows = normalizeShlSkaters(raw);
     if (rows.length >= 50) { shlSeason = candidate; shlSkaters = rows; break; }
   } catch (error) {
@@ -83,7 +83,7 @@ if (!shlSeason) {
 } else {
   for (const module of ["goalies_summary", "goalies"]) {
     try {
-      const raw = await get(`${shlBase}/${module}?count=1000&season=${shlSeason}&gameType=regular&masterSiteInstanceId=shl1_shl`);
+      const raw = await get(`${shlBase}/${module}?count=1000&season=${shlSeason}&gameType=regular`);
       const rows = normalizeShlGoalies(raw);
       if (rows.length >= 8) { shlGoalies = rows; break; }
     } catch (error) {

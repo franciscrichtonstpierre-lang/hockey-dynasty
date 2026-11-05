@@ -30,8 +30,14 @@ const compact = players.map(p => ({
   ratingEvidence: p.ratingEvidence ?? null,
   ratingModeledAttributes: p.ratingModeledAttributes ?? [],
   potential: p.potential ?? null,
-  ratingStatus: p.ratingStatus ?? null,
+  potentialEstimate: p.potentialEstimate ?? null,
   potentialStatus: p.potentialStatus ?? null,
+  potentialEstimateMethod: p.potentialEstimateMethod ?? null,
+  potentialSource: p.potentialSource ?? null,
+  potentialConfidence: p.potentialConfidence ?? null,
+  potentialRationale: p.potentialRationale ?? null,
+  potentialReviewRequired: p.potentialReviewRequired ?? null,
+  ratingStatus: p.ratingStatus ?? null,
   age: p.age ?? null,
   nationality: p.nationality ?? null,
   shootsCatches: p.shootsCatches ?? null,
@@ -48,6 +54,11 @@ const lookupPlayers = players.map(p => ({
   overall:p.overall ?? null, attributes:p.attributes ?? null,
   potential:p.potential ?? null, potentialEstimate:p.potentialEstimate ?? null,
   potentialStatus:p.potentialStatus ?? null,
+  potentialEstimateMethod:p.potentialEstimateMethod ?? null,
+  potentialSource:p.potentialSource ?? null,
+  potentialConfidence:p.potentialConfidence ?? null,
+  potentialRationale:p.potentialRationale ?? null,
+  potentialReviewRequired:p.potentialReviewRequired ?? null,
   ratingSource:p.ratingSource ?? null, ratingStatus:p.ratingStatus ?? null,
   ratingConfidence:p.ratingConfidence ?? null, ratingSampleConfidence:p.ratingSampleConfidence ?? null,
   ratingSampleSize:p.ratingSampleSize ?? null, ratedAttributes:p.ratedAttributes ?? [],
@@ -156,7 +167,7 @@ const manifest = {
   chunkSize,
   chunkCount,
   generatedAt: new Date().toISOString(),
-  fields: ["id", "name", "birthDate", "position", "currentLeague", "currentTeam", "nhlRightsTeam", "draftYear", "overall", "attributes", "ratingSource", "ratingConfidence", "ratingSampleConfidence", "ratingSampleSize", "ratedAttributes", "ratingMethod", "ratingEvidence", "ratingModeledAttributes", "potential", "ratingStatus", "potentialStatus", "age", "nationality", "shootsCatches", "source"]
+  fields: ["id", "name", "birthDate", "position", "currentLeague", "currentTeam", "nhlRightsTeam", "draftYear", "overall", "attributes", "ratingSource", "ratingConfidence", "ratingSampleConfidence", "ratingSampleSize", "ratedAttributes", "ratingMethod", "ratingEvidence", "ratingModeledAttributes", "potential", "potentialEstimate", "potentialStatus", "potentialEstimateMethod", "potentialSource", "potentialConfidence", "potentialRationale", "potentialReviewRequired", "ratingStatus", "age", "nationality", "shootsCatches", "source"]
 };
 await writeFile(`${outputDir}/manifest.json`, JSON.stringify(manifest, null, 2) + "\n", "utf8");
 await writeFile(`${outputDir}/ratings-lookup.json`, JSON.stringify(ratingsLookup) + "\n", "utf8");

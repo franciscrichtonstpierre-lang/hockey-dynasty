@@ -150,15 +150,22 @@ for (const player of registry.players || []) {
   if (!Number.isInteger(override.potential) || override.potential < 0 || override.potential > 99 || !override.source || !override.rationale) {
     throw new Error(`Invalid source-reviewed potential override for ${player.name}.`);
   }
-  player.potential = override.potential;
-  player.potentialEstimate = override.potential;
-  player.potentialStatus = "scouting_source_reviewed_estimate";
-  player.potentialEstimateMethod = "manual_source_review_2026-11-04";
+  const potentialFloor = Math.max(0, Number(player.overall) || 0);
+  const floorAdjusted = potentialFloor > override.potential;
+  const appliedPotential = Math.max(override.potential, potentialFloor);
+  player.potential = appliedPotential;
+  player.potentialEstimate = appliedPotential;
+  player.potentialStatus = floorAdjusted ? "provisional_model_estimate" : "scouting_source_reviewed_estimate";
+  player.potentialEstimateMethod = floorAdjusted
+    ? "oa_floor_invariant_correction_2026-11-05; requires_source_review"
+    : "manual_source_review_2026-11-04";
   player.potentialSource = override.source;
-  player.potentialConfidence = override.confidence || "medium";
-  player.potentialRationale = override.rationale;
-  player.potentialReviewRequired = false;
-  player.potentialReviewResolution = "manual_source_review_2026-11-04";
+  player.potentialConfidence = floorAdjusted ? "low" : (override.confidence || "medium");
+  player.potentialRationale = floorAdjusted
+    ? `${override.rationale} Floor-adjusted to current OA ${potentialFloor}; this correction requires a fresh source review.`
+    : override.rationale;
+  player.potentialReviewRequired = floorAdjusted;
+  player.potentialReviewResolution = floorAdjusted ? null : "manual_source_review_2026-11-04";
   potentialOverridesApplied++;
 }
 console.log(`Source-reviewed potential overrides applied: ${potentialOverridesApplied}.`);

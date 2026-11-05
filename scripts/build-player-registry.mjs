@@ -2,6 +2,7 @@
 // Source-labelled ratings are imported when IDs match; unknown rights and contracts are never inferred, while missing potential receives a flagged provisional estimate.
 import { readFile, writeFile } from "node:fs/promises";
 import { emptyRatings, hasAnyRating, normalizeRatings } from "./lib/player-ratings.mjs";
+import { mergeNhlProspectAliases } from "./lib/registry-identity-merge.mjs";
 
 const codes = ["ANA","BOS","BUF","CGY","CAR","CHI","COL","CBJ","DAL","DET","EDM","FLA","LAK","MIN","MTL","NSH","NJD","NYI","NYR","OTT","PHI","PIT","SJS","SEA","STL","TBL","TOR","UTA","VAN","VGK","WSH","WPG"];
 const affiliations = JSON.parse(await readFile("data/ahl/teams.json", "utf8")).teams || [];
@@ -615,6 +616,8 @@ for(const result of pipelineJsonResults){
   }
 }
 console.log(`Hockey Insights team prospect JSON: ${pipelineJsonPagesFetched}/32 team files; ${pipelineJsonRows} rows; ${pipelineJsonEnriched} existing records enriched; ${pipelineJsonAdded} new records; ${pipelineJsonAmbiguous} ambiguous identities; ${pipelineJsonUnknown} source rows without a known league.`);
+const identityMerge = mergeNhlProspectAliases(records, nameKey);
+console.log(`NHL/prospect duplicate aliases merged: ${identityMerge.merged}; removed IDs: ${identityMerge.mergedIds.join(", ")}`);
 
 // Apply auditable, source-backed current league/team corrections to legacy prospect entries.
 const manualLeagueCorrections=JSON.parse(await readFile("data/players/manual-league-corrections.json","utf8"));

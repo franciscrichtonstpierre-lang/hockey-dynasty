@@ -1489,9 +1489,9 @@ async function loadDraftPickLedger(){
   const database=await response.json(),sourcePicks=Array.isArray(database.picks)?database.picks:[];
   const oldPicks=Array.isArray(S.picks)?S.picks:[];
   const oldById=new Map(oldPicks.map(p=>[p.id,p]));
-  const excludedKeys=new Set(sourcePicks.filter(p=>p.status==="excluded_conditional").map(p=>String(p.year)+"-"+String(p.round)+"-"+String(p.originalTeam)));
+  const excludedKeys=new Set(sourcePicks.filter(p=>p.status==="excluded").map(p=>String(p.year)+"-"+String(p.round)+"-"+String(p.originalTeam)));
   const seenIds=new Set();
-  const loaded=sourcePicks.filter(p=>p.status!=="excluded_conditional").map(p=>{
+  const loaded=sourcePicks.filter(p=>p.status!=="excluded").map(p=>{
    const key=String(p.year)+"-"+String(p.round)+"-"+String(p.originalTeam),id="nhl-pick-"+key;
    seenIds.add(id);
    const old=oldById.get(id),origin=codes.indexOf(p.originalTeam),sourceOwner=codes.indexOf(p.currentOwner);

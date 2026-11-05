@@ -2,15 +2,15 @@
 
 Saison cible : **2026–2027**. Ce dépôt contient l’application et les instantanés de données utilisés par le jeu.
 
-## Couverture vérifiée le 1er novembre 2026
+## Couverture vérifiée le 5 novembre 2026
 
 **Dernier audit automatisé : réussi.** Les contrôles de couverture, d’identifiants, d’attributs, de salaires utilisables, de personnel et de choix de repêchage passent.
 
 - **LNH :** 32/32 fichiers d’effectifs valides, 800 joueurs.
 - **LAH :** 32/32 fichiers d’effectifs valides, 809 joueurs.
-- **Registre central :** 3 343 fiches. L’audit confirme des identifiants uniques et des cartes complètes sur 3 343/3 343 fiches; deux fiches ont encore une ligue inconnue. **Les potentiels sont des estimations provisoires** : 0/3 343 sont source-vérifiés.
-- **Espoirs d’organisation :** 32/32 fichiers non vides, 1 315 joueurs. Tous ont maintenant une carte de cotes raccordée à l’application; quatre profils sans fiche centrale correspondante portent une estimation de profil marquée de confiance très faible. Certains droits et ligues restent à revérifier. **Prochains repêchages :** un registre transversal contient 102 noms pour 2027, 37 pour 2028 et 7 pour 2029; ces listes ne sont pas définitives.
-- **Contrats :** 805/805 joueurs LNH sont appariés à un dossier contractuel; 490/800 ont un cap hit 2026–2027 source-vérifié. Les estimations d’AAV et de salaire de simulation sont étiquetées séparément du cap hit officiel.
+- **Registre central :** 3 334 fiches, avec 16 attributs sur chaque fiche. Le dernier audit du registre signale quatre ligues inconnues. Les potentiels sont distincts des attributs : 319 profils ont une estimation révisée manuellement à partir de sources publiques et documentée avec justification et confiance; 3 015 restent des estimations de modèle. Aucune de ces valeurs n'est présentée comme un potentiel officiel publié par une ligue.
+- **Espoirs d’organisation :** 32/32 fichiers non vides, environ 1 326 profils dans le dernier export. Les profils sans correspondance centrale sont conservés comme estimations de très faible confiance. Les droits et ligues inconnus ne doivent pas être déduits de l'affiliation. **Prochains repêchages :** les listes 2027–2029 restent des projections et ne sont pas des sélections officielles.
+- **Contrats :** le dernier audit de synchronisation confirme 799/799 contrats NHL appariés avec une source; les données saisonnières sont présentes pour 738 dossiers. Les estimations de salaire de simulation restent étiquetées séparément des montants officiels.
 - **Entraîneurs LNH :** 32 équipes et 158 fiches. **Personnel LAH :** 32 équipes et 159 fiches dans `data/coaches/ahl-2026-2027.json`. Les 32 équipes de chaque ligue ont un entraîneur-chef et des adjoints; les cotes de simulation sont présentes, mais ne doivent pas être confondues avec des évaluations de dépistage source-vérifiées.
 - **Choix de repêchage :** le registre énumère **672 emplacements de base** (32 équipes × 7 rondes × 3 années : 2027–2029). **655 propriétaires sont vérifiés, 17 choix conditionnels sont exclus et aucun propriétaire ne reste non attribué.** Le registre passe l’audit.
 
@@ -37,7 +37,7 @@ Saison cible : **2026–2027**. Ce dépôt contient l’application et les insta
 
 - Aucun droit LNH n’est déduit uniquement de l’affiliation LAH.
 - Chaque joueur conserve exactement les attributs **FI, SH, PL, ST, CH, PO, HI, SK, EN, PE, FA, LE, SR, OFF, DEF et OA**, de 0 à 99. Ces cotes sont des estimations de simulation, pas des rapports de dépistage vérifiés : l’application affiche leur statut, leur source et leur confiance, et marque les estimations par « ≈ ». Les cartes non appuyées par des statistiques utilisent les éléments de profil disponibles, notamment la ligue, la position, le rang de repêchage et les mensurations lorsqu’ils existent; elles ne sont pas présentées comme des cotes source-vérifiées.
-- Le potentiel est séparé des 16 attributs. Le champ `potential` reste réservé aux valeurs source-vérifiées; `potentialEstimate` est une estimation provisoire calculée séparément à partir de la cote actuelle et d’une tranche d’âge. Le dernier audit n’a trouvé aucune cote de potentiel source-vérifiée.
+- Le potentiel est séparé des 16 attributs. `potential` et `potentialEstimate` représentent une projection de simulation; les 319 révisions manuelles sont des estimations argumentées par des sources publiques, pas des notes officielles. Les autres potentiels restent des estimations de modèle. Le statut, la méthode, la source, la confiance et la justification doivent être conservés dans l'index et dans l'application.
 - Les salaires, contrats, conditions de choix, propriétaires de choix et cotes non confirmés ne sont pas fabriqués.
 - La publication automatique est bloquée si la vérification JavaScript ou l’audit final échoue. Une synchronisation réussie ne remplace pas la lecture des résultats de l’audit; les données estimées restent distinctes des données vérifiées.
 

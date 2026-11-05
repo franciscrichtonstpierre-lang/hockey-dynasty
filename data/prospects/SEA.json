@@ -2,7 +2,7 @@
   "teamCode": "SEA",
   "source": "https://api-web.nhle.com/v1/prospects/SEA",
   "sourceType": "NHL Web API + source-labelled supplemental pipeline",
-  "syncedUTC": "2026-11-05T09:22:55.353Z",
+  "syncedUTC": "2026-11-05T20:20:01.615Z",
   "count": 51,
   "prospects": [
     {
@@ -106,32 +106,6 @@
         "default": "Tomsk"
       },
       "birthCountry": "RUS",
-      "positionGroup": "forwards"
-    },
-    {
-      "id": 8483442,
-      "headshot": "https://assets.nhle.com/mugs/nhl/20252026/SEA/8483442.png",
-      "firstName": {
-        "default": "Jagger"
-      },
-      "lastName": {
-        "default": "Firkus"
-      },
-      "sweaterNumber": 57,
-      "positionCode": "R",
-      "shootsCatches": "R",
-      "heightInInches": 70,
-      "weightInPounds": 153,
-      "heightInCentimeters": 178,
-      "weightInKilograms": 69,
-      "birthDate": "2004-04-29",
-      "birthCity": {
-        "default": "Irma"
-      },
-      "birthCountry": "CAN",
-      "birthStateProvince": {
-        "default": "Alberta"
-      },
       "positionGroup": "forwards"
     },
     {
@@ -1083,6 +1057,21 @@
       "draftYear": 2024,
       "draftRound": 1,
       "draftOverall": 8,
+      "rightsStatus": "secondary_snapshot_recheck_required",
+      "source": "https://hockeyinsights.ca/team-pipeline/seattle-kraken/",
+      "sourceUpdatedAt": "2026-09-28",
+      "verificationStatus": "secondary_snapshot_recheck_required"
+    },
+    {
+      "fullName": "Jagger Firkus",
+      "positionCode": "RW",
+      "age": 22,
+      "currentLeague": "AHL",
+      "currentTeam": null,
+      "nhlRightsTeam": "SEA",
+      "draftYear": 2022,
+      "draftRound": 2,
+      "draftOverall": 35,
       "rightsStatus": "secondary_snapshot_recheck_required",
       "source": "https://hockeyinsights.ca/team-pipeline/seattle-kraken/",
       "sourceUpdatedAt": "2026-09-28",

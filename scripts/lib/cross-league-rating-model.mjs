@@ -29,16 +29,18 @@ const leagueKey = value => {
   return LEAGUE_ALIASES[code] || code;
 };
 const playerAge = player => {
-  const age = numeric(player, "age");
-  if (age > 0) return age;
+  // Prefer the verified birth date: imported roster ages can be stale or season-relative.
   const date = player?.birthDate || player?.dateOfBirth;
-  if (!date) return 0;
-  const parsed = new Date(String(date).slice(0, 10) + "T00:00:00Z");
-  if (!Number.isFinite(parsed.getTime())) return 0;
-  const today = RATING_REFERENCE_DATE;
-  let years = today.getUTCFullYear() - parsed.getUTCFullYear();
-  if (today.getUTCMonth() < parsed.getUTCMonth() || (today.getUTCMonth() === parsed.getUTCMonth() && today.getUTCDate() < parsed.getUTCDate())) years--;
-  return years;
+  if (date) {
+    const parsed = new Date(String(date).slice(0, 10) + "T00:00:00Z");
+    if (Number.isFinite(parsed.getTime())) {
+      const today = RATING_REFERENCE_DATE;
+      let years = today.getUTCFullYear() - parsed.getUTCFullYear();
+      if (today.getUTCMonth() < parsed.getUTCMonth() || (today.getUTCMonth() === parsed.getUTCMonth() && today.getUTCDate() < parsed.getUTCDate())) years--;
+      return years;
+    }
+  }
+  return numeric(player, "age");
 };
 const positionGroup = player => {
   const value = String(player?.detailedPosition || player?.position || player?.positionCode || "F").toUpperCase();

@@ -331,14 +331,36 @@ export function estimatePlayerPotential(player, overall = player?.overall) {
   const rank = rankSignal(player);
   const rankWeight = age > 0 && age <= 18 ? 0.24 : age <= 21 && age > 0 ? 0.18 : age <= 24 && age > 0 ? 0.10 : 0;
   const rankAdjustment = rank.score == null ? 0 : Math.max(0, rank.score - current) * rankWeight;
+  const stats = player?.potentialStats || null;
+  const games = numeric(stats, "games_played", "gamesPlayed", "GP");
+  const position = positionGroup(player);
+  let productionAdjustment = 0;
+  let productionEvidence = null;
+  if (age > 0 && age <= 23 && stats && games >= 10) {
+    if (position === "G") {
+      let sv = numeric(stats, "save_percentage", "savePercentage", "SVPCT");
+      if (sv > 1) sv /= 100;
+      if (sv >= 0.915) productionAdjustment = 2;
+      else if (sv >= 0.900) productionAdjustment = 1;
+      productionEvidence = "goalie_save_percentage";
+    } else {
+      const points = numeric(stats, "points", "PTS") || (numeric(stats, "goals", "G") + numeric(stats, "assists", "A"));
+      const ppg = points / games;
+      const league = leagueKey(player?.potentialLeague || player?.currentLeague || player?.league);
+      const thresholds = ["OHL","WHL","QMJHL","USHL"].includes(league) ? [0.90,1.25,1.60]
+        : ["AHL","ECHL"].includes(league) ? [0.45,0.70,0.95]
+        : league === "NCAA" ? [0.40,0.65,0.90] : [0.35,0.60,0.85];
+      productionAdjustment = ppg >= thresholds[2] ? 3 : ppg >= thresholds[1] ? 2 : ppg >= thresholds[0] ? 1 : 0;
+      productionEvidence = "league_points_per_game";
+    }
+  }
+  const hasSignal = rank.score != null || productionEvidence != null;
   return {
-    value:clamp(Math.max(current, current + growth + rankAdjustment)),
+    value:clamp(Math.max(current, current + growth + rankAdjustment + productionAdjustment)),
     status:"provisional_model_estimate",
-    method:rank.score == null
-      ? "age_curve_current_ability_projection_v4; provisional_not_source_verified"
-      : "age_curve_current_ability_and_draft_rank_projection_v4; provisional_not_source_verified",
-    evidence:rank.kind || "current_ability_and_age",
-    confidence:rank.score == null ? "very_low" : "low"
+    method:"age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
+    evidence:[rank.kind, productionEvidence].filter(Boolean).join("+") || "current_ability_and_age",
+    confidence:hasSignal ? "low" : "very_low"
   };
 }
 

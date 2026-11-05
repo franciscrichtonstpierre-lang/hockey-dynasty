@@ -4,7 +4,7 @@
   "season": "2026-2027",
   "seasonId": "78",
   "source": "Official ECHL HockeyTech / LeagueStat public player statistics feed",
-  "syncedAt": "2026-11-05T02:12:43.449Z",
+  "syncedAt": "2026-11-05T02:22:09.086Z",
   "endpoints": {
     "skaters": "https://lscluster.hockeytech.com/feed/index.php?feed=statviewfeed&key=2c2b89ea7345cae8&client_code=echl&league_id=1&site_id=0&lang=en&view=players&season=78&team=all&limit=1000",
     "goalies": "https://lscluster.hockeytech.com/feed/index.php?feed=statviewfeed&key=2c2b89ea7345cae8&client_code=echl&league_id=1&site_id=0&lang=en&view=players&season=78&team=all&limit=1000&position=goalies"
@@ -246,6 +246,27 @@
       "team_code": null
     },
     {
+      "player_id": "10092",
+      "name": "Francesco Arcuri",
+      "active": "1",
+      "position": "F",
+      "rookie": "0",
+      "team_name": "New Mexico Goatheads",
+      "games_played": "9",
+      "goals": "2",
+      "shots": "34",
+      "assists": "7",
+      "points": "9",
+      "points_per_game": "1.00",
+      "plus_minus": "-5",
+      "penalty_minutes": "12",
+      "penalty_minutes_per_game": "1.33",
+      "power_play_goals": "1",
+      "short_handed_goals": "0",
+      "rank": 12,
+      "team_code": null
+    },
+    {
       "player_id": "10879",
       "name": "Cody Laskosky",
       "active": "1",
@@ -263,7 +284,7 @@
       "penalty_minutes_per_game": "0.67",
       "power_play_goals": "2",
       "short_handed_goals": "0",
-      "rank": 12,
+      "rank": 13,
       "team_code": null
     },
     {
@@ -284,7 +305,7 @@
       "penalty_minutes_per_game": "0.29",
       "power_play_goals": "1",
       "short_handed_goals": "0",
-      "rank": 13,
+      "rank": 14,
       "team_code": null
     },
     {
@@ -305,7 +326,7 @@
       "penalty_minutes_per_game": "0.33",
       "power_play_goals": "3",
       "short_handed_goals": "0",
-      "rank": 14,
+      "rank": 15,
       "team_code": null
     },
     {
@@ -326,7 +347,7 @@
       "penalty_minutes_per_game": "0.67",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 15,
+      "rank": 16,
       "team_code": null
     },
     {
@@ -347,7 +368,7 @@
       "penalty_minutes_per_game": "0.50",
       "power_play_goals": "1",
       "short_handed_goals": "0",
-      "rank": 16,
+      "rank": 17,
       "team_code": null
     },
     {
@@ -366,27 +387,6 @@
       "plus_minus": "1",
       "penalty_minutes": "6",
       "penalty_minutes_per_game": "0.67",
-      "power_play_goals": "1",
-      "short_handed_goals": "0",
-      "rank": 17,
-      "team_code": null
-    },
-    {
-      "player_id": "10092",
-      "name": "Francesco Arcuri",
-      "active": "1",
-      "position": "F",
-      "rookie": "0",
-      "team_name": "New Mexico Goatheads",
-      "games_played": "8",
-      "goals": "2",
-      "shots": "33",
-      "assists": "6",
-      "points": "8",
-      "points_per_game": "1.00",
-      "plus_minus": "-6",
-      "penalty_minutes": "12",
-      "penalty_minutes_per_game": "1.50",
       "power_play_goals": "1",
       "short_handed_goals": "0",
       "rank": 18,
@@ -6063,6 +6063,27 @@
       "team_code": null
     },
     {
+      "player_id": "10984",
+      "name": "Tyler Paquette",
+      "active": "1",
+      "position": "F",
+      "rookie": "0",
+      "team_name": "New Mexico Goatheads",
+      "games_played": "5",
+      "goals": "1",
+      "shots": "4",
+      "assists": "1",
+      "points": "2",
+      "points_per_game": "0.40",
+      "plus_minus": "2",
+      "penalty_minutes": "0",
+      "penalty_minutes_per_game": "0.00",
+      "power_play_goals": "0",
+      "short_handed_goals": "0",
+      "rank": 289,
+      "team_code": null
+    },
+    {
       "player_id": "10230",
       "name": "Remy Parker",
       "active": "1",
@@ -6080,7 +6101,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 289,
+      "rank": 290,
       "team_code": null
     },
     {
@@ -6101,7 +6122,7 @@
       "penalty_minutes_per_game": "0.40",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 290,
+      "rank": 291,
       "team_code": null
     },
     {
@@ -6122,7 +6143,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 291,
+      "rank": 292,
       "team_code": null
     },
     {
@@ -6143,7 +6164,7 @@
       "penalty_minutes_per_game": "0.40",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 292,
+      "rank": 293,
       "team_code": null
     },
     {
@@ -6164,7 +6185,7 @@
       "penalty_minutes_per_game": "1.20",
       "power_play_goals": "1",
       "short_handed_goals": "0",
-      "rank": 293,
+      "rank": 294,
       "team_code": null
     },
     {
@@ -6185,7 +6206,7 @@
       "penalty_minutes_per_game": "0.67",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 294,
+      "rank": 295,
       "team_code": null
     },
     {
@@ -6206,7 +6227,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 295,
+      "rank": 296,
       "team_code": null
     },
     {
@@ -6227,7 +6248,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "1",
       "short_handed_goals": "0",
-      "rank": 296,
+      "rank": 297,
       "team_code": null
     },
     {
@@ -6248,7 +6269,7 @@
       "penalty_minutes_per_game": "0.67",
       "power_play_goals": "0",
       "short_handed_goals": "1",
-      "rank": 297,
+      "rank": 298,
       "team_code": null
     },
     {
@@ -6269,7 +6290,7 @@
       "penalty_minutes_per_game": "0.33",
       "power_play_goals": "1",
       "short_handed_goals": "0",
-      "rank": 298,
+      "rank": 299,
       "team_code": null
     },
     {
@@ -6290,7 +6311,7 @@
       "penalty_minutes_per_game": "0.67",
       "power_play_goals": "1",
       "short_handed_goals": "0",
-      "rank": 299,
+      "rank": 300,
       "team_code": null
     },
     {
@@ -6311,7 +6332,7 @@
       "penalty_minutes_per_game": "0.67",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 300,
+      "rank": 301,
       "team_code": null
     },
     {
@@ -6332,7 +6353,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "1",
-      "rank": 301,
+      "rank": 302,
       "team_code": null
     },
     {
@@ -6353,7 +6374,7 @@
       "penalty_minutes_per_game": "0.33",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 302,
+      "rank": 303,
       "team_code": null
     },
     {
@@ -6374,7 +6395,7 @@
       "penalty_minutes_per_game": "0.67",
       "power_play_goals": "1",
       "short_handed_goals": "0",
-      "rank": 303,
+      "rank": 304,
       "team_code": null
     },
     {
@@ -6395,7 +6416,7 @@
       "penalty_minutes_per_game": "0.29",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 304,
+      "rank": 305,
       "team_code": null
     },
     {
@@ -6416,7 +6437,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "1",
       "short_handed_goals": "0",
-      "rank": 305,
+      "rank": 306,
       "team_code": null
     },
     {
@@ -6437,7 +6458,7 @@
       "penalty_minutes_per_game": "0.57",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 306,
+      "rank": 307,
       "team_code": null
     },
     {
@@ -6458,7 +6479,7 @@
       "penalty_minutes_per_game": "0.57",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 307,
+      "rank": 308,
       "team_code": null
     },
     {
@@ -6479,7 +6500,7 @@
       "penalty_minutes_per_game": "1.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 308,
+      "rank": 309,
       "team_code": null
     },
     {
@@ -6500,7 +6521,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 309,
+      "rank": 310,
       "team_code": null
     },
     {
@@ -6521,7 +6542,7 @@
       "penalty_minutes_per_game": "0.75",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 310,
+      "rank": 311,
       "team_code": null
     },
     {
@@ -6542,7 +6563,7 @@
       "penalty_minutes_per_game": "1.50",
       "power_play_goals": "0",
       "short_handed_goals": "1",
-      "rank": 311,
+      "rank": 312,
       "team_code": null
     },
     {
@@ -6563,7 +6584,7 @@
       "penalty_minutes_per_game": "0.25",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 312,
+      "rank": 313,
       "team_code": null
     },
     {
@@ -6584,7 +6605,7 @@
       "penalty_minutes_per_game": "0.50",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 313,
+      "rank": 314,
       "team_code": null
     },
     {
@@ -6605,7 +6626,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 314,
+      "rank": 315,
       "team_code": null
     },
     {
@@ -6626,7 +6647,7 @@
       "penalty_minutes_per_game": "0.44",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 315,
+      "rank": 316,
       "team_code": null
     },
     {
@@ -6647,7 +6668,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 316,
+      "rank": 317,
       "team_code": null
     },
     {
@@ -6668,7 +6689,7 @@
       "penalty_minutes_per_game": "1.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 317,
+      "rank": 318,
       "team_code": null
     },
     {
@@ -6689,7 +6710,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 318,
+      "rank": 319,
       "team_code": null
     },
     {
@@ -6710,7 +6731,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 319,
+      "rank": 320,
       "team_code": null
     },
     {
@@ -6731,7 +6752,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 320,
+      "rank": 321,
       "team_code": null
     },
     {
@@ -6752,7 +6773,7 @@
       "penalty_minutes_per_game": "1.33",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 321,
+      "rank": 322,
       "team_code": null
     },
     {
@@ -6773,7 +6794,7 @@
       "penalty_minutes_per_game": "0.50",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 322,
+      "rank": 323,
       "team_code": null
     },
     {
@@ -6794,7 +6815,7 @@
       "penalty_minutes_per_game": "2.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 323,
+      "rank": 324,
       "team_code": null
     },
     {
@@ -6815,7 +6836,7 @@
       "penalty_minutes_per_game": "0.40",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 324,
+      "rank": 325,
       "team_code": null
     },
     {
@@ -6836,7 +6857,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 325,
+      "rank": 326,
       "team_code": null
     },
     {
@@ -6857,7 +6878,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 326,
+      "rank": 327,
       "team_code": null
     },
     {
@@ -6878,7 +6899,7 @@
       "penalty_minutes_per_game": "0.40",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 327,
+      "rank": 328,
       "team_code": null
     },
     {
@@ -6899,7 +6920,7 @@
       "penalty_minutes_per_game": "1.40",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 328,
+      "rank": 329,
       "team_code": null
     },
     {
@@ -6920,7 +6941,7 @@
       "penalty_minutes_per_game": "0.80",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 329,
+      "rank": 330,
       "team_code": null
     },
     {
@@ -6941,7 +6962,7 @@
       "penalty_minutes_per_game": "3.60",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 330,
+      "rank": 331,
       "team_code": null
     },
     {
@@ -6962,7 +6983,7 @@
       "penalty_minutes_per_game": "1.20",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 331,
+      "rank": 332,
       "team_code": null
     },
     {
@@ -6983,7 +7004,7 @@
       "penalty_minutes_per_game": "0.40",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 332,
+      "rank": 333,
       "team_code": null
     },
     {
@@ -7004,7 +7025,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 333,
+      "rank": 334,
       "team_code": null
     },
     {
@@ -7025,7 +7046,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 334,
+      "rank": 335,
       "team_code": null
     },
     {
@@ -7046,7 +7067,7 @@
       "penalty_minutes_per_game": "0.40",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 335,
+      "rank": 336,
       "team_code": null
     },
     {
@@ -7067,7 +7088,7 @@
       "penalty_minutes_per_game": "0.67",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 336,
+      "rank": 337,
       "team_code": null
     },
     {
@@ -7088,7 +7109,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 337,
+      "rank": 338,
       "team_code": null
     },
     {
@@ -7109,7 +7130,7 @@
       "penalty_minutes_per_game": "0.67",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 338,
+      "rank": 339,
       "team_code": null
     },
     {
@@ -7130,7 +7151,7 @@
       "penalty_minutes_per_game": "1.83",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 339,
+      "rank": 340,
       "team_code": null
     },
     {
@@ -7151,7 +7172,7 @@
       "penalty_minutes_per_game": "0.33",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 340,
+      "rank": 341,
       "team_code": null
     },
     {
@@ -7172,7 +7193,7 @@
       "penalty_minutes_per_game": "1.33",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 341,
+      "rank": 342,
       "team_code": null
     },
     {
@@ -7193,7 +7214,7 @@
       "penalty_minutes_per_game": "0.33",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 342,
+      "rank": 343,
       "team_code": null
     },
     {
@@ -7214,7 +7235,7 @@
       "penalty_minutes_per_game": "0.33",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 343,
+      "rank": 344,
       "team_code": null
     },
     {
@@ -7235,7 +7256,7 @@
       "penalty_minutes_per_game": "1.17",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 344,
+      "rank": 345,
       "team_code": null
     },
     {
@@ -7256,7 +7277,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 345,
+      "rank": 346,
       "team_code": null
     },
     {
@@ -7277,7 +7298,7 @@
       "penalty_minutes_per_game": "3.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 346,
+      "rank": 347,
       "team_code": null
     },
     {
@@ -7298,7 +7319,7 @@
       "penalty_minutes_per_game": "1.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 347,
+      "rank": 348,
       "team_code": null
     },
     {
@@ -7319,7 +7340,7 @@
       "penalty_minutes_per_game": "0.67",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 348,
+      "rank": 349,
       "team_code": null
     },
     {
@@ -7340,7 +7361,7 @@
       "penalty_minutes_per_game": "0.86",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 349,
+      "rank": 350,
       "team_code": null
     },
     {
@@ -7361,7 +7382,7 @@
       "penalty_minutes_per_game": "0.29",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 350,
+      "rank": 351,
       "team_code": null
     },
     {
@@ -7382,7 +7403,7 @@
       "penalty_minutes_per_game": "0.29",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 351,
+      "rank": 352,
       "team_code": null
     },
     {
@@ -7403,7 +7424,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 352,
+      "rank": 353,
       "team_code": null
     },
     {
@@ -7424,7 +7445,7 @@
       "penalty_minutes_per_game": "0.29",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 353,
+      "rank": 354,
       "team_code": null
     },
     {
@@ -7445,7 +7466,7 @@
       "penalty_minutes_per_game": "1.43",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 354,
+      "rank": 355,
       "team_code": null
     },
     {
@@ -7466,7 +7487,7 @@
       "penalty_minutes_per_game": "1.38",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 355,
+      "rank": 356,
       "team_code": null
     },
     {
@@ -7487,7 +7508,7 @@
       "penalty_minutes_per_game": "0.25",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 356,
+      "rank": 357,
       "team_code": null
     },
     {
@@ -7508,7 +7529,7 @@
       "penalty_minutes_per_game": "0.75",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 357,
+      "rank": 358,
       "team_code": null
     },
     {
@@ -7529,7 +7550,7 @@
       "penalty_minutes_per_game": "1.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 358,
+      "rank": 359,
       "team_code": null
     },
     {
@@ -7550,7 +7571,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 359,
+      "rank": 360,
       "team_code": null
     },
     {
@@ -7571,7 +7592,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 360,
+      "rank": 361,
       "team_code": null
     },
     {
@@ -7592,7 +7613,7 @@
       "penalty_minutes_per_game": "1.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 361,
+      "rank": 362,
       "team_code": null
     },
     {
@@ -7613,7 +7634,7 @@
       "penalty_minutes_per_game": "1.00",
       "power_play_goals": "0",
       "short_handed_goals": "1",
-      "rank": 362,
+      "rank": 363,
       "team_code": null
     },
     {
@@ -7634,7 +7655,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 363,
+      "rank": 364,
       "team_code": null
     },
     {
@@ -7655,7 +7676,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 364,
+      "rank": 365,
       "team_code": null
     },
     {
@@ -7676,7 +7697,7 @@
       "penalty_minutes_per_game": "2.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 365,
+      "rank": 366,
       "team_code": null
     },
     {
@@ -7697,7 +7718,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 366,
+      "rank": 367,
       "team_code": null
     },
     {
@@ -7718,7 +7739,7 @@
       "penalty_minutes_per_game": "0.67",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 367,
+      "rank": 368,
       "team_code": null
     },
     {
@@ -7739,7 +7760,7 @@
       "penalty_minutes_per_game": "1.33",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 368,
+      "rank": 369,
       "team_code": null
     },
     {
@@ -7760,7 +7781,7 @@
       "penalty_minutes_per_game": "0.80",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 369,
+      "rank": 370,
       "team_code": null
     },
     {
@@ -7781,7 +7802,7 @@
       "penalty_minutes_per_game": "3.20",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 370,
+      "rank": 371,
       "team_code": null
     },
     {
@@ -7802,7 +7823,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "1",
       "short_handed_goals": "0",
-      "rank": 371,
+      "rank": 372,
       "team_code": null
     },
     {
@@ -7823,7 +7844,7 @@
       "penalty_minutes_per_game": "0.40",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 372,
+      "rank": 373,
       "team_code": null
     },
     {
@@ -7844,7 +7865,7 @@
       "penalty_minutes_per_game": "0.80",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 373,
+      "rank": 374,
       "team_code": null
     },
     {
@@ -7865,7 +7886,7 @@
       "penalty_minutes_per_game": "0.80",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 374,
+      "rank": 375,
       "team_code": null
     },
     {
@@ -7886,7 +7907,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "1",
       "short_handed_goals": "0",
-      "rank": 375,
+      "rank": 376,
       "team_code": null
     },
     {
@@ -7907,7 +7928,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "1",
       "short_handed_goals": "0",
-      "rank": 376,
+      "rank": 377,
       "team_code": null
     },
     {
@@ -7928,7 +7949,7 @@
       "penalty_minutes_per_game": "0.67",
       "power_play_goals": "0",
       "short_handed_goals": "1",
-      "rank": 377,
+      "rank": 378,
       "team_code": null
     },
     {
@@ -7949,7 +7970,7 @@
       "penalty_minutes_per_game": "3.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 378,
+      "rank": 379,
       "team_code": null
     },
     {
@@ -7970,7 +7991,7 @@
       "penalty_minutes_per_game": "1.50",
       "power_play_goals": "1",
       "short_handed_goals": "0",
-      "rank": 379,
+      "rank": 380,
       "team_code": null
     },
     {
@@ -7991,7 +8012,7 @@
       "penalty_minutes_per_game": "1.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 380,
+      "rank": 381,
       "team_code": null
     },
     {
@@ -8012,7 +8033,7 @@
       "penalty_minutes_per_game": "0.33",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 381,
+      "rank": 382,
       "team_code": null
     },
     {
@@ -8033,7 +8054,7 @@
       "penalty_minutes_per_game": "0.67",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 382,
+      "rank": 383,
       "team_code": null
     },
     {
@@ -8054,7 +8075,7 @@
       "penalty_minutes_per_game": "1.50",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 383,
+      "rank": 384,
       "team_code": null
     },
     {
@@ -8075,7 +8096,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "1",
       "short_handed_goals": "0",
-      "rank": 384,
+      "rank": 385,
       "team_code": null
     },
     {
@@ -8096,7 +8117,7 @@
       "penalty_minutes_per_game": "0.33",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 385,
+      "rank": 386,
       "team_code": null
     },
     {
@@ -8117,7 +8138,7 @@
       "penalty_minutes_per_game": "0.33",
       "power_play_goals": "1",
       "short_handed_goals": "0",
-      "rank": 386,
+      "rank": 387,
       "team_code": null
     },
     {
@@ -8138,7 +8159,7 @@
       "penalty_minutes_per_game": "2.57",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 387,
+      "rank": 388,
       "team_code": null
     },
     {
@@ -8159,7 +8180,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 388,
+      "rank": 389,
       "team_code": null
     },
     {
@@ -8180,7 +8201,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 389,
+      "rank": 390,
       "team_code": null
     },
     {
@@ -8201,7 +8222,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 390,
+      "rank": 391,
       "team_code": null
     },
     {
@@ -8222,7 +8243,7 @@
       "penalty_minutes_per_game": "0.75",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 391,
+      "rank": 392,
       "team_code": null
     },
     {
@@ -8243,7 +8264,7 @@
       "penalty_minutes_per_game": "0.25",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 392,
+      "rank": 393,
       "team_code": null
     },
     {
@@ -8264,7 +8285,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 393,
+      "rank": 394,
       "team_code": null
     },
     {
@@ -8285,7 +8306,7 @@
       "penalty_minutes_per_game": "2.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 394,
+      "rank": 395,
       "team_code": null
     },
     {
@@ -8306,7 +8327,7 @@
       "penalty_minutes_per_game": "2.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 395,
+      "rank": 396,
       "team_code": null
     },
     {
@@ -8327,7 +8348,7 @@
       "penalty_minutes_per_game": "3.50",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 396,
+      "rank": 397,
       "team_code": null
     },
     {
@@ -8348,7 +8369,7 @@
       "penalty_minutes_per_game": "3.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 397,
+      "rank": 398,
       "team_code": null
     },
     {
@@ -8369,7 +8390,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 398,
+      "rank": 399,
       "team_code": null
     },
     {
@@ -8390,7 +8411,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 399,
+      "rank": 400,
       "team_code": null
     },
     {
@@ -8411,7 +8432,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 400,
+      "rank": 401,
       "team_code": null
     },
     {
@@ -8432,7 +8453,28 @@
       "penalty_minutes_per_game": "1.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 401,
+      "rank": 402,
+      "team_code": null
+    },
+    {
+      "player_id": "11137",
+      "name": "Connor Kelley",
+      "active": "1",
+      "position": "D",
+      "rookie": "1",
+      "team_name": "New Mexico Goatheads",
+      "games_played": "2",
+      "goals": "0",
+      "shots": "0",
+      "assists": "1",
+      "points": "1",
+      "points_per_game": "0.50",
+      "plus_minus": "-2",
+      "penalty_minutes": "2",
+      "penalty_minutes_per_game": "1.00",
+      "power_play_goals": "0",
+      "short_handed_goals": "0",
+      "rank": 403,
       "team_code": null
     },
     {
@@ -8453,7 +8495,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 402,
+      "rank": 404,
       "team_code": null
     },
     {
@@ -8474,7 +8516,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 403,
+      "rank": 405,
       "team_code": null
     },
     {
@@ -8495,7 +8537,7 @@
       "penalty_minutes_per_game": "2.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 404,
+      "rank": 406,
       "team_code": null
     },
     {
@@ -8516,7 +8558,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 405,
+      "rank": 407,
       "team_code": null
     },
     {
@@ -8537,7 +8579,7 @@
       "penalty_minutes_per_game": "1.33",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 406,
+      "rank": 408,
       "team_code": null
     },
     {
@@ -8558,7 +8600,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 407,
+      "rank": 409,
       "team_code": null
     },
     {
@@ -8579,7 +8621,7 @@
       "penalty_minutes_per_game": "1.33",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 408,
+      "rank": 410,
       "team_code": null
     },
     {
@@ -8600,7 +8642,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 409,
+      "rank": 411,
       "team_code": null
     },
     {
@@ -8621,7 +8663,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 410,
+      "rank": 412,
       "team_code": null
     },
     {
@@ -8642,7 +8684,7 @@
       "penalty_minutes_per_game": "2.33",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 411,
+      "rank": 413,
       "team_code": null
     },
     {
@@ -8663,7 +8705,7 @@
       "penalty_minutes_per_game": "0.67",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 412,
+      "rank": 414,
       "team_code": null
     },
     {
@@ -8684,7 +8726,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 413,
+      "rank": 415,
       "team_code": null
     },
     {
@@ -8705,7 +8747,7 @@
       "penalty_minutes_per_game": "0.67",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 414,
+      "rank": 416,
       "team_code": null
     },
     {
@@ -8726,7 +8768,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 415,
+      "rank": 417,
       "team_code": null
     },
     {
@@ -8747,7 +8789,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 416,
+      "rank": 418,
       "team_code": null
     },
     {
@@ -8768,7 +8810,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 417,
+      "rank": 419,
       "team_code": null
     },
     {
@@ -8789,7 +8831,7 @@
       "penalty_minutes_per_game": "0.50",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 418,
+      "rank": 420,
       "team_code": null
     },
     {
@@ -8810,7 +8852,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 419,
+      "rank": 421,
       "team_code": null
     },
     {
@@ -8831,7 +8873,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 420,
+      "rank": 422,
       "team_code": null
     },
     {
@@ -8852,7 +8894,7 @@
       "penalty_minutes_per_game": "1.75",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 421,
+      "rank": 423,
       "team_code": null
     },
     {
@@ -8873,7 +8915,7 @@
       "penalty_minutes_per_game": "1.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 422,
+      "rank": 424,
       "team_code": null
     },
     {
@@ -8894,7 +8936,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 423,
+      "rank": 425,
       "team_code": null
     },
     {
@@ -8915,7 +8957,7 @@
       "penalty_minutes_per_game": "1.50",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 424,
+      "rank": 426,
       "team_code": null
     },
     {
@@ -8936,7 +8978,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 425,
+      "rank": 427,
       "team_code": null
     },
     {
@@ -8957,28 +8999,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 426,
-      "team_code": null
-    },
-    {
-      "player_id": "11174",
-      "name": "Cooper Moore",
-      "active": "1",
-      "position": "D",
-      "rookie": "0",
-      "team_name": "Worcester Railers",
-      "games_played": "4",
-      "goals": "0",
-      "shots": "5",
-      "assists": "1",
-      "points": "1",
-      "points_per_game": "0.25",
-      "plus_minus": "2",
-      "penalty_minutes": "4",
-      "penalty_minutes_per_game": "1.00",
-      "power_play_goals": "0",
-      "short_handed_goals": "0",
-      "rank": 427,
+      "rank": 428,
       "team_code": null
     },
     {
@@ -8999,7 +9020,28 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 428,
+      "rank": 429,
+      "team_code": null
+    },
+    {
+      "player_id": "11174",
+      "name": "Cooper Moore",
+      "active": "1",
+      "position": "D",
+      "rookie": "0",
+      "team_name": "Worcester Railers",
+      "games_played": "4",
+      "goals": "0",
+      "shots": "5",
+      "assists": "1",
+      "points": "1",
+      "points_per_game": "0.25",
+      "plus_minus": "2",
+      "penalty_minutes": "4",
+      "penalty_minutes_per_game": "1.00",
+      "power_play_goals": "0",
+      "short_handed_goals": "0",
+      "rank": 430,
       "team_code": null
     },
     {
@@ -9020,28 +9062,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 429,
-      "team_code": null
-    },
-    {
-      "player_id": "10984",
-      "name": "Tyler Paquette",
-      "active": "1",
-      "position": "F",
-      "rookie": "0",
-      "team_name": "New Mexico Goatheads",
-      "games_played": "4",
-      "goals": "0",
-      "shots": "2",
-      "assists": "1",
-      "points": "1",
-      "points_per_game": "0.25",
-      "plus_minus": "1",
-      "penalty_minutes": "0",
-      "penalty_minutes_per_game": "0.00",
-      "power_play_goals": "0",
-      "short_handed_goals": "0",
-      "rank": 430,
+      "rank": 431,
       "team_code": null
     },
     {
@@ -9062,7 +9083,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 431,
+      "rank": 432,
       "team_code": null
     },
     {
@@ -9083,7 +9104,7 @@
       "penalty_minutes_per_game": "3.25",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 432,
+      "rank": 433,
       "team_code": null
     },
     {
@@ -9104,7 +9125,7 @@
       "penalty_minutes_per_game": "0.50",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 433,
+      "rank": 434,
       "team_code": null
     },
     {
@@ -9125,7 +9146,7 @@
       "penalty_minutes_per_game": "0.50",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 434,
+      "rank": 435,
       "team_code": null
     },
     {
@@ -9146,7 +9167,7 @@
       "penalty_minutes_per_game": "0.50",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 435,
+      "rank": 436,
       "team_code": null
     },
     {
@@ -9167,7 +9188,7 @@
       "penalty_minutes_per_game": "2.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 436,
+      "rank": 437,
       "team_code": null
     },
     {
@@ -9188,7 +9209,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 437,
+      "rank": 438,
       "team_code": null
     },
     {
@@ -9209,7 +9230,7 @@
       "penalty_minutes_per_game": "0.80",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 438,
+      "rank": 439,
       "team_code": null
     },
     {
@@ -9230,7 +9251,7 @@
       "penalty_minutes_per_game": "0.40",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 439,
+      "rank": 440,
       "team_code": null
     },
     {
@@ -9251,7 +9272,7 @@
       "penalty_minutes_per_game": "0.80",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 440,
+      "rank": 441,
       "team_code": null
     },
     {
@@ -9272,7 +9293,7 @@
       "penalty_minutes_per_game": "0.80",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 441,
+      "rank": 442,
       "team_code": null
     },
     {
@@ -9293,7 +9314,7 @@
       "penalty_minutes_per_game": "0.40",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 442,
+      "rank": 443,
       "team_code": null
     },
     {
@@ -9314,7 +9335,7 @@
       "penalty_minutes_per_game": "1.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 443,
+      "rank": 444,
       "team_code": null
     },
     {
@@ -9335,7 +9356,7 @@
       "penalty_minutes_per_game": "0.40",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 444,
+      "rank": 445,
       "team_code": null
     },
     {
@@ -9356,7 +9377,7 @@
       "penalty_minutes_per_game": "0.40",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 445,
+      "rank": 446,
       "team_code": null
     },
     {
@@ -9377,7 +9398,7 @@
       "penalty_minutes_per_game": "0.40",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 446,
+      "rank": 447,
       "team_code": null
     },
     {
@@ -9398,7 +9419,7 @@
       "penalty_minutes_per_game": "0.80",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 447,
+      "rank": 448,
       "team_code": null
     },
     {
@@ -9419,7 +9440,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 448,
+      "rank": 449,
       "team_code": null
     },
     {
@@ -9440,7 +9461,7 @@
       "penalty_minutes_per_game": "1.20",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 449,
+      "rank": 450,
       "team_code": null
     },
     {
@@ -9461,7 +9482,7 @@
       "penalty_minutes_per_game": "0.40",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 450,
+      "rank": 451,
       "team_code": null
     },
     {
@@ -9482,7 +9503,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 451,
+      "rank": 452,
       "team_code": null
     },
     {
@@ -9503,7 +9524,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 452,
+      "rank": 453,
       "team_code": null
     },
     {
@@ -9524,7 +9545,7 @@
       "penalty_minutes_per_game": "0.40",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 453,
+      "rank": 454,
       "team_code": null
     },
     {
@@ -9545,7 +9566,7 @@
       "penalty_minutes_per_game": "0.80",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 454,
+      "rank": 455,
       "team_code": null
     },
     {
@@ -9566,7 +9587,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 455,
+      "rank": 456,
       "team_code": null
     },
     {
@@ -9587,7 +9608,7 @@
       "penalty_minutes_per_game": "3.40",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 456,
+      "rank": 457,
       "team_code": null
     },
     {
@@ -9608,7 +9629,7 @@
       "penalty_minutes_per_game": "1.60",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 457,
+      "rank": 458,
       "team_code": null
     },
     {
@@ -9629,7 +9650,7 @@
       "penalty_minutes_per_game": "1.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 458,
+      "rank": 459,
       "team_code": null
     },
     {
@@ -9650,7 +9671,7 @@
       "penalty_minutes_per_game": "0.80",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 459,
+      "rank": 460,
       "team_code": null
     },
     {
@@ -9671,7 +9692,7 @@
       "penalty_minutes_per_game": "2.33",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 460,
+      "rank": 461,
       "team_code": null
     },
     {
@@ -9692,7 +9713,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 461,
+      "rank": 462,
       "team_code": null
     },
     {
@@ -9713,7 +9734,7 @@
       "penalty_minutes_per_game": "0.67",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 462,
+      "rank": 463,
       "team_code": null
     },
     {
@@ -9734,7 +9755,7 @@
       "penalty_minutes_per_game": "0.33",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 463,
+      "rank": 464,
       "team_code": null
     },
     {
@@ -9755,7 +9776,7 @@
       "penalty_minutes_per_game": "1.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 464,
+      "rank": 465,
       "team_code": null
     },
     {
@@ -9776,7 +9797,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 465,
+      "rank": 466,
       "team_code": null
     },
     {
@@ -9797,7 +9818,7 @@
       "penalty_minutes_per_game": "0.33",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 466,
+      "rank": 467,
       "team_code": null
     },
     {
@@ -9818,7 +9839,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 467,
+      "rank": 468,
       "team_code": null
     },
     {
@@ -9839,7 +9860,7 @@
       "penalty_minutes_per_game": "1.50",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 468,
+      "rank": 469,
       "team_code": null
     },
     {
@@ -9860,7 +9881,7 @@
       "penalty_minutes_per_game": "0.67",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 469,
+      "rank": 470,
       "team_code": null
     },
     {
@@ -9881,7 +9902,7 @@
       "penalty_minutes_per_game": "0.67",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 470,
+      "rank": 471,
       "team_code": null
     },
     {
@@ -9902,7 +9923,7 @@
       "penalty_minutes_per_game": "1.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 471,
+      "rank": 472,
       "team_code": null
     },
     {
@@ -9923,7 +9944,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 472,
+      "rank": 473,
       "team_code": null
     },
     {
@@ -9944,7 +9965,7 @@
       "penalty_minutes_per_game": "1.17",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 473,
+      "rank": 474,
       "team_code": null
     },
     {
@@ -9965,7 +9986,7 @@
       "penalty_minutes_per_game": "2.17",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 474,
+      "rank": 475,
       "team_code": null
     },
     {
@@ -9986,7 +10007,7 @@
       "penalty_minutes_per_game": "0.33",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 475,
+      "rank": 476,
       "team_code": null
     },
     {
@@ -10007,7 +10028,7 @@
       "penalty_minutes_per_game": "0.33",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 476,
+      "rank": 477,
       "team_code": null
     },
     {
@@ -10028,7 +10049,7 @@
       "penalty_minutes_per_game": "1.33",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 477,
+      "rank": 478,
       "team_code": null
     },
     {
@@ -10049,7 +10070,7 @@
       "penalty_minutes_per_game": "0.33",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 478,
+      "rank": 479,
       "team_code": null
     },
     {
@@ -10070,7 +10091,7 @@
       "penalty_minutes_per_game": "0.33",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 479,
+      "rank": 480,
       "team_code": null
     },
     {
@@ -10091,7 +10112,7 @@
       "penalty_minutes_per_game": "3.17",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 480,
+      "rank": 481,
       "team_code": null
     },
     {
@@ -10112,7 +10133,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 481,
+      "rank": 482,
       "team_code": null
     },
     {
@@ -10133,7 +10154,7 @@
       "penalty_minutes_per_game": "0.57",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 482,
+      "rank": 483,
       "team_code": null
     },
     {
@@ -10154,7 +10175,7 @@
       "penalty_minutes_per_game": "1.29",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 483,
+      "rank": 484,
       "team_code": null
     },
     {
@@ -10175,7 +10196,7 @@
       "penalty_minutes_per_game": "2.29",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 484,
+      "rank": 485,
       "team_code": null
     },
     {
@@ -10196,7 +10217,7 @@
       "penalty_minutes_per_game": "1.43",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 485,
+      "rank": 486,
       "team_code": null
     },
     {
@@ -10217,7 +10238,7 @@
       "penalty_minutes_per_game": "0.57",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 486,
+      "rank": 487,
       "team_code": null
     },
     {
@@ -10238,7 +10259,7 @@
       "penalty_minutes_per_game": "2.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 487,
+      "rank": 488,
       "team_code": null
     },
     {
@@ -10259,7 +10280,7 @@
       "penalty_minutes_per_game": "1.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 488,
+      "rank": 489,
       "team_code": null
     },
     {
@@ -10280,7 +10301,7 @@
       "penalty_minutes_per_game": "1.14",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 489,
+      "rank": 490,
       "team_code": null
     },
     {
@@ -10301,7 +10322,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 490,
+      "rank": 491,
       "team_code": null
     },
     {
@@ -10322,7 +10343,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 491,
+      "rank": 492,
       "team_code": null
     },
     {
@@ -10343,7 +10364,7 @@
       "penalty_minutes_per_game": "0.57",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 492,
+      "rank": 493,
       "team_code": null
     },
     {
@@ -10364,7 +10385,7 @@
       "penalty_minutes_per_game": "1.29",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 493,
+      "rank": 494,
       "team_code": null
     },
     {
@@ -10385,7 +10406,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 494,
+      "rank": 495,
       "team_code": null
     },
     {
@@ -10406,7 +10427,7 @@
       "penalty_minutes_per_game": "1.14",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 495,
+      "rank": 496,
       "team_code": null
     },
     {
@@ -10427,7 +10448,7 @@
       "penalty_minutes_per_game": "0.29",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 496,
+      "rank": 497,
       "team_code": null
     },
     {
@@ -10448,7 +10469,7 @@
       "penalty_minutes_per_game": "0.25",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 497,
+      "rank": 498,
       "team_code": null
     },
     {
@@ -10469,7 +10490,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 498,
+      "rank": 499,
       "team_code": null
     },
     {
@@ -10490,7 +10511,7 @@
       "penalty_minutes_per_game": "0.50",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 499,
+      "rank": 500,
       "team_code": null
     },
     {
@@ -10511,7 +10532,7 @@
       "penalty_minutes_per_game": "0.50",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 500,
+      "rank": 501,
       "team_code": null
     },
     {
@@ -10532,7 +10553,7 @@
       "penalty_minutes_per_game": "0.88",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 501,
+      "rank": 502,
       "team_code": null
     },
     {
@@ -10553,7 +10574,7 @@
       "penalty_minutes_per_game": "0.25",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 502,
+      "rank": 503,
       "team_code": null
     },
     {
@@ -10574,7 +10595,7 @@
       "penalty_minutes_per_game": "2.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 503,
+      "rank": 504,
       "team_code": null
     },
     {
@@ -10595,7 +10616,7 @@
       "penalty_minutes_per_game": "1.13",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 504,
+      "rank": 505,
       "team_code": null
     },
     {
@@ -10616,7 +10637,7 @@
       "penalty_minutes_per_game": "1.13",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 505,
+      "rank": 506,
       "team_code": null
     },
     {
@@ -10637,7 +10658,7 @@
       "penalty_minutes_per_game": "2.38",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 506,
+      "rank": 507,
       "team_code": null
     },
     {
@@ -10658,7 +10679,7 @@
       "penalty_minutes_per_game": "7.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 507,
+      "rank": 508,
       "team_code": null
     },
     {
@@ -10679,7 +10700,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 508,
+      "rank": 509,
       "team_code": null
     },
     {
@@ -10700,7 +10721,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 509,
+      "rank": 510,
       "team_code": null
     },
     {
@@ -10721,7 +10742,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 510,
+      "rank": 511,
       "team_code": null
     },
     {
@@ -10742,7 +10763,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 511,
+      "rank": 512,
       "team_code": null
     },
     {
@@ -10763,7 +10784,7 @@
       "penalty_minutes_per_game": "2.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 512,
+      "rank": 513,
       "team_code": null
     },
     {
@@ -10784,7 +10805,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 513,
+      "rank": 514,
       "team_code": null
     },
     {
@@ -10805,7 +10826,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 514,
+      "rank": 515,
       "team_code": null
     },
     {
@@ -10826,7 +10847,7 @@
       "penalty_minutes_per_game": "2.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 515,
+      "rank": 516,
       "team_code": null
     },
     {
@@ -10847,7 +10868,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 516,
+      "rank": 517,
       "team_code": null
     },
     {
@@ -10868,7 +10889,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 517,
+      "rank": 518,
       "team_code": null
     },
     {
@@ -10889,7 +10910,7 @@
       "penalty_minutes_per_game": "4.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 518,
+      "rank": 519,
       "team_code": null
     },
     {
@@ -10910,7 +10931,7 @@
       "penalty_minutes_per_game": "5.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 519,
+      "rank": 520,
       "team_code": null
     },
     {
@@ -10931,7 +10952,7 @@
       "penalty_minutes_per_game": "5.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 520,
+      "rank": 521,
       "team_code": null
     },
     {
@@ -10952,7 +10973,7 @@
       "penalty_minutes_per_game": "2.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 521,
+      "rank": 522,
       "team_code": null
     },
     {
@@ -10973,7 +10994,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 522,
+      "rank": 523,
       "team_code": null
     },
     {
@@ -10994,7 +11015,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 523,
+      "rank": 524,
       "team_code": null
     },
     {
@@ -11015,7 +11036,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 524,
+      "rank": 525,
       "team_code": null
     },
     {
@@ -11036,7 +11057,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 525,
+      "rank": 526,
       "team_code": null
     },
     {
@@ -11057,7 +11078,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 526,
+      "rank": 527,
       "team_code": null
     },
     {
@@ -11078,7 +11099,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 527,
+      "rank": 528,
       "team_code": null
     },
     {
@@ -11099,7 +11120,7 @@
       "penalty_minutes_per_game": "2.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 528,
+      "rank": 529,
       "team_code": null
     },
     {
@@ -11120,7 +11141,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 529,
+      "rank": 530,
       "team_code": null
     },
     {
@@ -11141,7 +11162,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 530,
+      "rank": 531,
       "team_code": null
     },
     {
@@ -11162,7 +11183,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 531,
+      "rank": 532,
       "team_code": null
     },
     {
@@ -11183,7 +11204,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 532,
+      "rank": 533,
       "team_code": null
     },
     {
@@ -11204,7 +11225,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 533,
+      "rank": 534,
       "team_code": null
     },
     {
@@ -11225,7 +11246,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 534,
+      "rank": 535,
       "team_code": null
     },
     {
@@ -11246,7 +11267,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 535,
+      "rank": 536,
       "team_code": null
     },
     {
@@ -11267,7 +11288,7 @@
       "penalty_minutes_per_game": "5.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 536,
+      "rank": 537,
       "team_code": null
     },
     {
@@ -11288,7 +11309,7 @@
       "penalty_minutes_per_game": "5.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 537,
+      "rank": 538,
       "team_code": null
     },
     {
@@ -11309,7 +11330,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 538,
+      "rank": 539,
       "team_code": null
     },
     {
@@ -11330,7 +11351,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 539,
+      "rank": 540,
       "team_code": null
     },
     {
@@ -11351,7 +11372,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 540,
+      "rank": 541,
       "team_code": null
     },
     {
@@ -11372,7 +11393,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 541,
+      "rank": 542,
       "team_code": null
     },
     {
@@ -11393,7 +11414,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 542,
+      "rank": 543,
       "team_code": null
     },
     {
@@ -11414,7 +11435,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 543,
+      "rank": 544,
       "team_code": null
     },
     {
@@ -11435,7 +11456,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 544,
+      "rank": 545,
       "team_code": null
     },
     {
@@ -11456,7 +11477,7 @@
       "penalty_minutes_per_game": "5.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 545,
+      "rank": 546,
       "team_code": null
     },
     {
@@ -11477,7 +11498,7 @@
       "penalty_minutes_per_game": "3.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 546,
+      "rank": 547,
       "team_code": null
     },
     {
@@ -11498,7 +11519,7 @@
       "penalty_minutes_per_game": "3.50",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 547,
+      "rank": 548,
       "team_code": null
     },
     {
@@ -11519,7 +11540,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 548,
+      "rank": 549,
       "team_code": null
     },
     {
@@ -11540,7 +11561,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 549,
+      "rank": 550,
       "team_code": null
     },
     {
@@ -11561,7 +11582,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 550,
+      "rank": 551,
       "team_code": null
     },
     {
@@ -11582,7 +11603,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 551,
+      "rank": 552,
       "team_code": null
     },
     {
@@ -11603,7 +11624,7 @@
       "penalty_minutes_per_game": "1.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 552,
+      "rank": 553,
       "team_code": null
     },
     {
@@ -11624,7 +11645,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 553,
+      "rank": 554,
       "team_code": null
     },
     {
@@ -11645,7 +11666,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 554,
+      "rank": 555,
       "team_code": null
     },
     {
@@ -11666,7 +11687,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 555,
+      "rank": 556,
       "team_code": null
     },
     {
@@ -11687,7 +11708,7 @@
       "penalty_minutes_per_game": "7.50",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 556,
+      "rank": 557,
       "team_code": null
     },
     {
@@ -11708,7 +11729,7 @@
       "penalty_minutes_per_game": "2.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 557,
+      "rank": 558,
       "team_code": null
     },
     {
@@ -11729,7 +11750,7 @@
       "penalty_minutes_per_game": "1.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 558,
+      "rank": 559,
       "team_code": null
     },
     {
@@ -11750,7 +11771,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 559,
+      "rank": 560,
       "team_code": null
     },
     {
@@ -11771,7 +11792,7 @@
       "penalty_minutes_per_game": "1.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 560,
+      "rank": 561,
       "team_code": null
     },
     {
@@ -11792,7 +11813,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 561,
+      "rank": 562,
       "team_code": null
     },
     {
@@ -11811,27 +11832,6 @@
       "plus_minus": "-1",
       "penalty_minutes": "0",
       "penalty_minutes_per_game": "0.00",
-      "power_play_goals": "0",
-      "short_handed_goals": "0",
-      "rank": 562,
-      "team_code": null
-    },
-    {
-      "player_id": "11137",
-      "name": "Connor Kelley",
-      "active": "1",
-      "position": "D",
-      "rookie": "1",
-      "team_name": "New Mexico Goatheads",
-      "games_played": "2",
-      "goals": "0",
-      "shots": "0",
-      "assists": "0",
-      "points": "0",
-      "points_per_game": "0.00",
-      "plus_minus": "-3",
-      "penalty_minutes": "2",
-      "penalty_minutes_per_game": "1.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
       "rank": 563,

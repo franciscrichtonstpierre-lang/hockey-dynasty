@@ -1,7 +1,8 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import {
-  normalizeLiigaGoalies, normalizeLiigaSkaters, normalizeShlGoalies, normalizeShlSkaters
+  normalizeLiigaGoalies, normalizeLiigaSkaters, normalizeShlGoalies, normalizeShlSkaters,
+  normalizeEliteProspectsShlGoalies, normalizeEliteProspectsShlSkaters
 } from "../scripts/lib/european-stat-feed.mjs";
 
 test("normalizes Liiga skater statistics to the shared league-stat schema", () => {
@@ -29,4 +30,26 @@ test("normalizes SHL player and goalie summary fields", () => {
   assert.equal(goalies[0].name,"SHL Goalie");
   assert.equal(goalies[0].save_percentage,92.1);
   assert.equal(goalies[0].shutouts,1);
+});
+
+
+test("normalizes Elite Prospects SHL skater table rows and position", () => {
+  const html = '<table><tr><th>Rank</th><th>Player</th></tr><tr><td>1.</td><td><img alt="Sweden"><a href="/player/oscar-lindberg">Oscar Lindberg (C)</a></td><td>Skellefteå AIK</td><td>14</td><td>6</td><td>13</td><td>19</td><td>1.36</td><td>14</td><td>3</td></tr><tr><td>2.</td><td><a href="/player/oliwer-kaski">Oliwer Kaski (D)</a></td><td>Malmö</td><td>14</td><td>7</td><td>6</td><td>13</td><td>0.93</td><td>6</td><td>2</td></tr></table>';
+  const rows = normalizeEliteProspectsShlSkaters(html);
+  assert.equal(rows.length,2);
+  assert.equal(rows[0].name,"Oscar Lindberg");
+  assert.equal(rows[0].position,"F");
+  assert.equal(rows[0].points,19);
+  assert.equal(rows[1].position,"D");
+  assert.equal(rows[1].player_id,"ep:oliwer-kaski");
+});
+
+test("normalizes Elite Prospects SHL goalie table rows", () => {
+  const html = '<table><tr><th>Rank</th><th>Player</th></tr><tr><td>1.</td><td><a href="/player/marek-langhamer">Marek Langhamer</a></td><td>Malmö</td><td>10</td><td>1.78</td><td>.932</td><td>7</td><td>3</td><td>-</td><td>2</td><td>608</td><td>247</td><td>18</td></tr></table>';
+  const rows = normalizeEliteProspectsShlGoalies(html);
+  assert.equal(rows.length,1);
+  assert.equal(rows[0].position,"G");
+  assert.equal(rows[0].save_percentage,93.2);
+  assert.equal(rows[0].saves,247);
+  assert.equal(rows[0].goals_against,18);
 });

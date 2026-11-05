@@ -4,7 +4,7 @@
   "season": "2026-2027",
   "seasonId": "94",
   "source": "Official AHL HockeyTech public player statistics feed",
-  "syncedAt": "2026-11-05T01:28:39.832Z",
+  "syncedAt": "2026-11-05T01:29:47.036Z",
   "endpoints": {
     "skaters": "https://lscluster.hockeytech.com/feed/index.php?feed=statviewfeed&key=ccb91f29d6744675&client_code=ahl&league_id=4&site_id=3&lang=en&view=players&season=94&team=all&limit=1000",
     "goalies": "https://lscluster.hockeytech.com/feed/index.php?feed=statviewfeed&key=ccb91f29d6744675&client_code=ahl&league_id=4&site_id=3&lang=en&view=players&season=94&team=all&limit=1000&position=goalies"
@@ -782,8 +782,8 @@
       "points": "11",
       "points_per_game": "0.92",
       "plus_minus": "-1",
-      "penalty_minutes": "6",
-      "penalty_minutes_per_game": "0.50",
+      "penalty_minutes": "8",
+      "penalty_minutes_per_game": "0.67",
       "power_play_goals": "6",
       "short_handed_goals": "0",
       "shootout_goals": "0",
@@ -2006,8 +2006,8 @@
       "points": "8",
       "points_per_game": "1.33",
       "plus_minus": "1",
-      "penalty_minutes": "6",
-      "penalty_minutes_per_game": "1.00",
+      "penalty_minutes": "8",
+      "penalty_minutes_per_game": "1.33",
       "power_play_goals": "2",
       "short_handed_goals": "0",
       "shootout_goals": "0",
@@ -3793,6 +3793,30 @@
       "rank": 152
     },
     {
+      "player_id": "9161",
+      "name": "Bogdan Trineyev",
+      "active": "1",
+      "position": "RW",
+      "rookie": "0",
+      "team_code": "HER",
+      "games_played": "11",
+      "goals": "4",
+      "shots": "33",
+      "assists": "2",
+      "points": "6",
+      "points_per_game": "0.55",
+      "plus_minus": "0",
+      "penalty_minutes": "6",
+      "penalty_minutes_per_game": "0.55",
+      "power_play_goals": "2",
+      "short_handed_goals": "1",
+      "shootout_goals": "0",
+      "shootout_attempts": "0",
+      "shootout_winning_goals": "0",
+      "shootout_percentage": "0.0",
+      "rank": 153
+    },
+    {
       "player_id": "9785",
       "name": "Koehn Ziemmer",
       "active": "1",
@@ -3814,7 +3838,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 153
+      "rank": 154
     },
     {
       "player_id": "9523",
@@ -3838,7 +3862,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 154
+      "rank": 155
     },
     {
       "player_id": "11363",
@@ -3862,7 +3886,7 @@
       "shootout_attempts": "2",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 155
+      "rank": 156
     },
     {
       "player_id": "11115",
@@ -3886,7 +3910,7 @@
       "shootout_attempts": "1",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 156
+      "rank": 157
     },
     {
       "player_id": "7591",
@@ -3910,7 +3934,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 157
+      "rank": 158
     },
     {
       "player_id": "10313",
@@ -3934,7 +3958,7 @@
       "shootout_attempts": "1",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 158
+      "rank": 159
     },
     {
       "player_id": "11352",
@@ -3958,7 +3982,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 159
+      "rank": 160
     },
     {
       "player_id": "10121",
@@ -3982,7 +4006,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 160
+      "rank": 161
     },
     {
       "player_id": "8987",
@@ -4006,7 +4030,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 161
+      "rank": 162
     },
     {
       "player_id": "11366",
@@ -4030,7 +4054,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 162
+      "rank": 163
     },
     {
       "player_id": "11105",
@@ -4054,7 +4078,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 163
+      "rank": 164
     },
     {
       "player_id": "11023",
@@ -4078,7 +4102,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 164
+      "rank": 165
     },
     {
       "player_id": "9693",
@@ -4102,7 +4126,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 165
+      "rank": 166
     },
     {
       "player_id": "7375",
@@ -4126,7 +4150,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 166
+      "rank": 167
     },
     {
       "player_id": "10468",
@@ -4150,7 +4174,31 @@
       "shootout_attempts": "1",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 167
+      "rank": 168
+    },
+    {
+      "player_id": "7024",
+      "name": "Louie Belpedio",
+      "active": "1",
+      "position": "D",
+      "rookie": "0",
+      "team_code": "HER",
+      "games_played": "10",
+      "goals": "2",
+      "shots": "13",
+      "assists": "4",
+      "points": "6",
+      "points_per_game": "0.60",
+      "plus_minus": "6",
+      "penalty_minutes": "16",
+      "penalty_minutes_per_game": "1.60",
+      "power_play_goals": "1",
+      "short_handed_goals": "0",
+      "shootout_goals": "0",
+      "shootout_attempts": "0",
+      "shootout_winning_goals": "0",
+      "shootout_percentage": "0.0",
+      "rank": 169
     },
     {
       "player_id": "10994",
@@ -4174,7 +4222,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 168
+      "rank": 170
     },
     {
       "player_id": "9969",
@@ -4198,7 +4246,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 169
+      "rank": 171
     },
     {
       "player_id": "7767",
@@ -4222,7 +4270,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 170
+      "rank": 172
     },
     {
       "player_id": "9962",
@@ -4246,7 +4294,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 171
+      "rank": 173
     },
     {
       "player_id": "11143",
@@ -4270,7 +4318,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 172
+      "rank": 174
     },
     {
       "player_id": "7159",
@@ -4294,7 +4342,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 173
+      "rank": 175
     },
     {
       "player_id": "9067",
@@ -4318,7 +4366,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 174
+      "rank": 176
     },
     {
       "player_id": "6733",
@@ -4342,7 +4390,7 @@
       "shootout_attempts": "1",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 175
+      "rank": 177
     },
     {
       "player_id": "10882",
@@ -4366,7 +4414,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 176
+      "rank": 178
     },
     {
       "player_id": "6807",
@@ -4390,7 +4438,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 177
+      "rank": 179
     },
     {
       "player_id": "11041",
@@ -4414,7 +4462,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 178
+      "rank": 180
     },
     {
       "player_id": "6616",
@@ -4438,7 +4486,7 @@
       "shootout_attempts": "1",
       "shootout_winning_goals": "1",
       "shootout_percentage": "100.0",
-      "rank": 179
+      "rank": 181
     },
     {
       "player_id": "8537",
@@ -4462,7 +4510,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 180
+      "rank": 182
     },
     {
       "player_id": "10209",
@@ -4486,7 +4534,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 181
+      "rank": 183
     },
     {
       "player_id": "10077",
@@ -4510,7 +4558,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 182
+      "rank": 184
     },
     {
       "player_id": "10148",
@@ -4534,7 +4582,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 183
+      "rank": 185
     },
     {
       "player_id": "10540",
@@ -4558,7 +4606,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 184
+      "rank": 186
     },
     {
       "player_id": "11338",
@@ -4582,7 +4630,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 185
+      "rank": 187
     },
     {
       "player_id": "8424",
@@ -4606,7 +4654,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 186
+      "rank": 188
     },
     {
       "player_id": "10603",
@@ -4630,7 +4678,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 187
+      "rank": 189
     },
     {
       "player_id": "10452",
@@ -4654,7 +4702,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 188
+      "rank": 190
     },
     {
       "player_id": "10876",
@@ -4678,7 +4726,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 189
+      "rank": 191
     },
     {
       "player_id": "5888",
@@ -4702,7 +4750,7 @@
       "shootout_attempts": "2",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 190
+      "rank": 192
     },
     {
       "player_id": "10471",
@@ -4726,7 +4774,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 191
+      "rank": 193
     },
     {
       "player_id": "8519",
@@ -4750,7 +4798,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 192
+      "rank": 194
     },
     {
       "player_id": "10217",
@@ -4774,7 +4822,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 193
+      "rank": 195
     },
     {
       "player_id": "4584",
@@ -4798,7 +4846,7 @@
       "shootout_attempts": "1",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 194
+      "rank": 196
     },
     {
       "player_id": "9923",
@@ -4822,7 +4870,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 195
+      "rank": 197
     },
     {
       "player_id": "9241",
@@ -4846,31 +4894,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 196
-    },
-    {
-      "player_id": "9161",
-      "name": "Bogdan Trineyev",
-      "active": "1",
-      "position": "RW",
-      "rookie": "0",
-      "team_code": "HER",
-      "games_played": "11",
-      "goals": "4",
-      "shots": "33",
-      "assists": "1",
-      "points": "5",
-      "points_per_game": "0.45",
-      "plus_minus": "0",
-      "penalty_minutes": "6",
-      "penalty_minutes_per_game": "0.55",
-      "power_play_goals": "2",
-      "short_handed_goals": "1",
-      "shootout_goals": "0",
-      "shootout_attempts": "0",
-      "shootout_winning_goals": "0",
-      "shootout_percentage": "0.0",
-      "rank": 197
+      "rank": 198
     },
     {
       "player_id": "9624",
@@ -4894,7 +4918,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 198
+      "rank": 199
     },
     {
       "player_id": "7297",
@@ -4918,7 +4942,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 199
+      "rank": 200
     },
     {
       "player_id": "9278",
@@ -4942,7 +4966,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 200
+      "rank": 201
     },
     {
       "player_id": "7346",
@@ -4966,7 +4990,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 201
+      "rank": 202
     },
     {
       "player_id": "7106",
@@ -4990,7 +5014,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 202
+      "rank": 203
     },
     {
       "player_id": "7921",
@@ -5014,7 +5038,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 203
+      "rank": 204
     },
     {
       "player_id": "10561",
@@ -5038,7 +5062,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 204
+      "rank": 205
     },
     {
       "player_id": "11072",
@@ -5062,7 +5086,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 205
+      "rank": 206
     },
     {
       "player_id": "8485",
@@ -5086,7 +5110,7 @@
       "shootout_attempts": "1",
       "shootout_winning_goals": "0",
       "shootout_percentage": "100.0",
-      "rank": 206
+      "rank": 207
     },
     {
       "player_id": "10463",
@@ -5110,7 +5134,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 207
+      "rank": 208
     },
     {
       "player_id": "11148",
@@ -5134,7 +5158,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 208
+      "rank": 209
     },
     {
       "player_id": "10475",
@@ -5158,7 +5182,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 209
+      "rank": 210
     },
     {
       "player_id": "5995",
@@ -5182,7 +5206,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 210
+      "rank": 211
     },
     {
       "player_id": "10037",
@@ -5206,7 +5230,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 211
+      "rank": 212
     },
     {
       "player_id": "10512",
@@ -5230,7 +5254,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 212
+      "rank": 213
     },
     {
       "player_id": "9356",
@@ -5254,7 +5278,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 213
+      "rank": 214
     },
     {
       "player_id": "7251",
@@ -5274,30 +5298,6 @@
       "penalty_minutes_per_game": "0.50",
       "power_play_goals": "0",
       "short_handed_goals": "1",
-      "shootout_goals": "0",
-      "shootout_attempts": "0",
-      "shootout_winning_goals": "0",
-      "shootout_percentage": "0.0",
-      "rank": 214
-    },
-    {
-      "player_id": "7024",
-      "name": "Louie Belpedio",
-      "active": "1",
-      "position": "D",
-      "rookie": "0",
-      "team_code": "HER",
-      "games_played": "10",
-      "goals": "2",
-      "shots": "12",
-      "assists": "3",
-      "points": "5",
-      "points_per_game": "0.50",
-      "plus_minus": "6",
-      "penalty_minutes": "16",
-      "penalty_minutes_per_game": "1.60",
-      "power_play_goals": "1",
-      "short_handed_goals": "0",
       "shootout_goals": "0",
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
@@ -12937,6 +12937,30 @@
       "rank": 533
     },
     {
+      "player_id": "9734",
+      "name": "Alex Suzdalev",
+      "active": "1",
+      "position": "LW",
+      "rookie": "0",
+      "team_code": "HER",
+      "games_played": "6",
+      "goals": "1",
+      "shots": "7",
+      "assists": "0",
+      "points": "1",
+      "points_per_game": "0.17",
+      "plus_minus": "-4",
+      "penalty_minutes": "0",
+      "penalty_minutes_per_game": "0.00",
+      "power_play_goals": "1",
+      "short_handed_goals": "0",
+      "shootout_goals": "0",
+      "shootout_attempts": "0",
+      "shootout_winning_goals": "0",
+      "shootout_percentage": "0.0",
+      "rank": 534
+    },
+    {
       "player_id": "7627",
       "name": "Hunter Drew",
       "active": "1",
@@ -12958,7 +12982,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 534
+      "rank": 535
     },
     {
       "player_id": "10917",
@@ -12982,7 +13006,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 535
+      "rank": 536
     },
     {
       "player_id": "10143",
@@ -13006,7 +13030,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 536
+      "rank": 537
     },
     {
       "player_id": "8749",
@@ -13030,7 +13054,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 537
+      "rank": 538
     },
     {
       "player_id": "10283",
@@ -13054,7 +13078,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 538
+      "rank": 539
     },
     {
       "player_id": "9040",
@@ -13078,7 +13102,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 539
+      "rank": 540
     },
     {
       "player_id": "9245",
@@ -13102,7 +13126,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 540
+      "rank": 541
     },
     {
       "player_id": "10592",
@@ -13126,7 +13150,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 541
+      "rank": 542
     },
     {
       "player_id": "9269",
@@ -13150,7 +13174,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 542
+      "rank": 543
     },
     {
       "player_id": "11094",
@@ -13174,7 +13198,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 543
+      "rank": 544
     },
     {
       "player_id": "10645",
@@ -13198,7 +13222,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 544
+      "rank": 545
     },
     {
       "player_id": "9239",
@@ -13222,7 +13246,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 545
+      "rank": 546
     },
     {
       "player_id": "11037",
@@ -13246,7 +13270,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 546
+      "rank": 547
     },
     {
       "player_id": "10654",
@@ -13270,7 +13294,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 547
+      "rank": 548
     },
     {
       "player_id": "10836",
@@ -13294,7 +13318,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 548
+      "rank": 549
     },
     {
       "player_id": "11052",
@@ -13318,7 +13342,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 549
+      "rank": 550
     },
     {
       "player_id": "9165",
@@ -13342,7 +13366,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 550
+      "rank": 551
     },
     {
       "player_id": "9799",
@@ -13366,7 +13390,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 551
+      "rank": 552
     },
     {
       "player_id": "11092",
@@ -13390,7 +13414,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 552
+      "rank": 553
     },
     {
       "player_id": "10915",
@@ -13414,7 +13438,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 553
+      "rank": 554
     },
     {
       "player_id": "10100",
@@ -13438,7 +13462,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 554
+      "rank": 555
     },
     {
       "player_id": "4638",
@@ -13462,7 +13486,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 555
+      "rank": 556
     },
     {
       "player_id": "8706",
@@ -13486,7 +13510,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 556
+      "rank": 557
     },
     {
       "player_id": "7989",
@@ -13510,7 +13534,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 557
+      "rank": 558
     },
     {
       "player_id": "11277",
@@ -13534,7 +13558,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 558
+      "rank": 559
     },
     {
       "player_id": "9681",
@@ -13558,7 +13582,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 559
+      "rank": 560
     },
     {
       "player_id": "8922",
@@ -13582,7 +13606,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 560
+      "rank": 561
     },
     {
       "player_id": "10448",
@@ -13606,7 +13630,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 561
+      "rank": 562
     },
     {
       "player_id": "10755",
@@ -13630,7 +13654,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 562
+      "rank": 563
     },
     {
       "player_id": "10898",
@@ -13654,7 +13678,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 563
+      "rank": 564
     },
     {
       "player_id": "10913",
@@ -13678,7 +13702,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 564
+      "rank": 565
     },
     {
       "player_id": "10692",
@@ -13702,7 +13726,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 565
+      "rank": 566
     },
     {
       "player_id": "8784",
@@ -13726,7 +13750,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 566
+      "rank": 567
     },
     {
       "player_id": "11038",
@@ -13750,7 +13774,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 567
+      "rank": 568
     },
     {
       "player_id": "8705",
@@ -13774,7 +13798,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 568
+      "rank": 569
     },
     {
       "player_id": "10622",
@@ -13798,7 +13822,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 569
+      "rank": 570
     },
     {
       "player_id": "10498",
@@ -13822,7 +13846,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 570
+      "rank": 571
     },
     {
       "player_id": "9271",
@@ -13846,7 +13870,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 571
+      "rank": 572
     },
     {
       "player_id": "8484",
@@ -13870,7 +13894,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 572
+      "rank": 573
     },
     {
       "player_id": "10877",
@@ -13894,7 +13918,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 573
+      "rank": 574
     },
     {
       "player_id": "9078",
@@ -13918,7 +13942,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 574
+      "rank": 575
     },
     {
       "player_id": "10578",
@@ -13942,7 +13966,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 575
+      "rank": 576
     },
     {
       "player_id": "11026",
@@ -13966,7 +13990,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 576
+      "rank": 577
     },
     {
       "player_id": "9952",
@@ -13990,7 +14014,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 577
+      "rank": 578
     },
     {
       "player_id": "7145",
@@ -14014,7 +14038,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 578
+      "rank": 579
     },
     {
       "player_id": "10869",
@@ -14038,7 +14062,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 579
+      "rank": 580
     },
     {
       "player_id": "10748",
@@ -14062,7 +14086,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 580
+      "rank": 581
     },
     {
       "player_id": "6479",
@@ -14086,7 +14110,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 581
+      "rank": 582
     },
     {
       "player_id": "11032",
@@ -14110,7 +14134,31 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 582
+      "rank": 583
+    },
+    {
+      "player_id": "4334",
+      "name": "Garrett Wilson",
+      "active": "1",
+      "position": "LW",
+      "rookie": "0",
+      "team_code": "LV",
+      "games_played": "5",
+      "goals": "0",
+      "shots": "1",
+      "assists": "1",
+      "points": "1",
+      "points_per_game": "0.20",
+      "plus_minus": "-1",
+      "penalty_minutes": "21",
+      "penalty_minutes_per_game": "4.20",
+      "power_play_goals": "0",
+      "short_handed_goals": "0",
+      "shootout_goals": "0",
+      "shootout_attempts": "0",
+      "shootout_winning_goals": "0",
+      "shootout_percentage": "0.0",
+      "rank": 584
     },
     {
       "player_id": "4334",
@@ -14158,7 +14206,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 584
+      "rank": 585
     },
     {
       "player_id": "7733",
@@ -14182,7 +14230,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 585
+      "rank": 586
     },
     {
       "player_id": "11019",
@@ -14206,7 +14254,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 586
+      "rank": 587
     },
     {
       "player_id": "10944",
@@ -14230,7 +14278,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 587
+      "rank": 588
     },
     {
       "player_id": "11304",
@@ -14254,7 +14302,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 588
+      "rank": 589
     },
     {
       "player_id": "9973",
@@ -14278,7 +14326,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 589
+      "rank": 590
     },
     {
       "player_id": "10241",
@@ -14302,7 +14350,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 590
+      "rank": 591
     },
     {
       "player_id": "5592",
@@ -14326,7 +14374,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 591
+      "rank": 592
     },
     {
       "player_id": "9107",
@@ -14350,7 +14398,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 592
+      "rank": 593
     },
     {
       "player_id": "10451",
@@ -14374,7 +14422,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 593
+      "rank": 594
     },
     {
       "player_id": "11358",
@@ -14398,7 +14446,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 594
+      "rank": 595
     },
     {
       "player_id": "7512",
@@ -14422,7 +14470,7 @@
       "shootout_attempts": "1",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 595
+      "rank": 596
     },
     {
       "player_id": "10522",
@@ -14446,7 +14494,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 596
+      "rank": 597
     },
     {
       "player_id": "6014",
@@ -14470,7 +14518,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 597
+      "rank": 598
     },
     {
       "player_id": "10602",
@@ -14494,7 +14542,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 598
+      "rank": 599
     },
     {
       "player_id": "10843",
@@ -14518,7 +14566,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 599
+      "rank": 600
     },
     {
       "player_id": "11166",
@@ -14542,7 +14590,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 600
+      "rank": 601
     },
     {
       "player_id": "10488",
@@ -14566,7 +14614,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 601
+      "rank": 602
     },
     {
       "player_id": "10529",
@@ -14590,7 +14638,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 602
+      "rank": 603
     },
     {
       "player_id": "9201",
@@ -14614,7 +14662,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 603
+      "rank": 604
     },
     {
       "player_id": "10503",
@@ -14638,7 +14686,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 604
+      "rank": 605
     },
     {
       "player_id": "10459",
@@ -14662,7 +14710,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 605
+      "rank": 606
     },
     {
       "player_id": "9767",
@@ -14686,7 +14734,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 606
+      "rank": 607
     },
     {
       "player_id": "8692",
@@ -14710,7 +14758,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 607
+      "rank": 608
     },
     {
       "player_id": "10582",
@@ -14734,7 +14782,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 608
+      "rank": 609
     },
     {
       "player_id": "10837",
@@ -14758,7 +14806,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 609
+      "rank": 610
     },
     {
       "player_id": "11344",
@@ -14782,7 +14830,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 610
+      "rank": 611
     },
     {
       "player_id": "10523",
@@ -14806,7 +14854,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 611
+      "rank": 612
     },
     {
       "player_id": "10349",
@@ -14830,7 +14878,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 612
+      "rank": 613
     },
     {
       "player_id": "11422",
@@ -14854,7 +14902,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 613
+      "rank": 614
     },
     {
       "player_id": "10699",
@@ -14878,7 +14926,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 614
+      "rank": 615
     },
     {
       "player_id": "11323",
@@ -14902,7 +14950,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 615
+      "rank": 616
     },
     {
       "player_id": "11015",
@@ -14926,7 +14974,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 616
+      "rank": 617
     },
     {
       "player_id": "10131",
@@ -14950,7 +14998,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 617
+      "rank": 618
     },
     {
       "player_id": "8809",
@@ -14974,7 +15022,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 618
+      "rank": 619
     },
     {
       "player_id": "6799",
@@ -14998,7 +15046,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 619
+      "rank": 620
     },
     {
       "player_id": "10179",
@@ -15022,7 +15070,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 620
+      "rank": 621
     },
     {
       "player_id": "7698",
@@ -15046,7 +15094,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 621
+      "rank": 622
     },
     {
       "player_id": "8622",
@@ -15070,7 +15118,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 622
+      "rank": 623
     },
     {
       "player_id": "4883",
@@ -15094,7 +15142,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 623
+      "rank": 624
     },
     {
       "player_id": "5547",
@@ -15118,7 +15166,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 624
+      "rank": 625
     },
     {
       "player_id": "9079",
@@ -15142,7 +15190,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 625
+      "rank": 626
     },
     {
       "player_id": "11055",
@@ -15166,7 +15214,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 626
+      "rank": 627
     },
     {
       "player_id": "10180",
@@ -15190,7 +15238,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 627
+      "rank": 628
     },
     {
       "player_id": "9217",
@@ -15214,7 +15262,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 628
+      "rank": 629
     },
     {
       "player_id": "6937",
@@ -15238,7 +15286,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 629
+      "rank": 630
     },
     {
       "player_id": "7446",
@@ -15262,7 +15310,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 630
+      "rank": 631
     },
     {
       "player_id": "8396",
@@ -15286,7 +15334,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 631
+      "rank": 632
     },
     {
       "player_id": "10747",
@@ -15310,7 +15358,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 632
+      "rank": 633
     },
     {
       "player_id": "7218",
@@ -15334,7 +15382,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 633
+      "rank": 634
     },
     {
       "player_id": "10272",
@@ -15358,7 +15406,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 634
+      "rank": 635
     },
     {
       "player_id": "9745",
@@ -15382,7 +15430,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 635
+      "rank": 636
     },
     {
       "player_id": "9643",
@@ -15406,7 +15454,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 636
+      "rank": 637
     },
     {
       "player_id": "10189",
@@ -15430,7 +15478,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 637
+      "rank": 638
     },
     {
       "player_id": "9749",
@@ -15454,7 +15502,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 638
+      "rank": 639
     },
     {
       "player_id": "11198",
@@ -15478,7 +15526,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 639
+      "rank": 640
     },
     {
       "player_id": "9592",
@@ -15502,7 +15550,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 640
+      "rank": 641
     },
     {
       "player_id": "10511",
@@ -15526,7 +15574,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 641
+      "rank": 642
     },
     {
       "player_id": "9139",
@@ -15550,7 +15598,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 642
+      "rank": 643
     },
     {
       "player_id": "10981",
@@ -15574,7 +15622,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 643
+      "rank": 644
     },
     {
       "player_id": "9391",
@@ -15598,7 +15646,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 644
+      "rank": 645
     },
     {
       "player_id": "10664",
@@ -15622,7 +15670,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 645
+      "rank": 646
     },
     {
       "player_id": "10769",
@@ -15646,7 +15694,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 646
+      "rank": 647
     },
     {
       "player_id": "8011",
@@ -15670,7 +15718,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 647
+      "rank": 648
     },
     {
       "player_id": "9831",
@@ -15694,7 +15742,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 648
+      "rank": 649
     },
     {
       "player_id": "9688",
@@ -15718,7 +15766,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 649
+      "rank": 650
     },
     {
       "player_id": "10501",
@@ -15742,7 +15790,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 650
+      "rank": 651
     },
     {
       "player_id": "10038",
@@ -15766,7 +15814,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 651
+      "rank": 652
     },
     {
       "player_id": "7016",
@@ -15790,7 +15838,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 652
+      "rank": 653
     },
     {
       "player_id": "4950",
@@ -15814,7 +15862,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 653
+      "rank": 654
     },
     {
       "player_id": "10786",
@@ -15838,7 +15886,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 654
+      "rank": 655
     },
     {
       "player_id": "10467",
@@ -15862,7 +15910,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 655
+      "rank": 656
     },
     {
       "player_id": "8445",
@@ -15886,7 +15934,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 656
+      "rank": 657
     },
     {
       "player_id": "7747",
@@ -15910,7 +15958,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 657
+      "rank": 658
     },
     {
       "player_id": "10776",
@@ -15934,7 +15982,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 658
+      "rank": 659
     },
     {
       "player_id": "9668",
@@ -15958,7 +16006,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 659
+      "rank": 660
     },
     {
       "player_id": "11234",
@@ -15982,7 +16030,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 660
+      "rank": 661
     },
     {
       "player_id": "9524",
@@ -16006,7 +16054,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 661
+      "rank": 662
     },
     {
       "player_id": "10997",
@@ -16030,7 +16078,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 662
+      "rank": 663
     },
     {
       "player_id": "9757",
@@ -16054,7 +16102,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 663
+      "rank": 664
     },
     {
       "player_id": "11095",
@@ -16078,7 +16126,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 664
+      "rank": 665
     },
     {
       "player_id": "4119",
@@ -16102,7 +16150,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 665
+      "rank": 666
     },
     {
       "player_id": "8421",
@@ -16126,7 +16174,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 666
+      "rank": 667
     },
     {
       "player_id": "10598",
@@ -16150,7 +16198,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 667
+      "rank": 668
     },
     {
       "player_id": "11238",
@@ -16174,7 +16222,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 668
+      "rank": 669
     },
     {
       "player_id": "10137",
@@ -16198,7 +16246,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 669
+      "rank": 670
     },
     {
       "player_id": "11241",
@@ -16222,7 +16270,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 670
+      "rank": 671
     },
     {
       "player_id": "11413",
@@ -16246,7 +16294,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 671
+      "rank": 672
     },
     {
       "player_id": "10520",
@@ -16270,7 +16318,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 672
+      "rank": 673
     },
     {
       "player_id": "11035",
@@ -16294,7 +16342,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 673
+      "rank": 674
     },
     {
       "player_id": "2519",
@@ -16318,7 +16366,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 674
+      "rank": 675
     },
     {
       "player_id": "11416",
@@ -16342,7 +16390,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 675
+      "rank": 676
     },
     {
       "player_id": "11239",
@@ -16366,7 +16414,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 676
+      "rank": 677
     },
     {
       "player_id": "10144",
@@ -16390,7 +16438,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 677
+      "rank": 678
     },
     {
       "player_id": "7584",
@@ -16414,7 +16462,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 678
+      "rank": 679
     },
     {
       "player_id": "9781",
@@ -16438,7 +16486,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 679
+      "rank": 680
     },
     {
       "player_id": "11151",
@@ -16462,7 +16510,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 680
+      "rank": 681
     },
     {
       "player_id": "9029",
@@ -16486,7 +16534,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 681
+      "rank": 682
     },
     {
       "player_id": "11255",
@@ -16510,7 +16558,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 682
+      "rank": 683
     },
     {
       "player_id": "9803",
@@ -16534,7 +16582,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 683
+      "rank": 684
     },
     {
       "player_id": "10070",
@@ -16558,7 +16606,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 684
+      "rank": 685
     },
     {
       "player_id": "10646",
@@ -16582,7 +16630,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 685
+      "rank": 686
     },
     {
       "player_id": "9268",
@@ -16606,7 +16654,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 686
+      "rank": 687
     },
     {
       "player_id": "10718",
@@ -16630,7 +16678,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 687
+      "rank": 688
     },
     {
       "player_id": "8837",
@@ -16654,7 +16702,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 688
+      "rank": 689
     },
     {
       "player_id": "10585",
@@ -16678,7 +16726,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 689
+      "rank": 690
     },
     {
       "player_id": "11384",
@@ -16702,7 +16750,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 690
+      "rank": 691
     },
     {
       "player_id": "11208",
@@ -16726,7 +16774,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 691
+      "rank": 692
     },
     {
       "player_id": "10903",
@@ -16750,7 +16798,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 692
+      "rank": 693
     },
     {
       "player_id": "10872",
@@ -16774,7 +16822,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 693
+      "rank": 694
     },
     {
       "player_id": "8937",
@@ -16798,7 +16846,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 694
+      "rank": 695
     },
     {
       "player_id": "10554",
@@ -16822,7 +16870,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 695
+      "rank": 696
     },
     {
       "player_id": "5589",
@@ -16846,7 +16894,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 696
+      "rank": 697
     },
     {
       "player_id": "5490",
@@ -16870,7 +16918,31 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 697
+      "rank": 698
+    },
+    {
+      "player_id": "9964",
+      "name": "Kyle McDonald",
+      "active": "1",
+      "position": "RW",
+      "rookie": "0",
+      "team_code": "BEL",
+      "games_played": "2",
+      "goals": "0",
+      "shots": "2",
+      "assists": "0",
+      "points": "0",
+      "points_per_game": "0.00",
+      "plus_minus": "0",
+      "penalty_minutes": "0",
+      "penalty_minutes_per_game": "0.00",
+      "power_play_goals": "0",
+      "short_handed_goals": "0",
+      "shootout_goals": "0",
+      "shootout_attempts": "0",
+      "shootout_winning_goals": "0",
+      "shootout_percentage": "0.0",
+      "rank": 699
     },
     {
       "player_id": "9820",
@@ -16894,7 +16966,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 698
+      "rank": 700
     },
     {
       "player_id": "9964",
@@ -16942,7 +17014,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 700
+      "rank": 701
     },
     {
       "player_id": "11181",
@@ -16966,7 +17038,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 701
+      "rank": 702
     },
     {
       "player_id": "11256",
@@ -16990,7 +17062,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 702
+      "rank": 703
     },
     {
       "player_id": "10620",
@@ -17014,7 +17086,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 703
+      "rank": 704
     },
     {
       "player_id": "10020",
@@ -17038,7 +17110,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 704
+      "rank": 705
     },
     {
       "player_id": "7343",
@@ -17062,7 +17134,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 705
+      "rank": 706
     },
     {
       "player_id": "6522",
@@ -17086,7 +17158,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 706
+      "rank": 707
     },
     {
       "player_id": "11331",
@@ -17110,7 +17182,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 707
+      "rank": 708
     },
     {
       "player_id": "10886",
@@ -17134,7 +17206,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 708
+      "rank": 709
     },
     {
       "player_id": "4604",
@@ -17158,7 +17230,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 709
+      "rank": 710
     },
     {
       "player_id": "10841",
@@ -17182,7 +17254,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 710
+      "rank": 711
     },
     {
       "player_id": "7490",
@@ -17206,7 +17278,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 711
+      "rank": 712
     },
     {
       "player_id": "10426",
@@ -17230,7 +17302,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 712
+      "rank": 713
     },
     {
       "player_id": "11346",
@@ -17254,7 +17326,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 713
+      "rank": 714
     },
     {
       "player_id": "8500",
@@ -17278,7 +17350,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 714
+      "rank": 715
     },
     {
       "player_id": "11082",
@@ -17302,7 +17374,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 715
+      "rank": 716
     },
     {
       "player_id": "4830",
@@ -17326,7 +17398,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 716
+      "rank": 717
     },
     {
       "player_id": "8851",
@@ -17350,7 +17422,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 717
+      "rank": 718
     },
     {
       "player_id": "10088",
@@ -17374,7 +17446,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 718
+      "rank": 719
     },
     {
       "player_id": "11324",
@@ -17398,7 +17470,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 719
+      "rank": 720
     },
     {
       "player_id": "10050",
@@ -17422,7 +17494,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 720
+      "rank": 721
     },
     {
       "player_id": "10873",
@@ -17446,7 +17518,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 721
+      "rank": 722
     },
     {
       "player_id": "10442",
@@ -17470,7 +17542,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 722
+      "rank": 723
     },
     {
       "player_id": "10204",
@@ -17494,7 +17566,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 723
+      "rank": 724
     },
     {
       "player_id": "9709",
@@ -17518,7 +17590,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 724
+      "rank": 725
     },
     {
       "player_id": "8928",
@@ -17542,7 +17614,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 725
+      "rank": 726
     },
     {
       "player_id": "10818",
@@ -17566,7 +17638,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 726
+      "rank": 727
     },
     {
       "player_id": "7784",
@@ -17590,7 +17662,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 727
+      "rank": 728
     },
     {
       "player_id": "11159",
@@ -17614,7 +17686,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 728
+      "rank": 729
     },
     {
       "player_id": "11057",
@@ -17638,7 +17710,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 729
+      "rank": 730
     },
     {
       "player_id": "9797",
@@ -17662,7 +17734,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 730
+      "rank": 731
     },
     {
       "player_id": "9633",
@@ -17686,7 +17758,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 731
+      "rank": 732
     },
     {
       "player_id": "9072",
@@ -17710,7 +17782,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 732
+      "rank": 733
     },
     {
       "player_id": "10286",
@@ -17734,7 +17806,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 733
+      "rank": 734
     },
     {
       "player_id": "10160",
@@ -17758,7 +17830,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 734
+      "rank": 735
     },
     {
       "player_id": "10904",
@@ -17782,7 +17854,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 735
+      "rank": 736
     },
     {
       "player_id": "6948",
@@ -17806,7 +17878,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 736
+      "rank": 737
     },
     {
       "player_id": "10080",
@@ -17830,7 +17902,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 737
+      "rank": 738
     },
     {
       "player_id": "9396",
@@ -17854,7 +17926,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 738
+      "rank": 739
     },
     {
       "player_id": "10832",
@@ -17878,7 +17950,7 @@
       "shootout_attempts": "1",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 739
+      "rank": 740
     },
     {
       "player_id": "10203",
@@ -17902,7 +17974,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 740
+      "rank": 741
     },
     {
       "player_id": "10385",
@@ -17926,7 +17998,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 741
+      "rank": 742
     },
     {
       "player_id": "10454",
@@ -17950,7 +18022,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 742
+      "rank": 743
     },
     {
       "player_id": "10476",
@@ -17974,7 +18046,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 743
+      "rank": 744
     },
     {
       "player_id": "10766",
@@ -17998,7 +18070,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 744
+      "rank": 745
     },
     {
       "player_id": "9570",
@@ -18022,7 +18094,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 745
+      "rank": 746
     },
     {
       "player_id": "10973",
@@ -18046,7 +18118,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 746
+      "rank": 747
     },
     {
       "player_id": "11316",
@@ -18070,7 +18142,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 747
+      "rank": 748
     },
     {
       "player_id": "11421",
@@ -18094,7 +18166,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 748
+      "rank": 749
     },
     {
       "player_id": "10610",
@@ -18118,7 +18190,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 749
+      "rank": 750
     },
     {
       "player_id": "7309",
@@ -18142,7 +18214,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 750
+      "rank": 751
     },
     {
       "player_id": "7951",
@@ -18166,7 +18238,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 751
+      "rank": 752
     },
     {
       "player_id": "10717",
@@ -18190,7 +18262,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 752
+      "rank": 753
     },
     {
       "player_id": "6778",
@@ -18214,7 +18286,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 753
+      "rank": 754
     },
     {
       "player_id": "10611",
@@ -18238,7 +18310,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 754
+      "rank": 755
     },
     {
       "player_id": "10279",
@@ -18262,7 +18334,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 755
+      "rank": 756
     },
     {
       "player_id": "10033",
@@ -18286,7 +18358,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 756
+      "rank": 757
     },
     {
       "player_id": "10368",
@@ -18310,7 +18382,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 757
+      "rank": 758
     },
     {
       "player_id": "9689",
@@ -18334,7 +18406,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 758
+      "rank": 759
     },
     {
       "player_id": "10126",
@@ -18358,7 +18430,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 759
+      "rank": 760
     },
     {
       "player_id": "9733",
@@ -18382,7 +18454,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 760
+      "rank": 761
     },
     {
       "player_id": "9361",
@@ -18406,7 +18478,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 761
+      "rank": 762
     },
     {
       "player_id": "11050",
@@ -18430,7 +18502,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 762
+      "rank": 763
     },
     {
       "player_id": "10846",
@@ -18454,7 +18526,7 @@
       "shootout_attempts": "1",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 763
+      "rank": 764
     },
     {
       "player_id": "10483",
@@ -18478,7 +18550,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 764
+      "rank": 765
     },
     {
       "player_id": "8454",
@@ -18502,7 +18574,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 765
+      "rank": 766
     },
     {
       "player_id": "10625",
@@ -18526,7 +18598,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 766
+      "rank": 767
     },
     {
       "player_id": "9126",
@@ -18550,7 +18622,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 767
+      "rank": 768
     },
     {
       "player_id": "8722",
@@ -18574,7 +18646,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 768
+      "rank": 769
     },
     {
       "player_id": "9719",
@@ -18598,7 +18670,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 769
+      "rank": 770
     },
     {
       "player_id": "10526",
@@ -18622,7 +18694,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 770
+      "rank": 771
     },
     {
       "player_id": "9259",
@@ -18646,7 +18718,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 771
+      "rank": 772
     },
     {
       "player_id": "10778",
@@ -18670,7 +18742,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 772
+      "rank": 773
     },
     {
       "player_id": "9373",
@@ -18694,7 +18766,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 773
+      "rank": 774
     },
     {
       "player_id": "10389",
@@ -18718,7 +18790,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 774
+      "rank": 775
     },
     {
       "player_id": "10967",
@@ -18742,7 +18814,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 775
+      "rank": 776
     },
     {
       "player_id": "10304",
@@ -18766,7 +18838,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 776
+      "rank": 777
     },
     {
       "player_id": "11033",
@@ -18790,7 +18862,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 777
+      "rank": 778
     },
     {
       "player_id": "6663",
@@ -18814,7 +18886,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 778
+      "rank": 779
     },
     {
       "player_id": "10092",
@@ -18838,7 +18910,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 779
+      "rank": 780
     },
     {
       "player_id": "9102",
@@ -18862,7 +18934,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 780
+      "rank": 781
     },
     {
       "player_id": "10597",
@@ -18886,7 +18958,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 781
+      "rank": 782
     },
     {
       "player_id": "8789",
@@ -18910,7 +18982,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 782
+      "rank": 783
     },
     {
       "player_id": "8615",
@@ -18934,7 +19006,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 783
+      "rank": 784
     },
     {
       "player_id": "10589",
@@ -18958,7 +19030,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 784
+      "rank": 785
     },
     {
       "player_id": "7595",
@@ -18982,7 +19054,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 785
+      "rank": 786
     },
     {
       "player_id": "9802",
@@ -19006,7 +19078,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 786
+      "rank": 787
     },
     {
       "player_id": "7751",
@@ -19030,7 +19102,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 787
+      "rank": 788
     },
     {
       "player_id": "10621",
@@ -19054,7 +19126,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 788
+      "rank": 789
     },
     {
       "player_id": "9106",
@@ -19078,7 +19150,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 789
+      "rank": 790
     },
     {
       "player_id": "11008",
@@ -19102,7 +19174,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 790
+      "rank": 791
     },
     {
       "player_id": "10521",
@@ -19126,7 +19198,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 791
+      "rank": 792
     },
     {
       "player_id": "10880",
@@ -19150,7 +19222,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 792
+      "rank": 793
     },
     {
       "player_id": "10427",
@@ -19174,7 +19246,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 793
+      "rank": 794
     },
     {
       "player_id": "9571",
@@ -19198,7 +19270,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 794
+      "rank": 795
     },
     {
       "player_id": "4961",
@@ -19222,7 +19294,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 795
+      "rank": 796
     },
     {
       "player_id": "9717",
@@ -19246,7 +19318,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 796
+      "rank": 797
     },
     {
       "player_id": "5507",
@@ -19270,7 +19342,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 797
+      "rank": 798
     },
     {
       "player_id": "5658",
@@ -19294,7 +19366,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 798
+      "rank": 799
     },
     {
       "player_id": "10447",
@@ -19318,7 +19390,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 799
+      "rank": 800
     },
     {
       "player_id": "6142",
@@ -19342,7 +19414,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 800
+      "rank": 801
     },
     {
       "player_id": "10573",
@@ -19366,7 +19438,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 801
+      "rank": 802
     },
     {
       "player_id": "7777",
@@ -19390,7 +19462,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 802
+      "rank": 803
     },
     {
       "player_id": "11012",
@@ -19414,7 +19486,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 803
+      "rank": 804
     },
     {
       "player_id": "6787",
@@ -19438,7 +19510,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 804
+      "rank": 805
     },
     {
       "player_id": "7179",
@@ -19462,7 +19534,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 805
+      "rank": 806
     },
     {
       "player_id": "6322",
@@ -19486,7 +19558,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 806
+      "rank": 807
     },
     {
       "player_id": "10000",
@@ -19510,7 +19582,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 807
+      "rank": 808
     },
     {
       "player_id": "10932",
@@ -19534,7 +19606,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 808
+      "rank": 809
     },
     {
       "player_id": "10317",
@@ -19558,7 +19630,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 809
+      "rank": 810
     },
     {
       "player_id": "10207",
@@ -19582,7 +19654,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 810
+      "rank": 811
     },
     {
       "player_id": "7645",
@@ -19606,7 +19678,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 811
+      "rank": 812
     },
     {
       "player_id": "6869",
@@ -19630,7 +19702,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 812
+      "rank": 813
     },
     {
       "player_id": "10305",
@@ -19654,7 +19726,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 813
+      "rank": 814
     },
     {
       "player_id": "10177",
@@ -19678,7 +19750,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 814
+      "rank": 815
     },
     {
       "player_id": "9721",
@@ -19702,7 +19774,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 815
+      "rank": 816
     },
     {
       "player_id": "10643",
@@ -19720,30 +19792,6 @@
       "plus_minus": "0",
       "penalty_minutes": "0",
       "penalty_minutes_per_game": "0.00",
-      "power_play_goals": "0",
-      "short_handed_goals": "0",
-      "shootout_goals": "0",
-      "shootout_attempts": "0",
-      "shootout_winning_goals": "0",
-      "shootout_percentage": "0.0",
-      "rank": 816
-    },
-    {
-      "player_id": "10635",
-      "name": "Blake Smith",
-      "active": "1",
-      "position": "D",
-      "rookie": "0",
-      "team_code": "TOR",
-      "games_played": "6",
-      "goals": "0",
-      "shots": "11",
-      "assists": "0",
-      "points": "0",
-      "points_per_game": "0.00",
-      "plus_minus": "4",
-      "penalty_minutes": "8",
-      "penalty_minutes_per_game": "1.33",
       "power_play_goals": "0",
       "short_handed_goals": "0",
       "shootout_goals": "0",
@@ -19777,21 +19825,21 @@
       "rank": 818
     },
     {
-      "player_id": "9734",
-      "name": "Alex Suzdalev",
+      "player_id": "10635",
+      "name": "Blake Smith",
       "active": "1",
-      "position": "LW",
+      "position": "D",
       "rookie": "0",
-      "team_code": "HER",
+      "team_code": "TOR",
       "games_played": "6",
       "goals": "0",
-      "shots": "6",
+      "shots": "11",
       "assists": "0",
       "points": "0",
       "points_per_game": "0.00",
-      "plus_minus": "-4",
-      "penalty_minutes": "0",
-      "penalty_minutes_per_game": "0.00",
+      "plus_minus": "4",
+      "penalty_minutes": "8",
+      "penalty_minutes_per_game": "1.33",
       "power_play_goals": "0",
       "short_handed_goals": "0",
       "shootout_goals": "0",

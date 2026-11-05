@@ -158,3 +158,35 @@ export function normalizeEliteProspectsShlGoalies(html) {
     goals_against:row.number(12)
   }));
 }
+
+
+export function normalizeAllsvenskanSkaters(payload) {
+  return firstRows(payload).map(row => ({
+    player_id:value(row,"player_id","playerStatnetId") ?? ("ha:"+String(value(row,"player_name","name") || "").toLowerCase().replace(/[^a-z0-9]+/g,"-")),
+    name:String(value(row,"player_name","full_name","name") || "").trim(),
+    position:value(row,"position","player_position"),
+    games_played:num(row,"gp","games_played"),
+    goals:num(row,"g","goals"),
+    assists:num(row,"a","assists"),
+    points:num(row,"tp","points","pts"),
+    plus_minus:num(row,"plus_minus","plusMinus"),
+    penalty_minutes:num(row,"pim","penalty_minutes"),
+    shots:num(row,"sog","shots")
+  })).filter(row => row.name && row.games_played > 0);
+}
+
+export function normalizeAllsvenskanGoalies(payload) {
+  return firstRows(payload).map(row => ({
+    player_id:value(row,"player_id","playerStatnetId") ?? ("ha-g:"+String(value(row,"player_name","name") || "").toLowerCase().replace(/[^a-z0-9]+/g,"-")),
+    name:String(value(row,"player_name","full_name","name") || "").trim(),
+    position:"G",
+    games_played:num(row,"gp","games_played"),
+    wins:num(row,"w","wins"),
+    losses:num(row,"l","losses"),
+    saves:num(row,"svs","saves"),
+    save_percentage:num(row,"svs_perc","save_percentage","sv_pct"),
+    goals_against:num(row,"ga","goals_against"),
+    goals_against_average:num(row,"gaa","goals_against_average"),
+    shutouts:num(row,"so","shutouts")
+  })).filter(row => row.name && row.games_played > 0);
+}

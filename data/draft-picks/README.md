@@ -1,6 +1,6 @@
 # Registre des choix de repêchage NHL 2027–2029
 
-Le registre conserve les 672 emplacements de base (32 équipes × 7 rondes × 3 années). **Hockey Dynasty ne gère aucun choix conditionnel.** Seuls les choix fermes dont le propriétaire est confirmé sont des actifs échangeables. Les 17 emplacements dont le propriétaire dépend d'une condition ou ne peut pas être confirmé sont marqués `excluded`, sans propriétaire, et ne sont pas chargés dans les inventaires ni dans les propositions d'échange.
+Le registre conserve les 672 emplacements de base (32 équipes × 7 rondes × 3 années). **Hockey Dynasty ne gère aucun choix conditionnel.** Seuls les choix fermes dont le propriétaire est confirmé sont des actifs échangeables. Les 17 emplacements dont le propriétaire ne peut pas être confirmé comme un droit ferme sont marqués `excluded`, sans propriétaire, et ne sont pas chargés dans les inventaires ni dans les propositions d'échange.
 
 Aucune protection, clause, condition, sélection « meilleur de deux » ou transfert contingent n'est simulé. Un choix qui n'est pas un actif ferme reste simplement indisponible.
 
@@ -25,7 +25,7 @@ Aucune protection, clause, condition, sélection « meilleur de deux » ou trans
 - `currentOwner` est le club qui détient actuellement le droit; il ne doit pas être déduit du rang projeté.
 - `status` accepte `active`, `forfeited`, `provisional_snapshot`, `unverified` ou `excluded`.
 - Un choix `excluded` n'a aucun propriétaire jouable et ne peut pas être échangé.
-- Les champs de conditions ne font pas partie du modèle de données.
+- Le modèle de données ne contient aucun champ de condition, de protection ou de transfert contingent.
 
 ## Contrôles de complétude
 

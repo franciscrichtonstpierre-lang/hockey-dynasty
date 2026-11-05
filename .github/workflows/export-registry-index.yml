@@ -12,7 +12,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: hockey-dynasty-registry-index
+  group: hockey-dynasty-data-sync-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:

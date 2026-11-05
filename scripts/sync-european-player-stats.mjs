@@ -48,8 +48,8 @@ await save(
 
 const allsvenskanSeasonEndYear = 2027;
 const allsvenskanBaseBody = {
-  league:"HA", phase:"HA", season:"2026", team_side:"all", team:"all",
-  against_team:"all", all_results:"all", game_status:"played", decided_in:"all",
+  league:"HA", phase:"HA", season:String(allsvenskanSeasonEndYear - 1), team_side:"all", team:"all",
+  against_team:"all", all_results:"all", game_status:"all", decided_in:"all",
   categories:"summary", page:1, page_size:1000
 };
 const postAllsvenskan = async (path, body) => {
@@ -58,7 +58,9 @@ const postAllsvenskan = async (path, body) => {
     headers:{
       "User-Agent":"fastRhockey",
       "Accept":"application/json",
-      "Content-Type":"application/json"
+      "Content-Type":"application/json",
+      "Origin":"https://hockeyallsvenskan.se",
+      "Referer":"https://hockeyallsvenskan.se/pages/mer-statistik"
     },
     body:JSON.stringify(body),
     signal:AbortSignal.timeout(25000)
@@ -76,6 +78,8 @@ try {
   ]);
   const haSkaters = normalizeAllsvenskanSkaters(haSkaterRaw);
   const haGoalies = normalizeAllsvenskanGoalies(haGoalieRaw);
+  if (!haSkaters.length) console.warn("HockeyAllsvenskan skater payload sample: " + JSON.stringify(haSkaterRaw).slice(0,700));
+  if (!haGoalies.length) console.warn("HockeyAllsvenskan goalie payload sample: " + JSON.stringify(haGoalieRaw).slice(0,700));
   await save(
     "ALLSVENSKAN", "2026-2027", haSkaters, haGoalies,
     "Official HockeyAllsvenskan public statistics API; regular season 2026-27 (end-year 2027, site start-year 2026)",

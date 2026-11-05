@@ -16,13 +16,20 @@ test("every source-reviewed potential override is applied and documented", () =>
     assert.ok(["low","medium","high"].includes(override.confidence), `invalid confidence for ${id}`);
     const player = byId.get(id);
     assert.ok(player, `missing player ${id}`);
-    assert.equal(player.potential,override.potential);
-    assert.ok(override.potential >= Number(player.overall || 0), `potential must not be below OA for ${id}`);
-    assert.equal(player.potentialStatus,"scouting_source_reviewed_estimate");
-    assert.equal(player.potentialReviewRequired,false);
+    const expectedPotential = Math.max(override.potential,Number(player.overall || 0));
+    assert.equal(player.potential,expectedPotential);
+    assert.ok(player.potential >= Number(player.overall || 0), `potential must not be below OA for ${id}`);
     assert.equal(player.potentialSource,override.source);
     assert.ok(player.potentialRationale);
-    assert.ok(player.potentialEstimateMethod.includes("manual_source_review"));
+    if (override.potential < Number(player.overall || 0)) {
+      assert.equal(player.potentialStatus,"provisional_model_estimate");
+      assert.equal(player.potentialReviewRequired,true);
+      assert.ok(player.potentialEstimateMethod.includes("oa_floor_invariant"));
+    } else {
+      assert.equal(player.potentialStatus,"scouting_source_reviewed_estimate");
+      assert.equal(player.potentialReviewRequired,false);
+      assert.ok(player.potentialEstimateMethod.includes("manual_source_review"));
+    }
   }
 });
 

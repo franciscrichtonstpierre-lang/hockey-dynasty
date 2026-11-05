@@ -224,3 +224,23 @@ test("uses position to disambiguate first-initial and surname matches when exact
   const matched = matchLeagueStats({ name:"J. Brown", currentLeague:"OHL", position:"F" }, index);
   assert.equal(matched, rows[1]);
 });
+
+
+test("allows a unique current-season cross-league match for a player labeled SHL when the SHL feed has no row", () => {
+  const row = { player_id:880, name:"Axel Elofsson", position:"D", games_played:15, goals:0, assists:14, points:14, shots:18, plus_minus:2, penalty_minutes:8 };
+  const allsvenskan = createLeagueStatIndex({ league:"ALLSVENSKAN", source:"official HockeyAllsvenskan stats", season:"2026-2027", skaters:[row], goalies:[] });
+  const shl = createLeagueStatIndex({ league:"SHL", source:"official SHL stats", season:"2026-2027", skaters:[], goalies:[] });
+  const matched = matchStatIndex({ name:"Axel Elofsson", currentLeague:"SHL", position:"D" }, new Map([["SHL",shl],["ALLSVENSKAN",allsvenskan]]), { allowCrossLeague:true });
+  assert.equal(matched.index,allsvenskan);
+  assert.equal(matched.row.player_id,880);
+});
+
+test("does not accept cross-league matches when more than one league has the same player", () => {
+  const rowA = { player_id:881, name:"Alex Example", position:"F", games_played:10, goals:2, assists:3, points:5 };
+  const rowB = { player_id:882, name:"Alex Example", position:"F", games_played:10, goals:1, assists:4, points:5 };
+  const shl = createLeagueStatIndex({ league:"SHL", source:"official SHL stats", season:"2026-2027", skaters:[], goalies:[] });
+  const allsvenskan = createLeagueStatIndex({ league:"ALLSVENSKAN", source:"official HockeyAllsvenskan stats", season:"2026-2027", skaters:[rowA], goalies:[] });
+  const liiga = createLeagueStatIndex({ league:"LIIGA", source:"official Liiga stats", season:"2026-2027", skaters:[rowB], goalies:[] });
+  const matched = matchStatIndex({ name:"Alex Example", currentLeague:"SHL", position:"F" }, new Map([["SHL",shl],["ALLSVENSKAN",allsvenskan],["LIIGA",liiga]]), { allowCrossLeague:true });
+  assert.equal(matched.row,null);
+});

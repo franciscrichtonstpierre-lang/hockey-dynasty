@@ -155,13 +155,12 @@ if (picks && Array.isArray(picks.picks)) {
     seen.add(key);
     const forfeited = p.status === "forfeited";
     const verifiedOwner = p.verified === true && !!p.source &&
-      ((forfeited && p.currentOwner == null) || (!forfeited && ["active","conditional"].includes(p.status) && teams.includes(p.currentOwner)));
+      ((forfeited && p.currentOwner == null) || (!forfeited && p.status === "active" && teams.includes(p.currentOwner)));
     if (verifiedOwner) {
       report.draftPicks.verified++;
-      if (p.status === "conditional" && p.conditionsVerified !== true) report.draftPicks.unverifiedConditions++;
     } else if (p.status === "provisional_snapshot" && p.verified === false && teams.includes(p.currentOwner)) {
       report.draftPicks.provisionalOwner++;
-    } else if (p.status === "excluded_conditional" && p.verified === false && p.currentOwner == null) {
+    } else if (p.status === "excluded" && p.verified === false && p.currentOwner == null) {
       report.draftPicks.excludedConditional++;
     } else if (p.status === "unverified" && p.verified === false && p.currentOwner == null) {
       report.draftPicks.unresolvedOwner++;

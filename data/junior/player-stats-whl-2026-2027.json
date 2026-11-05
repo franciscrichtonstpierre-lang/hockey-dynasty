@@ -4,7 +4,7 @@
   "season": "2026-2027",
   "seasonId": "295",
   "source": "Official WHL HockeyTech / LeagueStat public player statistics feed",
-  "syncedAt": "2026-11-05T02:02:01.692Z",
+  "syncedAt": "2026-11-05T02:04:23.171Z",
   "endpoints": {
     "skaters": "https://lscluster.hockeytech.com/feed/index.php?feed=statviewfeed&key=f1aa699db3d81487&client_code=whl&league_id=7&site_id=0&lang=en&view=players&season=295&team=all&limit=1000",
     "goalies": "https://lscluster.hockeytech.com/feed/index.php?feed=statviewfeed&key=f1aa699db3d81487&client_code=whl&league_id=7&site_id=0&lang=en&view=players&season=295&team=all&limit=1000&position=goalies"
@@ -82,7 +82,7 @@
       "assists": "8",
       "points": "23",
       "points_per_game": "1.64",
-      "plus_minus": "10",
+      "plus_minus": "11",
       "penalty_minutes": "19",
       "penalty_minutes_per_game": "1.36",
       "power_play_goals": "5",
@@ -159,7 +159,7 @@
       "games_played": "16",
       "game_winning_goals": "1",
       "goals": "10",
-      "shooting_percentage": "17.9",
+      "shooting_percentage": "17.2",
       "assists": "11",
       "points": "21",
       "points_per_game": "1.31",
@@ -447,6 +447,33 @@
       "rank": 16
     },
     {
+      "player_id": "30760",
+      "name": "Charlie Kresl",
+      "position": "C",
+      "rookie": "0",
+      "jersey_number": "25",
+      "team_code": "CGY",
+      "games_played": "13",
+      "game_winning_goals": "0",
+      "goals": "2",
+      "shooting_percentage": "10.0",
+      "assists": "15",
+      "points": "17",
+      "points_per_game": "1.31",
+      "plus_minus": "8",
+      "penalty_minutes": "11",
+      "penalty_minutes_per_game": "0.85",
+      "power_play_goals": "0",
+      "power_play_assists": "7",
+      "short_handed_goals": "0",
+      "short_handed_assists": "1",
+      "shootout_goals": "0",
+      "shootout_attempts": "1",
+      "shootout_winning_goals": "0",
+      "shootout_percentage": "0.0",
+      "rank": 17
+    },
+    {
       "player_id": "30256",
       "name": "Alisher Sarkenov",
       "position": "RW",
@@ -460,7 +487,7 @@
       "assists": "7",
       "points": "16",
       "points_per_game": "1.00",
-      "plus_minus": "-2",
+      "plus_minus": "-3",
       "penalty_minutes": "16",
       "penalty_minutes_per_game": "1.00",
       "power_play_goals": "4",
@@ -471,7 +498,7 @@
       "shootout_attempts": "2",
       "shootout_winning_goals": "0",
       "shootout_percentage": "100.0",
-      "rank": 17
+      "rank": 18
     },
     {
       "player_id": "30623",
@@ -498,7 +525,7 @@
       "shootout_attempts": "1",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 18
+      "rank": 19
     },
     {
       "player_id": "29384",
@@ -525,7 +552,7 @@
       "shootout_attempts": "2",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 19
+      "rank": 20
     },
     {
       "player_id": "29554",
@@ -552,7 +579,7 @@
       "shootout_attempts": "1",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 20
+      "rank": 21
     },
     {
       "player_id": "29444",
@@ -579,7 +606,7 @@
       "shootout_attempts": "2",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 21
+      "rank": 22
     },
     {
       "player_id": "29457",
@@ -606,7 +633,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 22
+      "rank": 23
     },
     {
       "player_id": "29786",
@@ -631,33 +658,6 @@
       "short_handed_assists": "0",
       "shootout_goals": "0",
       "shootout_attempts": "0",
-      "shootout_winning_goals": "0",
-      "shootout_percentage": "0.0",
-      "rank": 23
-    },
-    {
-      "player_id": "30760",
-      "name": "Charlie Kresl",
-      "position": "C",
-      "rookie": "0",
-      "jersey_number": "25",
-      "team_code": "CGY",
-      "games_played": "13",
-      "game_winning_goals": "0",
-      "goals": "2",
-      "shooting_percentage": "10.0",
-      "assists": "14",
-      "points": "16",
-      "points_per_game": "1.23",
-      "plus_minus": "7",
-      "penalty_minutes": "11",
-      "penalty_minutes_per_game": "0.85",
-      "power_play_goals": "0",
-      "power_play_assists": "7",
-      "short_handed_goals": "0",
-      "short_handed_assists": "1",
-      "shootout_goals": "0",
-      "shootout_attempts": "1",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
       "rank": 24
@@ -690,6 +690,33 @@
       "rank": 25
     },
     {
+      "player_id": "30757",
+      "name": "Artem Katsuro",
+      "position": "RW",
+      "rookie": "1",
+      "jersey_number": "11",
+      "team_code": "CGY",
+      "games_played": "16",
+      "game_winning_goals": "1",
+      "goals": "8",
+      "shooting_percentage": "19.0",
+      "assists": "7",
+      "points": "15",
+      "points_per_game": "0.94",
+      "plus_minus": "4",
+      "penalty_minutes": "4",
+      "penalty_minutes_per_game": "0.25",
+      "power_play_goals": "2",
+      "power_play_assists": "5",
+      "short_handed_goals": "0",
+      "short_handed_assists": "0",
+      "shootout_goals": "1",
+      "shootout_attempts": "2",
+      "shootout_winning_goals": "1",
+      "shootout_percentage": "50.0",
+      "rank": 26
+    },
+    {
       "player_id": "29194",
       "name": "Julien Maze",
       "position": "LW",
@@ -714,7 +741,7 @@
       "shootout_attempts": "2",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 26
+      "rank": 27
     },
     {
       "player_id": "29195",
@@ -741,7 +768,7 @@
       "shootout_attempts": "1",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 27
+      "rank": 28
     },
     {
       "player_id": "30018",
@@ -768,7 +795,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 28
+      "rank": 29
     },
     {
       "player_id": "29892",
@@ -795,7 +822,7 @@
       "shootout_attempts": "1",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 29
+      "rank": 30
     },
     {
       "player_id": "30150",
@@ -822,7 +849,7 @@
       "shootout_attempts": "1",
       "shootout_winning_goals": "1",
       "shootout_percentage": "100.0",
-      "rank": 30
+      "rank": 31
     },
     {
       "player_id": "30221",
@@ -849,7 +876,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 31
+      "rank": 32
     },
     {
       "player_id": "29340",
@@ -876,7 +903,7 @@
       "shootout_attempts": "1",
       "shootout_winning_goals": "1",
       "shootout_percentage": "100.0",
-      "rank": 32
+      "rank": 33
     },
     {
       "player_id": "29219",
@@ -903,33 +930,6 @@
       "shootout_attempts": "1",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 33
-    },
-    {
-      "player_id": "30757",
-      "name": "Artem Katsuro",
-      "position": "RW",
-      "rookie": "1",
-      "jersey_number": "11",
-      "team_code": "CGY",
-      "games_played": "15",
-      "game_winning_goals": "1",
-      "goals": "7",
-      "shooting_percentage": "16.7",
-      "assists": "7",
-      "points": "14",
-      "points_per_game": "0.93",
-      "plus_minus": "3",
-      "penalty_minutes": "4",
-      "penalty_minutes_per_game": "0.27",
-      "power_play_goals": "2",
-      "power_play_assists": "5",
-      "short_handed_goals": "0",
-      "short_handed_assists": "0",
-      "shootout_goals": "1",
-      "shootout_attempts": "2",
-      "shootout_winning_goals": "1",
-      "shootout_percentage": "50.0",
       "rank": 34
     },
     {
@@ -1128,16 +1128,16 @@
       "rookie": "0",
       "jersey_number": "20",
       "team_code": "PA",
-      "games_played": "15",
+      "games_played": "16",
       "game_winning_goals": "2",
       "goals": "6",
-      "shooting_percentage": "16.2",
+      "shooting_percentage": "15.8",
       "assists": "7",
       "points": "13",
-      "points_per_game": "0.87",
-      "plus_minus": "-3",
+      "points_per_game": "0.81",
+      "plus_minus": "-4",
       "penalty_minutes": "7",
-      "penalty_minutes_per_game": "0.47",
+      "penalty_minutes_per_game": "0.44",
       "power_play_goals": "1",
       "power_play_assists": "3",
       "short_handed_goals": "1",
@@ -1290,16 +1290,16 @@
       "rookie": "0",
       "jersey_number": "29",
       "team_code": "PA",
-      "games_played": "13",
+      "games_played": "14",
       "game_winning_goals": "0",
       "goals": "8",
-      "shooting_percentage": "20.0",
+      "shooting_percentage": "19.5",
       "assists": "4",
       "points": "12",
-      "points_per_game": "0.92",
-      "plus_minus": "2",
+      "points_per_game": "0.86",
+      "plus_minus": "1",
       "penalty_minutes": "10",
-      "penalty_minutes_per_game": "0.77",
+      "penalty_minutes_per_game": "0.71",
       "power_play_goals": "5",
       "power_play_assists": "1",
       "short_handed_goals": "0",
@@ -2721,16 +2721,16 @@
       "rookie": "0",
       "jersey_number": "4",
       "team_code": "CGY",
-      "games_played": "15",
+      "games_played": "16",
       "game_winning_goals": "0",
       "goals": "2",
-      "shooting_percentage": "9.1",
+      "shooting_percentage": "8.7",
       "assists": "8",
       "points": "10",
-      "points_per_game": "0.67",
-      "plus_minus": "-5",
+      "points_per_game": "0.63",
+      "plus_minus": "-4",
       "penalty_minutes": "14",
-      "penalty_minutes_per_game": "0.93",
+      "penalty_minutes_per_game": "0.88",
       "power_play_goals": "1",
       "power_play_assists": "5",
       "short_handed_goals": "0",
@@ -3720,16 +3720,16 @@
       "rookie": "1",
       "jersey_number": "7",
       "team_code": "PA",
-      "games_played": "13",
+      "games_played": "14",
       "game_winning_goals": "0",
       "goals": "0",
       "shooting_percentage": "0.0",
       "assists": "8",
       "points": "8",
-      "points_per_game": "0.62",
-      "plus_minus": "-2",
+      "points_per_game": "0.57",
+      "plus_minus": "-3",
       "penalty_minutes": "21",
-      "penalty_minutes_per_game": "1.62",
+      "penalty_minutes_per_game": "1.50",
       "power_play_goals": "0",
       "power_play_assists": "3",
       "short_handed_goals": "0",
@@ -9717,7 +9717,7 @@
       "games_played": "16",
       "game_winning_goals": "0",
       "goals": "1",
-      "shooting_percentage": "7.1",
+      "shooting_percentage": "6.7",
       "assists": "1",
       "points": "2",
       "points_per_game": "0.13",
@@ -10464,33 +10464,6 @@
       "rank": 387
     },
     {
-      "player_id": "30753",
-      "name": "Jakob Leander",
-      "position": "D",
-      "rookie": "0",
-      "jersey_number": "6",
-      "team_code": "CGY",
-      "games_played": "14",
-      "game_winning_goals": "0",
-      "goals": "0",
-      "shooting_percentage": "0.0",
-      "assists": "2",
-      "points": "2",
-      "points_per_game": "0.14",
-      "plus_minus": "-3",
-      "penalty_minutes": "13",
-      "penalty_minutes_per_game": "0.93",
-      "power_play_goals": "0",
-      "power_play_assists": "0",
-      "short_handed_goals": "0",
-      "short_handed_assists": "1",
-      "shootout_goals": "0",
-      "shootout_attempts": "0",
-      "shootout_winning_goals": "0",
-      "shootout_percentage": "0.0",
-      "rank": 388
-    },
-    {
       "player_id": "29387",
       "name": "Chase Petersen",
       "position": "C",
@@ -10515,7 +10488,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 389
+      "rank": 388
     },
     {
       "player_id": "30576",
@@ -10542,7 +10515,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 390
+      "rank": 389
     },
     {
       "player_id": "29212",
@@ -10565,6 +10538,33 @@
       "power_play_assists": "0",
       "short_handed_goals": "0",
       "short_handed_assists": "0",
+      "shootout_goals": "0",
+      "shootout_attempts": "0",
+      "shootout_winning_goals": "0",
+      "shootout_percentage": "0.0",
+      "rank": 390
+    },
+    {
+      "player_id": "30753",
+      "name": "Jakob Leander",
+      "position": "D",
+      "rookie": "0",
+      "jersey_number": "6",
+      "team_code": "CGY",
+      "games_played": "15",
+      "game_winning_goals": "0",
+      "goals": "0",
+      "shooting_percentage": "0.0",
+      "assists": "2",
+      "points": "2",
+      "points_per_game": "0.13",
+      "plus_minus": "-2",
+      "penalty_minutes": "13",
+      "penalty_minutes_per_game": "0.87",
+      "power_play_goals": "0",
+      "power_play_assists": "0",
+      "short_handed_goals": "0",
+      "short_handed_assists": "1",
       "shootout_goals": "0",
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
@@ -12111,33 +12111,6 @@
       "rank": 448
     },
     {
-      "player_id": "30461",
-      "name": "Henry Chmiel",
-      "position": "D",
-      "rookie": "1",
-      "jersey_number": "5",
-      "team_code": "PA",
-      "games_played": "12",
-      "game_winning_goals": "0",
-      "goals": "0",
-      "shooting_percentage": "0.0",
-      "assists": "1",
-      "points": "1",
-      "points_per_game": "0.08",
-      "plus_minus": "3",
-      "penalty_minutes": "10",
-      "penalty_minutes_per_game": "0.83",
-      "power_play_goals": "0",
-      "power_play_assists": "0",
-      "short_handed_goals": "0",
-      "short_handed_assists": "0",
-      "shootout_goals": "0",
-      "shootout_attempts": "0",
-      "shootout_winning_goals": "0",
-      "shootout_percentage": "0.0",
-      "rank": 449
-    },
-    {
       "player_id": "29228",
       "name": "Ethan Hughes",
       "position": "C",
@@ -12162,7 +12135,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 450
+      "rank": 449
     },
     {
       "player_id": "30252",
@@ -12189,7 +12162,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 451
+      "rank": 450
     },
     {
       "player_id": "29748",
@@ -12216,7 +12189,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 452
+      "rank": 451
     },
     {
       "player_id": "29390",
@@ -12235,6 +12208,33 @@
       "plus_minus": "1",
       "penalty_minutes": "12",
       "penalty_minutes_per_game": "1.00",
+      "power_play_goals": "0",
+      "power_play_assists": "0",
+      "short_handed_goals": "0",
+      "short_handed_assists": "0",
+      "shootout_goals": "0",
+      "shootout_attempts": "0",
+      "shootout_winning_goals": "0",
+      "shootout_percentage": "0.0",
+      "rank": 452
+    },
+    {
+      "player_id": "30461",
+      "name": "Henry Chmiel",
+      "position": "D",
+      "rookie": "1",
+      "jersey_number": "5",
+      "team_code": "PA",
+      "games_played": "13",
+      "game_winning_goals": "0",
+      "goals": "0",
+      "shooting_percentage": "0.0",
+      "assists": "1",
+      "points": "1",
+      "points_per_game": "0.08",
+      "plus_minus": "2",
+      "penalty_minutes": "10",
+      "penalty_minutes_per_game": "0.77",
       "power_play_goals": "0",
       "power_play_assists": "0",
       "short_handed_goals": "0",
@@ -16682,6 +16682,32 @@
       "name": null
     },
     {
+      "player_id": "29568",
+      "shortname": "D. McFadyen",
+      "rookie": "1",
+      "jersey_number": "30",
+      "team_name": "Lethbridge Hurricanes",
+      "team_code": "LET",
+      "games_played": "1",
+      "minutes_played": 21,
+      "save_percentage": "0.875",
+      "goals_against": "1",
+      "shutouts": "0",
+      "wins": "0",
+      "losses": "0",
+      "ot_losses": "0",
+      "shootout_games_played": "0",
+      "shootout_losses": "0",
+      "shootout_wins": "0",
+      "shootout_goals_against": "0",
+      "shootout_attempts": "0",
+      "shootout_percentage": "0.000",
+      "ties": "0",
+      "goals_against_average": "2.90",
+      "rank": 22,
+      "name": null
+    },
+    {
       "player_id": "30226",
       "shortname": "T. Tvrznik",
       "rookie": "0",
@@ -16704,7 +16730,7 @@
       "shootout_percentage": "0.750",
       "ties": "0",
       "goals_against_average": "2.90",
-      "rank": 22,
+      "rank": 23,
       "name": null
     },
     {
@@ -16730,7 +16756,7 @@
       "shootout_percentage": "1.000",
       "ties": "0",
       "goals_against_average": "2.96",
-      "rank": 23,
+      "rank": 24,
       "name": null
     },
     {
@@ -16741,8 +16767,8 @@
       "team_name": "Edmonton Oil Kings",
       "team_code": "EDM",
       "games_played": "8",
-      "minutes_played": 443,
-      "save_percentage": "0.912",
+      "minutes_played": 445,
+      "save_percentage": "0.913",
       "goals_against": "22",
       "shutouts": "0",
       "wins": "4",
@@ -16755,8 +16781,8 @@
       "shootout_attempts": "2",
       "shootout_percentage": "1.000",
       "ties": "0",
-      "goals_against_average": "2.98",
-      "rank": 24,
+      "goals_against_average": "2.97",
+      "rank": 25,
       "name": null
     },
     {
@@ -16782,7 +16808,7 @@
       "shootout_percentage": "0.000",
       "ties": "0",
       "goals_against_average": "3.00",
-      "rank": 25,
+      "rank": 26,
       "name": null
     },
     {
@@ -16808,7 +16834,7 @@
       "shootout_percentage": "0.000",
       "ties": "0",
       "goals_against_average": "3.01",
-      "rank": 26,
+      "rank": 27,
       "name": null
     },
     {
@@ -16834,7 +16860,7 @@
       "shootout_percentage": "0.200",
       "ties": "0",
       "goals_against_average": "3.02",
-      "rank": 27,
+      "rank": 28,
       "name": null
     },
     {
@@ -16860,7 +16886,7 @@
       "shootout_percentage": "0.500",
       "ties": "0",
       "goals_against_average": "3.09",
-      "rank": 28,
+      "rank": 29,
       "name": null
     },
     {
@@ -16886,7 +16912,7 @@
       "shootout_percentage": "1.000",
       "ties": "0",
       "goals_against_average": "3.11",
-      "rank": 29,
+      "rank": 30,
       "name": null
     },
     {
@@ -16912,7 +16938,7 @@
       "shootout_percentage": "0.000",
       "ties": "0",
       "goals_against_average": "3.12",
-      "rank": 30,
+      "rank": 31,
       "name": null
     },
     {
@@ -16938,32 +16964,6 @@
       "shootout_percentage": "0.000",
       "ties": "0",
       "goals_against_average": "3.16",
-      "rank": 31,
-      "name": null
-    },
-    {
-      "player_id": "29568",
-      "shortname": "D. McFadyen",
-      "rookie": "1",
-      "jersey_number": "30",
-      "team_name": "Lethbridge Hurricanes",
-      "team_code": "LET",
-      "games_played": "1",
-      "minutes_played": 19,
-      "save_percentage": "0.857",
-      "goals_against": "1",
-      "shutouts": "0",
-      "wins": "0",
-      "losses": "0",
-      "ot_losses": "0",
-      "shootout_games_played": "0",
-      "shootout_losses": "0",
-      "shootout_wins": "0",
-      "shootout_goals_against": "0",
-      "shootout_attempts": "0",
-      "shootout_percentage": "0.000",
-      "ties": "0",
-      "goals_against_average": "3.17",
       "rank": 32,
       "name": null
     },

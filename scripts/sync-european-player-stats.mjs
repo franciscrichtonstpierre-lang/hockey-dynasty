@@ -1,6 +1,6 @@
 // Synchronize public SHL and Liiga regular-season player statistics for 2026-27.
 import { mkdir, readFile, writeFile } from "node:fs/promises";
-import { normalizeLiigaGoalies, normalizeLiigaSkaters, normalizeShlGoalies, normalizeShlSkaters, normalizeEliteProspectsShlGoalies, normalizeEliteProspectsShlSkaters } from "./lib/european-stat-feed.mjs";
+import { normalizeLiigaGoalies, normalizeLiigaSkaters, normalizeShlGoalies, normalizeShlSkaters, normalizeEliteProspectsShlGoalies, normalizeEliteProspectsShlSkaters, normalizeAllsvenskanGoalies, normalizeAllsvenskanSkaters } from "./lib/european-stat-feed.mjs";
 
 const season = "2026-2027";
 async function get(url) {
@@ -45,6 +45,45 @@ await save(
   "Official Liiga API v2 regular-season player statistics",
   "data/europe/player-stats-liiga-2026-2027.json"
 );
+
+const allsvenskanSeasonEndYear = 2027;
+const allsvenskanBaseBody = {
+  league:"HA", phase:"HA", season:"2026", team_side:"all", team:"all",
+  against_team:"all", all_results:"all", game_status:"played", decided_in:"all",
+  categories:"summary", page:1, page_size:1000
+};
+const postAllsvenskan = async (path, body) => {
+  const response = await fetch("https://hockeyallsvenskan.se/api/" + path, {
+    method:"POST",
+    headers:{
+      "User-Agent":"fastRhockey",
+      "Accept":"application/json",
+      "Content-Type":"application/json"
+    },
+    body:JSON.stringify(body),
+    signal:AbortSignal.timeout(25000)
+  });
+  if (!response.ok) throw new Error("HockeyAllsvenskan HTTP " + response.status + " (" + path + ")");
+  const raw = await response.text();
+  if (!raw.trim()) throw new Error("HockeyAllsvenskan empty response (" + path + ")");
+  try { return JSON.parse(raw); }
+  catch { throw new Error("HockeyAllsvenskan non-JSON response (" + path + ")"); }
+};
+try {
+  const [haSkaterRaw, haGoalieRaw] = await Promise.all([
+    postAllsvenskan("all-time-skaters-stats", {...allsvenskanBaseBody, position:"all", ages:"all"}),
+    postAllsvenskan("all-time-goalkeepers-stats", allsvenskanBaseBody)
+  ]);
+  const haSkaters = normalizeAllsvenskanSkaters(haSkaterRaw);
+  const haGoalies = normalizeAllsvenskanGoalies(haGoalieRaw);
+  await save(
+    "ALLSVENSKAN", "2026-2027", haSkaters, haGoalies,
+    "Official HockeyAllsvenskan public statistics API; regular season 2026-27 (end-year 2027, site start-year 2026)",
+    "data/europe/player-stats-allsvenskan-2026-2027.json"
+  );
+} catch (error) {
+  console.warn("HockeyAllsvenskan official stats unavailable; retaining existing data if present: " + error.message);
+}
 
 const priorLiigaBase = "https://liiga.fi/api/v2/players/stats/summed/2026/2026/runkosarja/true";
 try {

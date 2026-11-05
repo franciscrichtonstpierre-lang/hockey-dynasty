@@ -57,9 +57,9 @@ test("normalizes Elite Prospects SHL goalie table rows", () => {
 
 
 test("normalizes official HockeyAllsvenskan skater statistics", () => {
-  const raw = {data:[
-    {player_name:"Oskar Kvist",team_statnet_id:"MODO",gp:12,g:5,a:7,tp:12,pim:8,plus_minus:4,sog:31},
-    {player_name:"Elias Pettersson",team_statnet_id:"AIK",gp:9,g:2,a:4,tp:6,pim:2,plus_minus:-1,sog:18}
+  const raw = {count:2,page:1,page_size:1000,total_pages:1,results:[
+    {player:"Oskar Kvist",team:"MODO",GP:12,G:5,A:7,TP:12,PIM:8,PlusMinus:4,SOG:31},
+    {player:"Elias Pettersson",team:"AIK",GP:9,G:2,A:4,TP:6,PIM:2,PlusMinus:-1,SOG:18}
   ]};
   const rows = normalizeAllsvenskanSkaters(raw);
   assert.equal(rows.length,2);
@@ -70,8 +70,8 @@ test("normalizes official HockeyAllsvenskan skater statistics", () => {
 });
 
 test("normalizes official HockeyAllsvenskan goalie statistics", () => {
-  const raw = {data:[
-    {player_name:"Robin Christoffersson",gp:10,svs:280,svs_perc:93.98,ga:18,gaa:1.8,w:7,l:2,so:2}
+  const raw = {count:1,page:1,page_size:1000,total_pages:1,results:[
+    {player:"Robin Christoffersson",GP:10,SVS:280,SVS_perc:"93.98",GA:18,GAA:"1.80",W:7,L:2,SO:2}
   ]};
   const rows = normalizeAllsvenskanGoalies(raw);
   assert.equal(rows.length,1);

@@ -771,8 +771,9 @@ try{
   p.birthDateSource=bio.sourceUrl||bio.profileUrl||bio.hubUrl;
   p.bioSourceUrl=bio.sourceUrl||bio.profileUrl||bio.hubUrl;
   p.draftEligibilityYear=bio.draftYear;
-  if(bio.currentTeam)p.currentTeam=bio.currentTeam;
-  if(bio.currentLeague)p.currentLeague=bio.currentLeague;
+  // A manually source-verified league/team correction outranks a stale or incomplete draft-bio snapshot.
+  if(bio.currentTeam&&p.leagueResolution!=="manual_source_verified")p.currentTeam=bio.currentTeam;
+  if(bio.currentLeague&&bio.currentLeague!=="UNKNOWN"&&p.leagueResolution!=="manual_source_verified")p.currentLeague=bio.currentLeague;
   futureDraftBioApplied++;
  }
  console.log("Future draft Elite Prospects biography enrichment: "+futureDraftBioApplied+" records updated; "+futureDraftBioAmbiguous+" ambiguous matches.");

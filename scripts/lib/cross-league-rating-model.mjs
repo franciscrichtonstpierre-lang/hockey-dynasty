@@ -338,7 +338,7 @@ export function estimatePlayerPotential(player, overall = player?.overall) {
   let productionEvidence = null;
   if (age > 0 && age <= 23 && stats && games >= 10) {
     if (position === "G") {
-      let sv = numeric(stats, "save_percentage", "savePercentage", "SVPCT");
+      let sv = numeric(stats, "save_percentage", "savePctg", "savePercentage", "SVPCT");
       if (sv > 1) sv /= 100;
       if (sv >= 0.915) productionAdjustment = 2;
       else if (sv >= 0.900) productionAdjustment = 1;

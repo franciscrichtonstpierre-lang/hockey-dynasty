@@ -1,21 +1,21 @@
 {
   "season": "2026-2027",
-  "generatedAt": "2026-11-03T13:03:20.439Z",
+  "generatedAt": "2026-11-09T09:31:00.215Z",
   "nhl": {
-    "total": 798,
-    "salaryPresent": 798,
-    "verifiedSalaryPresent": 798,
+    "total": 800,
+    "salaryPresent": 800,
+    "verifiedSalaryPresent": 800,
     "salaryBasisCounts": {
-      "verified_nhl_base_salary": 798
+      "verified_nhl_base_salary": 800
     },
-    "capHitPresent": 798,
-    "verifiedCapHitPresent": 798,
+    "capHitPresent": 800,
+    "verifiedCapHitPresent": 800,
     "capHitBasisCounts": {
       "verified_manual_override": 151,
-      "verified_season_cap_hit": 429,
+      "verified_season_cap_hit": 428,
       "verified_puckpedia_season_cap_hit": 141,
-      "verified_puckpedia_cap_hit": 70,
-      "verified_contract_total_divided_by_term": 7
+      "verified_puckpedia_cap_hit": 71,
+      "verified_contract_total_divided_by_term": 9
     },
     "missingSalary": [],
     "missingCapHit": [],
@@ -49,9 +49,9 @@
         "missingCapHit": []
       },
       "CBJ": {
-        "players": 23,
-        "salaryPresent": 23,
-        "capHitPresent": 23,
+        "players": 22,
+        "salaryPresent": 22,
+        "capHitPresent": 22,
         "missingSalary": [],
         "missingCapHit": []
       },
@@ -63,9 +63,9 @@
         "missingCapHit": []
       },
       "CHI": {
-        "players": 24,
-        "salaryPresent": 24,
-        "capHitPresent": 24,
+        "players": 25,
+        "salaryPresent": 25,
+        "capHitPresent": 25,
         "missingSalary": [],
         "missingCapHit": []
       },
@@ -84,9 +84,9 @@
         "missingCapHit": []
       },
       "DET": {
-        "players": 25,
-        "salaryPresent": 25,
-        "capHitPresent": 25,
+        "players": 26,
+        "salaryPresent": 26,
+        "capHitPresent": 26,
         "missingSalary": [],
         "missingCapHit": []
       },
@@ -161,30 +161,30 @@
         "missingCapHit": []
       },
       "PHI": {
-        "players": 25,
-        "salaryPresent": 25,
-        "capHitPresent": 25,
+        "players": 24,
+        "salaryPresent": 24,
+        "capHitPresent": 24,
         "missingSalary": [],
         "missingCapHit": []
       },
       "PIT": {
-        "players": 25,
-        "salaryPresent": 25,
-        "capHitPresent": 25,
+        "players": 26,
+        "salaryPresent": 26,
+        "capHitPresent": 26,
         "missingSalary": [],
         "missingCapHit": []
       },
       "SEA": {
-        "players": 28,
-        "salaryPresent": 28,
-        "capHitPresent": 28,
+        "players": 29,
+        "salaryPresent": 29,
+        "capHitPresent": 29,
         "missingSalary": [],
         "missingCapHit": []
       },
       "SJS": {
-        "players": 24,
-        "salaryPresent": 24,
-        "capHitPresent": 24,
+        "players": 25,
+        "salaryPresent": 25,
+        "capHitPresent": 25,
         "missingSalary": [],
         "missingCapHit": []
       },
@@ -231,9 +231,9 @@
         "missingCapHit": []
       },
       "WPG": {
-        "players": 25,
-        "salaryPresent": 25,
-        "capHitPresent": 25,
+        "players": 24,
+        "salaryPresent": 24,
+        "capHitPresent": 24,
         "missingSalary": [],
         "missingCapHit": []
       },
@@ -247,9 +247,9 @@
     }
   },
   "organization": {
-    "total": 2558,
+    "total": 2562,
     "matchedContracts": 445,
-    "salaryPresent": 429,
+    "salaryPresent": 427,
     "matchedMissingSalary": [
       {
         "playerId": 0,
@@ -284,7 +284,7 @@
         "name": "Gregor Biber",
         "teamCode": "UTA",
         "currentLeague": "AHL",
-        "contract": "gregor biber|UTA|2026-05"
+        "contract": "8485010|UTA|2026-05"
       },
       {
         "playerId": 0,
@@ -308,6 +308,13 @@
         "contract": "joshua brown|EDM|2024-07"
       },
       {
+        "playerId": 8482733,
+        "name": "Logan Mailloux",
+        "teamCode": "STL",
+        "currentLeague": "AHL",
+        "contract": "8482733|STL|2026-01"
+      },
+      {
         "playerId": 0,
         "name": "Luca Marrelli",
         "teamCode": "CBJ",
@@ -327,6 +334,13 @@
         "teamCode": "SJS",
         "currentLeague": "AHL",
         "contract": "phillip sinn|SJS|2026-05"
+      },
+      {
+        "playerId": 8484151,
+        "name": "Quinton Burns",
+        "teamCode": "STL",
+        "currentLeague": "AHL",
+        "contract": "8484151|STL|2024-08"
       },
       {
         "playerId": 0,
@@ -362,6 +376,13 @@
         "teamCode": "UTA",
         "currentLeague": "AHL",
         "contract": "tomas lavoie|?|2025-04"
+      },
+      {
+        "playerId": 0,
+        "name": "Topias Leinonen",
+        "teamCode": "BUF",
+        "currentLeague": "AHL",
+        "contract": "topias leinonen|BUF|2025-03"
       }
     ]
   }

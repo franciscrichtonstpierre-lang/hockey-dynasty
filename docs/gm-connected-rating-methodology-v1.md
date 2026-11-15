@@ -27,7 +27,7 @@ GM Connected publicly identifies Evolving Hockey, MoneyPuck and NHL EDGE as inpu
 3. **Independent scouting evidence:** multiple dated reports for traits that box-score and tracking data cannot measure reliably, especially decision-making, positioning, compete, leadership and prospect projection.
 4. **Video-game / manager-game ratings:** comparison anchors and sanity checks only, never the sole source of a rating.
 
-Respect source terms and redistribution rights. Store source references and derived values where redistribution of raw source data is not permitted.
+Respect source terms and redistribution rights. Store source references and derived values where redistribution of raw source data is not permitted. MoneyPuck states that its published downloads are free for non-commercial use and asks users to contact it for other purposes; do not assume that a public download grants commercial redistribution rights. Evolving Hockey exposes advanced metrics such as RAPM, GAR and xGAR, while CSV downloads and some tools are subscription features; do not automate access to subscriber-only data without authorized access. NHL EDGE publishes public tracking comparisons and leaderboards (including skating speed, bursts, distance, shot speed/location and zone time); record the exact metric, season and retrieval date, and do not mistake a top-10 leaderboard for a complete player dataset.
 
 ## Metric families and attribute evidence
 

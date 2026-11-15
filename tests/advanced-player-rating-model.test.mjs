@@ -64,6 +64,38 @@ test("insufficient or invalid percentiles do not produce fabricated skater OA", 
   assert.equal(result.metadata.confidence, "low");
 });
 
+test("one isolated metric cannot masquerade as a complete Overall", () => {
+  const skater = evaluateAdvancedSkater({ position:"F" }, {
+    gamesPlayed:60, ixgPer60Percentile:0.99
+  });
+  const goalie = evaluateAdvancedGoalie({ position:"G" }, {
+    gamesPlayed:60, goalsSavedAboveExpectedPercentile:0.99
+  });
+  assert.equal(skater.overall, null);
+  assert.equal(goalie.overall, null);
+  assert.equal(skater.metadata.availableWeightCoverage, 0.2);
+  assert.equal(goalie.metadata.availableWeightCoverage, 0.3);
+});
+
+test("advanced metric source provenance is retained with cohort and season", () => {
+  const result = evaluateAdvancedSkater({ position:"F" }, {
+    gamesPlayed:55, league:"NHL", season:"2025-2026", usageCohort:"top-six",
+    ixgPer60Percentile:0.9, goalsAboveExpectedPer60Percentile:0.9,
+    primaryPointsPer60Percentile:0.9, shotGenerationPer60Percentile:0.9,
+    ixgPerShotPercentile:0.8, goalsAboveExpectedPercentile:0.8,
+    shotVolumePer60Percentile:0.8, primaryAssistsPer60Percentile:0.8,
+    chanceCreationPercentile:0.8, controlledEntriesPercentile:0.8,
+    controlledExitsPercentile:0.8, topSpeedPercentile:0.8,
+    speedBurstsPercentile:0.8, highIntensityDistancePercentile:0.8,
+    sources:["MoneyPuck"],
+    sourceObservations:[{sourceName:"MoneyPuck",sourceUrl:"https://moneypuck.com/",checkedAt:"2026-11-15T00:00:00Z",season:"2025-2026"}]
+  });
+  assert.equal(result.metadata.league, "NHL");
+  assert.equal(result.metadata.season, "2025-2026");
+  assert.equal(result.metadata.usageCohort, "top-six");
+  assert.equal(result.metadata.sourceObservations.length, 1);
+});
+
 test("goalies use GSAx and shot-quality evidence in a dedicated model", () => {
   const strong = evaluateAdvancedGoalie({ position:"G" }, {
     gamesPlayed:45, goalsSavedAboveExpectedPercentile:0.95,

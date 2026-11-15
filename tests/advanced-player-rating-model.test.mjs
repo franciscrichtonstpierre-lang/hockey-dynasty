@@ -27,8 +27,19 @@ test("advanced skater model ranks evidence-based offensive production without in
   assert.ok(elite.overall > depth.overall);
   assert.equal(elite.attributes.FI, null);
   assert.equal(elite.attributes.LE, null);
-  assert.equal(elite.metadata.confidence, "medium");
+  assert.equal(elite.metadata.confidence, "low");
   assert.ok(elite.overall >= 0 && elite.overall <= 99);
+});
+
+test("fighting percentile never changes skater OA", () => {
+  const evidence = {
+    gamesPlayed:50, ixgPer60Percentile:0.7, goalsAboveExpectedPer60Percentile:0.7,
+    primaryPointsPer60Percentile:0.7, shotGenerationPer60Percentile:0.7
+  };
+  const withoutFight = evaluateAdvancedSkater({ position:"F" }, evidence);
+  const withFight = evaluateAdvancedSkater({ position:"F" }, { ...evidence, fightingSkillPercentile:1 });
+  assert.equal(withoutFight.overall, withFight.overall);
+  assert.equal(withFight.attributes.FI, 99);
 });
 
 test("defencemen use a separate OA weighting profile", () => {

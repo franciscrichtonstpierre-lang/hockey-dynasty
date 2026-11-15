@@ -73,3 +73,9 @@ The existing model has useful cross-league coverage and provenance, but its curr
 ## First verified cleanup on the working branch
 
 The existing code had a semantic mismatch: the rating generator and calibration rules treated FI as fighting and FA as faceoffs, while the player editor and development engine treated FI as faceoffs and FA as aggression. The working branch now aligns the editor labels and field-name mapping with the canonical data model, excludes FI from the development engine's OA calculation, and moves FI/FA references in the training focus pools to match their meanings. A regression test was added for the label mapping and another for FI exclusion from OA. These changes are isolated on `ratings/gm-connected-methodology-v1`; production `main` ratings and player records have not been bulk-modified.
+
+## Advanced-evidence prototype added on the working branch
+
+The branch now contains `scripts/lib/advanced-player-rating-model.mjs`, an isolated evaluator that accepts normalized 0–1 percentiles from authorized feeds. It has separate forward and defenceman OA weights, a dedicated goalie model using goals-saved-above-expected and shot-quality evidence, confidence/sample metadata, and null outputs for traits without evidence. Fighting remains separate from OA.
+
+This module is a tested-design candidate, not yet wired into the production registry or the daily ratings refresh. It does not download MoneyPuck, Evolving Hockey or NHL EDGE data. An authorized, versioned source adapter must populate its percentile inputs before production use. The module intentionally avoids inventing values for missing traits.

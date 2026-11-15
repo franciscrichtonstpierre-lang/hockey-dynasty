@@ -36,6 +36,15 @@ const OA_WEIGHTS = Object.freeze({
   D: { OFF:0.10, DEF:0.20, SH:0.06, PL:0.08, SK:0.10, FA:0.02, EN:0.07, PE:0.05, ST:0.05, CH:0.08, PO:0.09, HI:0.04, LE:0.02, SR:0.04 }
 });
 
+function weightCoverage(attributes, position) {
+  const weights = OA_WEIGHTS[position];
+  if (!weights) return 0;
+  const possible = Object.values(weights).reduce((sum, weight) => sum + weight, 0);
+  const available = Object.entries(weights).reduce((sum, [key, weight]) =>
+    sum + (finite(attributes[key]) ? weight : 0), 0);
+  return possible ? Number((available / possible).toFixed(3)) : 0;
+}
+
 function calculateWeightedOverall(attributes, position) {
   const weights = OA_WEIGHTS[position];
   if (!weights) return null;
@@ -71,7 +80,8 @@ export function evaluateAdvancedSkater(player, evidence = {}) {
   attributes.OFF = attributes.OFF;
   attributes.DEF = attributes.DEF;
   const overall = calculateWeightedOverall(attributes, position);
-  const availableFamilies = Object.values(attributes).filter(finite).length;
+  const availableFamilies = Object.entries(attributes).filter(([key, value]) => key !== "FI" && finite(value)).length;
+  const coverage = weightCoverage(attributes, position);
   const games = evidence.gamesPlayed;
   const confidence = sampleConfidence(games);
   const sourceNames = Array.isArray(evidence.sources)
@@ -88,6 +98,14 @@ export function evaluateAdvancedSkater(player, evidence = {}) {
       sampleConfidence:confidence,
       sampleSize:finite(games) ? games : null,
       availableAttributeFamilies:availableFamilies,
+      availableWeightCoverage:coverage,
+      league:evidence.league || null,
+      season:evidence.season || null,
+      usageCohort:evidence.usageCohort || null,
+      sourceObservations:Array.isArray(evidence.sourceObservations) ? evidence.sourceObservations.filter(item =>
+        item && typeof item.sourceName === "string" && typeof item.sourceUrl === "string" &&
+        typeof item.checkedAt === "string" && typeof item.season === "string"
+      ) : [],
       sources:sourceNames,
       notes:"Percentiles must be computed within comparable position, league, season and usage cohorts. Unobserved traits remain null; FI is excluded from OA."
     }

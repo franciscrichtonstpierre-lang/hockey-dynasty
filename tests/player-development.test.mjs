@@ -32,6 +32,15 @@ test("calculates overall from individual attributes with position-specific weigh
   assert.notEqual(applied.OA, 12);
 });
 
+test("fighting (FI) is excluded from OA while faceoffs (FA) remain part of skater OA", () => {
+  const ratings = Object.fromEntries(attributes.map(key => [key, 70]));
+  const baseline = engine.calculateOverall(ratings, "F");
+  const fighting = engine.calculateOverall({ ...ratings, FI: 99 }, "F");
+  const faceoffs = engine.calculateOverall({ ...ratings, FA: 99 }, "F");
+  assert.equal(fighting, baseline);
+  assert.ok(faceoffs > baseline);
+});
+
 test("maps visible 0–99 ratings to internal 1–200 ability", () => {
   assert.equal(engine.visibleToAbility(0), 1);
   assert.equal(engine.visibleToAbility(99), 200);

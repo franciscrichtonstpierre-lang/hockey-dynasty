@@ -118,4 +118,5 @@ test("goalie model returns no rating when no relevant performance evidence exist
   const result = evaluateAdvancedGoalie({ position:"G" }, { gamesPlayed:30 });
   assert.equal(result.overall, null);
   assert.equal(result.status, "insufficient_advanced_evidence");
+  assert.equal(result.metadata.confidence, "very_low");
 });

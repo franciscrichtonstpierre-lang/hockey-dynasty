@@ -69,3 +69,7 @@ Use a dedicated model, not skater formulas. Prioritize goals saved above expecte
 ## Current implementation gap
 
 The existing model has useful cross-league coverage and provenance, but its current statistical path leans heavily on points, goals, assists, plus/minus, games played and profile fallbacks. The repository does not yet contain an integrated Evolving Hockey / MoneyPuck / NHL EDGE advanced-metric feed. The current model therefore cannot honestly be described as GM Connected-level yet. Adding a new formula without adding and validating those inputs would only create more elaborate guesses.
+
+## First verified cleanup on the working branch
+
+The existing code had a semantic mismatch: the rating generator and calibration rules treated FI as fighting and FA as faceoffs, while the player editor and development engine treated FI as faceoffs and FA as aggression. The working branch now aligns the editor labels and field-name mapping with the canonical data model, excludes FI from the development engine's OA calculation, and moves FI/FA references in the training focus pools to match their meanings. A regression test was added for the label mapping and another for FI exclusion from OA. These changes are isolated on `ratings/gm-connected-methodology-v1`; production `main` ratings and player records have not been bulk-modified.

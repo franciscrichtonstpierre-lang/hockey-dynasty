@@ -40,13 +40,16 @@ function calculateWeightedOverall(attributes, position) {
   const weights = OA_WEIGHTS[position];
   if (!weights) return null;
   let total = 0, weightTotal = 0;
+  const possibleWeight = Object.values(weights).reduce((sum, weight) => sum + weight, 0);
   for (const [key, weight] of Object.entries(weights)) {
     const value = attributes[key];
     if (!finite(value)) continue;
     total += value * weight;
     weightTotal += weight;
   }
-  return weightTotal ? clamp(Math.round(total / weightTotal)) : null;
+  // Do not let one or two available metrics masquerade as a complete Overall.
+  if (!weightTotal || weightTotal / possibleWeight < 0.5) return null;
+  return clamp(Math.round(total / weightTotal));
 }
 
 export function evaluateAdvancedSkater(player, evidence = {}) {
@@ -102,23 +105,32 @@ export function evaluateAdvancedGoalie(player, evidence = {}) {
   };
   const weights = { GSAx:0.30, SV:0.25, HD:0.20, REB:0.10, WORK:0.05, CONS:0.10 };
   let total = 0, weightTotal = 0;
+  const possibleWeight = Object.values(weights).reduce((sum, weight) => sum + weight, 0);
   for (const [key, weight] of Object.entries(weights)) {
     if (metrics[key] == null) continue;
     total += metrics[key] * weight;
     weightTotal += weight;
   }
+  const hasSufficientCoverage = weightTotal / possibleWeight >= 0.5;
   const games = evidence.gamesPlayed;
   return {
-    status:weightTotal ? "advanced_goalie_evidence_estimate" : "insufficient_advanced_evidence",
+    status:hasSufficientCoverage ? "advanced_goalie_evidence_estimate" : "insufficient_advanced_evidence",
     position:"G",
     metrics,
-    overall:weightTotal ? clamp(Math.round(total / weightTotal)) : null,
+    overall:hasSufficientCoverage ? clamp(Math.round(total / weightTotal)) : null,
     metadata:{
       method:"hd_advanced_goalie_evidence_v1",
       evidence:"goals_saved_above_expected_and_shot_quality_metrics",
       confidence:sampleConfidence(games) === "high" && weightTotal >= 0.75 ? "medium" : sampleConfidence(games),
       sampleConfidence:sampleConfidence(games),
       sampleSize:finite(games) ? games : null,
+      availableWeightCoverage:Number((weightTotal / possibleWeight).toFixed(3)),
+      league:evidence.league || null,
+      season:evidence.season || null,
+      sourceObservations:Array.isArray(evidence.sourceObservations) ? evidence.sourceObservations.filter(item =>
+        item && typeof item.sourceName === "string" && typeof item.sourceUrl === "string" &&
+        typeof item.checkedAt === "string" && typeof item.season === "string"
+      ) : [],
       sources:Array.isArray(evidence.sources) ? [...new Set(evidence.sources.filter(value => typeof value === "string" && value.trim()))] : [],
       notes:"Goalie evaluation is independent of skater attribute weights; wins and raw GAA are not primary ability measures."
     }

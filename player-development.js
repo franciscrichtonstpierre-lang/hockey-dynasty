@@ -48,14 +48,14 @@
   });
 
   const FOCUS_POOLS = Object.freeze({
-    "Attaque": ["SH", "PL", "ST", "OFF", "FI"],
+    "Attaque": ["SH", "PL", "ST", "OFF", "FA"],
     "Défense": ["CH", "PO", "HI", "DEF", "SR"],
     "Développement des jeunes": ["SK", "EN", "PE", "FA", "LE"],
     "Avantage numérique": ["SH", "PL", "ST", "OFF"],
     "Désavantage numérique": ["CH", "PO", "DEF", "PE"],
-    "Physique": ["EN", "SK", "FA", "HI", "SR"],
+    "Physique": ["EN", "SK", "FI", "HI", "SR"],
     "Technique": ["PE", "FA", "LE"],
-    "Réflexes": ["FI", "SK", "EN"],
+    "Réflexes": ["FA", "SK", "EN"],
     "Contrôle des rebonds": ["PO", "CH", "HI"],
     "Récupération": []
   });
@@ -332,7 +332,7 @@
     let weighted = 0;
     let totalWeight = 0;
     for (const attribute of ATTRIBUTES) {
-      if (attribute === "OA") continue;
+      if (attribute === "OA" || attribute === "FI") continue;
       const value = numberOr(ratings?.[attribute], null);
       if (value == null) continue;
       const weight = weights[attribute] ?? 1;

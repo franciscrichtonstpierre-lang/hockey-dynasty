@@ -139,7 +139,7 @@ export function evaluateAdvancedGoalie(player, evidence = {}) {
     metadata:{
       method:"hd_advanced_goalie_evidence_v1",
       evidence:"goals_saved_above_expected_and_shot_quality_metrics",
-      confidence:sampleConfidence(games) === "high" && weightTotal >= 0.75 ? "medium" : sampleConfidence(games),
+      confidence:!hasSufficientCoverage ? "very_low" : sampleConfidence(games) === "high" && weightTotal >= 0.75 ? "medium" : sampleConfidence(games),
       sampleConfidence:sampleConfidence(games),
       sampleSize:finite(games) ? games : null,
       availableWeightCoverage:Number((weightTotal / possibleWeight).toFixed(3)),

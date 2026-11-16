@@ -46,7 +46,7 @@ test("synthetic pilot reports position distributions, evidence coverage and fail
   assert.equal(report.positions.G.players,5);
   assert.equal(report.guardrails.productionWrite,false);
   assert.equal(report.guardrails.providerDataUsed,false);
-  assert.ok(report.positions.F.attributeCoverage.OFF===1);
+  assert.ok(report.positions.F.attributeCoverage.OFF===1);\n  assert.ok(report.candidates.every(x=>typeof x.profile.archetype==="string"));\n  assert.ok(report.candidates.every(x=>typeof x.profile.confidence==="string"));
   assert.ok(Array.isArray(report.smallCohorts));
  }finally{await rm(dir,{recursive:true,force:true});}
 });
@@ -66,17 +66,17 @@ test("synthetic pilot refuses input that is not explicitly synthetic",async()=>{
 
 test("equal Overall can produce distinct evidence-based skater archetypes",async()=>{
  const { evaluateAdvancedSkater, classifyAdvancedProfile } = await import("../scripts/lib/advanced-player-rating-model.mjs");
- const make = (off,def) => evaluateAdvancedSkater({position:"F"},{
+ const make = (off,def,playmaking) => evaluateAdvancedSkater({position:"F"},{
   gamesPlayed:55,
   ixgPer60Percentile:off, goalsAboveExpectedPer60Percentile:off, primaryPointsPer60Percentile:off, shotGenerationPer60Percentile:off,
   xgaSuppressionPercentile:def, expectedGoalDifferentialPercentile:def, shotAttemptSuppressionPercentile:def,
   ixgPerShotPercentile:.5, goalsAboveExpectedPercentile:.5, shotVolumePer60Percentile:.5,
-  primaryAssistsPer60Percentile:.5, chanceCreationPercentile:.5, controlledEntriesPercentile:.5, controlledExitsPercentile:.5,
+  primaryAssistsPer60Percentile:playmaking, chanceCreationPercentile:playmaking, controlledEntriesPercentile:playmaking, controlledExitsPercentile:playmaking,
   topSpeedPercentile:.5, speedBurstsPercentile:.5, highIntensityDistancePercentile:.5,
   faceoffWinPercentile:.5, availabilityPercentile:.5, sustainedWorkloadPercentile:.5, penaltyDifferentialPercentile:.5,
   STPercentile:.5, CHPercentile:.5, POPercentile:.5, HIPercentile:.5, LEPercentile:.5, SRPercentile:.5
  });
- const scorer=make(.95,.25), stopper=make(.25,.95);
+ const scorer=make(.95,.25,.1), stopper=make(.25,.95,.7);
  assert.equal(scorer.overall,stopper.overall);
  assert.equal(classifyAdvancedProfile(scorer).archetype,"offensive_elite");
  assert.equal(classifyAdvancedProfile(stopper).archetype,"defensive_specialist");

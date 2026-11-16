@@ -16,8 +16,25 @@ const source = sourceDoc.source || {};
 if (!source.name || !source.url || !source.checkedAt || !source.season) {
   throw new Error("Source provenance requires name, url, checkedAt and season.");
 }
-if (!["approved", "public_noncommercial", "manual_authorized"].includes(source.licenseStatus)) {
-  throw new Error("Refusing import: licenseStatus must explicitly be approved, public_noncommercial, or manual_authorized.");
+// Fail closed for a potentially commercial game. Access to a dataset, a public download,
+ // personal-use permission, or a generic manual authorization is not enough.
+if (source.licenseStatus !== "approved") {
+  throw new Error("Refusing import: commercial use requires licenseStatus=approved.");
+}
+if (!source.licenseId || typeof source.licenseId !== "string") {
+  throw new Error("Refusing import: an identifiable written licenseId is required.");
+}
+if (source.permissions?.commercialGameUse !== true) {
+  throw new Error("Refusing import: license must explicitly allow commercial game use.");
+}
+if (source.permissions?.derivedOutputs !== true) {
+  throw new Error("Refusing import: license must explicitly allow derived outputs in the game.");
+}
+if (!source.licenseVerifiedAt || Number.isNaN(Date.parse(source.licenseVerifiedAt))) {
+  throw new Error("Refusing import: licenseVerifiedAt must be a valid date-time.");
+}
+if (source.licenseExpiresAt && Date.parse(source.licenseExpiresAt) <= Date.now()) {
+  throw new Error("Refusing import: license has expired.");
 }
 if (!Array.isArray(sourceDoc.rows) || !sourceDoc.rows.length) throw new Error("No source rows supplied.");
 
@@ -97,7 +114,7 @@ for (const [cohort, cohortRows] of groups) {
       playerId:String(row.playerId), position:row.position, league:row.league, season:row.season,
       usageCohort:row.usageCohort || "all", gamesPlayed:Number.isFinite(row.gamesPlayed)?row.gamesPlayed:null,
       sources:[source.name],
-      sourceObservations:[{sourceName:source.name,sourceUrl:source.url,checkedAt:source.checkedAt,season:String(row.season),licenseStatus:source.licenseStatus}],
+      sourceObservations:[{sourceName:source.name,sourceUrl:source.url,checkedAt:source.checkedAt,season:String(row.season),licenseStatus:source.licenseStatus,licenseId:source.licenseId,commercialGameUse:source.permissions.commercialGameUse,derivedOutputs:source.permissions.derivedOutputs,licenseVerifiedAt:source.licenseVerifiedAt,licenseExpiresAt:source.licenseExpiresAt||null}],
       sourceMetricCount:0
     };
     for (const [rawKey, percentileKey] of Object.entries(metricMap)) {
@@ -113,7 +130,7 @@ for (const [cohort, cohortRows] of groups) {
 }
 const out = {
   schemaVersion:1, generatedAt:new Date().toISOString(),
-  source:{name:source.name,url:source.url,checkedAt:source.checkedAt,season:source.season,licenseStatus:source.licenseStatus},
+  source:{name:source.name,url:source.url,checkedAt:source.checkedAt,season:source.season,licenseStatus:source.licenseStatus,licenseId:source.licenseId,permissions:source.permissions,licenseVerifiedAt:source.licenseVerifiedAt,licenseExpiresAt:source.licenseExpiresAt||null},
   inputRowCount:rows.length, cohortCount:groups.size, normalizedRowCount:normalized.length,
   method:"within_league_season_position_usage_empirical_percentile_v1",
   warnings:[

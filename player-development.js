@@ -68,7 +68,7 @@
   // Goalie training uses only attributes that exist in the current 16-rating model.
   // These are broad proxies, not a claim that the game already has separate goalie skills.
   const GOALIE_FOCUS_POOLS = Object.freeze({
-    "Technique": ["SK", "PO", "PE"],
+    "Technique": ["SK", "PE", "SR"],
     "Réflexes": ["SK", "PE", "SR"],
     "Contrôle des rebonds": ["PO", "CH", "HI"]
   });

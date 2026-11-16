@@ -28,7 +28,9 @@
         "official_player_profile",
         "scouting_report",
         "prospect_ranking",
-        "secondary_database"
+        "secondary_database",
+        "advanced_metrics_feed",
+        "player_tracking_data"
       ]
     },
     "sourceName": {
@@ -67,6 +69,27 @@
       ],
       "minimum": 0,
       "maximum": 99
+    },
+    "normalizedPercentile": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 1
+    },
+    "metric": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "sampleSize": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0
     },
     "confidence": {
       "enum": [

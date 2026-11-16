@@ -1,0 +1,34 @@
+name: Player rating model tests
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "scripts/lib/advanced-player-rating-model.mjs"
+      - "scripts/import-advanced-evidence.mjs"
+      - "scripts/evaluate-advanced-evidence.mjs"
+      - "data/rating-source-observation.schema.json"
+      - "data/advanced-input/**"
+      - "docs/advanced-data-integration-status-2026-11-15.md"
+      - "tests/advanced-player-rating-model.test.mjs"
+      - "tests/import-advanced-evidence.test.mjs"
+      - "tests/evaluate-advanced-evidence.test.mjs"
+      - "tests/rating-source-observation-schema.test.mjs"
+      - "tests/ratings-invariants.test.mjs"
+      - "player-development.js"
+      - "tests/player-development.test.mjs"
+      - "index.html"
+
+permissions:
+  contents: read
+
+jobs:
+  rating-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Run repository test suite
+        run: node --test tests/*.test.mjs

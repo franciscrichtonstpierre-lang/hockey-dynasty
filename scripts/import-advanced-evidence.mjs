@@ -1,0 +1,128 @@
+// Build normalized, provenance-aware advanced evidence from locally supplied source exports.
+// No network scraping, credentials, paywall bypass, or production writes.
+// Input is JSON: { source:{name,url,checkedAt,licenseStatus,season}, rows:[...] }.
+// Each row has playerId, position, league, season, gamesPlayed, usageCohort and metrics.
+// Metrics use the canonical keys consumed by advanced-player-rating-model.mjs.
+
+import { readFile, writeFile, mkdir } from "node:fs/promises";
+import { dirname, resolve } from "node:path";
+
+const INPUT = process.argv[2];
+const OUTPUT = process.argv[3] || "data/advanced-evidence/normalized-evidence.json";
+if (!INPUT) throw new Error("Usage: node scripts/import-advanced-evidence.mjs <authorized-export.json> [output.json]");
+
+const sourceDoc = JSON.parse(await readFile(resolve(INPUT), "utf8"));
+const source = sourceDoc.source || {};
+if (!source.name || !source.url || !source.checkedAt || !source.season) {
+  throw new Error("Source provenance requires name, url, checkedAt and season.");
+}
+if (!["approved", "public_noncommercial", "manual_authorized"].includes(source.licenseStatus)) {
+  throw new Error("Refusing import: licenseStatus must explicitly be approved, public_noncommercial, or manual_authorized.");
+}
+if (!Array.isArray(sourceDoc.rows) || !sourceDoc.rows.length) throw new Error("No source rows supplied.");
+
+const validPositions = new Set(["F","C","LW","RW","D","G"]);
+const metricKeys = new Set([
+  "ixgPer60","goalsAboveExpectedPer60","primaryPointsPer60","shotGenerationPer60",
+  "xgaSuppression","expectedGoalDifferential","shotAttemptSuppression",
+  "ixgPerShot","goalsAboveExpected","shotVolumePer60","primaryAssistsPer60",
+  "chanceCreation","controlledEntries","controlledExits","topSpeed","speedBursts",
+  "highIntensityDistance","faceoffWin","availability","sustainedWorkload",
+  "penaltyDifferential","fightingSkill","ST","CH","PO","HI","LE","SR",
+  "goalsSavedAboveExpected","shotQualityAdjustedSave","highDangerSave",
+  "reboundControl","workload","seasonStability"
+]);
+const rows = sourceDoc.rows.map((row, index) => {
+  if (!row.playerId || !validPositions.has(String(row.position).toUpperCase()) || !row.league || !row.season) {
+    throw new Error("Row "+index+" missing playerId, supported position, league or season.");
+  }
+  const metrics = row.metrics || {};
+  for (const [key, value] of Object.entries(metrics)) {
+    if (!metricKeys.has(key)) throw new Error("Unknown canonical metric '"+key+"' in row "+index);
+    if (value !== null && (!Number.isFinite(value))) throw new Error("Non-numeric metric '"+key+"' in row "+index);
+  }
+  return { ...row, position:String(row.position).toUpperCase(), metrics };
+});
+
+// Percentiles are calculated within the same season, league, position and usage cohort.
+// A missing metric remains missing; there is no cross-league prestige multiplier.
+const groups = new Map();
+for (const row of rows) {
+  const key = [row.season,row.league,row.position,row.usageCohort || "all"].join("|");
+  if (!groups.has(key)) groups.set(key, []);
+  groups.get(key).push(row);
+}
+const percentile = (values, value) => {
+  const sorted = values.filter(Number.isFinite).sort((a,b)=>a-b);
+  if (!sorted.length || !Number.isFinite(value)) return null;
+  let lo=0,hi=sorted.length;
+  while(lo<hi){const mid=(lo+hi)>>1;if(sorted[mid]<=value)lo=mid+1;else hi=mid;}
+  return sorted.length === 1 ? 0.5 : (lo-1)/(sorted.length-1);
+};
+const metricMap = {
+  ixgPer60:"ixgPer60Percentile",
+  goalsAboveExpectedPer60:"goalsAboveExpectedPer60Percentile",
+  primaryPointsPer60:"primaryPointsPer60Percentile",
+  shotGenerationPer60:"shotGenerationPer60Percentile",
+  xgaSuppression:"xgaSuppressionPercentile",
+  expectedGoalDifferential:"expectedGoalDifferentialPercentile",
+  shotAttemptSuppression:"shotAttemptSuppressionPercentile",
+  ixgPerShot:"ixgPerShotPercentile",
+  goalsAboveExpected:"goalsAboveExpectedPercentile",
+  shotVolumePer60:"shotVolumePer60Percentile",
+  primaryAssistsPer60:"primaryAssistsPer60Percentile",
+  chanceCreation:"chanceCreationPercentile",
+  controlledEntries:"controlledEntriesPercentile",
+  controlledExits:"controlledExitsPercentile",
+  topSpeed:"topSpeedPercentile",
+  speedBursts:"speedBurstsPercentile",
+  highIntensityDistance:"highIntensityDistancePercentile",
+  faceoffWin:"faceoffWinPercentile",
+  availability:"availabilityPercentile",
+  sustainedWorkload:"sustainedWorkloadPercentile",
+  penaltyDifferential:"penaltyDifferentialPercentile",
+  fightingSkill:"fightingSkillPercentile",
+  ST:"STPercentile",CH:"CHPercentile",PO:"POPercentile",HI:"HIPercentile",LE:"LEPercentile",SR:"SRPercentile",
+  goalsSavedAboveExpected:"goalsSavedAboveExpectedPercentile",
+  shotQualityAdjustedSave:"shotQualityAdjustedSavePercentile",
+  highDangerSave:"highDangerSavePercentile",
+  reboundControl:"reboundControlPercentile",
+  workload:"workloadPercentile",
+  seasonStability:"seasonStabilityPercentile"
+};
+const normalized = [];
+for (const [cohort, cohortRows] of groups) {
+  for (const row of cohortRows) {
+    const evidence = {
+      playerId:String(row.playerId), position:row.position, league:row.league, season:row.season,
+      usageCohort:row.usageCohort || "all", gamesPlayed:Number.isFinite(row.gamesPlayed)?row.gamesPlayed:null,
+      sources:[source.name],
+      sourceObservations:[{sourceName:source.name,sourceUrl:source.url,checkedAt:source.checkedAt,season:String(row.season),licenseStatus:source.licenseStatus}],
+      sourceMetricCount:0
+    };
+    for (const [rawKey, percentileKey] of Object.entries(metricMap)) {
+      const raw = row.metrics[rawKey];
+      if (Number.isFinite(raw)) {
+        const cohortValues = cohortRows.map(item=>item.metrics?.[rawKey]).filter(Number.isFinite);
+        evidence[percentileKey] = percentile(cohortValues, raw);
+        evidence.sourceMetricCount++;
+      }
+    }
+    normalized.push(evidence);
+  }
+}
+const out = {
+  schemaVersion:1, generatedAt:new Date().toISOString(),
+  source:{name:source.name,url:source.url,checkedAt:source.checkedAt,season:source.season,licenseStatus:source.licenseStatus},
+  inputRowCount:rows.length, cohortCount:groups.size, normalizedRowCount:normalized.length,
+  method:"within_league_season_position_usage_empirical_percentile_v1",
+  warnings:[
+    "Percentiles are only as reliable as the source export and player identity matching.",
+    "Do not combine this output with production ratings until coverage, permissions and player-ID mapping are reviewed.",
+    "Small cohorts require manual review; this importer does not adjust for league strength."
+  ],
+  players:normalized
+};
+await mkdir(dirname(resolve(OUTPUT)),{recursive:true});
+await writeFile(resolve(OUTPUT),JSON.stringify(out,null,2)+"\n");
+console.log(JSON.stringify({output:OUTPUT,rows:out.normalizedRowCount,cohorts:out.cohortCount,source:source.name}));

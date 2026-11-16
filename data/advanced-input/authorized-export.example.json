@@ -1,0 +1,27 @@
+{
+  "source": {
+    "name": "Example authorized source export",
+    "url": "https://example.org/data-dictionary",
+    "checkedAt": "2026-11-15T12:00:00Z",
+    "season": "2025-2026",
+    "licenseStatus": "approved"
+  },
+  "rows": [
+    {
+      "playerId": "NHL_PLAYER_ID_OR_STABLE_CROSS_LEAGUE_ID",
+      "position": "F",
+      "league": "NHL",
+      "season": "2025-2026",
+      "gamesPlayed": 60,
+      "usageCohort": "top-six",
+      "metrics": {
+        "ixgPer60": 0.85,
+        "goalsAboveExpectedPer60": 0.12,
+        "primaryPointsPer60": 1.45,
+        "shotGenerationPer60": 8.2,
+        "topSpeed": 23.4,
+        "speedBursts": 42
+      }
+    }
+  ]
+}

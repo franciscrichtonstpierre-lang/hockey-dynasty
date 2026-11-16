@@ -46,7 +46,9 @@ test("synthetic pilot reports position distributions, evidence coverage and fail
   assert.equal(report.positions.G.players,5);
   assert.equal(report.guardrails.productionWrite,false);
   assert.equal(report.guardrails.providerDataUsed,false);
-  assert.ok(report.positions.F.attributeCoverage.OFF===1);\n  assert.ok(report.candidates.every(x=>typeof x.profile.archetype==="string"));\n  assert.ok(report.candidates.every(x=>typeof x.profile.confidence==="string"));
+  assert.ok(report.positions.F.attributeCoverage.OFF===1);
+  assert.ok(report.candidates.every(x=>typeof x.profile.archetype==="string"));
+  assert.ok(report.candidates.every(x=>typeof x.profile.confidence==="string"));
   assert.ok(Array.isArray(report.smallCohorts));
  }finally{await rm(dir,{recursive:true,force:true});}
 });

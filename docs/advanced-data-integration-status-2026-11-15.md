@@ -118,3 +118,16 @@ Limites et précautions :
 - un potentiel non vérifié ne doit pas être présenté comme une projection de dépisteur confirmée;
 - le moteur de développement n'a pas été fusionné avec les cotes avancées et ne déclenche aucun recalcul des joueurs de production;
 - validation CI requise avant de considérer cette couche comme vérifiée.
+
+
+## Règles de calcul des cotes OFF, DEF et OA — 16 novembre 2026
+
+La logique de cotes du moteur de développement a été alignée sur les règles du jeu :
+- **OFF** est dérivé uniquement de la moyenne de SH, PL et ST.
+- **DEF** est dérivé uniquement de la moyenne de CH, PO et HI.
+- **OA** est la moyenne arithmétique de tous les attributs visibles sauf FI et OA lui-même. Les valeurs dérivées OFF et DEF sont incluses dans cette moyenne.
+- **FI** reste indépendant : sa variation ne change ni OFF, ni DEF, ni OA.
+- OFF, DEF et OA sont des résultats calculés, pas des attributs entraînés indépendamment. La progression et la régression portent sur les attributs de base; les trois valeurs dérivées sont recalculées ensuite.
+- Les pondérations par poste ne sont plus utilisées pour calculer OA. Elles restent seulement dans la logique de plafond potentiel individuel, pas dans ces trois formules.
+
+Les tests dédiés vérifient les formules, l'exclusion de FI et l'absence de dépendance à l'ancien OFF/DEF/OA fourni en entrée. Ce changement touche le moteur de développement sur la branche de travail seulement; il ne recalcule pas les cotes des joueurs en production.

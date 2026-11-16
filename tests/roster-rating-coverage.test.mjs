@@ -130,11 +130,14 @@ test("the live organization renderer displays ratings for all Montreal prospect 
 test("the organization roster loader waits for and retries the shared ratings registry", () => {
   const loader = sourceLine("async function loadRatings(forceOverrides=false)");
   const registryFetcher = sourceLine("async function fetchRatingRegistry()");
+  const dataFetcher = sourceLine("async function hdFetchData(");
+  const pinnedUrl = sourceLine("function hdPinnedDataUrl(");
   const organizationLoader = sourceLine("async function loadOrganizationEffectifExtras(");
 
   assert.match(loader, /hdRegistryRatingsLoaded/);
   assert.match(loader, /hdRatingsLoadPromise/);
-  assert.match(registryFetcher, /raw\.githubusercontent\.com/);
-  assert.match(registryFetcher, /cdn\.jsdelivr\.net/);
+  assert.match(registryFetcher, /hdFetchData\(/);
+  assert.match(dataFetcher, /hdPinnedDataUrl\(/);
+  assert.match(pinnedUrl, /raw\.githubusercontent\.com/);
   assert.match(organizationLoader, /await loadRatings\(\)/);
 });

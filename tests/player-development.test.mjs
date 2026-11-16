@@ -187,3 +187,43 @@ test("classifies scouting tiers from Superstar through F without imposing a hard
   assert.equal(highB.schemaVersion, 3);
 });
 
+
+
+test("higher ice time and season performance improve development progress", () => {
+  const young = { ...player, id: "same-development-test", birthDate: null, age: 19, potential: 99 };
+  const initial = engine.createInitialState(young, null);
+  const lowOpportunity = engine.advancePlayer(young, structuredClone(initial), {
+    days: 28, asOf: start, training, iceTime: 3, performance: 25
+  }).state;
+  const highOpportunity = engine.advancePlayer(young, structuredClone(initial), {
+    days: 28, asOf: start, training, iceTime: 35, performance: 90
+  }).state;
+  const progress = state => attributes.reduce((sum, key) => {
+    const node = ability(state, key);
+    return sum + node[0] + node[2];
+  }, 0);
+  assert.ok(progress(highOpportunity) > progress(lowOpportunity));
+});
+
+test("a larger verified potential gap provides more development runway without breaking PA ceilings", () => {
+  const prospect = { ...player, id: "potential-runway-test", birthDate: null, age: 19 };
+  const lowCeiling = { ...prospect, potential: 72, potentialStatus: "source_verified" };
+  const highCeiling = { ...prospect, potential: 95, potentialStatus: "source_verified" };
+  const lowState = engine.createInitialState(lowCeiling, null);
+  const highState = engine.createInitialState(highCeiling, null);
+  const lowRunway = attributes.reduce((sum, key) => sum + (ability(lowState, key)[1] - ability(lowState, key)[0]), 0);
+  const highRunway = attributes.reduce((sum, key) => sum + (ability(highState, key)[1] - ability(highState, key)[0]), 0);
+  assert.ok(highRunway > lowRunway);
+  for (const key of attributes) {
+    assert.ok(ability(highState, key)[1] >= ability(highState, key)[0], key);
+    assert.ok(ability(highState, key)[1] <= 200, key);
+  }
+});
+
+test("development remains deterministic for identical player state and simulation inputs", () => {
+  const initial = engine.createInitialState({ ...player, id: "deterministic-development" }, null);
+  const options = { days: 28, asOf: start, training, iceTime: 22, performance: 65 };
+  const first = engine.advancePlayer(player, structuredClone(initial), options);
+  const second = engine.advancePlayer(player, structuredClone(initial), options);
+  assert.deepEqual(second, first);
+});

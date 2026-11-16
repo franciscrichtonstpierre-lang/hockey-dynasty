@@ -630,11 +630,6 @@ for(const correction of (manualLeagueCorrections.players||[])){
   if(correction.playerId){
     const exactId=[...records.values()].filter(p=>String(p.id)===String(correction.playerId));
     if(exactId.length)matches=exactId;
-    else {
-      const rosterMatches=allMatches.filter(p=>["NHL","AHL"].includes(p.currentLeague)&&p.currentTeam);
-      if(rosterMatches.length===1)matches=rosterMatches;
-      else if(rosterMatches.length>1){const nhlMatches=rosterMatches.filter(p=>p.currentLeague==="NHL");if(nhlMatches.length===1)matches=nhlMatches;}
-    }
   }
   if(matches.length>1&&correction.birthDate){
     const exactBirth=matches.filter(p=>p.birthDate===correction.birthDate);
@@ -674,7 +669,7 @@ for(const correction of (manualLeagueCorrections.players||[])){
     continue;
   }
   const selected=matches[0];
-  if(correction.playerId&&String(selected.id)!==String(correction.playerId)){records.delete(selected.id);selected.id=String(correction.playerId);records.set(selected.id,selected)}
+  if(correction.playerId&&String(selected.id)!==String(correction.playerId)&&/^(?:nhl|ahl):/i.test(String(correction.playerId))&&/^(?:prospect|pipeline|manual-correction):/i.test(String(selected.id))){records.delete(selected.id);selected.id=String(correction.playerId);records.set(selected.id,selected)}
   if(correction.nhlPlayerId!=null&&Number.isFinite(Number(correction.nhlPlayerId)))selected.nhlPlayerId=Number(correction.nhlPlayerId);
   const wantedPosition=posGroup(correction)||String(correction.position||"").toUpperCase();
   const targets=[selected,...allMatches.filter(p=>p!==selected&&(!p.currentLeague||p.currentLeague==="UNKNOWN")&&(!p.birthDate||!correction.birthDate||p.birthDate===correction.birthDate)&&(!p.position||!wantedPosition||p.position===wantedPosition||p.detailedPosition===String(correction.position||"").toUpperCase()))];

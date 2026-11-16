@@ -131,3 +131,11 @@ La logique de cotes du moteur de développement a été alignée sur les règles
 - Les pondérations par poste ne sont plus utilisées pour calculer OA. Elles restent seulement dans la logique de plafond potentiel individuel, pas dans ces trois formules.
 
 Les tests dédiés vérifient les formules, l'exclusion de FI et l'absence de dépendance à l'ancien OFF/DEF/OA fourni en entrée. Ce changement touche le moteur de développement sur la branche de travail seulement; il ne recalcule pas les cotes des joueurs en production.
+
+
+## Attribute-by-attribute development specialization — 16 Nov 2026
+- Added modest position-based natural-growth profiles: forwards favor shooting/playmaking/strength and skating; defencemen favor positioning/checking/hitting and skating/strength; goalies favor positioning/skating/endurance with smaller weights on skater-only offensive attributes.
+- Team training focus remains a separate modifier, so an attack-focused plan emphasizes SH/PL/ST while a defensive plan emphasizes CH/PO/HI/SR. FI remains an independently trained attribute and is not used in OFF, DEF or OA derivation.
+- Added separate goalie focus pools for Technique, Reflexes and Rebound Control, using only the existing 16 attributes as broad proxies. This is explicitly provisional because the current rating schema has no dedicated goalie-only attributes.
+- Added regression tests for forward/defenceman growth profiles, attack-vs-defense training focus, FI independence, goalie focus pools and the UI's existing “Normale” default.
+- Coefficients are game-design starting values, not empirically calibrated NHL development rates. No production ratings or player records were changed.

@@ -18,18 +18,31 @@ const player = {
 const start = new Date("2026-10-07T00:00:00Z");
 const training = { focus: "Développement des jeunes", intensity: "Normale", coachSkill: 78, facilities: 65 };
 
-test("calculates overall from individual attributes with position-specific weights", () => {
+test("derives OFF from SH/PL/ST, DEF from CH/PO/HI, and OA from every rating except FI", () => {
   const ratings = Object.fromEntries(attributes.map(key => [key, 70]));
   ratings.SH = 90;
-  ratings.DEF = 50;
-  ratings.OA = 12; // stored OA must not override the calculated value
-  const forward = engine.calculateOverall(ratings, "F");
-  const defender = engine.calculateOverall(ratings, "D");
-  assert.ok(forward > defender);
+  ratings.PL = 60;
+  ratings.ST = 75;
+  ratings.CH = 80;
+  ratings.PO = 50;
+  ratings.HI = 65;
+  ratings.FI = 99;
+  ratings.OFF = 1;
+  ratings.DEF = 2;
+  ratings.OA = 3;
+
+  assert.equal(engine.calculateOffensiveOverall(ratings), 75);
+  assert.equal(engine.calculateDefensiveOverall(ratings), 65);
+  const expectedOverall = Math.round((75 + 65 + ratings.SK + ratings.EN + ratings.PE + ratings.FA
+    + ratings.LE + ratings.SR + ratings.SH + ratings.PL + ratings.ST + ratings.CH + ratings.PO + ratings.HI) / 14);
+  assert.equal(engine.calculateOverall(ratings), expectedOverall);
+  assert.equal(engine.calculateOverall({ ...ratings, FI: 0 }), expectedOverall);
+
   const state = engine.createInitialState({ ...player, position: "F" }, null);
   const applied = engine.applyToRatings(ratings, state);
-  assert.equal(applied.OA, engine.calculateOverall(applied, "F"));
-  assert.notEqual(applied.OA, 12);
+  assert.equal(applied.OFF, Math.round((applied.SH + applied.PL + applied.ST) / 3));
+  assert.equal(applied.DEF, Math.round((applied.CH + applied.PO + applied.HI) / 3));
+  assert.equal(applied.OA, engine.calculateOverall(applied));
 });
 
 test("fighting (FI) is excluded from OA while faceoffs (FA) remain part of skater OA", () => {

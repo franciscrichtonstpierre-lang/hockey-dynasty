@@ -1,4 +1,5 @@
 // Synchronise les effectifs officiels LNH et les listes publiques d'espoirs.
+// Cette synchronisation alimente la base maîtresse des nouvelles Dynasties; les sauvegardes déjà simulées doivent conserver leur instantané de départ.
 // Source: NHL Web API. N'écrase jamais un fichier avec une réponse vide/invalide.
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname } from "node:path";

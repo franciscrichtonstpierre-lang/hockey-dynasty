@@ -62,3 +62,38 @@ test("synthetic pilot refuses input that is not explicitly synthetic",async()=>{
   assert.match(run.stderr,/must explicitly declare synthetic/);
  }finally{await rm(dir,{recursive:true,force:true});}
 });
+
+
+test("equal Overall can produce distinct evidence-based skater archetypes",async()=>{
+ const { evaluateAdvancedSkater, classifyAdvancedProfile } = await import("../scripts/lib/advanced-player-rating-model.mjs");
+ const make = (off,def) => evaluateAdvancedSkater({position:"F"},{
+  gamesPlayed:55,
+  ixgPer60Percentile:off, goalsAboveExpectedPer60Percentile:off, primaryPointsPer60Percentile:off, shotGenerationPer60Percentile:off,
+  xgaSuppressionPercentile:def, expectedGoalDifferentialPercentile:def, shotAttemptSuppressionPercentile:def,
+  ixgPerShotPercentile:.5, goalsAboveExpectedPercentile:.5, shotVolumePer60Percentile:.5,
+  primaryAssistsPer60Percentile:.5, chanceCreationPercentile:.5, controlledEntriesPercentile:.5, controlledExitsPercentile:.5,
+  topSpeedPercentile:.5, speedBurstsPercentile:.5, highIntensityDistancePercentile:.5,
+  faceoffWinPercentile:.5, availabilityPercentile:.5, sustainedWorkloadPercentile:.5, penaltyDifferentialPercentile:.5,
+  STPercentile:.5, CHPercentile:.5, POPercentile:.5, HIPercentile:.5, LEPercentile:.5, SRPercentile:.5
+ });
+ const scorer=make(.95,.25), stopper=make(.25,.95);
+ assert.equal(scorer.overall,stopper.overall);
+ assert.equal(classifyAdvancedProfile(scorer).archetype,"offensive_elite");
+ assert.equal(classifyAdvancedProfile(stopper).archetype,"defensive_specialist");
+});
+
+test("low sample is a confidence flag, not a low-talent archetype",async()=>{
+ const { evaluateAdvancedSkater, classifyAdvancedProfile } = await import("../scripts/lib/advanced-player-rating-model.mjs");
+ const result=evaluateAdvancedSkater({position:"F"},{gamesPlayed:8,
+  ixgPer60Percentile:.9,goalsAboveExpectedPer60Percentile:.9,primaryPointsPer60Percentile:.9,shotGenerationPer60Percentile:.9,
+  xgaSuppressionPercentile:.8,expectedGoalDifferentialPercentile:.8,shotAttemptSuppressionPercentile:.8,
+  ixgPerShotPercentile:.8,goalsAboveExpectedPercentile:.8,shotVolumePer60Percentile:.8,
+  primaryAssistsPer60Percentile:.8,chanceCreationPercentile:.8,controlledEntriesPercentile:.8,controlledExitsPercentile:.8,
+  topSpeedPercentile:.8,speedBurstsPercentile:.8,highIntensityDistancePercentile:.8,
+  STPercentile:.8,CHPercentile:.8,POPercentile:.8,HIPercentile:.8,LEPercentile:.8,SRPercentile:.8
+ });
+ const profile=classifyAdvancedProfile(result);
+ assert.equal(profile.archetype,"offensive_elite");
+ assert.equal(profile.limitedSample,true);
+ assert.notEqual(profile.confidence,"high");
+});

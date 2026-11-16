@@ -630,6 +630,11 @@ for(const correction of (manualLeagueCorrections.players||[])){
   if(correction.playerId){
     const exactId=[...records.values()].filter(p=>String(p.id)===String(correction.playerId));
     if(exactId.length)matches=exactId;
+    else {
+      const rosterMatches=allMatches.filter(p=>["NHL","AHL"].includes(p.currentLeague)&&p.currentTeam);
+      if(rosterMatches.length===1)matches=rosterMatches;
+      else if(rosterMatches.length>1){const nhlMatches=rosterMatches.filter(p=>p.currentLeague==="NHL");if(nhlMatches.length===1)matches=nhlMatches;}
+    }
   }
   if(matches.length>1&&correction.birthDate){
     const exactBirth=matches.filter(p=>p.birthDate===correction.birthDate);
@@ -674,8 +679,9 @@ for(const correction of (manualLeagueCorrections.players||[])){
   const wantedPosition=posGroup(correction)||String(correction.position||"").toUpperCase();
   const targets=[selected,...allMatches.filter(p=>p!==selected&&(!p.currentLeague||p.currentLeague==="UNKNOWN")&&(!p.birthDate||!correction.birthDate||p.birthDate===correction.birthDate)&&(!p.position||!wantedPosition||p.position===wantedPosition||p.detailedPosition===String(correction.position||"").toUpperCase()))];
   for(const p of targets){
-    if(correction.currentLeague)p.currentLeague=correction.currentLeague;
-    if(Object.prototype.hasOwnProperty.call(correction,"currentTeam"))p.currentTeam=correction.currentTeam;
+    const hasOfficialRoster=["NHL","AHL"].includes(p.currentLeague)&&Boolean(p.currentTeam);
+    if(correction.currentLeague&&!hasOfficialRoster)p.currentLeague=correction.currentLeague;
+    if(Object.prototype.hasOwnProperty.call(correction,"currentTeam")&&!hasOfficialRoster)p.currentTeam=correction.currentTeam;
     if(correction.clearNhlRightsTeam===true)p.nhlRightsTeam=null;else if(correction.nhlRightsTeam&&codes.includes(correction.nhlRightsTeam))p.nhlRightsTeam=correction.nhlRightsTeam;
     if(correction.birthDate&&!p.birthDate)p.birthDate=correction.birthDate;if(correction.birthDateSource)p.birthDateSource=correction.birthDateSource;if(correction.heightCm!=null&&Number.isFinite(Number(correction.heightCm)))p.heightCm=Number(correction.heightCm);if(correction.weightKg!=null&&Number.isFinite(Number(correction.weightKg)))p.weightKg=Number(correction.weightKg);if(correction.shootsCatches)p.shootsCatches=correction.shootsCatches;
     if(correction.position&&!p.position)p.position=posGroup(correction)||correction.position;

@@ -92,3 +92,29 @@ L'importateur applique désormais un contrôle fail-closed adapté à un produit
 - les champs de portée de licence sont conservés dans les observations de provenance.
 
 Cette validation logicielle n'interprète pas un contrat et ne vérifie pas l'authenticité du document. Un humain doit confirmer que la licence écrite couvre bien Hockey Dynasty, les compétitions, les champs, les plateformes, la durée et les sorties affichées. Les tests utilisent une licence fictive de test; elle n'est pas une autorisation réelle.
+
+
+## Moteur de développement et vieillissement — revue du 16 novembre 2026
+
+Le dépôt contenait déjà un moteur de développement dédié (player-development.js), distinct du moteur de cotes avancées. Il utilise une échelle interne CA/PA de 1 à 200 et expose les attributs visibles sur 0–99. Les plafonds PA sont individualisés par attribut et pondérés selon le poste; le développement est déterministe à état initial et entrées identiques.
+
+Les leviers déjà présents dans le moteur :
+- progression par jour, âge et âge de pointe distinct par groupe de poste;
+- temps de glace, performance, cohérence/détermination, entraînement, intensité, entraîneur et installations;
+- plafond individuel de potentiel par attribut;
+- réduction de progression pendant les blessures;
+- régression après 32 ans, pondérée par famille d'attributs;
+- probabilité de retraite à partir de 35 ans.
+
+Ajouts de tests sur la branche :
+- comparaison d'opportunités de développement avec temps de glace et performance faibles/élevés;
+- comparaison de la marge de progression selon deux potentiels explicitement marqués comme vérifiés;
+- reproductibilité de la simulation pour un même état et les mêmes paramètres.
+
+Ces tests complètent les cas déjà présents pour le développement sur plusieurs blocs, l'équivalence 7/14/28 jours, les blessures, les plafonds PA, les âges de pointe par poste et la régression des vétérans.
+
+Limites et précautions :
+- les coefficients de croissance, de régression et de retraite sont des règles de simulation provisoires, pas des estimations empiriquement calibrées sur des historiques NHL licenciés;
+- un potentiel non vérifié ne doit pas être présenté comme une projection de dépisteur confirmée;
+- le moteur de développement n'a pas été fusionné avec les cotes avancées et ne déclenche aucun recalcul des joueurs de production;
+- validation CI requise avant de considérer cette couche comme vérifiée.

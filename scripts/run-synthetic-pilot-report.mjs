@@ -2,7 +2,7 @@
 // Refuses non-synthetic inputs and writes a local review report only.
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
-import { evaluateAdvancedGoalie, evaluateAdvancedSkater } from "./lib/advanced-player-rating-model.mjs";
+import { evaluateAdvancedGoalie, evaluateAdvancedSkater, classifyAdvancedProfile } from "./lib/advanced-player-rating-model.mjs";
 
 const input = process.argv[2] || "data/advanced-input/synthetic-pilot.json";
 const output = process.argv[3] || "data/advanced-evidence/synthetic-pilot-report.json";
@@ -23,7 +23,7 @@ const candidates = doc.players.map(row => {
     ? evaluateAdvancedGoalie({ playerId: row.playerId, position: "G" }, evidence)
     : evaluateAdvancedSkater({ playerId: row.playerId, position: row.position }, evidence);
   return { playerId: row.playerId, position: row.position, league: row.league, season: row.season,
-    usageCohort: row.usageCohort || "unspecified", result };
+    usageCohort: row.usageCohort || "unspecified", result, profile: classifyAdvancedProfile(result) };
 });
 const quantile = (values, p) => {
   if (!values.length) return null;

@@ -73,3 +73,7 @@ node scripts/import-advanced-evidence.mjs data/advanced-input/authorized-export.
 ## État de déploiement
 
 Aucune source externe n'a été téléchargée ou branchée automatiquement. Aucune cote de production, aucun potentiel, aucun contrat, aucun choix de repêchage et aucune donnée de droits d'équipe n'ont été modifiés. Le travail reste isolé sur la branche `ratings/gm-connected-methodology-v1`.
+
+## Pipeline candidate evaluation added
+
+The branch also includes `scripts/evaluate-advanced-evidence.mjs`. It reads the normalized importer output, runs the position-specific candidate evaluators, and writes `data/advanced-evidence/candidate-ratings.json`. This is explicitly a review artifact with `productionWrite:false`; it is not connected to the production registry or Supabase. An end-to-end regression test checks that the candidate evaluator produces ratings only when evidence coverage is sufficient and labels the output as non-production.

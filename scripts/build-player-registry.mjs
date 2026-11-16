@@ -669,7 +669,7 @@ for(const correction of (manualLeagueCorrections.players||[])){
     continue;
   }
   const selected=matches[0];
-  if(correction.playerId&&String(selected.id)!==String(correction.playerId)&&/^(?:nhl|ahl):/i.test(String(correction.playerId))&&/^(?:prospect|pipeline|manual-correction):/i.test(String(selected.id))){records.delete(selected.id);selected.id=String(correction.playerId);records.set(selected.id,selected)}
+  if(correction.playerId&&String(selected.id)!==String(correction.playerId)&&/^(?:nhl|ahl):/i.test(String(correction.playerId))){records.delete(selected.id);selected.id=String(correction.playerId);records.set(selected.id,selected)}
   if(correction.nhlPlayerId!=null&&Number.isFinite(Number(correction.nhlPlayerId)))selected.nhlPlayerId=Number(correction.nhlPlayerId);
   const wantedPosition=posGroup(correction)||String(correction.position||"").toUpperCase();
   const targets=[selected,...allMatches.filter(p=>p!==selected&&(!p.currentLeague||p.currentLeague==="UNKNOWN")&&(!p.birthDate||!correction.birthDate||p.birthDate===correction.birthDate)&&(!p.position||!wantedPosition||p.position===wantedPosition||p.detailedPosition===String(correction.position||"").toUpperCase()))];

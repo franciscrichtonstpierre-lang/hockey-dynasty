@@ -240,3 +240,62 @@ test("development remains deterministic for identical player state and simulatio
   const second = engine.advancePlayer(player, structuredClone(initial), options);
   assert.deepEqual(second, first);
 });
+
+
+test("natural development is position-specific: forwards favor offense and defencemen favor positioning/defense", () => {
+  const base = { ...player, id: "position-growth-profile", birthDate: null, age: 19, potential: 99 };
+  const forward = { ...base, position: "F" };
+  const defender = { ...base, position: "D" };
+  const forwardInitial = engine.createInitialState(forward, null);
+  const defenderInitial = engine.createInitialState(defender, null);
+  const options = { days: 28, asOf: start, training: { focus: "Équilibré", intensity: "Normale" }, iceTime: 24, performance: 65 };
+  const forwardEnd = engine.advancePlayer(forward, structuredClone(forwardInitial), options).state;
+  const defenderEnd = engine.advancePlayer(defender, structuredClone(defenderInitial), options).state;
+  const progress = (before, after, key) => {
+    const a = ability(before, key), b = ability(after, key);
+    return (b[0] - a[0]) + (b[2] - a[2]);
+  };
+  assert.ok(progress(forwardInitial, forwardEnd, "SH") > progress(forwardInitial, forwardEnd, "PO"));
+  assert.ok(progress(defenderInitial, defenderEnd, "PO") > progress(defenderInitial, defenderEnd, "SH"));
+});
+
+test("team training focus specializes individual attributes without changing FI independence", () => {
+  const young = { ...player, id: "focus-specialization", birthDate: null, age: 19, potential: 99 };
+  const initial = engine.createInitialState(young, null);
+  const options = { days: 28, asOf: start, intensity: "Normale", iceTime: 24, performance: 65 };
+  const attack = engine.advancePlayer(young, structuredClone(initial), {
+    ...options, training: { focus: "Attaque", intensity: "Normale" }
+  }).state;
+  const defense = engine.advancePlayer(young, structuredClone(initial), {
+    ...options, training: { focus: "Défense", intensity: "Normale" }
+  }).state;
+  const progress = (state, key) => {
+    const node = ability(state, key);
+    const startNode = ability(initial, key);
+    return (node[0] - startNode[0]) + (node[2] - startNode[2]);
+  };
+  assert.ok(progress(attack, "SH") > progress(defense, "SH"));
+  assert.ok(progress(defense, "PO") > progress(attack, "PO"));
+  assert.equal(progress(attack, "FI"), progress(defense, "FI"));
+});
+
+test("goalie focus uses dedicated existing-attribute pools and accepts the UI default Normale", () => {
+  const goalie = { ...player, id: "goalie-focus-test", position: "G", birthDate: null, age: 22, potential: 99 };
+  const initial = engine.createInitialState(goalie, null);
+  const technical = engine.advancePlayer(goalie, structuredClone(initial), {
+    days: 28, asOf: start, training: { goalieFocus: "Technique", intensity: "Normale" }
+  }).state;
+  const rebound = engine.advancePlayer(goalie, structuredClone(initial), {
+    days: 28, asOf: start, training: { goalieFocus: "Contrôle des rebonds", intensity: "Normale" }
+  }).state;
+  const normal = engine.advancePlayer(goalie, structuredClone(initial), {
+    days: 28, asOf: start, training: { goalieFocus: "Normale", intensity: "Normale" }
+  }).state;
+  const progress = (state, key) => {
+    const current = ability(state, key), before = ability(initial, key);
+    return (current[0] - before[0]) + (current[2] - before[2]);
+  };
+  assert.ok(progress(technical, "SK") > progress(rebound, "SK"));
+  assert.ok(progress(rebound, "PO") > progress(technical, "PO"));
+  assert.ok(Number.isFinite(progress(normal, "SK")));
+});

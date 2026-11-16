@@ -649,9 +649,9 @@ for(const correction of (manualLeagueCorrections.players||[])){
     if(unresolved.length)matches=unresolved;
   }
   if(matches.length===0){
-    const manualId=`manual-correction:${nameKey(correction.name).replace(/ /g,"-")}`;
+    const manualId=correction.playerId||((correction.nhlPlayerId!=null&&Number.isFinite(Number(correction.nhlPlayerId)))?`nhl:${Number(correction.nhlPlayerId)}`:`manual-correction:${nameKey(correction.name).replace(/ /g,"-")}`);
     add({
-      id:manualId,name:correction.name,aliases:correction.aliases||[],
+      id:manualId,name:correction.name,aliases:correction.aliases||[],nhlPlayerId:correction.nhlPlayerId!=null&&Number.isFinite(Number(correction.nhlPlayerId))?Number(correction.nhlPlayerId):null,
       position:posGroup(correction)||String(correction.position||"").toUpperCase()||null,
       currentLeague:correction.currentLeague||"OTHER",currentTeam:correction.currentTeam||null,
       nhlRightsTeam:correction.clearNhlRightsTeam===true?null:(codes.includes(correction.nhlRightsTeam)?correction.nhlRightsTeam:null),
@@ -669,6 +669,8 @@ for(const correction of (manualLeagueCorrections.players||[])){
     continue;
   }
   const selected=matches[0];
+  if(correction.playerId&&String(selected.id)!==String(correction.playerId)){records.delete(selected.id);selected.id=String(correction.playerId);records.set(selected.id,selected)}
+  if(correction.nhlPlayerId!=null&&Number.isFinite(Number(correction.nhlPlayerId)))selected.nhlPlayerId=Number(correction.nhlPlayerId);
   const wantedPosition=posGroup(correction)||String(correction.position||"").toUpperCase();
   const targets=[selected,...allMatches.filter(p=>p!==selected&&(!p.currentLeague||p.currentLeague==="UNKNOWN")&&(!p.birthDate||!correction.birthDate||p.birthDate===correction.birthDate)&&(!p.position||!wantedPosition||p.position===wantedPosition||p.detailedPosition===String(correction.position||"").toUpperCase()))];
   for(const p of targets){

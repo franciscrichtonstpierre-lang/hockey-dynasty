@@ -48,7 +48,9 @@ Le prototype actuel ne résout pas encore l'identité et la normalisation entre 
 ## Contrat de données pour l'importateur
 
 L'importateur attend un JSON local avec :
-- `source.name`, `source.url`, `source.checkedAt`, `source.season`, `source.licenseStatus`;
+- `source.name`, `source.url`, `source.checkedAt`, `source.season`, `source.licenseStatus=approved`, `source.licenseId`, `source.licenseVerifiedAt`;
+- `source.permissions.commercialGameUse=true` et `source.permissions.derivedOutputs=true` obligatoirement; un statut public/non commercial ou une autorisation générique est refusé;
+- `source.licenseExpiresAt` facultatif, mais une licence échue est refusée;
 - `rows[]` : `playerId`, `position`, `league`, `season`, `gamesPlayed`, `usageCohort`, `metrics`;
 - les métriques canoniques sont listées dans `scripts/import-advanced-evidence.mjs`.
 
@@ -77,3 +79,16 @@ Aucune source externe n'a été téléchargée ou branchée automatiquement. Auc
 ## Pipeline candidate evaluation added
 
 The branch also includes `scripts/evaluate-advanced-evidence.mjs`. It reads the normalized importer output, runs the position-specific candidate evaluators, and writes `data/advanced-evidence/candidate-ratings.json`. This is explicitly a review artifact with `productionWrite:false`; it is not connected to the production registry or Supabase. An end-to-end regression test checks that the candidate evaluator produces ratings only when evidence coverage is sufficient and labels the output as non-production.
+
+
+## Contrôle de portée de licence — ajout du 16 novembre 2026
+
+L'importateur applique désormais un contrôle fail-closed adapté à un produit pouvant être commercialisé :
+- `licenseStatus` doit être exactement `approved`;
+- un identifiant de licence écrit (`licenseId`) et une date de vérification valide (`licenseVerifiedAt`) sont obligatoires;
+- `permissions.commercialGameUse` et `permissions.derivedOutputs` doivent être explicitement `true`;
+- les statuts `public_noncommercial`, `manual_authorized`, `unknown` ou toute valeur différente de `approved` sont refusés;
+- une licence échue est refusée;
+- les champs de portée de licence sont conservés dans les observations de provenance.
+
+Cette validation logicielle n'interprète pas un contrat et ne vérifie pas l'authenticité du document. Un humain doit confirmer que la licence écrite couvre bien Hockey Dynasty, les compétitions, les champs, les plateformes, la durée et les sorties affichées. Les tests utilisent une licence fictive de test; elle n'est pas une autorisation réelle.

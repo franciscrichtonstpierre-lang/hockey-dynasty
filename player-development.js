@@ -48,11 +48,11 @@
   });
 
   const FOCUS_POOLS = Object.freeze({
-    "Attaque": ["SH", "PL", "ST", "OFF", "FA"],
-    "Défense": ["CH", "PO", "HI", "DEF", "SR"],
+    "Attaque": ["SH", "PL", "ST", "FA"],
+    "Défense": ["CH", "PO", "HI", "SR"],
     "Développement des jeunes": ["SK", "EN", "PE", "FA", "LE"],
-    "Avantage numérique": ["SH", "PL", "ST", "OFF"],
-    "Désavantage numérique": ["CH", "PO", "DEF", "PE"],
+    "Avantage numérique": ["SH", "PL", "ST"],
+    "Désavantage numérique": ["CH", "PO", "PE"],
     "Physique": ["EN", "SK", "FI", "HI", "SR"],
     "Technique": ["PE", "FA", "LE"],
     "Réflexes": ["FA", "SK", "EN"],
@@ -64,13 +64,56 @@
     return String(player?.id || player?.playerId || player?.nhlPlayerId || player?.name || "unknown");
   }
 
+  const OFFENSIVE_ATTRIBUTES = Object.freeze(["SH", "PL", "ST"]);
+  const DEFENSIVE_ATTRIBUTES = Object.freeze(["CH", "PO", "HI"]);
+  const OVERALL_ATTRIBUTES = Object.freeze(ATTRIBUTES.filter(attribute => !["FI", "OA"].includes(attribute)));
+
+  function averageAttributes(ratings, keys) {
+    const values = keys.map(key => numberOr(ratings?.[key], null)).filter(value => value != null);
+    return values.length ? clamp(Math.round(values.reduce((sum, value) => sum + clamp(value, 0, 99), 0) / values.length), 0, 99) : null;
+  }
+
+  function calculateOffensiveOverall(ratings) {
+    return averageAttributes(ratings, OFFENSIVE_ATTRIBUTES);
+  }
+
+  function calculateDefensiveOverall(ratings) {
+    return averageAttributes(ratings, DEFENSIVE_ATTRIBUTES);
+  }
+
+  function applyDerivedRatings(ratings) {
+    const output = { ...ratings };
+    const offensive = calculateOffensiveOverall(output);
+    const defensive = calculateDefensiveOverall(output);
+    if (offensive != null) output.OFF = offensive;
+    if (defensive != null) output.DEF = defensive;
+    const overall = averageAttributes(output, OVERALL_ATTRIBUTES);
+    if (overall != null) output.OA = overall;
+    return output;
+  }
+
+  function syncDerivedAbilityAttributes(abilityAttributes) {
+    const indexOf = key => ATTRIBUTES.indexOf(key);
+    const visible = slot => Object.fromEntries(ATTRIBUTES.map((key, index) => [
+      key, abilityToVisible(abilityAttributes[index][slot])
+    ]));
+    const setDerived = (target, keys) => {
+      const ca = visibleToAbility(averageAttributes(visible(0), keys) ?? 0);
+      const pa = Math.max(ca, visibleToAbility(averageAttributes(visible(1), keys) ?? 0));
+      abilityAttributes[indexOf(target)] = [ca, pa, 0];
+    };
+    setDerived("OFF", OFFENSIVE_ATTRIBUTES);
+    setDerived("DEF", DEFENSIVE_ATTRIBUTES);
+    setDerived("OA", OVERALL_ATTRIBUTES);
+  }
+
   function baseRatings(player) {
     const source = player?.attributes && typeof player.attributes === "object" ? player.attributes : {};
     const overall = numberOr(player?.overall ?? player?.OA, 50);
-    return Object.fromEntries(ATTRIBUTES.map(attribute => [
+    return applyDerivedRatings(Object.fromEntries(ATTRIBUTES.map(attribute => [
       attribute,
       clamp(numberOr(source[attribute], overall), 0, 99)
-    ]));
+    ])));
   }
 
   function ageAt(player, date) {
@@ -124,6 +167,8 @@
       abilityAttributes[index] = [ca, pa, Math.max(0, numberOr(oldProgress, numberOr(old?.regressionProgress, 0)))];
     }
 
+    syncDerivedAbilityAttributes(abilityAttributes);
+
     const priorSeed = Number(prior.rngState);
     const rngState = Number.isFinite(priorSeed) && priorSeed !== 0 ? priorSeed >>> 0 : hashSeed(id + ":development");
     const consistency = clamp(numberOr(player?.consistency ?? player?.CON, 70), 0, 100);
@@ -140,8 +185,8 @@
       disposition,
       rngState,
       abilityAttributes,
-      currentAbility: Math.round(abilityAttributes.reduce((sum, node) => sum + node[0], 0) / ATTRIBUTES.length),
-      potentialAbility: Math.round(abilityAttributes.reduce((sum, node) => sum + node[1], 0) / ATTRIBUTES.length),
+      currentAbility: abilityAttributes[ATTRIBUTES.indexOf("OA")][0],
+      potentialAbility: abilityAttributes[ATTRIBUTES.indexOf("OA")][1],
       potentialSource: player?.potentialStatus || (player?.potential != null ? "unverified" : "estimated_from_current_rating"),
       potentialIsEstimated: !["source_verified", "verified"].includes(String(player?.potentialStatus || "").toLowerCase()),
       lastUpdated: prior.lastUpdated || null,
@@ -231,6 +276,7 @@
       const age = ageAt(player, currentDate);
       const ageFactor = ageGrowthFactor(age, state.peakAge);
       const injuryFactor = day < injuredDays ? .28 : 1;
+      syncDerivedAbilityAttributes(state.abilityAttributes);
       const overall = abilityToVisible(state.abilityAttributes[ATTRIBUTES.indexOf("OA")][0]);
       const potential = abilityToVisible(state.abilityAttributes[ATTRIBUTES.indexOf("OA")][1]);
       const retirementChance = annualRetirementChance(age, overall, potential);
@@ -245,6 +291,7 @@
       const pool = FOCUS_POOLS[playerFocus] || FOCUS_POOLS["Équilibré"];
       const balanced = playerFocus === "Équilibré";
       for (const attribute of ATTRIBUTES) {
+        if (["OFF", "DEF", "OA"].includes(attribute)) continue;
         const ability = state.abilityAttributes[ATTRIBUTES.indexOf(attribute)];
         if (age >= 32) {
           const physicalWeight = ["SK", "EN", "ST", "HI", "SR"].includes(attribute) ? 1.35
@@ -283,8 +330,9 @@
       }
     }
 
-    state.currentAbility = Math.round(state.abilityAttributes.reduce((sum, node) => sum + node[0], 0) / ATTRIBUTES.length);
-    state.potentialAbility = Math.round(state.abilityAttributes.reduce((sum, node) => sum + node[1], 0) / ATTRIBUTES.length);
+    syncDerivedAbilityAttributes(state.abilityAttributes);
+    state.currentAbility = state.abilityAttributes[ATTRIBUTES.indexOf("OA")][0];
+    state.potentialAbility = state.abilityAttributes[ATTRIBUTES.indexOf("OA")][1];
     state.lastUpdated = end.toISOString().slice(0, 10);
     state.updatedAt = end.toISOString();
     return { state, gains, regressions, trainingGains, retired };
@@ -297,7 +345,7 @@
     const specific = dev.attributeDelta && typeof dev.attributeDelta === "object" ? dev.attributeDelta : {};
     const output = { ...source };
     for (const attribute of ATTRIBUTES) {
-      if (attribute === "OA") continue;
+      if (["OFF", "DEF", "OA"].includes(attribute)) continue;
       const base = numberOr(source[attribute], null);
       if (base == null) continue;
       const ability = Array.isArray(dev.abilityAttributes)
@@ -311,7 +359,10 @@
         output[attribute] = clamp(Math.round(base + delta), 0, 99);
       }
     }
-    const calculatedOverall = calculateOverall(output, dev.position || "F");
+    const derived = applyDerivedRatings(output);
+    output.OFF = derived.OFF;
+    output.DEF = derived.DEF;
+    const calculatedOverall = calculateOverall(derived, dev.position || "F");
     if (calculatedOverall != null) output.OA = calculatedOverall;
     else if (numberOr(source.OA, null) != null) output.OA = clamp(Math.round(numberOr(source.OA, 0) + legacyDelta + numberOr(specific.OA, 0)), 0, 99);
     return output;
@@ -326,20 +377,13 @@
   }
 
   function calculateOverall(ratings, position) {
-    const group = ["G", "D", "F"].includes(String(position || "").toUpperCase())
-      ? String(position).toUpperCase() : "F";
-    const weights = POSITION_WEIGHTS[group];
-    let weighted = 0;
-    let totalWeight = 0;
-    for (const attribute of ATTRIBUTES) {
-      if (attribute === "OA" || attribute === "FI") continue;
-      const value = numberOr(ratings?.[attribute], null);
-      if (value == null) continue;
-      const weight = weights[attribute] ?? 1;
-      weighted += clamp(value, 0, 99) * weight;
-      totalWeight += weight;
-    }
-    return totalWeight ? clamp(Math.round(weighted / totalWeight), 0, 99) : null;
+    // Straight average of all visible ratings except FI and OA; OFF and DEF are derived and included.
+    const derived = { ...ratings };
+    const offensive = calculateOffensiveOverall(derived);
+    const defensive = calculateDefensiveOverall(derived);
+    if (offensive != null) derived.OFF = offensive;
+    if (defensive != null) derived.DEF = defensive;
+    return averageAttributes(derived, OVERALL_ATTRIBUTES);
   }
 
   function createInitialState(player, previous) {
@@ -357,6 +401,8 @@
     applyToRatings,
     visibleRatingFor,
     calculateOverall,
+    calculateOffensiveOverall,
+    calculateDefensiveOverall,
     ageAt
   });
 })(typeof globalThis !== "undefined" ? globalThis : this);

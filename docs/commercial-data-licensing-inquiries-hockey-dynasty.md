@@ -177,3 +177,89 @@ Les résultats seraient normalisés par saison, ligue, poste et rôle, avec gest
 - Territoires de distribution : à négocier, aucune portée mondiale présumée.
 
 **Important :** ne pas inventer de société, de coordonnées, de ventes projetées ou d'engagements commerciaux. Ces brouillons ne constituent pas un avis juridique ni une licence. Aucune donnée protégée ne doit être intégrée à une version distribuée avant l'autorisation requise.
+
+
+## 10. Alternative commerciale à évaluer — Sportradar (vérification documentaire du 15 novembre 2026)
+
+**Documentation officielle :**
+- NHL API v7 : https://developer.sportradar.com/ice-hockey/reference/nhl-overview
+- NHL API Basics : https://developer.sportradar.com/ice-hockey/docs/nhl-ig-api-basics
+- NHL historical data : https://developer.sportradar.com/ice-hockey/docs/nhl-ig-historical-data
+- NCAA Men's Hockey API v3 : https://developer.sportradar.com/ice-hockey/reference/ncaamh-overview
+- Global Ice Hockey API v2 : https://developer.sportradar.com/ice-hockey/reference/global-ice-hockey-overview
+- Coverage Matrix : accessible depuis les pages de documentation ci-dessus.
+
+### Ce que la documentation confirme
+
+- **NHL :** API B2B authentifiée, réponses JSON ou XML, plus de 30 flux documentés. Les flux comprennent les effectifs actifs, profils de joueurs, blessures, transactions quotidiennes, feuilles de match, play-by-play, temps de glace, mises au jeu, tirs par zone, statistiques saisonnières et analyses Corsi/Fenwick. Des flux Push sont proposés aux clients temps réel.
+- **Historique NHL :** données annoncées à partir de la saison 2013; les données officielles NHL sont utilisées depuis 2015. Certains champs ne sont pas nécessairement disponibles pour les saisons anciennes.
+- **NCAA Men's Hockey :** API séparée couvrant le hockey masculin Division I, avec scores, calendriers, classements, équipes et effectifs. La documentation indique une couverture nettement moins profonde que l'API NHL; ne pas supposer qu'elle fournit des statistiques individuelles avancées équivalentes.
+- **Global Ice Hockey :** API distincte annonçant plus de 80 ligues, dont SHL, Liiga, Czech Extraliga, Ekstraliga et HKL. Elle fournit selon la compétition des profils, effectifs, résultats historiques, statistiques saisonnières et données en direct. La disponibilité exacte et la profondeur varient par ligue et événement; vérifier la Coverage Matrix avant tout engagement.
+- **Limite tracking :** les pages NHL examinées documentent les données événementielles et positionnelles, tirs par zone, analyses Corsi/Fenwick et temps de glace. Elles ne documentent pas explicitement un flux complet de tracking biomécanique du type vitesse maximale, accélérations et distance parcourue par joueur. Ces champs doivent être demandés et confirmés séparément; ne pas les considérer comme inclus.
+
+### Accès, prix et droits
+
+L'accès à l'API nécessite une authentification et un compte client. La documentation technique publique ne constitue pas une offre tarifaire ni une licence autorisant automatiquement l'utilisation dans un jeu commercial. Aucun tarif ferme, droit d'affichage dans un jeu vidéo, droit de stockage à long terme, droit de calcul/affichage de métriques dérivées, ni droit de redistribution n'a été confirmé par les pages examinées.
+
+Demander une proposition écrite pour un développeur indépendant canadien, incluant :
+1. Un forfait de développement/test et ses limites de requêtes.
+2. Un devis commercial pour PC et Android, achat unique ou autre modèle encore à déterminer.
+3. Les droits sur les données historiques et les mises à jour futures.
+4. Le stockage des données et des identifiants de joueurs après expiration du contrat.
+5. Le droit de calculer et d'afficher des attributs propriétaires (Overall 0–99, attributs de poste, potentiels et agrégats).
+6. Les droits de distribution par territoire, plateformes et nombre d'utilisateurs.
+7. Les champs exacts pour chaque ligue et chaque saison, avec exemple de payload et Coverage Matrix.
+8. La disponibilité réelle des mesures EDGE/tracking (vitesse, accélérations, distance, coordonnées), sans assimiler les événements play-by-play au tracking optique.
+
+### Brouillon de demande Sportradar
+
+**Subject: Hockey data licensing inquiry for an independent hockey management game (PC/Android)**
+
+Hello Sportradar team,
+
+I am an independent developer based in Canada, currently developing Hockey Dynasty, a hockey management and simulation game for PC and Android. I am evaluating a possible commercial release in the future and would like to understand your licensing options before selecting data providers.
+
+I reviewed your NHL API v7, NCAA Men's Hockey and Global Ice Hockey documentation. I am interested in a potential license for historical and ongoing player, team and game data, including rosters, player profiles, transactions, injuries, time on ice, play-by-play, shot zones, seasonal statistics and game analytics.
+
+Could you please advise:
+
+1. Which NHL, NCAA Men's Hockey and Global Ice Hockey packages could be licensed for a commercial PC/Android game, and which specific leagues/seasons/player-level fields are included?
+2. What are the available development/trial options, request limits and commercial pricing for an independent developer?
+3. Do the NHL feeds include player tracking measurements such as skating speed, acceleration, distance and continuous player coordinates, or only event/shot-zone and play-by-play information? If tracking is separate, who licenses it?
+4. May we calculate and display our own derived player ratings and attributes from licensed data, without exposing or redistributing raw feeds?
+5. What are the rules for historical storage, refreshes, attribution, end-user display, territories, user counts and data retention after termination?
+6. Can the license cover future seasons and additional leagues as Hockey Dynasty grows?
+
+I would appreciate a coverage matrix and a sample schema for the relevant feeds, together with an indicative quote and the applicable licensing terms.
+
+Thank you for your guidance.
+
+Best regards,
+Hockey Dynasty — independent developer
+
+### Statut de la piste
+
+**À contacter — aucune relation commerciale établie.** Les documentations confirment les API et leurs grandes catégories de couverture, mais pas les droits, les prix ni la présence d'un flux complet de tracking. Le dossier ne prétend pas que Sportradar est déjà licencié ou intégré.
+
+## 11. Autre fournisseur à sonder — Stats Perform / Opta
+
+- FAQ officielle de prix et licences : https://www.statsperform.com/faqs/stats-perform-faqs-pricing-licensing/
+- FAQ officielle couverture hockey : https://www.statsperform.com/faqs/stats-perform-faqs-partners-coverage/
+- Données granulaires : https://www.statsperform.com/fr/products/granular-data/
+
+Stats Perform indique couvrir un éventail de compétitions de hockey et propose des licences personnalisées par compétition, pays ou niveau de données. Ses tarifs sont établis sur devis; sa documentation indique qu'il travaille aussi avec des startups et petites organisations. Les pages publiques ne permettent toutefois pas d'identifier exactement les ligues de hockey, les champs individuels, la disponibilité de données de tracking, ni les droits d'utilisation dans Hockey Dynasty.
+
+**Action :** demander une liste de compétitions de hockey couvertes, un exemple de flux joueur/événement, les saisons historiques, la profondeur des statistiques avancées et un devis indépendant/jeu vidéo. Ne pas présumer que la couverture annoncée pour le sport hockey signifie une couverture de toutes les ligues souhaitées.
+
+## 12. Architecture de données recommandée pour limiter le risque de licence
+
+Conserver trois couches séparées :
+1. **Source sous licence :** données brutes minimales, isolées par fournisseur, avec identifiant de licence, champs permis, dates d'acquisition, saison, rétention et règles de suppression.
+2. **Calcul interne :** transformations, pondérations et modèle de notation Hockey Dynasty, avec traçabilité des champs d'entrée et version de l'algorithme.
+3. **Sortie du jeu :** attributs et cotes autorisés par le contrat, sans export des données brutes ou reconstruction des tables sources.
+
+Chaque champ du schéma normalisé doit avoir un statut : `licensed_input`, `public_reference_only`, `derived_internal`, `display_approved` ou `not_authorized`. Un champ ne passe pas en production parce qu'il est accessible techniquement : il faut une autorisation écrite couvrant l'usage prévu.
+
+Exemple de champs à demander aux fournisseurs : `provider_player_id`, `season_id`, `competition_id`, `games_played`, `toi_seconds`, `shots`, `shot_location`, `shot_type`, `xg`, `corsi_for`, `fenwick_for`, `faceoff_wins`, `goalie_saves`, `goals_saved_above_expected`, `tracking_top_speed`, `tracking_distance`, `tracking_accelerations`. Ces noms sont des champs canoniques souhaités, pas une affirmation que chaque fournisseur les propose.
+
+**Priorité de négociation :** Sportradar pour la base NHL transactionnelle/statistique et les ligues internationales; MoneyPuck pour xG si les droits commerciaux sont négociables; Evolving Hockey pour les métriques avancées si les droits de sorties dérivées sont négociables; NHL/EDGE ou un détenteur autorisé pour le tracking réel; Stats Perform comme deuxième devis multi-compétitions.

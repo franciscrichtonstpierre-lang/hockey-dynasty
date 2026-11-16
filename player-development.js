@@ -55,9 +55,22 @@
     "Désavantage numérique": ["CH", "PO", "PE"],
     "Physique": ["EN", "SK", "FI", "HI", "SR"],
     "Technique": ["PE", "FA", "LE"],
-    "Réflexes": ["FA", "SK", "EN"],
-    "Contrôle des rebonds": ["PO", "CH", "HI"],
     "Récupération": []
+  });
+
+  // Position changes the natural development profile; team focus adds a separate training bonus.
+  const POSITION_DEVELOPMENT_WEIGHTS = Object.freeze({
+    F: { SH:1.14, PL:1.12, ST:1.08, SK:1.06, CH:.94, PO:.92, HI:.94 },
+    D: { SH:.94, PL:1, ST:1.06, CH:1.12, PO:1.16, HI:1.10, SK:1.08, EN:1.05, SR:1.04 },
+    G: { SH:.82, PL:.84, ST:.94, CH:1.04, PO:1.14, HI:.92, SK:1.10, EN:1.08, PE:1.06, SR:1.04 }
+  });
+
+  // Goalie training uses only attributes that exist in the current 16-rating model.
+  // These are broad proxies, not a claim that the game already has separate goalie skills.
+  const GOALIE_FOCUS_POOLS = Object.freeze({
+    "Technique": ["SK", "PO", "PE"],
+    "Réflexes": ["SK", "PE", "SR"],
+    "Contrôle des rebonds": ["PO", "CH", "HI"]
   });
 
   function playerId(player) {
@@ -287,9 +300,12 @@
         break;
       }
 
-      const playerFocus = state.position === "G" ? (FOCUS_POOLS[goalieFocus] ? goalieFocus : "Équilibré") : focus;
-      const pool = FOCUS_POOLS[playerFocus] || FOCUS_POOLS["Équilibré"];
-      const balanced = playerFocus === "Équilibré";
+      const requestedGoalieFocus = goalieFocus === "Normale" ? "Équilibré" : goalieFocus;
+      const playerFocus = state.position === "G" ? requestedGoalieFocus : focus;
+      const pool = state.position === "G"
+        ? (GOALIE_FOCUS_POOLS[playerFocus] || [])
+        : (FOCUS_POOLS[playerFocus] || []);
+      const balanced = playerFocus === "Équilibré" || playerFocus === "Normale";
       for (const attribute of ATTRIBUTES) {
         if (["OFF", "DEF", "OA"].includes(attribute)) continue;
         const ability = state.abilityAttributes[ATTRIBUTES.indexOf(attribute)];
@@ -315,8 +331,10 @@
           ? (pool.includes(attribute) ? 1 : (balanced ? .48 : .08))
           : 0);
         const trainingBonus = focusWeight * .008 * intensityFactor * coachFactor;
+        const positionGrowthWeight = POSITION_DEVELOPMENT_WEIGHTS[state.position]?.[attribute] ?? 1;
         const naturalGrowth = .012 * ageFactor * gapFactor * state.disposition
-          * coachFactor * facilitiesFactor * usageFactor * performanceFactor * determinationFactor * leadershipFactor;
+          * coachFactor * facilitiesFactor * usageFactor * performanceFactor * determinationFactor * leadershipFactor
+          * positionGrowthWeight;
         const goalieAdjustment = isGoalie && ["FI", "SH", "PL", "FA"].includes(attribute) ? .72 : 1;
         const dailyNoise = .7 + random(state) * .6;
         ability[2] += (naturalGrowth + trainingBonus) * injuryFactor * goalieAdjustment * dailyNoise;

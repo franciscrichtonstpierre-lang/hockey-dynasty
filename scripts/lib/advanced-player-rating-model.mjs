@@ -157,3 +157,37 @@ export function evaluateAdvancedGoalie(player, evidence = {}) {
 
 export const ADVANCED_SKATER_FAMILIES = SKATER_FAMILIES;
 export const ADVANCED_OA_WEIGHTS = OA_WEIGHTS;
+
+
+// Profile labels describe the shape of observed evidence; they never change Overall.
+export function classifyAdvancedProfile(result) {
+  const m = result?.metadata || {};
+  const confidence = m.confidence || "very_low";
+  const sampleSize = m.sampleSize ?? null;
+  const limitedSample = !Number.isFinite(sampleSize) || sampleSize < 25;
+  if (!Number.isFinite(result?.overall)) {
+    return { archetype:"insufficient_evidence", confidence, limitedSample, rationale:"Overall is withheld until minimum evidence coverage is met." };
+  }
+  if (result.position === "G") {
+    const g = result.metrics || {};
+    const elite = [g.GSAx, g.SV, g.HD].filter(finite);
+    const strong = elite.length >= 2 && elite.filter(v => v >= 75).length >= 2;
+    const starter = finite(g.WORK) && g.WORK >= 65;
+    return {
+      archetype: strong ? (starter ? "elite_starter" : "high_end_goalie") : starter ? "workhorse_goalie" : "goalie",
+      confidence, limitedSample,
+      rationale:"Goalie profile uses goals-saved-above-expected, shot-quality and workload evidence; role labels remain indicative."
+    };
+  }
+  const a = result.attributes || {};
+  const off = a.OFF, def = a.DEF;
+  let archetype = "versatile_skater";
+  if (finite(off) && off >= 75 && (!finite(def) || off - def >= 10)) archetype = "offensive_elite";
+  else if (finite(def) && def >= 75 && (!finite(off) || def - off >= 10)) archetype = "defensive_specialist";
+  else if (finite(off) && finite(def) && off >= 65 && def >= 65) archetype = "two_way_complete";
+  else if (finite(result.overall) && result.overall < 60) archetype = "depth_player";
+  return {
+    archetype, confidence, limitedSample,
+    rationale:"Archetype is based only on observed OFF/DEF family scores and Overall; missing traits are not inferred."
+  };
+}

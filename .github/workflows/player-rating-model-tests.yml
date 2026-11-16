@@ -7,6 +7,7 @@ on:
       - "scripts/lib/advanced-player-rating-model.mjs"
       - "scripts/import-advanced-evidence.mjs"
       - "scripts/evaluate-advanced-evidence.mjs"
+      - "scripts/run-synthetic-pilot-report.mjs"
       - "data/rating-source-observation.schema.json"
       - "data/advanced-input/**"
       - "docs/advanced-data-integration-status-2026-11-15.md"

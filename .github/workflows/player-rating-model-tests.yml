@@ -6,11 +6,13 @@ on:
     paths:
       - "scripts/lib/advanced-player-rating-model.mjs"
       - "scripts/import-advanced-evidence.mjs"
+      - "scripts/evaluate-advanced-evidence.mjs"
       - "data/rating-source-observation.schema.json"
       - "data/advanced-input/**"
       - "docs/advanced-data-integration-status-2026-11-15.md"
       - "tests/advanced-player-rating-model.test.mjs"
       - "tests/import-advanced-evidence.test.mjs"
+      - "tests/evaluate-advanced-evidence.test.mjs"
       - "tests/rating-source-observation-schema.test.mjs"
       - "tests/ratings-invariants.test.mjs"
       - "player-development.js"

@@ -83,6 +83,21 @@ test("advanced evidence importer refuses a blocked PlayerWON dataset even when c
     }));
     const run=spawnSync(process.execPath,[script.pathname,input,join(dir,"out.json")],{encoding:"utf8",env:{...process.env,HD_ALLOW_TEST_FIXTURE:"1"}});
     assert.notEqual(run.status,0);
-    assert.match(run.stderr,/central registry does not approve this exact dataset/);
+    assert.match(run.stderr,/pending rights review/);
+  } finally { await rm(dir,{recursive:true,force:true}); }
+});
+
+test("advanced evidence importer reports pending PlayerWON rights separately from prohibition", async () => {
+  const dir = await mkdtemp(join(tmpdir(), "hd-advanced-pending-"));
+  try {
+    const input=join(dir,"input.json");
+    await writeFile(input,JSON.stringify({
+      source:{name:"PlayerWON NHL players",datasetId:"playerwon_nhl_players",url:"https://www.playerwon.ca/data/nhl/players/",checkedAt:"2026-11-17T12:00:00Z",season:"2026-2027",licenseStatus:"approved",licenseId:"PLAYERWON-POLICY",licenseVerifiedAt:"2026-11-17T12:00:00Z",permissions:{commercialGameUse:true,derivedOutputs:true,displayInGame:true},thirdPartyRightsVerified:true,paid:false},
+      rows:[{playerId:"p1",position:"F",league:"NHL",season:"2026-2027",metrics:{ixgPer60:1}}]
+    }));
+    const run=spawnSync(process.execPath,[script.pathname,input,join(dir,"out.json")],{encoding:"utf8",env:{...process.env,HD_ALLOW_TEST_FIXTURE:"1"}});
+    assert.notEqual(run.status,0);
+    assert.match(run.stderr,/pending rights review/);
+    assert.match(run.stderr,/review_required/);
   } finally { await rm(dir,{recursive:true,force:true}); }
 });

@@ -36,3 +36,11 @@ As of 2026-11-17, Steam Workshop lists two current community databases: [Premier
 **Rights gate:** the Steam Subscriber Agreement grants subscriptions for personal, non-commercial use and restricts reproduction, distribution and derivative use absent applicable permission. A free Workshop download is not a grant to use the database in a commercial game. Therefore, do not download-and-import, scrape, copy ratings, reproduce player/contract tables, or ship any EHM roster content. Keep both datasets excluded pending rights until written permission explicitly covers commercial use, modification/derived use, redistribution/display, and any third-party rights. Public release notes and high-level feature descriptions can be used as contextual research, with citations.
 
 Potential next step if needed: request a no-cost written license from the database authors. Until it is granted and recorded per dataset, the independent Hockey Dynasty ratings engine and other cleared sources continue without waiting.
+
+## File-level verification: OpenSport hockey.db (2026-11-17)
+
+The repository tree currently contains only `2015-16/nhl.txt` and `2015-16/nhl.yml` under its season folder, plus `teams.txt` and `leagues.txt`. The inspected `nhl.txt` is a 2015-16 schedule fixture (date/week, away team, home team), not player rosters, player statistics, contracts, or ratings. Its README dedicates the repository schema, data and scripts to the public domain. Decision: retain it only as a public-domain historical schedule/parser fixture; do not connect it to the player-rating or 2026-27 roster pipeline. It cannot supply OA attributes.
+
+## Existing zero-cost source already wired: ehlersio/nhl-contracts
+
+The repository already contains `scripts/sync-contracts.mjs`, which downloads the rolling `contracts`, `contract_seasons`, `gaps`, and `claims` JSON files for 2026-27 and maps contract claims to the local NHL roster by player ID (with normalized-name fallback). The sync workflow invokes this importer and validates the generated contract outputs. The upstream project declares its data CC0-1.0 and code MIT; preserve each record's source claims and confidence tier. This source supplies contract/salary evidence, not player ability attributes or OA ratings.

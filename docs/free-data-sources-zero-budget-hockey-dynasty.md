@@ -183,3 +183,13 @@ Une source n'est pas intégrable au produit simplement parce qu'elle est gratuit
 - nouvelles bibliothèques libres pour calculer xG, RAPM/GAR-like et métriques de gardiens.
 
 Ne pas proposer de devis, abonnements, essais payants ou licences payantes. Si aucune source gratuite avec droits commerciaux suffisants n'est trouvée, le dire explicitement plutôt que de la remplacer par une source payante.
+
+
+## Contrôle technique ajouté le 16 novembre 2026
+
+Le dépôt contient maintenant :
+- `data/data-source-rights-registry.json` : registre initial des droits et des réserves par source;
+- `scripts/lib/data-rights-gate.mjs` : fonction de contrôle bloquant les exports commerciaux si l'usage commercial, les dérivés et l'affichage ne sont pas explicitement autorisés, si la source est payante ou si les droits de tiers ne sont pas vérifiés;
+- `tests/data-rights-gate.test.mjs` : tests couvrant les refus et l'autorisation explicite.
+
+Ce garde-fou n'est pas encore branché automatiquement à tous les pipelines d'import/export. Aucun fichier PlayerWON ou NHL EDGE n'a été téléchargé/importé à cette étape : les pages du Data Hub sont identifiées, mais les CSV doivent encore être audités dataset par dataset (provenance, champs, saison et conditions de tiers) avant de les charger dans la base du jeu.

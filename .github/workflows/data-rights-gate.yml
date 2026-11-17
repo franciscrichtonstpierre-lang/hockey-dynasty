@@ -7,6 +7,7 @@ on:
       - "scripts/lib/data-rights-gate.mjs"
       - "scripts/import-advanced-evidence.mjs"
       - "data/data-source-rights-registry.json"
+      - "data/data-source-rights-registry.json"
       - "tests/data-rights-gate.test.mjs"
       - "tests/import-advanced-evidence.test.mjs"
   pull_request:
@@ -14,6 +15,7 @@ on:
     paths:
       - "scripts/lib/data-rights-gate.mjs"
       - "scripts/import-advanced-evidence.mjs"
+      - "data/data-source-rights-registry.json"
       - "tests/data-rights-gate.test.mjs"
       - "tests/import-advanced-evidence.test.mjs"
 

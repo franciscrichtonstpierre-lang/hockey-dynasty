@@ -1,7 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
-const registry = JSON.parse(await readFile("data/players/registry.json", "utf8"));
+const registry = JSON.parse(await readFile("data/players/registry-index/ratings-lookup.json", "utf8"));
 const keys = ["SH","PL","ST","CH","PO","HI","SK","EN","PE","FA","LE","SR"];
 const mean = values => Math.round(values.reduce((sum, value) => sum + value, 0) / values.length);
 test("every complete registry card obeys OFF, DEF and OA formulas (FI excluded)", () => {

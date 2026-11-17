@@ -195,3 +195,8 @@ Le dépôt contient maintenant :
 Le garde-fou est désormais branché à `scripts/import-advanced-evidence.mjs`. L'importateur refuse une source si l'usage commercial dans le jeu, les sorties dérivées, l'affichage, les droits de tiers ou l'absence de frais ne sont pas explicitement confirmés pour le dataset concerné. Il conserve ces décisions dans la provenance du fichier normalisé. Les autres pipelines d'import/export restent à raccorder au même contrôle. Le workflow GitHub Actions `.github/workflows/data-rights-gate.yml` exécute les tests du garde-fou et de l'importateur sur les changements ciblés.
 
 Aucun fichier PlayerWON ou NHL EDGE n'a été téléchargé/importé à cette étape : les pages du Data Hub sont identifiées, mais les CSV doivent encore être audités dataset par dataset (provenance, champs, saison et conditions de tiers) avant de les charger dans la base du jeu.
+
+
+## Audit PlayerWON par dataset — 2026-11-17
+
+Le rapport `docs/playerwon-dataset-rights-audit-2026-11-17.md` détaille les colonnes, leur provenance connue et les raisons du blocage. Le registre `data/data-source-rights-registry.json` contient maintenant des décisions au niveau de chaque dataset PlayerWON NHL (joueurs, gardiens, équipes, matchs, tirs, play-by-play, shifts et disponibilité). Tous restent bloqués ou exclus tant que les droits commerciaux des sources tierces ne sont pas établis. L'importateur vérifie désormais l'identifiant exact du dataset dans ce registre central : un manifeste local qui prétend être approuvé ne peut pas contourner une décision centrale `blocked`.

@@ -128,5 +128,116 @@
       "status": "public-reference-only",
       "notes": "Do not ingest NHL/EDGE data into a commercial build based solely on public endpoint availability."
     }
+  },
+  "datasets": {
+    "playerwon_nhl_players": {
+      "provider": "playerwon",
+      "dataset": "NHL player-season data",
+      "url": "https://www.playerwon.ca/data/nhl/players/",
+      "status": "blocked",
+      "commercialUseAllowed": false,
+      "derivedUseAllowed": false,
+      "displayApproved": false,
+      "thirdPartyRightsVerified": false,
+      "paid": false,
+      "reason": "Underlying NHL statistics; upstream commercial and display rights not established."
+    },
+    "playerwon_nhl_goalies": {
+      "provider": "playerwon",
+      "dataset": "NHL goalie-season data",
+      "url": "https://www.playerwon.ca/data/nhl/goalies/",
+      "status": "blocked",
+      "commercialUseAllowed": false,
+      "derivedUseAllowed": false,
+      "displayApproved": false,
+      "thirdPartyRightsVerified": false,
+      "paid": false,
+      "reason": "Underlying NHL statistics; upstream commercial and display rights not established."
+    },
+    "playerwon_nhl_teams": {
+      "provider": "playerwon",
+      "dataset": "NHL team-season snapshots",
+      "url": "https://www.playerwon.ca/data/nhl/teams/",
+      "status": "blocked",
+      "commercialUseAllowed": false,
+      "derivedUseAllowed": false,
+      "displayApproved": false,
+      "thirdPartyRightsVerified": false,
+      "paid": false,
+      "reason": "Underlying NHL standings data; upstream rights not established."
+    },
+    "playerwon_nhl_games": {
+      "provider": "playerwon",
+      "dataset": "NHL game log",
+      "url": "https://www.playerwon.ca/data/nhl/games/",
+      "status": "blocked",
+      "commercialUseAllowed": false,
+      "derivedUseAllowed": false,
+      "displayApproved": false,
+      "thirdPartyRightsVerified": false,
+      "paid": false,
+      "reason": "Underlying NHL game and boxscore data; upstream rights not established."
+    },
+    "playerwon_nhl_shots": {
+      "provider": "playerwon",
+      "dataset": "NHL shot events and PlayerWON xG",
+      "url": "https://www.playerwon.ca/data/nhl/shots/",
+      "status": "blocked",
+      "commercialUseAllowed": false,
+      "derivedUseAllowed": false,
+      "displayApproved": false,
+      "thirdPartyRightsVerified": false,
+      "paid": false,
+      "reason": "NHL event inputs and coordinates are third-party; PlayerWON xG authorship alone does not clear input-data rights."
+    },
+    "playerwon_nhl_play_by_play": {
+      "provider": "playerwon",
+      "dataset": "NHL play-by-play events",
+      "url": "https://www.playerwon.ca/data/nhl/play-by-play/",
+      "status": "blocked",
+      "commercialUseAllowed": false,
+      "derivedUseAllowed": false,
+      "displayApproved": false,
+      "thirdPartyRightsVerified": false,
+      "paid": false,
+      "reason": "Contains original NHL event fields and raw source event JSON."
+    },
+    "playerwon_nhl_shifts": {
+      "provider": "playerwon",
+      "dataset": "NHL player shifts",
+      "url": "https://www.playerwon.ca/data/nhl/shifts/",
+      "status": "blocked",
+      "commercialUseAllowed": false,
+      "derivedUseAllowed": false,
+      "displayApproved": false,
+      "thirdPartyRightsVerified": false,
+      "paid": false,
+      "reason": "Underlying NHL shift and time-on-ice data; upstream rights not established."
+    },
+    "playerwon_nhl_availability": {
+      "provider": "playerwon",
+      "dataset": "NHL player availability",
+      "url": "https://www.playerwon.ca/data/nhl/availability/",
+      "status": "excluded",
+      "commercialUseAllowed": false,
+      "derivedUseAllowed": false,
+      "displayApproved": false,
+      "thirdPartyRightsVerified": false,
+      "paid": false,
+      "reason": "Not part of initial roster snapshot; upstream rights not established."
+    },
+    "test-fixture": {
+      "provider": "internal-test",
+      "dataset": "Synthetic test-only rows",
+      "url": "https://example.invalid/test-fixture",
+      "status": "test-only",
+      "commercialUseAllowed": true,
+      "derivedUseAllowed": true,
+      "displayApproved": true,
+      "thirdPartyRightsVerified": true,
+      "paid": false,
+      "testOnly": true,
+      "reason": "Synthetic test fixture; import only when HD_ALLOW_TEST_FIXTURE=1."
+    }
   }
 }

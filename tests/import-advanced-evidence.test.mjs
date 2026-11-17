@@ -12,7 +12,7 @@ test("advanced evidence importer creates within-cohort percentiles with provenan
   try {
     const input = join(dir, "input.json"), output = join(dir, "out.json");
     await writeFile(input, JSON.stringify({
-      source:{name:"Test source",url:"https://example.org/data",checkedAt:"2026-11-15T12:00:00Z",season:"2025-2026",licenseStatus:"approved",licenseId:"TEST-COMMERCIAL-001",permissions:{commercialGameUse:true,derivedOutputs:true},licenseVerifiedAt:"2026-11-15T12:00:00Z"},
+      source:{name:"Test source",url:"https://example.org/data",checkedAt:"2026-11-15T12:00:00Z",season:"2025-2026",licenseStatus:"approved",licenseId:"TEST-COMMERCIAL-001",permissions:{commercialGameUse:true,derivedOutputs:true,displayInGame:true},thirdPartyRightsVerified:true,paid:false,licenseVerifiedAt:"2026-11-15T12:00:00Z"},
       rows:[
         {playerId:"p1",position:"F",league:"NHL",season:"2025-2026",gamesPlayed:50,usageCohort:"all",metrics:{ixgPer60:1,topSpeed:30}},
         {playerId:"p2",position:"F",league:"NHL",season:"2025-2026",gamesPlayed:50,usageCohort:"all",metrics:{ixgPer60:2,topSpeed:32}},
@@ -54,7 +54,7 @@ test("advanced evidence importer refuses approved label without explicit commerc
   const dir = await mkdtemp(join(tmpdir(), "hd-advanced-scope-"));
   try {
     const input=join(dir,"input.json");
-    const base={name:"Generic approval",url:"https://example.org",checkedAt:"2026-11-15T12:00:00Z",season:"2025-2026",licenseStatus:"approved",licenseId:"GENERIC-OK",licenseVerifiedAt:"2026-11-15T12:00:00Z",permissions:{commercialGameUse:false,derivedOutputs:false}};
+    const base={name:"Generic approval",url:"https://example.org",checkedAt:"2026-11-15T12:00:00Z",season:"2025-2026",licenseStatus:"approved",licenseId:"GENERIC-OK",licenseVerifiedAt:"2026-11-15T12:00:00Z",permissions:{commercialGameUse:false,derivedOutputs:false,displayInGame:false},thirdPartyRightsVerified:false,paid:false};
     await writeFile(input,JSON.stringify({source:base,rows:[{playerId:"p1",position:"F",league:"NHL",season:"2025-2026",metrics:{ixgPer60:1}}]}));
     const run=spawnSync(process.execPath,[script.pathname,input,join(dir,"out.json")],{encoding:"utf8"});
     assert.notEqual(run.status,0);
@@ -66,7 +66,7 @@ test("advanced evidence importer refuses expired commercial licenses", async () 
   const dir = await mkdtemp(join(tmpdir(), "hd-advanced-expired-"));
   try {
     const input=join(dir,"input.json");
-    await writeFile(input,JSON.stringify({source:{name:"Expired",url:"https://example.org",checkedAt:"2026-11-15T12:00:00Z",season:"2025-2026",licenseStatus:"approved",licenseId:"EXPIRED-1",licenseVerifiedAt:"2026-11-15T12:00:00Z",licenseExpiresAt:"2000-01-01T00:00:00Z",permissions:{commercialGameUse:true,derivedOutputs:true}},rows:[{playerId:"p1",position:"F",league:"NHL",season:"2025-2026",metrics:{ixgPer60:1}}]}));
+    await writeFile(input,JSON.stringify({source:{name:"Expired",url:"https://example.org",checkedAt:"2026-11-15T12:00:00Z",season:"2025-2026",licenseStatus:"approved",licenseId:"EXPIRED-1",licenseVerifiedAt:"2026-11-15T12:00:00Z",licenseExpiresAt:"2000-01-01T00:00:00Z",permissions:{commercialGameUse:true,derivedOutputs:true,displayInGame:true},thirdPartyRightsVerified:true,paid:false},rows:[{playerId:"p1",position:"F",league:"NHL",season:"2025-2026",metrics:{ixgPer60:1}}]}));
     const run=spawnSync(process.execPath,[script.pathname,input,join(dir,"out.json")],{encoding:"utf8"});
     assert.notEqual(run.status,0);
     assert.match(run.stderr,/license has expired/);

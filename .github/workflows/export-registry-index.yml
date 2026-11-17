@@ -28,11 +28,13 @@ jobs:
           node-version: "22"
       - name: Exporter les identités en petits fichiers
         run: node scripts/export-registry-index.mjs
-      - name: Publier l'index compact
+      - name: Vérifier les formules des cotes composites
+        run: node --test tests/composite-ratings.test.mjs
+      - name: Publier l'index compact et le registre recalculé
         run: |
           git config user.name "uhm-data-bot"
           git config user.email "uhm-data-bot@users.noreply.github.com"
-          git add data/players/registry-index
+          git add data/players/registry.json data/players/registry-index
           if git diff --cached --quiet; then
             echo "L'index compact est déjà à jour."
           else

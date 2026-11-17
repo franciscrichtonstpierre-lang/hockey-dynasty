@@ -44,7 +44,7 @@ test("advanced evidence importer refuses unknown or unapproved licensing status"
       source:{name:"Unapproved",datasetId:"test-fixture",url:"https://example.org",checkedAt:"2026-11-15T12:00:00Z",season:"2025-2026",licenseStatus:"public_noncommercial"},
       rows:[{playerId:"p1",position:"F",league:"NHL",season:"2025-2026",metrics:{ixgPer60:1}}]
     }));
-    const run=spawnSync(process.execPath,[script.pathname,input,join(dir,"out.json")],{encoding:"utf8"});
+    const run=spawnSync(process.execPath,[script.pathname,input,join(dir,"out.json")],{encoding:"utf8",env:{...process.env,HD_ALLOW_TEST_FIXTURE:"1"}});
     assert.notEqual(run.status,0);
     assert.match(run.stderr,/Refusing import/);
   } finally { await rm(dir,{recursive:true,force:true}); }
@@ -56,7 +56,7 @@ test("advanced evidence importer refuses approved label without explicit commerc
     const input=join(dir,"input.json");
     const base={name:"Generic approval",datasetId:"test-fixture",url:"https://example.org",checkedAt:"2026-11-15T12:00:00Z",season:"2025-2026",licenseStatus:"approved",licenseId:"GENERIC-OK",licenseVerifiedAt:"2026-11-15T12:00:00Z",permissions:{commercialGameUse:false,derivedOutputs:false,displayInGame:false},thirdPartyRightsVerified:false,paid:false};
     await writeFile(input,JSON.stringify({source:base,rows:[{playerId:"p1",position:"F",league:"NHL",season:"2025-2026",metrics:{ixgPer60:1}}]}));
-    const run=spawnSync(process.execPath,[script.pathname,input,join(dir,"out.json")],{encoding:"utf8"});
+    const run=spawnSync(process.execPath,[script.pathname,input,join(dir,"out.json")],{encoding:"utf8",env:{...process.env,HD_ALLOW_TEST_FIXTURE:"1"}});
     assert.notEqual(run.status,0);
     assert.match(run.stderr,/commercial game use/);
   } finally { await rm(dir,{recursive:true,force:true}); }
@@ -67,8 +67,22 @@ test("advanced evidence importer refuses expired commercial licenses", async () 
   try {
     const input=join(dir,"input.json");
     await writeFile(input,JSON.stringify({source:{name:"Expired",datasetId:"test-fixture",url:"https://example.org",checkedAt:"2026-11-15T12:00:00Z",season:"2025-2026",licenseStatus:"approved",licenseId:"EXPIRED-1",licenseVerifiedAt:"2026-11-15T12:00:00Z",licenseExpiresAt:"2000-01-01T00:00:00Z",permissions:{commercialGameUse:true,derivedOutputs:true,displayInGame:true},thirdPartyRightsVerified:true,paid:false},rows:[{playerId:"p1",position:"F",league:"NHL",season:"2025-2026",metrics:{ixgPer60:1}}]}));
-    const run=spawnSync(process.execPath,[script.pathname,input,join(dir,"out.json")],{encoding:"utf8"});
+    const run=spawnSync(process.execPath,[script.pathname,input,join(dir,"out.json")],{encoding:"utf8",env:{...process.env,HD_ALLOW_TEST_FIXTURE:"1"}});
     assert.notEqual(run.status,0);
     assert.match(run.stderr,/license has expired/);
+  } finally { await rm(dir,{recursive:true,force:true}); }
+});
+
+test("advanced evidence importer refuses a blocked PlayerWON dataset even when caller claims approval", async () => {
+  const dir = await mkdtemp(join(tmpdir(), "hd-advanced-registry-"));
+  try {
+    const input=join(dir,"input.json");
+    await writeFile(input,JSON.stringify({
+      source:{name:"PlayerWON NHL players",datasetId:"playerwon_nhl_players",url:"https://www.playerwon.ca/data/nhl/players/",checkedAt:"2026-11-17T12:00:00Z",season:"2026-2027",licenseStatus:"approved",licenseId:"PLAYERWON-POLICY",licenseVerifiedAt:"2026-11-17T12:00:00Z",permissions:{commercialGameUse:true,derivedOutputs:true,displayInGame:true},thirdPartyRightsVerified:true,paid:false},
+      rows:[{playerId:"p1",position:"F",league:"NHL",season:"2026-2027",metrics:{ixgPer60:1}}]
+    }));
+    const run=spawnSync(process.execPath,[script.pathname,input,join(dir,"out.json")],{encoding:"utf8",env:{...process.env,HD_ALLOW_TEST_FIXTURE:"1"}});
+    assert.notEqual(run.status,0);
+    assert.match(run.stderr,/central registry does not approve this exact dataset/);
   } finally { await rm(dir,{recursive:true,force:true}); }
 });

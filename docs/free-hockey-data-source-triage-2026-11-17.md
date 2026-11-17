@@ -16,6 +16,7 @@ A package's software license is not a license for the data returned by an upstre
 | MoneyPuck | Shot-level, xG and goalie analytics | Public download is not commercial permission; exclude from commercial pipeline under current non-commercial terms. |
 | Evolving Hockey | RAPM/GAR/xGAR and related metrics | Paid/personal-use restrictions; excluded under zero-budget commercial policy. |
 | NHL EDGE / NHL APIs | Tracking and official NHL statistics | Public endpoint/package availability is not commercial reuse permission; exclude until a no-cost permission is explicitly documented. |
+| EHM community rosters (Premier Pivot / TBL 2026-27) | Excellent comparison for league coverage, affiliations, roster structure and identifying omissions | Free Steam Workshop subscription is not a commercial data license. Steam Subscriber Agreement limits subscriptions to personal, non-commercial use and restricts copying/distribution absent permission. Do not parse/copy roster values into production unless authors and relevant rights holders provide written commercial permission. |
 
 ## Immediate engineering sequence
 1. Import only legacy public-domain/CC0 files after per-file verification; preserve license and provenance metadata.
@@ -26,3 +27,12 @@ A package's software license is not a license for the data returned by an upstre
 
 ## Important limitation
 This inventory identifies promising free routes; it does not establish that every data item in those repositories is accurate, complete, current, or cleared for commercial use. The source-level decision must be revisited when a new dataset/file or upstream endpoint is selected.
+
+
+## EHM 2026-27 community databases — useful comparison, not cleared input
+
+As of 2026-11-17, Steam Workshop lists two current community databases: [Premier Pivot Database v11.1 (2026-10-06)](https://steamcommunity.com/sharedfiles/filedetails/?id=1428241604) and [TBL Rosters v19.0.0](https://steamcommunity.com/sharedfiles/filedetails/?id=567307051). The community guide describes Premier Pivot as frequently updated with real-life transactions and TBL as a season-start snapshot based on Premier Pivot. These are valuable leads for checking whether Hockey Dynasty's team, league, affiliate and prospect coverage is missing anything.
+
+**Rights gate:** the Steam Subscriber Agreement grants subscriptions for personal, non-commercial use and restricts reproduction, distribution and derivative use absent applicable permission. A free Workshop download is not a grant to use the database in a commercial game. Therefore, do not download-and-import, scrape, copy ratings, reproduce player/contract tables, or ship any EHM roster content. Keep both datasets excluded pending rights until written permission explicitly covers commercial use, modification/derived use, redistribution/display, and any third-party rights. Public release notes and high-level feature descriptions can be used as contextual research, with citations.
+
+Potential next step if needed: request a no-cost written license from the database authors. Until it is granted and recorded per dataset, the independent Hockey Dynasty ratings engine and other cleared sources continue without waiting.

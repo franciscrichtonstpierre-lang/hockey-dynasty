@@ -24,8 +24,8 @@ test("OFF and DEF are derived from their three component attributes, overriding 
 
 test("OA is recalculated from the 14 non-FI attributes, not retained from input", () => {
   const result = estimatePlayerRatings({ name:"Test Skater", position:"D", currentLeague:"NHL", attributes:card(20) });
-  const weights = {SH:.08,PL:.08,ST:.05,CH:.08,PO:.10,HI:.05,SK:.06,EN:.08,PE:.08,FA:.03,LE:.05,SR:.08,OFF:.10,DEF:.08};
-  const expected = Math.round(Object.entries(weights).reduce((sum,[key,weight])=>sum+result.attributes[key]*weight,0)/Object.values(weights).reduce((sum,weight)=>sum+weight,0));
+  const nonFight = RATING_ATTRIBUTES.filter(key => key !== "FI" && key !== "OA");
+  const expected = Math.round(nonFight.reduce((sum,key)=>sum+result.attributes[key],0)/nonFight.length);
   assert.equal(result.attributes.OA, expected);
   assert.notEqual(result.attributes.OA, 99);
 });

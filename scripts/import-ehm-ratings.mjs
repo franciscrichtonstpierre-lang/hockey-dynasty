@@ -52,7 +52,7 @@ for (const p of source.players) {
 }
 const convert = value => {
   const n = Number(value);
-  if (!Number.isFinite(n) || n < 0 || n > scale) throw new Error("Invalid attribute value: " + value);
+  if (!Number.isFinite(n) || n < 1 || n > scale) throw new Error("Invalid EHM attribute value (expected 1-" + scale + "): " + value);
   return Math.round(n / scale * 99);
 };
 const ability = value => {
@@ -95,10 +95,10 @@ for (const player of registry.players.filter(p => p.currentLeague === "NHL")) {
     overall:OA,
     potential:ability(paRaw),
     potentialEstimate:ability(paRaw),
-    potentialStatus:"source_verified",
+    potentialStatus:"scouting_source_reviewed_estimate",
     potentialEstimateMethod:"ehm_2026_2027_pa_normalized_to_0_99",
     potentialSource:manifest.datasetUrl,
-    potentialConfidence:"source_verified",
+    potentialConfidence:"high",\n    potentialRationale:"EHM 2026-2027 Potential Ability (PA), normalized from the documented 1-200 scale.",
     ehmReference:{
       dataset:manifest.dataset,
       season:"2026-2027",

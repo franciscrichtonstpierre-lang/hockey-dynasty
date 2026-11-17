@@ -12008,7 +12008,27 @@
         "season": "2026-2027",
         "field": "Cap Hit"
       },
-      "capHitVerificationStatus": "SOURCE_VERIFIED"
+      "capHitVerificationStatus": "SOURCE_VERIFIED",
+      "contract": {
+        "contractKey": "manual-emil-andrae-2026-2028",
+        "signingTeam": "TOR",
+        "signedAt": "2026-07-04",
+        "type": "Standard Player Contract",
+        "termYears": 2,
+        "startSeason": "2026-27",
+        "endSeason": "2027-28",
+        "confidenceTier": "SOURCE_VERIFIED",
+        "sources": [
+          {
+            "publisher": "Toronto Maple Leafs",
+            "url": "https://www.nhl.com/mapleleafs/news/maple-leafs-sign-defenceman-emil-andrae"
+          },
+          {
+            "publisher": "Toronto Maple Leafs",
+            "url": "https://www.nhl.com/mapleleafs/news/maple-leafs-complete-trade-with-columbus"
+          }
+        ]
+      }
     },
     {
       "playerId": 8481161,
@@ -12338,7 +12358,24 @@
         "season": "2026-2027",
         "field": "Cap Hit"
       },
-      "capHitVerificationStatus": "SOURCE_VERIFIED"
+      "capHitVerificationStatus": "SOURCE_VERIFIED",
+      "contract": {
+        "contractKey": "manual-tyler-pitlick-2025-2027",
+        "signingTeam": "MIN",
+        "signedAt": "2025-07-02",
+        "type": "Two-Way Contract",
+        "termYears": 2,
+        "startSeason": "2025-26",
+        "endSeason": "2026-27",
+        "oneWay": false,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "sources": [
+          {
+            "publisher": "Minnesota Wild",
+            "url": "https://www.nhl.com/wild/news/minnesota-wild-signs-five-players-to-contracts-070225"
+          }
+        ]
+      }
     },
     {
       "playerId": 8485702,
@@ -13643,7 +13680,21 @@
         "season": "2026-2027",
         "field": "Cap Hit"
       },
-      "capHitVerificationStatus": "SOURCE_VERIFIED"
+      "capHitVerificationStatus": "SOURCE_VERIFIED",
+      "contract": {
+        "contractKey": "manual-quinton-burns-2024-2027",
+        "signingTeam": "STL",
+        "signedAt": "2024-08-23",
+        "type": "Entry Level Contract",
+        "termYears": 3,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "sources": [
+          {
+            "publisher": "St. Louis Blues",
+            "url": "https://www.nhl.com/blues/news/blues-sign-burns-to-entry-level-contract"
+          }
+        ]
+      }
     },
     {
       "playerId": 8481006,
@@ -14459,7 +14510,24 @@
       },
       "salaryVerificationStatus": "SOURCE_VERIFIED",
       "capHitVerificationStatus": "SOURCE_VERIFIED",
-      "sourceDataset": "manual_puckpedia_base_salary_override"
+      "sourceDataset": "manual_puckpedia_base_salary_override",
+      "contract": {
+        "contractKey": "manual-ben-jones-2026-2027",
+        "signingTeam": "CGY",
+        "signedAt": "2026-07-01",
+        "type": "Two-Way Contract",
+        "termYears": 1,
+        "startSeason": "2026-27",
+        "endSeason": "2026-27",
+        "oneWay": false,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "sources": [
+          {
+            "publisher": "Calgary Flames",
+            "url": "https://www.nhl.com/flames/news/topic/transactions/flames-announce-multiple-signings-01-07-26"
+          }
+        ]
+      }
     },
     {
       "playerId": 8482160,
@@ -14493,6 +14561,23 @@
         "url": "https://puckpedia.com/player/martin-chromiak",
         "season": "2026-2027",
         "field": "Minors Salary"
+      },
+      "contract": {
+        "contractKey": "manual-martin-chromiak-2026-2027",
+        "signingTeam": "LAK",
+        "signedAt": "2026-06-11",
+        "type": "Two-Way Contract",
+        "termYears": 1,
+        "startSeason": "2026-27",
+        "endSeason": "2026-27",
+        "oneWay": false,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "sources": [
+          {
+            "publisher": "Los Angeles Kings",
+            "url": "https://www.nhl.com/kings/news/topic/press-releases/la-kings-sign-forward-martin-chromiak-to-one-year-contract"
+          }
+        ]
       }
     },
     {
@@ -14743,7 +14828,21 @@
       },
       "salaryVerificationStatus": "SOURCE_VERIFIED",
       "capHitVerificationStatus": "SOURCE_VERIFIED",
-      "sourceDataset": "manual_puckpedia_base_salary_override"
+      "sourceDataset": "manual_puckpedia_base_salary_override",
+      "contract": {
+        "contractKey": "manual-adam-jiricek-2024-2027",
+        "signingTeam": "STL",
+        "signedAt": "2024-07-02",
+        "type": "Entry Level Contract",
+        "termYears": 3,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "sources": [
+          {
+            "publisher": "St. Louis Blues",
+            "url": "https://www.nhl.com/blues/news/jiricek-signs-3-year-entry-level-contract"
+          }
+        ]
+      }
     },
     {
       "playerId": 0,

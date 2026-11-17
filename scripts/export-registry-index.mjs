@@ -29,15 +29,6 @@ for (const player of players) {
   compositesRebuilt++;
 }
 if (!compositesRebuilt) throw new Error("No complete rating cards found; registry publication stopped.");
-registry.players = players;
-registry.compositeRatings = {
-  rule: "OFF=mean(SH,PL,ST); DEF=mean(CH,PO,HI); OA=mean(12 non-FI base attributes + OFF + DEF)",
-  rebuilt: compositesRebuilt,
-  incomplete: compositesIncomplete,
-  fiExcludedFromOA: true
-};
-await writeFile(sourcePath, JSON.stringify(registry, null, 2) + "\n", "utf8");
-
 const compact = players.map(p => ({
   id: p.id ?? null,
   nhlPlayerId: p.nhlPlayerId ?? null,

@@ -4,7 +4,14 @@
     "name": "zero-budget-commercial-use-only",
     "paidSourcesAllowed": false,
     "commercialExportRequiresExplicitApproval": true,
-    "unknownRightsDefault": "blocked"
+    "unknownRightsDefault": "review_required",
+    "statuses": [
+      "commercial-free-confirmed",
+      "review_required",
+      "prohibited",
+      "excluded_pending_rights",
+      "test-only"
+    ]
   },
   "sources": {
     "playerwon": {
@@ -134,85 +141,92 @@
       "provider": "playerwon",
       "dataset": "NHL player-season data",
       "url": "https://www.playerwon.ca/data/nhl/players/",
-      "status": "blocked",
+      "status": "review_required",
       "commercialUseAllowed": false,
       "derivedUseAllowed": false,
       "displayApproved": false,
       "thirdPartyRightsVerified": false,
       "paid": false,
-      "reason": "Underlying NHL statistics; upstream commercial and display rights not established."
+      "reason": "Upstream third-party rights are not yet verified. This is a review hold, not a finding that the data is prohibited. Do not import until approved.",
+      "decision": "pending"
     },
     "playerwon_nhl_goalies": {
       "provider": "playerwon",
       "dataset": "NHL goalie-season data",
       "url": "https://www.playerwon.ca/data/nhl/goalies/",
-      "status": "blocked",
+      "status": "review_required",
       "commercialUseAllowed": false,
       "derivedUseAllowed": false,
       "displayApproved": false,
       "thirdPartyRightsVerified": false,
       "paid": false,
-      "reason": "Underlying NHL statistics; upstream commercial and display rights not established."
+      "reason": "Upstream third-party rights are not yet verified. This is a review hold, not a finding that the data is prohibited. Do not import until approved.",
+      "decision": "pending"
     },
     "playerwon_nhl_teams": {
       "provider": "playerwon",
       "dataset": "NHL team-season snapshots",
       "url": "https://www.playerwon.ca/data/nhl/teams/",
-      "status": "blocked",
+      "status": "review_required",
       "commercialUseAllowed": false,
       "derivedUseAllowed": false,
       "displayApproved": false,
       "thirdPartyRightsVerified": false,
       "paid": false,
-      "reason": "Underlying NHL standings data; upstream rights not established."
+      "reason": "Upstream third-party rights are not yet verified. This is a review hold, not a finding that the data is prohibited. Do not import until approved.",
+      "decision": "pending"
     },
     "playerwon_nhl_games": {
       "provider": "playerwon",
       "dataset": "NHL game log",
       "url": "https://www.playerwon.ca/data/nhl/games/",
-      "status": "blocked",
+      "status": "review_required",
       "commercialUseAllowed": false,
       "derivedUseAllowed": false,
       "displayApproved": false,
       "thirdPartyRightsVerified": false,
       "paid": false,
-      "reason": "Underlying NHL game and boxscore data; upstream rights not established."
+      "reason": "Upstream third-party rights are not yet verified. This is a review hold, not a finding that the data is prohibited. Do not import until approved.",
+      "decision": "pending"
     },
     "playerwon_nhl_shots": {
       "provider": "playerwon",
       "dataset": "NHL shot events and PlayerWON xG",
       "url": "https://www.playerwon.ca/data/nhl/shots/",
-      "status": "blocked",
+      "status": "review_required",
       "commercialUseAllowed": false,
       "derivedUseAllowed": false,
       "displayApproved": false,
       "thirdPartyRightsVerified": false,
       "paid": false,
-      "reason": "NHL event inputs and coordinates are third-party; PlayerWON xG authorship alone does not clear input-data rights."
+      "reason": "Upstream third-party rights are not yet verified. This is a review hold, not a finding that the data is prohibited. Do not import until approved.",
+      "decision": "pending"
     },
     "playerwon_nhl_play_by_play": {
       "provider": "playerwon",
       "dataset": "NHL play-by-play events",
       "url": "https://www.playerwon.ca/data/nhl/play-by-play/",
-      "status": "blocked",
+      "status": "review_required",
       "commercialUseAllowed": false,
       "derivedUseAllowed": false,
       "displayApproved": false,
       "thirdPartyRightsVerified": false,
       "paid": false,
-      "reason": "Contains original NHL event fields and raw source event JSON."
+      "reason": "Upstream third-party rights are not yet verified. This is a review hold, not a finding that the data is prohibited. Do not import until approved.",
+      "decision": "pending"
     },
     "playerwon_nhl_shifts": {
       "provider": "playerwon",
       "dataset": "NHL player shifts",
       "url": "https://www.playerwon.ca/data/nhl/shifts/",
-      "status": "blocked",
+      "status": "review_required",
       "commercialUseAllowed": false,
       "derivedUseAllowed": false,
       "displayApproved": false,
       "thirdPartyRightsVerified": false,
       "paid": false,
-      "reason": "Underlying NHL shift and time-on-ice data; upstream rights not established."
+      "reason": "Upstream third-party rights are not yet verified. This is a review hold, not a finding that the data is prohibited. Do not import until approved.",
+      "decision": "pending"
     },
     "playerwon_nhl_availability": {
       "provider": "playerwon",

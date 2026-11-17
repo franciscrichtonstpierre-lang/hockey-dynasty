@@ -6,6 +6,7 @@
 
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
+import { assertCommercialExportAllowed } from "./lib/data-rights-gate.mjs";
 
 const INPUT = process.argv[2];
 const OUTPUT = process.argv[3] || "data/advanced-evidence/normalized-evidence.json";
@@ -16,19 +17,14 @@ const source = sourceDoc.source || {};
 if (!source.name || !source.url || !source.checkedAt || !source.season) {
   throw new Error("Source provenance requires name, url, checkedAt and season.");
 }
-// Fail closed for a potentially commercial game. Access to a dataset, a public download,
- // personal-use permission, or a generic manual authorization is not enough.
+// Fail closed using the shared project-wide rights gate. A public/free CSV is not
+// sufficient: commercial game use, derived output, in-game display and upstream
+// third-party rights must all be explicitly verified for this exact dataset.
 if (source.licenseStatus !== "approved") {
   throw new Error("Refusing import: commercial use requires licenseStatus=approved.");
 }
 if (!source.licenseId || typeof source.licenseId !== "string") {
-  throw new Error("Refusing import: an identifiable written licenseId is required.");
-}
-if (source.permissions?.commercialGameUse !== true) {
-  throw new Error("Refusing import: license must explicitly allow commercial game use.");
-}
-if (source.permissions?.derivedOutputs !== true) {
-  throw new Error("Refusing import: license must explicitly allow derived outputs in the game.");
+  throw new Error("Refusing import: record the exact policy/license identifier (URL plus version/date is acceptable).");
 }
 if (!source.licenseVerifiedAt || Number.isNaN(Date.parse(source.licenseVerifiedAt))) {
   throw new Error("Refusing import: licenseVerifiedAt must be a valid date-time.");
@@ -36,6 +32,13 @@ if (!source.licenseVerifiedAt || Number.isNaN(Date.parse(source.licenseVerifiedA
 if (source.licenseExpiresAt && Date.parse(source.licenseExpiresAt) <= Date.now()) {
   throw new Error("Refusing import: license has expired.");
 }
+assertCommercialExportAllowed({
+  commercialUseAllowed: source.permissions?.commercialGameUse === true,
+  derivedUseAllowed: source.permissions?.derivedOutputs === true,
+  displayApproved: source.permissions?.displayInGame === true,
+  thirdPartyRightsVerified: source.thirdPartyRightsVerified === true,
+  paid: source.paid === true || source.requiresPayment === true
+}, "advanced evidence import");
 if (!Array.isArray(sourceDoc.rows) || !sourceDoc.rows.length) throw new Error("No source rows supplied.");
 
 const validPositions = new Set(["F","C","LW","RW","D","G"]);

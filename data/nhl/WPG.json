@@ -343,6 +343,34 @@
       "birthStateProvince": {
         "default": "SK"
       }
+    },
+    {
+      "id": 8483526,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/WPG/8483526.png",
+      "firstName": {
+        "default": "Danil"
+      },
+      "lastName": {
+        "default": "Zhilkin"
+      },
+      "sweaterNumber": 53,
+      "positionCode": "C",
+      "shootsCatches": "L",
+      "heightInInches": 73,
+      "weightInPounds": 192,
+      "heightInCentimeters": 185,
+      "weightInKilograms": 87,
+      "birthDate": "2003-12-19",
+      "birthCity": {
+        "default": "Moscow",
+        "cs": "Moskva",
+        "de": "Moskau",
+        "fi": "Moskova",
+        "fr": "Moscou",
+        "sk": "Moskva",
+        "sv": "Moskva"
+      },
+      "birthCountry": "RUS"
     }
   ],
   "defensemen": [
@@ -634,5 +662,5 @@
   ],
   "_sourceSeason": "20262027",
   "_sourceUrl": "https://api-web.nhle.com/v1/roster/WPG/20262027",
-  "_syncedAt": "2026-11-17T09:24:44.388Z"
+  "_syncedAt": "2026-11-17T21:44:31.547Z"
 }

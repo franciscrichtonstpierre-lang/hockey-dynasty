@@ -26,7 +26,7 @@ function walk(value,out=[]) {
   if(value&&typeof value==="object"){out.push(value);for(const x of Object.values(value))if(x&&typeof x==="object")walk(x,out)}
   return out;
 }
-const norm=s=>String(s||"").normalize("NFD").replace(/[\\u0300-\\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]/g,"");
+const norm=s=>String(s||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]/g,"");
 const bootstrap=await get(endpoint("bootstrap",{season:seasonId,pageName:"roster"}));
 const seasonRows=[...(bootstrap.regularSeasons||[]),...(bootstrap.playoffSeasons||[])];
 const season=seasonRows.find(s=>String(s.season_name||s.seasonName||s.name||"").replace(/\\s/g,"").includes("2026-2027")||String(s.season_id||s.id||"")===seasonId);

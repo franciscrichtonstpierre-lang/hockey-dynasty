@@ -26,11 +26,13 @@ if (registryRecord.testOnly === true && process.env.HD_ALLOW_TEST_FIXTURE !== "1
   throw new Error("Refusing import: test-only dataset cannot be used outside explicit test mode.");
 }
 if (registryRecord.testOnly !== true && registryRecord.status !== "commercial-free-confirmed") {
-  throw new Error("Refusing import: central registry does not approve this exact dataset for commercial use.");
+  const reason = registryRecord.status === "prohibited"
+    ? "this dataset is explicitly prohibited for the intended use"
+    : "this dataset is pending rights review; it is not classified as prohibited";
+  throw new Error("Refusing import: " + reason + ". Registry status: " + registryRecord.status + ".");
 }
-// Fail closed using the shared project-wide rights gate. A public/free CSV is not
-// sufficient: commercial game use, derived output, in-game display and upstream
-// third-party rights must all be explicitly verified for this exact dataset.
+// Keep the legal decision distinct: explicitly prohibited sources are rejected;
+// incomplete evidence is reported as pending review. Neither may enter production.
 if (source.licenseStatus !== "approved") {
   throw new Error("Refusing import: commercial use requires licenseStatus=approved.");
 }

@@ -117,7 +117,7 @@ for (const [cohort, cohortRows] of groups) {
       playerId:String(row.playerId), position:row.position, league:row.league, season:row.season,
       usageCohort:row.usageCohort || "all", gamesPlayed:Number.isFinite(row.gamesPlayed)?row.gamesPlayed:null,
       sources:[source.name],
-      sourceObservations:[{sourceName:source.name,sourceUrl:source.url,checkedAt:source.checkedAt,season:String(row.season),licenseStatus:source.licenseStatus,licenseId:source.licenseId,commercialGameUse:source.permissions.commercialGameUse,derivedOutputs:source.permissions.derivedOutputs,licenseVerifiedAt:source.licenseVerifiedAt,licenseExpiresAt:source.licenseExpiresAt||null}],
+      sourceObservations:[{sourceName:source.name,sourceUrl:source.url,checkedAt:source.checkedAt,season:String(row.season),licenseStatus:source.licenseStatus,licenseId:source.licenseId,commercialGameUse:source.permissions.commercialGameUse,derivedOutputs:source.permissions.derivedOutputs,licenseVerifiedAt:source.licenseVerifiedAt,licenseExpiresAt:source.licenseExpiresAt||null,displayInGame:source.permissions?.displayInGame===true,thirdPartyRightsVerified:source.thirdPartyRightsVerified===true,paid:source.paid===true||source.requiresPayment===true}],
       sourceMetricCount:0
     };
     for (const [rawKey, percentileKey] of Object.entries(metricMap)) {
@@ -133,7 +133,7 @@ for (const [cohort, cohortRows] of groups) {
 }
 const out = {
   schemaVersion:1, generatedAt:new Date().toISOString(),
-  source:{name:source.name,url:source.url,checkedAt:source.checkedAt,season:source.season,licenseStatus:source.licenseStatus,licenseId:source.licenseId,permissions:source.permissions,licenseVerifiedAt:source.licenseVerifiedAt,licenseExpiresAt:source.licenseExpiresAt||null},
+  source:{name:source.name,url:source.url,checkedAt:source.checkedAt,season:source.season,licenseStatus:source.licenseStatus,licenseId:source.licenseId,permissions:source.permissions,licenseVerifiedAt:source.licenseVerifiedAt,licenseExpiresAt:source.licenseExpiresAt||null,thirdPartyRightsVerified:source.thirdPartyRightsVerified===true,paid:source.paid===true||source.requiresPayment===true},
   inputRowCount:rows.length, cohortCount:groups.size, normalizedRowCount:normalized.length,
   method:"within_league_season_position_usage_empirical_percentile_v1",
   warnings:[

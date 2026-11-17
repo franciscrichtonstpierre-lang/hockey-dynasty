@@ -95,7 +95,7 @@ test("low sample is a confidence flag, not a low-talent archetype",async()=>{
   STPercentile:.8,CHPercentile:.8,POPercentile:.8,HIPercentile:.8,LEPercentile:.8,SRPercentile:.8
  });
  const profile=classifyAdvancedProfile(result);
- assert.equal(profile.archetype,"offensive_elite");
+ assert.equal(profile.archetype,"two_way_complete");
  assert.equal(profile.limitedSample,true);
  assert.notEqual(profile.confidence,"high");
 });

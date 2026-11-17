@@ -31,6 +31,9 @@ if (String(source.season) !== "2026-2027" || String(manifest.season) !== "2026-2
 }
 const scale = Number(manifest.attributeScale);
 if (![20, 99, 100].includes(scale)) throw new Error("manifest.attributeScale must be 20, 99 or 100.");
+const overallScale = Number(manifest.overallScale);
+if (![99, 100].includes(overallScale)) throw new Error("manifest.overallScale must be 99 or 100; map the source's actual EHM overall field explicitly.");
+const overallField = manifest.overallField || "OA";
 const caScale = Number(manifest.abilityScale);
 if (caScale !== 200) throw new Error("manifest.abilityScale must be 200 (EHM CA/PA scale).");
 
@@ -53,7 +56,7 @@ for (const p of source.players) {
 const convert = value => {
   const n = Number(value);
   if (!Number.isFinite(n) || n < 1 || n > scale) throw new Error("Invalid EHM attribute value (expected 1-" + scale + "): " + value);
-  return Math.round(n / scale * 99);
+  return Math.round((n - 1) / (scale - 1) * 99);
 };
 const ability = value => {
   const n = Number(value);
@@ -85,14 +88,21 @@ for (const player of registry.players.filter(p => p.currentLeague === "NHL")) {
   const DEF = Math.round((raw.CH + raw.PO + raw.HI) / 3);
   const FI = row.attributes[manifest.attributeMap?.FI || "FI"] == null
     ? 10 : convert(row.attributes[manifest.attributeMap?.FI || "FI"]);
-  const OA = Math.round([...keys.map(k => raw[k]), OFF, DEF].reduce((a,b) => a+b,0) / 14);
+  const oaRaw = row[overallField] ?? row.overall;
+  if (oaRaw == null) throw new Error("Missing source EHM overall field '" + overallField + "' for " + row.name);
+  const oaNumber = Number(oaRaw);
+  const oaMin = overallScale === 100 ? 1 : 0;
+  if (!Number.isFinite(oaNumber) || oaNumber < oaMin || oaNumber > overallScale) {
+    throw new Error("Invalid EHM overall for " + row.name + ": expected " + oaMin + "-" + overallScale + ", received " + oaRaw);
+  }
+  const OA = overallScale === 100 ? Math.round((oaNumber - 1) / 99 * 99) : Math.round(oaNumber);
   const paRaw = row.PA ?? row.pa ?? row.potentialAbility;
   const caRaw = row.CA ?? row.ca ?? row.currentAbility;
   if (paRaw == null || caRaw == null) throw new Error("Missing EHM CA/PA for " + row.name);
   outputPlayers.push({
     ...player,
     attributes:{ FI, ...raw, OFF, DEF, OA },
-    overall:OA,
+    overall:OA,\n    ehmOverall:OA,\n    ehmCA:Number(caRaw),\n    ehmPA:Number(paRaw),
     potential:ability(paRaw),
     potentialEstimate:ability(paRaw),
     potentialStatus:"scouting_source_reviewed_estimate",
@@ -113,7 +123,7 @@ for (const player of registry.players.filter(p => p.currentLeague === "NHL")) {
     ratingSource:manifest.datasetUrl,
     ratingStatus:"source_verified_ehm_reference",
     ratingConfidence:"source_verified",
-    ratingMethod:"ehm_2026_2027_attributes_normalized_with_hd_composite_rules",
+    ratingMethod:"ehm_2026_2027_source_overall_and_attributes",
     ratingEvidence:"ehm_community_roster_authorized_import",
     ratedAttributes:["FI",...keys,"OFF","DEF","OA"]
   });
@@ -131,7 +141,7 @@ const result = {
     attributeScale:scale,
     abilityScale:200,
     potential:"PA normalized from 1-200 to 0-99",
-    oa:"arithmetic mean of 12 mapped attributes plus OFF and DEF; FI excluded"
+    oa:"exact mapped source overall; no Hockey Dynasty recomputation",\n    overallField,\n    overallScale
   },
   summary:{
     nhlPlayersInRegistry:registry.players.filter(p=>p.currentLeague==="NHL").length,

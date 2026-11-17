@@ -65,3 +65,10 @@ Sources de référence à consulter :
 - [Elite Prospects](https://www.eliteprospects.com/)
 - [HockeyProspecting](https://hockeyprospecting.com/)
 - [Daily Faceoff — prospect rankings](https://www.dailyfaceoff.com/)
+
+
+## Politique de données gratuites
+
+Le projet privilégie désormais exclusivement les sources et outils gratuits, sans licences payantes, abonnements ni essais payants. La matrice des sources, les conditions d'utilisation commerciale et les règles de provenance sont documentées dans [la stratégie de données gratuites uniquement](docs/free-data-sources-zero-budget-hockey-dynasty.md).
+
+Les anciens brouillons de demandes de licences commerciales sont archivés et ne doivent pas être envoyés : [dossier archivé](docs/commercial-data-licensing-inquiries-hockey-dynasty.md).

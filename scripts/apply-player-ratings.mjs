@@ -124,7 +124,15 @@ for (const player of registry.players || []) {
   const override = calibrationOverrides.players?.[String(player.nhlPlayerId || "")];
   if (!override) continue;
   player.attributes = { ...player.attributes, ...override.attributes };
-  player.overall = override.overall;
+  // Calibration cards obey the same derived OFF/DEF/OA rules as every other player.
+  player.attributes.OFF = Math.round((player.attributes.SH + player.attributes.PL + player.attributes.ST) / 3);
+  player.attributes.DEF = Math.round((player.attributes.CH + player.attributes.PO + player.attributes.HI) / 3);
+  player.attributes.OA = Math.round(RATING_ATTRIBUTES.filter(key => key !== "FI" && key !== "OA")
+    .reduce((sum, key) => sum + player.attributes[key], 0) / 14);
+  if (player.attributes.OA !== override.overall) {
+    throw new Error(`Calibration OA for ${player.name} must match the simple non-FI mean: expected ${player.attributes.OA}, configured ${override.overall}.`);
+  }
+  player.overall = player.attributes.OA;
   player.potential = override.potential;
   player.potentialEstimate = override.potential;
   player.potentialStatus = override.potentialStatus || "provisional_model_estimate";
@@ -136,8 +144,8 @@ for (const player of registry.players || []) {
   player.ratingModeledAttributes = [];
   player.ratedAttributes = RATING_ATTRIBUTES.slice();
   if (!exact(player.attributes)) throw new Error(`Invalid calibrated rating card for ${player.name}.`);
-  const weights = { SH:0.08, PL:0.08, ST:0.05, CH:0.08, PO:0.10, HI:0.05, SK:0.06, EN:0.08, PE:0.08, FA:0.03, LE:0.05, SR:0.08, OFF:0.10, DEF:0.08 };
-  const oa = Math.round(Object.entries(weights).reduce((sum, [key, weight]) => sum + player.attributes[key] * weight, 0));
+  const oa = Math.round(RATING_ATTRIBUTES.filter(key => key !== "FI" && key !== "OA")
+    .reduce((sum, key) => sum + player.attributes[key], 0) / 14);
   if (oa !== player.attributes.OA) throw new Error(`Calibrated OA mismatch for ${player.name}: ${player.attributes.OA} vs ${oa}.`);
 }
 

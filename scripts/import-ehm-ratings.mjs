@@ -102,20 +102,24 @@ for (const player of registry.players.filter(p => p.currentLeague === "NHL")) {
   outputPlayers.push({
     ...player,
     attributes:{ FI, ...raw, OFF, DEF, OA },
-    overall:OA,\n    ehmOverall:OA,\n    ehmCA:Number(caRaw),\n    ehmPA:Number(paRaw),
+    overall:OA,
+    ehmOverall:OA,
+    ehmCA:Number(caRaw),
+    ehmPA:Number(paRaw),
     potential:ability(paRaw),
     potentialEstimate:ability(paRaw),
     potentialStatus:"scouting_source_reviewed_estimate",
     potentialEstimateMethod:"ehm_2026_2027_pa_normalized_to_0_99",
     potentialSource:manifest.datasetUrl,
-    potentialConfidence:"high",\n    potentialRationale:"EHM 2026-2027 Potential Ability (PA), normalized from the documented 1-200 scale.",
+    potentialConfidence:"high",
+    potentialRationale:"EHM 2026-2027 Potential Ability (PA), normalized from the documented 1-200 scale.",
     ehmReference:{
       dataset:manifest.dataset,
       season:"2026-2027",
       sourcePlayerName:row.name,
       rawCA:Number(caRaw),
       rawPA:Number(paRaw),
-      rawOA:row.OA ?? row.oa ?? null,
+      rawOA:oaRaw,
       rawAttributes:row.attributes,
       attributeScale:scale,
       abilityScale:200
@@ -141,7 +145,9 @@ const result = {
     attributeScale:scale,
     abilityScale:200,
     potential:"PA normalized from 1-200 to 0-99",
-    oa:"exact mapped source overall; no Hockey Dynasty recomputation",\n    overallField,\n    overallScale
+    oa:"exact mapped source overall; no Hockey Dynasty recomputation",
+    overallField,
+    overallScale
   },
   summary:{
     nhlPlayersInRegistry:registry.players.filter(p=>p.currentLeague==="NHL").length,

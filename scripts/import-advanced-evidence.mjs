@@ -6,6 +6,7 @@
 
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
+import { fileURLToPath } from "node:url";
 import { assertCommercialExportAllowed } from "./lib/data-rights-gate.mjs";
 
 const INPUT = process.argv[2];
@@ -13,9 +14,19 @@ const OUTPUT = process.argv[3] || "data/advanced-evidence/normalized-evidence.js
 if (!INPUT) throw new Error("Usage: node scripts/import-advanced-evidence.mjs <authorized-export.json> [output.json]");
 
 const sourceDoc = JSON.parse(await readFile(resolve(INPUT), "utf8"));
+const registryPath = resolve(dirname(fileURLToPath(import.meta.url)), "../data/data-source-rights-registry.json");
+const rightsRegistry = JSON.parse(await readFile(registryPath, "utf8"));
 const source = sourceDoc.source || {};
-if (!source.name || !source.url || !source.checkedAt || !source.season) {
-  throw new Error("Source provenance requires name, url, checkedAt and season.");
+if (!source.name || !source.url || !source.checkedAt || !source.season || !source.datasetId) {
+  throw new Error("Source provenance requires name, url, checkedAt, season and datasetId.");
+}
+const registryRecord = rightsRegistry.datasets?.[source.datasetId];
+if (!registryRecord) throw new Error("Refusing import: datasetId is not present in the central rights registry.");
+if (registryRecord.testOnly === true && process.env.HD_ALLOW_TEST_FIXTURE !== "1") {
+  throw new Error("Refusing import: test-only dataset cannot be used outside explicit test mode.");
+}
+if (registryRecord.testOnly !== true && registryRecord.status !== "commercial-free-confirmed") {
+  throw new Error("Refusing import: central registry does not approve this exact dataset for commercial use.");
 }
 // Fail closed using the shared project-wide rights gate. A public/free CSV is not
 // sufficient: commercial game use, derived output, in-game display and upstream

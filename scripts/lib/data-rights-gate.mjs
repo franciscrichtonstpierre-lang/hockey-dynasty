@@ -1,34 +1,36 @@
-const REQUIRED_RIGHTS = [
-  "commercialUseAllowed",
-  "derivedUseAllowed",
-  "displayApproved"
-];
+const RIGHTS = ["commercialUseAllowed", "derivedUseAllowed", "displayApproved"];
 
 export function assessDataRights(record = {}) {
-  const missing = REQUIRED_RIGHTS.filter(key => record[key] !== true);
   const paid = record.paid === true || record.requiresPayment === true;
-  const thirdPartyUnclear = record.thirdPartyRightsVerified === false ||
-    record.thirdPartyRightsVerified == null && record.datasetLevelReviewRequired === true;
+  const prohibited = paid || RIGHTS.some(key => record[key] === false);
+  const missing = RIGHTS.filter(key => record[key] !== true);
+  const thirdPartyUnclear = record.thirdPartyRightsVerified !== true;
 
-  const allowed = missing.length === 0 && !paid && !thirdPartyUnclear;
+  let status;
+  if (prohibited) status = "prohibited";
+  else if (missing.length || thirdPartyUnclear) status = "review_required";
+  else status = "commercial_free_confirmed";
+
   return {
-    allowed,
-    status: allowed ? "commercial_free_confirmed" : "blocked",
+    allowed: status === "commercial_free_confirmed",
+    status,
     missing,
     paid,
-    thirdPartyUnclear
+    thirdPartyUnclear,
+    reasons: [
+      paid ? "paid source is prohibited by the zero-budget policy" : null,
+      ...RIGHTS.filter(key => record[key] === false).map(key => key + " is explicitly not permitted"),
+      ...missing.filter(key => record[key] == null).map(key => key + " has not been verified"),
+      thirdPartyUnclear ? "third-party rights have not been verified for this dataset" : null
+    ].filter(Boolean)
   };
 }
 
 export function assertCommercialExportAllowed(record, context = "data export") {
   const assessment = assessDataRights(record);
   if (!assessment.allowed) {
-    const reasons = [
-      assessment.missing.length ? `missing explicit rights: ${assessment.missing.join(", ")}` : null,
-      assessment.paid ? "paid source is prohibited by the zero-budget policy" : null,
-      assessment.thirdPartyUnclear ? "third-party rights have not been verified for this dataset" : null
-    ].filter(Boolean).join("; ");
-    throw new Error(`Blocked ${context}: ${reasons}.`);
+    const category = assessment.status === "prohibited" ? "prohibited" : "pending legal review";
+    throw new Error("Blocked " + context + " (" + category + "): " + assessment.reasons.join("; ") + ".");
   }
   return true;
 }

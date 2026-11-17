@@ -9,6 +9,35 @@ const registry = JSON.parse(await readFile(sourcePath, "utf8"));
 const players = Array.isArray(registry.players) ? registry.players : [];
 if (!players.length) throw new Error("Registry is empty or has no players array.");
 
+// Enforce the owner's composite-rating rules at the final publication boundary.
+// FI is independent and excluded: OFF=(SH+PL+ST)/3, DEF=(CH+PO+HI)/3,
+// OA=mean of the 12 remaining base attributes plus OFF and DEF.
+const compositeKeys = ["SH","PL","ST","CH","PO","HI","SK","EN","PE","FA","LE","SR"];
+let compositesRebuilt = 0;
+let compositesIncomplete = 0;
+for (const player of players) {
+  const a = player.attributes;
+  if (!a || !compositeKeys.every(key => Number.isFinite(Number(a[key])) && Number(a[key]) >= 0 && Number(a[key]) <= 99)) {
+    compositesIncomplete++;
+    continue;
+  }
+  a.OFF = Math.round((Number(a.SH) + Number(a.PL) + Number(a.ST)) / 3);
+  a.DEF = Math.round((Number(a.CH) + Number(a.PO) + Number(a.HI)) / 3);
+  const oaKeys = [...compositeKeys, "OFF", "DEF"];
+  a.OA = Math.round(oaKeys.reduce((sum, key) => sum + Number(a[key]), 0) / oaKeys.length);
+  player.overall = a.OA;
+  compositesRebuilt++;
+}
+if (!compositesRebuilt) throw new Error("No complete rating cards found; registry publication stopped.");
+registry.players = players;
+registry.compositeRatings = {
+  rule: "OFF=mean(SH,PL,ST); DEF=mean(CH,PO,HI); OA=mean(12 non-FI base attributes + OFF + DEF)",
+  rebuilt: compositesRebuilt,
+  incomplete: compositesIncomplete,
+  fiExcludedFromOA: true
+};
+await writeFile(sourcePath, JSON.stringify(registry, null, 2) + "\\n", "utf8");
+
 const compact = players.map(p => ({
   id: p.id ?? null,
   nhlPlayerId: p.nhlPlayerId ?? null,
@@ -171,4 +200,4 @@ const manifest = {
 };
 await writeFile(`${outputDir}/manifest.json`, JSON.stringify(manifest, null, 2) + "\n", "utf8");
 await writeFile(`${outputDir}/ratings-lookup.json`, JSON.stringify(ratingsLookup) + "\n", "utf8");
-console.log(`Exported ${compact.length} registry identities into ${chunkCount} chunks and ${extraProfiles} unmatched organization prospect profiles.`);
+console.log(`Rebuilt OFF/DEF/OA for ${compositesRebuilt} complete players; ${compositesIncomplete} incomplete cards left untouched. Exported ${compact.length} registry identities into ${chunkCount} chunks and ${extraProfiles} unmatched organization prospect profiles.`);

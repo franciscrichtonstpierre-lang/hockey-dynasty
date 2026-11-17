@@ -46,10 +46,10 @@ if (source.licenseExpiresAt && Date.parse(source.licenseExpiresAt) <= Date.now()
   throw new Error("Refusing import: license has expired.");
 }
 assertCommercialExportAllowed({
-  commercialUseAllowed: source.permissions?.commercialGameUse === true,
-  derivedUseAllowed: source.permissions?.derivedOutputs === true,
-  displayApproved: source.permissions?.displayInGame === true,
-  thirdPartyRightsVerified: source.thirdPartyRightsVerified === true,
+  commercialUseAllowed: source.permissions?.commercialGameUse,
+  derivedUseAllowed: source.permissions?.derivedOutputs,
+  displayApproved: source.permissions?.displayInGame,
+  thirdPartyRightsVerified: source.thirdPartyRightsVerified,
   paid: source.paid === true || source.requiresPayment === true
 }, "advanced evidence import");
 if (!Array.isArray(sourceDoc.rows) || !sourceDoc.rows.length) throw new Error("No source rows supplied.");

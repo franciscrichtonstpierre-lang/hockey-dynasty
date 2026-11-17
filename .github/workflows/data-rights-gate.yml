@@ -1,0 +1,31 @@
+name: Data rights gate tests
+
+on:
+  push:
+    branches: [ratings/gm-connected-methodology-v1]
+    paths:
+      - "scripts/lib/data-rights-gate.mjs"
+      - "scripts/import-advanced-evidence.mjs"
+      - "tests/data-rights-gate.test.mjs"
+      - "tests/import-advanced-evidence.test.mjs"
+  pull_request:
+    branches: [main]
+    paths:
+      - "scripts/lib/data-rights-gate.mjs"
+      - "scripts/import-advanced-evidence.mjs"
+      - "tests/data-rights-gate.test.mjs"
+      - "tests/import-advanced-evidence.test.mjs"
+
+permissions:
+  contents: read
+
+jobs:
+  rights-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Test commercial data rights gate and importer
+        run: node --test tests/data-rights-gate.test.mjs tests/import-advanced-evidence.test.mjs

@@ -2,8 +2,8 @@
   "teamCode": "DAL",
   "source": "https://api-web.nhle.com/v1/prospects/DAL",
   "sourceType": "NHL Web API + source-labelled supplemental pipeline",
-  "syncedUTC": "2026-11-05T20:31:38.905Z",
-  "count": 34,
+  "syncedUTC": "2026-11-17T00:03:40.681Z",
+  "count": 35,
   "prospects": [
     {
       "id": 8482919,
@@ -447,34 +447,6 @@
       "positionGroup": "defensemen"
     },
     {
-      "id": 8485468,
-      "headshot": "https://assets.nhle.com/mugs/nhl/20252026/DAL/8485468.png",
-      "firstName": {
-        "default": "Trey"
-      },
-      "lastName": {
-        "default": "Taylor"
-      },
-      "sweaterNumber": 27,
-      "positionCode": "D",
-      "shootsCatches": "L",
-      "heightInInches": 74,
-      "weightInPounds": 196,
-      "heightInCentimeters": 188,
-      "weightInKilograms": 89,
-      "birthDate": "2002-02-04",
-      "birthCity": {
-        "default": "Richmond"
-      },
-      "birthCountry": "CAN",
-      "birthStateProvince": {
-        "default": "British Columbia",
-        "fr": "Colombie-Britannique",
-        "sk": "Britská Kolumbia"
-      },
-      "positionGroup": "defensemen"
-    },
-    {
       "id": 8477990,
       "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DAL/8477990.png",
       "firstName": {
@@ -497,6 +469,33 @@
       "birthCountry": "USA",
       "birthStateProvince": {
         "default": "Michigan"
+      },
+      "positionGroup": "goalies"
+    },
+    {
+      "id": 8482465,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DAL/8482465.png",
+      "firstName": {
+        "default": "Rémi"
+      },
+      "lastName": {
+        "default": "Poirier"
+      },
+      "sweaterNumber": 31,
+      "positionCode": "G",
+      "shootsCatches": "L",
+      "heightInInches": 75,
+      "weightInPounds": 211,
+      "heightInCentimeters": 191,
+      "weightInKilograms": 96,
+      "birthDate": "2001-10-06",
+      "birthCity": {
+        "default": "Farnham"
+      },
+      "birthCountry": "CAN",
+      "birthStateProvince": {
+        "default": "Quebec",
+        "fr": "Québec"
       },
       "positionGroup": "goalies"
     },
@@ -728,6 +727,21 @@
       "draftYear": 2024,
       "draftRound": 7,
       "draftOverall": 222,
+      "rightsStatus": "secondary_snapshot_recheck_required",
+      "source": "https://hockeyinsights.ca/team-pipeline/dallas-stars/",
+      "sourceUpdatedAt": "2026-09-28",
+      "verificationStatus": "secondary_snapshot_recheck_required"
+    },
+    {
+      "fullName": "Trey Taylor",
+      "positionCode": "D",
+      "age": 24,
+      "currentLeague": "AHL",
+      "currentTeam": null,
+      "nhlRightsTeam": "DAL",
+      "draftYear": null,
+      "draftRound": null,
+      "draftOverall": null,
       "rightsStatus": "secondary_snapshot_recheck_required",
       "source": "https://hockeyinsights.ca/team-pipeline/dallas-stars/",
       "sourceUpdatedAt": "2026-09-28",

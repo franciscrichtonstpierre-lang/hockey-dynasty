@@ -176,6 +176,31 @@
       }
     },
     {
+      "id": 8478904,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CBJ/8478904.png",
+      "firstName": {
+        "default": "Steven"
+      },
+      "lastName": {
+        "default": "Lorentz"
+      },
+      "sweaterNumber": 18,
+      "positionCode": "C",
+      "shootsCatches": "L",
+      "heightInInches": 76,
+      "weightInPounds": 219,
+      "heightInCentimeters": 193,
+      "weightInKilograms": 99,
+      "birthDate": "1996-04-13",
+      "birthCity": {
+        "default": "Kitchener"
+      },
+      "birthCountry": "CAN",
+      "birthStateProvince": {
+        "default": "ON"
+      }
+    },
+    {
       "id": 8477497,
       "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CBJ/8477497.png",
       "firstName": {
@@ -303,6 +328,31 @@
         "default": "Angarsk"
       },
       "birthCountry": "RUS"
+    },
+    {
+      "id": 8485469,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CBJ/8485469.png",
+      "firstName": {
+        "default": "Jack"
+      },
+      "lastName": {
+        "default": "Williams"
+      },
+      "sweaterNumber": 92,
+      "positionCode": "C",
+      "shootsCatches": "R",
+      "heightInInches": 72,
+      "weightInPounds": 189,
+      "heightInCentimeters": 183,
+      "weightInKilograms": 86,
+      "birthDate": "2002-03-02",
+      "birthCity": {
+        "default": "Biddeford"
+      },
+      "birthCountry": "USA",
+      "birthStateProvince": {
+        "default": "ME"
+      }
     }
   ],
   "defensemen": [
@@ -537,5 +587,5 @@
   ],
   "_sourceSeason": "20262027",
   "_sourceUrl": "https://api-web.nhle.com/v1/roster/CBJ/20262027",
-  "_syncedAt": "2026-11-05T20:31:37.926Z"
+  "_syncedAt": "2026-11-17T00:03:39.943Z"
 }

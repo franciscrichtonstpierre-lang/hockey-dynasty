@@ -1,6 +1,31 @@
 {
   "forwards": [
     {
+      "id": 8479591,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/BOS/8479591.png",
+      "firstName": {
+        "default": "Michael"
+      },
+      "lastName": {
+        "default": "Eyssimont"
+      },
+      "sweaterNumber": 81,
+      "positionCode": "C",
+      "shootsCatches": "L",
+      "heightInInches": 72,
+      "weightInPounds": 196,
+      "heightInCentimeters": 183,
+      "weightInKilograms": 89,
+      "birthDate": "1996-09-09",
+      "birthCity": {
+        "default": "Littleton"
+      },
+      "birthCountry": "USA",
+      "birthStateProvince": {
+        "default": "CO"
+      }
+    },
+    {
       "id": 8479987,
       "headshot": "https://assets.nhle.com/mugs/nhl/20262027/BOS/8479987.png",
       "firstName": {
@@ -598,5 +623,5 @@
   ],
   "_sourceSeason": "20262027",
   "_sourceUrl": "https://api-web.nhle.com/v1/roster/BOS/20262027",
-  "_syncedAt": "2026-11-05T20:31:37.252Z"
+  "_syncedAt": "2026-11-17T00:03:39.452Z"
 }

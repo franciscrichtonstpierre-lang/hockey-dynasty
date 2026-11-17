@@ -1,6 +1,31 @@
 {
   "forwards": [
     {
+      "id": 8478445,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/NYI/8478445.png",
+      "firstName": {
+        "default": "Mathew"
+      },
+      "lastName": {
+        "default": "Barzal"
+      },
+      "sweaterNumber": 13,
+      "positionCode": "C",
+      "shootsCatches": "R",
+      "heightInInches": 73,
+      "weightInPounds": 190,
+      "heightInCentimeters": 185,
+      "weightInKilograms": 86,
+      "birthDate": "1997-05-26",
+      "birthCity": {
+        "default": "Coquitlam"
+      },
+      "birthCountry": "CAN",
+      "birthStateProvince": {
+        "default": "BC"
+      }
+    },
+    {
       "id": 8482070,
       "headshot": "https://assets.nhle.com/mugs/nhl/20262027/NYI/8482070.png",
       "firstName": {
@@ -198,31 +223,6 @@
       "birthCountry": "FIN"
     },
     {
-      "id": 8481237,
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/NYI/8481237.png",
-      "firstName": {
-        "default": "Kyle"
-      },
-      "lastName": {
-        "default": "MacLean"
-      },
-      "sweaterNumber": 32,
-      "positionCode": "C",
-      "shootsCatches": "L",
-      "heightInInches": 74,
-      "weightInPounds": 194,
-      "heightInCentimeters": 188,
-      "weightInKilograms": 88,
-      "birthDate": "1999-04-29",
-      "birthCity": {
-        "default": "Verona"
-      },
-      "birthCountry": "USA",
-      "birthStateProvince": {
-        "default": "NJ"
-      }
-    },
-    {
       "id": 8476419,
       "headshot": "https://assets.nhle.com/mugs/nhl/20262027/NYI/8476419.png",
       "firstName": {
@@ -379,6 +379,31 @@
       }
     },
     {
+      "id": 8477018,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/NYI/8477018.png",
+      "firstName": {
+        "default": "Ben"
+      },
+      "lastName": {
+        "default": "Hutton"
+      },
+      "sweaterNumber": 71,
+      "positionCode": "D",
+      "shootsCatches": "L",
+      "heightInInches": 75,
+      "weightInPounds": 209,
+      "heightInCentimeters": 191,
+      "weightInKilograms": 95,
+      "birthDate": "1993-04-20",
+      "birthCity": {
+        "default": "Brockville"
+      },
+      "birthCountry": "CAN",
+      "birthStateProvince": {
+        "default": "ON"
+      }
+    },
+    {
       "id": 8482516,
       "headshot": "https://assets.nhle.com/mugs/nhl/20262027/NYI/8482516.png",
       "firstName": {
@@ -527,7 +552,7 @@
       "weightInKilograms": 88,
       "birthDate": "2007-09-05",
       "birthCity": {
-        "default": "Hamilton"
+        "default": "Stoney Creek"
       },
       "birthCountry": "CAN",
       "birthStateProvince": {
@@ -615,5 +640,5 @@
   ],
   "_sourceSeason": "20262027",
   "_sourceUrl": "https://api-web.nhle.com/v1/roster/NYI/20262027",
-  "_syncedAt": "2026-11-05T20:31:39.780Z"
+  "_syncedAt": "2026-11-17T00:03:41.344Z"
 }

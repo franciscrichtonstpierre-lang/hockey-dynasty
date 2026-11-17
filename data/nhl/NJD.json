@@ -147,6 +147,29 @@
       "birthCountry": "RUS"
     },
     {
+      "id": 8484177,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/NJD/8484177.png",
+      "firstName": {
+        "default": "Lenni"
+      },
+      "lastName": {
+        "default": "Hameenaho"
+      },
+      "sweaterNumber": 29,
+      "positionCode": "R",
+      "shootsCatches": "R",
+      "heightInInches": 73,
+      "weightInPounds": 195,
+      "heightInCentimeters": 185,
+      "weightInKilograms": 88,
+      "birthDate": "2004-11-07",
+      "birthCity": {
+        "default": "Kajaani",
+        "sv": "Jkajana"
+      },
+      "birthCountry": "FIN"
+    },
+    {
       "id": 8480002,
       "headshot": "https://assets.nhle.com/mugs/nhl/20262027/NJD/8480002.png",
       "firstName": {
@@ -488,6 +511,28 @@
         "default": "Zurich"
       },
       "birthCountry": "CHE"
+    },
+    {
+      "id": 8484987,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/NJD/8484987.png",
+      "firstName": {
+        "default": "Anton"
+      },
+      "lastName": {
+        "default": "Silaev"
+      },
+      "sweaterNumber": 52,
+      "positionCode": "D",
+      "shootsCatches": "L",
+      "heightInInches": 79,
+      "weightInPounds": 211,
+      "heightInCentimeters": 201,
+      "weightInKilograms": 96,
+      "birthDate": "2006-04-11",
+      "birthCity": {
+        "default": "Sarov"
+      },
+      "birthCountry": "RUS"
     }
   ],
   "goalies": [
@@ -544,5 +589,5 @@
   ],
   "_sourceSeason": "20262027",
   "_sourceUrl": "https://api-web.nhle.com/v1/roster/NJD/20262027",
-  "_syncedAt": "2026-11-05T20:31:39.719Z"
+  "_syncedAt": "2026-11-17T00:03:41.336Z"
 }

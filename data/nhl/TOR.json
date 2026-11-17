@@ -28,6 +28,31 @@
       "birthCountry": "LVA"
     },
     {
+      "id": 8482153,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/TOR/8482153.png",
+      "firstName": {
+        "default": "Brendan"
+      },
+      "lastName": {
+        "default": "Brisson"
+      },
+      "sweaterNumber": 90,
+      "positionCode": "C",
+      "shootsCatches": "L",
+      "heightInInches": 72,
+      "weightInPounds": 188,
+      "heightInCentimeters": 183,
+      "weightInKilograms": 85,
+      "birthDate": "2001-10-22",
+      "birthCity": {
+        "default": "Los Angeles"
+      },
+      "birthCountry": "USA",
+      "birthStateProvince": {
+        "default": "CA"
+      }
+    },
+    {
       "id": 8484158,
       "headshot": "https://assets.nhle.com/mugs/nhl/20262027/TOR/8484158.png",
       "firstName": {
@@ -122,31 +147,6 @@
       "birthCountry": "USA",
       "birthStateProvince": {
         "default": "MI"
-      }
-    },
-    {
-      "id": 8479968,
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/TOR/8479968.png",
-      "firstName": {
-        "default": "Vinni"
-      },
-      "lastName": {
-        "default": "Lettieri"
-      },
-      "sweaterNumber": 71,
-      "positionCode": "C",
-      "shootsCatches": "R",
-      "heightInInches": 70,
-      "weightInPounds": 184,
-      "heightInCentimeters": 178,
-      "weightInKilograms": 83,
-      "birthDate": "1995-02-06",
-      "birthCity": {
-        "default": "Excelsior"
-      },
-      "birthCountry": "USA",
-      "birthStateProvince": {
-        "default": "MN"
       }
     },
     {
@@ -374,6 +374,31 @@
       "birthDate": "1990-09-20",
       "birthCity": {
         "default": "Mississauga"
+      },
+      "birthCountry": "CAN",
+      "birthStateProvince": {
+        "default": "ON"
+      }
+    },
+    {
+      "id": 8482525,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/TOR/8482525.png",
+      "firstName": {
+        "default": "Ryan"
+      },
+      "lastName": {
+        "default": "Tverberg"
+      },
+      "sweaterNumber": 77,
+      "positionCode": "C",
+      "shootsCatches": "R",
+      "heightInInches": 71,
+      "weightInPounds": 187,
+      "heightInCentimeters": 180,
+      "weightInKilograms": 85,
+      "birthDate": "2002-01-30",
+      "birthCity": {
+        "default": "Richmond Hill"
       },
       "birthCountry": "CAN",
       "birthStateProvince": {
@@ -663,6 +688,30 @@
   ],
   "goalies": [
     {
+      "id": 8482515,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/TOR/8482515.png",
+      "firstName": {
+        "default": "Artur"
+      },
+      "lastName": {
+        "default": "Akhtyamov"
+      },
+      "sweaterNumber": 70,
+      "positionCode": "G",
+      "shootsCatches": "L",
+      "heightInInches": 74,
+      "weightInPounds": 176,
+      "heightInCentimeters": 188,
+      "weightInKilograms": 80,
+      "birthDate": "2001-10-31",
+      "birthCity": {
+        "default": "Kazan",
+        "cs": "Kazaň",
+        "sk": "Kazaň"
+      },
+      "birthCountry": "RUS"
+    },
+    {
       "id": 8475683,
       "headshot": "https://assets.nhle.com/mugs/nhl/20262027/TOR/8475683.png",
       "firstName": {
@@ -719,5 +768,5 @@
   ],
   "_sourceSeason": "20262027",
   "_sourceUrl": "https://api-web.nhle.com/v1/roster/TOR/20262027",
-  "_syncedAt": "2026-11-05T20:31:41.063Z"
+  "_syncedAt": "2026-11-17T00:03:42.289Z"
 }

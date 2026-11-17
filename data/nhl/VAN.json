@@ -392,6 +392,31 @@
       }
     },
     {
+      "id": 8480075,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/VAN/8480075.png",
+      "firstName": {
+        "default": "Cameron"
+      },
+      "lastName": {
+        "default": "Crotty"
+      },
+      "sweaterNumber": 51,
+      "positionCode": "D",
+      "shootsCatches": "R",
+      "heightInInches": 75,
+      "weightInPounds": 212,
+      "heightInCentimeters": 191,
+      "weightInKilograms": 96,
+      "birthDate": "1999-05-05",
+      "birthCity": {
+        "default": "Ottawa"
+      },
+      "birthCountry": "CAN",
+      "birthStateProvince": {
+        "default": "ON"
+      }
+    },
+    {
       "id": 8479425,
       "headshot": "https://assets.nhle.com/mugs/nhl/20262027/VAN/8479425.png",
       "firstName": {
@@ -415,31 +440,6 @@
         "sk": "Hradec Králové"
       },
       "birthCountry": "CZE"
-    },
-    {
-      "id": 8483768,
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/VAN/8483768.png",
-      "firstName": {
-        "default": "Victor"
-      },
-      "lastName": {
-        "default": "Mancini"
-      },
-      "sweaterNumber": 90,
-      "positionCode": "D",
-      "shootsCatches": "R",
-      "heightInInches": 75,
-      "weightInPounds": 229,
-      "heightInCentimeters": 191,
-      "weightInKilograms": 104,
-      "birthDate": "2002-05-26",
-      "birthCity": {
-        "default": "Hancock"
-      },
-      "birthCountry": "USA",
-      "birthStateProvince": {
-        "default": "MI"
-      }
     },
     {
       "id": 8476467,
@@ -614,9 +614,31 @@
         "sv": "Uleåborg"
       },
       "birthCountry": "FIN"
+    },
+    {
+      "id": 8484268,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/VAN/8484268.png",
+      "firstName": {
+        "default": "Nikita"
+      },
+      "lastName": {
+        "default": "Tolopilo"
+      },
+      "sweaterNumber": 60,
+      "positionCode": "G",
+      "shootsCatches": "L",
+      "heightInInches": 78,
+      "weightInPounds": 229,
+      "heightInCentimeters": 198,
+      "weightInKilograms": 104,
+      "birthDate": "2000-04-06",
+      "birthCity": {
+        "default": "Minsk"
+      },
+      "birthCountry": "BLR"
     }
   ],
   "_sourceSeason": "20262027",
   "_sourceUrl": "https://api-web.nhle.com/v1/roster/VAN/20262027",
-  "_syncedAt": "2026-11-05T20:31:41.711Z"
+  "_syncedAt": "2026-11-17T00:03:42.630Z"
 }

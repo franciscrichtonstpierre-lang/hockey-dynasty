@@ -2,8 +2,8 @@
   "teamCode": "PIT",
   "source": "https://api-web.nhle.com/v1/prospects/PIT",
   "sourceType": "NHL Web API + source-labelled supplemental pipeline",
-  "syncedUTC": "2026-11-05T20:31:40.864Z",
-  "count": 48,
+  "syncedUTC": "2026-11-17T00:03:42.100Z",
+  "count": 49,
   "prospects": [
     {
       "id": 8482698,
@@ -259,32 +259,6 @@
       "birthCountry": "CAN",
       "birthStateProvince": {
         "default": "Ontario"
-      },
-      "positionGroup": "forwards"
-    },
-    {
-      "id": 8483487,
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/PIT/8483487.png",
-      "firstName": {
-        "default": "Rutger"
-      },
-      "lastName": {
-        "default": "McGroarty"
-      },
-      "sweaterNumber": 2,
-      "positionCode": "R",
-      "shootsCatches": "L",
-      "heightInInches": 74,
-      "weightInPounds": 212,
-      "heightInCentimeters": 188,
-      "weightInKilograms": 96,
-      "birthDate": "2004-03-30",
-      "birthCity": {
-        "default": "Lincoln"
-      },
-      "birthCountry": "USA",
-      "birthStateProvince": {
-        "default": "Nebraska"
       },
       "positionGroup": "forwards"
     },
@@ -636,6 +610,31 @@
       "positionGroup": "defensemen"
     },
     {
+      "id": 8486169,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/PIT/8486169.png",
+      "firstName": {
+        "default": "Jake"
+      },
+      "lastName": {
+        "default": "Livanavage"
+      },
+      "sweaterNumber": 4,
+      "positionCode": "D",
+      "heightInInches": 72,
+      "weightInPounds": 186,
+      "heightInCentimeters": 183,
+      "weightInKilograms": 84,
+      "birthDate": "2004-05-06",
+      "birthCity": {
+        "default": "Gilbert"
+      },
+      "birthCountry": "USA",
+      "birthStateProvince": {
+        "default": "Arizona"
+      },
+      "positionGroup": "defensemen"
+    },
+    {
       "id": 8483503,
       "headshot": "https://assets.nhle.com/mugs/nhl/20252026/PIT/8483503.png",
       "firstName": {
@@ -686,6 +685,29 @@
       "birthStateProvince": {
         "default": "Michigan"
       },
+      "positionGroup": "defensemen"
+    },
+    {
+      "id": 8482470,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/PIT/8482470.png",
+      "firstName": {
+        "default": "Ilya"
+      },
+      "lastName": {
+        "default": "Solovyov"
+      },
+      "sweaterNumber": 7,
+      "positionCode": "D",
+      "shootsCatches": "L",
+      "heightInInches": 75,
+      "weightInPounds": 229,
+      "heightInCentimeters": 191,
+      "weightInKilograms": 104,
+      "birthDate": "2000-07-20",
+      "birthCity": {
+        "default": "Mogilev"
+      },
+      "birthCountry": "BLR",
       "positionGroup": "defensemen"
     },
     {
@@ -799,6 +821,21 @@
       "draftYear": 2025,
       "draftRound": 1,
       "draftOverall": 11,
+      "rightsStatus": "secondary_snapshot_recheck_required",
+      "source": "https://hockeyinsights.ca/team-pipeline/pittsburgh-penguins/",
+      "sourceUpdatedAt": "2026-09-28",
+      "verificationStatus": "secondary_snapshot_recheck_required"
+    },
+    {
+      "fullName": "Rutger McGroarty",
+      "positionCode": "RW",
+      "age": 22,
+      "currentLeague": "NHL",
+      "currentTeam": null,
+      "nhlRightsTeam": "PIT",
+      "draftYear": 2022,
+      "draftRound": 1,
+      "draftOverall": 14,
       "rightsStatus": "secondary_snapshot_recheck_required",
       "source": "https://hockeyinsights.ca/team-pipeline/pittsburgh-penguins/",
       "sourceUpdatedAt": "2026-09-28",
@@ -1039,21 +1076,6 @@
       "draftYear": 2023,
       "draftRound": 7,
       "draftOverall": 223,
-      "rightsStatus": "secondary_snapshot_recheck_required",
-      "source": "https://hockeyinsights.ca/team-pipeline/pittsburgh-penguins/",
-      "sourceUpdatedAt": "2026-09-28",
-      "verificationStatus": "secondary_snapshot_recheck_required"
-    },
-    {
-      "fullName": "Jake Livanavage",
-      "positionCode": "LD",
-      "age": 22,
-      "currentLeague": "NCAA",
-      "currentTeam": null,
-      "nhlRightsTeam": "PIT",
-      "draftYear": null,
-      "draftRound": null,
-      "draftOverall": null,
       "rightsStatus": "secondary_snapshot_recheck_required",
       "source": "https://hockeyinsights.ca/team-pipeline/pittsburgh-penguins/",
       "sourceUpdatedAt": "2026-09-28",

@@ -351,6 +351,28 @@
         "sv": "Moskva"
       },
       "birthCountry": "RUS"
+    },
+    {
+      "id": 8477573,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/STL/8477573.png",
+      "firstName": {
+        "default": "Nathan"
+      },
+      "lastName": {
+        "default": "Walker"
+      },
+      "sweaterNumber": 26,
+      "positionCode": "L",
+      "shootsCatches": "L",
+      "heightInInches": 69,
+      "weightInPounds": 191,
+      "heightInCentimeters": 175,
+      "weightInKilograms": 87,
+      "birthDate": "1994-02-07",
+      "birthCity": {
+        "default": "Cardiff"
+      },
+      "birthCountry": "GBR"
     }
   ],
   "defensemen": [
@@ -406,31 +428,6 @@
       "birthCountry": "SWE"
     },
     {
-      "id": 8484151,
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/STL/8484151.png",
-      "firstName": {
-        "default": "Quinton"
-      },
-      "lastName": {
-        "default": "Burns"
-      },
-      "sweaterNumber": 42,
-      "positionCode": "D",
-      "shootsCatches": "L",
-      "heightInInches": 74,
-      "weightInPounds": 194,
-      "heightInCentimeters": 188,
-      "weightInKilograms": 88,
-      "birthDate": "2005-04-14",
-      "birthCity": {
-        "default": "Smith Falls"
-      },
-      "birthCountry": "CAN",
-      "birthStateProvince": {
-        "default": "ON"
-      }
-    },
-    {
       "id": 8478443,
       "headshot": "https://assets.nhle.com/mugs/nhl/20262027/STL/8478443.png",
       "firstName": {
@@ -481,48 +478,29 @@
       }
     },
     {
-      "id": 8484790,
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/STL/8484790.png",
+      "id": 8482733,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/STL/8482733.png",
       "firstName": {
-        "default": "Adam"
+        "default": "Logan"
       },
       "lastName": {
-        "default": "Jiricek"
+        "default": "Mailloux"
       },
-      "sweaterNumber": 36,
+      "sweaterNumber": 23,
       "positionCode": "D",
       "shootsCatches": "R",
       "heightInInches": 75,
-      "weightInPounds": 185,
+      "weightInPounds": 212,
       "heightInCentimeters": 191,
-      "weightInKilograms": 84,
-      "birthDate": "2006-06-28",
+      "weightInKilograms": 96,
+      "birthDate": "2003-04-15",
       "birthCity": {
-        "default": "Klatovy"
+        "default": "Belle River"
       },
-      "birthCountry": "CZE"
-    },
-    {
-      "id": 8484188,
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/STL/8484188.png",
-      "firstName": {
-        "default": "Theo"
-      },
-      "lastName": {
-        "default": "Lindstein"
-      },
-      "sweaterNumber": 4,
-      "positionCode": "D",
-      "shootsCatches": "L",
-      "heightInInches": 72,
-      "weightInPounds": 187,
-      "heightInCentimeters": 183,
-      "weightInKilograms": 85,
-      "birthDate": "2005-01-05",
-      "birthCity": {
-        "default": "Gavle"
-      },
-      "birthCountry": "SWE"
+      "birthCountry": "CAN",
+      "birthStateProvince": {
+        "default": "ON"
+      }
     },
     {
       "id": 8476892,
@@ -549,6 +527,30 @@
       "birthStateProvince": {
         "default": "AB"
       }
+    },
+    {
+      "id": 8480157,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/STL/8480157.png",
+      "firstName": {
+        "default": "Calle"
+      },
+      "lastName": {
+        "default": "Rosen",
+        "cs": "Rosén",
+        "sk": "Rosén"
+      },
+      "sweaterNumber": 43,
+      "positionCode": "D",
+      "shootsCatches": "L",
+      "heightInInches": 73,
+      "weightInPounds": 188,
+      "heightInCentimeters": 185,
+      "weightInKilograms": 85,
+      "birthDate": "1994-02-02",
+      "birthCity": {
+        "default": "Vaxjo"
+      },
+      "birthCountry": "SWE"
     },
     {
       "id": 8481006,
@@ -630,5 +632,5 @@
   ],
   "_sourceSeason": "20262027",
   "_sourceUrl": "https://api-web.nhle.com/v1/roster/STL/20262027",
-  "_syncedAt": "2026-11-05T20:31:41.053Z"
+  "_syncedAt": "2026-11-17T00:03:42.217Z"
 }

@@ -2,8 +2,8 @@
   "teamCode": "STL",
   "source": "https://api-web.nhle.com/v1/prospects/STL",
   "sourceType": "NHL Web API + source-labelled supplemental pipeline",
-  "syncedUTC": "2026-11-05T20:31:41.456Z",
-  "count": 51,
+  "syncedUTC": "2026-11-17T00:03:42.439Z",
+  "count": 49,
   "prospects": [
     {
       "id": 8483667,
@@ -633,29 +633,6 @@
       "positionGroup": "forwards"
     },
     {
-      "id": 8477573,
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/STL/8477573.png",
-      "firstName": {
-        "default": "Nathan"
-      },
-      "lastName": {
-        "default": "Walker"
-      },
-      "sweaterNumber": 26,
-      "positionCode": "L",
-      "shootsCatches": "L",
-      "heightInInches": 69,
-      "weightInPounds": 191,
-      "heightInCentimeters": 175,
-      "weightInKilograms": 87,
-      "birthDate": "1994-02-07",
-      "birthCity": {
-        "default": "Cardiff"
-      },
-      "birthCountry": "GBR",
-      "positionGroup": "forwards"
-    },
-    {
       "id": 8486027,
       "headshot": "https://assets.nhle.com/mugs/nhl/latest/8486027.png",
       "firstName": {
@@ -699,6 +676,32 @@
       "birthDate": "2004-04-25",
       "birthCity": {
         "default": "Markham"
+      },
+      "birthCountry": "CAN",
+      "birthStateProvince": {
+        "default": "Ontario"
+      },
+      "positionGroup": "defensemen"
+    },
+    {
+      "id": 8484151,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/STL/8484151.png",
+      "firstName": {
+        "default": "Quinton"
+      },
+      "lastName": {
+        "default": "Burns"
+      },
+      "sweaterNumber": 42,
+      "positionCode": "D",
+      "shootsCatches": "L",
+      "heightInInches": 74,
+      "weightInPounds": 194,
+      "heightInCentimeters": 188,
+      "weightInKilograms": 88,
+      "birthDate": "2005-04-14",
+      "birthCity": {
+        "default": "Smith Falls"
       },
       "birthCountry": "CAN",
       "birthStateProvince": {
@@ -760,6 +763,29 @@
       "positionGroup": "defensemen"
     },
     {
+      "id": 8484790,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/STL/8484790.png",
+      "firstName": {
+        "default": "Adam"
+      },
+      "lastName": {
+        "default": "Jiricek"
+      },
+      "sweaterNumber": 36,
+      "positionCode": "D",
+      "shootsCatches": "R",
+      "heightInInches": 75,
+      "weightInPounds": 185,
+      "heightInCentimeters": 191,
+      "weightInKilograms": 84,
+      "birthDate": "2006-06-28",
+      "birthCity": {
+        "default": "Klatovy"
+      },
+      "birthCountry": "CZE",
+      "positionGroup": "defensemen"
+    },
+    {
       "id": 8483705,
       "headshot": "https://assets.nhle.com/mugs/nhl/20262027/STL/8483705.png",
       "firstName": {
@@ -783,6 +809,29 @@
       "positionGroup": "defensemen"
     },
     {
+      "id": 8484188,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/STL/8484188.png",
+      "firstName": {
+        "default": "Theo"
+      },
+      "lastName": {
+        "default": "Lindstein"
+      },
+      "sweaterNumber": 4,
+      "positionCode": "D",
+      "shootsCatches": "L",
+      "heightInInches": 72,
+      "weightInPounds": 187,
+      "heightInCentimeters": 183,
+      "weightInKilograms": 85,
+      "birthDate": "2005-01-05",
+      "birthCity": {
+        "default": "Gavle"
+      },
+      "birthCountry": "SWE",
+      "positionGroup": "defensemen"
+    },
+    {
       "id": 8482478,
       "headshot": "https://assets.nhle.com/mugs/nhl/20252026/STL/8482478.png",
       "firstName": {
@@ -803,32 +852,6 @@
         "default": "Karlstad"
       },
       "birthCountry": "SWE",
-      "positionGroup": "defensemen"
-    },
-    {
-      "id": 8482733,
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/STL/8482733.png",
-      "firstName": {
-        "default": "Logan"
-      },
-      "lastName": {
-        "default": "Mailloux"
-      },
-      "sweaterNumber": 23,
-      "positionCode": "D",
-      "shootsCatches": "R",
-      "heightInInches": 75,
-      "weightInPounds": 212,
-      "heightInCentimeters": 191,
-      "weightInKilograms": 96,
-      "birthDate": "2003-04-15",
-      "birthCity": {
-        "default": "Belle River"
-      },
-      "birthCountry": "CAN",
-      "birthStateProvince": {
-        "default": "Ontario"
-      },
       "positionGroup": "defensemen"
     },
     {
@@ -934,31 +957,6 @@
       "birthStateProvince": {
         "default": "Minnesota"
       },
-      "positionGroup": "defensemen"
-    },
-    {
-      "id": 8480157,
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/STL/8480157.png",
-      "firstName": {
-        "default": "Calle"
-      },
-      "lastName": {
-        "default": "Rosen",
-        "cs": "Rosén",
-        "sk": "Rosén"
-      },
-      "sweaterNumber": 43,
-      "positionCode": "D",
-      "shootsCatches": "L",
-      "heightInInches": 73,
-      "weightInPounds": 188,
-      "heightInCentimeters": 185,
-      "weightInKilograms": 85,
-      "birthDate": "1994-02-02",
-      "birthCity": {
-        "default": "Vaxjo"
-      },
-      "birthCountry": "SWE",
       "positionGroup": "defensemen"
     },
     {
@@ -1130,21 +1128,6 @@
       "verificationStatus": "secondary_snapshot_recheck_required"
     },
     {
-      "fullName": "Adam Jiricek",
-      "positionCode": "D",
-      "age": 20,
-      "currentLeague": "OHL",
-      "currentTeam": null,
-      "nhlRightsTeam": "STL",
-      "draftYear": 2024,
-      "draftRound": 1,
-      "draftOverall": 16,
-      "rightsStatus": "secondary_snapshot_recheck_required",
-      "source": "https://hockeyinsights.ca/team-pipeline/st-louis-blues/",
-      "sourceUpdatedAt": "2026-09-28",
-      "verificationStatus": "secondary_snapshot_recheck_required"
-    },
-    {
       "fullName": "Jimmy Snuggerud",
       "positionCode": "RW",
       "age": 22,
@@ -1160,15 +1143,15 @@
       "verificationStatus": "secondary_snapshot_recheck_required"
     },
     {
-      "fullName": "Theo Lindstein",
+      "fullName": "Logan Mailloux",
       "positionCode": "D",
-      "age": 21,
+      "age": 23,
       "currentLeague": "NHL",
       "currentTeam": null,
       "nhlRightsTeam": "STL",
-      "draftYear": 2023,
+      "draftYear": 2021,
       "draftRound": 1,
-      "draftOverall": 29,
+      "draftOverall": 31,
       "rightsStatus": "secondary_snapshot_recheck_required",
       "source": "https://hockeyinsights.ca/team-pipeline/st-louis-blues/",
       "sourceUpdatedAt": "2026-09-28",
@@ -1184,21 +1167,6 @@
       "draftYear": 2022,
       "draftRound": 3,
       "draftOverall": 73,
-      "rightsStatus": "secondary_snapshot_recheck_required",
-      "source": "https://hockeyinsights.ca/team-pipeline/st-louis-blues/",
-      "sourceUpdatedAt": "2026-09-28",
-      "verificationStatus": "secondary_snapshot_recheck_required"
-    },
-    {
-      "fullName": "Quinton Burns",
-      "positionCode": "D",
-      "age": 21,
-      "currentLeague": "ECHL",
-      "currentTeam": null,
-      "nhlRightsTeam": "STL",
-      "draftYear": 2023,
-      "draftRound": 3,
-      "draftOverall": 74,
       "rightsStatus": "secondary_snapshot_recheck_required",
       "source": "https://hockeyinsights.ca/team-pipeline/st-louis-blues/",
       "sourceUpdatedAt": "2026-09-28",

@@ -388,6 +388,31 @@
       "birthCountry": "CHE"
     },
     {
+      "id": 8477335,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DAL/8477335.png",
+      "firstName": {
+        "default": "Kyle"
+      },
+      "lastName": {
+        "default": "Burroughs"
+      },
+      "sweaterNumber": 28,
+      "positionCode": "D",
+      "shootsCatches": "R",
+      "heightInInches": 72,
+      "weightInPounds": 193,
+      "heightInCentimeters": 183,
+      "weightInKilograms": 88,
+      "birthDate": "1995-07-12",
+      "birthCity": {
+        "default": "Vancouver"
+      },
+      "birthCountry": "CAN",
+      "birthStateProvince": {
+        "default": "BC"
+      }
+    },
+    {
       "id": 8478476,
       "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DAL/8478476.png",
       "firstName": {
@@ -531,6 +556,31 @@
       "birthStateProvince": {
         "default": "TX"
       }
+    },
+    {
+      "id": 8485468,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DAL/8485468.png",
+      "firstName": {
+        "default": "Trey"
+      },
+      "lastName": {
+        "default": "Taylor"
+      },
+      "sweaterNumber": 27,
+      "positionCode": "D",
+      "shootsCatches": "L",
+      "heightInInches": 74,
+      "weightInPounds": 196,
+      "heightInCentimeters": 188,
+      "weightInKilograms": 89,
+      "birthDate": "2002-02-04",
+      "birthCity": {
+        "default": "Richmond"
+      },
+      "birthCountry": "CAN",
+      "birthStateProvince": {
+        "default": "BC"
+      }
     }
   ],
   "goalies": [
@@ -587,5 +637,5 @@
   ],
   "_sourceSeason": "20262027",
   "_sourceUrl": "https://api-web.nhle.com/v1/roster/DAL/20262027",
-  "_syncedAt": "2026-11-05T20:31:38.505Z"
+  "_syncedAt": "2026-11-17T00:03:40.405Z"
 }

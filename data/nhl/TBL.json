@@ -200,31 +200,6 @@
       "birthCountry": "SWE"
     },
     {
-      "id": 8483752,
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/TBL/8483752.png",
-      "firstName": {
-        "default": "Dominic"
-      },
-      "lastName": {
-        "default": "James"
-      },
-      "sweaterNumber": 17,
-      "positionCode": "C",
-      "shootsCatches": "L",
-      "heightInInches": 72,
-      "weightInPounds": 190,
-      "heightInCentimeters": 183,
-      "weightInKilograms": 86,
-      "birthDate": "2002-07-03",
-      "birthCity": {
-        "default": "Plymouth"
-      },
-      "birthCountry": "USA",
-      "birthStateProvince": {
-        "default": "MI"
-      }
-    },
-    {
       "id": 8476453,
       "headshot": "https://assets.nhle.com/mugs/nhl/20262027/TBL/8476453.png",
       "firstName": {
@@ -279,6 +254,31 @@
         "default": "Omsk"
       },
       "birthCountry": "RUS"
+    },
+    {
+      "id": 8484770,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/TBL/8484770.png",
+      "firstName": {
+        "default": "Sam"
+      },
+      "lastName": {
+        "default": "O'Reilly"
+      },
+      "sweaterNumber": 23,
+      "positionCode": "R",
+      "shootsCatches": "R",
+      "heightInInches": 74,
+      "weightInPounds": 198,
+      "heightInCentimeters": 188,
+      "weightInKilograms": 90,
+      "birthDate": "2006-03-30",
+      "birthCity": {
+        "default": "Toronto"
+      },
+      "birthCountry": "CAN",
+      "birthStateProvince": {
+        "default": "ON"
+      }
     },
     {
       "id": 8478010,
@@ -613,5 +613,5 @@
   ],
   "_sourceSeason": "20262027",
   "_sourceUrl": "https://api-web.nhle.com/v1/roster/TBL/20262027",
-  "_syncedAt": "2026-11-05T20:31:41.110Z"
+  "_syncedAt": "2026-11-17T00:03:42.250Z"
 }

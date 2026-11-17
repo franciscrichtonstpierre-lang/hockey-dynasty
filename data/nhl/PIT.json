@@ -251,6 +251,31 @@
       "birthCountry": "RUS"
     },
     {
+      "id": 8483487,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/PIT/8483487.png",
+      "firstName": {
+        "default": "Rutger"
+      },
+      "lastName": {
+        "default": "McGroarty"
+      },
+      "sweaterNumber": 2,
+      "positionCode": "R",
+      "shootsCatches": "L",
+      "heightInInches": 74,
+      "weightInPounds": 212,
+      "heightInCentimeters": 188,
+      "weightInKilograms": 96,
+      "birthDate": "2004-03-30",
+      "birthCity": {
+        "default": "Lincoln"
+      },
+      "birthCountry": "USA",
+      "birthStateProvince": {
+        "default": "NE"
+      }
+    },
+    {
       "id": 8478438,
       "headshot": "https://assets.nhle.com/mugs/nhl/20262027/PIT/8478438.png",
       "firstName": {
@@ -501,52 +526,6 @@
       }
     },
     {
-      "id": 8486169,
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/PIT/8486169.png",
-      "firstName": {
-        "default": "Jake"
-      },
-      "lastName": {
-        "default": "Livanavage"
-      },
-      "sweaterNumber": 4,
-      "positionCode": "D",
-      "heightInInches": 72,
-      "weightInPounds": 186,
-      "heightInCentimeters": 183,
-      "weightInKilograms": 84,
-      "birthDate": "2004-05-06",
-      "birthCity": {
-        "default": "Gilbert"
-      },
-      "birthCountry": "USA",
-      "birthStateProvince": {
-        "default": "AZ"
-      }
-    },
-    {
-      "id": 8482470,
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/PIT/8482470.png",
-      "firstName": {
-        "default": "Ilya"
-      },
-      "lastName": {
-        "default": "Solovyov"
-      },
-      "sweaterNumber": 7,
-      "positionCode": "D",
-      "shootsCatches": "L",
-      "heightInInches": 75,
-      "weightInPounds": 229,
-      "heightInCentimeters": 191,
-      "weightInKilograms": 104,
-      "birthDate": "2000-07-20",
-      "birthCity": {
-        "default": "Mogilev"
-      },
-      "birthCountry": "BLR"
-    },
-    {
       "id": 8481056,
       "headshot": "https://assets.nhle.com/mugs/nhl/20262027/PIT/8481056.png",
       "firstName": {
@@ -651,5 +630,5 @@
   ],
   "_sourceSeason": "20262027",
   "_sourceUrl": "https://api-web.nhle.com/v1/roster/PIT/20262027",
-  "_syncedAt": "2026-11-05T20:31:40.471Z"
+  "_syncedAt": "2026-11-17T00:03:41.805Z"
 }

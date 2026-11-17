@@ -347,31 +347,6 @@
         "sv": "Helsingfors"
       },
       "birthCountry": "FIN"
-    },
-    {
-      "id": 8476952,
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CHI/8476952.png",
-      "firstName": {
-        "default": "Dominic"
-      },
-      "lastName": {
-        "default": "Toninato"
-      },
-      "sweaterNumber": 25,
-      "positionCode": "C",
-      "shootsCatches": "L",
-      "heightInInches": 74,
-      "weightInPounds": 201,
-      "heightInCentimeters": 188,
-      "weightInKilograms": 91,
-      "birthDate": "1994-03-09",
-      "birthCity": {
-        "default": "Duluth"
-      },
-      "birthCountry": "USA",
-      "birthStateProvince": {
-        "default": "MN"
-      }
     }
   ],
   "defensemen": [
@@ -575,6 +550,31 @@
   ],
   "goalies": [
     {
+      "id": 8482123,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CHI/8482123.png",
+      "firstName": {
+        "default": "Drew"
+      },
+      "lastName": {
+        "default": "Commesso"
+      },
+      "sweaterNumber": 33,
+      "positionCode": "G",
+      "shootsCatches": "L",
+      "heightInInches": 74,
+      "weightInPounds": 190,
+      "heightInCentimeters": 188,
+      "weightInKilograms": 86,
+      "birthDate": "2002-07-19",
+      "birthCity": {
+        "default": "Norwell"
+      },
+      "birthCountry": "USA",
+      "birthStateProvince": {
+        "default": "MA"
+      }
+    },
+    {
       "id": 8481519,
       "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CHI/8481519.png",
       "firstName": {
@@ -598,35 +598,9 @@
       "birthStateProvince": {
         "default": "CT"
       }
-    },
-    {
-      "id": 8482821,
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CHI/8482821.png",
-      "firstName": {
-        "default": "Arvid"
-      },
-      "lastName": {
-        "default": "Soderblom",
-        "cs": "Söderblom",
-        "fi": "Söderblom",
-        "sk": "Söderblom",
-        "sv": "Söderblom"
-      },
-      "sweaterNumber": 40,
-      "positionCode": "G",
-      "shootsCatches": "L",
-      "heightInInches": 75,
-      "weightInPounds": 180,
-      "heightInCentimeters": 191,
-      "weightInKilograms": 82,
-      "birthDate": "1999-08-19",
-      "birthCity": {
-        "default": "Göteborg"
-      },
-      "birthCountry": "SWE"
     }
   ],
   "_sourceSeason": "20262027",
   "_sourceUrl": "https://api-web.nhle.com/v1/roster/CHI/20262027",
-  "_syncedAt": "2026-11-05T20:31:37.903Z"
+  "_syncedAt": "2026-11-17T00:03:39.932Z"
 }

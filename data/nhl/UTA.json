@@ -1,6 +1,31 @@
 {
   "forwards": [
     {
+      "id": 8484388,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/UTA/8484388.png",
+      "firstName": {
+        "default": "Daniil"
+      },
+      "lastName": {
+        "default": "But"
+      },
+      "sweaterNumber": 50,
+      "positionCode": "L",
+      "shootsCatches": "R",
+      "heightInInches": 77,
+      "weightInPounds": 203,
+      "heightInCentimeters": 196,
+      "weightInKilograms": 92,
+      "birthDate": "2005-02-15",
+      "birthCity": {
+        "default": "Yaroslavl",
+        "cs": "Jaroslavl",
+        "fi": "Jaroslavl",
+        "sk": "Jaroslavl"
+      },
+      "birthCountry": "RUS"
+    },
+    {
       "id": 8479619,
       "headshot": "https://assets.nhle.com/mugs/nhl/20262027/UTA/8479619.png",
       "firstName": {
@@ -201,6 +226,31 @@
       }
     },
     {
+      "id": 8481827,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/UTA/8481827.png",
+      "firstName": {
+        "default": "Ben"
+      },
+      "lastName": {
+        "default": "McCartney"
+      },
+      "sweaterNumber": 62,
+      "positionCode": "L",
+      "shootsCatches": "L",
+      "heightInInches": 72,
+      "weightInPounds": 182,
+      "heightInCentimeters": 183,
+      "weightInKilograms": 83,
+      "birthDate": "2001-07-13",
+      "birthCity": {
+        "default": "Portage la Prairie"
+      },
+      "birthCountry": "CAN",
+      "birthStateProvince": {
+        "default": "MB"
+      }
+    },
+    {
       "id": 8477070,
       "headshot": "https://assets.nhle.com/mugs/nhl/20262027/UTA/8477070.png",
       "firstName": {
@@ -348,6 +398,59 @@
       "birthCountry": "USA",
       "birthStateProvince": {
         "default": "NY"
+      }
+    },
+    {
+      "id": 8483436,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/UTA/8483436.png",
+      "firstName": {
+        "default": "Artem"
+      },
+      "lastName": {
+        "default": "Duda"
+      },
+      "sweaterNumber": 84,
+      "positionCode": "D",
+      "shootsCatches": "L",
+      "heightInInches": 73,
+      "weightInPounds": 187,
+      "heightInCentimeters": 185,
+      "weightInKilograms": 85,
+      "birthDate": "2004-04-08",
+      "birthCity": {
+        "default": "Moscow",
+        "cs": "Moskva",
+        "de": "Moskau",
+        "fi": "Moskova",
+        "fr": "Moscou",
+        "sk": "Moskva",
+        "sv": "Moskva"
+      },
+      "birthCountry": "RUS"
+    },
+    {
+      "id": 8481708,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/UTA/8481708.png",
+      "firstName": {
+        "default": "Zac"
+      },
+      "lastName": {
+        "default": "Jones"
+      },
+      "sweaterNumber": 15,
+      "positionCode": "D",
+      "shootsCatches": "L",
+      "heightInInches": 71,
+      "weightInPounds": 190,
+      "heightInCentimeters": 180,
+      "weightInKilograms": 86,
+      "birthDate": "2000-10-18",
+      "birthCity": {
+        "default": "Richmond"
+      },
+      "birthCountry": "USA",
+      "birthStateProvince": {
+        "default": "VA"
       }
     },
     {
@@ -584,5 +687,5 @@
   ],
   "_sourceSeason": "20262027",
   "_sourceUrl": "https://api-web.nhle.com/v1/roster/UTA/20262027",
-  "_syncedAt": "2026-11-05T20:31:41.239Z"
+  "_syncedAt": "2026-11-17T00:03:42.341Z"
 }

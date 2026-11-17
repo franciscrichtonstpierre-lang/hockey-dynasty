@@ -785,7 +785,7 @@ async function simulate(){
 function newSeason(){if(!hdIsCommissionerSession())return msg("Seul le commissaire connecté de la ligue peut commencer une nouvelle saison.");if(!confirm("Remettre les statistiques de saison à zéro? Les choix et échanges seront conservés."))return;S.season++;S.day=S.w=S.l=S.otl=S.gf=S.ga=0;S.history=[];save();render();msg("Nouvelle saison commencée.")}
 
 const codes=["ANA","BOS","BUF","CGY","CAR","CHI","COL","CBJ","DAL","DET","EDM","FLA","LAK","MIN","MTL","NSH","NJD","NYI","NYR","OTT","PHI","PIT","SJS","SEA","STL","TBL","TOR","UTA","VAN","VGK","WSH","WPG"];
-function gameRatings(p){const id=String(p.id||p.playerId||p.nhlPlayerId||"");const match=typeof registryRatingForPlayer==="function"?registryRatingForPlayer(p,String(p.currentLeague||p.league||"").toUpperCase()==="AHL"?"LAH":"",p.nhlRightsTeam||p.rightsTeam):null;const r=(id?hdRatings[id]:null)||match?.attributes||p.attributes;if(!r)return {off:50,def:50,ov:50,available:false};const rated=applyDevelopment(String(match?.id||id),r,match||p);return {off:Number(rated.OFF)||50,def:Number(rated.DEF)||50,ov:Number(rated.OA)||50,available:true};}
+function gameRatings(p){const id=String(p.id||p.playerId||p.nhlPlayerId||"");const match=typeof registryRatingForPlayer==="function"?registryRatingForPlayer(p,String(p.currentLeague||p.league||"").toUpperCase()==="AHL"?"LAH":"",p.nhlRightsTeam||p.rightsTeam):null;const r=match?.attributes||(id?hdRatings[id]:null)||p.attributes;if(!r)return {off:50,def:50,ov:50,available:false};const rated=applyDevelopment(String(match?.id||id),r,match||p);return {off:Number(rated.OFF)||50,def:Number(rated.DEF)||50,ov:Number(rated.OA)||50,available:true};}
 let hdRatings={};
 let hdRatingMetadata={};
 let hdRatingsLoaded=false;

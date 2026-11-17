@@ -33,7 +33,7 @@ const season=seasonRows.find(s=>String(s.season_name||s.seasonName||s.name||"").
 const actualSeasonId=String(season?.season_id||season?.id||seasonId);
 const teams=(bootstrap.teamsNoAll||bootstrap.teams||[]).filter(t=>(t.team_id||t.teamId||t.id)&&(t.name||t.team||t.team_name||t.teamName||t.team_nickname||t.teamNickName||t.team_full_name||t.teamFullName));
 if(teams.length<25)throw new Error(`ECHL bootstrap returned only ${teams.length} teams; refusing to publish an incomplete league.`);
-const slug=s=>norm(s).replace(/[^a-z0-9]/g,"-").replace(/^-|-$/g,"");
+const slug=s=>String(s||"").normalize("NFD").replace(/\\p{Diacritic}/gu,"").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
 let succeeded=0,failed=0;
 async function syncTeam(team){
   const name=String(team.name||team.team_full_name||team.teamFullName||team.team_name||team.teamName||team.team||team.team_nickname||team.teamNickName||"").trim();

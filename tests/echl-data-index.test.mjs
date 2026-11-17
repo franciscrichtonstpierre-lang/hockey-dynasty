@@ -8,7 +8,7 @@ const readJson = name => JSON.parse(readFileSync(fileURLToPath(new URL(name, roo
 const index = readJson("teams.json");
 const slug = value => String(value || "")
   .normalize("NFD")
-  .replace(/[\\u0300-\\u036f]/g, "")
+  .replace(/[\u0300-\u036f]/g, "")
   .toLowerCase()
   .replace(/[^a-z0-9]+/g, "-")
   .replace(/^-|-$/g, "");

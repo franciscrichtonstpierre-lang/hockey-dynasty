@@ -67,6 +67,15 @@ Sources de référence à consulter :
 - [Daily Faceoff — prospect rankings](https://www.dailyfaceoff.com/)
 
 
+## Contrôle des droits sur les données (politique zéro budget)
+
+- `data/data-source-rights-registry.json` — registre des sources, licences, provenance tierce, droits commerciaux, dérivés, affichage, attribution et rétention.
+- `scripts/lib/data-rights-gate.mjs` — bloque l'export commercial si les droits commerciaux, les droits dérivés ou l'affichage ne sont pas explicitement autorisés, si la source est payante ou si les droits de tiers restent non vérifiés.
+- `tests/data-rights-gate.test.mjs` — tests du blocage par défaut et du passage explicite après vérification.
+
+Le contrôle est disponible comme garde-fou technique; il doit être appelé par tout futur pipeline d'import/export avant qu'une donnée soit incluse dans une version distribuée. L'ajout du contrôle ne signifie pas que des données PlayerWON, NHL EDGE ou SportsDataverse ont été importées ou autorisées en bloc.
+
+
 ## Politique de données gratuites
 
 Le projet privilégie désormais exclusivement les sources et outils gratuits, sans licences payantes, abonnements ni essais payants. La matrice des sources, les conditions d'utilisation commerciale et les règles de provenance sont documentées dans [la stratégie de données gratuites uniquement](docs/free-data-sources-zero-budget-hockey-dynasty.md).

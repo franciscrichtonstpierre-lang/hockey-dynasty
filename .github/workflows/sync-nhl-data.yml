@@ -16,6 +16,7 @@ on:
       - "data/ncaa/**"
       - "data/europe/**"
       - "scripts/apply-player-ratings.mjs"
+      - "scripts/import-ehm-ratings.mjs"
       - "scripts/build-ratings.mjs"
       - "scripts/lib/player-ratings.mjs"
       - "scripts/export-registry-index.mjs"
@@ -154,6 +155,8 @@ jobs:
       - name: Exporter le registre complet pour la recherche du jeu
         if: always()
         run: node scripts/export-registry-index.mjs
+      - name: Vérifier la syntaxe de l’importateur EHM 2026-2027
+        run: node --check scripts/import-ehm-ratings.mjs
       - name: Tester le modèle partagé et les données de toutes les ligues
         run: node --test tests/*.test.mjs
       - name: Vérifier la syntaxe JavaScript de l’interface

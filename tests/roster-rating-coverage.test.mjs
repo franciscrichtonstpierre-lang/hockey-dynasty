@@ -138,6 +138,11 @@ test("the organization roster loader waits for and retries the shared ratings re
   assert.match(loader, /hdRatingsLoadPromise/);
   assert.match(registryFetcher, /hdFetchData\(/);
   assert.match(dataFetcher, /hdPinnedDataUrl\(/);
+  assert.match(dataFetcher, /liveRatingData/);
+  assert.match(dataFetcher, /startsWith\("data\/players\/registry-index\/"/);
+  const globalRegistryLoader = sourceLine("async function loadGlobalPlayerRegistry()");
+  assert.match(globalRegistryLoader, /const base="\.\/data\/players\/registry-index\/registry-"/);
+  assert.doesNotMatch(globalRegistryLoader, /frozen\.commitSha/);
   assert.match(pinnedUrl, /raw\.githubusercontent\.com/);
   assert.match(organizationLoader, /await loadRatings\(\)/);
 });

@@ -17,6 +17,9 @@ test("every registry player has the complete shared card and explicit estimate p
     assert.ok(["high", "medium", "low", "very_low", "manual_calibration_anchor"].includes(player.ratingConfidence), `honest confidence for ${player.id}`);
     assert.ok(player.ratingMethod && player.ratingEvidence, `method and evidence for ${player.id}`);
     assert.equal(player.overall, player.attributes.OA, `overall matches OA for ${player.id}`);
+    assert.equal(player.attributes.OFF, Math.round((player.attributes.SH + player.attributes.PL + player.attributes.ST) / 3), `OFF derives from SH/PL/ST for ${player.id}`);
+    assert.equal(player.attributes.DEF, Math.round((player.attributes.CH + player.attributes.PO + player.attributes.HI) / 3), `DEF derives from CH/PO/HI for ${player.id}`);
+    assert.equal(player.attributes.OA, Math.round(RATING_ATTRIBUTES.filter(key => key !== "FI" && key !== "OA").reduce((sum, key) => sum + player.attributes[key], 0) / 14), `OA is the simple non-FI mean for ${player.id}`);
     assert.deepEqual(player.ratedAttributes, RATING_ATTRIBUTES, `rated attributes for ${player.id}`);
     uniqueCards.add(JSON.stringify(player.attributes));
     assert.ok(!( "POT" in player.attributes), `potential is a separate field for ${player.id}`);

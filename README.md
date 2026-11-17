@@ -4,13 +4,13 @@ Saison cible : **2026–2027**. Ce dépôt contient l’application et les insta
 
 ## Couverture vérifiée le 17 novembre 2026
 
-**Dernier audit automatisé : réussi.** Les 93 tests passent (0 échec), la syntaxe JavaScript est valide et l’audit des bases LNH, LAH, ECHL, espoirs, contrats, entraîneurs et choix est terminé. La publication GitHub Pages du commit `0e197ddc59ce790cdb3972ba3e74db29bcc3c534` a réussi.
+**Dernier audit automatisé : réussi.** Les 95 tests passent (0 échec), la syntaxe JavaScript est valide et l’audit des bases LNH, LAH, ECHL, espoirs, contrats, entraîneurs et choix est terminé. La publication GitHub Pages du commit `0e197ddc59ce790cdb3972ba3e74db29bcc3c534` a réussi.
 
 - **LNH :** 32/32 fichiers d’effectifs valides, 797 joueurs.
 - **LAH :** 32/32 fichiers d’effectifs valides, 816 joueurs.
 - **Registre central :** 3 334 fiches et 16 attributs complets sur chaque fiche; aucun identifiant ou doublon d’identité détecté. 16 fiches ont encore une ligue inconnue. Les potentiels sont distincts des attributs : 312 ont une valeur appuyée par une source; 3 022 restent des estimations provisoires du modèle. Elles ne sont pas présentées comme des potentiels officiels.
 - **ECHL :** 30/30 équipes indexées, 773 joueurs. Les noms de fichiers des 30 clubs ont été corrigés et normalisés; l’index pointe vers les nouveaux fichiers. **Espoirs d’organisation :** 32/32 fichiers non vides, 1 323 profils. **Prochains repêchages :** 128 profils (84 en 2027, 37 en 2028, 7 en 2029); ces listes restent des projections, pas des sélections officielles.
-- **Contrats :** 810/815 contrats NHL appariés; 804 ont une URL source, 6 dossiers appariés n’ont pas encore de source URL exploitable et 5 joueurs NHL n’ont pas de contrat apparié dans le jeu de données. 741 lignes saisonnières et 804 cap hits source sont présents; 141 salaires de simulation restent des estimations clairement séparées des montants officiels. Pour l’organisation hors NHL, 2 560 joueurs sont couverts et 442 contrats sont appariés; les autres statuts ne sont pas assimilés à des contrats confirmés.
+- **Contrats :** 810/815 contrats NHL appariés, tous les 810 dossiers appariés ayant maintenant une source URL; 5 joueurs NHL n’ont pas de contrat apparié dans le jeu de données. Les six dossiers manuels qui avaient un contrat vide ont reçu leur type, leur durée, leur date de signature et une source officielle de club. 741 lignes saisonnières et 804 cap hits source sont présents; 141 salaires de simulation restent des estimations clairement séparées des montants officiels. Pour l’organisation hors NHL, 2 560 joueurs sont couverts et 442 contrats sont appariés; les autres statuts ne sont pas assimilés à des contrats confirmés.
 - **Entraîneurs LNH :** 32 équipes et 158 fiches. **Personnel LAH :** 32 équipes et 159 fiches dans `data/coaches/ahl-2026-2027.json`; les cotes de simulation ne sont pas des évaluations de dépistage source-vérifiées.
 - **Choix de repêchage :** 672 emplacements de base (32 équipes × 7 rondes × 3 années : 2027–2029); 655 propriétaires vérifiés, 17 emplacements non jouables exclus, aucun propriétaire non résolu. Le registre passe l’audit.
 

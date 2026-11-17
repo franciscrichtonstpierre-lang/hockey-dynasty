@@ -1,14 +1,14 @@
-// Stage an EHM 2026-27 rating import without changing roster placement.
+// Import authorized EHM 2026-27 ratings into the canonical registry without changing roster placement.
 // Input is a rights-cleared JSON export; this script never downloads Workshop files.
 import { readFile, writeFile } from "node:fs/promises";
 
-const [inputPath, manifestPath, outputPath = "data/ehm/2026-2027-import-preview.json"] = process.argv.slice(2);
+const [inputPath, manifestPath] = process.argv.slice(2);
 if (!inputPath || !manifestPath) {
   throw new Error("Usage: node scripts/import-ehm-ratings.mjs <export.json> <rights-manifest.json> [output.json]");
 }
 const json = async path => JSON.parse(await readFile(path, "utf8"));
-const [source, manifest, registry] = await Promise.all([
-  json(inputPath), json(manifestPath), json("data/players/registry.json")
+const [source, manifest, registry, ratings] = await Promise.all([
+  json(inputPath), json(manifestPath), json("data/players/registry.json"), json("data/ratings.json")
 ]);
 
 const approval = manifest.permission || {};
@@ -68,7 +68,7 @@ const outputPlayers = [];
 const unmatched = [];
 const ambiguous = [];
 const seenSource = new Set();
-for (const player of registry.players.filter(p => p.currentLeague === "NHL")) {
+for (const player of registry.players) {
   let row = player.nhlPlayerId == null ? null : byId.get(String(player.nhlPlayerId));
   if (!row) {
     const candidates = byName.get(norm(player.name)) || [];
@@ -95,7 +95,9 @@ for (const player of registry.players.filter(p => p.currentLeague === "NHL")) {
   if (!Number.isFinite(oaNumber) || oaNumber < oaMin || oaNumber > overallScale) {
     throw new Error("Invalid EHM overall for " + row.name + ": expected " + oaMin + "-" + overallScale + ", received " + oaRaw);
   }
-  const OA = overallScale === 100 ? Math.round((oaNumber - 1) / 99 * 99) : Math.round(oaNumber);
+  const sourceOverall = overallScale === 100 ? Math.round((oaNumber - 1) / 99 * 99) : Math.round(oaNumber);
+  const oaKeys = [...keys, "OFF", "DEF"];
+  const OA = Math.round(oaKeys.reduce((sum, key) => sum + (key === "OFF" ? OFF : key === "DEF" ? DEF : raw[key]), 0) / oaKeys.length);
   const paRaw = row.PA ?? row.pa ?? row.potentialAbility;
   const caRaw = row.CA ?? row.ca ?? row.currentAbility;
   if (paRaw == null || caRaw == null) throw new Error("Missing EHM CA/PA for " + row.name);
@@ -103,6 +105,7 @@ for (const player of registry.players.filter(p => p.currentLeague === "NHL")) {
     ...player,
     attributes:{ FI, ...raw, OFF, DEF, OA },
     overall:OA,
+    ehmSourceOverall:sourceOverall,
     ehmOverall:OA,
     ehmCA:Number(caRaw),
     ehmPA:Number(paRaw),
@@ -135,7 +138,7 @@ for (const player of registry.players.filter(p => p.currentLeague === "NHL")) {
 if (seenSource.size !== outputPlayers.length) throw new Error("Internal source-match accounting error.");
 const result = {
   schemaVersion:1,
-  mode:"preview_only",
+  mode:"production_registry_import",
   createdAt:new Date().toISOString(),
   season:"2026-2027",
   source:{ dataset:manifest.dataset, datasetUrl:manifest.datasetUrl, author:approval.author, writtenPermissionReference:approval.writtenPermissionReference },
@@ -145,11 +148,12 @@ const result = {
     attributeScale:scale,
     abilityScale:200,
     potential:"PA normalized from 1-200 to 0-99",
-    oa:"exact mapped source overall; no Hockey Dynasty recomputation",
+    oa:"mean of the 14 non-FI fields (12 mapped attributes plus OFF and DEF)",
     overallField,
     overallScale
   },
   summary:{
+    registryPlayers:registry.players.length,
     nhlPlayersInRegistry:registry.players.filter(p=>p.currentLeague==="NHL").length,
     matched:outputPlayers.length,
     unmatched:unmatched.length,
@@ -160,6 +164,20 @@ const result = {
   ambiguous,
   players:outputPlayers
 };
-await writeFile(outputPath, JSON.stringify(result,null,2)+"\n");
+if (!outputPlayers.length) throw new Error("No registry players matched the EHM export; nothing was changed.");
+const matchedById = new Map(outputPlayers.map(p => [p.id, p]));
+registry.players = registry.players.map(p => matchedById.get(p.id) || p);
+registry.generatedAt = new Date().toISOString();
+registry.ratingImport = { dataset:manifest.dataset, season:"2026-2027", importedAt:registry.generatedAt, matched:outputPlayers.length, unmatched:unmatched.length, author:approval.author };
+ratings.players = ratings.players || {};
+ratings.playerMetadata = ratings.playerMetadata || {};
+for (const player of outputPlayers) {
+  if (player.nhlPlayerId == null) continue;
+  const id = String(player.nhlPlayerId);
+  ratings.players[id] = player.attributes;
+  ratings.playerMetadata[id] = { source:manifest.datasetUrl, status:"source_verified_ehm_reference", confidence:"source_verified", sampleConfidence:"source_verified", ratedAttributes:player.ratedAttributes, method:"ehm_2026_2027_source_attributes_recomputed_oa", evidence:"ehm_community_roster_authorized_import", season:"2026-2027", position:player.detailedPosition || player.position || null };
+}
+await writeFile("data/players/registry.json", JSON.stringify(registry,null,2)+"\n");
+await writeFile("data/ratings.json", JSON.stringify(ratings,null,2)+"\n");
 console.log(JSON.stringify(result.summary,null,2));
-console.log("Preview written to " + outputPath + "; production registry and roster files were not modified.");
+console.log("Applied authorized EHM ratings to the canonical registry and NHL-ID ratings lookup. Unmatched records were left unchanged; run export-registry-index.mjs and the full validation suite next.");

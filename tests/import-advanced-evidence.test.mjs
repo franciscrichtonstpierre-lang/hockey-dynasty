@@ -58,7 +58,7 @@ test("advanced evidence importer refuses approved label without explicit commerc
     await writeFile(input,JSON.stringify({source:base,rows:[{playerId:"p1",position:"F",league:"NHL",season:"2025-2026",metrics:{ixgPer60:1}}]}));
     const run=spawnSync(process.execPath,[script.pathname,input,join(dir,"out.json")],{encoding:"utf8",env:{...process.env,HD_ALLOW_TEST_FIXTURE:"1"}});
     assert.notEqual(run.status,0);
-    assert.match(run.stderr,/commercial game use/);
+    assert.match(run.stderr,/commercialUseAllowed is explicitly not permitted/);
   } finally { await rm(dir,{recursive:true,force:true}); }
 });
 

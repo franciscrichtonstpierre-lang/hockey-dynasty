@@ -13,7 +13,7 @@
       "currentTeam": "Milwaukee Admirals",
       "nhlRightsTeam": "NSH",
       "draftYear": 2022,
-      "overall": 83,
+      "overall": 82,
       "attributes": {
         "FI": 10,
         "SH": 88,
@@ -30,7 +30,7 @@
         "SR": 82,
         "OFF": 85,
         "DEF": 82,
-        "OA": 83
+        "OA": 82
       },
       "ratingSource": "Official AHL HockeyTech public player statistics feed | https://api-web.nhle.com/v1/prospects/NSH | https://hockeyinsights.ca/team-pipeline/nashville-predators/",
       "ratingConfidence": "low",
@@ -74,8 +74,8 @@
         "DEF",
         "OA"
       ],
-      "potential": 93,
-      "potentialEstimate": 93,
+      "potential": 92,
+      "potentialEstimate": 92,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -608,7 +608,7 @@
       "currentTeam": "Calgary Flames",
       "nhlRightsTeam": "CGY",
       "draftYear": 2026,
-      "overall": 82,
+      "overall": 81,
       "attributes": {
         "FI": 10,
         "SH": 87,
@@ -625,7 +625,7 @@
         "SR": 83,
         "OFF": 83,
         "DEF": 80,
-        "OA": 82
+        "OA": 81
       },
       "ratingSource": "Official WHL HockeyTech / LeagueStat public player statistics feed | https://hockeyinsights.ca/team-pipeline/calgary-flames/ | https://lscluster.hockeytech.com/feed/index.php?feed=statviewfeed&view=roster&team_id=223&season_id=295&client_code=whl",
       "ratingConfidence": "low",
@@ -693,7 +693,7 @@
       "currentTeam": "Cincinnati Cyclones",
       "nhlRightsTeam": null,
       "draftYear": null,
-      "overall": 72,
+      "overall": 71,
       "attributes": {
         "FI": 10,
         "SH": 74,
@@ -710,7 +710,7 @@
         "SR": 73,
         "OFF": 73,
         "DEF": 70,
-        "OA": 72
+        "OA": 71
       },
       "ratingSource": "Official ECHL HockeyTech / LeagueStat public player statistics feed; previous-season fallback: Official ECHL HockeyTech / LeagueStat public player statistics feed (2025-26) | https://lscluster.hockeytech.com/feed/index.php?feed=statviewfeed&key=2c2b89ea7345cae8&client_code=echl&league_id=1&site_id=0&lang=en&view=roster&team_id=5&season_id=78",
       "ratingConfidence": "low",
@@ -754,8 +754,8 @@
         "DEF",
         "OA"
       ],
-      "potential": 76,
-      "potentialEstimate": 76,
+      "potential": 75,
+      "potentialEstimate": 75,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -948,7 +948,7 @@
       "currentTeam": "LAK",
       "nhlRightsTeam": "LAK",
       "draftYear": null,
-      "overall": 62,
+      "overall": 61,
       "attributes": {
         "FI": 10,
         "SH": 77,
@@ -965,7 +965,7 @@
         "SR": 66,
         "OFF": 66,
         "DEF": 57,
-        "OA": 62
+        "OA": 61
       },
       "ratingSource": "NHL Stats REST regular-season player statistics",
       "ratingConfidence": "low",
@@ -991,9 +991,11 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
-      "potential": 62,
-      "potentialEstimate": 62,
+      "ratingModeledAttributes": [
+        "FA"
+      ],
+      "potential": 61,
+      "potentialEstimate": 61,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -1101,7 +1103,7 @@
       "currentTeam": "LAK",
       "nhlRightsTeam": "LAK",
       "draftYear": null,
-      "overall": 64,
+      "overall": 65,
       "attributes": {
         "FI": 10,
         "SH": 49,
@@ -1118,7 +1120,7 @@
         "SR": 72,
         "OFF": 62,
         "DEF": 64,
-        "OA": 64
+        "OA": 65
       },
       "ratingSource": "NHL Stats REST regular-season player statistics",
       "ratingConfidence": "low",
@@ -1144,9 +1146,11 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
-      "potential": 64,
-      "potentialEstimate": 64,
+      "ratingModeledAttributes": [
+        "FA"
+      ],
+      "potential": 65,
+      "potentialEstimate": 65,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -1169,7 +1173,7 @@
       "currentTeam": "MIN",
       "nhlRightsTeam": "MIN",
       "draftYear": null,
-      "overall": 74,
+      "overall": 72,
       "attributes": {
         "FI": 10,
         "SH": 88,
@@ -1186,7 +1190,7 @@
         "SR": 81,
         "OFF": 78,
         "DEF": 68,
-        "OA": 74
+        "OA": 72
       },
       "ratingSource": "NHL Stats REST regular-season player statistics",
       "ratingConfidence": "low",
@@ -1213,8 +1217,8 @@
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
       "ratingModeledAttributes": [],
-      "potential": 74,
-      "potentialEstimate": 74,
+      "potential": 72,
+      "potentialEstimate": 72,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -1237,7 +1241,7 @@
       "currentTeam": "CGY",
       "nhlRightsTeam": "CGY",
       "draftYear": null,
-      "overall": 66,
+      "overall": 65,
       "attributes": {
         "FI": 10,
         "SH": 84,
@@ -1254,7 +1258,7 @@
         "SR": 70,
         "OFF": 73,
         "DEF": 60,
-        "OA": 66
+        "OA": 65
       },
       "ratingSource": "NHL Stats REST regular-season player statistics",
       "ratingConfidence": "low",
@@ -1280,9 +1284,11 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
-      "potential": 67,
-      "potentialEstimate": 67,
+      "ratingModeledAttributes": [
+        "FA"
+      ],
+      "potential": 66,
+      "potentialEstimate": 66,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -1305,7 +1311,7 @@
       "currentTeam": "CGY",
       "nhlRightsTeam": "CGY",
       "draftYear": null,
-      "overall": 53,
+      "overall": 54,
       "attributes": {
         "FI": 10,
         "SH": 44,
@@ -1322,7 +1328,7 @@
         "SR": 55,
         "OFF": 52,
         "DEF": 54,
-        "OA": 53
+        "OA": 54
       },
       "ratingSource": "NHL Stats REST regular-season player statistics",
       "ratingConfidence": "low",
@@ -1348,9 +1354,11 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
-      "potential": 53,
-      "potentialEstimate": 53,
+      "ratingModeledAttributes": [
+        "FA"
+      ],
+      "potential": 54,
+      "potentialEstimate": 54,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -1416,7 +1424,13 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FI",
+        "SH",
+        "PL",
+        "FA",
+        "OFF"
+      ],
       "potential": 82,
       "potentialEstimate": 82,
       "potentialStatus": "provisional_model_estimate",
@@ -1441,7 +1455,7 @@
       "currentTeam": "DAL",
       "nhlRightsTeam": "DAL",
       "draftYear": null,
-      "overall": 53,
+      "overall": 52,
       "attributes": {
         "FI": 10,
         "SH": 55,
@@ -1458,7 +1472,7 @@
         "SR": 56,
         "OFF": 52,
         "DEF": 51,
-        "OA": 53
+        "OA": 52
       },
       "ratingSource": "NHL Stats REST regular-season player statistics",
       "ratingConfidence": "low",
@@ -1484,9 +1498,11 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
-      "potential": 53,
-      "potentialEstimate": 53,
+      "ratingModeledAttributes": [
+        "FA"
+      ],
+      "potential": 52,
+      "potentialEstimate": 52,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -1679,7 +1695,7 @@
       "currentTeam": "IK Oskarshamn",
       "nhlRightsTeam": "CHI",
       "draftYear": 2024,
-      "overall": 88,
+      "overall": 87,
       "attributes": {
         "FI": 10,
         "SH": 95,
@@ -1696,7 +1712,7 @@
         "SR": 89,
         "OFF": 90,
         "DEF": 85,
-        "OA": 88
+        "OA": 87
       },
       "ratingSource": "Official HockeyAllsvenskan public statistics API; regular season 2026-27 (end-year 2027, site start-year 2026) | https://api-web.nhle.com/v1/prospects/CHI | https://hockeyinsights.ca/team-pipeline/chicago-blackhawks/",
       "ratingConfidence": "low",
@@ -1849,7 +1865,7 @@
       "currentTeam": "Hershey Bears",
       "nhlRightsTeam": null,
       "draftYear": null,
-      "overall": 78,
+      "overall": 77,
       "attributes": {
         "FI": 10,
         "SH": 84,
@@ -1866,7 +1882,7 @@
         "SR": 76,
         "OFF": 80,
         "DEF": 76,
-        "OA": 78
+        "OA": 77
       },
       "ratingSource": "Official AHL HockeyTech public player statistics feed; previous-season fallback: Official AHL HockeyTech / LeagueStat public player statistics feed (2025-26) | https://lscluster.hockeytech.com/feed/index.php?feed=statviewfeed&key=ccb91f29d6744675&client_code=ahl&league_id=4&site_id=3&lang=en&view=roster&team_id=319&season_id=94",
       "ratingConfidence": "low",
@@ -1910,8 +1926,8 @@
         "DEF",
         "OA"
       ],
-      "potential": 78,
-      "potentialEstimate": 78,
+      "potential": 77,
+      "potentialEstimate": 77,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -2147,7 +2163,13 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FI",
+        "SH",
+        "PL",
+        "FA",
+        "OFF"
+      ],
       "potential": 78,
       "potentialEstimate": 78,
       "potentialStatus": "provisional_model_estimate",
@@ -2257,7 +2279,7 @@
       "currentTeam": "Connecticut",
       "nhlRightsTeam": "SJS",
       "draftYear": 2022,
-      "overall": 89,
+      "overall": 88,
       "attributes": {
         "FI": 10,
         "SH": 97,
@@ -2274,7 +2296,7 @@
         "SR": 92,
         "OFF": 91,
         "DEF": 86,
-        "OA": 89
+        "OA": 88
       },
       "ratingSource": "https://www.collegehockeyinc.com/conferences/national/natplayer27.php; previous-season fallback: https://www.collegehockeyinc.com/conferences/national/natplayer26.php | https://api-web.nhle.com/v1/prospects/SJS | https://hockeyinsights.ca/team-pipeline/san-jose-sharks/ | https://www.collegehockeynews.com/reports/roster/Connecticut/17",
       "ratingConfidence": "low",
@@ -2318,8 +2340,8 @@
         "DEF",
         "OA"
       ],
-      "potential": 99,
-      "potentialEstimate": 99,
+      "potential": 98,
+      "potentialEstimate": 98,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -2512,7 +2534,7 @@
       "currentTeam": "TBL",
       "nhlRightsTeam": "TBL",
       "draftYear": null,
-      "overall": 76,
+      "overall": 75,
       "attributes": {
         "FI": 10,
         "SH": 81,
@@ -2529,7 +2551,7 @@
         "SR": 84,
         "OFF": 81,
         "DEF": 73,
-        "OA": 76
+        "OA": 75
       },
       "ratingSource": "NHL Stats REST regular-season player statistics",
       "ratingConfidence": "low",
@@ -2555,9 +2577,11 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
-      "potential": 76,
-      "potentialEstimate": 76,
+      "ratingModeledAttributes": [
+        "FA"
+      ],
+      "potential": 75,
+      "potentialEstimate": 75,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -2878,7 +2902,13 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FI",
+        "SH",
+        "PL",
+        "FA",
+        "OFF"
+      ],
       "potential": 80,
       "potentialEstimate": 80,
       "potentialStatus": "provisional_model_estimate",
@@ -2903,7 +2933,7 @@
       "currentTeam": "Bakersfield Condors",
       "nhlRightsTeam": null,
       "draftYear": null,
-      "overall": 68,
+      "overall": 69,
       "attributes": {
         "FI": 10,
         "SH": 64,
@@ -2920,7 +2950,7 @@
         "SR": 67,
         "OFF": 67,
         "DEF": 71,
-        "OA": 68
+        "OA": 69
       },
       "ratingSource": "Official AHL HockeyTech public player statistics feed; previous-season fallback: Official AHL HockeyTech / LeagueStat public player statistics feed (2025-26) | https://lscluster.hockeytech.com/feed/index.php?feed=statviewfeed&key=ccb91f29d6744675&client_code=ahl&league_id=4&site_id=3&lang=en&view=roster&team_id=402&season_id=94",
       "ratingConfidence": "low",
@@ -2964,8 +2994,8 @@
         "DEF",
         "OA"
       ],
-      "potential": 69,
-      "potentialEstimate": 69,
+      "potential": 70,
+      "potentialEstimate": 70,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -2988,7 +3018,7 @@
       "currentTeam": "Coachella Valley Firebirds",
       "nhlRightsTeam": null,
       "draftYear": 2013,
-      "overall": 77,
+      "overall": 76,
       "attributes": {
         "FI": 10,
         "SH": 82,
@@ -3005,7 +3035,7 @@
         "SR": 79,
         "OFF": 79,
         "DEF": 74,
-        "OA": 77
+        "OA": 76
       },
       "ratingSource": "Official AHL HockeyTech public player statistics feed | https://lscluster.hockeytech.com/feed/index.php?feed=statviewfeed&key=ccb91f29d6744675&client_code=ahl&league_id=4&site_id=3&lang=en&view=roster&team_id=445&season_id=94",
       "ratingConfidence": "low",
@@ -3049,8 +3079,8 @@
         "DEF",
         "OA"
       ],
-      "potential": 77,
-      "potentialEstimate": 77,
+      "potential": 76,
+      "potentialEstimate": 76,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -3073,7 +3103,7 @@
       "currentTeam": "DET",
       "nhlRightsTeam": "DET",
       "draftYear": 2018,
-      "overall": 56,
+      "overall": 55,
       "attributes": {
         "FI": 10,
         "SH": 62,
@@ -3090,7 +3120,7 @@
         "SR": 58,
         "OFF": 57,
         "DEF": 53,
-        "OA": 56
+        "OA": 55
       },
       "ratingSource": "NHL Stats REST regular-season player statistics",
       "ratingConfidence": "low",
@@ -3116,9 +3146,11 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
-      "potential": 56,
-      "potentialEstimate": 56,
+      "ratingModeledAttributes": [
+        "FA"
+      ],
+      "potential": 55,
+      "potentialEstimate": 55,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -3269,7 +3301,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 68,
       "potentialEstimate": 68,
       "potentialStatus": "provisional_model_estimate",
@@ -3379,7 +3413,7 @@
       "currentTeam": "Providence",
       "nhlRightsTeam": "CHI",
       "draftYear": 2024,
-      "overall": 88,
+      "overall": 87,
       "attributes": {
         "FI": 10,
         "SH": 95,
@@ -3396,7 +3430,7 @@
         "SR": 91,
         "OFF": 89,
         "DEF": 86,
-        "OA": 88
+        "OA": 87
       },
       "ratingSource": "https://www.collegehockeyinc.com/conferences/national/natplayer27.php; previous-season fallback: https://www.collegehockeyinc.com/conferences/national/natplayer26.php | https://api-web.nhle.com/v1/prospects/CHI | https://hockeyinsights.ca/team-pipeline/chicago-blackhawks/ | https://www.collegehockeynews.com/reports/roster/Providence/46",
       "ratingConfidence": "low",
@@ -3549,7 +3583,7 @@
       "currentTeam": "Providence College",
       "nhlRightsTeam": "WPG",
       "draftYear": 2026,
-      "overall": 60,
+      "overall": 59,
       "attributes": {
         "FI": 10,
         "SH": 46,
@@ -3566,7 +3600,7 @@
         "SR": 67,
         "OFF": 53,
         "DEF": 69,
-        "OA": 60
+        "OA": 59
       },
       "ratingSource": "Official AHL HockeyTech public player statistics feed | https://hockeyinsights.ca/team-pipeline/winnipeg-jets/",
       "ratingConfidence": "low",
@@ -3804,7 +3838,7 @@
       "currentTeam": "TOR",
       "nhlRightsTeam": "TOR",
       "draftYear": null,
-      "overall": 70,
+      "overall": 69,
       "attributes": {
         "FI": 10,
         "SH": 91,
@@ -3821,7 +3855,7 @@
         "SR": 74,
         "OFF": 79,
         "DEF": 63,
-        "OA": 70
+        "OA": 69
       },
       "ratingSource": "NHL Stats REST regular-season player statistics",
       "ratingConfidence": "low",
@@ -3848,8 +3882,8 @@
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
       "ratingModeledAttributes": [],
-      "potential": 70,
-      "potentialEstimate": 70,
+      "potential": 69,
+      "potentialEstimate": 69,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -4000,7 +4034,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 60,
       "potentialEstimate": 60,
       "potentialStatus": "provisional_model_estimate",
@@ -4086,8 +4122,8 @@
         "DEF",
         "OA"
       ],
-      "potential": 77,
-      "potentialEstimate": 77,
+      "potential": 75,
+      "potentialEstimate": 75,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -4280,7 +4316,7 @@
       "currentTeam": "FLA",
       "nhlRightsTeam": "FLA",
       "draftYear": null,
-      "overall": 55,
+      "overall": 54,
       "attributes": {
         "FI": 10,
         "SH": 55,
@@ -4297,7 +4333,7 @@
         "SR": 58,
         "OFF": 54,
         "DEF": 53,
-        "OA": 55
+        "OA": 54
       },
       "ratingSource": "NHL Stats REST regular-season player statistics",
       "ratingConfidence": "low",
@@ -4323,9 +4359,11 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
-      "potential": 55,
-      "potentialEstimate": 55,
+      "ratingModeledAttributes": [
+        "FA"
+      ],
+      "potential": 54,
+      "potentialEstimate": 54,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -4561,7 +4599,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 67,
       "potentialEstimate": 67,
       "potentialStatus": "provisional_model_estimate",
@@ -4586,7 +4626,7 @@
       "currentTeam": "OTT",
       "nhlRightsTeam": "OTT",
       "draftYear": null,
-      "overall": 74,
+      "overall": 73,
       "attributes": {
         "FI": 10,
         "SH": 59,
@@ -4603,7 +4643,7 @@
         "SR": 79,
         "OFF": 66,
         "DEF": 78,
-        "OA": 74
+        "OA": 73
       },
       "ratingSource": "NHL Stats REST regular-season goalie statistics",
       "ratingConfidence": "low",
@@ -4629,9 +4669,15 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
-      "potential": 74,
-      "potentialEstimate": 74,
+      "ratingModeledAttributes": [
+        "FI",
+        "SH",
+        "PL",
+        "FA",
+        "OFF"
+      ],
+      "potential": 73,
+      "potentialEstimate": 73,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -5122,7 +5168,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 60,
       "potentialEstimate": 60,
       "potentialStatus": "provisional_model_estimate",
@@ -5275,7 +5323,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 60,
       "potentialEstimate": 60,
       "potentialStatus": "provisional_model_estimate",
@@ -5343,7 +5393,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 63,
       "potentialEstimate": 63,
       "potentialStatus": "provisional_model_estimate",
@@ -5538,7 +5590,7 @@
       "currentTeam": "CGY",
       "nhlRightsTeam": "CGY",
       "draftYear": null,
-      "overall": 65,
+      "overall": 64,
       "attributes": {
         "FI": 10,
         "SH": 76,
@@ -5555,7 +5607,7 @@
         "SR": 70,
         "OFF": 70,
         "DEF": 60,
-        "OA": 65
+        "OA": 64
       },
       "ratingSource": "NHL Stats REST regular-season player statistics",
       "ratingConfidence": "low",
@@ -5581,9 +5633,11 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
-      "potential": 65,
-      "potentialEstimate": 65,
+      "ratingModeledAttributes": [
+        "FA"
+      ],
+      "potential": 64,
+      "potentialEstimate": 64,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -5649,7 +5703,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 63,
       "potentialEstimate": 63,
       "potentialStatus": "provisional_model_estimate",
@@ -5759,7 +5815,7 @@
       "currentTeam": "NSH",
       "nhlRightsTeam": "NSH",
       "draftYear": null,
-      "overall": 65,
+      "overall": 64,
       "attributes": {
         "FI": 10,
         "SH": 79,
@@ -5776,7 +5832,7 @@
         "SR": 68,
         "OFF": 71,
         "DEF": 60,
-        "OA": 65
+        "OA": 64
       },
       "ratingSource": "NHL Stats REST regular-season player statistics",
       "ratingConfidence": "low",
@@ -5802,9 +5858,11 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
-      "potential": 65,
-      "potentialEstimate": 65,
+      "ratingModeledAttributes": [
+        "FA"
+      ],
+      "potential": 64,
+      "potentialEstimate": 64,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -6252,7 +6310,7 @@
       "currentTeam": "Western Michigan",
       "nhlRightsTeam": "PIT",
       "draftYear": 2024,
-      "overall": 86,
+      "overall": 85,
       "attributes": {
         "FI": 10,
         "SH": 83,
@@ -6269,7 +6327,7 @@
         "SR": 88,
         "OFF": 85,
         "DEF": 88,
-        "OA": 86
+        "OA": 85
       },
       "ratingSource": "https://www.collegehockeyinc.com/conferences/national/natplayer27.php; previous-season fallback: https://www.collegehockeyinc.com/conferences/national/natplayer26.php | https://hockeyinsights.ca/team-pipeline/pittsburgh-penguins/ | https://www.collegehockeynews.com/reports/roster/Western-Michigan/57",
       "ratingConfidence": "low",
@@ -6313,8 +6371,8 @@
         "DEF",
         "OA"
       ],
-      "potential": 97,
-      "potentialEstimate": 97,
+      "potential": 96,
+      "potentialEstimate": 96,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -6380,7 +6438,13 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FI",
+        "SH",
+        "PL",
+        "FA",
+        "OFF"
+      ],
       "potential": 75,
       "potentialEstimate": 75,
       "potentialStatus": "provisional_model_estimate",
@@ -6533,7 +6597,13 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FI",
+        "SH",
+        "PL",
+        "FA",
+        "OFF"
+      ],
       "potential": 74,
       "potentialEstimate": 74,
       "potentialStatus": "provisional_model_estimate",
@@ -6898,7 +6968,7 @@
       "currentTeam": "SEA",
       "nhlRightsTeam": "SEA",
       "draftYear": null,
-      "overall": 72,
+      "overall": 70,
       "attributes": {
         "FI": 10,
         "SH": 89,
@@ -6915,7 +6985,7 @@
         "SR": 78,
         "OFF": 78,
         "DEF": 65,
-        "OA": 72
+        "OA": 70
       },
       "ratingSource": "NHL Stats REST regular-season player statistics",
       "ratingConfidence": "low",
@@ -6941,9 +7011,11 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
-      "potential": 72,
-      "potentialEstimate": 72,
+      "ratingModeledAttributes": [
+        "FA"
+      ],
+      "potential": 70,
+      "potentialEstimate": 70,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -7094,7 +7166,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 51,
       "potentialEstimate": 51,
       "potentialStatus": "provisional_model_estimate",
@@ -7459,7 +7533,7 @@
       "currentTeam": "WSH",
       "nhlRightsTeam": "WSH",
       "draftYear": null,
-      "overall": 67,
+      "overall": 66,
       "attributes": {
         "FI": 10,
         "SH": 86,
@@ -7476,7 +7550,7 @@
         "SR": 72,
         "OFF": 74,
         "DEF": 62,
-        "OA": 67
+        "OA": 66
       },
       "ratingSource": "NHL Stats REST regular-season player statistics",
       "ratingConfidence": "low",
@@ -7502,9 +7576,11 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
-      "potential": 67,
-      "potentialEstimate": 67,
+      "ratingModeledAttributes": [
+        "FA"
+      ],
+      "potential": 66,
+      "potentialEstimate": 66,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -7570,7 +7646,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 63,
       "potentialEstimate": 63,
       "potentialStatus": "provisional_model_estimate",
@@ -7595,7 +7673,7 @@
       "currentTeam": "Tahoe Knight Monsters",
       "nhlRightsTeam": null,
       "draftYear": null,
-      "overall": 59,
+      "overall": 60,
       "attributes": {
         "FI": 10,
         "SH": 59,
@@ -7612,7 +7690,7 @@
         "SR": 66,
         "OFF": 56,
         "DEF": 61,
-        "OA": 59
+        "OA": 60
       },
       "ratingSource": "Official ECHL HockeyTech / LeagueStat public player statistics feed | https://lscluster.hockeytech.com/feed/index.php?feed=statviewfeed&key=2c2b89ea7345cae8&client_code=echl&league_id=1&site_id=0&lang=en&view=roster&team_id=106&season_id=78",
       "ratingConfidence": "low",
@@ -7656,8 +7734,8 @@
         "DEF",
         "OA"
       ],
-      "potential": 59,
-      "potentialEstimate": 59,
+      "potential": 60,
+      "potentialEstimate": 60,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -7808,7 +7886,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 71,
       "potentialEstimate": 71,
       "potentialStatus": "provisional_model_estimate",
@@ -7833,7 +7913,7 @@
       "currentTeam": "CAR",
       "nhlRightsTeam": "CAR",
       "draftYear": null,
-      "overall": 67,
+      "overall": 66,
       "attributes": {
         "FI": 10,
         "SH": 83,
@@ -7850,7 +7930,7 @@
         "SR": 73,
         "OFF": 72,
         "DEF": 61,
-        "OA": 67
+        "OA": 66
       },
       "ratingSource": "NHL Stats REST regular-season player statistics",
       "ratingConfidence": "low",
@@ -7877,8 +7957,8 @@
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
       "ratingModeledAttributes": [],
-      "potential": 67,
-      "potentialEstimate": 67,
+      "potential": 66,
+      "potentialEstimate": 66,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -8411,7 +8491,7 @@
       "currentTeam": "NYR",
       "nhlRightsTeam": "NYR",
       "draftYear": null,
-      "overall": 49,
+      "overall": 50,
       "attributes": {
         "FI": 10,
         "SH": 48,
@@ -8428,7 +8508,7 @@
         "SR": 49,
         "OFF": 48,
         "DEF": 47,
-        "OA": 49
+        "OA": 50
       },
       "ratingSource": "NHL Stats REST regular-season player statistics",
       "ratingConfidence": "low",
@@ -8455,8 +8535,8 @@
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
       "ratingModeledAttributes": [],
-      "potential": 50,
-      "potentialEstimate": 50,
+      "potential": 51,
+      "potentialEstimate": 51,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -8522,7 +8602,13 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FI",
+        "SH",
+        "PL",
+        "FA",
+        "OFF"
+      ],
       "potential": 75,
       "potentialEstimate": 75,
       "potentialStatus": "provisional_model_estimate",
@@ -8553,16 +8639,16 @@
         "SH": 76,
         "PL": 75,
         "ST": 79,
-        "CH": 83,
-        "PO": 78,
-        "HI": 83,
-        "SK": 71,
+        "CH": 87,
+        "PO": 84,
+        "HI": 84,
+        "SK": 75,
         "EN": 78,
         "PE": 81,
         "FA": 55,
         "LE": 79,
-        "SR": 79,
-        "OFF": 74,
+        "SR": 80,
+        "OFF": 77,
         "DEF": 85,
         "OA": 78
       },
@@ -8870,7 +8956,7 @@
       "currentTeam": "BUF",
       "nhlRightsTeam": "BUF",
       "draftYear": null,
-      "overall": 68,
+      "overall": 66,
       "attributes": {
         "FI": 10,
         "SH": 88,
@@ -8887,7 +8973,7 @@
         "SR": 73,
         "OFF": 75,
         "DEF": 62,
-        "OA": 68
+        "OA": 66
       },
       "ratingSource": "NHL Stats REST regular-season player statistics",
       "ratingConfidence": "low",
@@ -8913,9 +8999,11 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
-      "potential": 72,
-      "potentialEstimate": 72,
+      "ratingModeledAttributes": [
+        "FA"
+      ],
+      "potential": 70,
+      "potentialEstimate": 70,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -9321,7 +9409,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 58,
       "potentialEstimate": 58,
       "potentialStatus": "provisional_model_estimate",
@@ -9389,7 +9479,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 68,
       "potentialEstimate": 68,
       "potentialStatus": "provisional_model_estimate",
@@ -9457,7 +9549,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 75,
       "potentialEstimate": 75,
       "potentialStatus": "provisional_model_estimate",
@@ -9652,7 +9746,7 @@
       "currentTeam": "BUF",
       "nhlRightsTeam": "BUF",
       "draftYear": null,
-      "overall": 68,
+      "overall": 67,
       "attributes": {
         "FI": 10,
         "SH": 80,
@@ -9669,7 +9763,7 @@
         "SR": 75,
         "OFF": 72,
         "DEF": 62,
-        "OA": 68
+        "OA": 67
       },
       "ratingSource": "NHL Stats REST regular-season player statistics",
       "ratingConfidence": "low",
@@ -9696,8 +9790,8 @@
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
       "ratingModeledAttributes": [],
-      "potential": 69,
-      "potentialEstimate": 69,
+      "potential": 68,
+      "potentialEstimate": 68,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -9805,7 +9899,7 @@
       "currentTeam": "South Carolina Stingrays",
       "nhlRightsTeam": null,
       "draftYear": null,
-      "overall": 75,
+      "overall": 74,
       "attributes": {
         "FI": 10,
         "SH": 80,
@@ -9822,7 +9916,7 @@
         "SR": 73,
         "OFF": 76,
         "DEF": 74,
-        "OA": 75
+        "OA": 74
       },
       "ratingSource": "Official ECHL HockeyTech / LeagueStat public player statistics feed | https://lscluster.hockeytech.com/feed/index.php?feed=statviewfeed&key=2c2b89ea7345cae8&client_code=echl&league_id=1&site_id=0&lang=en&view=roster&team_id=18&season_id=78",
       "ratingConfidence": "low",
@@ -9866,8 +9960,8 @@
         "DEF",
         "OA"
       ],
-      "potential": 75,
-      "potentialEstimate": 75,
+      "potential": 74,
+      "potentialEstimate": 74,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -10230,7 +10324,7 @@
       "currentTeam": "Hamilton Hammers",
       "nhlRightsTeam": "NYI",
       "draftYear": null,
-      "overall": 62,
+      "overall": 61,
       "attributes": {
         "FI": 10,
         "SH": 43,
@@ -10247,7 +10341,7 @@
         "SR": 68,
         "OFF": 52,
         "DEF": 73,
-        "OA": 62
+        "OA": 61
       },
       "ratingSource": "Official AHL HockeyTech public player statistics feed; previous-season fallback: Official AHL HockeyTech / LeagueStat public player statistics feed (2025-26) | https://hockeyinsights.ca/team-pipeline/new-york-islanders/",
       "ratingConfidence": "low",
@@ -10291,8 +10385,8 @@
         "DEF",
         "OA"
       ],
-      "potential": 68,
-      "potentialEstimate": 68,
+      "potential": 67,
+      "potentialEstimate": 67,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -11250,7 +11344,7 @@
       "currentTeam": "MTL",
       "nhlRightsTeam": "MTL",
       "draftYear": null,
-      "overall": 74,
+      "overall": 72,
       "attributes": {
         "FI": 10,
         "SH": 91,
@@ -11267,7 +11361,7 @@
         "SR": 81,
         "OFF": 80,
         "DEF": 67,
-        "OA": 74
+        "OA": 72
       },
       "ratingSource": "NHL Stats REST regular-season player statistics",
       "ratingConfidence": "low",
@@ -11293,9 +11387,11 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
-      "potential": 82,
-      "potentialEstimate": 82,
+      "ratingModeledAttributes": [
+        "FA"
+      ],
+      "potential": 80,
+      "potentialEstimate": 80,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -11446,9 +11542,11 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
-      "potential": 59,
-      "potentialEstimate": 59,
+      "ratingModeledAttributes": [
+        "FA"
+      ],
+      "potential": 57,
+      "potentialEstimate": 57,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -11556,7 +11654,7 @@
       "currentTeam": "PIT",
       "nhlRightsTeam": "PIT",
       "draftYear": null,
-      "overall": 64,
+      "overall": 63,
       "attributes": {
         "FI": 10,
         "SH": 83,
@@ -11573,7 +11671,7 @@
         "SR": 69,
         "OFF": 70,
         "DEF": 59,
-        "OA": 64
+        "OA": 63
       },
       "ratingSource": "NHL Stats REST regular-season player statistics",
       "ratingConfidence": "low",
@@ -11599,9 +11697,11 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
-      "potential": 64,
-      "potentialEstimate": 64,
+      "ratingModeledAttributes": [
+        "FA"
+      ],
+      "potential": 63,
+      "potentialEstimate": 63,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -11752,7 +11852,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 56,
       "potentialEstimate": 56,
       "potentialStatus": "provisional_model_estimate",
@@ -11990,7 +12092,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 71,
       "potentialEstimate": 71,
       "potentialStatus": "provisional_model_estimate",
@@ -12270,7 +12374,7 @@
       "currentTeam": "DAL",
       "nhlRightsTeam": "DAL",
       "draftYear": null,
-      "overall": 61,
+      "overall": 60,
       "attributes": {
         "FI": 10,
         "SH": 73,
@@ -12287,7 +12391,7 @@
         "SR": 66,
         "OFF": 64,
         "DEF": 56,
-        "OA": 61
+        "OA": 60
       },
       "ratingSource": "NHL Stats REST regular-season player statistics",
       "ratingConfidence": "low",
@@ -12314,8 +12418,8 @@
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
       "ratingModeledAttributes": [],
-      "potential": 63,
-      "potentialEstimate": 63,
+      "potential": 62,
+      "potentialEstimate": 62,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -12508,7 +12612,7 @@
       "currentTeam": "Iowa Wild",
       "nhlRightsTeam": null,
       "draftYear": null,
-      "overall": 84,
+      "overall": 83,
       "attributes": {
         "FI": 10,
         "SH": 90,
@@ -12525,7 +12629,7 @@
         "SR": 85,
         "OFF": 85,
         "DEF": 82,
-        "OA": 84
+        "OA": 83
       },
       "ratingSource": "Official AHL HockeyTech public player statistics feed | https://lscluster.hockeytech.com/feed/index.php?feed=statviewfeed&key=ccb91f29d6744675&client_code=ahl&league_id=4&site_id=3&lang=en&view=roster&team_id=389&season_id=94",
       "ratingConfidence": "low",
@@ -12569,8 +12673,8 @@
         "DEF",
         "OA"
       ],
-      "potential": 84,
-      "potentialEstimate": 84,
+      "potential": 83,
+      "potentialEstimate": 83,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -13299,7 +13403,13 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FI",
+        "SH",
+        "PL",
+        "FA",
+        "OFF"
+      ],
       "potential": 78,
       "potentialEstimate": 78,
       "potentialStatus": "provisional_model_estimate",
@@ -13367,7 +13477,13 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FI",
+        "SH",
+        "PL",
+        "FA",
+        "OFF"
+      ],
       "potential": 77,
       "potentialEstimate": 77,
       "potentialStatus": "provisional_model_estimate",
@@ -13690,7 +13806,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 73,
       "potentialEstimate": 73,
       "potentialStatus": "provisional_model_estimate",
@@ -13715,7 +13833,7 @@
       "currentTeam": "Laval Rocket",
       "nhlRightsTeam": null,
       "draftYear": 2014,
-      "overall": 63,
+      "overall": 64,
       "attributes": {
         "FI": 10,
         "SH": 58,
@@ -13732,7 +13850,7 @@
         "SR": 67,
         "OFF": 58,
         "DEF": 66,
-        "OA": 63
+        "OA": 64
       },
       "ratingSource": "Official AHL HockeyTech public player statistics feed | https://lscluster.hockeytech.com/feed/index.php?feed=statviewfeed&key=ccb91f29d6744675&client_code=ahl&league_id=4&site_id=3&lang=en&view=roster&team_id=415&season_id=94",
       "ratingConfidence": "low",
@@ -13776,8 +13894,8 @@
         "DEF",
         "OA"
       ],
-      "potential": 63,
-      "potentialEstimate": 63,
+      "potential": 64,
+      "potentialEstimate": 64,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -13800,7 +13918,7 @@
       "currentTeam": "SEA",
       "nhlRightsTeam": "SEA",
       "draftYear": null,
-      "overall": 65,
+      "overall": 64,
       "attributes": {
         "FI": 10,
         "SH": 76,
@@ -13817,7 +13935,7 @@
         "SR": 74,
         "OFF": 69,
         "DEF": 60,
-        "OA": 65
+        "OA": 64
       },
       "ratingSource": "NHL Stats REST regular-season player statistics",
       "ratingConfidence": "low",
@@ -13843,9 +13961,11 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
-      "potential": 67,
-      "potentialEstimate": 67,
+      "ratingModeledAttributes": [
+        "FA"
+      ],
+      "potential": 66,
+      "potentialEstimate": 66,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -13868,7 +13988,7 @@
       "currentTeam": "Orlando Solar Bears",
       "nhlRightsTeam": null,
       "draftYear": null,
-      "overall": 67,
+      "overall": 68,
       "attributes": {
         "FI": 10,
         "SH": 64,
@@ -13885,7 +14005,7 @@
         "SR": 67,
         "OFF": 67,
         "DEF": 69,
-        "OA": 67
+        "OA": 68
       },
       "ratingSource": "Official ECHL HockeyTech / LeagueStat public player statistics feed; previous-season fallback: Official ECHL HockeyTech / LeagueStat public player statistics feed (2025-26) | https://lscluster.hockeytech.com/feed/index.php?feed=statviewfeed&key=2c2b89ea7345cae8&client_code=echl&league_id=1&site_id=0&lang=en&view=roster&team_id=61&season_id=78",
       "ratingConfidence": "low",
@@ -13929,8 +14049,8 @@
         "DEF",
         "OA"
       ],
-      "potential": 68,
-      "potentialEstimate": 68,
+      "potential": 69,
+      "potentialEstimate": 69,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -13953,7 +14073,7 @@
       "currentTeam": "Coachella Valley Firebirds",
       "nhlRightsTeam": "SEA",
       "draftYear": 2023,
-      "overall": 71,
+      "overall": 72,
       "attributes": {
         "FI": 10,
         "SH": 66,
@@ -13970,7 +14090,7 @@
         "SR": 74,
         "OFF": 69,
         "DEF": 74,
-        "OA": 71
+        "OA": 72
       },
       "ratingSource": "Official AHL HockeyTech public player statistics feed | https://api-web.nhle.com/v1/prospects/SEA | https://hockeyinsights.ca/team-pipeline/seattle-kraken/",
       "ratingConfidence": "low",
@@ -14014,8 +14134,8 @@
         "DEF",
         "OA"
       ],
-      "potential": 82,
-      "potentialEstimate": 82,
+      "potential": 83,
+      "potentialEstimate": 83,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -14166,7 +14286,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 62,
       "potentialEstimate": 62,
       "potentialStatus": "provisional_model_estimate",
@@ -14531,7 +14653,7 @@
       "currentTeam": "Cincinnati Cyclones",
       "nhlRightsTeam": null,
       "draftYear": null,
-      "overall": 60,
+      "overall": 59,
       "attributes": {
         "FI": 10,
         "SH": 54,
@@ -14548,7 +14670,7 @@
         "SR": 64,
         "OFF": 55,
         "DEF": 63,
-        "OA": 60
+        "OA": 59
       },
       "ratingSource": "Official AHL HockeyTech / LeagueStat public player statistics feed (2025-26) | https://lscluster.hockeytech.com/feed/index.php?feed=statviewfeed&key=2c2b89ea7345cae8&client_code=echl&league_id=1&site_id=0&lang=en&view=roster&team_id=5&season_id=78",
       "ratingConfidence": "low",
@@ -14592,8 +14714,8 @@
         "DEF",
         "OA"
       ],
-      "potential": 66,
-      "potentialEstimate": 66,
+      "potential": 65,
+      "potentialEstimate": 65,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -14616,7 +14738,7 @@
       "currentTeam": "MTL",
       "nhlRightsTeam": "MTL",
       "draftYear": null,
-      "overall": 63,
+      "overall": 64,
       "attributes": {
         "FI": 10,
         "SH": 53,
@@ -14633,7 +14755,7 @@
         "SR": 69,
         "OFF": 62,
         "DEF": 62,
-        "OA": 63
+        "OA": 64
       },
       "ratingSource": "NHL Stats REST regular-season player statistics",
       "ratingConfidence": "low",
@@ -14659,9 +14781,11 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
-      "potential": 67,
-      "potentialEstimate": 67,
+      "ratingModeledAttributes": [
+        "FA"
+      ],
+      "potential": 68,
+      "potentialEstimate": 68,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -14684,7 +14808,7 @@
       "currentTeam": "UTA",
       "nhlRightsTeam": "UTA",
       "draftYear": null,
-      "overall": 60,
+      "overall": 59,
       "attributes": {
         "FI": 10,
         "SH": 76,
@@ -14701,7 +14825,7 @@
         "SR": 65,
         "OFF": 64,
         "DEF": 56,
-        "OA": 60
+        "OA": 59
       },
       "ratingSource": "NHL Stats REST regular-season player statistics",
       "ratingConfidence": "low",
@@ -14727,9 +14851,11 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
-      "potential": 60,
-      "potentialEstimate": 60,
+      "ratingModeledAttributes": [
+        "FA"
+      ],
+      "potential": 59,
+      "potentialEstimate": 59,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -15432,7 +15558,7 @@
       "currentTeam": "Maine Mariners",
       "nhlRightsTeam": "BOS",
       "draftYear": 2021,
-      "overall": 77,
+      "overall": 76,
       "attributes": {
         "FI": 10,
         "SH": 80,
@@ -15449,7 +15575,7 @@
         "SR": 77,
         "OFF": 78,
         "DEF": 75,
-        "OA": 77
+        "OA": 76
       },
       "ratingSource": "Official AHL HockeyTech / LeagueStat public player statistics feed (2025-26) | https://hockeyinsights.ca/team-pipeline/boston-bruins/",
       "ratingConfidence": "low",
@@ -15493,8 +15619,8 @@
         "DEF",
         "OA"
       ],
-      "potential": 83,
-      "potentialEstimate": 83,
+      "potential": 82,
+      "potentialEstimate": 82,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -15815,7 +15941,13 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FI",
+        "SH",
+        "PL",
+        "FA",
+        "OFF"
+      ],
       "potential": 81,
       "potentialEstimate": 81,
       "potentialStatus": "provisional_model_estimate",
@@ -16095,7 +16227,7 @@
       "currentTeam": "Sudbury Wolves",
       "nhlRightsTeam": null,
       "draftYear": 2028,
-      "overall": 82,
+      "overall": 81,
       "attributes": {
         "FI": 10,
         "SH": 88,
@@ -16112,7 +16244,7 @@
         "SR": 79,
         "OFF": 85,
         "DEF": 80,
-        "OA": 82
+        "OA": 81
       },
       "ratingSource": "Official OHL HockeyTech / LeagueStat public player statistics feed | https://www.dailyfaceoff.com/news/top-2028-2029-prospects-watch-u17-world-challenge-schultz-pue-daneault | https://lscluster.hockeytech.com/feed/index.php?feed=statviewfeed&view=roster&team_id=12&season_id=88&client_code=ohl",
       "ratingConfidence": "low",
@@ -16265,7 +16397,7 @@
       "currentTeam": "Wheeling Nailers",
       "nhlRightsTeam": null,
       "draftYear": null,
-      "overall": 60,
+      "overall": 59,
       "attributes": {
         "FI": 10,
         "SH": 62,
@@ -16282,7 +16414,7 @@
         "SR": 65,
         "OFF": 60,
         "DEF": 61,
-        "OA": 60
+        "OA": 59
       },
       "ratingSource": "Official ECHL HockeyTech / LeagueStat public player statistics feed; previous-season fallback: Official ECHL HockeyTech / LeagueStat public player statistics feed (2025-26) | https://lscluster.hockeytech.com/feed/index.php?feed=statviewfeed&key=2c2b89ea7345cae8&client_code=echl&league_id=1&site_id=0&lang=en&view=roster&team_id=25&season_id=78",
       "ratingConfidence": "low",
@@ -16326,8 +16458,8 @@
         "DEF",
         "OA"
       ],
-      "potential": 60,
-      "potentialEstimate": 60,
+      "potential": 59,
+      "potentialEstimate": 59,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -16648,7 +16780,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 62,
       "potentialEstimate": 62,
       "potentialStatus": "provisional_model_estimate",
@@ -17141,7 +17275,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 52,
       "potentialEstimate": 52,
       "potentialStatus": "provisional_model_estimate",
@@ -17591,7 +17727,7 @@
       "currentTeam": "Calgary Wranglers",
       "nhlRightsTeam": null,
       "draftYear": null,
-      "overall": 69,
+      "overall": 70,
       "attributes": {
         "FI": 10,
         "SH": 65,
@@ -17608,7 +17744,7 @@
         "SR": 68,
         "OFF": 68,
         "DEF": 72,
-        "OA": 69
+        "OA": 70
       },
       "ratingSource": "Official AHL HockeyTech public player statistics feed; previous-season fallback: Official AHL HockeyTech / LeagueStat public player statistics feed (2025-26) | https://lscluster.hockeytech.com/feed/index.php?feed=statviewfeed&key=ccb91f29d6744675&client_code=ahl&league_id=4&site_id=3&lang=en&view=roster&team_id=444&season_id=94",
       "ratingConfidence": "low",
@@ -17652,8 +17788,8 @@
         "DEF",
         "OA"
       ],
-      "potential": 77,
-      "potentialEstimate": 77,
+      "potential": 76,
+      "potentialEstimate": 76,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -17744,7 +17880,7 @@
       "currentTeam": "Andover High School",
       "nhlRightsTeam": "PHI",
       "draftYear": 2026,
-      "overall": 68,
+      "overall": 69,
       "attributes": {
         "FI": 10,
         "SH": 73,
@@ -17761,7 +17897,7 @@
         "SR": 69,
         "OFF": 70,
         "DEF": 66,
-        "OA": 68
+        "OA": 69
       },
       "ratingSource": "Official USHL HockeyTech / LeagueStat public player statistics feed (2025-26) | Acquired draft pick from FLA",
       "ratingConfidence": "low",
@@ -17805,8 +17941,8 @@
         "DEF",
         "OA"
       ],
-      "potential": 85,
-      "potentialEstimate": 85,
+      "potential": 86,
+      "potentialEstimate": 86,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -17957,7 +18093,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 66,
       "potentialEstimate": 66,
       "potentialStatus": "provisional_model_estimate",
@@ -18067,7 +18205,7 @@
       "currentTeam": "LAK",
       "nhlRightsTeam": "LAK",
       "draftYear": null,
-      "overall": 70,
+      "overall": 69,
       "attributes": {
         "FI": 10,
         "SH": 88,
@@ -18084,7 +18222,7 @@
         "SR": 74,
         "OFF": 77,
         "DEF": 64,
-        "OA": 70
+        "OA": 69
       },
       "ratingSource": "NHL Stats REST regular-season player statistics",
       "ratingConfidence": "low",
@@ -18110,9 +18248,11 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
-      "potential": 70,
-      "potentialEstimate": 70,
+      "ratingModeledAttributes": [
+        "FA"
+      ],
+      "potential": 69,
+      "potentialEstimate": 69,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -18305,7 +18445,7 @@
       "currentTeam": "Manitoba Moose",
       "nhlRightsTeam": "WPG",
       "draftYear": 2024,
-      "overall": 76,
+      "overall": 75,
       "attributes": {
         "FI": 10,
         "SH": 81,
@@ -18322,7 +18462,7 @@
         "SR": 77,
         "OFF": 78,
         "DEF": 73,
-        "OA": 76
+        "OA": 75
       },
       "ratingSource": "Official AHL HockeyTech public player statistics feed | https://api-web.nhle.com/v1/prospects/WPG | https://hockeyinsights.ca/team-pipeline/winnipeg-jets/",
       "ratingConfidence": "low",
@@ -18366,8 +18506,8 @@
         "DEF",
         "OA"
       ],
-      "potential": 91,
-      "potentialEstimate": 91,
+      "potential": 90,
+      "potentialEstimate": 90,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -18433,7 +18573,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 64,
       "potentialEstimate": 64,
       "potentialStatus": "provisional_model_estimate",
@@ -18458,7 +18600,7 @@
       "currentTeam": "VAN",
       "nhlRightsTeam": "VAN",
       "draftYear": null,
-      "overall": 74,
+      "overall": 73,
       "attributes": {
         "FI": 10,
         "SH": 59,
@@ -18475,7 +18617,7 @@
         "SR": 79,
         "OFF": 66,
         "DEF": 78,
-        "OA": 74
+        "OA": 73
       },
       "ratingSource": "NHL Stats REST regular-season goalie statistics",
       "ratingConfidence": "low",
@@ -18501,9 +18643,15 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
-      "potential": 74,
-      "potentialEstimate": 74,
+      "ratingModeledAttributes": [
+        "FI",
+        "SH",
+        "PL",
+        "FA",
+        "OFF"
+      ],
+      "potential": 73,
+      "potentialEstimate": 73,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -18696,7 +18844,7 @@
       "currentTeam": "Belleville Senators",
       "nhlRightsTeam": "OTT",
       "draftYear": 2022,
-      "overall": 59,
+      "overall": 58,
       "attributes": {
         "FI": 10,
         "SH": 61,
@@ -18713,7 +18861,7 @@
         "SR": 62,
         "OFF": 60,
         "DEF": 60,
-        "OA": 59
+        "OA": 58
       },
       "ratingSource": "Official AHL HockeyTech public player statistics feed | https://api-web.nhle.com/v1/prospects/OTT | https://hockeyinsights.ca/team-pipeline/ottawa-senators/",
       "ratingConfidence": "low",
@@ -18757,8 +18905,8 @@
         "DEF",
         "OA"
       ],
-      "potential": 67,
-      "potentialEstimate": 67,
+      "potential": 66,
+      "potentialEstimate": 66,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -18934,7 +19082,7 @@
       "currentTeam": "SJS",
       "nhlRightsTeam": "SJS",
       "draftYear": null,
-      "overall": 66,
+      "overall": 65,
       "attributes": {
         "FI": 10,
         "SH": 89,
@@ -18951,7 +19099,7 @@
         "SR": 69,
         "OFF": 74,
         "DEF": 61,
-        "OA": 66
+        "OA": 65
       },
       "ratingSource": "NHL Stats REST regular-season player statistics",
       "ratingConfidence": "low",
@@ -18977,9 +19125,11 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
-      "potential": 66,
-      "potentialEstimate": 66,
+      "ratingModeledAttributes": [
+        "FA"
+      ],
+      "potential": 65,
+      "potentialEstimate": 65,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -19002,7 +19152,7 @@
       "currentTeam": "Grand Rapids Griffins",
       "nhlRightsTeam": null,
       "draftYear": 2020,
-      "overall": 80,
+      "overall": 79,
       "attributes": {
         "FI": 10,
         "SH": 80,
@@ -19019,7 +19169,7 @@
         "SR": 82,
         "OFF": 80,
         "DEF": 79,
-        "OA": 80
+        "OA": 79
       },
       "ratingSource": "Official AHL HockeyTech public player statistics feed | https://www.nhl.com/redwings/news/red-wings-release-2026-nhl-prospect-tournament-roster-and-schedule; https://thehockeywriters.com/red-wings-prospect-rankings-summer-2026/; https://www.nhl.com/news/detroit-red-wings-top-prospects-for-2026-27-season-32-in-32",
       "ratingConfidence": "low",
@@ -19063,8 +19213,8 @@
         "DEF",
         "OA"
       ],
-      "potential": 84,
-      "potentialEstimate": 84,
+      "potential": 83,
+      "potentialEstimate": 83,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -19342,7 +19492,7 @@
       "currentTeam": "Seattle Kraken",
       "nhlRightsTeam": "SEA",
       "draftYear": 2024,
-      "overall": 70,
+      "overall": 72,
       "attributes": {
         "FI": 10,
         "SH": 83,
@@ -19359,7 +19509,7 @@
         "SR": 83,
         "OFF": 65,
         "DEF": 67,
-        "OA": 70
+        "OA": 72
       },
       "ratingSource": "Official Liiga API v2 regular-season player statistics | https://api-web.nhle.com/v1/prospects/SEA | https://hockeyinsights.ca/team-pipeline/seattle-kraken/",
       "ratingConfidence": "low",
@@ -19580,7 +19730,7 @@
       "currentTeam": "Wichita Thunder",
       "nhlRightsTeam": null,
       "draftYear": null,
-      "overall": 69,
+      "overall": 70,
       "attributes": {
         "FI": 10,
         "SH": 66,
@@ -19597,7 +19747,7 @@
         "SR": 71,
         "OFF": 68,
         "DEF": 71,
-        "OA": 69
+        "OA": 70
       },
       "ratingSource": "Official ECHL HockeyTech / LeagueStat public player statistics feed; previous-season fallback: Official ECHL HockeyTech / LeagueStat public player statistics feed (2025-26) | https://lscluster.hockeytech.com/feed/index.php?feed=statviewfeed&key=2c2b89ea7345cae8&client_code=echl&league_id=1&site_id=0&lang=en&view=roster&team_id=72&season_id=78",
       "ratingConfidence": "low",
@@ -19641,8 +19791,8 @@
         "DEF",
         "OA"
       ],
-      "potential": 71,
-      "potentialEstimate": 71,
+      "potential": 72,
+      "potentialEstimate": 72,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -19750,7 +19900,7 @@
       "currentTeam": "Charlotte Checkers",
       "nhlRightsTeam": "FLA",
       "draftYear": 2021,
-      "overall": 64,
+      "overall": 65,
       "attributes": {
         "FI": 10,
         "SH": 58,
@@ -19767,7 +19917,7 @@
         "SR": 67,
         "OFF": 58,
         "DEF": 68,
-        "OA": 64
+        "OA": 65
       },
       "ratingSource": "Official AHL HockeyTech public player statistics feed | https://api-web.nhle.com/v1/prospects/FLA | https://hockeyinsights.ca/team-pipeline/florida-panthers/",
       "ratingConfidence": "low",
@@ -19811,8 +19961,8 @@
         "DEF",
         "OA"
       ],
-      "potential": 70,
-      "potentialEstimate": 70,
+      "potential": 71,
+      "potentialEstimate": 71,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -19835,7 +19985,7 @@
       "currentTeam": "MIN",
       "nhlRightsTeam": "MIN",
       "draftYear": null,
-      "overall": 77,
+      "overall": 76,
       "attributes": {
         "FI": 10,
         "SH": 96,
@@ -19852,7 +20002,7 @@
         "SR": 85,
         "OFF": 84,
         "DEF": 70,
-        "OA": 77
+        "OA": 76
       },
       "ratingSource": "NHL Stats REST regular-season player statistics",
       "ratingConfidence": "low",
@@ -19878,9 +20028,11 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
-      "potential": 77,
-      "potentialEstimate": 77,
+      "ratingModeledAttributes": [
+        "FA"
+      ],
+      "potential": 76,
+      "potentialEstimate": 76,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -20073,7 +20225,7 @@
       "currentTeam": "TOR",
       "nhlRightsTeam": "TOR",
       "draftYear": null,
-      "overall": 74,
+      "overall": 73,
       "attributes": {
         "FI": 10,
         "SH": 92,
@@ -20090,7 +20242,7 @@
         "SR": 81,
         "OFF": 80,
         "DEF": 68,
-        "OA": 74
+        "OA": 73
       },
       "ratingSource": "NHL Stats REST regular-season player statistics",
       "ratingConfidence": "low",
@@ -20116,9 +20268,11 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
-      "potential": 75,
-      "potentialEstimate": 75,
+      "ratingModeledAttributes": [
+        "FA"
+      ],
+      "potential": 74,
+      "potentialEstimate": 74,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -20991,7 +21145,7 @@
       "currentTeam": "Abbotsford Canucks",
       "nhlRightsTeam": null,
       "draftYear": null,
-      "overall": 82,
+      "overall": 81,
       "attributes": {
         "FI": 10,
         "SH": 87,
@@ -21008,7 +21162,7 @@
         "SR": 81,
         "OFF": 84,
         "DEF": 81,
-        "OA": 82
+        "OA": 81
       },
       "ratingSource": "Official AHL HockeyTech public player statistics feed | https://lscluster.hockeytech.com/feed/index.php?feed=statviewfeed&key=ccb91f29d6744675&client_code=ahl&league_id=4&site_id=3&lang=en&view=roster&team_id=440&season_id=94",
       "ratingConfidence": "low",
@@ -21052,8 +21206,8 @@
         "DEF",
         "OA"
       ],
-      "potential": 82,
-      "potentialEstimate": 82,
+      "potential": 81,
+      "potentialEstimate": 81,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -21076,7 +21230,7 @@
       "currentTeam": "San Diego Gulls",
       "nhlRightsTeam": "ANA",
       "draftYear": 2023,
-      "overall": 68,
+      "overall": 69,
       "attributes": {
         "FI": 10,
         "SH": 64,
@@ -21093,7 +21247,7 @@
         "SR": 68,
         "OFF": 67,
         "DEF": 71,
-        "OA": 68
+        "OA": 69
       },
       "ratingSource": "Official AHL HockeyTech public player statistics feed; previous-season fallback: Official AHL HockeyTech / LeagueStat public player statistics feed (2025-26) | https://hockeyinsights.ca/team-pipeline/anaheim-ducks/",
       "ratingConfidence": "low",
@@ -21137,8 +21291,8 @@
         "DEF",
         "OA"
       ],
-      "potential": 79,
-      "potentialEstimate": 79,
+      "potential": 77,
+      "potentialEstimate": 77,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -21527,7 +21681,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 67,
       "potentialEstimate": 67,
       "potentialStatus": "provisional_model_estimate",
@@ -22232,7 +22388,7 @@
       "currentTeam": "Texas Stars",
       "nhlRightsTeam": null,
       "draftYear": 2013,
-      "overall": 78,
+      "overall": 77,
       "attributes": {
         "FI": 10,
         "SH": 71,
@@ -22249,7 +22405,7 @@
         "SR": 79,
         "OFF": 76,
         "DEF": 80,
-        "OA": 78
+        "OA": 77
       },
       "ratingSource": "Official AHL HockeyTech public player statistics feed | https://lscluster.hockeytech.com/feed/index.php?feed=statviewfeed&key=ccb91f29d6744675&client_code=ahl&league_id=4&site_id=3&lang=en&view=roster&team_id=380&season_id=94",
       "ratingConfidence": "low",
@@ -22293,8 +22449,8 @@
         "DEF",
         "OA"
       ],
-      "potential": 78,
-      "potentialEstimate": 78,
+      "potential": 77,
+      "potentialEstimate": 77,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -22360,7 +22516,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 55,
       "potentialEstimate": 55,
       "potentialStatus": "provisional_model_estimate",
@@ -22385,7 +22543,7 @@
       "currentTeam": "WPG",
       "nhlRightsTeam": "WPG",
       "draftYear": null,
-      "overall": 76,
+      "overall": 74,
       "attributes": {
         "FI": 10,
         "SH": 95,
@@ -22402,7 +22560,7 @@
         "SR": 82,
         "OFF": 83,
         "DEF": 69,
-        "OA": 76
+        "OA": 74
       },
       "ratingSource": "NHL Stats REST regular-season player statistics",
       "ratingConfidence": "low",
@@ -22428,9 +22586,11 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
-      "potential": 76,
-      "potentialEstimate": 76,
+      "ratingModeledAttributes": [
+        "FA"
+      ],
+      "potential": 74,
+      "potentialEstimate": 74,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -22939,8 +23099,8 @@
         "DEF",
         "OA"
       ],
-      "potential": 85,
-      "potentialEstimate": 85,
+      "potential": 83,
+      "potentialEstimate": 83,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -23048,7 +23208,7 @@
       "currentTeam": "NYI",
       "nhlRightsTeam": "NYI",
       "draftYear": null,
-      "overall": 49,
+      "overall": 50,
       "attributes": {
         "FI": 10,
         "SH": 48,
@@ -23065,7 +23225,7 @@
         "SR": 50,
         "OFF": 48,
         "DEF": 47,
-        "OA": 49
+        "OA": 50
       },
       "ratingSource": "NHL Stats REST regular-season player statistics",
       "ratingConfidence": "low",
@@ -23092,8 +23252,8 @@
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
       "ratingModeledAttributes": [],
-      "potential": 50,
-      "potentialEstimate": 50,
+      "potential": 51,
+      "potentialEstimate": 51,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -24374,7 +24534,7 @@
       "currentTeam": "Indy Fuel",
       "nhlRightsTeam": null,
       "draftYear": null,
-      "overall": 66,
+      "overall": 67,
       "attributes": {
         "FI": 10,
         "SH": 63,
@@ -24391,7 +24551,7 @@
         "SR": 66,
         "OFF": 66,
         "DEF": 69,
-        "OA": 66
+        "OA": 67
       },
       "ratingSource": "Official ECHL HockeyTech / LeagueStat public player statistics feed | https://lscluster.hockeytech.com/feed/index.php?feed=statviewfeed&key=2c2b89ea7345cae8&client_code=echl&league_id=1&site_id=0&lang=en&view=roster&team_id=65&season_id=78",
       "ratingConfidence": "low",
@@ -24435,8 +24595,8 @@
         "DEF",
         "OA"
       ],
-      "potential": 67,
-      "potentialEstimate": 67,
+      "potential": 68,
+      "potentialEstimate": 68,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -24459,7 +24619,7 @@
       "currentTeam": "MTL",
       "nhlRightsTeam": "MTL",
       "draftYear": null,
-      "overall": 76,
+      "overall": 75,
       "attributes": {
         "FI": 10,
         "SH": 73,
@@ -24476,7 +24636,7 @@
         "SR": 87,
         "OFF": 78,
         "DEF": 72,
-        "OA": 76
+        "OA": 75
       },
       "ratingSource": "NHL Stats REST regular-season player statistics",
       "ratingConfidence": "low",
@@ -24502,9 +24662,11 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
-      "potential": 84,
-      "potentialEstimate": 84,
+      "ratingModeledAttributes": [
+        "FA"
+      ],
+      "potential": 83,
+      "potentialEstimate": 83,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -24826,8 +24988,8 @@
         "DEF",
         "OA"
       ],
-      "potential": 75,
-      "potentialEstimate": 75,
+      "potential": 72,
+      "potentialEstimate": 72,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -24978,7 +25140,13 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FI",
+        "SH",
+        "PL",
+        "FA",
+        "OFF"
+      ],
       "potential": 68,
       "potentialEstimate": 68,
       "potentialStatus": "provisional_model_estimate",
@@ -25343,7 +25511,7 @@
       "currentTeam": "UTA",
       "nhlRightsTeam": "UTA",
       "draftYear": null,
-      "overall": 70,
+      "overall": 69,
       "attributes": {
         "FI": 10,
         "SH": 87,
@@ -25360,7 +25528,7 @@
         "SR": 77,
         "OFF": 74,
         "DEF": 64,
-        "OA": 70
+        "OA": 69
       },
       "ratingSource": "NHL Stats REST regular-season player statistics",
       "ratingConfidence": "low",
@@ -25386,9 +25554,11 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
-      "potential": 70,
-      "potentialEstimate": 70,
+      "ratingModeledAttributes": [
+        "FA"
+      ],
+      "potential": 69,
+      "potentialEstimate": 69,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -25539,7 +25709,13 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FI",
+        "SH",
+        "PL",
+        "FA",
+        "OFF"
+      ],
       "potential": 75,
       "potentialEstimate": 75,
       "potentialStatus": "provisional_model_estimate",
@@ -25625,8 +25801,8 @@
         "DEF",
         "OA"
       ],
-      "potential": 92,
-      "potentialEstimate": 92,
+      "potential": 89,
+      "potentialEstimate": 89,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -25649,7 +25825,7 @@
       "currentTeam": "Kärpät",
       "nhlRightsTeam": null,
       "draftYear": 2027,
-      "overall": 64,
+      "overall": 65,
       "attributes": {
         "FI": 10,
         "SH": 60,
@@ -25666,7 +25842,7 @@
         "SR": 64,
         "OFF": 63,
         "DEF": 67,
-        "OA": 64
+        "OA": 65
       },
       "ratingSource": "Official Liiga API v2 regular-season player statistics | https://draftprospectshockey.com/prospects-hub",
       "ratingConfidence": "low",
@@ -25710,8 +25886,8 @@
         "DEF",
         "OA"
       ],
-      "potential": 86,
-      "potentialEstimate": 86,
+      "potential": 87,
+      "potentialEstimate": 87,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -25734,7 +25910,7 @@
       "currentTeam": "ANA",
       "nhlRightsTeam": "ANA",
       "draftYear": null,
-      "overall": 74,
+      "overall": 72,
       "attributes": {
         "FI": 10,
         "SH": 92,
@@ -25751,7 +25927,7 @@
         "SR": 82,
         "OFF": 81,
         "DEF": 68,
-        "OA": 74
+        "OA": 72
       },
       "ratingSource": "NHL Stats REST regular-season player statistics",
       "ratingConfidence": "low",
@@ -25778,8 +25954,8 @@
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
       "ratingModeledAttributes": [],
-      "potential": 85,
-      "potentialEstimate": 85,
+      "potential": 83,
+      "potentialEstimate": 83,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -25972,7 +26148,7 @@
       "currentTeam": "EDM",
       "nhlRightsTeam": "EDM",
       "draftYear": null,
-      "overall": 77,
+      "overall": 76,
       "attributes": {
         "FI": 10,
         "SH": 94,
@@ -25989,7 +26165,7 @@
         "SR": 86,
         "OFF": 83,
         "DEF": 70,
-        "OA": 77
+        "OA": 76
       },
       "ratingSource": "NHL Stats REST regular-season player statistics",
       "ratingConfidence": "low",
@@ -26016,8 +26192,8 @@
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
       "ratingModeledAttributes": [],
-      "potential": 77,
-      "potentialEstimate": 77,
+      "potential": 76,
+      "potentialEstimate": 76,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -27145,7 +27321,7 @@
       "currentTeam": "Savannah Ghost Pirates",
       "nhlRightsTeam": null,
       "draftYear": null,
-      "overall": 78,
+      "overall": 77,
       "attributes": {
         "FI": 10,
         "SH": 83,
@@ -27162,7 +27338,7 @@
         "SR": 79,
         "OFF": 79,
         "DEF": 75,
-        "OA": 78
+        "OA": 77
       },
       "ratingSource": "Official ECHL HockeyTech / LeagueStat public player statistics feed; previous-season fallback: Official ECHL HockeyTech / LeagueStat public player statistics feed (2025-26) | https://lscluster.hockeytech.com/feed/index.php?feed=statviewfeed&key=2c2b89ea7345cae8&client_code=echl&league_id=1&site_id=0&lang=en&view=roster&team_id=102&season_id=78",
       "ratingConfidence": "low",
@@ -27206,8 +27382,8 @@
         "DEF",
         "OA"
       ],
-      "potential": 80,
-      "potentialEstimate": 80,
+      "potential": 79,
+      "potentialEstimate": 79,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -27230,7 +27406,7 @@
       "currentTeam": "UTA",
       "nhlRightsTeam": "UTA",
       "draftYear": null,
-      "overall": 50,
+      "overall": 51,
       "attributes": {
         "FI": 10,
         "SH": 58,
@@ -27247,7 +27423,7 @@
         "SR": 50,
         "OFF": 51,
         "DEF": 48,
-        "OA": 50
+        "OA": 51
       },
       "ratingSource": "NHL Stats REST regular-season player statistics",
       "ratingConfidence": "low",
@@ -27274,8 +27450,8 @@
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
       "ratingModeledAttributes": [],
-      "potential": 50,
-      "potentialEstimate": 50,
+      "potential": 51,
+      "potentialEstimate": 51,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -27298,7 +27474,7 @@
       "currentTeam": "VAN",
       "nhlRightsTeam": "VAN",
       "draftYear": null,
-      "overall": 56,
+      "overall": 55,
       "attributes": {
         "FI": 10,
         "SH": 68,
@@ -27315,7 +27491,7 @@
         "SR": 58,
         "OFF": 61,
         "DEF": 52,
-        "OA": 56
+        "OA": 55
       },
       "ratingSource": "NHL Stats REST regular-season player statistics",
       "ratingConfidence": "low",
@@ -27341,9 +27517,11 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
-      "potential": 64,
-      "potentialEstimate": 64,
+      "ratingModeledAttributes": [
+        "FA"
+      ],
+      "potential": 63,
+      "potentialEstimate": 63,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -27834,7 +28012,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 67,
       "potentialEstimate": 67,
       "potentialStatus": "provisional_model_estimate",
@@ -27859,7 +28039,7 @@
       "currentTeam": "San Jose Barracuda",
       "nhlRightsTeam": null,
       "draftYear": 2016,
-      "overall": 72,
+      "overall": 73,
       "attributes": {
         "FI": 10,
         "SH": 68,
@@ -27876,7 +28056,7 @@
         "SR": 74,
         "OFF": 71,
         "DEF": 75,
-        "OA": 72
+        "OA": 73
       },
       "ratingSource": "Official AHL HockeyTech public player statistics feed; previous-season fallback: Official AHL HockeyTech / LeagueStat public player statistics feed (2025-26) | https://lscluster.hockeytech.com/feed/index.php?feed=statviewfeed&key=ccb91f29d6744675&client_code=ahl&league_id=4&site_id=3&lang=en&view=roster&team_id=405&season_id=94",
       "ratingConfidence": "low",
@@ -27920,8 +28100,8 @@
         "DEF",
         "OA"
       ],
-      "potential": 72,
-      "potentialEstimate": 72,
+      "potential": 73,
+      "potentialEstimate": 73,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -28369,7 +28549,7 @@
       "currentTeam": "VAN",
       "nhlRightsTeam": "VAN",
       "draftYear": null,
-      "overall": 59,
+      "overall": 58,
       "attributes": {
         "FI": 10,
         "SH": 78,
@@ -28386,7 +28566,7 @@
         "SR": 62,
         "OFF": 67,
         "DEF": 54,
-        "OA": 59
+        "OA": 58
       },
       "ratingSource": "NHL Stats REST regular-season player statistics",
       "ratingConfidence": "low",
@@ -28413,8 +28593,8 @@
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
       "ratingModeledAttributes": [],
-      "potential": 60,
-      "potentialEstimate": 60,
+      "potential": 59,
+      "potentialEstimate": 59,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -28565,7 +28745,13 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FI",
+        "SH",
+        "PL",
+        "FA",
+        "OFF"
+      ],
       "potential": 80,
       "potentialEstimate": 80,
       "potentialStatus": "provisional_model_estimate",
@@ -28930,7 +29116,7 @@
       "currentTeam": "UTA",
       "nhlRightsTeam": "UTA",
       "draftYear": null,
-      "overall": 70,
+      "overall": 69,
       "attributes": {
         "FI": 10,
         "SH": 89,
@@ -28947,7 +29133,7 @@
         "SR": 77,
         "OFF": 77,
         "DEF": 64,
-        "OA": 70
+        "OA": 69
       },
       "ratingSource": "NHL Stats REST regular-season player statistics",
       "ratingConfidence": "low",
@@ -28974,8 +29160,8 @@
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
       "ratingModeledAttributes": [],
-      "potential": 78,
-      "potentialEstimate": 78,
+      "potential": 77,
+      "potentialEstimate": 77,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -29095,7 +29281,7 @@
         "SK": 65,
         "EN": 62,
         "PE": 52,
-        "FA": 62,
+        "FA": 56,
         "LE": 54,
         "SR": 60,
         "OFF": 62,
@@ -29126,7 +29312,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 65,
       "potentialEstimate": 65,
       "potentialStatus": "provisional_model_estimate",
@@ -29364,7 +29552,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 54,
       "potentialEstimate": 54,
       "potentialStatus": "provisional_model_estimate",
@@ -29559,7 +29749,7 @@
       "currentTeam": "CAR",
       "nhlRightsTeam": "CAR",
       "draftYear": null,
-      "overall": 68,
+      "overall": 67,
       "attributes": {
         "FI": 10,
         "SH": 86,
@@ -29576,7 +29766,7 @@
         "SR": 74,
         "OFF": 73,
         "DEF": 63,
-        "OA": 68
+        "OA": 67
       },
       "ratingSource": "NHL Stats REST regular-season player statistics",
       "ratingConfidence": "low",
@@ -29603,8 +29793,8 @@
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
       "ratingModeledAttributes": [],
-      "potential": 74,
-      "potentialEstimate": 74,
+      "potential": 73,
+      "potentialEstimate": 73,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -29670,7 +29860,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 65,
       "potentialEstimate": 65,
       "potentialStatus": "provisional_model_estimate",
@@ -29908,7 +30100,13 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FI",
+        "SH",
+        "PL",
+        "FA",
+        "OFF"
+      ],
       "potential": 83,
       "potentialEstimate": 83,
       "potentialStatus": "provisional_model_estimate",
@@ -30103,7 +30301,7 @@
       "currentTeam": "Bloomington Bison",
       "nhlRightsTeam": null,
       "draftYear": null,
-      "overall": 67,
+      "overall": 68,
       "attributes": {
         "FI": 10,
         "SH": 71,
@@ -30120,7 +30318,7 @@
         "SR": 68,
         "OFF": 69,
         "DEF": 66,
-        "OA": 67
+        "OA": 68
       },
       "ratingSource": "Official ECHL HockeyTech / LeagueStat public player statistics feed; previous-season fallback: Official ECHL HockeyTech / LeagueStat public player statistics feed (2025-26) | https://lscluster.hockeytech.com/feed/index.php?feed=statviewfeed&key=2c2b89ea7345cae8&client_code=echl&league_id=1&site_id=0&lang=en&view=roster&team_id=107&season_id=78",
       "ratingConfidence": "low",
@@ -30164,8 +30362,8 @@
         "DEF",
         "OA"
       ],
-      "potential": 73,
-      "potentialEstimate": 73,
+      "potential": 74,
+      "potentialEstimate": 74,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -30401,7 +30599,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 66,
       "potentialEstimate": 66,
       "potentialStatus": "provisional_model_estimate",
@@ -30511,7 +30711,7 @@
       "currentTeam": "Florida Panthers",
       "nhlRightsTeam": "FLA",
       "draftYear": 2026,
-      "overall": 62,
+      "overall": 60,
       "attributes": {
         "FI": 10,
         "SH": 42,
@@ -30528,7 +30728,7 @@
         "SR": 70,
         "OFF": 52,
         "DEF": 72,
-        "OA": 62
+        "OA": 60
       },
       "ratingSource": "Official QMJHL HockeyTech / LeagueStat public player statistics feed | https://api-web.nhle.com/v1/prospects/FLA | https://hockeyinsights.ca/team-pipeline/florida-panthers/",
       "ratingConfidence": "low",
@@ -30936,7 +31136,7 @@
       "currentTeam": "Sudbury Wolves",
       "nhlRightsTeam": null,
       "draftYear": 2027,
-      "overall": 76,
+      "overall": 75,
       "attributes": {
         "FI": 10,
         "SH": 68,
@@ -30953,7 +31153,7 @@
         "SR": 78,
         "OFF": 73,
         "DEF": 79,
-        "OA": 76
+        "OA": 75
       },
       "ratingSource": "Official OHL HockeyTech / LeagueStat public player statistics feed | https://draftprospectshockey.com/prospects-hub | https://rinkcentral.com/prospects/luca-blonda",
       "ratingConfidence": "low",
@@ -30997,8 +31197,8 @@
         "DEF",
         "OA"
       ],
-      "potential": 98,
-      "potentialEstimate": 98,
+      "potential": 97,
+      "potentialEstimate": 97,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -31106,7 +31306,7 @@
       "currentTeam": "CBJ",
       "nhlRightsTeam": "CBJ",
       "draftYear": 2022,
-      "overall": 52,
+      "overall": 53,
       "attributes": {
         "FI": 10,
         "SH": 54,
@@ -31123,7 +31323,7 @@
         "SR": 54,
         "OFF": 52,
         "DEF": 50,
-        "OA": 52
+        "OA": 53
       },
       "ratingSource": "NHL Stats REST regular-season player statistics",
       "ratingConfidence": "low",
@@ -31150,8 +31350,8 @@
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
       "ratingModeledAttributes": [],
-      "potential": 60,
-      "potentialEstimate": 60,
+      "potential": 59,
+      "potentialEstimate": 59,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -31320,8 +31520,8 @@
         "DEF",
         "OA"
       ],
-      "potential": 94,
-      "potentialEstimate": 94,
+      "potential": 92,
+      "potentialEstimate": 92,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -31429,7 +31629,7 @@
       "currentTeam": "Cleveland Monsters",
       "nhlRightsTeam": "CBJ",
       "draftYear": 2023,
-      "overall": 77,
+      "overall": 78,
       "attributes": {
         "FI": 10,
         "SH": 85,
@@ -31446,7 +31646,7 @@
         "SR": 78,
         "OFF": 81,
         "DEF": 74,
-        "OA": 77
+        "OA": 78
       },
       "ratingSource": "Official AHL HockeyTech public player statistics feed | https://hockeyinsights.ca/team-pipeline/columbus-blue-jackets/",
       "ratingConfidence": "low",
@@ -31490,8 +31690,8 @@
         "DEF",
         "OA"
       ],
-      "potential": 90,
-      "potentialEstimate": 90,
+      "potential": 91,
+      "potentialEstimate": 91,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -31684,7 +31884,7 @@
       "currentTeam": "Los Angeles Kings",
       "nhlRightsTeam": "LAK",
       "draftYear": 2026,
-      "overall": 81,
+      "overall": 80,
       "attributes": {
         "FI": 10,
         "SH": 76,
@@ -31701,7 +31901,7 @@
         "SR": 82,
         "OFF": 80,
         "DEF": 83,
-        "OA": 81
+        "OA": 80
       },
       "ratingSource": "Official OHL HockeyTech / LeagueStat public player statistics feed | https://hockeyinsights.ca/team-pipeline/los-angeles-kings/ | https://lscluster.hockeytech.com/feed/index.php?feed=statviewfeed&view=roster&team_id=8&season_id=88&client_code=ohl",
       "ratingConfidence": "low",
@@ -31854,7 +32054,7 @@
       "currentTeam": "Ottawa Senators",
       "nhlRightsTeam": "OTT",
       "draftYear": 2025,
-      "overall": 62,
+      "overall": 60,
       "attributes": {
         "FI": 10,
         "SH": 42,
@@ -31871,7 +32071,7 @@
         "SR": 70,
         "OFF": 52,
         "DEF": 72,
-        "OA": 62
+        "OA": 60
       },
       "ratingSource": "Official QMJHL HockeyTech / LeagueStat public player statistics feed | https://api-web.nhle.com/v1/prospects/OTT | https://hockeyinsights.ca/team-pipeline/ottawa-senators/",
       "ratingConfidence": "low",
@@ -32364,7 +32564,7 @@
       "currentTeam": "DET",
       "nhlRightsTeam": "DET",
       "draftYear": null,
-      "overall": 73,
+      "overall": 72,
       "attributes": {
         "FI": 10,
         "SH": 89,
@@ -32381,7 +32581,7 @@
         "SR": 80,
         "OFF": 80,
         "DEF": 66,
-        "OA": 73
+        "OA": 72
       },
       "ratingSource": "NHL Stats REST regular-season player statistics",
       "ratingConfidence": "low",
@@ -32407,9 +32607,11 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
-      "potential": 77,
-      "potentialEstimate": 77,
+      "ratingModeledAttributes": [
+        "FA"
+      ],
+      "potential": 76,
+      "potentialEstimate": 76,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -32578,8 +32780,8 @@
         "DEF",
         "OA"
       ],
-      "potential": 72,
-      "potentialEstimate": 72,
+      "potential": 71,
+      "potentialEstimate": 71,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -32772,7 +32974,7 @@
       "currentTeam": "Manitoba Moose",
       "nhlRightsTeam": null,
       "draftYear": null,
-      "overall": 82,
+      "overall": 81,
       "attributes": {
         "FI": 10,
         "SH": 87,
@@ -32789,7 +32991,7 @@
         "SR": 83,
         "OFF": 83,
         "DEF": 80,
-        "OA": 82
+        "OA": 81
       },
       "ratingSource": "Official AHL HockeyTech public player statistics feed | https://api-web.nhle.com/v1/prospects/WPG",
       "ratingConfidence": "low",
@@ -32833,8 +33035,8 @@
         "DEF",
         "OA"
       ],
-      "potential": 84,
-      "potentialEstimate": 84,
+      "potential": 83,
+      "potentialEstimate": 83,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -33665,7 +33867,13 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FI",
+        "SH",
+        "PL",
+        "FA",
+        "OFF"
+      ],
       "potential": 79,
       "potentialEstimate": 79,
       "potentialStatus": "provisional_model_estimate",
@@ -33775,7 +33983,7 @@
       "currentTeam": "Springfield Thunderbirds",
       "nhlRightsTeam": "STL",
       "draftYear": 2024,
-      "overall": 67,
+      "overall": 68,
       "attributes": {
         "FI": 10,
         "SH": 63,
@@ -33792,7 +34000,7 @@
         "SR": 68,
         "OFF": 66,
         "DEF": 70,
-        "OA": 67
+        "OA": 68
       },
       "ratingSource": "Official AHL HockeyTech public player statistics feed; previous-season fallback: Official AHL HockeyTech / LeagueStat public player statistics feed (2025-26) | https://api-web.nhle.com/v1/prospects/STL | https://hockeyinsights.ca/team-pipeline/st-louis-blues/",
       "ratingConfidence": "low",
@@ -34200,7 +34408,7 @@
       "currentTeam": "Allen Americans",
       "nhlRightsTeam": null,
       "draftYear": null,
-      "overall": 72,
+      "overall": 71,
       "attributes": {
         "FI": 10,
         "SH": 75,
@@ -34217,7 +34425,7 @@
         "SR": 73,
         "OFF": 72,
         "DEF": 71,
-        "OA": 72
+        "OA": 71
       },
       "ratingSource": "Official ECHL HockeyTech / LeagueStat public player statistics feed; previous-season fallback: Official ECHL HockeyTech / LeagueStat public player statistics feed (2025-26) | https://lscluster.hockeytech.com/feed/index.php?feed=statviewfeed&key=2c2b89ea7345cae8&client_code=echl&league_id=1&site_id=0&lang=en&view=roster&team_id=66&season_id=78",
       "ratingConfidence": "low",
@@ -34261,8 +34469,8 @@
         "DEF",
         "OA"
       ],
-      "potential": 73,
-      "potentialEstimate": 73,
+      "potential": 72,
+      "potentialEstimate": 72,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -34285,7 +34493,7 @@
       "currentTeam": "Cornell",
       "nhlRightsTeam": "CBJ",
       "draftYear": 2024,
-      "overall": 81,
+      "overall": 80,
       "attributes": {
         "FI": 10,
         "SH": 73,
@@ -34302,7 +34510,7 @@
         "SR": 86,
         "OFF": 76,
         "DEF": 85,
-        "OA": 81
+        "OA": 80
       },
       "ratingSource": "https://www.collegehockeyinc.com/conferences/national/natplayer27.php; previous-season fallback: https://www.collegehockeyinc.com/conferences/national/natplayer26.php | https://hockeyinsights.ca/team-pipeline/columbus-blue-jackets/ | https://www.collegehockeynews.com/reports/roster/Cornell/18",
       "ratingConfidence": "low",
@@ -34346,8 +34554,8 @@
         "DEF",
         "OA"
       ],
-      "potential": 92,
-      "potentialEstimate": 92,
+      "potential": 91,
+      "potentialEstimate": 91,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -34625,7 +34833,7 @@
       "currentTeam": "NJD",
       "nhlRightsTeam": "NJD",
       "draftYear": null,
-      "overall": 68,
+      "overall": 67,
       "attributes": {
         "FI": 10,
         "SH": 76,
@@ -34642,7 +34850,7 @@
         "SR": 75,
         "OFF": 73,
         "DEF": 63,
-        "OA": 68
+        "OA": 67
       },
       "ratingSource": "NHL Stats REST regular-season player statistics",
       "ratingConfidence": "low",
@@ -34668,9 +34876,11 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
-      "potential": 72,
-      "potentialEstimate": 72,
+      "ratingModeledAttributes": [
+        "FA"
+      ],
+      "potential": 71,
+      "potentialEstimate": 71,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -34693,7 +34903,7 @@
       "currentTeam": "NYR",
       "nhlRightsTeam": "NYR",
       "draftYear": null,
-      "overall": 49,
+      "overall": 50,
       "attributes": {
         "FI": 10,
         "SH": 47,
@@ -34710,7 +34920,7 @@
         "SR": 51,
         "OFF": 48,
         "DEF": 47,
-        "OA": 49
+        "OA": 50
       },
       "ratingSource": "NHL Stats REST regular-season player statistics",
       "ratingConfidence": "low",
@@ -34737,8 +34947,8 @@
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
       "ratingModeledAttributes": [],
-      "potential": 49,
-      "potentialEstimate": 49,
+      "potential": 50,
+      "potentialEstimate": 50,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -34761,7 +34971,7 @@
       "currentTeam": "Toronto Marlies",
       "nhlRightsTeam": "TOR",
       "draftYear": null,
-      "overall": 76,
+      "overall": 77,
       "attributes": {
         "FI": 10,
         "SH": 83,
@@ -34778,7 +34988,7 @@
         "SR": 76,
         "OFF": 80,
         "DEF": 73,
-        "OA": 76
+        "OA": 77
       },
       "ratingSource": "Official AHL HockeyTech public player statistics feed; previous-season fallback: Official AHL HockeyTech / LeagueStat public player statistics feed (2025-26) | https://hockeyinsights.ca/team-pipeline/toronto-maple-leafs/",
       "ratingConfidence": "low",
@@ -34822,8 +35032,8 @@
         "DEF",
         "OA"
       ],
-      "potential": 84,
-      "potentialEstimate": 84,
+      "potential": 85,
+      "potentialEstimate": 85,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -34846,7 +35056,7 @@
       "currentTeam": "NJD",
       "nhlRightsTeam": "NJD",
       "draftYear": null,
-      "overall": 71,
+      "overall": 70,
       "attributes": {
         "FI": 10,
         "SH": 68,
@@ -34863,7 +35073,7 @@
         "SR": 77,
         "OFF": 74,
         "DEF": 69,
-        "OA": 71
+        "OA": 70
       },
       "ratingSource": "NHL Stats REST regular-season player statistics",
       "ratingConfidence": "low",
@@ -34889,9 +35099,11 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
-      "potential": 77,
-      "potentialEstimate": 77,
+      "ratingModeledAttributes": [
+        "FA"
+      ],
+      "potential": 76,
+      "potentialEstimate": 76,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -35849,7 +36061,7 @@
       "currentTeam": "VAN",
       "nhlRightsTeam": "VAN",
       "draftYear": null,
-      "overall": 52,
+      "overall": 53,
       "attributes": {
         "FI": 10,
         "SH": 45,
@@ -35866,7 +36078,7 @@
         "SR": 53,
         "OFF": 53,
         "DEF": 53,
-        "OA": 52
+        "OA": 53
       },
       "ratingSource": "NHL Stats REST regular-season player statistics",
       "ratingConfidence": "low",
@@ -35892,9 +36104,11 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
-      "potential": 52,
-      "potentialEstimate": 52,
+      "ratingModeledAttributes": [
+        "FA"
+      ],
+      "potential": 53,
+      "potentialEstimate": 53,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -36087,7 +36301,7 @@
       "currentTeam": "New Jersey Devils",
       "nhlRightsTeam": "NJD",
       "draftYear": 2026,
-      "overall": 74,
+      "overall": 75,
       "attributes": {
         "FI": 10,
         "SH": 80,
@@ -36104,7 +36318,7 @@
         "SR": 75,
         "OFF": 78,
         "DEF": 71,
-        "OA": 74
+        "OA": 75
       },
       "ratingSource": "Official WHL HockeyTech / LeagueStat public player statistics feed | https://api-web.nhle.com/v1/prospects/NJD | https://hockeyinsights.ca/team-pipeline/new-jersey-devils/ | https://lscluster.hockeytech.com/feed/index.php?feed=statviewfeed&view=roster&team_id=208&season_id=295&client_code=whl",
       "ratingConfidence": "low",
@@ -36148,8 +36362,8 @@
         "DEF",
         "OA"
       ],
-      "potential": 94,
-      "potentialEstimate": 94,
+      "potential": 95,
+      "potentialEstimate": 95,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -36257,7 +36471,7 @@
       "currentTeam": "New Mexico Goatheads",
       "nhlRightsTeam": null,
       "draftYear": null,
-      "overall": 78,
+      "overall": 77,
       "attributes": {
         "FI": 10,
         "SH": 84,
@@ -36274,7 +36488,7 @@
         "SR": 79,
         "OFF": 79,
         "DEF": 76,
-        "OA": 78
+        "OA": 77
       },
       "ratingSource": "Official ECHL HockeyTech / LeagueStat public player statistics feed | https://lscluster.hockeytech.com/feed/index.php?feed=statviewfeed&key=2c2b89ea7345cae8&client_code=echl&league_id=1&site_id=0&lang=en&view=roster&team_id=114&season_id=78",
       "ratingConfidence": "low",
@@ -36318,8 +36532,8 @@
         "DEF",
         "OA"
       ],
-      "potential": 80,
-      "potentialEstimate": 80,
+      "potential": 79,
+      "potentialEstimate": 79,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -36767,7 +36981,7 @@
       "currentTeam": "COL",
       "nhlRightsTeam": "COL",
       "draftYear": null,
-      "overall": 82,
+      "overall": 81,
       "attributes": {
         "FI": 10,
         "SH": 59,
@@ -36784,7 +36998,7 @@
         "SR": 90,
         "OFF": 70,
         "DEF": 89,
-        "OA": 82
+        "OA": 81
       },
       "ratingSource": "NHL Stats REST regular-season goalie statistics",
       "ratingConfidence": "low",
@@ -36810,9 +37024,15 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
-      "potential": 82,
-      "potentialEstimate": 82,
+      "ratingModeledAttributes": [
+        "FI",
+        "SH",
+        "PL",
+        "FA",
+        "OFF"
+      ],
+      "potential": 81,
+      "potentialEstimate": 81,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -37048,7 +37268,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 66,
       "potentialEstimate": 66,
       "potentialStatus": "provisional_model_estimate",
@@ -37073,7 +37295,7 @@
       "currentTeam": "SEA",
       "nhlRightsTeam": "SEA",
       "draftYear": null,
-      "overall": 63,
+      "overall": 62,
       "attributes": {
         "FI": 10,
         "SH": 77,
@@ -37090,7 +37312,7 @@
         "SR": 66,
         "OFF": 68,
         "DEF": 59,
-        "OA": 63
+        "OA": 62
       },
       "ratingSource": "NHL Stats REST regular-season player statistics",
       "ratingConfidence": "low",
@@ -37116,9 +37338,11 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
-      "potential": 69,
-      "potentialEstimate": 69,
+      "ratingModeledAttributes": [
+        "FA"
+      ],
+      "potential": 66,
+      "potentialEstimate": 66,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -37141,7 +37365,7 @@
       "currentTeam": "SJS",
       "nhlRightsTeam": "SJS",
       "draftYear": null,
-      "overall": 77,
+      "overall": 75,
       "attributes": {
         "FI": 10,
         "SH": 96,
@@ -37158,7 +37382,7 @@
         "SR": 85,
         "OFF": 84,
         "DEF": 70,
-        "OA": 77
+        "OA": 75
       },
       "ratingSource": "NHL Stats REST regular-season player statistics",
       "ratingConfidence": "low",
@@ -37464,7 +37688,7 @@
       "currentTeam": "Frölunda HC",
       "nhlRightsTeam": "FLA",
       "draftYear": 2025,
-      "overall": 74,
+      "overall": 73,
       "attributes": {
         "FI": 10,
         "SH": 74,
@@ -37481,7 +37705,7 @@
         "SR": 76,
         "OFF": 73,
         "DEF": 73,
-        "OA": 74
+        "OA": 73
       },
       "ratingSource": "Elite Prospects 2026-27 SHL regular-season player table; partial manual snapshot taken 2026-11-04 because SHL API returned empty bodies and Elite Prospects blocked automated runner requests (HTTP 403). Supplemented 2026-11-05 with official SHL athlete-profile season statistics for Zeb Forsfjäll and Melker Thelin. Supplemented 2026-11-05 with additional Brynäs IF player rows. | https://api-web.nhle.com/v1/prospects/FLA | https://hockeyinsights.ca/team-pipeline/florida-panthers/",
       "ratingConfidence": "low",
@@ -38654,7 +38878,7 @@
       "currentTeam": "Färjestad Karlstad",
       "nhlRightsTeam": "DAL",
       "draftYear": 2025,
-      "overall": 51,
+      "overall": 52,
       "attributes": {
         "FI": 10,
         "SH": 48,
@@ -38671,7 +38895,7 @@
         "SR": 61,
         "OFF": 47,
         "DEF": 54,
-        "OA": 51
+        "OA": 52
       },
       "ratingSource": "Official HockeyAllsvenskan public statistics API; regular season 2026-27 (end-year 2027, site start-year 2026) | https://hockeyinsights.ca/team-pipeline/dallas-stars/",
       "ratingConfidence": "low",
@@ -38824,7 +39048,7 @@
       "currentTeam": "BOS",
       "nhlRightsTeam": "BOS",
       "draftYear": null,
-      "overall": 64,
+      "overall": 63,
       "attributes": {
         "FI": 10,
         "SH": 75,
@@ -38841,7 +39065,7 @@
         "SR": 70,
         "OFF": 67,
         "DEF": 59,
-        "OA": 64
+        "OA": 63
       },
       "ratingSource": "NHL Stats REST regular-season player statistics",
       "ratingConfidence": "low",
@@ -38868,8 +39092,8 @@
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
       "ratingModeledAttributes": [],
-      "potential": 68,
-      "potentialEstimate": 68,
+      "potential": 67,
+      "potentialEstimate": 67,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -39453,7 +39677,7 @@
       "currentTeam": "VAN",
       "nhlRightsTeam": "VAN",
       "draftYear": null,
-      "overall": 65,
+      "overall": 64,
       "attributes": {
         "FI": 10,
         "SH": 77,
@@ -39470,7 +39694,7 @@
         "SR": 71,
         "OFF": 72,
         "DEF": 58,
-        "OA": 65
+        "OA": 64
       },
       "ratingSource": "NHL Stats REST regular-season player statistics",
       "ratingConfidence": "low",
@@ -39497,8 +39721,8 @@
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
       "ratingModeledAttributes": [],
-      "potential": 67,
-      "potentialEstimate": 67,
+      "potential": 66,
+      "potentialEstimate": 66,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -39606,7 +39830,7 @@
       "currentTeam": "MIN",
       "nhlRightsTeam": "MIN",
       "draftYear": null,
-      "overall": 55,
+      "overall": 54,
       "attributes": {
         "FI": 10,
         "SH": 69,
@@ -39623,7 +39847,7 @@
         "SR": 56,
         "OFF": 59,
         "DEF": 51,
-        "OA": 55
+        "OA": 54
       },
       "ratingSource": "NHL Stats REST regular-season player statistics",
       "ratingConfidence": "low",
@@ -39649,9 +39873,11 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
-      "potential": 55,
-      "potentialEstimate": 55,
+      "ratingModeledAttributes": [
+        "FA"
+      ],
+      "potential": 54,
+      "potentialEstimate": 54,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -39674,7 +39900,7 @@
       "currentTeam": "St. Louis Blues",
       "nhlRightsTeam": "STL",
       "draftYear": 2024,
-      "overall": 52,
+      "overall": 53,
       "attributes": {
         "FI": 10,
         "SH": 50,
@@ -39691,7 +39917,7 @@
         "SR": 61,
         "OFF": 51,
         "DEF": 53,
-        "OA": 52
+        "OA": 53
       },
       "ratingSource": "Official HockeyAllsvenskan public statistics API; regular season 2026-27 (end-year 2027, site start-year 2026) | https://api-web.nhle.com/v1/prospects/STL | https://hockeyinsights.ca/team-pipeline/st-louis-blues/",
       "ratingConfidence": "low",
@@ -39929,7 +40155,7 @@
       "currentTeam": "NYR",
       "nhlRightsTeam": "NYR",
       "draftYear": null,
-      "overall": 61,
+      "overall": 62,
       "attributes": {
         "FI": 10,
         "SH": 50,
@@ -39946,7 +40172,7 @@
         "SR": 66,
         "OFF": 63,
         "DEF": 60,
-        "OA": 61
+        "OA": 62
       },
       "ratingSource": "NHL Stats REST regular-season player statistics",
       "ratingConfidence": "low",
@@ -39972,9 +40198,11 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
-      "potential": 61,
-      "potentialEstimate": 61,
+      "ratingModeledAttributes": [
+        "FA"
+      ],
+      "potential": 62,
+      "potentialEstimate": 62,
       "potentialStatus": "provisional_model_estimate",
       "potentialEstimateMethod": "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified",
       "potentialSource": null,
@@ -40082,7 +40310,7 @@
       "currentTeam": "Philadelphia Flyers",
       "nhlRightsTeam": "PHI",
       "draftYear": 2026,
-      "overall": 59,
+      "overall": 58,
       "attributes": {
         "FI": 10,
         "SH": 45,
@@ -40099,7 +40327,7 @@
         "SR": 68,
         "OFF": 53,
         "DEF": 67,
-        "OA": 59
+        "OA": 58
       },
       "ratingSource": "Official WHL HockeyTech / LeagueStat public player statistics feed; previous-season fallback: Official WHL HockeyTech / LeagueStat public player statistics feed (2025-26) | https://hockeyinsights.ca/team-pipeline/philadelphia-flyers/ | https://lscluster.hockeytech.com/feed/index.php?feed=statviewfeed&view=roster&team_id=214&season_id=295&client_code=whl",
       "ratingConfidence": "low",
@@ -40295,7 +40523,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 66,
       "potentialEstimate": 66,
       "potentialStatus": "provisional_model_estimate",
@@ -40533,7 +40763,9 @@
       ],
       "ratingMethod": "nhl_season_stats_with_shared_profile_completion_v1",
       "ratingEvidence": "nhl_player_statistics",
-      "ratingModeledAttributes": [],
+      "ratingModeledAttributes": [
+        "FA"
+      ],
       "potential": 57,
       "potentialEstimate": 57,
       "potentialStatus": "provisional_model_estimate",

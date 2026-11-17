@@ -188,7 +188,7 @@ test("goalies receive all 16 attributes and a calculated OA from goalie-specific
 });
 
 
-test("OA uses normalized weights across exactly 14 non-FI attributes", () => {
+test("OA uses the simple arithmetic mean of all 14 non-FI attributes", () => {
   const result = estimatePlayerRatings({
     name:"OA normalization", currentLeague:"NHL", position:"F", age:25
   }, null, null, {

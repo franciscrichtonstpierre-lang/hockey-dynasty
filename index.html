@@ -536,7 +536,7 @@ async function loadGlobalPlayerRegistry(){
  const frozen=await hdLoadActiveRosterSnapshot(),version=frozen?.commitSha||"live";
  if(version!==hdGlobalPlayerRegistryVersion){hdGlobalPlayerRegistryVersion=version;hdGlobalPlayerRegistryPromise=null}
  if(!hdGlobalPlayerRegistryPromise)hdGlobalPlayerRegistryPromise=(async()=>{
-  const base=frozen?("https://raw.githubusercontent.com/franciscrichtonstpierre-lang/hockey-dynasty/"+frozen.commitSha+"/data/players/registry-index/registry-"):"./data/players/registry-index/registry-";
+  const base="./data/players/registry-index/registry-";
   const chunks=await Promise.all(Array.from({length:7},async(_,i)=>{const n=String(i+1).padStart(3,"0");const r=await fetch(base+n+".json",{cache:"force-cache"});if(!r.ok)throw Error("Registre joueurs indisponible ("+n+")");return r.json()}));
   return chunks.flatMap(x=>Array.isArray(x.players)?x.players:[]);
  })().catch(e=>{hdGlobalPlayerRegistryPromise=null;throw e});
@@ -797,7 +797,7 @@ let hdLoadedSnapshotKey="",hdRemoteSnapshotCheckedLeagueId="",hdRemoteSnapshotCh
 function hdSnapshotKey(){return activeOnlineLeagueId?"online:"+String(activeOnlineLeagueId):"local:hd_v05"}
 function hdPinnedDataUrl(path,meta){const commit=meta?.commitSha||S?.rosterSnapshotMeta?.commitSha;return commit?"https://raw.githubusercontent.com/franciscrichtonstpierre-lang/hockey-dynasty/"+commit+"/"+String(path||"").replace(/^\.\//,""):"./"+String(path||"").replace(/^\.\//,"")}
 async function hdLoadActiveRosterSnapshot(){const key=hdSnapshotKey();if(S?.rosterSnapshotMeta?.key===key&&S.rosterSnapshotMeta.commitSha)return S.rosterSnapshotMeta;if(activeOnlineLeagueId&&authClient&&signedInUser&&(hdRemoteSnapshotCheckedLeagueId!==activeOnlineLeagueId||Date.now()-hdRemoteSnapshotCheckedAt>30000)){const {data,error}=await authClient.from("league_game_states").select("state").eq("league_id",activeOnlineLeagueId).maybeSingle();if(error)throw error;hdRemoteSnapshotCheckedLeagueId=activeOnlineLeagueId;hdRemoteSnapshotCheckedAt=Date.now();const remote=data?.state?.rosterSnapshot;if(remote?.commitSha){S.rosterSnapshotMeta={...remote,key};save();return S.rosterSnapshotMeta}}return null}
-async function hdFetchData(path,options){const meta=await hdLoadActiveRosterSnapshot();return fetch(hdPinnedDataUrl(path,meta),options||{})}
+async function hdFetchData(path,options){const normalized=String(path||"").replace(/^\.\//,"");const liveRatingData=normalized==="data/ratings.json"||normalized.startsWith("data/players/registry-index/");if(liveRatingData)return fetch("./"+normalized,options||{});const meta=await hdLoadActiveRosterSnapshot();return fetch(hdPinnedDataUrl(normalized,meta),options||{})}
 async function hdFetchAhlRoster(code,options){return hdFetchData("data/ahl/"+code+".json",options)}
 async function hdFetchProspects(code,options){return hdFetchData("data/prospects/"+code+".json",options)}
 async function hdFetchPlayerRegistry(options){return hdFetchData("data/players/registry.json",options)}

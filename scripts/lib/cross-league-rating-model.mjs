@@ -289,14 +289,13 @@ export function estimatePlayerRatings(player, statRow, statIndex, existingRating
   };
   // Goalies still receive all 16 card attributes; these are goalie-specific
   // performance proxies mapped onto the shared card fields. FI stays separate.
-  const oaWeights = { SH:0.08, PL:0.08, ST:0.05, CH:0.08, PO:0.10, HI:0.05, SK:0.06, EN:0.08, PE:0.08, FA:0.03, LE:0.05, SR:0.08, OFF:0.10, DEF:0.08 };
   const attributes = Object.fromEntries(RATING_ATTRIBUTES.map(key => [key, existing[key] ?? modeled[key]]));
-  // OFF and DEF are derived card attributes, never independent imported ratings.
-  // Keep the shared 0-99 scale by averaging their three component attributes.
+  // OFF and DEF are derived from their agreed component attributes.
   attributes.OFF = clamp((attributes.SH + attributes.PL + attributes.ST) / 3);
   attributes.DEF = clamp((attributes.CH + attributes.PO + attributes.HI) / 3);
-  const oaWeightTotal = Object.values(oaWeights).reduce((sum, weight) => sum + weight, 0);
-  const calculatedOa = clamp(Object.entries(oaWeights).reduce((sum, [key, weight]) => sum + attributes[key] * weight, 0) / oaWeightTotal);
+  // OA is the arithmetic mean of all 14 non-FI attributes. FI never contributes.
+  const oaKeys = RATING_ATTRIBUTES.filter(key => key !== "FI" && key !== "OA");
+  const calculatedOa = clamp(oaKeys.reduce((sum, key) => sum + attributes[key], 0) / oaKeys.length);
   // Never preserve a stale imported OA: it is always derived from the 14 non-FI attributes.
   attributes.OA = calculatedOa;
   const sources = [...new Set([statIndex?.source, player?.source, player?.supplementalSource, player?.bioSourceUrl].filter(value => typeof value === "string" && value.trim()))];

@@ -81,3 +81,6 @@ Le contrôle est disponible comme garde-fou technique; il doit être appelé par
 Le projet privilégie désormais exclusivement les sources et outils gratuits, sans licences payantes, abonnements ni essais payants. La matrice des sources, les conditions d'utilisation commerciale et les règles de provenance sont documentées dans [la stratégie de données gratuites uniquement](docs/free-data-sources-zero-budget-hockey-dynasty.md).
 
 Les anciens brouillons de demandes de licences commerciales sont archivés et ne doivent pas être envoyés : [dossier archivé](docs/commercial-data-licensing-inquiries-hockey-dynasty.md).
+
+- Audit PlayerWON dataset par dataset : `docs/playerwon-dataset-rights-audit-2026-11-17.md`.
+- Registre central de droits par dataset : `data/data-source-rights-registry.json`; les CSV PlayerWON NHL restent bloqués tant que les droits tiers ne sont pas confirmés.

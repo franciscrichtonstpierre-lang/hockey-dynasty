@@ -30,7 +30,7 @@ test("FI does not influence OA", () => {
 
 test("live development changes always rebuild OFF, DEF and OA and ignore FI", async () => {
   const html = await readFile("index.html", "utf8");
-  const lines = html.split("\\n");
+  const lines = html.split("\n");
   const compositeLine = lines.find(line => line.startsWith("function hdRecalculateCompositeRatings("));
   const applyLine = lines.find(line => line.startsWith("function applyDevelopment("));
   assert.ok(compositeLine && applyLine, "live composite and development functions exist");
@@ -41,7 +41,7 @@ test("live development changes always rebuild OFF, DEF and OA and ignore FI", as
     uhmDbPlayerId: () => "test-player",
     UHM_PLAYER_OVERRIDES_BY_ID: new Map()
   });
-  new Script(compositeLine + "\\n" + applyLine + "\\nglobalThis.apply = applyDevelopment;").runInContext(context);
+  new Script(compositeLine + "\n" + applyLine + "\nglobalThis.apply = applyDevelopment;").runInContext(context);
   const base = { FI:10, SH:76, PL:75, ST:79, CH:83, PO:78, HI:83, SK:71, EN:78, PE:81, FA:55, LE:79, SR:79, OFF:1, DEF:1, OA:1 };
   const result = context.apply("test-player", base, {});
   assert.equal(result.FI, 50);

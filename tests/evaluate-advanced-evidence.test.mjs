@@ -1,101 +1,79 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
-import { tmpdir } from "node:os";
-import { join } from "node:path";
-import { spawnSync } from "node:child_process";
+import { RATING_ATTRIBUTES } from "../scripts/lib/player-ratings.mjs";
+import {
+  createLeagueStatIndex,
+  estimatePlayerPotential,
+  estimatePlayerRatings,
+  matchLeagueStats
+} from "../scripts/lib/cross-league-rating-model.mjs";
 
-const script=new URL("../scripts/evaluate-advanced-evidence.mjs",import.meta.url);
+const completeCard = {
+  FI:10, SH:70, PL:72, ST:68, CH:65, PO:66, HI:64, SK:71,
+  EN:69, PE:67, FA:60, LE:68, SR:70, OFF:70, DEF:65, OA:0
+};
 
-test("candidate evaluator writes a review artifact and never claims production writes",async()=>{
- const dir=await mkdtemp(join(tmpdir(),"hd-candidate-"));
- try{
-  const input=join(dir,"normalized.json"),output=join(dir,"candidates.json");
-  const forward={playerId:"f1",position:"F",league:"NHL",season:"2025-2026",gamesPlayed:55,
-   ixgPer60Percentile:.9,goalsAboveExpectedPer60Percentile:.9,primaryPointsPer60Percentile:.9,shotGenerationPer60Percentile:.9,
-   ixgPerShotPercentile:.8,goalsAboveExpectedPercentile:.8,shotVolumePer60Percentile:.8,
-   primaryAssistsPer60Percentile:.8,chanceCreationPercentile:.8,controlledEntriesPercentile:.8,controlledExitsPercentile:.8,
-   topSpeedPercentile:.8,speedBurstsPercentile:.8,highIntensityDistancePercentile:.8};
-  const goalie={playerId:"g1",position:"G",league:"NHL",season:"2025-2026",gamesPlayed:45,
-   goalsSavedAboveExpectedPercentile:.9,shotQualityAdjustedSavePercentile:.9};
-  await writeFile(input,JSON.stringify({players:[forward,goalie]}));
-  const run=spawnSync(process.execPath,[script.pathname,input,output],{encoding:"utf8"});
-  assert.equal(run.status,0,run.stderr);
-  const report=JSON.parse(await readFile(output,"utf8"));
-  assert.equal(report.candidateCount,2);
-  assert.equal(report.ratedCount,2);
-  assert.equal(report.productionWrite,false);
-  assert.ok(report.candidates.every(x=>x.result.overall!==null));
- }finally{await rm(dir,{recursive:true,force:true});}
+test("shared rating model returns all sixteen bounded integer attributes", () => {
+  const result = estimatePlayerRatings(
+    { name:"Test Forward", age:24, currentLeague:"NHL", position:"F" },
+    null,
+    null,
+    completeCard
+  );
+  assert.deepEqual(Object.keys(result.attributes), RATING_ATTRIBUTES);
+  for (const key of RATING_ATTRIBUTES) {
+    assert.ok(Number.isInteger(result.attributes[key]), key + " must be an integer");
+    assert.ok(result.attributes[key] >= 0 && result.attributes[key] <= 99, key + " must be within 0-99");
+  }
 });
 
-test("synthetic pilot reports position distributions, evidence coverage and fail-closed guardrails",async()=>{
- const dir=await mkdtemp(join(tmpdir(),"hd-synthetic-pilot-"));
- try{
-  const input=join(dir,"synthetic.json"),output=join(dir,"report.json");
-  const fixture=JSON.parse(await readFile(new URL("../data/advanced-input/synthetic-pilot.json",import.meta.url),"utf8"));
-  await writeFile(input,JSON.stringify(fixture));
-  const reportScript=new URL("../scripts/run-synthetic-pilot-report.mjs",import.meta.url);
-  const run=spawnSync(process.execPath,[reportScript.pathname,input,output],{encoding:"utf8"});
-  assert.equal(run.status,0,run.stderr);
-  const report=JSON.parse(await readFile(output,"utf8"));
-  assert.equal(report.datasetType,"synthetic");
-  assert.equal(report.candidateCount,15);
-  assert.equal(report.positions.F.players,5);
-  assert.equal(report.positions.D.players,5);
-  assert.equal(report.positions.G.players,5);
-  assert.equal(report.guardrails.productionWrite,false);
-  assert.equal(report.guardrails.providerDataUsed,false);
-  assert.ok(report.positions.F.attributeCoverage.OFF===1);
-  assert.ok(report.candidates.every(x=>typeof x.profile.archetype==="string"));
-  assert.ok(report.candidates.every(x=>typeof x.profile.confidence==="string"));
-  assert.ok(Array.isArray(report.smallCohorts));
- }finally{await rm(dir,{recursive:true,force:true});}
+test("FI is independent and never changes the overall", () => {
+  const player = { name:"Test Forward", age:24, currentLeague:"NHL", position:"F" };
+  const lowFight = estimatePlayerRatings(player, null, null, { ...completeCard, FI:5 });
+  const highFight = estimatePlayerRatings(player, null, null, { ...completeCard, FI:99 });
+  assert.equal(lowFight.overall, highFight.overall);
+  assert.equal(lowFight.attributes.OA, highFight.attributes.OA);
+  assert.equal(lowFight.attributes.FI, 5);
+  assert.equal(highFight.attributes.FI, 99);
 });
 
-test("synthetic pilot refuses input that is not explicitly synthetic",async()=>{
- const dir=await mkdtemp(join(tmpdir(),"hd-synthetic-reject-"));
- try{
-  const input=join(dir,"input.json");
-  await writeFile(input,JSON.stringify({players:[{playerId:"SYN-X",position:"F"}]}));
-  const reportScript=new URL("../scripts/run-synthetic-pilot-report.mjs",import.meta.url);
-  const run=spawnSync(process.execPath,[reportScript.pathname,input,join(dir,"out.json")],{encoding:"utf8"});
-  assert.notEqual(run.status,0);
-  assert.match(run.stderr,/must explicitly declare synthetic/);
- }finally{await rm(dir,{recursive:true,force:true});}
+test("OFF and DEF are derived from their agreed component attributes", () => {
+  const result = estimatePlayerRatings(
+    { name:"Test Defender", age:27, currentLeague:"NHL", position:"D" },
+    null,
+    null,
+    { ...completeCard, SH:81, PL:72, ST:69, CH:77, PO:74, HI:70 }
+  );
+  assert.equal(result.attributes.OFF, Math.round((81 + 72 + 69) / 3));
+  assert.equal(result.attributes.DEF, Math.round((77 + 74 + 70) / 3));
+  const oaKeys = RATING_ATTRIBUTES.filter(key => key !== "FI" && key !== "OA");
+  assert.equal(result.attributes.OA, Math.round(oaKeys.reduce((sum, key) => sum + result.attributes[key], 0) / oaKeys.length));
 });
 
-
-test("equal Overall can produce distinct evidence-based skater archetypes",async()=>{
- const { evaluateAdvancedSkater, classifyAdvancedProfile } = await import("../scripts/lib/advanced-player-rating-model.mjs");
- const make = (off,def,playmaking) => evaluateAdvancedSkater({position:"F"},{
-  gamesPlayed:55,
-  ixgPer60Percentile:off, goalsAboveExpectedPer60Percentile:off, primaryPointsPer60Percentile:off, shotGenerationPer60Percentile:off,
-  xgaSuppressionPercentile:def, expectedGoalDifferentialPercentile:def, shotAttemptSuppressionPercentile:def,
-  ixgPerShotPercentile:.5, goalsAboveExpectedPercentile:.5, shotVolumePer60Percentile:.5,
-  primaryAssistsPer60Percentile:playmaking, chanceCreationPercentile:playmaking, controlledEntriesPercentile:playmaking, controlledExitsPercentile:playmaking,
-  topSpeedPercentile:.5, speedBurstsPercentile:.5, highIntensityDistancePercentile:.5,
-  faceoffWinPercentile:.5, availabilityPercentile:.5, sustainedWorkloadPercentile:.5, penaltyDifferentialPercentile:.5,
-  STPercentile:.5, CHPercentile:.5, POPercentile:.5, HIPercentile:.5, LEPercentile:.5, SRPercentile:.5
- });
- const scorer=make(.95,.25,.1), stopper=make(.25,.95,.7);
- assert.equal(scorer.overall,stopper.overall);
- assert.equal(classifyAdvancedProfile(scorer).archetype,"offensive_elite");
- assert.equal(classifyAdvancedProfile(stopper).archetype,"defensive_specialist");
+test("league stat matching uses a unique normalized player name", () => {
+  const index = createLeagueStatIndex({
+    league:"NHL",
+    season:"2025-2026",
+    source:"synthetic test fixture",
+    skaters:[
+      { player_id:"101", name:"Smith, Alex", position:"C", games_played:20, goals:8, assists:12, points:20 },
+      { player_id:"102", name:"Jones, Pat", position:"D", games_played:18, goals:2, assists:7, points:9 }
+    ],
+    goalies:[]
+  });
+  const matched = matchLeagueStats({ name:"Alex Smith", position:"C" }, index);
+  assert.equal(matched.player_id, "101");
 });
 
-test("low sample is a confidence flag, not a low-talent archetype",async()=>{
- const { evaluateAdvancedSkater, classifyAdvancedProfile } = await import("../scripts/lib/advanced-player-rating-model.mjs");
- const result=evaluateAdvancedSkater({position:"F"},{gamesPlayed:8,
-  ixgPer60Percentile:.9,goalsAboveExpectedPer60Percentile:.9,primaryPointsPer60Percentile:.9,shotGenerationPer60Percentile:.9,
-  xgaSuppressionPercentile:.8,expectedGoalDifferentialPercentile:.8,shotAttemptSuppressionPercentile:.8,
-  ixgPerShotPercentile:.8,goalsAboveExpectedPercentile:.8,shotVolumePer60Percentile:.8,
-  primaryAssistsPer60Percentile:.8,chanceCreationPercentile:.8,controlledEntriesPercentile:.8,controlledExitsPercentile:.8,
-  topSpeedPercentile:.8,speedBurstsPercentile:.8,highIntensityDistancePercentile:.8,
-  STPercentile:.8,CHPercentile:.8,POPercentile:.8,HIPercentile:.8,LEPercentile:.8,SRPercentile:.8
- });
- const profile=classifyAdvancedProfile(result);
- assert.equal(profile.archetype,"two_way_complete");
- assert.equal(profile.limitedSample,true);
- assert.notEqual(profile.confidence,"high");
+test("potential projection never falls below current ability", () => {
+  const result = estimatePlayerPotential({
+    name:"Young Prospect",
+    age:19,
+    currentLeague:"OHL",
+    position:"F",
+    draftOverall:12,
+    potentialStats:{ games_played:30, goals:18, assists:24, points:42 }
+  }, 78);
+  assert.ok(result.value >= 78);
+  assert.equal(result.status, "provisional_model_estimate");
 });

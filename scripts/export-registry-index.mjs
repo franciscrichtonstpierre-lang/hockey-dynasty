@@ -17,7 +17,7 @@ let compositesRebuilt = 0;
 let compositesIncomplete = 0;
 for (const player of players) {
   const a = player.attributes;
-  if (!a || !compositeKeys.every(key => Number.isFinite(Number(a[key])) && Number(a[key]) >= 0 && Number(a[key]) <= 99)) {
+  if (!a || !compositeKeys.every(key => a[key] !== null && a[key] !== "" && Number.isFinite(Number(a[key])) && Number(a[key]) >= 0 && Number(a[key]) <= 99)) {
     compositesIncomplete++;
     continue;
   }
@@ -36,7 +36,7 @@ registry.compositeRatings = {
   incomplete: compositesIncomplete,
   fiExcludedFromOA: true
 };
-await writeFile(sourcePath, JSON.stringify(registry, null, 2) + "\\n", "utf8");
+await writeFile(sourcePath, JSON.stringify(registry, null, 2) + "\n", "utf8");
 
 const compact = players.map(p => ({
   id: p.id ?? null,

@@ -1,6 +1,10 @@
 # Hockey Dynasty — dossier de demandes de licences commerciales
+
+> **ARCHIVÉ / NE PAS ENVOYER.** Depuis le 16 novembre 2026, la stratégie du projet est de n'utiliser que des sources et outils gratuits, sans abonnement, achat de données, essai payant ni frais de licence. Les brouillons ci-dessous sont conservés comme documentation historique uniquement; ils ne constituent pas des demandes à envoyer. Consulter désormais [la stratégie de données gratuites uniquement](free-data-sources-zero-budget-hockey-dynasty.md). Aucun fournisseur ne doit être contacté pour solliciter une offre payante.
+
 **Préparé le : 15 novembre 2026**  
-**Statut : brouillons prêts à envoyer — aucune demande n'a été transmise.**
+**Statut initial : brouillons prêts à envoyer — aucune demande n'a été transmise.**  
+**Statut actuel : archivés, inactifs et non autorisés à l'envoi selon la politique zéro budget.**
 
 ## 1. Présentation du projet
 

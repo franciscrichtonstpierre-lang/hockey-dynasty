@@ -2,17 +2,17 @@
 
 Saison cible : **2026–2027**. Ce dépôt contient l’application et les instantanés de données utilisés par le jeu.
 
-## Couverture vérifiée le 5 novembre 2026
+## Couverture vérifiée le 17 novembre 2026
 
-**Dernier audit automatisé : réussi.** Les contrôles de couverture, d’identifiants, d’attributs, de salaires utilisables, de personnel et de choix de repêchage passent.
+**Dernier audit automatisé : réussi.** Les 93 tests passent (0 échec), la syntaxe JavaScript est valide et l’audit des bases LNH, LAH, ECHL, espoirs, contrats, entraîneurs et choix est terminé. La publication GitHub Pages du commit `0e197ddc59ce790cdb3972ba3e74db29bcc3c534` a réussi.
 
-- **LNH :** 32/32 fichiers d’effectifs valides, 793 joueurs.
-- **LAH :** 32/32 fichiers d’effectifs valides, 808 joueurs.
-- **Registre central :** 3 334 fiches, avec 16 attributs sur chaque fiche. Le dernier audit du registre ne signale aucune ligue inconnue. Les potentiels sont distincts des attributs : 319 profils ont une estimation révisée manuellement à partir de sources publiques et documentée avec justification et confiance; 3 015 restent des estimations de modèle. Aucune de ces valeurs n'est présentée comme un potentiel officiel publié par une ligue.
-- **ECHL :** 30/30 équipes indexées, 781 joueurs. **Espoirs d’organisation :** 32/32 fichiers non vides, 1 326 profils. Les profils sans correspondance centrale sont conservés comme estimations de très faible confiance. Les droits et ligues inconnus ne doivent pas être déduits de l'affiliation. **Prochains repêchages :** 132 profils (88 en 2027, 37 en 2028, 7 en 2029); ces listes restent des projections et ne sont pas des sélections officielles.
-- **Contrats :** le dernier audit de synchronisation confirme 799/799 contrats NHL appariés avec une source; les données saisonnières sont présentes pour 738 dossiers. Les estimations de salaire de simulation restent étiquetées séparément des montants officiels.
-- **Entraîneurs LNH :** 32 équipes et 158 fiches. **Personnel LAH :** 32 équipes et 159 fiches dans `data/coaches/ahl-2026-2027.json`. Les 32 équipes de chaque ligue ont un entraîneur-chef et des adjoints; les cotes de simulation sont présentes, mais ne doivent pas être confondues avec des évaluations de dépistage source-vérifiées.
-- **Choix de repêchage :** le registre énumère **672 emplacements de base** (32 équipes × 7 rondes × 3 années : 2027–2029). **655 propriétaires sont vérifiés, 17 emplacements non jouables sont exclus et aucun propriétaire ne reste non attribué.** Le registre passe l’audit.
+- **LNH :** 32/32 fichiers d’effectifs valides, 797 joueurs.
+- **LAH :** 32/32 fichiers d’effectifs valides, 816 joueurs.
+- **Registre central :** 3 334 fiches et 16 attributs complets sur chaque fiche; aucun identifiant ou doublon d’identité détecté. 16 fiches ont encore une ligue inconnue. Les potentiels sont distincts des attributs : 312 ont une valeur appuyée par une source; 3 022 restent des estimations provisoires du modèle. Elles ne sont pas présentées comme des potentiels officiels.
+- **ECHL :** 30/30 équipes indexées, 773 joueurs. Les noms de fichiers des 30 clubs ont été corrigés et normalisés; l’index pointe vers les nouveaux fichiers. **Espoirs d’organisation :** 32/32 fichiers non vides, 1 323 profils. **Prochains repêchages :** 128 profils (84 en 2027, 37 en 2028, 7 en 2029); ces listes restent des projections, pas des sélections officielles.
+- **Contrats :** 810/815 contrats NHL appariés; 804 ont une URL source, 6 dossiers appariés n’ont pas encore de source URL exploitable et 5 joueurs NHL n’ont pas de contrat apparié dans le jeu de données. 741 lignes saisonnières et 804 cap hits source sont présents; 141 salaires de simulation restent des estimations clairement séparées des montants officiels. Pour l’organisation hors NHL, 2 560 joueurs sont couverts et 442 contrats sont appariés; les autres statuts ne sont pas assimilés à des contrats confirmés.
+- **Entraîneurs LNH :** 32 équipes et 158 fiches. **Personnel LAH :** 32 équipes et 159 fiches dans `data/coaches/ahl-2026-2027.json`; les cotes de simulation ne sont pas des évaluations de dépistage source-vérifiées.
+- **Choix de repêchage :** 672 emplacements de base (32 équipes × 7 rondes × 3 années : 2027–2029); 655 propriétaires vérifiés, 17 emplacements non jouables exclus, aucun propriétaire non résolu. Le registre passe l’audit.
 
 ## Synchronisation et audit
 

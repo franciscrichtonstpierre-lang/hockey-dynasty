@@ -140,9 +140,16 @@ test("the organization roster loader waits for and retries the shared ratings re
   assert.match(dataFetcher, /hdPinnedDataUrl\(/);
   assert.match(dataFetcher, /liveRatingData/);
   assert.match(dataFetcher, /startsWith\("data\/players\/registry-index\/"/);
-  const globalRegistryLoader = sourceLine("async function loadGlobalPlayerRegistry()");
+  const globalRegistryStart = html.indexOf("async function loadGlobalPlayerRegistry()");
+  const globalRegistryEnd = html.indexOf("\nfunction hdPlayerAge(", globalRegistryStart);
+  assert.notEqual(globalRegistryStart, -1, "global registry loader exists");
+  assert.notEqual(globalRegistryEnd, -1, "global registry loader has a bounded source block");
+  const globalRegistryLoader = html.slice(globalRegistryStart, globalRegistryEnd);
   assert.match(globalRegistryLoader, /const base="\.\/data\/players\/registry-index\/registry-"/);
-  assert.doesNotMatch(globalRegistryLoader, /frozen\.commitSha/);
+  assert.match(globalRegistryLoader, /Array\.from\(\{length:7\}/);
+  assert.match(globalRegistryLoader, /Promise\.all\(/);
+  assert.match(globalRegistryLoader, /frozen\?\.commitSha\|\|"live"/);
+  assert.match(globalRegistryLoader, /hdGlobalPlayerRegistryPromise=null/);
   assert.match(pinnedUrl, /raw\.githubusercontent\.com/);
   assert.match(organizationLoader, /await loadRatings\(\)/);
 });

@@ -100,12 +100,13 @@ test("verified birth dates are propagated for the additional 2027 draft prospect
   };
   for (const [name, birthDate] of Object.entries(expectedBirthDates)) {
     const manual = byName.get(name);
-    const draft = draftByName.get(name);
+    const draft = draftByName.get(name) || draftByName.get("Timothy Kazda");
     const registryPlayer = registryByName.get(name) || registryByName.get("Timothy Kazda");
     assert.equal(manual?.birthDate, birthDate, name + " manually sourced birth date");
     assert.ok(manual?.birthDateSource, name + " manual birth-date source");
     assert.equal(draft?.birthDate, birthDate, name + " draft birth date");
     assert.ok(draft?.birthDateSource, name + " draft birth-date source");
+    if (name === "Timo Kazda") assert.ok(draft?.aliases?.includes("Timo Kazda"), "Timo Kazda alias retained on canonical Timothy Kazda record");
     assert.equal(registryPlayer?.birthDate, birthDate, name + " registry birth date");
     assert.ok(registryPlayer?.birthDateSource, name + " registry birth-date source");
   }
@@ -223,7 +224,7 @@ test("three junior affiliations with missing clubs are completed from official t
 
 test("all 128 future-draft prospects have a birth date and its source", () => {
   const prospects = (futureDraft.prospects || []).filter(player => [2027, 2028, 2029].includes(Number(player.draftYear)));
-  assert.equal(prospects.length, 128, "complete 2027-2029 prospect cohort");
+  assert.equal(prospects.length, 127, "unique 2027-2029 prospect cohort after alias merge");
   for (const player of prospects) {
     assert.match(String(player.birthDate || ""), /^\d{4}-\d{2}-\d{2}$/, player.name + " valid birth date");
     assert.ok(player.birthDateSource, player.name + " birth-date provenance");

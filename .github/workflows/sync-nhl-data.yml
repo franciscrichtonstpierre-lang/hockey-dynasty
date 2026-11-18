@@ -44,7 +44,7 @@ on:
       - "tests/potential-scouting-overrides.test.mjs"
       - "tests/evaluate-advanced-evidence.test.mjs"
       - "tests/contract-salary-estimate.test.mjs"
-      - "tests/future-draft-affiliations.test.mjs"
+      - "tests/**"
       - "data/junior/**"
       - "data/free-agents/2026-2027.json"
   workflow_dispatch:

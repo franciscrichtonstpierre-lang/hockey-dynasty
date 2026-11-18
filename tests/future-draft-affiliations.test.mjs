@@ -148,6 +148,28 @@ test("verified birth dates are propagated for 2028 and 2029 draft prospects", ()
   }
 });
 
+test("the remaining 2028 and 2029 birth dates are propagated from verified profiles", () => {
+  const expectedBirthDates = {
+    "Isak Alvudd": "2010-03-05",
+    "Jack Trupiano": "2010-06-11",
+    "Jose Tiilikainen": "2010-06-14",
+    "Lionel Dedial": "2010-11-27",
+    "Matyas Čutta": "2010-04-03",
+    "Chase Schulberger": "2010-11-09"
+  };
+  for (const [name, birthDate] of Object.entries(expectedBirthDates)) {
+    const manual = byName.get(name);
+    const draft = draftByName.get(name);
+    const registryPlayer = registryByName.get(name);
+    assert.equal(manual?.birthDate, birthDate, name + " manually sourced birth date");
+    assert.ok(manual?.birthDateSource, name + " manual birth-date source");
+    assert.equal(draft?.birthDate, birthDate, name + " draft birth date");
+    assert.ok(draft?.birthDateSource, name + " draft birth-date source");
+    assert.equal(registryPlayer?.birthDate, birthDate, name + " registry birth date");
+    assert.ok(registryPlayer?.birthDateSource, name + " registry birth-date source");
+  }
+});
+
 test("each manual affiliation correction preserves its own verification date", () => {
   const script = readFileSync("scripts/build-player-registry.mjs", "utf8");
   assert.match(script, /correctionDate=Date\.parse\(correction\.sourceUpdatedAt\|\|manualLeagueCorrections\.verifiedAt/);

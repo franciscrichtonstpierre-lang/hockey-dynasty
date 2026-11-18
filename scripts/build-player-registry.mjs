@@ -684,7 +684,8 @@ for(const correction of (manualLeagueCorrections.players||[])){
     const applyTeam=Boolean(Object.prototype.hasOwnProperty.call(correction,"currentTeam")&&!hasOfficialRoster&&(!newerRecord||leagueUnknown||teamPlaceholder));
     if(applyLeague)p.currentLeague=correction.currentLeague;
     if(applyTeam)p.currentTeam=correction.currentTeam;
-    if(correction.clearNhlRightsTeam===true)p.nhlRightsTeam=null;else if(correction.nhlRightsTeam&&codes.includes(correction.nhlRightsTeam))p.nhlRightsTeam=correction.nhlRightsTeam;
+    const applyRights=!newerRecord||!p.nhlRightsTeam;
+    if(applyRights&&correction.clearNhlRightsTeam===true)p.nhlRightsTeam=null;else if(applyRights&&correction.nhlRightsTeam&&codes.includes(correction.nhlRightsTeam))p.nhlRightsTeam=correction.nhlRightsTeam;
     if(correction.birthDate&&!p.birthDate)p.birthDate=correction.birthDate;if(correction.birthDateSource&&!p.birthDateSource)p.birthDateSource=correction.birthDateSource;if(correction.heightCm!=null&&Number.isFinite(Number(correction.heightCm)))p.heightCm=Number(correction.heightCm);if(correction.weightKg!=null&&Number.isFinite(Number(correction.weightKg)))p.weightKg=Number(correction.weightKg);if(correction.shootsCatches)p.shootsCatches=correction.shootsCatches;
     if(correction.position&&!p.position)p.position=posGroup(correction)||correction.position;
     if(correction.currentStatus)p.currentStatus=correction.currentStatus;

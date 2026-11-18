@@ -675,19 +675,26 @@ for(const correction of (manualLeagueCorrections.players||[])){
   const targets=[selected,...allMatches.filter(p=>p!==selected&&(!p.currentLeague||p.currentLeague==="UNKNOWN")&&(!p.birthDate||!correction.birthDate||p.birthDate===correction.birthDate)&&(!p.position||!wantedPosition||p.position===wantedPosition||p.detailedPosition===String(correction.position||"").toUpperCase()))];
   for(const p of targets){
     const hasOfficialRoster=["NHL","AHL"].includes(p.currentLeague)&&Boolean(p.currentTeam);
-    if(correction.currentLeague&&!hasOfficialRoster)p.currentLeague=correction.currentLeague;
-    if(Object.prototype.hasOwnProperty.call(correction,"currentTeam")&&!hasOfficialRoster)p.currentTeam=correction.currentTeam;
+    const correctionDate=Date.parse(correction.sourceUpdatedAt||manualLeagueCorrections.verifiedAt||"");
+    const recordDate=Date.parse(p.sourceUpdatedAt||p.teamPipelineSnapshotDate||p.supplementalSnapshotDate||"");
+    const newerRecord=Number.isFinite(recordDate)&&Number.isFinite(correctionDate)&&recordDate>correctionDate;
+    const leagueUnknown=!p.currentLeague||p.currentLeague==="UNKNOWN";
+    const teamPlaceholder=!p.currentTeam||/^shoots\s+[LR]$/i.test(String(p.currentTeam));
+    const applyLeague=Boolean(correction.currentLeague&&!hasOfficialRoster&&(!newerRecord||leagueUnknown));
+    const applyTeam=Boolean(Object.prototype.hasOwnProperty.call(correction,"currentTeam")&&!hasOfficialRoster&&(!newerRecord||leagueUnknown||teamPlaceholder));
+    if(applyLeague)p.currentLeague=correction.currentLeague;
+    if(applyTeam)p.currentTeam=correction.currentTeam;
     if(correction.clearNhlRightsTeam===true)p.nhlRightsTeam=null;else if(correction.nhlRightsTeam&&codes.includes(correction.nhlRightsTeam))p.nhlRightsTeam=correction.nhlRightsTeam;
-    if(correction.birthDate&&!p.birthDate)p.birthDate=correction.birthDate;if(correction.birthDateSource)p.birthDateSource=correction.birthDateSource;if(correction.heightCm!=null&&Number.isFinite(Number(correction.heightCm)))p.heightCm=Number(correction.heightCm);if(correction.weightKg!=null&&Number.isFinite(Number(correction.weightKg)))p.weightKg=Number(correction.weightKg);if(correction.shootsCatches)p.shootsCatches=correction.shootsCatches;
+    if(correction.birthDate&&!p.birthDate)p.birthDate=correction.birthDate;if(correction.birthDateSource&&!p.birthDateSource)p.birthDateSource=correction.birthDateSource;if(correction.heightCm!=null&&Number.isFinite(Number(correction.heightCm)))p.heightCm=Number(correction.heightCm);if(correction.weightKg!=null&&Number.isFinite(Number(correction.weightKg)))p.weightKg=Number(correction.weightKg);if(correction.shootsCatches)p.shootsCatches=correction.shootsCatches;
     if(correction.position&&!p.position)p.position=posGroup(correction)||correction.position;
     if(correction.currentStatus)p.currentStatus=correction.currentStatus;
     if(Object.prototype.hasOwnProperty.call(correction,"playable"))p.playable=correction.playable;
     if(correction.retired)p.retired=true;
-    p.currentTeamSource=correction.source||null;
-    p.currentLeagueSource=correction.source||null;
-    p.leagueResolution="manual_source_verified";
-    p.manualCorrectionSource=correction.source||null;
-    p.sourceUpdatedAt=correction.sourceUpdatedAt||manualLeagueCorrections.verifiedAt||p.sourceUpdatedAt||now;
+    if(applyTeam)p.currentTeamSource=correction.source||p.currentTeamSource||null;
+    if(applyLeague)p.currentLeagueSource=correction.source||p.currentLeagueSource||null;
+    if(applyLeague)p.leagueResolution="manual_source_verified";
+    if(applyLeague||applyTeam)p.manualCorrectionSource=correction.source||null;
+    if((applyLeague||applyTeam)&&Number.isFinite(correctionDate)&&(!Number.isFinite(recordDate)||correctionDate>=recordDate))p.sourceUpdatedAt=new Date(correctionDate).toISOString();
   }
   manualCorrectionsApplied++;
 }

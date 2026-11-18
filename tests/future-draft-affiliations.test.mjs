@@ -133,7 +133,7 @@ test("verified birth dates are propagated for 2028 and 2029 draft prospects", ()
     "Madden Daneault": "2011-05-07",
     "Parker McMillan": "2011-06-13",
     "Pierre-Alexandre Lemieux": "2010-11-27",
-    "Thor Liffiton": "2010-12-06"
+    "Thor Liffiton": "2010-06-12"
   };
   for (const [name, birthDate] of Object.entries(expectedBirthDates)) {
     const manual = byName.get(name);
@@ -200,6 +200,25 @@ test("each manual affiliation correction preserves its own verification date", (
   assert.match(script, /applyRights=!newerRecord\|\|!p\.nhlRightsTeam/);
   assert.match(script, /correctionLeagueGeneric/);
   assert.match(script, /currentLeagueGeneric/);
+});
+
+test("three junior affiliations with missing clubs are completed from official team rosters", () => {
+  const expected = {
+    "Jose Tiilikainen": ["EUROPE", "Jokerit U20"],
+    "Pierre-Alexandre Lemieux": ["QMJHL", "Shawinigan Cataractes"],
+    "Thor Liffiton": ["WHL", "Penticton Vees"]
+  };
+  for (const [name, [league, team]] of Object.entries(expected)) {
+    const manual = byName.get(name);
+    const draft = draftByName.get(name);
+    const registryPlayer = registryByName.get(name);
+    assert.equal(manual?.currentLeague, league, name + " manual league");
+    assert.equal(manual?.currentTeam, team, name + " manual team");
+    assert.equal(draft?.currentLeague, league, name + " draft league");
+    assert.equal(draft?.currentTeam, team, name + " draft team");
+    assert.equal(registryPlayer?.currentLeague, league, name + " registry league");
+    assert.equal(registryPlayer?.currentTeam, team, name + " registry team");
+  }
 });
 
 test("all 128 future-draft prospects have a birth date and its source", () => {

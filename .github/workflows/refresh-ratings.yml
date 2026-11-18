@@ -19,7 +19,7 @@ on:
 permissions:
   contents: read
 concurrency:
-  group: hockey-dynasty-data-sync-${{ github.ref }}
+  group: hockey-dynasty-ratings-validation-${{ github.ref }}
   cancel-in-progress: false
 jobs:
   ratings:

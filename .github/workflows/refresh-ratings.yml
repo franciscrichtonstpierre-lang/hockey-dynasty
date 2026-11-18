@@ -1,4 +1,4 @@
-name: Refresh player ratings
+name: Valider les cotes des joueurs
 on:
   push:
     paths:
@@ -22,22 +22,16 @@ concurrency:
   group: hockey-dynasty-ratings-validation-${{ github.ref }}
   cancel-in-progress: false
 jobs:
-  ratings:
+  validate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - name: Build league-wide ratings from NHL stats
-        run: node scripts/build-ratings.mjs
-      - name: Complete shared ratings for every registered player
-        run: node scripts/apply-player-ratings.mjs
-      - name: Export completed player directory
-        run: node scripts/export-registry-index.mjs
-      - name: Test complete shared player ratings
+      - name: Tester le modèle partagé et les données de joueurs
         run: node --test tests/*.test.mjs
-      - name: Verify generated rating files
+      - name: Vérifier les fichiers de données publiés
         run: |
           test -s data/ratings.json
           test -s data/players/registry.json

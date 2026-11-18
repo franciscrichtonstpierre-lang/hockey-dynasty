@@ -25,9 +25,11 @@ test("the player directory displays the exact sixteen attributes and separate po
   }], escapeHtml);
   const headers = [...html.matchAll(/<th>(.*?)<\/th>/g)].map(match => match[1]);
 
-  assert.deepEqual(headers, ["Nom du joueur", "Type", "Ligue", "Équipe / droits", "Pos.", "POT", ...presentation.ATTRIBUTES]);
+  assert.deepEqual(headers, ["Nom du joueur", "Type", "Ligue", "Équipe / droits", "Pos.", "POT", "Origine des cotes", "Fiabilité", "Statut", ...presentation.ATTRIBUTES]);
   assert.equal((html.match(/class="ratingCell"/g) || []).length, 17, "POT plus all sixteen attributes are shown");
   assert.match(html, /<td class="playerName">Josh Anderson<\/td>/);
+  assert.match(html, /Statistiques officielles NHL/);
+  assert.match(html, /Estimation statistique ajustée/);
   assert.doesNotMatch(html, /GEN|≈|ratingStatus|ratingSource|<small>/);
   assert.doesNotMatch(html, /<td class="ratingCell">99<\/td>/, "duplicate overall is not rendered as GEN");
 });

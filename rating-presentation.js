@@ -36,7 +36,7 @@
     if (labels[key]) return labels[key];
     if (/nhl stats rest.*goalie|goalie statistics/i.test(key)) return "Statistiques gardiens NHL";
     if (/nhl stats rest|nhl.*regular.season.*statistics/i.test(key)) return "Statistiques officielles NHL";
-    if (/official.*(ahl|echl|ohl|whl|qmjhl|ushl|ncaa)|https?:\\/\\//i.test(key)) return "Source statistique externe";
+    if (/official.*(ahl|echl|ohl|whl|qmjhl|ushl|ncaa)/i.test(key) || key.includes("://")) return "Source statistique externe";
     if (/model_estimate_from_league_statistics|league_statistics/.test(key)) return "Estimation par statistiques de ligue";
     if (/minimal_profile|profile_model/.test(key)) return "Estimation par profil";
     if (/sample_adjusted/.test(key)) return "Estimation statistique ajustée";

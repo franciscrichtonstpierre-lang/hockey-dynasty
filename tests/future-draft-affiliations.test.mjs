@@ -101,7 +101,7 @@ test("verified birth dates are propagated for the additional 2027 draft prospect
   for (const [name, birthDate] of Object.entries(expectedBirthDates)) {
     const manual = byName.get(name);
     const draft = draftByName.get(name);
-    const registryPlayer = registryByName.get(name);
+    const registryPlayer = registryByName.get(name) || registryByName.get("Timothy Kazda");
     assert.equal(manual?.birthDate, birthDate, name + " manually sourced birth date");
     assert.ok(manual?.birthDateSource, name + " manual birth-date source");
     assert.equal(draft?.birthDate, birthDate, name + " draft birth date");

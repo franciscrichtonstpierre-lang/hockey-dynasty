@@ -222,7 +222,7 @@ test("three junior affiliations with missing clubs are completed from official t
   }
 });
 
-test("all 128 future-draft prospects have a birth date and its source", () => {
+test("all unique future-draft prospects have a birth date and its source", () => {
   const prospects = (futureDraft.prospects || []).filter(player => [2027, 2028, 2029].includes(Number(player.draftYear)));
   assert.equal(prospects.length, 127, "unique 2027-2029 prospect cohort after alias merge");
   for (const player of prospects) {

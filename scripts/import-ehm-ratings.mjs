@@ -108,7 +108,7 @@ for (const player of registry.players) {
     attributes:{ FI, ...raw, OFF, DEF, OA },
     overall:OA,
     ehmSourceOverall:sourceOverall,
-    ehmOverall:OA,
+    ehmOverall:sourceOverall,
     ehmCA:Number(caRaw),
     ehmPA:Number(paRaw),
     potential:ability(paRaw),

@@ -1,0 +1,52 @@
+name: Inspect Premier Pivot EHM source
+on:
+  push:
+    paths:
+      - ".github/workflows/inspect-premier-pivot.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Install SteamCMD
+        run: |
+          mkdir -p "$HOME/steamcmd"
+          cd "$HOME/steamcmd"
+          curl -fsSLO https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz
+          tar -xzf steamcmd_linux.tar.gz
+          chmod +x steamcmd.sh
+      - name: Download public Workshop item
+        run: |
+          "$HOME/steamcmd/steamcmd.sh" +force_install_dir "$RUNNER_TEMP/ehm-workshop" +login anonymous +workshop_download_item 301120 1428241604 validate +quit
+      - name: Inspect downloaded database without publishing source files
+        run: |
+          python3 - <<'PY'
+          import os, glob, sqlite3
+          root = os.path.expanduser("~/")
+          paths = glob.glob(os.path.join(os.environ["RUNNER_TEMP"], "ehm-workshop", "**", "1428241604", "**", "database.db"), recursive=True)
+          paths += glob.glob(os.path.join(os.environ["RUNNER_TEMP"], "ehm-workshop", "**", "database.db"), recursive=True)
+          paths = list(dict.fromkeys(paths))
+          if not paths:
+              print("RESULT=NOT_DOWNLOADED")
+              raise SystemExit("SteamCMD did not produce database.db; likely requires an authenticated Steam account or item access.")
+          for path in paths:
+              size = os.path.getsize(path)
+              with open(path, "rb") as f: header = f.read(16)
+              print(f"DATABASE_FOUND size_bytes={size} header={header!r}")
+              if header.startswith(b"SQLite format 3"):
+                  con = sqlite3.connect(f"file:{path}?mode=ro", uri=True)
+                  tables = con.execute("SELECT name FROM sqlite_master WHERE type='table' ORDER BY name").fetchall()
+                  print("FORMAT=SQLITE")
+                  print("TABLES=" + ",".join(x[0] for x in tables))
+                  for table, in tables:
+                      cols = con.execute(f'PRAGMA table_info("{table}")').fetchall()
+                      if any(any(k in str(c[1]).lower() for k in ("player","person","staff")) for c in cols):
+                          print("PLAYER_RELATED_TABLE=" + table)
+                          print("COLUMNS=" + ",".join(str(c[1]) for c in cols))
+                  con.close()
+              else:
+                  print("FORMAT=NON_SQLITE")
+          PY

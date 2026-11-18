@@ -148,13 +148,19 @@ try {
     const matches = all.filter(player => years.includes(Number(player.draftYear)) && names.has(normalizeName(player.name)));
     if (matches.length !== 1) { if (matches.length > 1) ambiguous++; continue; }
     const player = matches[0];
-    if (correction.currentLeague) player.currentLeague = correction.currentLeague;
-    if (correction.currentTeam) player.currentTeam = correction.currentTeam;
-    if (correction.birthDate) player.birthDate = correction.birthDate;
-    if (correction.birthDateSource || correction.source) player.birthDateSource = correction.birthDateSource || correction.source;
-    player.currentLeagueSource = correction.source || player.currentLeagueSource || null;
-    player.currentTeamSource = correction.source || player.currentTeamSource || null;
-    player.affiliationVerifiedAt = correction.sourceUpdatedAt || manual.verifiedAt || null;
+    const leagueUnknown = !player.currentLeague || String(player.currentLeague).toUpperCase() === "UNKNOWN";
+    const teamPlaceholder = !player.currentTeam || /^shoots\\s+[LR]$/i.test(String(player.currentTeam));
+    const updateTeam = leagueUnknown || teamPlaceholder;
+    if (leagueUnknown && correction.currentLeague) player.currentLeague = correction.currentLeague;
+    if (updateTeam && correction.currentTeam) player.currentTeam = correction.currentTeam;
+    if (correction.birthDate && !player.birthDate) player.birthDate = correction.birthDate;
+    if (correction.birthDateSource && !player.birthDateSource) player.birthDateSource = correction.birthDateSource;
+    else if (correction.source && !player.birthDateSource && correction.birthDate) player.birthDateSource = correction.source;
+    if ((leagueUnknown || updateTeam) && correction.source) {
+      player.currentLeagueSource = correction.source;
+      player.currentTeamSource = correction.source;
+      player.affiliationVerifiedAt = correction.sourceUpdatedAt || manual.verifiedAt || null;
+    }
     applied++;
   }
   console.log("Future draft affiliation overrides: " + applied + " applied; " + ambiguous + " ambiguous.");

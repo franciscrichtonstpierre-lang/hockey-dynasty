@@ -73,6 +73,8 @@ test("each manual affiliation correction preserves its own verification date", (
   assert.match(script, /recordDate>correctionDate/);
   assert.match(script, /newerRecord/);
   assert.match(script, /applyRights=!newerRecord\|\|!p\.nhlRightsTeam/);
+  assert.match(script, /correctionLeagueGeneric/);
+  assert.match(script, /currentLeagueGeneric/);
 });
 
 test("the fallback draft parser never stores handedness as a club name", () => {

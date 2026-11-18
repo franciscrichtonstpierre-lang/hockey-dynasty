@@ -680,7 +680,9 @@ for(const correction of (manualLeagueCorrections.players||[])){
     const newerRecord=Number.isFinite(recordDate)&&Number.isFinite(correctionDate)&&recordDate>correctionDate;
     const leagueUnknown=!p.currentLeague||p.currentLeague==="UNKNOWN";
     const teamPlaceholder=!p.currentTeam||/^shoots\s+[LR]$/i.test(String(p.currentTeam));
-    const applyLeague=Boolean(correction.currentLeague&&!hasOfficialRoster&&(!newerRecord||leagueUnknown));
+    const currentLeagueGeneric=["UNKNOWN","EUROPE","OTHER"].includes(String(p.currentLeague||"").toUpperCase());
+    const correctionLeagueGeneric=["EUROPE","OTHER"].includes(String(correction.currentLeague||"").toUpperCase());
+    const applyLeague=Boolean(correction.currentLeague&&!hasOfficialRoster&&(!newerRecord||leagueUnknown)&&(!correctionLeagueGeneric||currentLeagueGeneric));
     const applyTeam=Boolean(Object.prototype.hasOwnProperty.call(correction,"currentTeam")&&!hasOfficialRoster&&(!newerRecord||leagueUnknown||teamPlaceholder));
     if(applyLeague)p.currentLeague=correction.currentLeague;
     if(applyTeam)p.currentTeam=correction.currentTeam;

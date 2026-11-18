@@ -40,3 +40,8 @@ test("each manual affiliation correction preserves its own verification date", (
   assert.match(script, /correction\.sourceUpdatedAt\s*\|\|\s*manualLeagueCorrections\.verifiedAt/);
   assert.match(script, /p\.sourceUpdatedAt=correction\.sourceUpdatedAt\s*\|\|\s*manualLeagueCorrections\.verifiedAt/);
 });
+
+test("the fallback draft parser never stores handedness as a club name", () => {
+  const script = readFileSync("scripts/sync-future-draft-prospects.mjs", "utf8");
+  assert.match(script, /\^shoots\\s\+\[LR\]\$/);
+});

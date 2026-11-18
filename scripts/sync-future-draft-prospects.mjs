@@ -174,6 +174,14 @@ try {
   console.warn("Future draft affiliation overrides unavailable: " + error.message);
 }
 
+// Preserve the source of existing birth dates from the prospect feed when a
+// dedicated birthDateSource field was not supplied by the upstream snapshot.
+for (const player of all) {
+  if (player.birthDate && !player.birthDateSource && player.source) {
+    player.birthDateSource = player.source;
+  }
+}
+
 const byIdentity = new Map();
 for (const p of all) {
   const key = `${p.draftYear}|${p.name.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim()}`;

@@ -13,6 +13,29 @@
     return value === null || value === undefined || value === "" ? "—" : String(value);
   }
 
+  function ratingLabel(value) {
+    const key = String(value || "").toLowerCase();
+    const labels = {
+      high: "Échantillon élevé",
+      medium: "Échantillon moyen",
+      low: "Faible confiance",
+      very_low: "Très faible confiance",
+      source_verified: "Source vérifiée",
+      verified: "Vérifié",
+      league_statistics: "Statistiques de ligue",
+      nhl_player_statistics: "Statistiques NHL",
+      minimal_player_profile: "Profil minimal estimé",
+      sample_adjusted_statistical_estimate: "Estimation statistique ajustée",
+      sample_adjusted_statistical_estimate_with_profile_completion: "Statistiques + profil complété",
+      sample_adjusted_statistical_estimate_with_profile_completion_v1: "Statistiques + profil complété",
+      provisional_model_estimate: "Estimation provisoire",
+      cross_league_profile_model: "Modèle interligues",
+      "NHL Stats REST regular-season player statistics": "Statistiques officielles NHL",
+      "NHL Stats REST regular-season goalie statistics": "Statistiques gardiens NHL"
+    };
+    return labels[key] || displayValue(value);
+  }
+
   function directoryTable(players, escapeHtml) {
     const esc = typeof escapeHtml === "function" ? escapeHtml : value => String(value ?? "");
     const headers = ["Nom du joueur", "Type", "Ligue", "Équipe / droits", "Pos.", "POT", "Origine des cotes", "Fiabilité", "Statut", ...ATTRIBUTES];
@@ -26,9 +49,9 @@
         `<td>${esc(team)}</td>`,
         `<td>${esc(player.pos || "—")}</td>`,
         `<td class="ratingCell">${esc(displayValue(player.potential))}</td>`,
-        `<td>${esc(displayValue(player.ratingSource || player.potentialSource))}</td>`,
-        `<td>${esc(displayValue(player.ratingConfidence))}</td>`,
-        `<td>${esc(displayValue(player.ratingStatus))}</td>`,
+        `<td>${esc(ratingLabel(player.ratingSource || player.potentialSource))}</td>`,
+        `<td>${esc(ratingLabel(player.ratingConfidence))}</td>`,
+        `<td>${esc(ratingLabel(player.ratingStatus))}</td>`,
         ...ATTRIBUTES.map(attribute => `<td class="ratingCell">${esc(displayValue(player.attributes?.[attribute]))}</td>`)
       ];
       return `<tr>${cells.join("")}</tr>`;

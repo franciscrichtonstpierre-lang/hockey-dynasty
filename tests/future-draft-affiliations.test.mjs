@@ -4,6 +4,8 @@ import { readFileSync } from "node:fs";
 
 const corrections = JSON.parse(readFileSync("data/players/manual-league-corrections.json", "utf8"));
 const byName = new Map((corrections.players || []).map(player => [player.name, player]));
+const futureDraft = JSON.parse(readFileSync("data/future-draft-prospects/2027-2029.json", "utf8"));
+const draftByName = new Map((futureDraft.prospects || []).map(player => [player.name, player]));
 
 const expected = [
   ["Artem Katsuro", "WHL", "Calgary Hitmen"],
@@ -32,6 +34,10 @@ test("the 2027 draft watchlist has sourced league and club affiliations for all 
     assert.equal(player.currentTeam, team, name + " current club");
     assert.ok(player.source, name + " source");
     assert.equal(player.sourceUpdatedAt, "2026-11-18", name + " review date");
+    const draftPlayer = draftByName.get(name);
+    assert.ok(draftPlayer, name + " appears in the future-draft dataset");
+    assert.equal(draftPlayer.currentLeague, league, name + " draft-list league");
+    assert.equal(draftPlayer.currentTeam, team, name + " draft-list club");
   }
 });
 

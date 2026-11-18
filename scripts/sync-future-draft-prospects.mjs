@@ -141,7 +141,7 @@ try{
 // reintroducing parser placeholders such as "shoots L" as a club name.
 try {
   const manual = JSON.parse(await readFile("data/players/manual-league-corrections.json", "utf8"));
-  const normalizeName = value => String(value || "").normalize("NFD").replace(/[\\u0300-\\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+  const normalizeName = value => String(value || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
   let applied = 0, ambiguous = 0;
   for (const correction of (manual.players || [])) {
     const names = new Set([correction.name, ...(correction.aliases || [])].map(normalizeName));

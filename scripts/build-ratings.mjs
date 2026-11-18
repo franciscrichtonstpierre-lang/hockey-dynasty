@@ -81,6 +81,11 @@ for(const p of skaters){
   SR:clamp(36+point*22+goal*18+shot*14+powerPlay*4),
   OFF:off,DEF:def,OA:oa
  };
+ const a=players[id];
+ a.OFF=clamp((a.SH+a.PL+a.ST)/3);
+ a.DEF=clamp((a.CH+a.PO+a.HI)/3);
+ const oaKeys=["SH","PL","ST","CH","PO","HI","SK","EN","PE","FA","LE","SR","OFF","DEF"];
+ a.OA=clamp(oaKeys.reduce((sum,key)=>sum+a[key],0)/oaKeys.length);
  playerMetadata[id]={source:"NHL Stats REST regular-season player statistics",status:"sample_adjusted_statistical_estimate",confidence:"low",sampleConfidence:games(p)>=55?"high":games(p)>=20?"medium":"low",sampleSize:n(p,"gamesPlayed")>0?n(p,"gamesPlayed"):null,fightingMajors,ratedAttributes:Object.keys(players[id]).filter(key=>players[id][key]!=null),modeledAttributes:Object.keys(players[id]).filter(key=>players[id][key]==null),method:"nhl_season_statistics_percentile_model_v1",evidence:"nhl_player_statistics",position:pos,season};
 }
 for(const p of goalies){

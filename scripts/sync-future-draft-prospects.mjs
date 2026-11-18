@@ -103,7 +103,7 @@ for (const year of years) {
           const rank=m[1]==="-"?null:Number(m[1]);
           const name=m[2].trim(),position=m[3].toUpperCase().split("/")[0];
           const teamText=(line.split("·").slice(1).join("·").split("(")[0]||"").replace(/·\s*shoots.*$/i,"").trim();
-          const currentTeam=teamText||null;
+          const currentTeam=/^shoots\s+[LR]$/i.test(teamText)?"":teamText||null;
           const playerAnchor=[...li[1].matchAll(/<a\b[^>]*href=["']([^"']+)["'][^>]*>([\s\S]*?)<\/a>/gi)].find(a=>plain(a[2]).includes(name));
           const sourceProfileUrl=playerAnchor?new URL(playerAnchor[1],playerAnchor[1].startsWith("/prospects/")?"https://rinkcentral.com":fallbackUrl).href:null;
           all.push({

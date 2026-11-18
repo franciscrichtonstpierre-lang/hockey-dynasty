@@ -202,6 +202,15 @@ test("each manual affiliation correction preserves its own verification date", (
   assert.match(script, /currentLeagueGeneric/);
 });
 
+test("all 128 future-draft prospects have a birth date and its source", () => {
+  const prospects = (futureDraft.prospects || []).filter(player => [2027, 2028, 2029].includes(Number(player.draftYear)));
+  assert.equal(prospects.length, 128, "complete 2027-2029 prospect cohort");
+  for (const player of prospects) {
+    assert.match(String(player.birthDate || ""), /^\d{4}-\d{2}-\d{2}$/, player.name + " valid birth date");
+    assert.ok(player.birthDateSource, player.name + " birth-date provenance");
+  }
+});
+
 test("the fallback draft parser never stores handedness as a club name", () => {
   const script = readFileSync("scripts/sync-future-draft-prospects.mjs", "utf8");
   assert.match(script, /\^shoots\\s\+\[LR\]\$/);

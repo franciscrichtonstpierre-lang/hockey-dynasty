@@ -18,7 +18,9 @@ jobs:
           curl -fsSLO https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz
           tar -xzf steamcmd_linux.tar.gz
           chmod +x steamcmd.sh
-      - name: Download public Workshop item
+      - name: Attempt Workshop download
+        id: workshop
+        continue-on-error: true
         run: |
           "$HOME/steamcmd/steamcmd.sh" +force_install_dir "$RUNNER_TEMP/ehm-workshop" +login anonymous +workshop_download_item 301120 1428241604 validate +quit
       - name: Inspect downloaded database without publishing source files
@@ -31,7 +33,15 @@ jobs:
           paths = list(dict.fromkeys(paths))
           if not paths:
               print("RESULT=NOT_DOWNLOADED")
-              raise SystemExit("SteamCMD did not produce database.db; likely requires an authenticated Steam account or item access.")
+              summary = os.environ.get("GITHUB_STEP_SUMMARY")
+              message = ("## Premier Pivot: téléchargement non accessible\n\n"
+                         "SteamCMD a refusé le téléchargement anonyme de l'élément Workshop 1428241604. "
+                         "Le workflow et SteamCMD fonctionnent; l'élément exige probablement un accès Steam autorisé "
+                         "ou n'est plus disponible publiquement. Aucun fichier source n'a été modifié ni publié.\n")
+              if summary:
+                  with open(summary, "a", encoding="utf-8") as out: out.write(message)
+              print(message)
+              raise SystemExit(0)
           for path in paths:
               size = os.path.getsize(path)
               with open(path, "rb") as f: header = f.read(16)

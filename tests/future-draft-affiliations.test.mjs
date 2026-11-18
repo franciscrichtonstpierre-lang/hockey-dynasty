@@ -173,14 +173,14 @@ test("the remaining 2028 and 2029 birth dates are propagated from verified profi
 
 test("all remaining 2027 draft birth dates and the Timo Timothy alias are propagated", () => {
   const expectedBirthDates = {
-    "Timo Kazda": "2008-10-04",
+    "Timothy Kazda": "2008-10-04",
     "Kingston Harris": "2009-02-15",
     "Riley Zupfer": "2008-12-17",
     "Roberts Naudins": "2008-11-18",
     "Rocco Pelosi": "2009-01-28"
   };
   for (const [name, birthDate] of Object.entries(expectedBirthDates)) {
-    const manual = byName.get(name) || byName.get("Timothy Kazda");
+    const manual = byName.get(name);
     const draft = draftByName.get(name);
     const registryPlayer = registryByName.get(name);
     assert.equal(manual?.birthDate, birthDate, name + " manually sourced birth date");

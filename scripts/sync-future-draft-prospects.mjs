@@ -145,7 +145,23 @@ try {
   let applied = 0, kept = 0, ambiguous = 0;
   for (const correction of (manual.players || [])) {
     const names = new Set([correction.name, ...(correction.aliases || [])].map(normalizeName));
-    const matches = all.filter(player => years.includes(Number(player.draftYear)) && names.has(normalizeName(player.name)));
+    let matches = all.filter(player => years.includes(Number(player.draftYear)) && names.has(normalizeName(player.name)));
+    if (matches.length > 1 && correction.aliases?.length) {
+      const compatible = matches.every(player => !player.birthDate || !correction.birthDate || player.birthDate === correction.birthDate);
+      if (!compatible) { ambiguous++; continue; }
+      const canonicalName = normalizeName(correction.name);
+      const primary = matches.find(player => normalizeName(player.name) === canonicalName) || matches[0];
+      for (const duplicate of matches) {
+        if (duplicate === primary) continue;
+        for (const key of ["birthDate", "birthDateSource", "currentTeam", "currentLeague", "currentTeamSource", "currentLeagueSource", "position", "sourceProfileUrl"]) {
+          if ((primary[key] == null || primary[key] === "" || primary[key] === "UNKNOWN") && duplicate[key] != null && duplicate[key] !== "") primary[key] = duplicate[key];
+        }
+        all.splice(all.indexOf(duplicate), 1);
+      }
+      primary.name = correction.name;
+      primary.aliases = [...new Set([...(primary.aliases || []), ...correction.aliases])];
+      matches = [primary];
+    }
     if (matches.length !== 1) { if (matches.length > 1) ambiguous++; continue; }
     const player = matches[0];
     const leagueUnknown = !player.currentLeague || String(player.currentLeague).toUpperCase() === "UNKNOWN";

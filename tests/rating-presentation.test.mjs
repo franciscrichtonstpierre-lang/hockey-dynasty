@@ -29,7 +29,7 @@ test("the player directory displays the exact sixteen attributes and separate po
   assert.equal((html.match(/class="ratingCell"/g) || []).length, 17, "POT plus all sixteen attributes are shown");
   assert.match(html, /<td class="playerName">Josh Anderson<\/td>/);
   assert.match(html, /Statistiques officielles NHL/);
-  assert.match(html, /Estimation statistique ajustée/);
+  assert.match(html, /Statistiques \+ profil complété/);
   assert.doesNotMatch(html, /GEN|≈|ratingStatus|ratingSource|<small>/);
   assert.doesNotMatch(html, /<td class="ratingCell">99<\/td>/, "duplicate overall is not rendered as GEN");
 });

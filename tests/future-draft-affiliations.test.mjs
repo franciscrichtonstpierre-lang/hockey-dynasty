@@ -45,6 +45,8 @@ test("the 2027 draft watchlist has sourced league and club affiliations for all 
     assert.ok(registryPlayer, name + " canonical registry record");
     assert.equal(registryPlayer.currentLeague, league, name + " canonical league");
     assert.equal(registryPlayer.currentTeam, team, name + " canonical club");
+    assert.ok(registryPlayer.birthDate, name + " canonical birth date");
+    assert.ok(registryPlayer.birthDateSource, name + " canonical birth-date source");
     assert.ok(draftPlayer.currentTeamSource, name + " draft-list source");
     assert.equal(draftPlayer.affiliationVerifiedAt, "2026-11-18", name + " draft-list review date");
   }

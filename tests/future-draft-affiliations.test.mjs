@@ -170,6 +170,27 @@ test("the remaining 2028 and 2029 birth dates are propagated from verified profi
   }
 });
 
+test("all remaining 2027 draft birth dates and the Timo Timothy alias are propagated", () => {
+  const expectedBirthDates = {
+    "Timo Kazda": "2008-10-04",
+    "Kingston Harris": "2009-02-15",
+    "Riley Zupfer": "2008-12-17",
+    "Roberts Naudins": "2008-11-18",
+    "Rocco Pelosi": "2009-01-28"
+  };
+  for (const [name, birthDate] of Object.entries(expectedBirthDates)) {
+    const manual = byName.get(name) || byName.get("Timothy Kazda");
+    const draft = draftByName.get(name);
+    const registryPlayer = registryByName.get(name);
+    assert.equal(manual?.birthDate, birthDate, name + " manually sourced birth date");
+    assert.ok(manual?.birthDateSource, name + " manual birth-date source");
+    assert.equal(draft?.birthDate, birthDate, name + " draft birth date");
+    assert.ok(draft?.birthDateSource, name + " draft birth-date source");
+    assert.equal(registryPlayer?.birthDate, birthDate, name + " registry birth date");
+    assert.ok(registryPlayer?.birthDateSource, name + " registry birth-date source");
+  }
+});
+
 test("each manual affiliation correction preserves its own verification date", () => {
   const script = readFileSync("scripts/build-player-registry.mjs", "utf8");
   assert.match(script, /correctionDate=Date\.parse\(correction\.sourceUpdatedAt\|\|manualLeagueCorrections\.verifiedAt/);

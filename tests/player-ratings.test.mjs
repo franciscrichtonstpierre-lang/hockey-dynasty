@@ -39,6 +39,10 @@ test("every generated NHL rating has exactly the shared schema and individual pr
       if (metadata.sampleSize === 0) assert.equal(metadata.sampleConfidence, "low", `zero-game sample must have low confidence for ${id}`);
     } else assert.equal(metadata.sampleConfidence, null, `no sample confidence without a sample for ${id}`);
     assert.ok(RATING_ATTRIBUTES.every(key => Number.isInteger(ratings[key]) && ratings[key] >= 0 && ratings[key] <= 99), `complete rating range for ${id}`);
+    assert.equal(ratings.OFF, Math.round((ratings.SH + ratings.PL + ratings.ST) / 3), `OFF formula for ${id}`);
+    assert.equal(ratings.DEF, Math.round((ratings.CH + ratings.PO + ratings.HI) / 3), `DEF formula for ${id}`);
+    const oaKeys = RATING_ATTRIBUTES.filter(key => key !== "FI" && key !== "OA");
+    assert.equal(ratings.OA, Math.round(oaKeys.reduce((sum, key) => sum + ratings[key], 0) / oaKeys.length), `OA formula excludes FI for ${id}`);
     assert.deepEqual(metadata.ratedAttributes, RATING_ATTRIBUTES, `rated attributes for ${id}`);
   }
 });

@@ -136,6 +136,30 @@ try{
   }
 }catch(error){console.warn(`Future draft fallback seed unavailable: ${error.message}`);}
 
+// Apply individually sourced club/league corrections to the draft watchlist itself,
+// not only to the canonical player registry. This prevents later syncs from
+// reintroducing parser placeholders such as "shoots L" as a club name.
+try {
+  const manual = JSON.parse(await readFile("data/players/manual-league-corrections.json", "utf8"));
+  const normalizeName = value => String(value || "").normalize("NFD").replace(/[\\u0300-\\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+  let applied = 0, ambiguous = 0;
+  for (const correction of (manual.players || [])) {
+    const names = new Set([correction.name, ...(correction.aliases || [])].map(normalizeName));
+    const matches = all.filter(player => years.includes(Number(player.draftYear)) && names.has(normalizeName(player.name)));
+    if (matches.length !== 1) { if (matches.length > 1) ambiguous++; continue; }
+    const player = matches[0];
+    if (correction.currentLeague) player.currentLeague = correction.currentLeague;
+    if (correction.currentTeam) player.currentTeam = correction.currentTeam;
+    player.currentLeagueSource = correction.source || player.currentLeagueSource || null;
+    player.currentTeamSource = correction.source || player.currentTeamSource || null;
+    player.affiliationVerifiedAt = correction.sourceUpdatedAt || manual.verifiedAt || null;
+    applied++;
+  }
+  console.log("Future draft affiliation overrides: " + applied + " applied; " + ambiguous + " ambiguous.");
+} catch (error) {
+  console.warn("Future draft affiliation overrides unavailable: " + error.message);
+}
+
 const byIdentity = new Map();
 for (const p of all) {
   const key = `${p.draftYear}|${p.name.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim()}`;

@@ -142,7 +142,7 @@ try{
 try {
   const manual = JSON.parse(await readFile("data/players/manual-league-corrections.json", "utf8"));
   const normalizeName = value => String(value || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
-  let applied = 0, ambiguous = 0;
+  let applied = 0, kept = 0, ambiguous = 0;
   for (const correction of (manual.players || [])) {
     const names = new Set([correction.name, ...(correction.aliases || [])].map(normalizeName));
     const matches = all.filter(player => years.includes(Number(player.draftYear)) && names.has(normalizeName(player.name)));
@@ -150,20 +150,26 @@ try {
     const player = matches[0];
     const leagueUnknown = !player.currentLeague || String(player.currentLeague).toUpperCase() === "UNKNOWN";
     const teamPlaceholder = !player.currentTeam || /^shoots\s+[LR]$/i.test(String(player.currentTeam));
-    const updateTeam = leagueUnknown || teamPlaceholder;
-    if (leagueUnknown && correction.currentLeague) player.currentLeague = correction.currentLeague;
-    if (updateTeam && correction.currentTeam) player.currentTeam = correction.currentTeam;
+    const correctionDate = Date.parse(correction.sourceUpdatedAt || manual.verifiedAt || "");
+    const recordDate = Date.parse(player.sourceUpdatedAt || "");
+    const correctionIsNewer = !Number.isFinite(recordDate) || !Number.isFinite(correctionDate) || correctionDate >= recordDate;
+    const currentLeagueGeneric = ["UNKNOWN", "EUROPE", "OTHER"].includes(String(player.currentLeague || "").toUpperCase());
+    const correctionLeagueGeneric = ["EUROPE", "OTHER"].includes(String(correction.currentLeague || "").toUpperCase());
+    const updateLeague = Boolean(correction.currentLeague && !leagueUnknown && correctionIsNewer && (!correctionLeagueGeneric || currentLeagueGeneric)) || Boolean(leagueUnknown && correction.currentLeague);
+    const updateTeam = Boolean(correction.currentTeam && (leagueUnknown || teamPlaceholder || correctionIsNewer));
+    if (updateLeague) player.currentLeague = correction.currentLeague;
+    if (updateTeam) player.currentTeam = correction.currentTeam;
     if (correction.birthDate && !player.birthDate) player.birthDate = correction.birthDate;
     if (correction.birthDateSource && !player.birthDateSource) player.birthDateSource = correction.birthDateSource;
     else if (correction.source && !player.birthDateSource && correction.birthDate) player.birthDateSource = correction.source;
-    if ((leagueUnknown || updateTeam) && correction.source) {
-      player.currentLeagueSource = correction.source;
-      player.currentTeamSource = correction.source;
+    if ((updateLeague || updateTeam) && correction.source) {
+      if (updateLeague) player.currentLeagueSource = correction.source;
+      if (updateTeam) player.currentTeamSource = correction.source;
       player.affiliationVerifiedAt = correction.sourceUpdatedAt || manual.verifiedAt || null;
     }
-    applied++;
+    if (updateLeague || updateTeam) applied++; else kept++;
   }
-  console.log("Future draft affiliation overrides: " + applied + " applied; " + ambiguous + " ambiguous.");
+  console.log("Future draft affiliation overrides: " + applied + " applied; " + kept + " kept from newer sources; " + ambiguous + " ambiguous.");
 } catch (error) {
   console.warn("Future draft affiliation overrides unavailable: " + error.message);
 }

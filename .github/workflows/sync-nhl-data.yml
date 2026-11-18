@@ -149,6 +149,11 @@ jobs:
         if: always()
         continue-on-error: true
         run: node scripts/sync-draft-picks.mjs
+      - name: Construire les cotes NHL depuis les statistiques de la saison courante
+        if: always()
+        env:
+          NHL_RATING_SEASON: ${{ inputs.season || '20262027' }}
+        run: node scripts/build-ratings.mjs
       - name: Compléter les cotes des joueurs de toutes les ligues
         if: always()
         run: node scripts/apply-player-ratings.mjs

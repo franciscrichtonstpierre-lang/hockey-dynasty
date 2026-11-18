@@ -30,7 +30,18 @@ const ppg=p=>stabilized(n(p,"points"),games(p)), gpg=p=>stabilized(n(p,"goals"),
 // Preserve true zero-game samples as null in provenance; never invent a positive sample count.
 const sample=p=>Math.min(1,Math.sqrt(games(p)/55));
 const centered=(v,w)=>.5+(v-.5)*w;
-const rates={ppg:skaters.map(ppg),gpg:skaters.map(gpg),apg:skaters.map(apg),toi:skaters.map(toiSeconds),shots:skaters.map(p=>n(p,"shots")/games(p)),plus:skaters.map(p=>n(p,"plusMinus")/Math.sqrt(games(p))),save:goalies.map(p=>n(p,"savePctg","savePercentage")),gaa:goalies.map(p=>n(p,"goalsAgainstAverage","gaa"))};
+const perGame=(p,...keys)=>stabilized(n(p,...keys),games(p));
+const rates={
+ ppg:skaters.map(ppg),gpg:skaters.map(gpg),apg:skaters.map(apg),
+ toi:skaters.map(toiSeconds),shots:skaters.map(p=>perGame(p,"shots")),
+ plus:skaters.map(p=>n(p,"plusMinus")/Math.sqrt(games(p))),
+ hits:skaters.map(p=>perGame(p,"hits")),blocks:skaters.map(p=>perGame(p,"blockedShots","blocks")),
+ takeaways:skaters.map(p=>perGame(p,"takeaways")),giveaways:skaters.map(p=>perGame(p,"giveaways")),
+ pim:skaters.map(p=>perGame(p,"penaltyMinutes","pim")),
+ powerPlay:skaters.map(p=>perGame(p,"powerPlayPoints","ppPoints")),
+ shortHanded:skaters.map(p=>perGame(p,"shPoints","shortHandedPoints")),
+ save:goalies.map(p=>n(p,"savePctg","savePercentage")),gaa:goalies.map(p=>n(p,"goalsAgainstAverage","gaa"))
+};
 const players={},playerMetadata={};
 for(const p of skaters){
  const id=String(p.playerId||"");if(!id)continue;
@@ -41,12 +52,35 @@ for(const p of skaters){
  const point=centered(pct(rates.ppg,ppg(p)),w),goal=centered(pct(rates.gpg,gpg(p)),w),assist=centered(pct(rates.apg,apg(p)),w);
  const toi=centered(pct(rates.toi,toiSeconds(p)),w),shot=centered(pct(rates.shots,stabilized(n(p,"shots"),games(p))),w);
  const plus=centered(pct(rates.plus,n(p,"plusMinus")/Math.sqrt(games(p))),w);
- // Overall reflects role and sustained NHL contribution; +/- is only a minor proxy.
- const off=clamp(39+point*37+goal*9+shot*5);
- const def=clamp(46+toi*21+plus*7+(d?7:0));
+ const hit=centered(pct(rates.hits,perGame(p,"hits")),w);
+ const block=centered(pct(rates.blocks,perGame(p,"blockedShots","blocks")),w);
+ const takeaway=centered(pct(rates.takeaways,perGame(p,"takeaways")),w);
+ const giveaway=centered(1-pct(rates.giveaways,perGame(p,"giveaways")),w);
+ const discipline=centered(1-pct(rates.pim,perGame(p,"penaltyMinutes","pim")),w);
+ const powerPlay=centered(pct(rates.powerPlay,perGame(p,"powerPlayPoints","ppPoints")),w);
+ const shortHanded=centered(pct(rates.shortHanded,perGame(p,"shPoints","shortHandedPoints")),w);
+ // NHL box-score evidence now informs checking, positioning, physicality and special-teams contribution.
+ // +/- remains a modest signal; no single counting stat can dominate a grade.
+ const off=clamp(39+point*34+goal*10+shot*5+powerPlay*3);
+ const def=clamp(42+toi*13+plus*6+takeaway*8+giveaway*5+block*5+(d?5:0));
  const oa=clamp(d?off*.38+def*.62:off*.68+def*.32);
  const fightingMajors=n(p,"fightingMajors","fightingMajorCount","fightMajors","fights");
- players[id]={FI:fightingMajors>0?clamp(20+Math.min(79,fightingMajors*12)):10,SH:clamp(32+goal*53+shot*12),PL:clamp(38+point*35+assist*15),ST:clamp(40+toi*30+(d?7:0)),CH:clamp(40+toi*20+plus*15),PO:clamp(38+point*24+shot*18+goal*8),HI:clamp(43+toi*12+(d?12:0)),SK:clamp(47+toi*20+point*12),EN:clamp(42+toi*31),PE:clamp(40+plus*20+toi*12),FA:pos==="C"?clamp(42+pct((faceoffRes.data||[]).map(x=>n(x,"faceoffWinPct","faceoffWinPctg")),n(faceoffs.get(id),"faceoffWinPct","faceoffWinPctg"))*35):50,LE:clamp(40+toi*18+plus*12),SR:clamp(38+point*26+toi*16+plus*8),OFF:off,DEF:def,OA:oa};
+ players[id]={
+  FI:fightingMajors>0?clamp(20+Math.min(79,fightingMajors*12)):10,
+  SH:clamp(30+goal*47+shot*12+point*5),
+  PL:clamp(34+point*34+assist*14+powerPlay*6+shortHanded*2),
+  ST:clamp(38+toi*23+hit*8+(d?5:0)),
+  CH:clamp(35+hit*30+takeaway*15+plus*8+(d?4:0)),
+  PO:clamp(38+takeaway*22+giveaway*16+block*12+plus*5),
+  HI:clamp(35+hit*34+block*20+toi*6),
+  SK:clamp(42+toi*15+shot*12+point*8),
+  EN:clamp(38+toi*24+sample(p)*12),
+  PE:clamp(40+discipline*18+plus*8+takeaway*6),
+  FA:pos==="C"?clamp(42+pct((faceoffRes.data||[]).map(x=>n(x,"faceoffWinPct","faceoffWinPctg")),n(faceoffs.get(id),"faceoffWinPct","faceoffWinPctg"))*35):50,
+  LE:clamp(38+toi*17+plus*10+powerPlay*5+shortHanded*3),
+  SR:clamp(36+point*22+goal*18+shot*14+powerPlay*4),
+  OFF:off,DEF:def,OA:oa
+ };
  playerMetadata[id]={source:"NHL Stats REST regular-season player statistics",status:"sample_adjusted_statistical_estimate",confidence:"low",sampleConfidence:games(p)>=55?"high":games(p)>=20?"medium":"low",sampleSize:n(p,"gamesPlayed")>0?n(p,"gamesPlayed"):null,fightingMajors,ratedAttributes:Object.keys(players[id]).filter(key=>players[id][key]!=null),modeledAttributes:Object.keys(players[id]).filter(key=>players[id][key]==null),method:"nhl_season_statistics_percentile_model_v1",evidence:"nhl_player_statistics",position:pos,season};
 }
 for(const p of goalies){

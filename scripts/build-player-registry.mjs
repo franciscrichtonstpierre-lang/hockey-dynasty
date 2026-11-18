@@ -687,7 +687,7 @@ for(const correction of (manualLeagueCorrections.players||[])){
     p.currentLeagueSource=correction.source||null;
     p.leagueResolution="manual_source_verified";
     p.manualCorrectionSource=correction.source||null;
-    p.sourceUpdatedAt=manualLeagueCorrections.verifiedAt||p.sourceUpdatedAt||now;
+    p.sourceUpdatedAt=correction.sourceUpdatedAt||manualLeagueCorrections.verifiedAt||p.sourceUpdatedAt||now;
   }
   manualCorrectionsApplied++;
 }

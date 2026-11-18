@@ -15,7 +15,7 @@
 
   function directoryTable(players, escapeHtml) {
     const esc = typeof escapeHtml === "function" ? escapeHtml : value => String(value ?? "");
-    const headers = ["Nom du joueur", "Type", "Ligue", "Équipe / droits", "Pos.", "POT", ...ATTRIBUTES];
+    const headers = ["Nom du joueur", "Type", "Ligue", "Équipe / droits", "Pos.", "POT", "Origine des cotes", "Fiabilité", "Statut", ...ATTRIBUTES];
     const head = headers.map(label => `<th>${esc(label)}</th>`).join("");
     const rows = (Array.isArray(players) ? players : []).map(player => {
       const team = player.currentTeam || player.code || "—";
@@ -26,6 +26,9 @@
         `<td>${esc(team)}</td>`,
         `<td>${esc(player.pos || "—")}</td>`,
         `<td class="ratingCell">${esc(displayValue(player.potential))}</td>`,
+        `<td>${esc(displayValue(player.ratingSource || player.potentialSource))}</td>`,
+        `<td>${esc(displayValue(player.ratingConfidence))}</td>`,
+        `<td>${esc(displayValue(player.ratingStatus))}</td>`,
         ...ATTRIBUTES.map(attribute => `<td class="ratingCell">${esc(displayValue(player.attributes?.[attribute]))}</td>`)
       ];
       return `<tr>${cells.join("")}</tr>`;

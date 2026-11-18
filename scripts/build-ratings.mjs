@@ -7,7 +7,7 @@ const season=process.env.NHL_RATING_SEASON||"20262027";
 if (!/^\d{8}$/.test(season)) throw new Error("NHL_RATING_SEASON must use YYYY YYYY format (for example 20262027).");
 const clamp=(n,a=0,b=99)=>Math.max(a,Math.min(b,Math.round(Number.isFinite(n)?n:a)));
 const n=(p,...keys)=>{for(const k of keys){const v=p?.[k];if(v!==null&&v!==undefined&&v!==""&&Number.isFinite(Number(v)))return Number(v)}return 0};
-async function get(url){const r=await fetch(url,{headers:{"User-Agent":"Hockey-Dynasty/1.0"}});if(!r.ok)throw Error("NHL API "+r.status+" "+url);return r.json()}
+async function get(url){const r=await fetch(url,{headers:{"User-Agent":"Hockey-Dynasty/1.0"},signal:AbortSignal.timeout(45000)});if(!r.ok)throw Error("NHL API "+r.status+" "+url);return r.json()}
 const exp=encodeURIComponent("seasonId="+season+" and gameTypeId=2");
 const [skaterRes,goalieRes,faceoffRes]=await Promise.all([
  get("https://api.nhle.com/stats/rest/en/skater/summary?isAggregate=true&isGame=false&cayenneExp="+exp+"&limit=-1"),

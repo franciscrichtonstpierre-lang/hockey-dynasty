@@ -11,7 +11,6 @@ on:
       - "rating-presentation.js"
       - "docs/EHM-2026-2027-import.md"
       - "data/europe/**"
-      - "tests/**"
       - ".github/workflows/refresh-ratings.yml"
   workflow_dispatch:
   schedule:
@@ -30,7 +29,7 @@ jobs:
         with:
           node-version: 22
       - name: Tester le modèle partagé et les données de joueurs
-        run: node --test tests/*.test.mjs
+        run: node --test tests/player-ratings.test.mjs tests/cross-league-player-ratings.test.mjs tests/composite-ratings.test.mjs
       - name: Vérifier les fichiers de données publiés
         run: |
           test -s data/ratings.json

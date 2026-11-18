@@ -8,6 +8,7 @@ on:
       - "scripts/lib/player-ratings.mjs"
       - "scripts/export-registry-index.mjs"
       - "scripts/import-ehm-ratings.mjs"
+      - "rating-presentation.js"
       - "docs/EHM-2026-2027-import.md"
       - "data/europe/**"
       - "tests/**"

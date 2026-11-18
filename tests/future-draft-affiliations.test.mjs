@@ -40,6 +40,7 @@ test("the 2027 draft watchlist has sourced league and club affiliations for all 
     assert.ok(draftPlayer, name + " appears in the future-draft dataset");
     assert.equal(draftPlayer.currentLeague, league, name + " draft-list league");
     assert.equal(draftPlayer.currentTeam, team, name + " draft-list club");
+    assert.ok(draftPlayer.birthDate, name + " birth date");
     const registryPlayer = registryByName.get(name);
     assert.ok(registryPlayer, name + " canonical registry record");
     assert.equal(registryPlayer.currentLeague, league, name + " canonical league");

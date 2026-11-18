@@ -67,6 +67,50 @@ test("verified birth dates are copied into the future-draft dataset", () => {
   }
 });
 
+test("verified birth dates are propagated for the additional 2027 draft prospects", () => {
+  const expectedBirthDates = {
+    "Landon DuPont": "2009-05-28",
+    "Brock England": "2009-08-22",
+    "Dima Zhilkin": "2008-10-21",
+    "Sammy Nelson": "2008-09-19",
+    "Jaxon Jacobson": "2008-12-11",
+    "Luca Santala": "2009-07-28",
+    "Brock Cripps": "2009-07-23",
+    "Jaakko Wycisk": "2009-03-16",
+    "Andrei Pustovoy": "2008-12-08",
+    "Noah Davidson": "2008-11-01",
+    "Levi Harper": "2008-10-03",
+    "Shaeffer Gordon-Carroll": "2008-11-26",
+    "Boston Tait": "2009-04-13",
+    "Nolan Fitzhenry": "2009-02-10",
+    "Ryerson Edgar": "2009-07-30",
+    "Aden Bouchard": "2009-03-25",
+    "Carson Scott": "2009-04-02",
+    "Colin Grubb": "2009-04-02",
+    "Colton Lien": "2009-03-20",
+    "Diego Gutierrez": "2009-05-13",
+    "Eli McKamey": "2009-01-19",
+    "Freddie Schneider": "2009-02-16",
+    "Gunnar Conboy": "2009-04-02",
+    "Ilya Nikitins": "2008-12-21",
+    "Jacob Schwartz": "2009-06-06",
+    "Jake Prunty": "2009-03-04",
+    "Luca Blonda": "2008-11-25",
+    "Luca Jarvis": "2008-11-15"
+  };
+  for (const [name, birthDate] of Object.entries(expectedBirthDates)) {
+    const manual = byName.get(name);
+    const draft = draftByName.get(name);
+    const registryPlayer = registryByName.get(name);
+    assert.equal(manual?.birthDate, birthDate, name + " manually sourced birth date");
+    assert.ok(manual?.birthDateSource, name + " manual birth-date source");
+    assert.equal(draft?.birthDate, birthDate, name + " draft birth date");
+    assert.ok(draft?.birthDateSource, name + " draft birth-date source");
+    assert.equal(registryPlayer?.birthDate, birthDate, name + " registry birth date");
+    assert.ok(registryPlayer?.birthDateSource, name + " registry birth-date source");
+  }
+});
+
 test("each manual affiliation correction preserves its own verification date", () => {
   const script = readFileSync("scripts/build-player-registry.mjs", "utf8");
   assert.match(script, /correctionDate=Date\.parse\(correction\.sourceUpdatedAt\|\|manualLeagueCorrections\.verifiedAt/);

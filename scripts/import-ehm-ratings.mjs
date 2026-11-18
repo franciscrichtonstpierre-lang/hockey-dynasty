@@ -69,6 +69,8 @@ const unmatched = [];
 const ambiguous = [];
 const seenSource = new Set();
 for (const player of registry.players) {
+  // EHM roster import is intentionally limited to NHL players; prospects and other leagues stay untouched.
+  if (player.currentLeague !== "NHL") continue;
   let row = player.nhlPlayerId == null ? null : byId.get(String(player.nhlPlayerId));
   if (!row) {
     const candidates = byName.get(norm(player.name)) || [];
@@ -155,6 +157,7 @@ const result = {
   summary:{
     registryPlayers:registry.players.length,
     nhlPlayersInRegistry:registry.players.filter(p=>p.currentLeague==="NHL").length,
+    nonNhlPlayersLeftUntouched:registry.players.filter(p=>p.currentLeague!=="NHL").length,
     matched:outputPlayers.length,
     unmatched:unmatched.length,
     ambiguous:ambiguous.length,

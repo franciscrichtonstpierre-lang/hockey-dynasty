@@ -111,6 +111,43 @@ test("verified birth dates are propagated for the additional 2027 draft prospect
   }
 });
 
+test("verified birth dates are propagated for 2028 and 2029 draft prospects", () => {
+  const expectedBirthDates = {
+    "Adrian Sgro": "2010-03-15",
+    "Aiden Kelly": "2010-02-02",
+    "Cruz Jim": "2010-01-27",
+    "Drew Daley": "2010-02-16",
+    "Ezekiel Kaebel": "2010-01-23",
+    "Gordei Khotkov": "2010-03-10",
+    "Jack Hair": "2010-05-28",
+    "Joey Cullen": "2010-04-17",
+    "Kane Cloutier": "2010-06-14",
+    "Liam Pue": "2010-02-16",
+    "Louis-Oscar Holowaychuk": "2010-02-05",
+    "Maddox Schultz": "2010-03-15",
+    "Milan Kutsevich": "2010-02-02",
+    "Reid Nicol": "2010-02-04",
+    "Wilson Boumedienne": "2010-06-29",
+    "Zaac Charbonneau": "2010-01-18",
+    "Dominik Železný": "2011-07-04",
+    "Madden Daneault": "2011-05-07",
+    "Parker McMillan": "2011-06-13",
+    "Pierre-Alexandre Lemieux": "2010-11-27",
+    "Thor Liffiton": "2010-12-06"
+  };
+  for (const [name, birthDate] of Object.entries(expectedBirthDates)) {
+    const manual = byName.get(name);
+    const draft = draftByName.get(name);
+    const registryPlayer = registryByName.get(name);
+    assert.equal(manual?.birthDate, birthDate, name + " manually sourced birth date");
+    assert.ok(manual?.birthDateSource, name + " manual birth-date source");
+    assert.equal(draft?.birthDate, birthDate, name + " draft birth date");
+    assert.ok(draft?.birthDateSource, name + " draft birth-date source");
+    assert.equal(registryPlayer?.birthDate, birthDate, name + " registry birth date");
+    assert.ok(registryPlayer?.birthDateSource, name + " registry birth-date source");
+  }
+});
+
 test("each manual affiliation correction preserves its own verification date", () => {
   const script = readFileSync("scripts/build-player-registry.mjs", "utf8");
   assert.match(script, /correctionDate=Date\.parse\(correction\.sourceUpdatedAt\|\|manualLeagueCorrections\.verifiedAt/);

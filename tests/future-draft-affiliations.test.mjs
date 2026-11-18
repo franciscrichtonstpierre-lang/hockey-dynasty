@@ -43,6 +43,20 @@ test("the 2027 draft watchlist has sourced league and club affiliations for all 
   }
 });
 
+test("verified birth dates are copied into the future-draft dataset", () => {
+  const expectedBirthDates = {
+    "Camryn Warren": "2009-05-07",
+    "Šimon Bělohorský": "2008-10-18",
+    "Timothy Kazda": "2008-10-04"
+  };
+  for (const [name, birthDate] of Object.entries(expectedBirthDates)) {
+    const player = draftByName.get(name);
+    assert.ok(player, name + " future-draft record");
+    assert.equal(player.birthDate, birthDate, name + " birth date");
+    assert.ok(player.birthDateSource, name + " birth-date source");
+  }
+});
+
 test("each manual affiliation correction preserves its own verification date", () => {
   const script = readFileSync("scripts/build-player-registry.mjs", "utf8");
   assert.match(script, /correction\.sourceUpdatedAt\s*\|\|\s*manualLeagueCorrections\.verifiedAt/);

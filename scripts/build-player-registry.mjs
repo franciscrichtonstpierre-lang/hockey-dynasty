@@ -656,7 +656,7 @@ for(const correction of (manualLeagueCorrections.players||[])){
       currentLeague:correction.currentLeague||"OTHER",currentTeam:correction.currentTeam||null,
       nhlRightsTeam:correction.clearNhlRightsTeam===true?null:(codes.includes(correction.nhlRightsTeam)?correction.nhlRightsTeam:null),
       birthDate:correction.birthDate||null,birthDateSource:correction.birthDateSource||correction.source||"manual-league-corrections",heightCm:correction.heightCm!=null&&Number.isFinite(Number(correction.heightCm))?Number(correction.heightCm):null,weightKg:correction.weightKg!=null&&Number.isFinite(Number(correction.weightKg))?Number(correction.weightKg):null,shootsCatches:correction.shootsCatches||null,currentStatus:correction.currentStatus||null,playable:correction.playable===true,source:correction.source||"manual-league-corrections",
-      sourceUpdatedAt:manualLeagueCorrections.verifiedAt||now,
+      sourceUpdatedAt:correction.sourceUpdatedAt||manualLeagueCorrections.verifiedAt||now,
       leagueResolution:"manual_source_verified",manualCorrectionSource:correction.source||null,
       attributes:null,overall:null,potential:null
     });

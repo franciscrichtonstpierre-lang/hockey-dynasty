@@ -44,6 +44,7 @@ on:
       - "tests/potential-scouting-overrides.test.mjs"
       - "tests/evaluate-advanced-evidence.test.mjs"
       - "tests/contract-salary-estimate.test.mjs"
+      # Full regression suite includes roster, prospect identity, DOB propagation, and rating formula checks.
       - "tests/**"
       - "data/junior/**"
       - "data/free-agents/2026-2027.json"

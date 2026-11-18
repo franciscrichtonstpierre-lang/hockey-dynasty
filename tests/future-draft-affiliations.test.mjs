@@ -38,6 +38,8 @@ test("the 2027 draft watchlist has sourced league and club affiliations for all 
     assert.ok(draftPlayer, name + " appears in the future-draft dataset");
     assert.equal(draftPlayer.currentLeague, league, name + " draft-list league");
     assert.equal(draftPlayer.currentTeam, team, name + " draft-list club");
+    assert.ok(draftPlayer.currentTeamSource, name + " draft-list source");
+    assert.equal(draftPlayer.affiliationVerifiedAt, "2026-11-18", name + " draft-list review date");
   }
 });
 

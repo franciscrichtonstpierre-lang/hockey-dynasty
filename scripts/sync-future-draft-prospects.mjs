@@ -150,6 +150,8 @@ try {
     const player = matches[0];
     if (correction.currentLeague) player.currentLeague = correction.currentLeague;
     if (correction.currentTeam) player.currentTeam = correction.currentTeam;
+    if (correction.birthDate) player.birthDate = correction.birthDate;
+    if (correction.birthDateSource || correction.source) player.birthDateSource = correction.birthDateSource || correction.source;
     player.currentLeagueSource = correction.source || player.currentLeagueSource || null;
     player.currentTeamSource = correction.source || player.currentTeamSource || null;
     player.affiliationVerifiedAt = correction.sourceUpdatedAt || manual.verifiedAt || null;

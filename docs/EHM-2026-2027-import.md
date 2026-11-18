@@ -32,7 +32,7 @@ The source JSON must contain an explicit overall value on the documented 0-99 or
 }
 ```
 
-Use the source's actual field names in `attributeMap` in the manifest when they differ. `attributeScale` documents whether the twelve mapped ratings are on 1-20, 1-99 or 1-100. `overallScale` must be 99 or 100, and `overallField` identifies the source overall field (default `OA`). CA and PA remain on EHM's native 1-200 scale in `ehmCA` and `ehmPA`; the current game-facing potential field is separately normalized to 0-99. The source overall is mapped directly to `overall`, `ehmOverall` and `attributes.OA`; it is never recalculated from Hockey Dynasty attributes. Raw source values remain in `ehmReference`.
+Use the source's actual field names in `attributeMap` in the manifest when they differ. `attributeScale` documents whether the twelve mapped ratings are on 1-20, 1-99 or 1-100. `overallScale` must be 99 or 100, and `overallField` identifies the source overall field (default `OA`). CA and PA remain on EHM's native 1-200 scale in `ehmCA` and `ehmPA`; the current game-facing potential field is separately normalized to 0-99. The source overall is retained separately as `ehmSourceOverall` / `ehmOverall`; Hockey Dynasty's game-facing `overall` and `attributes.OA` are recalculated from the 12 non-FI attributes plus OFF and DEF, using the project's agreed formula. Raw source values remain in `ehmReference`.
 
 ## Rights manifest
 
@@ -48,9 +48,9 @@ A free download, Steam subscription, attribution, or open-source editor license 
 
 ## Safety and mapping rules
 
-- Only players whose existing registry `currentLeague` is `NHL` are processed.
+- Only players whose existing registry `currentLeague` is `NHL` are processed. All AHL, junior, NCAA, European and other non-NHL records remain untouched.
 - Match by NHL player ID first; use an exact normalized name only when unique.
 - Ambiguous and unmatched players are reported, never guessed.
 - The import output is a preview file. It does not write to `registry.json`, team rosters, team assignments, positions, or deployed data.
-- OFF = average(SH, PL, ST) and DEF = average(CH, PO, HI) remain derived display attributes. FI remains separate. OA is the exact mapped EHM source overall and is not recomputed using Hockey Dynasty formulas. Team, position, league and roster-placement fields are copied from the existing registry record.
+- OFF = average(SH, PL, ST), DEF = average(CH, PO, HI), and OA = average of the twelve non-FI attributes plus OFF and DEF. FI is excluded. The original EHM overall, CA and PA are retained separately as source reference fields. Team, position, league and roster-placement fields are copied from the existing registry record.
 - Review the preview and source coverage before any separately authorized production promotion.

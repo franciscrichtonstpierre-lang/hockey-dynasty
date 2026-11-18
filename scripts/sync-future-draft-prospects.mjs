@@ -149,7 +149,7 @@ try {
     if (matches.length !== 1) { if (matches.length > 1) ambiguous++; continue; }
     const player = matches[0];
     const leagueUnknown = !player.currentLeague || String(player.currentLeague).toUpperCase() === "UNKNOWN";
-    const teamPlaceholder = !player.currentTeam || /^shoots\\s+[LR]$/i.test(String(player.currentTeam));
+    const teamPlaceholder = !player.currentTeam || /^shoots\s+[LR]$/i.test(String(player.currentTeam));
     const updateTeam = leagueUnknown || teamPlaceholder;
     if (leagueUnknown && correction.currentLeague) player.currentLeague = correction.currentLeague;
     if (updateTeam && correction.currentTeam) player.currentTeam = correction.currentTeam;

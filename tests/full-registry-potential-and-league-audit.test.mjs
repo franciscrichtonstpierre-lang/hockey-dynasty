@@ -22,7 +22,10 @@ test("every registry player has a valid audited potential", () => {
       assert.equal(player.potentialReviewRequired,false);
     } else {
       assert.equal(player.potentialStatus,"provisional_model_estimate",`unknown potential status: ${player.name}`);
-      assert.match(player.potentialEstimateMethod,/projection_v5/);
+      assert.match(player.potentialEstimateMethod,/projection_v5|oa_floor_invariant/);
+      assert.ok(["low","very_low"].includes(player.potentialConfidence), `missing potential confidence: ${player.name}`);
+      assert.ok(player.potentialEvidence || player.potentialRationale, `missing potential evidence label: ${player.name}`);
+      assert.equal(player.potentialReviewRequired,true);
       modeled++;
     }
   }

@@ -120,7 +120,7 @@ for(const p of skaters){
   HI:clamp(35+hit*34+block*20+toi*6),
   SK:clamp(42+toi*15+shot*12+point*8),
   EN:clamp(38+toi*24+sample(p)*12),
-  PE:clamp(40+discipline*18+plus*8+takeaway*6),
+  PE:clamp(25+discipline*65),
   FA:pos==="C"?clamp(42+pct([...faceoffs.values()].map(x=>n(x,"faceoffWinPct","faceoffWinPctg")),n(faceoffs.get(id),"faceoffWinPct","faceoffWinPctg"))*35):50,
   LE:clamp(38+toi*17+plus*10+powerPlay*5+shortHanded*3),
   SR:clamp(36+point*22+goal*18+shot*14+powerPlay*4),

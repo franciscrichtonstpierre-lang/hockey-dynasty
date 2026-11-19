@@ -78,7 +78,7 @@ test("no source-backed exact league correction remains unresolved", () => {
   const unknown = players.filter(player => player.currentLeague === "UNKNOWN");
   const unresolved = unknown.filter(player => corrections.some(correction =>
     correction.playerId && String(correction.playerId) === String(player.id) &&
-    correction.currentLeague && /^https?:\\/\\//.test(correction.source || "")
+    correction.currentLeague && /^https?:\/\//.test(correction.source || "")
   ));
   assert.deepEqual(unresolved.map(player => player.name),[]);
 });

@@ -1,36 +1,16 @@
 {
   "schemaVersion": 1,
   "season": "2026-2027",
-  "generatedAt": "2026-11-19T04:48:46.092Z",
+  "generatedAt": "2026-11-19T04:50:23.370Z",
   "playerCount": 3342,
   "leagueCorrections": {
-    "applied": 137,
+    "applied": 158,
     "protectedRoster": 24,
     "ambiguous": 0,
     "missing": 2,
-    "unresolved": 97
+    "unresolved": 65
   },
   "unresolvedLeaguePlayers": [
-    {
-      "id": "prospect:TOR:alexander-plesovskikh",
-      "name": "Alexander Plesovskikh",
-      "position": "F",
-      "birthDate": "2006-08-01",
-      "age": 20,
-      "rightsTeam": "TOR",
-      "source": "https://hockeyinsights.ca/team-pipeline/toronto-maple-leafs/",
-      "reason": "organization_name_only_not_current_team"
-    },
-    {
-      "id": "nhl:8485562",
-      "name": "Alexander Zharovsky",
-      "position": "F",
-      "birthDate": "2007-02-22",
-      "age": 19,
-      "rightsTeam": "MTL",
-      "source": "https://api-web.nhle.com/v1/prospects/MTL",
-      "reason": "organization_name_only_not_current_team"
-    },
     {
       "id": "nhl:8482779",
       "name": "Andrei Buyalsky",
@@ -69,16 +49,6 @@
       "age": 18,
       "rightsTeam": "DET",
       "source": "https://www.nhl.com/redwings/news/red-wings-release-2026-nhl-prospect-tournament-roster-and-schedule; https://thehockeywriters.com/red-wings-prospect-rankings-summer-2026/; https://www.nhl.com/news/detroit-red-wings-top-prospects-for-2026-27-season-32-in-32",
-      "reason": "organization_name_only_not_current_team"
-    },
-    {
-      "id": "prospect:CGY:bode-laylin",
-      "name": "Bode Laylin",
-      "position": "D",
-      "birthDate": "2007-11-17",
-      "age": 18,
-      "rightsTeam": "CGY",
-      "source": "https://hockeyinsights.ca/team-pipeline/calgary-flames/",
       "reason": "organization_name_only_not_current_team"
     },
     {
@@ -122,26 +92,6 @@
       "reason": "organization_name_only_not_current_team"
     },
     {
-      "id": "nhl:8485434",
-      "name": "Carlos Handel",
-      "position": "D",
-      "birthDate": "2007-03-31",
-      "age": 19,
-      "rightsTeam": "MTL",
-      "source": "https://api-web.nhle.com/v1/prospects/MTL",
-      "reason": "organization_name_only_not_current_team"
-    },
-    {
-      "id": "nhl:8485642",
-      "name": "Carter Sanderson",
-      "position": "F",
-      "birthDate": "2007-09-12",
-      "age": 18,
-      "rightsTeam": "PIT",
-      "source": "https://api-web.nhle.com/v1/prospects/PIT",
-      "reason": "organization_name_only_not_current_team"
-    },
-    {
       "id": "prospect:SJS:christian-kirsch",
       "name": "Christian Kirsch",
       "position": "G",
@@ -172,16 +122,6 @@
       "reason": "organization_name_only_not_current_team"
     },
     {
-      "id": "prospect:BOS:cullen-mccrate",
-      "name": "Cullen McCrate",
-      "position": "D",
-      "birthDate": "2007-04-18",
-      "age": 19,
-      "rightsTeam": "BOS",
-      "source": "https://hockeyinsights.ca/team-pipeline/boston-bruins/",
-      "reason": "organization_name_only_not_current_team"
-    },
-    {
       "id": "nhl:8484465",
       "name": "Daniil Karpovich",
       "position": "D",
@@ -202,36 +142,6 @@
       "reason": "organization_name_only_not_current_team"
     },
     {
-      "id": "nhl:8485633",
-      "name": "David Rozsival",
-      "position": "F",
-      "birthDate": "2007-06-01",
-      "age": 19,
-      "rightsTeam": "NJD",
-      "source": "https://api-web.nhle.com/v1/prospects/NJD",
-      "reason": "organization_name_only_not_current_team"
-    },
-    {
-      "id": "nhl:8485094",
-      "name": "Denis Gabdrakhmanov",
-      "position": "G",
-      "birthDate": "2005-06-22",
-      "age": 21,
-      "rightsTeam": "FLA",
-      "source": "https://api-web.nhle.com/v1/prospects/FLA",
-      "reason": "organization_name_only_not_current_team"
-    },
-    {
-      "id": "nhl:8483667",
-      "name": "Dmitri Buchelnikov",
-      "position": "F",
-      "birthDate": "2003-09-06",
-      "age": 23,
-      "rightsTeam": "STL",
-      "source": "https://api-web.nhle.com/v1/prospects/STL",
-      "reason": "organization_name_only_not_current_team"
-    },
-    {
       "id": "nhl:8485621",
       "name": "Dmitri Isayev",
       "position": "F",
@@ -239,36 +149,6 @@
       "age": 19,
       "rightsTeam": "OTT",
       "source": "https://api-web.nhle.com/v1/prospects/OTT",
-      "reason": "organization_name_only_not_current_team"
-    },
-    {
-      "id": "prospect:UTA:dmitriy-simashev",
-      "name": "Dmitriy Simashev",
-      "position": "D",
-      "birthDate": "2005-02-04",
-      "age": 21,
-      "rightsTeam": "UTA",
-      "source": "https://hockeyinsights.ca/team-pipeline/utah-mammoth/; https://www.nhl.com/utah/news/utah-mammoth-announce-2026-development-camp-roster-release-6-28-26",
-      "reason": "organization_rights_snapshot_not_current_league"
-    },
-    {
-      "id": "nhl:8484993",
-      "name": "Egor Surin",
-      "position": "F",
-      "birthDate": "2006-08-01",
-      "age": 20,
-      "rightsTeam": "NSH",
-      "source": "https://api-web.nhle.com/v1/prospects/NSH",
-      "reason": "organization_name_only_not_current_team"
-    },
-    {
-      "id": "nhl:8484398",
-      "name": "Egor Zavragin",
-      "position": "G",
-      "birthDate": "2005-08-23",
-      "age": 21,
-      "rightsTeam": "PHI",
-      "source": "https://api-web.nhle.com/v1/prospects/PHI",
       "reason": "organization_name_only_not_current_team"
     },
     {
@@ -292,46 +172,6 @@
       "reason": "organization_name_only_not_current_team"
     },
     {
-      "id": "prospect:CBJ:filip-novak",
-      "name": "Filip Novak",
-      "position": "F",
-      "birthDate": "2008-03-07",
-      "age": 18,
-      "rightsTeam": "CBJ",
-      "source": "https://hockeyinsights.ca/team-pipeline/columbus-blue-jackets/",
-      "reason": "organization_name_only_not_current_team"
-    },
-    {
-      "id": "prospect:VAN:gabriel-chiarot",
-      "name": "Gabriel Chiarot",
-      "position": "F",
-      "birthDate": "2006-09-17",
-      "age": 19,
-      "rightsTeam": "VAN",
-      "source": "https://hockeyinsights.ca/team-pipeline/vancouver-canucks/; https://www.nhl.com/news/topic/32-in-32/vancouver-canucks-top-prospects-for-2026-27-season-32-in-32",
-      "reason": "organization_name_only_not_current_team"
-    },
-    {
-      "id": "nhl:8485656",
-      "name": "Ilya Kanarsky",
-      "position": "G",
-      "birthDate": "2004-12-06",
-      "age": 21,
-      "rightsTeam": "CHI",
-      "source": "https://api-web.nhle.com/v1/prospects/CHI",
-      "reason": "organization_name_only_not_current_team"
-    },
-    {
-      "id": "nhl:8486321",
-      "name": "Ivan Patrikhayev",
-      "position": "D",
-      "birthDate": "2006-02-03",
-      "age": 20,
-      "rightsTeam": "NYR",
-      "source": "https://api-web.nhle.com/v1/prospects/NYR",
-      "reason": "organization_name_only_not_current_team"
-    },
-    {
       "id": "nhl:8482945",
       "name": "Ivan Vorobyov",
       "position": "F",
@@ -349,16 +189,6 @@
       "age": 24,
       "rightsTeam": "MTL",
       "source": "https://api-web.nhle.com/v1/prospects/MTL",
-      "reason": "organization_name_only_not_current_team"
-    },
-    {
-      "id": "prospect:WPG:jacob-cloutier",
-      "name": "Jacob Cloutier",
-      "position": "F",
-      "birthDate": "2007-03-22",
-      "age": 19,
-      "rightsTeam": "WPG",
-      "source": "https://hockeyinsights.ca/team-pipeline/winnipeg-jets/",
       "reason": "organization_name_only_not_current_team"
     },
     {
@@ -392,26 +222,6 @@
       "reason": "organization_name_only_not_current_team"
     },
     {
-      "id": "nhl:8485011",
-      "name": "Jakub Milota",
-      "position": "G",
-      "birthDate": "2006-04-14",
-      "age": 20,
-      "rightsTeam": "NSH",
-      "source": "https://api-web.nhle.com/v1/prospects/NSH",
-      "reason": "organization_name_only_not_current_team"
-    },
-    {
-      "id": "pipeline:DET:jakub-rychlovsky",
-      "name": "Jakub Rychlovsky",
-      "position": "F",
-      "birthDate": "2001-08-07",
-      "age": 24,
-      "rightsTeam": null,
-      "source": "Signed / current contract",
-      "reason": "organization_name_only_not_current_team"
-    },
-    {
       "id": "nhl:8484473",
       "name": "Janne Peltonen",
       "position": "D",
@@ -419,26 +229,6 @@
       "age": 21,
       "rightsTeam": "CHI",
       "source": "https://api-web.nhle.com/v1/prospects/CHI",
-      "reason": "organization_name_only_not_current_team"
-    },
-    {
-      "id": "nhl:8486031",
-      "name": "Jaxon Cover",
-      "position": "F",
-      "birthDate": "2008-02-13",
-      "age": 18,
-      "rightsTeam": "OTT",
-      "source": "https://api-web.nhle.com/v1/prospects/OTT",
-      "reason": "organization_name_only_not_current_team"
-    },
-    {
-      "id": "prospect:MTL:jean-samuel-daigneault",
-      "name": "Jean-Samuel Daigneault",
-      "position": "D",
-      "birthDate": "2008-02-15",
-      "age": 18,
-      "rightsTeam": "MTL",
-      "source": "https://hockeyinsights.ca/team-pipeline/montreal-canadiens/",
       "reason": "organization_name_only_not_current_team"
     },
     {
@@ -459,16 +249,6 @@
       "age": 29,
       "rightsTeam": null,
       "source": "Own pick",
-      "reason": "organization_name_only_not_current_team"
-    },
-    {
-      "id": "prospect:SJS:joshua-ravensbergen",
-      "name": "Joshua Ravensbergen",
-      "position": "G",
-      "birthDate": "2006-11-27",
-      "age": 19,
-      "rightsTeam": "SJS",
-      "source": "https://hockeyinsights.ca/team-pipeline/san-jose-sharks/",
       "reason": "organization_name_only_not_current_team"
     },
     {
@@ -522,26 +302,6 @@
       "reason": "nhl_rights_without_current_nhl_roster_membership"
     },
     {
-      "id": "nhl:8482202",
-      "name": "Maksim Berezkin",
-      "position": "F",
-      "birthDate": "2001-10-12",
-      "age": 24,
-      "rightsTeam": "EDM",
-      "source": "https://api-web.nhle.com/v1/prospects/EDM",
-      "reason": "organization_name_only_not_current_team"
-    },
-    {
-      "id": "pipeline:PHI:maksim-sokolovskii",
-      "name": "Maksim Sokolovskii",
-      "position": "D",
-      "birthDate": "2008-07-12",
-      "age": 18,
-      "rightsTeam": null,
-      "source": "Acquired draft pick from BUF",
-      "reason": "organization_name_only_not_current_team"
-    },
-    {
       "id": "nhl:8485353",
       "name": "Mason West",
       "position": "F",
@@ -549,16 +309,6 @@
       "age": 19,
       "rightsTeam": "CHI",
       "source": "https://api-web.nhle.com/v1/prospects/CHI",
-      "reason": "organization_name_only_not_current_team"
-    },
-    {
-      "id": "nhl:8485104",
-      "name": "Matvei Korotky",
-      "position": "F",
-      "birthDate": "2005-12-23",
-      "age": 20,
-      "rightsTeam": "STL",
-      "source": "https://api-web.nhle.com/v1/prospects/STL",
       "reason": "organization_name_only_not_current_team"
     },
     {
@@ -582,26 +332,6 @@
       "reason": "organization_name_only_not_current_team"
     },
     {
-      "id": "pipeline:TBL:maxwell-crozier",
-      "name": "Maxwell Crozier",
-      "position": "D",
-      "birthDate": "2000-04-19",
-      "age": 26,
-      "rightsTeam": null,
-      "source": "Own pick",
-      "reason": "nhl_rights_without_current_nhl_roster_membership"
-    },
-    {
-      "id": "nhl:8484441",
-      "name": "Melvin Strahl",
-      "position": "G",
-      "birthDate": "2005-03-18",
-      "age": 21,
-      "rightsTeam": "CBJ",
-      "source": "https://api-web.nhle.com/v1/prospects/CBJ",
-      "reason": "organization_name_only_not_current_team"
-    },
-    {
       "id": "nhl:8485618",
       "name": "Mikhail Fyodorov",
       "position": "F",
@@ -612,26 +342,6 @@
       "reason": "organization_name_only_not_current_team"
     },
     {
-      "id": "nhl:8484389",
-      "name": "Mikhail Gulyayev",
-      "position": "D",
-      "birthDate": "2005-04-26",
-      "age": 21,
-      "rightsTeam": "COL",
-      "source": "https://api-web.nhle.com/v1/prospects/COL",
-      "reason": "organization_name_only_not_current_team"
-    },
-    {
-      "id": "nhl:8485596",
-      "name": "Mikkel Eriksen",
-      "position": "F",
-      "birthDate": "2007-09-13",
-      "age": 18,
-      "rightsTeam": "NYR",
-      "source": "https://api-web.nhle.com/v1/prospects/NYR",
-      "reason": "organization_name_only_not_current_team"
-    },
-    {
       "id": "nhl:8485106",
       "name": "Miroslav Satan",
       "position": "F",
@@ -639,16 +349,6 @@
       "age": 20,
       "rightsTeam": "WSH",
       "source": "https://api-web.nhle.com/v1/prospects/WSH",
-      "reason": "organization_name_only_not_current_team"
-    },
-    {
-      "id": "nhl:8482917",
-      "name": "Nikita Guslistov",
-      "position": "F",
-      "birthDate": "2002-05-30",
-      "age": 24,
-      "rightsTeam": "CAR",
-      "source": "https://api-web.nhle.com/v1/prospects/CAR",
       "reason": "organization_name_only_not_current_team"
     },
     {
@@ -672,16 +372,6 @@
       "reason": "organization_name_only_not_current_team"
     },
     {
-      "id": "prospect:VGK:noel-pakarinen",
-      "name": "Noel Pakarinen",
-      "position": "F",
-      "birthDate": "2008-07-09",
-      "age": 18,
-      "rightsTeam": "VGK",
-      "source": "https://hockeyinsights.ca/team-pipeline/vegas-golden-knights/",
-      "reason": "organization_name_only_not_current_team"
-    },
-    {
       "id": "prospect:BUF:norwin-panocha",
       "name": "Norwin Panocha",
       "position": "D",
@@ -700,16 +390,6 @@
       "rightsTeam": "SEA",
       "source": "https://api-web.nhle.com/v1/prospects/SEA",
       "reason": "nhl_rights_without_current_nhl_roster_membership"
-    },
-    {
-      "id": "nhl:8482769",
-      "name": "Prokhor Poltapov",
-      "position": "F",
-      "birthDate": "2003-02-01",
-      "age": 23,
-      "rightsTeam": "BUF",
-      "source": "https://api-web.nhle.com/v1/prospects/BUF",
-      "reason": "organization_name_only_not_current_team"
     },
     {
       "id": "prospect:TBL:roman-luttsev",
@@ -1000,8 +680,8 @@
     "evidence": {
       "current_ability_and_age": 1960,
       "league_points_per_game": 168,
-      "draft_pick+league_points_per_game": 603,
-      "draft_pick": 535,
+      "draft_pick+league_points_per_game": 609,
+      "draft_pick": 529,
       "draft_pick+goalie_save_percentage": 37,
       "published_source_rank+league_points_per_game": 22,
       "published_source_rank": 11,
@@ -1009,33 +689,33 @@
     }
   },
   "playersByLeague": {
-    "NHL": 803,
+    "NHL": 805,
     "AHL": 856,
     "ECHL": 764,
-    "NCAA": 291,
+    "NCAA": 295,
     "LIIGA": 48,
-    "ALLSVENSKAN": 17,
+    "ALLSVENSKAN": 18,
     "OTHER": 20,
-    "OHL": 88,
-    "WHL": 83,
-    "MHL": 28,
+    "OHL": 94,
+    "WHL": 87,
+    "MHL": 29,
     "SHL": 41,
-    "KHL": 42,
-    "VHL": 21,
-    "UNKNOWN": 97,
+    "KHL": 50,
+    "VHL": 25,
     "QMJHL": 32,
     "CHL-QMJHL": 14,
     "CHL-OHL": 2,
+    "UNKNOWN": 65,
     "NL": 7,
     "RETIRED": 2,
     "USHL": 24,
     "EUROPE": 37,
     "OJHL": 1,
+    "DEL": 4,
     "USNTDP": 9,
     "HSA": 1,
     "SL": 1,
-    "CZECH": 6,
-    "DEL": 3,
+    "CZECH": 7,
     "CHL-WHL": 1,
     "BCHL": 1,
     "NORWAY": 1,

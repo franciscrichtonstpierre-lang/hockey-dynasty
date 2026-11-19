@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "season": "2026-2027",
-  "generatedAt": "2026-11-19T04:55:41.311Z",
+  "generatedAt": "2026-11-19T04:57:18.449Z",
   "playerCount": 3342,
   "leagueCorrections": {
     "applied": 198,
@@ -168,6 +168,7 @@
     "sourceReviewed": 319,
     "provisional": 3023,
     "reviewRequired": 3023,
+    "sourceReferences": 456,
     "methods": {
       "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified": 3023,
       "manual_source_review_2026-11-04": 319
@@ -179,13 +180,14 @@
       "high": 59
     },
     "evidence": {
-      "current_ability_and_age": 1959,
-      "league_points_per_game": 169,
-      "draft_pick+league_points_per_game": 615,
-      "draft_pick": 523,
-      "draft_pick+goalie_save_percentage": 37,
+      "current_ability_and_age": 1951,
+      "league_points_per_game": 165,
+      "draft_pick+league_points_per_game": 448,
+      "published_scouting_sources": 319,
+      "draft_pick": 407,
       "published_source_rank+league_points_per_game": 22,
       "published_source_rank": 11,
+      "draft_pick+goalie_save_percentage": 13,
       "goalie_save_percentage": 6
     }
   },

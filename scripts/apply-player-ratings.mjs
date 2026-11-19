@@ -99,6 +99,7 @@ for (const player of registry.players || []) {
     player.potentialEstimateMethod = potential.method;
     player.potentialConfidence = potential.confidence || "very_low";
     player.potentialEvidence = potential.evidence || "current_ability_and_age";
+    player.potentialEvidenceSourceCount = 0;
     player.potentialReviewRequired = true;
   }
   player.ratedAttributes = RATING_ATTRIBUTES.slice();
@@ -178,6 +179,7 @@ for (const player of registry.players || []) {
   player.potentialEvidence = floorAdjusted
     ? "source_reviewed_value_floor_adjusted_requires_recheck"
     : "published_scouting_sources";
+  player.potentialEvidenceSourceCount = String(override.source || "").split(";").map(value => value.trim()).filter(Boolean).length;
   player.potentialConfidence = floorAdjusted ? "low" : (override.confidence || "medium");
   player.potentialRationale = floorAdjusted
     ? `${override.rationale} Floor-adjusted to current OA ${potentialFloor}; this correction requires a fresh source review.`

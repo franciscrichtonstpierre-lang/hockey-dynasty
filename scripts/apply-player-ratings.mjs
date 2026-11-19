@@ -97,6 +97,9 @@ for (const player of registry.players || []) {
     player.potentialEstimate = potential.value;
     player.potentialStatus = potential.status;
     player.potentialEstimateMethod = potential.method;
+    player.potentialConfidence = potential.confidence || "very_low";
+    player.potentialEvidence = potential.evidence || "current_ability_and_age";
+    player.potentialReviewRequired = true;
   }
   player.ratedAttributes = RATING_ATTRIBUTES.slice();
   if (useNhlStats && directMeta) {

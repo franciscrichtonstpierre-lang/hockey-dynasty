@@ -295,6 +295,27 @@ for (const player of freeAgents.players || []) {
   if (!exact(player.attributes)) throw new Error(`Invalid 16-rating card for free agent ${player.name} (${player.id}).`);
 }
 
+// Full-registry potential audit: every player must have a valid projection at or above current OA.
+const potentialAudit = { total:registry.players.length, sourceReviewed:0, modelEstimated:0, unresolved:0 };
+for (const player of registry.players || []) {
+  const value = player.potential;
+  const oa = Number(player.overall);
+  if (!Number.isInteger(value) || value < 0 || value > 99) throw new Error(`Invalid/missing potential for ${player.name} (${player.id}): ${value}.`);
+  if (Number.isFinite(oa) && value < oa) throw new Error(`Potential below OA for ${player.name} (${player.id}): PA ${value}, OA ${oa}.`);
+  if (player.potentialStatus === "scouting_source_reviewed_estimate") {
+    if (!player.potentialSource || !player.potentialRationale || player.potentialReviewRequired) throw new Error(`Incomplete source-reviewed potential evidence for ${player.name} (${player.id}).`);
+    potentialAudit.sourceReviewed++;
+  } else if (player.potentialStatus === "provisional_model_estimate") {
+    if (!player.potentialEstimateMethod) throw new Error(`Missing potential model method for ${player.name} (${player.id}).`);
+    potentialAudit.modelEstimated++;
+  } else {
+    potentialAudit.unresolved++;
+    throw new Error(`Unrecognized potential status for ${player.name} (${player.id}): ${player.potentialStatus}.`);
+  }
+}
+if (potentialAudit.total < 3000 || potentialAudit.sourceReviewed < 300 || potentialAudit.modelEstimated < 1) throw new Error(`Full-registry potential coverage failed: ${JSON.stringify(potentialAudit)}.`);
+console.log(`FULL REGISTRY POTENTIAL AUDIT PASSED: ${JSON.stringify(potentialAudit)}; all values 0-99 and PA >= OA.`);
+
 const leagueCoverage = {};
 for (const player of registry.players || []) {
   const league = String(player.currentLeague || "UNKNOWN");

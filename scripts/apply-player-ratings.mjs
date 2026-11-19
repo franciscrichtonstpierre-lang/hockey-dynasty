@@ -9,6 +9,7 @@ async function readJson(path, fallback = null) {
 }
 const registry = await readJson("data/players/registry.json");
 const ratings = await readJson("data/ratings.json");
+if (!Array.isArray(registry.players) || registry.players.length < 3000) throw new Error(`Full-registry rating pass stopped: expected at least 3000 players, found ${registry.players?.length ?? 0}.`);
 const statsFiles = [
   "data/ahl/player-stats-2026-2027.json",
   "data/ahl/player-stats-2025-2026.json",
@@ -180,6 +181,22 @@ for (const player of registry.players || []) {
   potentialOverridesApplied++;
 }
 console.log(`Source-reviewed potential overrides applied: ${potentialOverridesApplied}.`);
+
+// Final full-registry audit: no player may be published with a missing or stale composite.
+const oaKeysAudit = RATING_ATTRIBUTES.filter(key => key !== "FI" && key !== "OA");
+let auditedPlayers = 0;
+for (const player of registry.players || []) {
+  const a = player.attributes;
+  if (!exact(a)) throw new Error(`Full-registry audit found incomplete attributes for ${player.name} (${player.id}).`);
+  const expectedOff = Math.round((a.SH + a.PL + a.ST) / 3);
+  const expectedDef = Math.round((a.CH + a.PO + a.HI) / 3);
+  const expectedOa = Math.round(oaKeysAudit.reduce((sum, key) => sum + a[key], 0) / oaKeysAudit.length);
+  if (a.OFF !== expectedOff || a.DEF !== expectedDef || a.OA !== expectedOa || player.overall !== expectedOa) {
+    throw new Error(`Full-registry composite mismatch for ${player.name} (${player.id}): OFF ${a.OFF}/${expectedOff}, DEF ${a.DEF}/${expectedDef}, OA ${a.OA}/${expectedOa}, overall ${player.overall}.`);
+  }
+  auditedPlayers++;
+}
+console.log(`FULL REGISTRY RATING AUDIT PASSED: ${auditedPlayers} / ${registry.players.length} players; 16 attributes complete; OFF/DEF/OA verified.`);
 
 // Publish current NHL ratings to the NHL-ID lookup used by live NHL rosters.
 // Keep historical NHL-stat rows intact for players currently assigned abroad.

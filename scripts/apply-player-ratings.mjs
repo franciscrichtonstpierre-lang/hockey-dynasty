@@ -58,6 +58,13 @@ for (const player of registry.players || []) {
   });
   let statRow = match.row;
   let statIndex = match.index;
+  // When a rights-only profile has no verified current league, a unique match
+  // in an official league-wide statistics feed is sufficient to identify the
+  // player's playing league (but not to invent a team name).
+  if (statRow && statIndex?.league && ["UNKNOWN", "OTHER"].includes(String(player.currentLeague || "").toUpperCase())) {
+    player.currentLeague = statIndex.league;
+    player.leagueResolution = "unique_official_league_statistics_match";
+  }
   if (statRow && match.additionalMatches?.length) {
     const currentGames = Number(statRow.games_played ?? statRow.gamesPlayed ?? statRow.GP ?? 0);
     if (currentGames > 0 && currentGames < 10) {

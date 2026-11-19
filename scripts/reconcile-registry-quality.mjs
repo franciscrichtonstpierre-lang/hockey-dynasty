@@ -5,7 +5,7 @@ import { readFile, writeFile } from "node:fs/promises";
 const read = async path => JSON.parse(await readFile(path, "utf8"));
 const registry = await read("data/players/registry.json");
 const corrections = await read("data/players/manual-league-corrections.json");
-const normalize = value => String(value || "").normalize("NFD").replace(/[\\u0300-\\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+const normalize = value => String(value || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
 const position = value => {
   const raw = String(value || "").toUpperCase();
   if (["G","GOALIE","GOALTENDER"].includes(raw)) return "G";
@@ -16,7 +16,7 @@ const position = value => {
 let applied = 0, protectedRoster = 0, ambiguous = 0, missing = 0;
 const unresolvedNames = [];
 for (const correction of corrections.players || []) {
-  if (!correction.currentLeague || !correction.source || !/^https?:\\/\\//.test(correction.source)) continue;
+  if (!correction.currentLeague || !correction.source || !/^https?:\/\//.test(correction.source)) continue;
   const names = new Set([correction.name, ...(correction.aliases || [])].map(normalize));
   let matches = (registry.players || []).filter(player =>
     (correction.playerId && String(player.id) === String(correction.playerId)) || names.has(normalize(player.name))

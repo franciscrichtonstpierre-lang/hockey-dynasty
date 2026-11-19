@@ -19,6 +19,7 @@ on:
       - "scripts/import-ehm-ratings.mjs"
       - "scripts/build-ratings.mjs"
       - "scripts/lib/player-ratings.mjs"
+      - "scripts/lib/cross-league-rating-model.mjs"
       - "scripts/export-registry-index.mjs"
       - "scripts/sync-echl-data.mjs"
       - "scripts/enrich-echl-bios.mjs"

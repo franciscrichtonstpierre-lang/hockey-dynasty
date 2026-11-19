@@ -21,6 +21,7 @@ test("every registry player has a valid audited potential", () => {
       reviewed++;
       assert.ok(player.potentialSource && player.potentialRationale, `source evidence missing: ${player.name}`);
       assert.equal(player.potentialEvidence,"published_scouting_sources",`source evidence type missing: ${player.name}`);
+      assert.ok(player.potentialEvidenceSourceCount >= 1,`source count missing: ${player.name}`);
       assert.equal(player.potentialReviewRequired,false);
     } else {
       assert.equal(player.potentialStatus,"provisional_model_estimate",`unknown potential status: ${player.name}`);

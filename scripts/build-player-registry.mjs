@@ -817,7 +817,7 @@ for(const p of records.values()){
  }else if(echlNameByKey.has(key)){
   if(p.currentLeague!=="ECHL"||p.currentTeam!==echlNameByKey.get(key))teamLeagueCorrections++;
   p.currentLeague="ECHL";p.currentTeam=echlNameByKey.get(key);p.leagueResolution="explicit_current_team_name";
- }else if(nhlCodeByTeamName.has(key)){
+ }else if(p.currentLeague==="NHL"&&nhlCodeByTeamName.has(key)){
   const code=nhlCodeByTeamName.get(key);
   if(p.currentLeague!=="NHL"||p.currentTeam!==code)teamLeagueCorrections++;
   p.currentLeague="NHL";p.currentTeam=code;p.leagueResolution="explicit_current_team_name";

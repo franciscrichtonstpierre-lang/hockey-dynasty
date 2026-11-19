@@ -210,6 +210,22 @@ test("goalies receive all 16 attributes and a calculated OA from goalie-specific
 });
 
 
+test("PE contributes to OA for every player while FI remains excluded", () => {
+  const base = {
+    name:"Discipline calibration", currentLeague:"NHL", position:"F", age:25
+  };
+  const common = {
+    FI:10, SH:70, PL:70, ST:70, CH:70, PO:70, HI:70, SK:70,
+    EN:70, FA:70, LE:70, SR:70, OFF:70, DEF:70
+  };
+  const disciplined = estimatePlayerRatings(base, null, null, { ...common, PE:90 });
+  const undisciplined = estimatePlayerRatings(base, null, null, { ...common, PE:30 });
+  assert.equal(disciplined.attributes.PE, 90);
+  assert.equal(undisciplined.attributes.PE, 30);
+  assert.ok(disciplined.attributes.OA > undisciplined.attributes.OA,
+    "higher discipline PE must raise OA because PE is one of its 14 components");
+});
+
 test("OA uses normalized weights across exactly 14 non-FI attributes", () => {
   const result = estimatePlayerRatings({
     name:"OA normalization", currentLeague:"NHL", position:"F", age:25

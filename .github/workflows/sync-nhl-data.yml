@@ -28,6 +28,7 @@ on:
       - "scripts/enrich-future-draft-bios.mjs"
       - "scripts/sync-nhl-data.mjs"
       - "scripts/build-player-registry.mjs"
+      - "scripts/reconcile-registry-quality.mjs"
       - "scripts/enrich-nhl-player-bios.mjs"
       - "scripts/sync-future-draft-prospects.mjs"
       - "scripts/sync-draft-picks.mjs"
@@ -161,6 +162,9 @@ jobs:
       - name: Compléter les cotes des joueurs de toutes les ligues
         if: always()
         run: node scripts/apply-player-ratings.mjs
+      - name: Réconcilier les ligues vérifiées et auditer les potentiels
+        if: always()
+        run: node scripts/reconcile-registry-quality.mjs
       - name: Exporter le registre complet pour la recherche du jeu
         if: always()
         run: node scripts/export-registry-index.mjs
@@ -177,7 +181,7 @@ jobs:
         run: |
           git config user.name "uhm-data-bot"
           git config user.email "uhm-data-bot@users.noreply.github.com"
-          git add data/nhl data/echl data/junior data/ncaa data/europe data/free-agents/2026-2027.json data/ratings.json data/players/junior-bio-enrichment.json data/players/ncaa-bio-enrichment.json data/players/future-draft-bio-enrichment.json data/prospects data/prospects-supplemental data/future-draft-prospects data/ahl data/coaches data/players/registry.json data/players/registry-index data/players/nhl-player-bios.json data/players/nhl-player-bio-audit.json data/contracts/2026-2027.json data/contracts/contract-audit-2026-2027.json data/contracts/manual-overrides-2026-2027.json data/contracts/db-sync data/draft-picks
+          git add data/nhl data/echl data/junior data/ncaa data/europe data/free-agents/2026-2027.json data/ratings.json data/players/junior-bio-enrichment.json data/players/ncaa-bio-enrichment.json data/players/future-draft-bio-enrichment.json data/prospects data/prospects-supplemental data/future-draft-prospects data/ahl data/coaches data/players/registry.json data/players/registry-quality-audit.json data/players/registry-index data/players/nhl-player-bios.json data/players/nhl-player-bio-audit.json data/contracts/2026-2027.json data/contracts/contract-audit-2026-2027.json data/contracts/manual-overrides-2026-2027.json data/contracts/db-sync data/draft-picks
           if git diff --cached --quiet; then
             echo "Aucune modification de données."
           else

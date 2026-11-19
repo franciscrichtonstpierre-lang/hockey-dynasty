@@ -438,8 +438,13 @@
     {
       "name": "Mackenzie MacEachern",
       "birthDate": "1994-03-09",
-      "source": "https://www.nhl.com/canucks/player/mackenzie-maceachern-8476907/bio",
-      "note": "Date de naissance vérifiée à partir de la source indiquée; correction appliquée au registre central sans déduire le club actuel ni les droits NHL."
+      "source": "https://www.eliteprospects.com/player/183505/mackenzie-maceachern",
+      "note": "Profil Elite Prospects 2026-27 : Abbotsford Canucks, AHL.",
+      "playerId": "pipeline:VAN:mackenzie-maceachern",
+      "position": "F",
+      "nhlRightsTeam": "VAN",
+      "currentLeague": "AHL",
+      "currentTeam": "Abbotsford Canucks"
     },
     {
       "name": "Mads Sogaard",
@@ -1487,11 +1492,17 @@
       "clearNhlRightsTeam": true
     },
     {
-      "playerId": "REG-prospect-CAR-roman-luttsev",
+      "playerId": "prospect:TBL:roman-luttsev",
       "name": "Roman Luttsev",
       "birthDate": "2006-04-01",
       "sourceUrl": "https://www.hockey-reference.com/players/l/luttsro01.html",
-      "verifiedAt": "2026-11-01"
+      "verifiedAt": "2026-11-01",
+      "position": "F",
+      "nhlRightsTeam": "TBL",
+      "currentLeague": "VHL",
+      "currentTeam": "Molot Perm",
+      "source": "https://www.puckpedia.com/player/roman-luttsev",
+      "note": "Statistiques 2026-27 : Molot Perm, VHL."
     },
     {
       "playerId": "REG-prospect-CAR-roman-shokhrin",
@@ -1840,11 +1851,17 @@
       "verifiedAt": "2026-11-01"
     },
     {
-      "playerId": "REG-prospect-TOR-wyatt-schingoethe",
+      "playerId": "prospect:TOR:wyatt-schingoethe",
       "name": "Wyatt Schingoethe",
       "birthDate": "2002-08-03",
       "sourceUrl": "https://www.hockey-reference.com/players/s/schinwy01.html",
-      "verifiedAt": "2026-11-01"
+      "verifiedAt": "2026-11-01",
+      "position": "F",
+      "nhlRightsTeam": "TOR",
+      "currentLeague": "GERMANY3",
+      "currentTeam": "Hannover Indians",
+      "source": "https://www.athletedom.com/database/hockey/players/wyatt-schingoethe-271362",
+      "note": "Profil et statistiques 2026-27 : Hannover Indians, Germany 3."
     },
     {
       "playerId": "REG-prospect-SJS-yaroslav-korostelyov",
@@ -5420,6 +5437,61 @@
       "currentTeam": "Coachella Valley Firebirds",
       "source": "https://www.warpathbuffalo.com/prospects/oscar-fisker-molgaard",
       "note": "Statistiques et équipe 2026-27 : Coachella Valley Firebirds, AHL."
+    },
+    {
+      "name": "Daniil Orlov",
+      "playerId": "nhl:8483689",
+      "birthDate": "2003-12-21",
+      "position": "D",
+      "nhlRightsTeam": "NJD",
+      "currentLeague": "KHL",
+      "currentTeam": "Spartak Moskva",
+      "source": "https://www.eliteprospects.com/player/665898/daniil-orlov",
+      "note": "Profil Elite Prospects 2026-27 : Spartak Moskva, KHL."
+    },
+    {
+      "name": "William Tomko",
+      "playerId": "nhl:8486330",
+      "birthDate": "2006-10-17",
+      "position": "F",
+      "nhlRightsTeam": "SEA",
+      "currentLeague": "NCAA",
+      "currentTeam": "Ohio State University",
+      "source": "https://www.eliteprospects.com/player/764509/william-tomko",
+      "note": "Profil Elite Prospects 2026-27 : Ohio State University, NCAA."
+    },
+    {
+      "name": "Viktor Norringer",
+      "playerId": "nhl:8485015",
+      "birthDate": "2006-03-07",
+      "position": "F",
+      "nhlRightsTeam": "NSH",
+      "currentLeague": "NCAA",
+      "currentTeam": "Boston University",
+      "source": "https://goterriers.com/sports/mens-ice-hockey/roster/viktor-nrringer/27820",
+      "note": "Effectif officiel de Boston University 2026-27."
+    },
+    {
+      "name": "Will Reynolds",
+      "playerId": "nhl:8485566",
+      "birthDate": "2007-08-11",
+      "position": "D",
+      "nhlRightsTeam": "SEA",
+      "currentLeague": "QMJHL",
+      "currentTeam": "Newfoundland Regiment",
+      "source": "https://www.eliteprospects.com/player/876161/will-reynolds",
+      "note": "Profil Elite Prospects 2026-27 : Newfoundland Regiment, QMJHL."
+    },
+    {
+      "name": "Eli Barnett",
+      "playerId": "nhl:8483737",
+      "birthDate": "2003-09-16",
+      "position": "D",
+      "nhlRightsTeam": "SJS",
+      "currentLeague": "USPORTS",
+      "currentTeam": "University of New Brunswick",
+      "source": "https://www.eliteprospects.com/player/492134/eli-barnett",
+      "note": "Profil Elite Prospects 2026-27 : University of New Brunswick, USports."
     }
   ],
   "sourceNote": "Manual corrections are source-linked and do not infer NHL rights without a verified rights holder. Current club assignments, league labels, physical profile fields and expired-rights clearances reconciled on 2026-11-01."

@@ -56,6 +56,10 @@ test("source-verified league corrections are reflected in the registry", () => {
     ["Mikus Vecvanags","BCHL","Victoria Grizzlies"],
     ["Yevgeni Volokhin","VHL","Khimik Voskresensk"],
     ["Antoine Keller","NL","HC Ajoie"],
+    ["Cameron Reid","NCAA","University of Michigan"],
+    ["Ethan Bowen","BCHL",null],
+    ["Roman Shokhrin","VHL","Molot Perm"],
+    ["Timur Kol","KHL","Neftekhimik Nizhnekamsk"],
     ["Viktor Hurtig","RETIRED",null]
   ];
   for (const [name,league,team] of expected) {

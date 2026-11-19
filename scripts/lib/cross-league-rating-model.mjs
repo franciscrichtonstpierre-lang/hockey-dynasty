@@ -298,6 +298,9 @@ export function estimatePlayerRatings(player, statRow, statIndex, existingRating
   const goalieWorkload = stat?.goalie ? stat.workload : 0.5;
   const goalieWins = stat?.goalie ? stat.wins : 0.5;
   const goalieShutouts = stat?.goalie ? stat.shutouts : 0.5;
+  // Prefer an actual scouting/EHM skating grade when one exists. Otherwise use a
+  // modestly higher neutral skating baseline; scoring and body size are not speed.
+  const directSkatingRating = numeric(player, "skatingRating", "skating", "speedRating", "speed", "acceleration", "agility") || numeric(statRow, "skatingRating", "skating", "speedRating", "speed", "acceleration", "agility");
   const modeled = {
     // FI is Fighting only; it is independent of OA and never inferred from PIM.
     FI:clamp(directFightRating > 0 ? directFightRating : fightCount > 0 ? 20 + Math.min(79, fightCount * 12) : 10),

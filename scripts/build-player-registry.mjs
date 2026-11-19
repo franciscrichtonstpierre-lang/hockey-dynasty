@@ -674,7 +674,7 @@ for(const correction of (manualLeagueCorrections.players||[])){
   const wantedPosition=posGroup(correction)||String(correction.position||"").toUpperCase();
   const targets=[selected,...allMatches.filter(p=>p!==selected&&(!p.currentLeague||p.currentLeague==="UNKNOWN")&&(!p.birthDate||!correction.birthDate||p.birthDate===correction.birthDate)&&(!p.position||!wantedPosition||p.position===wantedPosition||p.detailedPosition===String(correction.position||"").toUpperCase()))];
   for(const p of targets){
-    const hasOfficialRoster=["NHL","AHL"].includes(p.currentLeague)&&Boolean(p.currentTeam);
+    const hasOfficialRoster=(p.currentLeague==="NHL"&&p.nhlRosterVerified===true)||(p.currentLeague==="AHL"&&p.ahlRosterVerified===true);
     const correctionDate=Date.parse(correction.sourceUpdatedAt||manualLeagueCorrections.verifiedAt||"");
     const recordDate=Date.parse(p.sourceUpdatedAt||p.teamPipelineSnapshotDate||p.supplementalSnapshotDate||"");
     const newerRecord=Number.isFinite(recordDate)&&Number.isFinite(correctionDate)&&recordDate>correctionDate;

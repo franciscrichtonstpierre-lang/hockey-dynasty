@@ -4,6 +4,7 @@ import { readFile } from "node:fs/promises";
 
 const registry = JSON.parse(await readFile("data/players/registry.json","utf8"));
 const players = registry.players || [];
+const corrections = JSON.parse(await readFile("data/players/manual-league-corrections.json","utf8")).players || [];
 const byName = new Map(players.map(player => [player.name,player]));
 
 test("every registry player has a valid audited potential", () => {
@@ -19,6 +20,7 @@ test("every registry player has a valid audited potential", () => {
     if (player.potentialStatus === "scouting_source_reviewed_estimate") {
       reviewed++;
       assert.ok(player.potentialSource && player.potentialRationale, `source evidence missing: ${player.name}`);
+      assert.equal(player.potentialEvidence,"published_scouting_sources",`source evidence type missing: ${player.name}`);
       assert.equal(player.potentialReviewRequired,false);
     } else {
       assert.equal(player.potentialStatus,"provisional_model_estimate",`unknown potential status: ${player.name}`);
@@ -70,4 +72,13 @@ test("unresolved leagues are explicit and never assigned a fabricated team", () 
     assert.ok(typeof player.leagueResolution==="string" && player.leagueResolution.length>0,`missing league resolution reason: ${player.name}`);
     assert.ok(player.source,`source trail missing for ${player.name}`);
   }
+});
+
+test("no source-backed exact league correction remains unresolved", () => {
+  const unknown = players.filter(player => player.currentLeague === "UNKNOWN");
+  const unresolved = unknown.filter(player => corrections.some(correction =>
+    correction.playerId && String(correction.playerId) === String(player.id) &&
+    correction.currentLeague && /^https?:\\/\\//.test(correction.source || "")
+  ));
+  assert.deepEqual(unresolved.map(player => player.name),[]);
 });

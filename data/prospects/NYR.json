@@ -2,8 +2,8 @@
   "teamCode": "NYR",
   "source": "https://api-web.nhle.com/v1/prospects/NYR",
   "sourceType": "NHL Web API + source-labelled supplemental pipeline",
-  "syncedUTC": "2026-11-18T09:26:18.970Z",
-  "count": 51,
+  "syncedUTC": "2026-11-19T00:09:23.232Z",
+  "count": 52,
   "prospects": [
     {
       "id": 8486295,
@@ -661,6 +661,32 @@
         "default": "British Columbia",
         "fr": "Colombie-Britannique",
         "sk": "Britská Kolumbia"
+      },
+      "positionGroup": "defensemen"
+    },
+    {
+      "id": 8481743,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/NYR/8481743.png",
+      "firstName": {
+        "default": "Marc"
+      },
+      "lastName": {
+        "default": "Del Gaizo"
+      },
+      "sweaterNumber": 27,
+      "positionCode": "D",
+      "shootsCatches": "L",
+      "heightInInches": 70,
+      "weightInPounds": 187,
+      "heightInCentimeters": 178,
+      "weightInKilograms": 85,
+      "birthDate": "1999-10-11",
+      "birthCity": {
+        "default": "Basking Ridge"
+      },
+      "birthCountry": "USA",
+      "birthStateProvince": {
+        "default": "New Jersey"
       },
       "positionGroup": "defensemen"
     },

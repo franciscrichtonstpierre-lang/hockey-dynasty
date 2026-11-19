@@ -4,7 +4,7 @@
   "season": "2026-2027",
   "seasonId": "88",
   "source": "Official OHL HockeyTech / LeagueStat public player statistics feed",
-  "syncedAt": "2026-11-18T09:26:41.075Z",
+  "syncedAt": "2026-11-19T00:09:49.154Z",
   "endpoints": {
     "skaters": "https://lscluster.hockeytech.com/feed/index.php?feed=statviewfeed&key=f1aa699db3d81487&client_code=ohl&league_id=1&site_id=1&lang=en&view=players&season=88&team=all&limit=1000",
     "goalies": "https://lscluster.hockeytech.com/feed/index.php?feed=statviewfeed&key=f1aa699db3d81487&client_code=ohl&league_id=1&site_id=1&lang=en&view=players&season=88&team=all&limit=1000&position=goalies"
@@ -267,6 +267,34 @@
       "rank": 9
     },
     {
+      "player_id": "9321",
+      "name": "Spencer Bowes",
+      "position": "C",
+      "rookie": "0",
+      "jersey_number": "12",
+      "team_code": "OTT",
+      "games_played": "21",
+      "game_winning_goals": "1",
+      "goals": "16",
+      "shots": "87",
+      "shooting_percentage": "18.4",
+      "assists": "11",
+      "points": "27",
+      "points_per_game": "1.29",
+      "plus_minus": "4",
+      "penalty_minutes": "18",
+      "penalty_minutes_per_game": "0.86",
+      "power_play_goals": "4",
+      "power_play_assists": "4",
+      "short_handed_goals": "0",
+      "short_handed_assists": "0",
+      "shootout_goals": "0",
+      "shootout_attempts": "1",
+      "shootout_winning_goals": "0",
+      "shootout_percentage": "0.0",
+      "rank": 10
+    },
+    {
       "player_id": "9638",
       "name": "Adam Novotný",
       "position": "LW",
@@ -292,7 +320,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 10
+      "rank": 11
     },
     {
       "player_id": "8972",
@@ -320,7 +348,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 11
+      "rank": 12
     },
     {
       "player_id": "9884",
@@ -348,7 +376,7 @@
       "shootout_attempts": "3",
       "shootout_winning_goals": "0",
       "shootout_percentage": "33.3",
-      "rank": 12
+      "rank": 13
     },
     {
       "player_id": "8945",
@@ -376,7 +404,7 @@
       "shootout_attempts": "1",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 13
+      "rank": 14
     },
     {
       "player_id": "9473",
@@ -404,7 +432,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 14
+      "rank": 15
     },
     {
       "player_id": "9685",
@@ -426,34 +454,6 @@
       "penalty_minutes_per_game": "0.35",
       "power_play_goals": "3",
       "power_play_assists": "13",
-      "short_handed_goals": "0",
-      "short_handed_assists": "0",
-      "shootout_goals": "0",
-      "shootout_attempts": "1",
-      "shootout_winning_goals": "0",
-      "shootout_percentage": "0.0",
-      "rank": 15
-    },
-    {
-      "player_id": "9321",
-      "name": "Spencer Bowes",
-      "position": "C",
-      "rookie": "0",
-      "jersey_number": "12",
-      "team_code": "OTT",
-      "games_played": "20",
-      "game_winning_goals": "1",
-      "goals": "15",
-      "shots": "79",
-      "shooting_percentage": "19.0",
-      "assists": "10",
-      "points": "25",
-      "points_per_game": "1.25",
-      "plus_minus": "3",
-      "penalty_minutes": "16",
-      "penalty_minutes_per_game": "0.80",
-      "power_play_goals": "4",
-      "power_play_assists": "3",
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
@@ -519,6 +519,34 @@
       "rank": 18
     },
     {
+      "player_id": "9327",
+      "name": "Landon Wright",
+      "position": "RW",
+      "rookie": "0",
+      "jersey_number": "36",
+      "team_code": "KGN",
+      "games_played": "23",
+      "game_winning_goals": "0",
+      "goals": "8",
+      "shots": "68",
+      "shooting_percentage": "11.8",
+      "assists": "17",
+      "points": "25",
+      "points_per_game": "1.09",
+      "plus_minus": "10",
+      "penalty_minutes": "0",
+      "penalty_minutes_per_game": "0.00",
+      "power_play_goals": "0",
+      "power_play_assists": "1",
+      "short_handed_goals": "0",
+      "short_handed_assists": "0",
+      "shootout_goals": "0",
+      "shootout_attempts": "0",
+      "shootout_winning_goals": "0",
+      "shootout_percentage": "0.0",
+      "rank": 19
+    },
+    {
       "player_id": "9656",
       "name": "Vladimir Dravecky",
       "position": "D",
@@ -544,7 +572,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 19
+      "rank": 20
     },
     {
       "player_id": "8920",
@@ -572,7 +600,7 @@
       "shootout_attempts": "1",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 20
+      "rank": 21
     },
     {
       "player_id": "9576",
@@ -600,7 +628,35 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 21
+      "rank": 22
+    },
+    {
+      "player_id": "9412",
+      "name": "Alex Misiak",
+      "position": "LW",
+      "rookie": "0",
+      "jersey_number": "86",
+      "team_code": "KGN",
+      "games_played": "21",
+      "game_winning_goals": "2",
+      "goals": "9",
+      "shots": "50",
+      "shooting_percentage": "18.0",
+      "assists": "15",
+      "points": "24",
+      "points_per_game": "1.14",
+      "plus_minus": "-4",
+      "penalty_minutes": "17",
+      "penalty_minutes_per_game": "0.81",
+      "power_play_goals": "2",
+      "power_play_assists": "7",
+      "short_handed_goals": "0",
+      "short_handed_assists": "0",
+      "shootout_goals": "0",
+      "shootout_attempts": "1",
+      "shootout_winning_goals": "0",
+      "shootout_percentage": "0.0",
+      "rank": 23
     },
     {
       "player_id": "8927",
@@ -628,35 +684,35 @@
       "shootout_attempts": "1",
       "shootout_winning_goals": "0",
       "shootout_percentage": "100.0",
-      "rank": 22
+      "rank": 24
     },
     {
-      "player_id": "9327",
-      "name": "Landon Wright",
-      "position": "RW",
+      "player_id": "9529",
+      "name": "Tomas Pobezal",
+      "position": "C",
       "rookie": "0",
-      "jersey_number": "36",
+      "jersey_number": "10",
       "team_code": "KGN",
       "games_played": "22",
-      "game_winning_goals": "0",
-      "goals": "8",
-      "shots": "64",
-      "shooting_percentage": "12.5",
-      "assists": "16",
+      "game_winning_goals": "2",
+      "goals": "6",
+      "shots": "53",
+      "shooting_percentage": "11.3",
+      "assists": "18",
       "points": "24",
       "points_per_game": "1.09",
-      "plus_minus": "9",
-      "penalty_minutes": "0",
-      "penalty_minutes_per_game": "0.00",
+      "plus_minus": "-2",
+      "penalty_minutes": "24",
+      "penalty_minutes_per_game": "1.09",
       "power_play_goals": "0",
-      "power_play_assists": "1",
+      "power_play_assists": "7",
       "short_handed_goals": "0",
-      "short_handed_assists": "0",
+      "short_handed_assists": "1",
       "shootout_goals": "0",
-      "shootout_attempts": "0",
+      "shootout_attempts": "1",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 23
+      "rank": 25
     },
     {
       "player_id": "9461",
@@ -684,7 +740,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 24
+      "rank": 26
     },
     {
       "player_id": "9538",
@@ -712,7 +768,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 25
+      "rank": 27
     },
     {
       "player_id": "9226",
@@ -740,35 +796,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 26
-    },
-    {
-      "player_id": "9412",
-      "name": "Alex Misiak",
-      "position": "LW",
-      "rookie": "0",
-      "jersey_number": "86",
-      "team_code": "KGN",
-      "games_played": "20",
-      "game_winning_goals": "2",
-      "goals": "9",
-      "shots": "46",
-      "shooting_percentage": "19.6",
-      "assists": "14",
-      "points": "23",
-      "points_per_game": "1.15",
-      "plus_minus": "-5",
-      "penalty_minutes": "17",
-      "penalty_minutes_per_game": "0.85",
-      "power_play_goals": "2",
-      "power_play_assists": "7",
-      "short_handed_goals": "0",
-      "short_handed_assists": "0",
-      "shootout_goals": "0",
-      "shootout_attempts": "1",
-      "shootout_winning_goals": "0",
-      "shootout_percentage": "0.0",
-      "rank": 27
+      "rank": 28
     },
     {
       "player_id": "8947",
@@ -796,7 +824,7 @@
       "shootout_attempts": "1",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 28
+      "rank": 29
     },
     {
       "player_id": "8802",
@@ -824,35 +852,35 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 29
+      "rank": 30
     },
     {
-      "player_id": "9529",
-      "name": "Tomas Pobezal",
+      "player_id": "9158",
+      "name": "Alex McLean",
       "position": "C",
       "rookie": "0",
-      "jersey_number": "10",
+      "jersey_number": "9",
       "team_code": "KGN",
-      "games_played": "21",
-      "game_winning_goals": "2",
-      "goals": "5",
-      "shots": "50",
-      "shooting_percentage": "10.0",
-      "assists": "18",
+      "games_played": "23",
+      "game_winning_goals": "1",
+      "goals": "8",
+      "shots": "48",
+      "shooting_percentage": "16.7",
+      "assists": "15",
       "points": "23",
-      "points_per_game": "1.10",
-      "plus_minus": "-3",
-      "penalty_minutes": "22",
-      "penalty_minutes_per_game": "1.05",
-      "power_play_goals": "0",
+      "points_per_game": "1.00",
+      "plus_minus": "-6",
+      "penalty_minutes": "4",
+      "penalty_minutes_per_game": "0.17",
+      "power_play_goals": "3",
       "power_play_assists": "7",
       "short_handed_goals": "0",
-      "short_handed_assists": "1",
+      "short_handed_assists": "0",
       "shootout_goals": "0",
-      "shootout_attempts": "1",
+      "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 30
+      "rank": 31
     },
     {
       "player_id": "9769",
@@ -861,17 +889,17 @@
       "rookie": "1",
       "jersey_number": "66",
       "team_code": "BFD",
-      "games_played": "18",
+      "games_played": "19",
       "game_winning_goals": "2",
       "goals": "10",
       "shots": "51",
       "shooting_percentage": "19.6",
       "assists": "12",
       "points": "22",
-      "points_per_game": "1.22",
+      "points_per_game": "1.16",
       "plus_minus": "7",
       "penalty_minutes": "10",
-      "penalty_minutes_per_game": "0.56",
+      "penalty_minutes_per_game": "0.53",
       "power_play_goals": "4",
       "power_play_assists": "4",
       "short_handed_goals": "0",
@@ -880,7 +908,35 @@
       "shootout_attempts": "1",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 31
+      "rank": 32
+    },
+    {
+      "player_id": "9498",
+      "name": "Aleks Kulemin",
+      "position": "C",
+      "rookie": "0",
+      "jersey_number": "41",
+      "team_code": "KGN",
+      "games_played": "23",
+      "game_winning_goals": "1",
+      "goals": "9",
+      "shots": "63",
+      "shooting_percentage": "14.3",
+      "assists": "13",
+      "points": "22",
+      "points_per_game": "0.96",
+      "plus_minus": "11",
+      "penalty_minutes": "16",
+      "penalty_minutes_per_game": "0.70",
+      "power_play_goals": "1",
+      "power_play_assists": "4",
+      "short_handed_goals": "1",
+      "short_handed_assists": "0",
+      "shootout_goals": "0",
+      "shootout_attempts": "1",
+      "shootout_winning_goals": "0",
+      "shootout_percentage": "0.0",
+      "rank": 33
     },
     {
       "player_id": "9162",
@@ -908,7 +964,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 32
+      "rank": 34
     },
     {
       "player_id": "9539",
@@ -936,7 +992,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 33
+      "rank": 35
     },
     {
       "player_id": "9106",
@@ -964,7 +1020,7 @@
       "shootout_attempts": "1",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 34
+      "rank": 36
     },
     {
       "player_id": "10098",
@@ -992,7 +1048,7 @@
       "shootout_attempts": "2",
       "shootout_winning_goals": "1",
       "shootout_percentage": "100.0",
-      "rank": 35
+      "rank": 37
     },
     {
       "player_id": "9178",
@@ -1020,7 +1076,7 @@
       "shootout_attempts": "1",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 36
+      "rank": 38
     },
     {
       "player_id": "9213",
@@ -1048,7 +1104,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 37
+      "rank": 39
     },
     {
       "player_id": "8708",
@@ -1076,35 +1132,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 38
-    },
-    {
-      "player_id": "9158",
-      "name": "Alex McLean",
-      "position": "C",
-      "rookie": "0",
-      "jersey_number": "9",
-      "team_code": "KGN",
-      "games_played": "22",
-      "game_winning_goals": "1",
-      "goals": "7",
-      "shots": "43",
-      "shooting_percentage": "16.3",
-      "assists": "14",
-      "points": "21",
-      "points_per_game": "0.95",
-      "plus_minus": "-7",
-      "penalty_minutes": "4",
-      "penalty_minutes_per_game": "0.18",
-      "power_play_goals": "3",
-      "power_play_assists": "7",
-      "short_handed_goals": "0",
-      "short_handed_assists": "0",
-      "shootout_goals": "0",
-      "shootout_attempts": "0",
-      "shootout_winning_goals": "0",
-      "shootout_percentage": "0.0",
-      "rank": 39
+      "rank": 40
     },
     {
       "player_id": "9181",
@@ -1132,7 +1160,7 @@
       "shootout_attempts": "1",
       "shootout_winning_goals": "0",
       "shootout_percentage": "100.0",
-      "rank": 40
+      "rank": 41
     },
     {
       "player_id": "9175",
@@ -1160,7 +1188,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 41
+      "rank": 42
     },
     {
       "player_id": "9976",
@@ -1188,7 +1216,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 42
+      "rank": 43
     },
     {
       "player_id": "9111",
@@ -1216,7 +1244,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 43
+      "rank": 44
     },
     {
       "player_id": "9017",
@@ -1244,7 +1272,7 @@
       "shootout_attempts": "1",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 44
+      "rank": 45
     },
     {
       "player_id": "9773",
@@ -1270,34 +1298,6 @@
       "short_handed_assists": "0",
       "shootout_goals": "0",
       "shootout_attempts": "2",
-      "shootout_winning_goals": "0",
-      "shootout_percentage": "0.0",
-      "rank": 45
-    },
-    {
-      "player_id": "9498",
-      "name": "Aleks Kulemin",
-      "position": "C",
-      "rookie": "0",
-      "jersey_number": "41",
-      "team_code": "KGN",
-      "games_played": "22",
-      "game_winning_goals": "1",
-      "goals": "7",
-      "shots": "58",
-      "shooting_percentage": "12.1",
-      "assists": "13",
-      "points": "20",
-      "points_per_game": "0.91",
-      "plus_minus": "8",
-      "penalty_minutes": "16",
-      "penalty_minutes_per_game": "0.73",
-      "power_play_goals": "1",
-      "power_play_assists": "4",
-      "short_handed_goals": "1",
-      "short_handed_assists": "0",
-      "shootout_goals": "0",
-      "shootout_attempts": "1",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
       "rank": 46
@@ -1477,17 +1477,17 @@
       "rookie": "0",
       "jersey_number": "10",
       "team_code": "OS",
-      "games_played": "20",
+      "games_played": "21",
       "game_winning_goals": "0",
       "goals": "8",
       "shots": "53",
       "shooting_percentage": "15.1",
       "assists": "11",
       "points": "19",
-      "points_per_game": "0.95",
+      "points_per_game": "0.90",
       "plus_minus": "2",
       "penalty_minutes": "16",
-      "penalty_minutes_per_game": "0.80",
+      "penalty_minutes_per_game": "0.76",
       "power_play_goals": "2",
       "power_play_assists": "6",
       "short_handed_goals": "1",
@@ -1611,6 +1611,34 @@
       "rank": 57
     },
     {
+      "player_id": "9523",
+      "name": "Arseny Pronin",
+      "position": "LW",
+      "rookie": "0",
+      "jersey_number": "20",
+      "team_code": "NB",
+      "games_played": "22",
+      "game_winning_goals": "2",
+      "goals": "13",
+      "shots": "53",
+      "shooting_percentage": "24.5",
+      "assists": "5",
+      "points": "18",
+      "points_per_game": "0.82",
+      "plus_minus": "10",
+      "penalty_minutes": "13",
+      "penalty_minutes_per_game": "0.59",
+      "power_play_goals": "0",
+      "power_play_assists": "1",
+      "short_handed_goals": "1",
+      "short_handed_assists": "1",
+      "shootout_goals": "0",
+      "shootout_attempts": "0",
+      "shootout_winning_goals": "0",
+      "shootout_percentage": "0.0",
+      "rank": 58
+    },
+    {
       "player_id": "9040",
       "name": "Reyth Smith",
       "position": "LW",
@@ -1636,7 +1664,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 58
+      "rank": 59
     },
     {
       "player_id": "9373",
@@ -1664,7 +1692,7 @@
       "shootout_attempts": "1",
       "shootout_winning_goals": "1",
       "shootout_percentage": "100.0",
-      "rank": 59
+      "rank": 60
     },
     {
       "player_id": "8924",
@@ -1673,17 +1701,17 @@
       "rookie": "0",
       "jersey_number": "24",
       "team_code": "NB",
-      "games_played": "21",
+      "games_played": "22",
       "game_winning_goals": "0",
       "goals": "8",
       "shots": "70",
       "shooting_percentage": "11.4",
       "assists": "10",
       "points": "18",
-      "points_per_game": "0.86",
-      "plus_minus": "2",
+      "points_per_game": "0.82",
+      "plus_minus": "3",
       "penalty_minutes": "14",
-      "penalty_minutes_per_game": "0.67",
+      "penalty_minutes_per_game": "0.64",
       "power_play_goals": "2",
       "power_play_assists": "4",
       "short_handed_goals": "0",
@@ -1692,7 +1720,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 60
+      "rank": 61
     },
     {
       "player_id": "9281",
@@ -1701,17 +1729,17 @@
       "rookie": "0",
       "jersey_number": "13",
       "team_code": "KIT",
-      "games_played": "22",
+      "games_played": "23",
       "game_winning_goals": "1",
       "goals": "8",
       "shots": "57",
       "shooting_percentage": "14.0",
       "assists": "10",
       "points": "18",
-      "points_per_game": "0.82",
+      "points_per_game": "0.78",
       "plus_minus": "7",
       "penalty_minutes": "13",
-      "penalty_minutes_per_game": "0.59",
+      "penalty_minutes_per_game": "0.57",
       "power_play_goals": "2",
       "power_play_assists": "2",
       "short_handed_goals": "0",
@@ -1720,7 +1748,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 61
+      "rank": 62
     },
     {
       "player_id": "9950",
@@ -1748,7 +1776,35 @@
       "shootout_attempts": "1",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 62
+      "rank": 63
+    },
+    {
+      "player_id": "9525",
+      "name": "Robin Kuzma",
+      "position": "LW",
+      "rookie": "0",
+      "jersey_number": "91",
+      "team_code": "KGN",
+      "games_played": "23",
+      "game_winning_goals": "1",
+      "goals": "7",
+      "shots": "58",
+      "shooting_percentage": "12.1",
+      "assists": "11",
+      "points": "18",
+      "points_per_game": "0.78",
+      "plus_minus": "10",
+      "penalty_minutes": "6",
+      "penalty_minutes_per_game": "0.26",
+      "power_play_goals": "0",
+      "power_play_assists": "0",
+      "short_handed_goals": "1",
+      "short_handed_assists": "1",
+      "shootout_goals": "0",
+      "shootout_attempts": "0",
+      "shootout_winning_goals": "0",
+      "shootout_percentage": "0.0",
+      "rank": 64
     },
     {
       "player_id": "9599",
@@ -1776,7 +1832,7 @@
       "shootout_attempts": "1",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 63
+      "rank": 65
     },
     {
       "player_id": "9517",
@@ -1804,7 +1860,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 64
+      "rank": 66
     },
     {
       "player_id": "9126",
@@ -1832,7 +1888,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 65
+      "rank": 67
     },
     {
       "player_id": "9574",
@@ -1860,35 +1916,7 @@
       "shootout_attempts": "1",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 66
-    },
-    {
-      "player_id": "9523",
-      "name": "Arseny Pronin",
-      "position": "LW",
-      "rookie": "0",
-      "jersey_number": "20",
-      "team_code": "NB",
-      "games_played": "21",
-      "game_winning_goals": "2",
-      "goals": "12",
-      "shots": "52",
-      "shooting_percentage": "23.1",
-      "assists": "5",
-      "points": "17",
-      "points_per_game": "0.81",
-      "plus_minus": "9",
-      "penalty_minutes": "13",
-      "penalty_minutes_per_game": "0.62",
-      "power_play_goals": "0",
-      "power_play_assists": "1",
-      "short_handed_goals": "1",
-      "short_handed_assists": "1",
-      "shootout_goals": "0",
-      "shootout_attempts": "0",
-      "shootout_winning_goals": "0",
-      "shootout_percentage": "0.0",
-      "rank": 67
+      "rank": 68
     },
     {
       "player_id": "9596",
@@ -1916,7 +1944,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 68
+      "rank": 69
     },
     {
       "player_id": "9333",
@@ -1944,7 +1972,7 @@
       "shootout_attempts": "2",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 69
+      "rank": 70
     },
     {
       "player_id": "9200",
@@ -1970,34 +1998,6 @@
       "short_handed_assists": "0",
       "shootout_goals": "0",
       "shootout_attempts": "0",
-      "shootout_winning_goals": "0",
-      "shootout_percentage": "0.0",
-      "rank": 70
-    },
-    {
-      "player_id": "10082",
-      "name": "Adam Goljer",
-      "position": "D",
-      "rookie": "0",
-      "jersey_number": "8",
-      "team_code": "KGN",
-      "games_played": "20",
-      "game_winning_goals": "1",
-      "goals": "8",
-      "shots": "51",
-      "shooting_percentage": "15.7",
-      "assists": "9",
-      "points": "17",
-      "points_per_game": "0.85",
-      "plus_minus": "-10",
-      "penalty_minutes": "6",
-      "penalty_minutes_per_game": "0.30",
-      "power_play_goals": "6",
-      "power_play_assists": "5",
-      "short_handed_goals": "0",
-      "short_handed_assists": "0",
-      "shootout_goals": "0",
-      "shootout_attempts": "1",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
       "rank": 71
@@ -2031,6 +2031,34 @@
       "rank": 72
     },
     {
+      "player_id": "10082",
+      "name": "Adam Goljer",
+      "position": "D",
+      "rookie": "0",
+      "jersey_number": "8",
+      "team_code": "KGN",
+      "games_played": "21",
+      "game_winning_goals": "1",
+      "goals": "8",
+      "shots": "51",
+      "shooting_percentage": "15.7",
+      "assists": "9",
+      "points": "17",
+      "points_per_game": "0.81",
+      "plus_minus": "-7",
+      "penalty_minutes": "10",
+      "penalty_minutes_per_game": "0.48",
+      "power_play_goals": "6",
+      "power_play_assists": "5",
+      "short_handed_goals": "0",
+      "short_handed_assists": "0",
+      "shootout_goals": "0",
+      "shootout_attempts": "1",
+      "shootout_winning_goals": "0",
+      "shootout_percentage": "0.0",
+      "rank": 73
+    },
+    {
       "player_id": "8990",
       "name": "Jacob Cloutier",
       "position": "RW",
@@ -2056,7 +2084,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 73
+      "rank": 74
     },
     {
       "player_id": "8991",
@@ -2080,34 +2108,6 @@
       "power_play_assists": "3",
       "short_handed_goals": "0",
       "short_handed_assists": "0",
-      "shootout_goals": "0",
-      "shootout_attempts": "0",
-      "shootout_winning_goals": "0",
-      "shootout_percentage": "0.0",
-      "rank": 74
-    },
-    {
-      "player_id": "9525",
-      "name": "Robin Kuzma",
-      "position": "LW",
-      "rookie": "0",
-      "jersey_number": "91",
-      "team_code": "KGN",
-      "games_played": "22",
-      "game_winning_goals": "1",
-      "goals": "7",
-      "shots": "56",
-      "shooting_percentage": "12.5",
-      "assists": "10",
-      "points": "17",
-      "points_per_game": "0.77",
-      "plus_minus": "7",
-      "penalty_minutes": "6",
-      "penalty_minutes_per_game": "0.27",
-      "power_play_goals": "0",
-      "power_play_assists": "0",
-      "short_handed_goals": "1",
-      "short_handed_assists": "1",
       "shootout_goals": "0",
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
@@ -2177,17 +2177,17 @@
       "rookie": "0",
       "jersey_number": "26",
       "team_code": "SBY",
-      "games_played": "19",
+      "games_played": "20",
       "game_winning_goals": "0",
       "goals": "5",
       "shots": "45",
       "shooting_percentage": "11.1",
       "assists": "12",
       "points": "17",
-      "points_per_game": "0.89",
+      "points_per_game": "0.85",
       "plus_minus": "-4",
       "penalty_minutes": "2",
-      "penalty_minutes_per_game": "0.11",
+      "penalty_minutes_per_game": "0.10",
       "power_play_goals": "4",
       "power_play_assists": "6",
       "short_handed_goals": "0",
@@ -2227,6 +2227,34 @@
       "rank": 79
     },
     {
+      "player_id": "8977",
+      "name": "Chase Yanni",
+      "position": "LW",
+      "rookie": "0",
+      "jersey_number": "16",
+      "team_code": "OTT",
+      "games_played": "19",
+      "game_winning_goals": "0",
+      "goals": "4",
+      "shots": "46",
+      "shooting_percentage": "8.7",
+      "assists": "13",
+      "points": "17",
+      "points_per_game": "0.89",
+      "plus_minus": "9",
+      "penalty_minutes": "11",
+      "penalty_minutes_per_game": "0.58",
+      "power_play_goals": "0",
+      "power_play_assists": "2",
+      "short_handed_goals": "0",
+      "short_handed_assists": "1",
+      "shootout_goals": "0",
+      "shootout_attempts": "0",
+      "shootout_winning_goals": "0",
+      "shootout_percentage": "0.0",
+      "rank": 80
+    },
+    {
       "player_id": "9560",
       "name": "John Banks",
       "position": "D",
@@ -2252,7 +2280,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 80
+      "rank": 81
     },
     {
       "player_id": "9522",
@@ -2261,17 +2289,17 @@
       "rookie": "0",
       "jersey_number": "13",
       "team_code": "OTT",
-      "games_played": "19",
+      "games_played": "20",
       "game_winning_goals": "1",
       "goals": "8",
       "shots": "49",
       "shooting_percentage": "16.3",
       "assists": "8",
       "points": "16",
-      "points_per_game": "0.84",
-      "plus_minus": "0",
+      "points_per_game": "0.80",
+      "plus_minus": "-1",
       "penalty_minutes": "2",
-      "penalty_minutes_per_game": "0.11",
+      "penalty_minutes_per_game": "0.10",
       "power_play_goals": "4",
       "power_play_assists": "2",
       "short_handed_goals": "0",
@@ -2280,7 +2308,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 81
+      "rank": 82
     },
     {
       "player_id": "8800",
@@ -2308,7 +2336,7 @@
       "shootout_attempts": "1",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 82
+      "rank": 83
     },
     {
       "player_id": "9793",
@@ -2336,7 +2364,7 @@
       "shootout_attempts": "1",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 83
+      "rank": 84
     },
     {
       "player_id": "9552",
@@ -2364,7 +2392,7 @@
       "shootout_attempts": "1",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 84
+      "rank": 85
     },
     {
       "player_id": "9418",
@@ -2392,7 +2420,35 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 85
+      "rank": 86
+    },
+    {
+      "player_id": "9137",
+      "name": "Nolan Buttar",
+      "position": "LW",
+      "rookie": "0",
+      "jersey_number": "22",
+      "team_code": "KGN",
+      "games_played": "23",
+      "game_winning_goals": "3",
+      "goals": "6",
+      "shots": "37",
+      "shooting_percentage": "16.2",
+      "assists": "10",
+      "points": "16",
+      "points_per_game": "0.70",
+      "plus_minus": "5",
+      "penalty_minutes": "16",
+      "penalty_minutes_per_game": "0.70",
+      "power_play_goals": "0",
+      "power_play_assists": "0",
+      "short_handed_goals": "1",
+      "short_handed_assists": "0",
+      "shootout_goals": "0",
+      "shootout_attempts": "0",
+      "shootout_winning_goals": "0",
+      "shootout_percentage": "0.0",
+      "rank": 87
     },
     {
       "player_id": "10018",
@@ -2420,7 +2476,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 86
+      "rank": 88
     },
     {
       "player_id": "9446",
@@ -2448,35 +2504,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 87
-    },
-    {
-      "player_id": "8977",
-      "name": "Chase Yanni",
-      "position": "LW",
-      "rookie": "0",
-      "jersey_number": "16",
-      "team_code": "OTT",
-      "games_played": "18",
-      "game_winning_goals": "0",
-      "goals": "4",
-      "shots": "39",
-      "shooting_percentage": "10.3",
-      "assists": "12",
-      "points": "16",
-      "points_per_game": "0.89",
-      "plus_minus": "8",
-      "penalty_minutes": "9",
-      "penalty_minutes_per_game": "0.50",
-      "power_play_goals": "0",
-      "power_play_assists": "2",
-      "short_handed_goals": "0",
-      "short_handed_assists": "1",
-      "shootout_goals": "0",
-      "shootout_attempts": "0",
-      "shootout_winning_goals": "0",
-      "shootout_percentage": "0.0",
-      "rank": 88
+      "rank": 89
     },
     {
       "player_id": "9478",
@@ -2504,7 +2532,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 89
+      "rank": 90
     },
     {
       "player_id": "9395",
@@ -2532,7 +2560,7 @@
       "shootout_attempts": "1",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 90
+      "rank": 91
     },
     {
       "player_id": "9668",
@@ -2560,7 +2588,35 @@
       "shootout_attempts": "1",
       "shootout_winning_goals": "0",
       "shootout_percentage": "100.0",
-      "rank": 91
+      "rank": 92
+    },
+    {
+      "player_id": "9228",
+      "name": "Cole Zurawski",
+      "position": "RW",
+      "rookie": "0",
+      "jersey_number": "44",
+      "team_code": "KGN",
+      "games_played": "19",
+      "game_winning_goals": "0",
+      "goals": "6",
+      "shots": "70",
+      "shooting_percentage": "8.6",
+      "assists": "9",
+      "points": "15",
+      "points_per_game": "0.79",
+      "plus_minus": "-10",
+      "penalty_minutes": "20",
+      "penalty_minutes_per_game": "1.05",
+      "power_play_goals": "2",
+      "power_play_assists": "6",
+      "short_handed_goals": "0",
+      "short_handed_assists": "0",
+      "shootout_goals": "1",
+      "shootout_attempts": "1",
+      "shootout_winning_goals": "0",
+      "shootout_percentage": "100.0",
+      "rank": 93
     },
     {
       "player_id": "9105",
@@ -2588,7 +2644,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 92
+      "rank": 94
     },
     {
       "player_id": "9261",
@@ -2616,7 +2672,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 93
+      "rank": 95
     },
     {
       "player_id": "8799",
@@ -2644,7 +2700,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 94
+      "rank": 96
     },
     {
       "player_id": "9554",
@@ -2672,7 +2728,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 95
+      "rank": 97
     },
     {
       "player_id": "9823",
@@ -2700,7 +2756,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 96
+      "rank": 98
     },
     {
       "player_id": "9921",
@@ -2728,7 +2784,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 97
+      "rank": 99
     },
     {
       "player_id": "9580",
@@ -2756,7 +2812,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 98
+      "rank": 100
     },
     {
       "player_id": "9784",
@@ -2784,7 +2840,7 @@
       "shootout_attempts": "1",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 99
+      "rank": 101
     },
     {
       "player_id": "9234",
@@ -2812,7 +2868,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 100
+      "rank": 102
     },
     {
       "player_id": "9160",
@@ -2840,35 +2896,35 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 101
+      "rank": 103
     },
     {
-      "player_id": "9137",
-      "name": "Nolan Buttar",
-      "position": "LW",
+      "player_id": "9516",
+      "name": "Brock Chitaroni",
+      "position": "RW",
       "rookie": "0",
-      "jersey_number": "22",
-      "team_code": "KGN",
-      "games_played": "22",
-      "game_winning_goals": "3",
-      "goals": "6",
-      "shots": "35",
-      "shooting_percentage": "17.1",
-      "assists": "8",
+      "jersey_number": "17",
+      "team_code": "OTT",
+      "games_played": "21",
+      "game_winning_goals": "0",
+      "goals": "4",
+      "shots": "42",
+      "shooting_percentage": "9.5",
+      "assists": "10",
       "points": "14",
-      "points_per_game": "0.64",
-      "plus_minus": "3",
-      "penalty_minutes": "16",
-      "penalty_minutes_per_game": "0.73",
+      "points_per_game": "0.67",
+      "plus_minus": "-8",
+      "penalty_minutes": "2",
+      "penalty_minutes_per_game": "0.10",
       "power_play_goals": "0",
-      "power_play_assists": "0",
-      "short_handed_goals": "1",
+      "power_play_assists": "4",
+      "short_handed_goals": "2",
       "short_handed_assists": "0",
       "shootout_goals": "0",
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 102
+      "rank": 104
     },
     {
       "player_id": "9358",
@@ -2896,7 +2952,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 103
+      "rank": 105
     },
     {
       "player_id": "9833",
@@ -2924,7 +2980,7 @@
       "shootout_attempts": "1",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 104
+      "rank": 106
     },
     {
       "player_id": "9285",
@@ -2952,7 +3008,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 105
+      "rank": 107
     },
     {
       "player_id": "9030",
@@ -2961,17 +3017,17 @@
       "rookie": "0",
       "jersey_number": "34",
       "team_code": "OS",
-      "games_played": "19",
+      "games_played": "20",
       "game_winning_goals": "1",
       "goals": "7",
       "shots": "46",
       "shooting_percentage": "15.2",
       "assists": "6",
       "points": "13",
-      "points_per_game": "0.68",
-      "plus_minus": "-8",
+      "points_per_game": "0.65",
+      "plus_minus": "-9",
       "penalty_minutes": "6",
-      "penalty_minutes_per_game": "0.32",
+      "penalty_minutes_per_game": "0.30",
       "power_play_goals": "4",
       "power_play_assists": "2",
       "short_handed_goals": "0",
@@ -2980,7 +3036,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 106
+      "rank": 108
     },
     {
       "player_id": "8926",
@@ -3008,7 +3064,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 107
+      "rank": 109
     },
     {
       "player_id": "9242",
@@ -3036,35 +3092,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 108
-    },
-    {
-      "player_id": "9228",
-      "name": "Cole Zurawski",
-      "position": "RW",
-      "rookie": "0",
-      "jersey_number": "44",
-      "team_code": "KGN",
-      "games_played": "18",
-      "game_winning_goals": "0",
-      "goals": "6",
-      "shots": "69",
-      "shooting_percentage": "8.7",
-      "assists": "7",
-      "points": "13",
-      "points_per_game": "0.72",
-      "plus_minus": "-13",
-      "penalty_minutes": "18",
-      "penalty_minutes_per_game": "1.00",
-      "power_play_goals": "2",
-      "power_play_assists": "6",
-      "short_handed_goals": "0",
-      "short_handed_assists": "0",
-      "shootout_goals": "1",
-      "shootout_attempts": "1",
-      "shootout_winning_goals": "0",
-      "shootout_percentage": "100.0",
-      "rank": 109
+      "rank": 110
     },
     {
       "player_id": "9044",
@@ -3092,7 +3120,35 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 110
+      "rank": 111
+    },
+    {
+      "player_id": "8976",
+      "name": "Nic Whitehead",
+      "position": "C",
+      "rookie": "0",
+      "jersey_number": "10",
+      "team_code": "OTT",
+      "games_played": "21",
+      "game_winning_goals": "1",
+      "goals": "6",
+      "shots": "55",
+      "shooting_percentage": "10.9",
+      "assists": "7",
+      "points": "13",
+      "points_per_game": "0.62",
+      "plus_minus": "-11",
+      "penalty_minutes": "4",
+      "penalty_minutes_per_game": "0.19",
+      "power_play_goals": "2",
+      "power_play_assists": "5",
+      "short_handed_goals": "0",
+      "short_handed_assists": "0",
+      "shootout_goals": "1",
+      "shootout_attempts": "1",
+      "shootout_winning_goals": "1",
+      "shootout_percentage": "100.0",
+      "rank": 112
     },
     {
       "player_id": "9108",
@@ -3120,7 +3176,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 111
+      "rank": 113
     },
     {
       "player_id": "8731",
@@ -3129,14 +3185,14 @@
       "rookie": "0",
       "jersey_number": "17",
       "team_code": "PBO",
-      "games_played": "15",
+      "games_played": "16",
       "game_winning_goals": "1",
       "goals": "5",
       "shots": "29",
       "shooting_percentage": "17.2",
       "assists": "8",
       "points": "13",
-      "points_per_game": "0.87",
+      "points_per_game": "0.81",
       "plus_minus": "3",
       "penalty_minutes": "2",
       "penalty_minutes_per_game": "0.13",
@@ -3148,7 +3204,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 112
+      "rank": 114
     },
     {
       "player_id": "10015",
@@ -3176,35 +3232,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 113
-    },
-    {
-      "player_id": "9516",
-      "name": "Brock Chitaroni",
-      "position": "RW",
-      "rookie": "0",
-      "jersey_number": "17",
-      "team_code": "OTT",
-      "games_played": "20",
-      "game_winning_goals": "0",
-      "goals": "4",
-      "shots": "40",
-      "shooting_percentage": "10.0",
-      "assists": "9",
-      "points": "13",
-      "points_per_game": "0.65",
-      "plus_minus": "-9",
-      "penalty_minutes": "2",
-      "penalty_minutes_per_game": "0.10",
-      "power_play_goals": "0",
-      "power_play_assists": "4",
-      "short_handed_goals": "2",
-      "short_handed_assists": "0",
-      "shootout_goals": "0",
-      "shootout_attempts": "0",
-      "shootout_winning_goals": "0",
-      "shootout_percentage": "0.0",
-      "rank": 114
+      "rank": 115
     },
     {
       "player_id": "9391",
@@ -3232,7 +3260,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 115
+      "rank": 116
     },
     {
       "player_id": "9027",
@@ -3260,7 +3288,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 116
+      "rank": 117
     },
     {
       "player_id": "8958",
@@ -3288,7 +3316,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 117
+      "rank": 118
     },
     {
       "player_id": "9322",
@@ -3316,7 +3344,35 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 118
+      "rank": 119
+    },
+    {
+      "player_id": "8820",
+      "name": "Vann Williamson",
+      "position": "D",
+      "rookie": "0",
+      "jersey_number": "27",
+      "team_code": "KGN",
+      "games_played": "21",
+      "game_winning_goals": "0",
+      "goals": "3",
+      "shots": "26",
+      "shooting_percentage": "11.5",
+      "assists": "10",
+      "points": "13",
+      "points_per_game": "0.62",
+      "plus_minus": "4",
+      "penalty_minutes": "28",
+      "penalty_minutes_per_game": "1.33",
+      "power_play_goals": "1",
+      "power_play_assists": "1",
+      "short_handed_goals": "0",
+      "short_handed_assists": "0",
+      "shootout_goals": "0",
+      "shootout_attempts": "0",
+      "shootout_winning_goals": "0",
+      "shootout_percentage": "0.0",
+      "rank": 120
     },
     {
       "player_id": "9572",
@@ -3344,7 +3400,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 119
+      "rank": 121
     },
     {
       "player_id": "9458",
@@ -3372,7 +3428,7 @@
       "shootout_attempts": "2",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 120
+      "rank": 122
     },
     {
       "player_id": "9229",
@@ -3400,35 +3456,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 121
-    },
-    {
-      "player_id": "9436",
-      "name": "Brenner Lammens",
-      "position": "C",
-      "rookie": "0",
-      "jersey_number": "93",
-      "team_code": "OS",
-      "games_played": "21",
-      "game_winning_goals": "2",
-      "goals": "6",
-      "shots": "45",
-      "shooting_percentage": "13.3",
-      "assists": "6",
-      "points": "12",
-      "points_per_game": "0.57",
-      "plus_minus": "-10",
-      "penalty_minutes": "31",
-      "penalty_minutes_per_game": "1.48",
-      "power_play_goals": "2",
-      "power_play_assists": "1",
-      "short_handed_goals": "0",
-      "short_handed_assists": "0",
-      "shootout_goals": "0",
-      "shootout_attempts": "0",
-      "shootout_winning_goals": "0",
-      "shootout_percentage": "0.0",
-      "rank": 122
+      "rank": 123
     },
     {
       "player_id": "9166",
@@ -3456,7 +3484,35 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 123
+      "rank": 124
+    },
+    {
+      "player_id": "9436",
+      "name": "Brenner Lammens",
+      "position": "C",
+      "rookie": "0",
+      "jersey_number": "93",
+      "team_code": "OS",
+      "games_played": "22",
+      "game_winning_goals": "2",
+      "goals": "6",
+      "shots": "45",
+      "shooting_percentage": "13.3",
+      "assists": "6",
+      "points": "12",
+      "points_per_game": "0.55",
+      "plus_minus": "-11",
+      "penalty_minutes": "31",
+      "penalty_minutes_per_game": "1.41",
+      "power_play_goals": "2",
+      "power_play_assists": "1",
+      "short_handed_goals": "0",
+      "short_handed_assists": "0",
+      "shootout_goals": "0",
+      "shootout_attempts": "0",
+      "shootout_winning_goals": "0",
+      "shootout_percentage": "0.0",
+      "rank": 125
     },
     {
       "player_id": "9221",
@@ -3484,7 +3540,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 124
+      "rank": 126
     },
     {
       "player_id": "10034",
@@ -3512,7 +3568,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 125
+      "rank": 127
     },
     {
       "player_id": "9765",
@@ -3540,35 +3596,7 @@
       "shootout_attempts": "1",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 126
-    },
-    {
-      "player_id": "8976",
-      "name": "Nic Whitehead",
-      "position": "C",
-      "rookie": "0",
-      "jersey_number": "10",
-      "team_code": "OTT",
-      "games_played": "20",
-      "game_winning_goals": "1",
-      "goals": "5",
-      "shots": "51",
-      "shooting_percentage": "9.8",
-      "assists": "7",
-      "points": "12",
-      "points_per_game": "0.60",
-      "plus_minus": "-6",
-      "penalty_minutes": "4",
-      "penalty_minutes_per_game": "0.20",
-      "power_play_goals": "1",
-      "power_play_assists": "5",
-      "short_handed_goals": "0",
-      "short_handed_assists": "0",
-      "shootout_goals": "1",
-      "shootout_attempts": "1",
-      "shootout_winning_goals": "1",
-      "shootout_percentage": "100.0",
-      "rank": 127
+      "rank": 128
     },
     {
       "player_id": "9806",
@@ -3596,7 +3624,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 128
+      "rank": 129
     },
     {
       "player_id": "9980",
@@ -3624,7 +3652,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 129
+      "rank": 130
     },
     {
       "player_id": "8987",
@@ -3633,17 +3661,17 @@
       "rookie": "0",
       "jersey_number": "19",
       "team_code": "NB",
-      "games_played": "21",
+      "games_played": "22",
       "game_winning_goals": "1",
       "goals": "4",
       "shots": "37",
       "shooting_percentage": "10.8",
       "assists": "8",
       "points": "12",
-      "points_per_game": "0.57",
+      "points_per_game": "0.55",
       "plus_minus": "-10",
       "penalty_minutes": "20",
-      "penalty_minutes_per_game": "0.95",
+      "penalty_minutes_per_game": "0.91",
       "power_play_goals": "1",
       "power_play_assists": "2",
       "short_handed_goals": "1",
@@ -3652,7 +3680,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 130
+      "rank": 131
     },
     {
       "player_id": "9130",
@@ -3674,34 +3702,6 @@
       "penalty_minutes_per_game": "1.05",
       "power_play_goals": "0",
       "power_play_assists": "0",
-      "short_handed_goals": "0",
-      "short_handed_assists": "0",
-      "shootout_goals": "0",
-      "shootout_attempts": "0",
-      "shootout_winning_goals": "0",
-      "shootout_percentage": "0.0",
-      "rank": 131
-    },
-    {
-      "player_id": "8820",
-      "name": "Vann Williamson",
-      "position": "D",
-      "rookie": "0",
-      "jersey_number": "27",
-      "team_code": "KGN",
-      "games_played": "20",
-      "game_winning_goals": "0",
-      "goals": "2",
-      "shots": "25",
-      "shooting_percentage": "8.0",
-      "assists": "10",
-      "points": "12",
-      "points_per_game": "0.60",
-      "plus_minus": "2",
-      "penalty_minutes": "28",
-      "penalty_minutes_per_game": "1.40",
-      "power_play_goals": "1",
-      "power_play_assists": "1",
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
@@ -4047,34 +4047,6 @@
       "rank": 144
     },
     {
-      "player_id": "10037",
-      "name": "Dmitry Savin",
-      "position": "C",
-      "rookie": "1",
-      "jersey_number": "8",
-      "team_code": "NB",
-      "games_played": "20",
-      "game_winning_goals": "1",
-      "goals": "4",
-      "shots": "44",
-      "shooting_percentage": "9.1",
-      "assists": "7",
-      "points": "11",
-      "points_per_game": "0.55",
-      "plus_minus": "4",
-      "penalty_minutes": "6",
-      "penalty_minutes_per_game": "0.30",
-      "power_play_goals": "1",
-      "power_play_assists": "2",
-      "short_handed_goals": "0",
-      "short_handed_assists": "0",
-      "shootout_goals": "0",
-      "shootout_attempts": "0",
-      "shootout_winning_goals": "0",
-      "shootout_percentage": "0.0",
-      "rank": 145
-    },
-    {
       "player_id": "9438",
       "name": "Linus Funck",
       "position": "D",
@@ -4100,7 +4072,7 @@
       "shootout_attempts": "1",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 146
+      "rank": 145
     },
     {
       "player_id": "9774",
@@ -4128,6 +4100,34 @@
       "shootout_attempts": "2",
       "shootout_winning_goals": "1",
       "shootout_percentage": "100.0",
+      "rank": 146
+    },
+    {
+      "player_id": "10037",
+      "name": "Dmitry Savin",
+      "position": "C",
+      "rookie": "1",
+      "jersey_number": "8",
+      "team_code": "NB",
+      "games_played": "21",
+      "game_winning_goals": "1",
+      "goals": "4",
+      "shots": "44",
+      "shooting_percentage": "9.1",
+      "assists": "7",
+      "points": "11",
+      "points_per_game": "0.52",
+      "plus_minus": "5",
+      "penalty_minutes": "6",
+      "penalty_minutes_per_game": "0.29",
+      "power_play_goals": "1",
+      "power_play_assists": "2",
+      "short_handed_goals": "0",
+      "short_handed_assists": "0",
+      "shootout_goals": "0",
+      "shootout_attempts": "0",
+      "shootout_winning_goals": "0",
+      "shootout_percentage": "0.0",
       "rank": 147
     },
     {
@@ -4473,17 +4473,17 @@
       "rookie": "0",
       "jersey_number": "25",
       "team_code": "KGN",
-      "games_played": "22",
+      "games_played": "23",
       "game_winning_goals": "0",
       "goals": "4",
-      "shots": "21",
-      "shooting_percentage": "19.0",
+      "shots": "22",
+      "shooting_percentage": "18.2",
       "assists": "6",
       "points": "10",
-      "points_per_game": "0.45",
+      "points_per_game": "0.43",
       "plus_minus": "-2",
       "penalty_minutes": "10",
-      "penalty_minutes_per_game": "0.45",
+      "penalty_minutes_per_game": "0.43",
       "power_play_goals": "0",
       "power_play_assists": "0",
       "short_handed_goals": "0",
@@ -4669,17 +4669,17 @@
       "rookie": "0",
       "jersey_number": "19",
       "team_code": "OTT",
-      "games_played": "20",
+      "games_played": "21",
       "game_winning_goals": "0",
       "goals": "1",
-      "shots": "64",
-      "shooting_percentage": "1.6",
+      "shots": "67",
+      "shooting_percentage": "1.5",
       "assists": "9",
       "points": "10",
-      "points_per_game": "0.50",
-      "plus_minus": "-2",
+      "points_per_game": "0.48",
+      "plus_minus": "-4",
       "penalty_minutes": "18",
-      "penalty_minutes_per_game": "0.90",
+      "penalty_minutes_per_game": "0.86",
       "power_play_goals": "0",
       "power_play_assists": "3",
       "short_handed_goals": "0",
@@ -5677,14 +5677,14 @@
       "rookie": "1",
       "jersey_number": "9",
       "team_code": "OTT",
-      "games_played": "15",
+      "games_played": "16",
       "game_winning_goals": "1",
       "goals": "4",
       "shots": "17",
       "shooting_percentage": "23.5",
       "assists": "3",
       "points": "7",
-      "points_per_game": "0.47",
+      "points_per_game": "0.44",
       "plus_minus": "-8",
       "penalty_minutes": "0",
       "penalty_minutes_per_game": "0.00",
@@ -5873,17 +5873,17 @@
       "rookie": "0",
       "jersey_number": "44",
       "team_code": "OS",
-      "games_played": "21",
+      "games_played": "22",
       "game_winning_goals": "0",
       "goals": "3",
       "shots": "45",
       "shooting_percentage": "6.7",
       "assists": "4",
       "points": "7",
-      "points_per_game": "0.33",
-      "plus_minus": "-9",
+      "points_per_game": "0.32",
+      "plus_minus": "-10",
       "penalty_minutes": "20",
-      "penalty_minutes_per_game": "0.95",
+      "penalty_minutes_per_game": "0.91",
       "power_play_goals": "0",
       "power_play_assists": "2",
       "short_handed_goals": "0",
@@ -5951,34 +5951,6 @@
       "rank": 212
     },
     {
-      "player_id": "9099",
-      "name": "Blake Clayton",
-      "position": "C",
-      "rookie": "0",
-      "jersey_number": "19",
-      "team_code": "SBY",
-      "games_played": "16",
-      "game_winning_goals": "0",
-      "goals": "2",
-      "shots": "23",
-      "shooting_percentage": "8.7",
-      "assists": "5",
-      "points": "7",
-      "points_per_game": "0.44",
-      "plus_minus": "6",
-      "penalty_minutes": "17",
-      "penalty_minutes_per_game": "1.06",
-      "power_play_goals": "0",
-      "power_play_assists": "1",
-      "short_handed_goals": "0",
-      "short_handed_assists": "1",
-      "shootout_goals": "0",
-      "shootout_attempts": "0",
-      "shootout_winning_goals": "0",
-      "shootout_percentage": "0.0",
-      "rank": 213
-    },
-    {
       "player_id": "9155",
       "name": "Blake Barnes",
       "position": "D",
@@ -5998,6 +5970,34 @@
       "penalty_minutes_per_game": "0.47",
       "power_play_goals": "0",
       "power_play_assists": "0",
+      "short_handed_goals": "0",
+      "short_handed_assists": "1",
+      "shootout_goals": "0",
+      "shootout_attempts": "0",
+      "shootout_winning_goals": "0",
+      "shootout_percentage": "0.0",
+      "rank": 213
+    },
+    {
+      "player_id": "9099",
+      "name": "Blake Clayton",
+      "position": "C",
+      "rookie": "0",
+      "jersey_number": "19",
+      "team_code": "SBY",
+      "games_played": "17",
+      "game_winning_goals": "0",
+      "goals": "2",
+      "shots": "23",
+      "shooting_percentage": "8.7",
+      "assists": "5",
+      "points": "7",
+      "points_per_game": "0.41",
+      "plus_minus": "6",
+      "penalty_minutes": "17",
+      "penalty_minutes_per_game": "1.00",
+      "power_play_goals": "0",
+      "power_play_assists": "1",
       "short_handed_goals": "0",
       "short_handed_assists": "1",
       "shootout_goals": "0",
@@ -6147,6 +6147,62 @@
       "rank": 219
     },
     {
+      "player_id": "9979",
+      "name": "Oskar Konobelj",
+      "position": "D",
+      "rookie": "1",
+      "jersey_number": "6",
+      "team_code": "NB",
+      "games_played": "22",
+      "game_winning_goals": "0",
+      "goals": "2",
+      "shots": "30",
+      "shooting_percentage": "6.7",
+      "assists": "5",
+      "points": "7",
+      "points_per_game": "0.32",
+      "plus_minus": "5",
+      "penalty_minutes": "42",
+      "penalty_minutes_per_game": "1.91",
+      "power_play_goals": "0",
+      "power_play_assists": "0",
+      "short_handed_goals": "0",
+      "short_handed_assists": "0",
+      "shootout_goals": "0",
+      "shootout_attempts": "0",
+      "shootout_winning_goals": "0",
+      "shootout_percentage": "0.0",
+      "rank": 220
+    },
+    {
+      "player_id": "9500",
+      "name": "Matthew Henderson",
+      "position": "D",
+      "rookie": "0",
+      "jersey_number": "77",
+      "team_code": "KGN",
+      "games_played": "23",
+      "game_winning_goals": "1",
+      "goals": "2",
+      "shots": "40",
+      "shooting_percentage": "5.0",
+      "assists": "5",
+      "points": "7",
+      "points_per_game": "0.30",
+      "plus_minus": "1",
+      "penalty_minutes": "9",
+      "penalty_minutes_per_game": "0.39",
+      "power_play_goals": "0",
+      "power_play_assists": "0",
+      "short_handed_goals": "0",
+      "short_handed_assists": "1",
+      "shootout_goals": "0",
+      "shootout_attempts": "0",
+      "shootout_winning_goals": "0",
+      "shootout_percentage": "0.0",
+      "rank": 221
+    },
+    {
       "player_id": "9805",
       "name": "Lucas Matheson",
       "position": "D",
@@ -6172,7 +6228,7 @@
       "shootout_attempts": "1",
       "shootout_winning_goals": "1",
       "shootout_percentage": "100.0",
-      "rank": 220
+      "rank": 222
     },
     {
       "player_id": "9673",
@@ -6200,7 +6256,35 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 221
+      "rank": 223
+    },
+    {
+      "player_id": "9540",
+      "name": "Carter Kunopaski",
+      "position": "D",
+      "rookie": "0",
+      "jersey_number": "15",
+      "team_code": "NB",
+      "games_played": "20",
+      "game_winning_goals": "0",
+      "goals": "1",
+      "shots": "18",
+      "shooting_percentage": "5.6",
+      "assists": "6",
+      "points": "7",
+      "points_per_game": "0.35",
+      "plus_minus": "7",
+      "penalty_minutes": "22",
+      "penalty_minutes_per_game": "1.10",
+      "power_play_goals": "0",
+      "power_play_assists": "0",
+      "short_handed_goals": "0",
+      "short_handed_assists": "0",
+      "shootout_goals": "0",
+      "shootout_attempts": "0",
+      "shootout_winning_goals": "0",
+      "shootout_percentage": "0.0",
+      "rank": 224
     },
     {
       "player_id": "8792",
@@ -6228,7 +6312,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 222
+      "rank": 225
     },
     {
       "player_id": "9429",
@@ -6256,7 +6340,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 223
+      "rank": 226
     },
     {
       "player_id": "9107",
@@ -6284,7 +6368,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 224
+      "rank": 227
     },
     {
       "player_id": "9558",
@@ -6312,7 +6396,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 225
+      "rank": 228
     },
     {
       "player_id": "9499",
@@ -6340,7 +6424,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 226
+      "rank": 229
     },
     {
       "player_id": "9449",
@@ -6368,7 +6452,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 227
+      "rank": 230
     },
     {
       "player_id": "9775",
@@ -6396,7 +6480,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 228
+      "rank": 231
     },
     {
       "player_id": "9476",
@@ -6424,7 +6508,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 229
+      "rank": 232
     },
     {
       "player_id": "9808",
@@ -6452,35 +6536,7 @@
       "shootout_attempts": "2",
       "shootout_winning_goals": "0",
       "shootout_percentage": "50.0",
-      "rank": 230
-    },
-    {
-      "player_id": "9530",
-      "name": "Reid Hayes",
-      "position": "RW",
-      "rookie": "1",
-      "jersey_number": "11",
-      "team_code": "OTT",
-      "games_played": "20",
-      "game_winning_goals": "1",
-      "goals": "3",
-      "shots": "25",
-      "shooting_percentage": "12.0",
-      "assists": "3",
-      "points": "6",
-      "points_per_game": "0.30",
-      "plus_minus": "-8",
-      "penalty_minutes": "2",
-      "penalty_minutes_per_game": "0.10",
-      "power_play_goals": "0",
-      "power_play_assists": "1",
-      "short_handed_goals": "0",
-      "short_handed_assists": "0",
-      "shootout_goals": "0",
-      "shootout_attempts": "0",
-      "shootout_winning_goals": "0",
-      "shootout_percentage": "0.0",
-      "rank": 231
+      "rank": 233
     },
     {
       "player_id": "9361",
@@ -6508,7 +6564,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 232
+      "rank": 234
     },
     {
       "player_id": "9992",
@@ -6536,7 +6592,35 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 233
+      "rank": 235
+    },
+    {
+      "player_id": "9530",
+      "name": "Reid Hayes",
+      "position": "RW",
+      "rookie": "1",
+      "jersey_number": "11",
+      "team_code": "OTT",
+      "games_played": "21",
+      "game_winning_goals": "1",
+      "goals": "3",
+      "shots": "25",
+      "shooting_percentage": "12.0",
+      "assists": "3",
+      "points": "6",
+      "points_per_game": "0.29",
+      "plus_minus": "-10",
+      "penalty_minutes": "2",
+      "penalty_minutes_per_game": "0.10",
+      "power_play_goals": "0",
+      "power_play_assists": "1",
+      "short_handed_goals": "0",
+      "short_handed_assists": "0",
+      "shootout_goals": "0",
+      "shootout_attempts": "0",
+      "shootout_winning_goals": "0",
+      "shootout_percentage": "0.0",
+      "rank": 236
     },
     {
       "player_id": "9064",
@@ -6564,7 +6648,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 234
+      "rank": 237
     },
     {
       "player_id": "9510",
@@ -6592,7 +6676,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 235
+      "rank": 238
     },
     {
       "player_id": "9821",
@@ -6620,35 +6704,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 236
-    },
-    {
-      "player_id": "9428",
-      "name": "Julian Brown",
-      "position": "D",
-      "rookie": "0",
-      "jersey_number": "5",
-      "team_code": "OS",
-      "games_played": "21",
-      "game_winning_goals": "0",
-      "goals": "2",
-      "shots": "23",
-      "shooting_percentage": "8.7",
-      "assists": "4",
-      "points": "6",
-      "points_per_game": "0.29",
-      "plus_minus": "-3",
-      "penalty_minutes": "28",
-      "penalty_minutes_per_game": "1.33",
-      "power_play_goals": "0",
-      "power_play_assists": "0",
-      "short_handed_goals": "0",
-      "short_handed_assists": "1",
-      "shootout_goals": "0",
-      "shootout_attempts": "0",
-      "shootout_winning_goals": "0",
-      "shootout_percentage": "0.0",
-      "rank": 237
+      "rank": 239
     },
     {
       "player_id": "9578",
@@ -6676,35 +6732,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 238
-    },
-    {
-      "player_id": "9979",
-      "name": "Oskar Konobelj",
-      "position": "D",
-      "rookie": "1",
-      "jersey_number": "6",
-      "team_code": "NB",
-      "games_played": "21",
-      "game_winning_goals": "0",
-      "goals": "2",
-      "shots": "30",
-      "shooting_percentage": "6.7",
-      "assists": "4",
-      "points": "6",
-      "points_per_game": "0.29",
-      "plus_minus": "4",
-      "penalty_minutes": "42",
-      "penalty_minutes_per_game": "2.00",
-      "power_play_goals": "0",
-      "power_play_assists": "0",
-      "short_handed_goals": "0",
-      "short_handed_assists": "0",
-      "shootout_goals": "0",
-      "shootout_attempts": "0",
-      "shootout_winning_goals": "0",
-      "shootout_percentage": "0.0",
-      "rank": 239
+      "rank": 240
     },
     {
       "player_id": "9801",
@@ -6732,7 +6760,35 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 240
+      "rank": 241
+    },
+    {
+      "player_id": "9428",
+      "name": "Julian Brown",
+      "position": "D",
+      "rookie": "0",
+      "jersey_number": "5",
+      "team_code": "OS",
+      "games_played": "22",
+      "game_winning_goals": "0",
+      "goals": "2",
+      "shots": "23",
+      "shooting_percentage": "8.7",
+      "assists": "4",
+      "points": "6",
+      "points_per_game": "0.27",
+      "plus_minus": "-4",
+      "penalty_minutes": "28",
+      "penalty_minutes_per_game": "1.27",
+      "power_play_goals": "0",
+      "power_play_assists": "0",
+      "short_handed_goals": "0",
+      "short_handed_assists": "1",
+      "shootout_goals": "0",
+      "shootout_attempts": "0",
+      "shootout_winning_goals": "0",
+      "shootout_percentage": "0.0",
+      "rank": 242
     },
     {
       "player_id": "9169",
@@ -6760,7 +6816,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 241
+      "rank": 243
     },
     {
       "player_id": "9396",
@@ -6788,7 +6844,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 242
+      "rank": 244
     },
     {
       "player_id": "10101",
@@ -6816,7 +6872,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 243
+      "rank": 245
     },
     {
       "player_id": "9794",
@@ -6840,62 +6896,6 @@
       "power_play_assists": "3",
       "short_handed_goals": "0",
       "short_handed_assists": "0",
-      "shootout_goals": "0",
-      "shootout_attempts": "0",
-      "shootout_winning_goals": "0",
-      "shootout_percentage": "0.0",
-      "rank": 244
-    },
-    {
-      "player_id": "9540",
-      "name": "Carter Kunopaski",
-      "position": "D",
-      "rookie": "0",
-      "jersey_number": "15",
-      "team_code": "NB",
-      "games_played": "19",
-      "game_winning_goals": "0",
-      "goals": "1",
-      "shots": "18",
-      "shooting_percentage": "5.6",
-      "assists": "5",
-      "points": "6",
-      "points_per_game": "0.32",
-      "plus_minus": "6",
-      "penalty_minutes": "22",
-      "penalty_minutes_per_game": "1.16",
-      "power_play_goals": "0",
-      "power_play_assists": "0",
-      "short_handed_goals": "0",
-      "short_handed_assists": "0",
-      "shootout_goals": "0",
-      "shootout_attempts": "0",
-      "shootout_winning_goals": "0",
-      "shootout_percentage": "0.0",
-      "rank": 245
-    },
-    {
-      "player_id": "9500",
-      "name": "Matthew Henderson",
-      "position": "D",
-      "rookie": "0",
-      "jersey_number": "77",
-      "team_code": "KGN",
-      "games_played": "22",
-      "game_winning_goals": "0",
-      "goals": "1",
-      "shots": "39",
-      "shooting_percentage": "2.6",
-      "assists": "5",
-      "points": "6",
-      "points_per_game": "0.27",
-      "plus_minus": "0",
-      "penalty_minutes": "9",
-      "penalty_minutes_per_game": "0.41",
-      "power_play_goals": "0",
-      "power_play_assists": "0",
-      "short_handed_goals": "0",
-      "short_handed_assists": "1",
       "shootout_goals": "0",
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
@@ -6963,8 +6963,8 @@
       "name": "Zach Nyman",
       "position": "D",
       "rookie": "0",
-      "jersey_number": "14",
-      "team_code": "BRAM",
+      "jersey_number": "10",
+      "team_code": "NB",
       "games_played": "18",
       "game_winning_goals": "0",
       "goals": "0",
@@ -6993,17 +6993,17 @@
       "rookie": "0",
       "jersey_number": "23",
       "team_code": "OTT",
-      "games_played": "20",
+      "games_played": "21",
       "game_winning_goals": "0",
       "goals": "0",
-      "shots": "39",
+      "shots": "40",
       "shooting_percentage": "0.0",
       "assists": "6",
       "points": "6",
-      "points_per_game": "0.30",
-      "plus_minus": "-4",
-      "penalty_minutes": "19",
-      "penalty_minutes_per_game": "0.95",
+      "points_per_game": "0.29",
+      "plus_minus": "-6",
+      "penalty_minutes": "21",
+      "penalty_minutes_per_game": "1.00",
       "power_play_goals": "0",
       "power_play_assists": "3",
       "short_handed_goals": "0",
@@ -7693,17 +7693,17 @@
       "rookie": "0",
       "jersey_number": "25",
       "team_code": "OTT",
-      "games_played": "18",
+      "games_played": "19",
       "game_winning_goals": "1",
       "goals": "3",
-      "shots": "22",
-      "shooting_percentage": "13.6",
+      "shots": "23",
+      "shooting_percentage": "13.0",
       "assists": "1",
       "points": "4",
-      "points_per_game": "0.22",
-      "plus_minus": "-4",
+      "points_per_game": "0.21",
+      "plus_minus": "-3",
       "penalty_minutes": "10",
-      "penalty_minutes_per_game": "0.56",
+      "penalty_minutes_per_game": "0.53",
       "power_play_goals": "1",
       "power_play_assists": "0",
       "short_handed_goals": "1",
@@ -7749,17 +7749,17 @@
       "rookie": "1",
       "jersey_number": "28",
       "team_code": "KGN",
-      "games_played": "19",
+      "games_played": "20",
       "game_winning_goals": "0",
       "goals": "3",
       "shots": "11",
       "shooting_percentage": "27.3",
       "assists": "1",
       "points": "4",
-      "points_per_game": "0.21",
+      "points_per_game": "0.20",
       "plus_minus": "-5",
       "penalty_minutes": "13",
-      "penalty_minutes_per_game": "0.68",
+      "penalty_minutes_per_game": "0.65",
       "power_play_goals": "0",
       "power_play_assists": "0",
       "short_handed_goals": "0",
@@ -7889,17 +7889,17 @@
       "rookie": "1",
       "jersey_number": "29",
       "team_code": "KIT",
-      "games_played": "19",
+      "games_played": "20",
       "game_winning_goals": "2",
       "goals": "2",
       "shots": "21",
       "shooting_percentage": "9.5",
       "assists": "2",
       "points": "4",
-      "points_per_game": "0.21",
+      "points_per_game": "0.20",
       "plus_minus": "0",
       "penalty_minutes": "4",
-      "penalty_minutes_per_game": "0.21",
+      "penalty_minutes_per_game": "0.20",
       "power_play_goals": "0",
       "power_play_assists": "0",
       "short_handed_goals": "0",
@@ -7917,17 +7917,17 @@
       "rookie": "0",
       "jersey_number": "18",
       "team_code": "OTT",
-      "games_played": "20",
+      "games_played": "21",
       "game_winning_goals": "1",
       "goals": "2",
       "shots": "31",
       "shooting_percentage": "6.5",
       "assists": "2",
       "points": "4",
-      "points_per_game": "0.20",
+      "points_per_game": "0.19",
       "plus_minus": "-3",
       "penalty_minutes": "21",
-      "penalty_minutes_per_game": "1.05",
+      "penalty_minutes_per_game": "1.00",
       "power_play_goals": "0",
       "power_play_assists": "0",
       "short_handed_goals": "0",
@@ -7967,6 +7967,34 @@
       "rank": 284
     },
     {
+      "player_id": "9951",
+      "name": "Miles Reilly",
+      "position": "C",
+      "rookie": "1",
+      "jersey_number": "7",
+      "team_code": "KGN",
+      "games_played": "4",
+      "game_winning_goals": "0",
+      "goals": "1",
+      "shots": "8",
+      "shooting_percentage": "12.5",
+      "assists": "3",
+      "points": "4",
+      "points_per_game": "1.00",
+      "plus_minus": "4",
+      "penalty_minutes": "2",
+      "penalty_minutes_per_game": "0.50",
+      "power_play_goals": "0",
+      "power_play_assists": "0",
+      "short_handed_goals": "0",
+      "short_handed_assists": "0",
+      "shootout_goals": "0",
+      "shootout_attempts": "0",
+      "shootout_winning_goals": "0",
+      "shootout_percentage": "0.0",
+      "rank": 285
+    },
+    {
       "player_id": "9150",
       "name": "Patrick Babin",
       "position": "D",
@@ -7992,7 +8020,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 285
+      "rank": 286
     },
     {
       "player_id": "10036",
@@ -8020,7 +8048,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 286
+      "rank": 287
     },
     {
       "player_id": "9971",
@@ -8048,7 +8076,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 287
+      "rank": 288
     },
     {
       "player_id": "9400",
@@ -8070,34 +8098,6 @@
       "penalty_minutes_per_game": "0.32",
       "power_play_goals": "0",
       "power_play_assists": "1",
-      "short_handed_goals": "0",
-      "short_handed_assists": "0",
-      "shootout_goals": "0",
-      "shootout_attempts": "0",
-      "shootout_winning_goals": "0",
-      "shootout_percentage": "0.0",
-      "rank": 288
-    },
-    {
-      "player_id": "9537",
-      "name": "Dante D'Andrea",
-      "position": "D",
-      "rookie": "1",
-      "jersey_number": "92",
-      "team_code": "KGN",
-      "games_played": "21",
-      "game_winning_goals": "0",
-      "goals": "1",
-      "shots": "17",
-      "shooting_percentage": "5.9",
-      "assists": "3",
-      "points": "4",
-      "points_per_game": "0.19",
-      "plus_minus": "12",
-      "penalty_minutes": "4",
-      "penalty_minutes_per_game": "0.19",
-      "power_play_goals": "0",
-      "power_play_assists": "0",
       "short_handed_goals": "0",
       "short_handed_assists": "0",
       "shootout_goals": "0",
@@ -8135,6 +8135,34 @@
       "rank": 290
     },
     {
+      "player_id": "9537",
+      "name": "Dante D'Andrea",
+      "position": "D",
+      "rookie": "1",
+      "jersey_number": "92",
+      "team_code": "KGN",
+      "games_played": "22",
+      "game_winning_goals": "0",
+      "goals": "1",
+      "shots": "19",
+      "shooting_percentage": "5.3",
+      "assists": "3",
+      "points": "4",
+      "points_per_game": "0.18",
+      "plus_minus": "14",
+      "penalty_minutes": "4",
+      "penalty_minutes_per_game": "0.18",
+      "power_play_goals": "0",
+      "power_play_assists": "0",
+      "short_handed_goals": "0",
+      "short_handed_assists": "0",
+      "shootout_goals": "0",
+      "shootout_attempts": "0",
+      "shootout_winning_goals": "0",
+      "shootout_percentage": "0.0",
+      "rank": 291
+    },
+    {
       "player_id": "9667",
       "name": "Gensen Geldart",
       "position": "C",
@@ -8160,7 +8188,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 291
+      "rank": 292
     },
     {
       "player_id": "9974",
@@ -8188,7 +8216,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 292
+      "rank": 293
     },
     {
       "player_id": "9754",
@@ -8197,17 +8225,17 @@
       "rookie": "1",
       "jersey_number": "37",
       "team_code": "OTT",
-      "games_played": "12",
+      "games_played": "13",
       "game_winning_goals": "0",
       "goals": "0",
       "shots": "9",
       "shooting_percentage": "0.0",
       "assists": "4",
       "points": "4",
-      "points_per_game": "0.33",
-      "plus_minus": "1",
+      "points_per_game": "0.31",
+      "plus_minus": "0",
       "penalty_minutes": "5",
-      "penalty_minutes_per_game": "0.42",
+      "penalty_minutes_per_game": "0.38",
       "power_play_goals": "0",
       "power_play_assists": "0",
       "short_handed_goals": "0",
@@ -8216,7 +8244,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 293
+      "rank": 294
     },
     {
       "player_id": "9733",
@@ -8244,7 +8272,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 294
+      "rank": 295
     },
     {
       "player_id": "9648",
@@ -8272,7 +8300,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 295
+      "rank": 296
     },
     {
       "player_id": "9561",
@@ -8300,7 +8328,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 296
+      "rank": 297
     },
     {
       "player_id": "9414",
@@ -8328,7 +8356,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 297
+      "rank": 298
     },
     {
       "player_id": "9851",
@@ -8337,17 +8365,17 @@
       "rookie": "0",
       "jersey_number": "17",
       "team_code": "OS",
-      "games_played": "19",
+      "games_played": "20",
       "game_winning_goals": "0",
       "goals": "0",
       "shots": "14",
       "shooting_percentage": "0.0",
       "assists": "4",
       "points": "4",
-      "points_per_game": "0.21",
+      "points_per_game": "0.20",
       "plus_minus": "-5",
       "penalty_minutes": "25",
-      "penalty_minutes_per_game": "1.32",
+      "penalty_minutes_per_game": "1.25",
       "power_play_goals": "0",
       "power_play_assists": "0",
       "short_handed_goals": "0",
@@ -8356,7 +8384,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 298
+      "rank": 299
     },
     {
       "player_id": "9247",
@@ -8384,7 +8412,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 299
+      "rank": 300
     },
     {
       "player_id": "9272",
@@ -8412,7 +8440,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 300
+      "rank": 301
     },
     {
       "player_id": "9390",
@@ -8440,7 +8468,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 301
+      "rank": 302
     },
     {
       "player_id": "9998",
@@ -8468,7 +8496,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 302
+      "rank": 303
     },
     {
       "player_id": "9241",
@@ -8496,7 +8524,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 303
+      "rank": 304
     },
     {
       "player_id": "10028",
@@ -8524,7 +8552,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 304
+      "rank": 305
     },
     {
       "player_id": "9815",
@@ -8552,7 +8580,7 @@
       "shootout_attempts": "2",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 305
+      "rank": 306
     },
     {
       "player_id": "10027",
@@ -8572,34 +8600,6 @@
       "plus_minus": "-10",
       "penalty_minutes": "10",
       "penalty_minutes_per_game": "0.53",
-      "power_play_goals": "0",
-      "power_play_assists": "0",
-      "short_handed_goals": "0",
-      "short_handed_assists": "0",
-      "shootout_goals": "0",
-      "shootout_attempts": "0",
-      "shootout_winning_goals": "0",
-      "shootout_percentage": "0.0",
-      "rank": 306
-    },
-    {
-      "player_id": "9951",
-      "name": "Miles Reilly",
-      "position": "C",
-      "rookie": "1",
-      "jersey_number": "7",
-      "team_code": "KGN",
-      "games_played": "3",
-      "game_winning_goals": "0",
-      "goals": "1",
-      "shots": "5",
-      "shooting_percentage": "20.0",
-      "assists": "2",
-      "points": "3",
-      "points_per_game": "1.00",
-      "plus_minus": "3",
-      "penalty_minutes": "2",
-      "penalty_minutes_per_game": "0.67",
       "power_play_goals": "0",
       "power_play_assists": "0",
       "short_handed_goals": "0",
@@ -8863,34 +8863,6 @@
       "rank": 316
     },
     {
-      "player_id": "9009",
-      "name": "Jaiden Newton",
-      "position": "C",
-      "rookie": "0",
-      "jersey_number": "8",
-      "team_code": "OTT",
-      "games_played": "19",
-      "game_winning_goals": "0",
-      "goals": "1",
-      "shots": "16",
-      "shooting_percentage": "6.3",
-      "assists": "2",
-      "points": "3",
-      "points_per_game": "0.16",
-      "plus_minus": "-2",
-      "penalty_minutes": "25",
-      "penalty_minutes_per_game": "1.32",
-      "power_play_goals": "0",
-      "power_play_assists": "0",
-      "short_handed_goals": "0",
-      "short_handed_assists": "1",
-      "shootout_goals": "0",
-      "shootout_attempts": "0",
-      "shootout_winning_goals": "0",
-      "shootout_percentage": "0.0",
-      "rank": 317
-    },
-    {
       "player_id": "9437",
       "name": "Cody Wood",
       "position": "D",
@@ -8912,6 +8884,34 @@
       "power_play_assists": "0",
       "short_handed_goals": "0",
       "short_handed_assists": "0",
+      "shootout_goals": "0",
+      "shootout_attempts": "0",
+      "shootout_winning_goals": "0",
+      "shootout_percentage": "0.0",
+      "rank": 317
+    },
+    {
+      "player_id": "9009",
+      "name": "Jaiden Newton",
+      "position": "C",
+      "rookie": "0",
+      "jersey_number": "8",
+      "team_code": "OTT",
+      "games_played": "20",
+      "game_winning_goals": "0",
+      "goals": "1",
+      "shots": "16",
+      "shooting_percentage": "6.3",
+      "assists": "2",
+      "points": "3",
+      "points_per_game": "0.15",
+      "plus_minus": "-3",
+      "penalty_minutes": "25",
+      "penalty_minutes_per_game": "1.25",
+      "power_play_goals": "0",
+      "power_play_assists": "0",
+      "short_handed_goals": "0",
+      "short_handed_assists": "1",
       "shootout_goals": "0",
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
@@ -9171,34 +9171,6 @@
       "rank": 327
     },
     {
-      "player_id": "9800",
-      "name": "Jace Voortman",
-      "position": "LW",
-      "rookie": "1",
-      "jersey_number": "27",
-      "team_code": "OS",
-      "games_played": "16",
-      "game_winning_goals": "0",
-      "goals": "0",
-      "shots": "19",
-      "shooting_percentage": "0.0",
-      "assists": "3",
-      "points": "3",
-      "points_per_game": "0.19",
-      "plus_minus": "-5",
-      "penalty_minutes": "10",
-      "penalty_minutes_per_game": "0.63",
-      "power_play_goals": "0",
-      "power_play_assists": "0",
-      "short_handed_goals": "0",
-      "short_handed_assists": "0",
-      "shootout_goals": "0",
-      "shootout_attempts": "0",
-      "shootout_winning_goals": "0",
-      "shootout_percentage": "0.0",
-      "rank": 328
-    },
-    {
       "player_id": "9840",
       "name": "Ryan Yurkiw",
       "position": "D",
@@ -9224,7 +9196,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 329
+      "rank": 328
     },
     {
       "player_id": "9846",
@@ -9242,6 +9214,34 @@
       "points": "3",
       "points_per_game": "0.18",
       "plus_minus": "-10",
+      "penalty_minutes": "10",
+      "penalty_minutes_per_game": "0.59",
+      "power_play_goals": "0",
+      "power_play_assists": "0",
+      "short_handed_goals": "0",
+      "short_handed_assists": "0",
+      "shootout_goals": "0",
+      "shootout_attempts": "0",
+      "shootout_winning_goals": "0",
+      "shootout_percentage": "0.0",
+      "rank": 329
+    },
+    {
+      "player_id": "9800",
+      "name": "Jace Voortman",
+      "position": "LW",
+      "rookie": "1",
+      "jersey_number": "27",
+      "team_code": "OS",
+      "games_played": "17",
+      "game_winning_goals": "0",
+      "goals": "0",
+      "shots": "19",
+      "shooting_percentage": "0.0",
+      "assists": "3",
+      "points": "3",
+      "points_per_game": "0.18",
+      "plus_minus": "-6",
       "penalty_minutes": "10",
       "penalty_minutes_per_game": "0.59",
       "power_play_goals": "0",
@@ -9905,17 +9905,17 @@
       "rookie": "1",
       "jersey_number": "22",
       "team_code": "OTT",
-      "games_played": "15",
+      "games_played": "16",
       "game_winning_goals": "0",
       "goals": "1",
-      "shots": "16",
-      "shooting_percentage": "6.3",
+      "shots": "17",
+      "shooting_percentage": "5.9",
       "assists": "1",
       "points": "2",
       "points_per_game": "0.13",
-      "plus_minus": "1",
+      "plus_minus": "0",
       "penalty_minutes": "11",
-      "penalty_minutes_per_game": "0.73",
+      "penalty_minutes_per_game": "0.69",
       "power_play_goals": "0",
       "power_play_assists": "0",
       "short_handed_goals": "0",
@@ -10095,34 +10095,6 @@
       "rank": 360
     },
     {
-      "player_id": "9015",
-      "name": "Nolan Jackson",
-      "position": "D",
-      "rookie": "0",
-      "jersey_number": "27",
-      "team_code": "OTT",
-      "games_played": "11",
-      "game_winning_goals": "0",
-      "goals": "0",
-      "shots": "11",
-      "shooting_percentage": "0.0",
-      "assists": "2",
-      "points": "2",
-      "points_per_game": "0.18",
-      "plus_minus": "-7",
-      "penalty_minutes": "10",
-      "penalty_minutes_per_game": "0.91",
-      "power_play_goals": "0",
-      "power_play_assists": "0",
-      "short_handed_goals": "0",
-      "short_handed_assists": "1",
-      "shootout_goals": "0",
-      "shootout_attempts": "0",
-      "shootout_winning_goals": "0",
-      "shootout_percentage": "0.0",
-      "rank": 361
-    },
-    {
       "player_id": "9830",
       "name": "Anton Gesink",
       "position": "RW",
@@ -10148,7 +10120,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 362
+      "rank": 361
     },
     {
       "player_id": "9405",
@@ -10168,6 +10140,34 @@
       "plus_minus": "1",
       "penalty_minutes": "9",
       "penalty_minutes_per_game": "0.75",
+      "power_play_goals": "0",
+      "power_play_assists": "0",
+      "short_handed_goals": "0",
+      "short_handed_assists": "1",
+      "shootout_goals": "0",
+      "shootout_attempts": "0",
+      "shootout_winning_goals": "0",
+      "shootout_percentage": "0.0",
+      "rank": 362
+    },
+    {
+      "player_id": "9015",
+      "name": "Nolan Jackson",
+      "position": "D",
+      "rookie": "0",
+      "jersey_number": "27",
+      "team_code": "OTT",
+      "games_played": "12",
+      "game_winning_goals": "0",
+      "goals": "0",
+      "shots": "12",
+      "shooting_percentage": "0.0",
+      "assists": "2",
+      "points": "2",
+      "points_per_game": "0.17",
+      "plus_minus": "-9",
+      "penalty_minutes": "10",
+      "penalty_minutes_per_game": "0.83",
       "power_play_goals": "0",
       "power_play_assists": "0",
       "short_handed_goals": "0",
@@ -10459,6 +10459,34 @@
       "rank": 373
     },
     {
+      "player_id": "9481",
+      "name": "Gavin Christie",
+      "position": "D",
+      "rookie": "1",
+      "jersey_number": "13",
+      "team_code": "KGN",
+      "games_played": "20",
+      "game_winning_goals": "0",
+      "goals": "0",
+      "shots": "11",
+      "shooting_percentage": "0.0",
+      "assists": "2",
+      "points": "2",
+      "points_per_game": "0.10",
+      "plus_minus": "4",
+      "penalty_minutes": "20",
+      "penalty_minutes_per_game": "1.00",
+      "power_play_goals": "0",
+      "power_play_assists": "0",
+      "short_handed_goals": "0",
+      "short_handed_assists": "0",
+      "shootout_goals": "0",
+      "shootout_attempts": "0",
+      "shootout_winning_goals": "0",
+      "shootout_percentage": "0.0",
+      "rank": 374
+    },
+    {
       "player_id": "9173",
       "name": "Lukas Moore",
       "position": "D",
@@ -10484,7 +10512,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 374
+      "rank": 375
     },
     {
       "player_id": "8774",
@@ -10512,7 +10540,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 375
+      "rank": 376
     },
     {
       "player_id": "9812",
@@ -10540,7 +10568,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 376
+      "rank": 377
     },
     {
       "player_id": "9422",
@@ -10568,7 +10596,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 377
+      "rank": 378
     },
     {
       "player_id": "9863",
@@ -10596,7 +10624,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 378
+      "rank": 379
     },
     {
       "player_id": "9724",
@@ -10624,7 +10652,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 379
+      "rank": 380
     },
     {
       "player_id": "9836",
@@ -10652,7 +10680,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 380
+      "rank": 381
     },
     {
       "player_id": "8946",
@@ -10680,7 +10708,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 381
+      "rank": 382
     },
     {
       "player_id": "9467",
@@ -10708,7 +10736,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 382
+      "rank": 383
     },
     {
       "player_id": "9739",
@@ -10736,7 +10764,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 383
+      "rank": 384
     },
     {
       "player_id": "10000",
@@ -10764,7 +10792,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 384
+      "rank": 385
     },
     {
       "player_id": "9357",
@@ -10792,7 +10820,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 385
+      "rank": 386
     },
     {
       "player_id": "9681",
@@ -10820,7 +10848,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 386
+      "rank": 387
     },
     {
       "player_id": "9447",
@@ -10848,7 +10876,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 387
+      "rank": 388
     },
     {
       "player_id": "8975",
@@ -10857,17 +10885,17 @@
       "rookie": "0",
       "jersey_number": "4",
       "team_code": "OTT",
-      "games_played": "20",
+      "games_played": "21",
       "game_winning_goals": "0",
       "goals": "1",
-      "shots": "26",
-      "shooting_percentage": "3.8",
+      "shots": "28",
+      "shooting_percentage": "3.6",
       "assists": "0",
       "points": "1",
       "points_per_game": "0.05",
-      "plus_minus": "2",
-      "penalty_minutes": "23",
-      "penalty_minutes_per_game": "1.15",
+      "plus_minus": "-2",
+      "penalty_minutes": "25",
+      "penalty_minutes_per_game": "1.19",
       "power_play_goals": "0",
       "power_play_assists": "0",
       "short_handed_goals": "0",
@@ -10876,7 +10904,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 388
+      "rank": 389
     },
     {
       "player_id": "9646",
@@ -10904,7 +10932,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 389
+      "rank": 390
     },
     {
       "player_id": "9370",
@@ -10932,7 +10960,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 390
+      "rank": 391
     },
     {
       "player_id": "9862",
@@ -10960,7 +10988,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 391
+      "rank": 392
     },
     {
       "player_id": "9952",
@@ -10988,7 +11016,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 392
+      "rank": 393
     },
     {
       "player_id": "9098",
@@ -11016,7 +11044,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 393
+      "rank": 394
     },
     {
       "player_id": "9233",
@@ -11044,7 +11072,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 394
+      "rank": 395
     },
     {
       "player_id": "9839",
@@ -11072,7 +11100,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 395
+      "rank": 396
     },
     {
       "player_id": "8969",
@@ -11100,7 +11128,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 396
+      "rank": 397
     },
     {
       "player_id": "9639",
@@ -11120,34 +11148,6 @@
       "plus_minus": "2",
       "penalty_minutes": "5",
       "penalty_minutes_per_game": "1.00",
-      "power_play_goals": "0",
-      "power_play_assists": "0",
-      "short_handed_goals": "0",
-      "short_handed_assists": "0",
-      "shootout_goals": "0",
-      "shootout_attempts": "0",
-      "shootout_winning_goals": "0",
-      "shootout_percentage": "0.0",
-      "rank": 397
-    },
-    {
-      "player_id": "9982",
-      "name": "Lucas Balanyk",
-      "position": "RW",
-      "rookie": "0",
-      "jersey_number": "20",
-      "team_code": "OTT",
-      "games_played": "6",
-      "game_winning_goals": "0",
-      "goals": "0",
-      "shots": "9",
-      "shooting_percentage": "0.0",
-      "assists": "1",
-      "points": "1",
-      "points_per_game": "0.17",
-      "plus_minus": "4",
-      "penalty_minutes": "0",
-      "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "power_play_assists": "0",
       "short_handed_goals": "0",
@@ -11215,6 +11215,34 @@
       "rank": 400
     },
     {
+      "player_id": "9982",
+      "name": "Lucas Balanyk",
+      "position": "RW",
+      "rookie": "0",
+      "jersey_number": "20",
+      "team_code": "OTT",
+      "games_played": "7",
+      "game_winning_goals": "0",
+      "goals": "0",
+      "shots": "9",
+      "shooting_percentage": "0.0",
+      "assists": "1",
+      "points": "1",
+      "points_per_game": "0.14",
+      "plus_minus": "-1",
+      "penalty_minutes": "0",
+      "penalty_minutes_per_game": "0.00",
+      "power_play_goals": "0",
+      "power_play_assists": "0",
+      "short_handed_goals": "0",
+      "short_handed_assists": "0",
+      "shootout_goals": "0",
+      "shootout_attempts": "0",
+      "shootout_winning_goals": "0",
+      "shootout_percentage": "0.0",
+      "rank": 401
+    },
+    {
       "player_id": "9167",
       "name": "Zach Jovanovski",
       "position": "G",
@@ -11240,7 +11268,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 401
+      "rank": 402
     },
     {
       "player_id": "10005",
@@ -11268,7 +11296,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 402
+      "rank": 403
     },
     {
       "player_id": "9598",
@@ -11296,7 +11324,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 403
+      "rank": 404
     },
     {
       "player_id": "9315",
@@ -11324,7 +11352,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 404
+      "rank": 405
     },
     {
       "player_id": "9789",
@@ -11352,7 +11380,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 405
+      "rank": 406
     },
     {
       "player_id": "9205",
@@ -11380,7 +11408,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 406
+      "rank": 407
     },
     {
       "player_id": "10025",
@@ -11408,7 +11436,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 407
+      "rank": 408
     },
     {
       "player_id": "9796",
@@ -11436,7 +11464,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 408
+      "rank": 409
     },
     {
       "player_id": "9747",
@@ -11464,7 +11492,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 409
+      "rank": 410
     },
     {
       "player_id": "9731",
@@ -11492,7 +11520,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 410
+      "rank": 411
     },
     {
       "player_id": "9688",
@@ -11520,7 +11548,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 411
+      "rank": 412
     },
     {
       "player_id": "10081",
@@ -11548,7 +11576,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 412
+      "rank": 413
     },
     {
       "player_id": "9378",
@@ -11576,7 +11604,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 413
+      "rank": 414
     },
     {
       "player_id": "8974",
@@ -11604,7 +11632,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 414
+      "rank": 415
     },
     {
       "player_id": "9837",
@@ -11632,7 +11660,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 415
+      "rank": 416
     },
     {
       "player_id": "9075",
@@ -11660,7 +11688,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 416
+      "rank": 417
     },
     {
       "player_id": "9248",
@@ -11688,7 +11716,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 417
+      "rank": 418
     },
     {
       "player_id": "9995",
@@ -11716,7 +11744,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 418
+      "rank": 419
     },
     {
       "player_id": "9785",
@@ -11744,7 +11772,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 419
+      "rank": 420
     },
     {
       "player_id": "9802",
@@ -11764,34 +11792,6 @@
       "plus_minus": "-4",
       "penalty_minutes": "6",
       "penalty_minutes_per_game": "0.33",
-      "power_play_goals": "0",
-      "power_play_assists": "0",
-      "short_handed_goals": "0",
-      "short_handed_assists": "0",
-      "shootout_goals": "0",
-      "shootout_attempts": "0",
-      "shootout_winning_goals": "0",
-      "shootout_percentage": "0.0",
-      "rank": 420
-    },
-    {
-      "player_id": "9481",
-      "name": "Gavin Christie",
-      "position": "D",
-      "rookie": "1",
-      "jersey_number": "13",
-      "team_code": "KGN",
-      "games_played": "19",
-      "game_winning_goals": "0",
-      "goals": "0",
-      "shots": "11",
-      "shooting_percentage": "0.0",
-      "assists": "1",
-      "points": "1",
-      "points_per_game": "0.05",
-      "plus_minus": "3",
-      "penalty_minutes": "20",
-      "penalty_minutes_per_game": "1.05",
       "power_play_goals": "0",
       "power_play_assists": "0",
       "short_handed_goals": "0",
@@ -11837,7 +11837,7 @@
       "rookie": "1",
       "jersey_number": "55",
       "team_code": "KGN",
-      "games_played": "21",
+      "games_played": "22",
       "game_winning_goals": "0",
       "goals": "0",
       "shots": "8",
@@ -11846,8 +11846,8 @@
       "points": "1",
       "points_per_game": "0.05",
       "plus_minus": "-7",
-      "penalty_minutes": "4",
-      "penalty_minutes_per_game": "0.19",
+      "penalty_minutes": "6",
+      "penalty_minutes_per_game": "0.27",
       "power_play_goals": "0",
       "power_play_assists": "0",
       "short_handed_goals": "0",
@@ -11865,7 +11865,7 @@
       "rookie": "1",
       "jersey_number": "71",
       "team_code": "KGN",
-      "games_played": "21",
+      "games_played": "22",
       "game_winning_goals": "0",
       "goals": "0",
       "shots": "14",
@@ -12307,34 +12307,6 @@
       "rank": 439
     },
     {
-      "player_id": "9753",
-      "name": "Hannu Packalen",
-      "position": "C",
-      "rookie": "0",
-      "jersey_number": "26",
-      "team_code": "OTT",
-      "games_played": "1",
-      "game_winning_goals": "0",
-      "goals": "0",
-      "shots": "0",
-      "shooting_percentage": "0.0",
-      "assists": "0",
-      "points": "0",
-      "points_per_game": "0.00",
-      "plus_minus": "0",
-      "penalty_minutes": "0",
-      "penalty_minutes_per_game": "0.00",
-      "power_play_goals": "0",
-      "power_play_assists": "0",
-      "short_handed_goals": "0",
-      "short_handed_assists": "0",
-      "shootout_goals": "0",
-      "shootout_attempts": "0",
-      "shootout_winning_goals": "0",
-      "shootout_percentage": "0.0",
-      "rank": 440
-    },
-    {
       "player_id": "9407",
       "name": "Luc Plante",
       "position": "LW",
@@ -12360,7 +12332,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 441
+      "rank": 440
     },
     {
       "player_id": "9427",
@@ -12388,7 +12360,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 442
+      "rank": 441
     },
     {
       "player_id": "9927",
@@ -12416,7 +12388,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 443
+      "rank": 442
     },
     {
       "player_id": "9934",
@@ -12444,7 +12416,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 444
+      "rank": 443
     },
     {
       "player_id": "9870",
@@ -12472,7 +12444,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 445
+      "rank": 444
     },
     {
       "player_id": "9626",
@@ -12500,7 +12472,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 446
+      "rank": 445
     },
     {
       "player_id": "9588",
@@ -12528,7 +12500,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 447
+      "rank": 446
     },
     {
       "player_id": "10038",
@@ -12556,7 +12528,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 448
+      "rank": 447
     },
     {
       "player_id": "10085",
@@ -12584,7 +12556,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 449
+      "rank": 448
     },
     {
       "player_id": "9171",
@@ -12612,7 +12584,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 450
+      "rank": 449
     },
     {
       "player_id": "9470",
@@ -12640,7 +12612,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 451
+      "rank": 450
     },
     {
       "player_id": "9930",
@@ -12668,7 +12640,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 452
+      "rank": 451
     },
     {
       "player_id": "10107",
@@ -12686,6 +12658,34 @@
       "points": "0",
       "points_per_game": "0.00",
       "plus_minus": "0",
+      "penalty_minutes": "0",
+      "penalty_minutes_per_game": "0.00",
+      "power_play_goals": "0",
+      "power_play_assists": "0",
+      "short_handed_goals": "0",
+      "short_handed_assists": "0",
+      "shootout_goals": "0",
+      "shootout_attempts": "0",
+      "shootout_winning_goals": "0",
+      "shootout_percentage": "0.0",
+      "rank": 452
+    },
+    {
+      "player_id": "9753",
+      "name": "Hannu Packalen",
+      "position": "C",
+      "rookie": "0",
+      "jersey_number": "26",
+      "team_code": "OTT",
+      "games_played": "2",
+      "game_winning_goals": "0",
+      "goals": "0",
+      "shots": "1",
+      "shooting_percentage": "0.0",
+      "assists": "0",
+      "points": "0",
+      "points_per_game": "0.00",
+      "plus_minus": "-3",
       "penalty_minutes": "0",
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
@@ -13399,34 +13399,6 @@
       "rank": 478
     },
     {
-      "player_id": "9745",
-      "name": "Noah LaGambina",
-      "position": "G",
-      "rookie": "1",
-      "jersey_number": "31",
-      "team_code": "OTT",
-      "games_played": "6",
-      "game_winning_goals": "0",
-      "goals": "0",
-      "shots": "0",
-      "shooting_percentage": "0.0",
-      "assists": "0",
-      "points": "0",
-      "points_per_game": "0.00",
-      "plus_minus": "0",
-      "penalty_minutes": "0",
-      "penalty_minutes_per_game": "0.00",
-      "power_play_goals": "0",
-      "power_play_assists": "0",
-      "short_handed_goals": "0",
-      "short_handed_assists": "0",
-      "shootout_goals": "0",
-      "shootout_attempts": "0",
-      "shootout_winning_goals": "0",
-      "shootout_percentage": "0.0",
-      "rank": 479
-    },
-    {
       "player_id": "8809",
       "name": "Landon Miller",
       "position": "G",
@@ -13452,7 +13424,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 480
+      "rank": 479
     },
     {
       "player_id": "9987",
@@ -13480,7 +13452,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 481
+      "rank": 480
     },
     {
       "player_id": "9104",
@@ -13508,7 +13480,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 482
+      "rank": 481
     },
     {
       "player_id": "9297",
@@ -13536,7 +13508,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 483
+      "rank": 482
     },
     {
       "player_id": "9486",
@@ -13545,6 +13517,34 @@
       "rookie": "1",
       "jersey_number": "30",
       "team_code": "KIT",
+      "games_played": "7",
+      "game_winning_goals": "0",
+      "goals": "0",
+      "shots": "0",
+      "shooting_percentage": "0.0",
+      "assists": "0",
+      "points": "0",
+      "points_per_game": "0.00",
+      "plus_minus": "0",
+      "penalty_minutes": "0",
+      "penalty_minutes_per_game": "0.00",
+      "power_play_goals": "0",
+      "power_play_assists": "0",
+      "short_handed_goals": "0",
+      "short_handed_assists": "0",
+      "shootout_goals": "0",
+      "shootout_attempts": "0",
+      "shootout_winning_goals": "0",
+      "shootout_percentage": "0.0",
+      "rank": 483
+    },
+    {
+      "player_id": "9745",
+      "name": "Noah LaGambina",
+      "position": "G",
+      "rookie": "1",
+      "jersey_number": "31",
+      "team_code": "OTT",
       "games_played": "7",
       "game_winning_goals": "0",
       "goals": "0",
@@ -14603,34 +14603,6 @@
       "rank": 521
     },
     {
-      "player_id": "9535",
-      "name": "Royden Smith",
-      "position": "G",
-      "rookie": "1",
-      "jersey_number": "29",
-      "team_code": "KGN",
-      "games_played": "15",
-      "game_winning_goals": "0",
-      "goals": "0",
-      "shots": "0",
-      "shooting_percentage": "0.0",
-      "assists": "0",
-      "points": "0",
-      "points_per_game": "0.00",
-      "plus_minus": "0",
-      "penalty_minutes": "0",
-      "penalty_minutes_per_game": "0.00",
-      "power_play_goals": "0",
-      "power_play_assists": "0",
-      "short_handed_goals": "0",
-      "short_handed_assists": "0",
-      "shootout_goals": "0",
-      "shootout_attempts": "0",
-      "shootout_winning_goals": "0",
-      "shootout_percentage": "0.0",
-      "rank": 522
-    },
-    {
       "player_id": "8754",
       "name": "David Egorov",
       "position": "G",
@@ -14656,7 +14628,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 523
+      "rank": 522
     },
     {
       "player_id": "9163",
@@ -14665,6 +14637,34 @@
       "rookie": "0",
       "jersey_number": "39",
       "team_code": "KIT",
+      "games_played": "16",
+      "game_winning_goals": "0",
+      "goals": "0",
+      "shots": "0",
+      "shooting_percentage": "0.0",
+      "assists": "0",
+      "points": "0",
+      "points_per_game": "0.00",
+      "plus_minus": "0",
+      "penalty_minutes": "0",
+      "penalty_minutes_per_game": "0.00",
+      "power_play_goals": "0",
+      "power_play_assists": "0",
+      "short_handed_goals": "0",
+      "short_handed_assists": "0",
+      "shootout_goals": "0",
+      "shootout_attempts": "0",
+      "shootout_winning_goals": "0",
+      "shootout_percentage": "0.0",
+      "rank": 523
+    },
+    {
+      "player_id": "9535",
+      "name": "Royden Smith",
+      "position": "G",
+      "rookie": "1",
+      "jersey_number": "29",
+      "team_code": "KGN",
       "games_played": "16",
       "game_winning_goals": "0",
       "goals": "0",
@@ -14897,7 +14897,7 @@
       "rookie": "0",
       "jersey_number": "30",
       "team_code": "BFD",
-      "games_played": "8",
+      "games_played": "9",
       "minutes_played": 477,
       "shots": "285",
       "save_percentage": "0.933",
@@ -15022,7 +15022,7 @@
       "rookie": "0",
       "jersey_number": "39",
       "team_code": "KIT",
-      "games_played": "16",
+      "games_played": "17",
       "minutes_played": 961,
       "shots": "422",
       "save_percentage": "0.898",
@@ -15047,13 +15047,13 @@
       "rookie": "1",
       "jersey_number": "29",
       "team_code": "KGN",
-      "games_played": "15",
-      "minutes_played": 858,
-      "shots": "437",
-      "save_percentage": "0.908",
-      "goals_against": "40",
+      "games_played": "16",
+      "minutes_played": 918,
+      "shots": "468",
+      "save_percentage": "0.910",
+      "goals_against": "42",
       "shutouts": "1",
-      "wins": "10",
+      "wins": "11",
       "losses": "3",
       "ot_losses": "0",
       "shootout_games_played": "1",
@@ -15062,7 +15062,7 @@
       "shootout_goals_against": "2",
       "shootout_attempts": "5",
       "shootout_percentage": "0.600",
-      "goals_against_average": "2.80",
+      "goals_against_average": "2.75",
       "rank": 14,
       "name": null
     },
@@ -15072,7 +15072,7 @@
       "rookie": "0",
       "jersey_number": "31",
       "team_code": "SBY",
-      "games_played": "9",
+      "games_played": "10",
       "minutes_played": 506,
       "shots": "250",
       "save_percentage": "0.904",
@@ -15122,7 +15122,7 @@
       "rookie": "0",
       "jersey_number": "78",
       "team_code": "PBO",
-      "games_played": "11",
+      "games_played": "12",
       "minutes_played": 654,
       "shots": "334",
       "save_percentage": "0.904",
@@ -15397,7 +15397,7 @@
       "rookie": "0",
       "jersey_number": "34",
       "team_code": "NB",
-      "games_played": "12",
+      "games_played": "13",
       "minutes_played": 715,
       "shots": "312",
       "save_percentage": "0.875",
@@ -15572,7 +15572,7 @@
       "rookie": "0",
       "jersey_number": "31",
       "team_code": "OS",
-      "games_played": "20",
+      "games_played": "21",
       "minutes_played": 1095,
       "shots": "622",
       "save_percentage": "0.892",
@@ -15792,31 +15792,6 @@
       "name": null
     },
     {
-      "player_id": "9745",
-      "shortname": "N. LaGambina",
-      "rookie": "1",
-      "jersey_number": "31",
-      "team_code": "OTT",
-      "games_played": "6",
-      "minutes_played": 231,
-      "shots": "108",
-      "save_percentage": "0.861",
-      "goals_against": "15",
-      "shutouts": "0",
-      "wins": "2",
-      "losses": "1",
-      "ot_losses": "0",
-      "shootout_games_played": "0",
-      "shootout_losses": "0",
-      "shootout_wins": "0",
-      "shootout_goals_against": "0",
-      "shootout_attempts": "0",
-      "shootout_percentage": "0.000",
-      "goals_against_average": "3.89",
-      "rank": 44,
-      "name": null
-    },
-    {
       "player_id": "9995",
       "shortname": "I. Tkach-Tkachenko",
       "rookie": "0",
@@ -15838,7 +15813,7 @@
       "shootout_attempts": "0",
       "shootout_percentage": "0.000",
       "goals_against_average": "3.93",
-      "rank": 45,
+      "rank": 44,
       "name": null
     },
     {
@@ -15863,6 +15838,31 @@
       "shootout_attempts": "0",
       "shootout_percentage": "0.000",
       "goals_against_average": "3.94",
+      "rank": 45,
+      "name": null
+    },
+    {
+      "player_id": "9745",
+      "shortname": "N. LaGambina",
+      "rookie": "1",
+      "jersey_number": "31",
+      "team_code": "OTT",
+      "games_played": "7",
+      "minutes_played": 291,
+      "shots": "142",
+      "save_percentage": "0.852",
+      "goals_against": "21",
+      "shutouts": "0",
+      "wins": "2",
+      "losses": "2",
+      "ot_losses": "0",
+      "shootout_games_played": "0",
+      "shootout_losses": "0",
+      "shootout_wins": "0",
+      "shootout_goals_against": "0",
+      "shootout_attempts": "0",
+      "shootout_percentage": "0.000",
+      "goals_against_average": "4.33",
       "rank": 46,
       "name": null
     },

@@ -4,7 +4,7 @@
   "season": "2026-2027",
   "seasonId": "94",
   "source": "Official AHL HockeyTech public player statistics feed",
-  "syncedAt": "2026-11-19T00:17:23.890Z",
+  "syncedAt": "2026-11-19T00:21:30.809Z",
   "endpoints": {
     "skaters": "https://lscluster.hockeytech.com/feed/index.php?feed=statviewfeed&key=ccb91f29d6744675&client_code=ahl&league_id=4&site_id=3&lang=en&view=players&season=94&team=all&limit=1000",
     "goalies": "https://lscluster.hockeytech.com/feed/index.php?feed=statviewfeed&key=ccb91f29d6744675&client_code=ahl&league_id=4&site_id=3&lang=en&view=players&season=94&team=all&limit=1000&position=goalies"
@@ -673,30 +673,6 @@
       "rank": 22
     },
     {
-      "player_id": "11068",
-      "name": "Jesse Kiiskinen",
-      "active": "1",
-      "position": "RW",
-      "rookie": "1",
-      "team_code": "GR",
-      "games_played": "17",
-      "goals": "6",
-      "shots": "34",
-      "assists": "10",
-      "points": "16",
-      "points_per_game": "0.94",
-      "plus_minus": "7",
-      "penalty_minutes": "9",
-      "penalty_minutes_per_game": "0.53",
-      "power_play_goals": "1",
-      "short_handed_goals": "0",
-      "shootout_goals": "0",
-      "shootout_attempts": "1",
-      "shootout_winning_goals": "0",
-      "shootout_percentage": "0.0",
-      "rank": 23
-    },
-    {
       "player_id": "7655",
       "name": "Liam Foudy",
       "active": "1",
@@ -718,6 +694,30 @@
       "shootout_attempts": "2",
       "shootout_winning_goals": "0",
       "shootout_percentage": "50.0",
+      "rank": 23
+    },
+    {
+      "player_id": "11068",
+      "name": "Jesse Kiiskinen",
+      "active": "1",
+      "position": "RW",
+      "rookie": "1",
+      "team_code": "GR",
+      "games_played": "18",
+      "goals": "6",
+      "shots": "34",
+      "assists": "10",
+      "points": "16",
+      "points_per_game": "0.89",
+      "plus_minus": "6",
+      "penalty_minutes": "9",
+      "penalty_minutes_per_game": "0.50",
+      "power_play_goals": "1",
+      "short_handed_goals": "0",
+      "shootout_goals": "0",
+      "shootout_attempts": "1",
+      "shootout_winning_goals": "0",
+      "shootout_percentage": "0.0",
       "rank": 24
     },
     {
@@ -895,15 +895,15 @@
       "position": "LW",
       "rookie": "0",
       "team_code": "GR",
-      "games_played": "9",
+      "games_played": "10",
       "goals": "11",
-      "shots": "33",
+      "shots": "34",
       "assists": "3",
       "points": "14",
-      "points_per_game": "1.56",
-      "plus_minus": "4",
+      "points_per_game": "1.40",
+      "plus_minus": "3",
       "penalty_minutes": "4",
-      "penalty_minutes_per_game": "0.44",
+      "penalty_minutes_per_game": "0.40",
       "power_play_goals": "5",
       "short_handed_goals": "0",
       "shootout_goals": "0",
@@ -2593,6 +2593,30 @@
       "rank": 102
     },
     {
+      "player_id": "11040",
+      "name": "Lucas Wahlin",
+      "active": "1",
+      "position": "F",
+      "rookie": "1",
+      "team_code": "MB",
+      "games_played": "19",
+      "goals": "4",
+      "shots": "39",
+      "assists": "7",
+      "points": "11",
+      "points_per_game": "0.58",
+      "plus_minus": "4",
+      "penalty_minutes": "14",
+      "penalty_minutes_per_game": "0.74",
+      "power_play_goals": "0",
+      "short_handed_goals": "0",
+      "shootout_goals": "0",
+      "shootout_attempts": "0",
+      "shootout_winning_goals": "0",
+      "shootout_percentage": "0.0",
+      "rank": 103
+    },
+    {
       "player_id": "11381",
       "name": "Jake Livanavage",
       "active": "1",
@@ -2614,7 +2638,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 103
+      "rank": 104
     },
     {
       "player_id": "9669",
@@ -2638,7 +2662,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 104
+      "rank": 105
     },
     {
       "player_id": "8864",
@@ -2662,7 +2686,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 105
+      "rank": 106
     },
     {
       "player_id": "5080",
@@ -2686,7 +2710,7 @@
       "shootout_attempts": "2",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 106
+      "rank": 107
     },
     {
       "player_id": "11046",
@@ -2710,7 +2734,7 @@
       "shootout_attempts": "2",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 107
+      "rank": 108
     },
     {
       "player_id": "11063",
@@ -2734,7 +2758,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 108
+      "rank": 109
     },
     {
       "player_id": "9969",
@@ -2758,7 +2782,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 109
+      "rank": 110
     },
     {
       "player_id": "6333",
@@ -2782,7 +2806,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 110
+      "rank": 111
     },
     {
       "player_id": "4462",
@@ -2806,7 +2830,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 111
+      "rank": 112
     },
     {
       "player_id": "9961",
@@ -2830,7 +2854,7 @@
       "shootout_attempts": "1",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 112
+      "rank": 113
     },
     {
       "player_id": "7656",
@@ -2854,7 +2878,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 113
+      "rank": 114
     },
     {
       "player_id": "5437",
@@ -2878,7 +2902,7 @@
       "shootout_attempts": "1",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 114
+      "rank": 115
     },
     {
       "player_id": "10876",
@@ -2902,7 +2926,7 @@
       "shootout_attempts": "2",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 115
+      "rank": 116
     },
     {
       "player_id": "9963",
@@ -2926,7 +2950,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 116
+      "rank": 117
     },
     {
       "player_id": "8714",
@@ -2950,7 +2974,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 117
+      "rank": 118
     },
     {
       "player_id": "10086",
@@ -2974,7 +2998,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 118
+      "rank": 119
     },
     {
       "player_id": "9984",
@@ -2983,22 +3007,22 @@
       "position": "LW",
       "rookie": "0",
       "team_code": "ROC",
-      "games_played": "15",
+      "games_played": "16",
       "goals": "6",
       "shots": "31",
       "assists": "4",
       "points": "10",
-      "points_per_game": "0.67",
+      "points_per_game": "0.63",
       "plus_minus": "4",
-      "penalty_minutes": "6",
-      "penalty_minutes_per_game": "0.40",
+      "penalty_minutes": "8",
+      "penalty_minutes_per_game": "0.50",
       "power_play_goals": "2",
       "short_handed_goals": "1",
       "shootout_goals": "0",
       "shootout_attempts": "1",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 119
+      "rank": 120
     },
     {
       "player_id": "6729",
@@ -3022,7 +3046,7 @@
       "shootout_attempts": "2",
       "shootout_winning_goals": "1",
       "shootout_percentage": "50.0",
-      "rank": 120
+      "rank": 121
     },
     {
       "player_id": "9522",
@@ -3046,7 +3070,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 121
+      "rank": 122
     },
     {
       "player_id": "8890",
@@ -3070,7 +3094,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 122
+      "rank": 123
     },
     {
       "player_id": "9274",
@@ -3094,7 +3118,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 123
+      "rank": 124
     },
     {
       "player_id": "9978",
@@ -3118,7 +3142,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 124
+      "rank": 125
     },
     {
       "player_id": "8987",
@@ -3142,7 +3166,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 125
+      "rank": 126
     },
     {
       "player_id": "7346",
@@ -3166,7 +3190,7 @@
       "shootout_attempts": "1",
       "shootout_winning_goals": "1",
       "shootout_percentage": "100.0",
-      "rank": 126
+      "rank": 127
     },
     {
       "player_id": "11418",
@@ -3190,7 +3214,7 @@
       "shootout_attempts": "1",
       "shootout_winning_goals": "0",
       "shootout_percentage": "100.0",
-      "rank": 127
+      "rank": 128
     },
     {
       "player_id": "7101",
@@ -3214,7 +3238,7 @@
       "shootout_attempts": "1",
       "shootout_winning_goals": "0",
       "shootout_percentage": "100.0",
-      "rank": 128
+      "rank": 129
     },
     {
       "player_id": "7404",
@@ -3238,7 +3262,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 129
+      "rank": 130
     },
     {
       "player_id": "9759",
@@ -3262,7 +3286,7 @@
       "shootout_attempts": "1",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 130
+      "rank": 131
     },
     {
       "player_id": "9523",
@@ -3282,30 +3306,6 @@
       "penalty_minutes_per_game": "1.44",
       "power_play_goals": "0",
       "short_handed_goals": "2",
-      "shootout_goals": "0",
-      "shootout_attempts": "0",
-      "shootout_winning_goals": "0",
-      "shootout_percentage": "0.0",
-      "rank": 131
-    },
-    {
-      "player_id": "11040",
-      "name": "Lucas Wahlin",
-      "active": "1",
-      "position": "F",
-      "rookie": "1",
-      "team_code": "MB",
-      "games_played": "18",
-      "goals": "4",
-      "shots": "39",
-      "assists": "6",
-      "points": "10",
-      "points_per_game": "0.56",
-      "plus_minus": "3",
-      "penalty_minutes": "14",
-      "penalty_minutes_per_game": "0.78",
-      "power_play_goals": "0",
-      "short_handed_goals": "0",
       "shootout_goals": "0",
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
@@ -4153,30 +4153,6 @@
       "rank": 167
     },
     {
-      "player_id": "10155",
-      "name": "Shai Buium",
-      "active": "1",
-      "position": "D",
-      "rookie": "0",
-      "team_code": "GR",
-      "games_played": "17",
-      "goals": "1",
-      "shots": "30",
-      "assists": "8",
-      "points": "9",
-      "points_per_game": "0.53",
-      "plus_minus": "5",
-      "penalty_minutes": "4",
-      "penalty_minutes_per_game": "0.24",
-      "power_play_goals": "0",
-      "short_handed_goals": "0",
-      "shootout_goals": "0",
-      "shootout_attempts": "0",
-      "shootout_winning_goals": "0",
-      "shootout_percentage": "0.0",
-      "rank": 168
-    },
-    {
       "player_id": "8648",
       "name": "Angus Crookshank",
       "active": "1",
@@ -4198,6 +4174,30 @@
       "shootout_attempts": "1",
       "shootout_winning_goals": "1",
       "shootout_percentage": "100.0",
+      "rank": 168
+    },
+    {
+      "player_id": "10155",
+      "name": "Shai Buium",
+      "active": "1",
+      "position": "D",
+      "rookie": "0",
+      "team_code": "GR",
+      "games_played": "18",
+      "goals": "1",
+      "shots": "31",
+      "assists": "8",
+      "points": "9",
+      "points_per_game": "0.50",
+      "plus_minus": "4",
+      "penalty_minutes": "4",
+      "penalty_minutes_per_game": "0.22",
+      "power_play_goals": "0",
+      "short_handed_goals": "0",
+      "shootout_goals": "0",
+      "shootout_attempts": "0",
+      "shootout_winning_goals": "0",
+      "shootout_percentage": "0.0",
       "rank": 169
     },
     {
@@ -5599,13 +5599,13 @@
       "position": "F",
       "rookie": "1",
       "team_code": "MB",
-      "games_played": "18",
+      "games_played": "19",
       "goals": "3",
-      "shots": "20",
+      "shots": "21",
       "assists": "4",
       "points": "7",
-      "points_per_game": "0.39",
-      "plus_minus": "4",
+      "points_per_game": "0.37",
+      "plus_minus": "5",
       "penalty_minutes": "2",
       "penalty_minutes_per_game": "0.11",
       "power_play_goals": "0",
@@ -7753,30 +7753,6 @@
       "rank": 317
     },
     {
-      "player_id": "8927",
-      "name": "Alex Kannok Leipert",
-      "active": "1",
-      "position": "D",
-      "rookie": "0",
-      "team_code": "GR",
-      "games_played": "17",
-      "goals": "0",
-      "shots": "13",
-      "assists": "6",
-      "points": "6",
-      "points_per_game": "0.35",
-      "plus_minus": "7",
-      "penalty_minutes": "19",
-      "penalty_minutes_per_game": "1.12",
-      "power_play_goals": "0",
-      "short_handed_goals": "0",
-      "shootout_goals": "0",
-      "shootout_attempts": "0",
-      "shootout_winning_goals": "0",
-      "shootout_percentage": "0.0",
-      "rank": 318
-    },
-    {
       "player_id": "5471",
       "name": "Gustav Olofsson",
       "active": "1",
@@ -7792,6 +7768,30 @@
       "plus_minus": "-1",
       "penalty_minutes": "12",
       "penalty_minutes_per_game": "0.71",
+      "power_play_goals": "0",
+      "short_handed_goals": "0",
+      "shootout_goals": "0",
+      "shootout_attempts": "0",
+      "shootout_winning_goals": "0",
+      "shootout_percentage": "0.0",
+      "rank": 318
+    },
+    {
+      "player_id": "8927",
+      "name": "Alex Kannok Leipert",
+      "active": "1",
+      "position": "D",
+      "rookie": "0",
+      "team_code": "GR",
+      "games_played": "18",
+      "goals": "0",
+      "shots": "13",
+      "assists": "6",
+      "points": "6",
+      "points_per_game": "0.33",
+      "plus_minus": "6",
+      "penalty_minutes": "19",
+      "penalty_minutes_per_game": "1.06",
       "power_play_goals": "0",
       "short_handed_goals": "0",
       "shootout_goals": "0",
@@ -12175,15 +12175,15 @@
       "position": "C",
       "rookie": "0",
       "team_code": "GR",
-      "games_played": "3",
+      "games_played": "4",
       "goals": "0",
       "shots": "9",
       "assists": "3",
       "points": "3",
-      "points_per_game": "1.00",
-      "plus_minus": "3",
+      "points_per_game": "0.75",
+      "plus_minus": "2",
       "penalty_minutes": "2",
-      "penalty_minutes_per_game": "0.67",
+      "penalty_minutes_per_game": "0.50",
       "power_play_goals": "0",
       "short_handed_goals": "0",
       "shootout_goals": "0",
@@ -14185,30 +14185,6 @@
       "rank": 585
     },
     {
-      "player_id": "8454",
-      "name": "Dawson Barteaux",
-      "active": "1",
-      "position": "D",
-      "rookie": "0",
-      "team_code": "MB",
-      "games_played": "11",
-      "goals": "0",
-      "shots": "9",
-      "assists": "2",
-      "points": "2",
-      "points_per_game": "0.18",
-      "plus_minus": "1",
-      "penalty_minutes": "10",
-      "penalty_minutes_per_game": "0.91",
-      "power_play_goals": "0",
-      "short_handed_goals": "0",
-      "shootout_goals": "0",
-      "shootout_attempts": "0",
-      "shootout_winning_goals": "0",
-      "shootout_percentage": "0.0",
-      "rank": 586
-    },
-    {
       "player_id": "9952",
       "name": "Lucas Ciona",
       "active": "1",
@@ -14230,7 +14206,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 587
+      "rank": 586
     },
     {
       "player_id": "10522",
@@ -14254,7 +14230,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 588
+      "rank": 587
     },
     {
       "player_id": "7760",
@@ -14278,7 +14254,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 589
+      "rank": 588
     },
     {
       "player_id": "10602",
@@ -14296,6 +14272,30 @@
       "plus_minus": "-3",
       "penalty_minutes": "44",
       "penalty_minutes_per_game": "4.00",
+      "power_play_goals": "0",
+      "short_handed_goals": "0",
+      "shootout_goals": "0",
+      "shootout_attempts": "0",
+      "shootout_winning_goals": "0",
+      "shootout_percentage": "0.0",
+      "rank": 589
+    },
+    {
+      "player_id": "8454",
+      "name": "Dawson Barteaux",
+      "active": "1",
+      "position": "D",
+      "rookie": "0",
+      "team_code": "MB",
+      "games_played": "12",
+      "goals": "0",
+      "shots": "9",
+      "assists": "2",
+      "points": "2",
+      "points_per_game": "0.17",
+      "plus_minus": "2",
+      "penalty_minutes": "10",
+      "penalty_minutes_per_game": "0.83",
       "power_play_goals": "0",
       "short_handed_goals": "0",
       "shootout_goals": "0",
@@ -20185,30 +20185,6 @@
       "rank": 835
     },
     {
-      "player_id": "9757",
-      "name": "Jack Matier",
-      "active": "1",
-      "position": "D",
-      "rookie": "0",
-      "team_code": "MB",
-      "games_played": "6",
-      "goals": "0",
-      "shots": "4",
-      "assists": "0",
-      "points": "0",
-      "points_per_game": "0.00",
-      "plus_minus": "2",
-      "penalty_minutes": "6",
-      "penalty_minutes_per_game": "1.00",
-      "power_play_goals": "0",
-      "short_handed_goals": "0",
-      "shootout_goals": "0",
-      "shootout_attempts": "0",
-      "shootout_winning_goals": "0",
-      "shootout_percentage": "0.0",
-      "rank": 836
-    },
-    {
       "player_id": "6322",
       "name": "Dysin Mayo",
       "active": "1",
@@ -20230,7 +20206,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 837
+      "rank": 836
     },
     {
       "player_id": "7730",
@@ -20254,7 +20230,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 838
+      "rank": 837
     },
     {
       "player_id": "9733",
@@ -20278,7 +20254,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 839
+      "rank": 838
     },
     {
       "player_id": "7595",
@@ -20302,7 +20278,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 840
+      "rank": 839
     },
     {
       "player_id": "10116",
@@ -20326,7 +20302,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 841
+      "rank": 840
     },
     {
       "player_id": "10621",
@@ -20350,7 +20326,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 842
+      "rank": 841
     },
     {
       "player_id": "10846",
@@ -20374,7 +20350,7 @@
       "shootout_attempts": "1",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 843
+      "rank": 842
     },
     {
       "player_id": "10521",
@@ -20398,7 +20374,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 844
+      "rank": 843
     },
     {
       "player_id": "10088",
@@ -20422,7 +20398,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 845
+      "rank": 844
     },
     {
       "player_id": "10403",
@@ -20446,7 +20422,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 846
+      "rank": 845
     },
     {
       "player_id": "9717",
@@ -20470,7 +20446,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 847
+      "rank": 846
     },
     {
       "player_id": "8722",
@@ -20494,7 +20470,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 848
+      "rank": 847
     },
     {
       "player_id": "6787",
@@ -20518,7 +20494,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 849
+      "rank": 848
     },
     {
       "player_id": "6663",
@@ -20536,6 +20512,30 @@
       "plus_minus": "0",
       "penalty_minutes": "0",
       "penalty_minutes_per_game": "0.00",
+      "power_play_goals": "0",
+      "short_handed_goals": "0",
+      "shootout_goals": "0",
+      "shootout_attempts": "0",
+      "shootout_winning_goals": "0",
+      "shootout_percentage": "0.0",
+      "rank": 849
+    },
+    {
+      "player_id": "9757",
+      "name": "Jack Matier",
+      "active": "1",
+      "position": "D",
+      "rookie": "0",
+      "team_code": "MB",
+      "games_played": "7",
+      "goals": "0",
+      "shots": "4",
+      "assists": "0",
+      "points": "0",
+      "points_per_game": "0.00",
+      "plus_minus": "3",
+      "penalty_minutes": "6",
+      "penalty_minutes_per_game": "0.86",
       "power_play_goals": "0",
       "short_handed_goals": "0",
       "shootout_goals": "0",

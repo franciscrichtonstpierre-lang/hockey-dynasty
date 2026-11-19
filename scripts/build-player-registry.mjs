@@ -57,10 +57,10 @@ const add = p => {
     const old = records.get(p.id);
     // Prefer the current roster record over a prospect-list record, while retaining known bio fields.
     const incoming = Object.fromEntries(Object.entries(p).filter(([,v]) => v != null && v !== ""));
-    const preserveRoster = ["NHL","AHL"].includes(old.currentLeague) && !["NHL","AHL"].includes(p.currentLeague);
+    const preserveRoster = Boolean(old.nhlRosterVerified || old.ahlRosterVerified || old.echlRosterVerified) || (["NHL","AHL"].includes(old.currentLeague) && !["NHL","AHL"].includes(p.currentLeague));
     records.set(p.id, {
       ...old, ...incoming,
-      ...(preserveRoster ? { currentLeague: old.currentLeague, currentTeam: old.currentTeam, nhlRightsTeam: old.nhlRightsTeam || p.nhlRightsTeam, position: old.position, detailedPosition: old.detailedPosition } : {}),
+      ...(preserveRoster ? { currentLeague: old.currentLeague, currentTeam: old.currentTeam, nhlRightsTeam: old.nhlRightsTeam || p.nhlRightsTeam, position: old.position, detailedPosition: old.detailedPosition, nhlRosterVerified:old.nhlRosterVerified, ahlRosterVerified:old.ahlRosterVerified, echlRosterVerified:old.echlRosterVerified } : {}),
       attributes: p.ratingStatus === "sample_adjusted_statistical_estimate" ? p.attributes : old.attributes || p.attributes
     });
   }
@@ -850,7 +850,7 @@ for (const p of records.values()) {
 let identityDuplicatesMerged = 0;
 for (const group of samePerson.values()) {
   if (group.length < 2) continue;
-  const priority = p => p.currentLeague === "NHL" ? 3 : p.currentLeague === "AHL" ? 2 : 1;
+  const priority = p => p.nhlRosterVerified ? 5 : p.ahlRosterVerified ? 4 : p.echlRosterVerified ? 3 : p.currentLeague === "NHL" ? 2 : p.currentLeague === "AHL" ? 1 : 0;
   group.sort((a,b) => priority(b)-priority(a) || Number(!!b.nhlPlayerId)-Number(!!a.nhlPlayerId));
   const primary = group[0];
   primary.otherObservedTeams = [...new Set([...(primary.otherObservedTeams||[]), ...group.slice(1).map(p=>p.currentTeam).filter(Boolean)])];
@@ -862,7 +862,23 @@ for (const group of samePerson.values()) {
     identityDuplicatesMerged++;
   }
 }
-console.log(`Merged ${identityDuplicatesMerged} duplicate identity records using NHL > AHL roster priority.`);
+console.log(`Merged ${identityDuplicatesMerged} duplicate identity records using verified NHL > AHL > ECHL roster priority.`);
+
+// An NHL rights/prospect record is not an NHL roster assignment. Only the official
+// NHL roster feed can establish current NHL membership; preserve verified AHL/ECHL
+// roster membership when a prospect snapshot carries an NHL organization label.
+let nonRosterNhlReclassified=0;
+for(const p of records.values()){
+ if(p.currentLeague!=="NHL"||p.nhlRosterVerified)continue;
+ if(p.ahlRosterVerified){p.currentLeague="AHL";continue;}
+ if(p.echlRosterVerified){p.currentLeague="ECHL";continue;}
+ p.currentLeague="UNKNOWN";
+ p.currentTeam=null;
+ p.leagueResolution="nhl_rights_without_current_nhl_roster_membership";
+ nonRosterNhlReclassified++;
+}
+console.log(`NHL-labelled records without official NHL roster membership reclassified: ${nonRosterNhlReclassified}.`);
+
 
 // Enrich unknown league only from a unique, same-name roster record.
 const byName = new Map();

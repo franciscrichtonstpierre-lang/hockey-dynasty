@@ -839,6 +839,21 @@ for(const p of records.values()){
 }
 console.log(`Organization-only NHL rights snapshots kept out of current NHL rosters: ${rightsOnlyLeagueUnknown}.`);
 
+// A rights snapshot may also put the NHL organization name in currentTeam while
+// the league label says OTHER, junior, NCAA, or Europe. That is not a playing
+// assignment. Keep the rights organization in nhlRightsTeam and clear the
+// unverified current club/league instead of inventing an NHL-affiliated roster.
+let organizationNameOnlyLeagueUnknown = 0;
+for(const p of records.values()){
+ const key=nameKey(p.currentTeam);
+ if(!key||!nhlCodeByTeamName.has(key)||p.currentLeague==="NHL"||p.nhlRosterVerified||p.ahlRosterVerified||p.echlRosterVerified)continue;
+ p.currentLeague="UNKNOWN";
+ p.currentTeam=null;
+ p.leagueResolution="organization_name_only_not_current_team";
+ organizationNameOnlyLeagueUnknown++;
+}
+console.log(`NHL organization names removed from unverified non-NHL current-team fields: ${organizationNameOnlyLeagueUnknown}.`);
+
 // Collapse same-person records that appear in both NHL and AHL snapshots.
 const samePerson = new Map();
 for (const p of records.values()) {

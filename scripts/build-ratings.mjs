@@ -143,7 +143,7 @@ for(const p of goalies){
  const off=clamp((sh+pl+st)/3),def=clamp((ch+po+hi)/3);
  const oaKeys=[sh,pl,st,ch,po,hi,clamp(ov-3),ov,ov,clamp(ov-5),ov,ov,off,def];
  const oa=clamp(oaKeys.reduce((sum,value)=>sum+value,0)/oaKeys.length);
- players[id]={FI:10,SH:sh,PL:pl,ST:st,CH:ch,PO:po,HI:hi,SK:clamp(ov-3),EN:ov,PE:58,FA:clamp(ov-5),LE:ov,SR:ov,OFF:off,DEF:def,OA:oa};
+ players[id]={FI:10,SH:sh,PL:pl,ST:st,CH:ch,PO:po,HI:hi,SK:clamp(72+(ov-70)*0.35),EN:ov,PE:78,FA:clamp(ov-5),LE:ov,SR:ov,OFF:off,DEF:def,OA:oa};
  playerMetadata[id]={source:"NHL Stats REST regular-season goalie statistics; 60% current season + 40% previous season",status:"sample_adjusted_statistical_estimate",confidence:"low",sampleConfidence:n(p,"_evidenceGames")>=55?"high":n(p,"_evidenceGames")>=25?"medium":"low",sampleSize:n(p,"_currentGames")>0?n(p,"_currentGames"):n(p,"_previousGames")>0?n(p,"_previousGames"):null,ratedAttributes:Object.keys(players[id]).filter(key=>players[id][key]!=null),modeledAttributes:Object.keys(players[id]).filter(key=>players[id][key]==null),method:"nhl_season_statistics_percentile_model_v1",evidence:"nhl_player_statistics",position:"G",season};
 }
 // Final canonical pass: every skater and goalie uses identical OFF/DEF/OA

@@ -282,3 +282,21 @@ test("does not accept cross-league matches when more than one league has the sam
   const matched = matchStatIndex({ name:"Alex Example", currentLeague:"SHL", position:"F" }, new Map([["SHL",shl],["ALLSVENSKAN",allsvenskan],["LIIGA",liiga]]), { allowCrossLeague:true });
   assert.equal(matched.row,null);
 });
+
+test("SK uses direct skating evidence and is not inferred from offensive production", () => {
+  const stats = { games_played:30, goals:8, assists:12, points:20, shots:65, plus_minus:3, penalty_minutes:18 };
+  const fast = estimatePlayerRatings({ name:"Fast Skater", currentLeague:"NHL", position:"F", skatingRating:96 }, stats, null);
+  const slow = estimatePlayerRatings({ name:"Slow Skater", currentLeague:"NHL", position:"F", skatingRating:62 }, stats, null);
+  assert.equal(fast.attributes.SK, 96);
+  assert.equal(slow.attributes.SK, 62);
+  assert.ok(fast.attributes.OA > slow.attributes.OA, "SK must contribute to OA through the shared overall formula");
+});
+
+test("SK fallback is not boosted by points production", () => {
+  const low = estimatePlayerRatings({ name:"Low Production Skater", currentLeague:"AHL", position:"F" },
+    { games_played:30, goals:1, assists:2, points:3, shots:20, plus_minus:0, penalty_minutes:12 }, null);
+  const high = estimatePlayerRatings({ name:"High Production Skater", currentLeague:"AHL", position:"F" },
+    { games_played:30, goals:20, assists:30, points:50, shots:120, plus_minus:0, penalty_minutes:12 }, null);
+  assert.ok(Math.abs(low.attributes.SK-high.attributes.SK) <= 3,
+    "offensive production must not be used as a skating-speed proxy");
+});

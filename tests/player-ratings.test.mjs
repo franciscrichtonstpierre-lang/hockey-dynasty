@@ -42,7 +42,7 @@ test("every generated NHL rating has exactly the shared schema and individual pr
     assert.equal(ratings.OFF, Math.round((ratings.SH + ratings.PL + ratings.ST) / 3), `OFF formula for ${id}`);
     assert.equal(ratings.DEF, Math.round((ratings.CH + ratings.PO + ratings.HI) / 3), `DEF formula for ${id}`);
     const oaKeys = RATING_ATTRIBUTES.filter(key => key !== "FI" && key !== "OA");
-    assert.equal(ratings.OA, Math.round(oaKeys.reduce((sum, key) => sum + ratings[key], 0) / oaKeys.length), `OA formula excludes FI for ${id}`);
+    assert.equal(ratings.OA, Math.round(oaKeys.reduce((sum, key) => sum + ratings[key], 0) / oaKeys.length), `OA formula includes PE and all global ratings while excluding FI for ${id}`);
     assert.deepEqual(metadata.ratedAttributes, RATING_ATTRIBUTES, `rated attributes for ${id}`);
   }
 });

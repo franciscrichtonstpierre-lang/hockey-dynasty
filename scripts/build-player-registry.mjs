@@ -921,6 +921,16 @@ for (const p of records.values()) {
 }
 console.log(`Registry league enrichment: ${leagueEnriched} UNKNOWN entries resolved via unique roster-name match.`);
 
+// Keep genuinely unresolved identities explicit instead of assigning a guessed league or club.
+let unresolvedLeagueRecords = 0;
+for (const p of records.values()) {
+  if (p.currentLeague !== "UNKNOWN") continue;
+  p.currentTeam = null;
+  p.leagueResolution ||= "unresolved_no_verified_current_roster_source";
+  unresolvedLeagueRecords++;
+}
+console.log(`Registry unresolved leagues retained without fabricated teams: ${unresolvedLeagueRecords}.`);
+
 // Preserve the shared schema without implying that a missing scouting grade is known.
 let unratedPlayers = 0;
 for (const p of records.values()) {

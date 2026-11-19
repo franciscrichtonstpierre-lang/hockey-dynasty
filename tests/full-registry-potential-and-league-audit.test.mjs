@@ -56,6 +56,7 @@ test("source-verified league corrections are reflected in the registry", () => {
     ["Mikus Vecvanags","BCHL","Victoria Grizzlies"],
     ["Yevgeni Volokhin","VHL","Khimik Voskresensk"],
     ["Antoine Keller","NL","HC Ajoie"],
+    ["Brett Murray","KHL","Shanghai Dragons"],
     ["Cameron Reid","NCAA","University of Michigan"],
     ["Ethan Bowen","BCHL",null],
     ["Roman Shokhrin","VHL","Molot Perm"],

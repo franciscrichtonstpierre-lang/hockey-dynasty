@@ -1,17 +1,27 @@
 {
   "schemaVersion": 1,
   "season": "2026-2027",
-  "generatedAt": "2026-11-19T04:59:09.620Z",
+  "generatedAt": "2026-11-19T05:00:38.174Z",
   "playerCount": 3342,
   "leagueCorrections": {
-    "applied": 199,
+    "applied": 197,
     "protectedRoster": 22,
     "ambiguous": 0,
     "missing": 2,
-    "unresolved": 12,
+    "unresolved": 14,
     "unresolvedWithExactCorrection": 0
   },
   "unresolvedLeaguePlayers": [
+    {
+      "id": "nhl:8482779",
+      "name": "Andrei Buyalsky",
+      "position": "F",
+      "birthDate": "2000-08-18",
+      "age": null,
+      "rightsTeam": null,
+      "source": "https://api-web.nhle.com/v1/prospects/COL",
+      "reason": "organization_name_only_not_current_team"
+    },
     {
       "id": "pipeline:NSH:brett-murray",
       "name": "Brett Murray",
@@ -70,6 +80,16 @@
       "age": 22,
       "rightsTeam": "DAL",
       "source": "https://hockeyinsights.ca/team-pipeline/dallas-stars/",
+      "reason": "organization_name_only_not_current_team"
+    },
+    {
+      "id": "nhl:8484431",
+      "name": "Nikita Ishimnikov",
+      "position": "D",
+      "birthDate": "2005-04-21",
+      "age": 21,
+      "rightsTeam": "COL",
+      "source": "https://api-web.nhle.com/v1/prospects/COL",
       "reason": "organization_name_only_not_current_team"
     },
     {
@@ -162,7 +182,7 @@
     }
   },
   "playersByLeague": {
-    "NHL": 807,
+    "NHL": 805,
     "AHL": 861,
     "ECHL": 765,
     "NCAA": 302,
@@ -178,11 +198,11 @@
     "QMJHL": 34,
     "CHL-QMJHL": 14,
     "CHL-OHL": 2,
+    "UNKNOWN": 14,
     "NL": 8,
     "RETIRED": 3,
     "USHL": 24,
     "EUROPE": 37,
-    "UNKNOWN": 12,
     "OJHL": 1,
     "DEL": 6,
     "USNTDP": 9,

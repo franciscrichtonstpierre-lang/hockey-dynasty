@@ -70,11 +70,18 @@ const potential = {
   total: players.length,
   sourceReviewed: players.filter(p => p.potentialStatus === "scouting_source_reviewed_estimate").length,
   provisional: players.filter(p => p.potentialStatus === "provisional_model_estimate").length,
-  methods: {}
+  reviewRequired: players.filter(p => p.potentialReviewRequired === true).length,
+  methods: {},
+  confidence: {},
+  evidence: {}
 };
 for (const player of players) {
   const method = player.potentialEstimateMethod || "missing";
+  const confidence = player.potentialConfidence || "not_recorded";
+  const evidence = player.potentialEvidence || player.potentialRationale ? (player.potentialEvidence || "source_reviewed_rationale") : "not_recorded";
   potential.methods[method] = (potential.methods[method] || 0) + 1;
+  potential.confidence[confidence] = (potential.confidence[confidence] || 0) + 1;
+  potential.evidence[evidence] = (potential.evidence[evidence] || 0) + 1;
 }
 const byLeague = {};
 for (const player of players) {

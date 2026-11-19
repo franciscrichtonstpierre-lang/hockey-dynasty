@@ -18,9 +18,11 @@ const unresolvedNames = [];
 for (const correction of corrections.players || []) {
   if (!correction.currentLeague || !correction.source || !/^https?:\/\//.test(correction.source)) continue;
   const names = new Set([correction.name, ...(correction.aliases || [])].map(normalize));
-  let matches = (registry.players || []).filter(player =>
-    (correction.playerId && String(player.id) === String(correction.playerId)) || names.has(normalize(player.name))
-  );
+  const exactIdMatches = correction.playerId
+    ? (registry.players || []).filter(player => String(player.id) === String(correction.playerId))
+    : [];
+  let matches = exactIdMatches.length ? exactIdMatches :
+    (registry.players || []).filter(player => names.has(normalize(player.name)));
   if (correction.birthDate && matches.length > 1) {
     const exact = matches.filter(player => player.birthDate === correction.birthDate);
     if (exact.length) matches = exact;

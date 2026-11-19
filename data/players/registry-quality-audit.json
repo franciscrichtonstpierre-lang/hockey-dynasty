@@ -1,36 +1,17 @@
 {
   "schemaVersion": 1,
   "season": "2026-2027",
-  "generatedAt": "2026-11-19T04:52:09.557Z",
+  "generatedAt": "2026-11-19T04:54:00.822Z",
   "playerCount": 3342,
   "leagueCorrections": {
-    "applied": 180,
-    "protectedRoster": 24,
+    "applied": 194,
+    "protectedRoster": 22,
     "ambiguous": 0,
     "missing": 2,
-    "unresolved": 34
+    "unresolved": 21,
+    "unresolvedWithExactCorrection": 0
   },
   "unresolvedLeaguePlayers": [
-    {
-      "id": "nhl:8482779",
-      "name": "Andrei Buyalsky",
-      "position": "F",
-      "birthDate": "2000-08-18",
-      "age": null,
-      "rightsTeam": null,
-      "source": "https://api-web.nhle.com/v1/prospects/COL",
-      "reason": "organization_name_only_not_current_team"
-    },
-    {
-      "id": "nhl:8485086",
-      "name": "Antoine Dorion",
-      "position": "F",
-      "birthDate": "2005-11-02",
-      "age": 20,
-      "rightsTeam": "STL",
-      "source": "https://api-web.nhle.com/v1/prospects/STL",
-      "reason": "organization_name_only_not_current_team"
-    },
     {
       "id": "pipeline:NSH:brett-murray",
       "name": "Brett Murray",
@@ -52,26 +33,6 @@
       "reason": "organization_name_only_not_current_team"
     },
     {
-      "id": "prospect:SJS:christian-kirsch",
-      "name": "Christian Kirsch",
-      "position": "G",
-      "birthDate": "2006-06-18",
-      "age": 20,
-      "rightsTeam": "SJS",
-      "source": "https://hockeyinsights.ca/team-pipeline/san-jose-sharks/",
-      "reason": "organization_name_only_not_current_team"
-    },
-    {
-      "id": "nhl:8485621",
-      "name": "Dmitri Isayev",
-      "position": "F",
-      "birthDate": "2007-06-26",
-      "age": 19,
-      "rightsTeam": "OTT",
-      "source": "https://api-web.nhle.com/v1/prospects/OTT",
-      "reason": "organization_name_only_not_current_team"
-    },
-    {
       "id": "prospect:ANA:ethan-bowen",
       "name": "Ethan Bowen",
       "position": "F",
@@ -79,16 +40,6 @@
       "age": 24,
       "rightsTeam": "ANA",
       "source": "https://hockeyinsights.ca/team-pipeline/anaheim-ducks/",
-      "reason": "organization_name_only_not_current_team"
-    },
-    {
-      "id": "nhl:8482945",
-      "name": "Ivan Vorobyov",
-      "position": "F",
-      "birthDate": "2002-03-11",
-      "age": 24,
-      "rightsTeam": "STL",
-      "source": "https://api-web.nhle.com/v1/prospects/STL",
       "reason": "organization_name_only_not_current_team"
     },
     {
@@ -112,16 +63,6 @@
       "reason": "organization_name_only_not_current_team"
     },
     {
-      "id": "prospect:SJS:jake-gustafson",
-      "name": "Jake Gustafson",
-      "position": "F",
-      "birthDate": "2008-04-03",
-      "age": 18,
-      "rightsTeam": "SJS",
-      "source": "https://hockeyinsights.ca/team-pipeline/san-jose-sharks/",
-      "reason": "organization_name_only_not_current_team"
-    },
-    {
       "id": "pipeline:PIT:joseph-masonius",
       "name": "Joseph Masonius",
       "position": "D",
@@ -132,16 +73,6 @@
       "reason": "organization_name_only_not_current_team"
     },
     {
-      "id": "prospect:VGK:juho-piiparinen",
-      "name": "Juho Piiparinen",
-      "position": "D",
-      "birthDate": "2008-08-10",
-      "age": 18,
-      "rightsTeam": "VGK",
-      "source": "https://hockeyinsights.ca/team-pipeline/vegas-golden-knights/",
-      "reason": "organization_name_only_not_current_team"
-    },
-    {
       "id": "nhl:8483434",
       "name": "Kirill Dolzhenkov",
       "position": "F",
@@ -149,36 +80,6 @@
       "age": 22,
       "rightsTeam": "CBJ",
       "source": "https://api-web.nhle.com/v1/prospects/CBJ",
-      "reason": "organization_name_only_not_current_team"
-    },
-    {
-      "id": "nhl:8486302",
-      "name": "Lars Steiner",
-      "position": "F",
-      "birthDate": "2007-11-12",
-      "age": 18,
-      "rightsTeam": "STL",
-      "source": "https://api-web.nhle.com/v1/prospects/STL",
-      "reason": "organization_name_only_not_current_team"
-    },
-    {
-      "id": "nhl:8485762",
-      "name": "Louis-Antoine Denault",
-      "position": "G",
-      "birthDate": "2006-09-26",
-      "age": 19,
-      "rightsTeam": "FLA",
-      "source": "https://api-web.nhle.com/v1/prospects/FLA",
-      "reason": "organization_name_only_not_current_team"
-    },
-    {
-      "id": "nhl:8485353",
-      "name": "Mason West",
-      "position": "F",
-      "birthDate": "2007-08-03",
-      "age": 19,
-      "rightsTeam": "CHI",
-      "source": "https://api-web.nhle.com/v1/prospects/CHI",
       "reason": "organization_name_only_not_current_team"
     },
     {
@@ -222,16 +123,6 @@
       "reason": "organization_name_only_not_current_team"
     },
     {
-      "id": "nhl:8485605",
-      "name": "Shamar Moses",
-      "position": "F",
-      "birthDate": "2007-05-06",
-      "age": 19,
-      "rightsTeam": "FLA",
-      "source": "https://api-web.nhle.com/v1/prospects/FLA",
-      "reason": "organization_name_only_not_current_team"
-    },
-    {
       "id": "nhl:8485651",
       "name": "Sigge Holmgren",
       "position": "D",
@@ -247,16 +138,6 @@
       "position": "F",
       "birthDate": "2005-10-18",
       "age": 20,
-      "rightsTeam": "FLA",
-      "source": "https://api-web.nhle.com/v1/prospects/FLA",
-      "reason": "organization_name_only_not_current_team"
-    },
-    {
-      "id": "nhl:8484475",
-      "name": "Stepan Zvyagin",
-      "position": "F",
-      "birthDate": "2004-04-16",
-      "age": 22,
       "rightsTeam": "FLA",
       "source": "https://api-web.nhle.com/v1/prospects/FLA",
       "reason": "organization_name_only_not_current_team"
@@ -292,16 +173,6 @@
       "reason": "organization_name_only_not_current_team"
     },
     {
-      "id": "nhl:8484855",
-      "name": "Tomas Galvas",
-      "position": "D",
-      "birthDate": "2006-02-11",
-      "age": 20,
-      "rightsTeam": "PIT",
-      "source": "https://api-web.nhle.com/v1/prospects/PIT",
-      "reason": "organization_name_only_not_current_team"
-    },
-    {
       "id": "prospect:MTL:ty-smilanic",
       "name": "Ty Smilanic",
       "position": "F",
@@ -329,16 +200,6 @@
       "age": 24,
       "rightsTeam": "NJD",
       "source": "https://api-web.nhle.com/v1/prospects/NJD",
-      "reason": "organization_name_only_not_current_team"
-    },
-    {
-      "id": "nhl:8483746",
-      "name": "Vyacheslav Buteyets",
-      "position": "G",
-      "birthDate": "2002-05-29",
-      "age": null,
-      "rightsTeam": null,
-      "source": "https://api-web.nhle.com/v1/prospects/ANA",
       "reason": "organization_name_only_not_current_team"
     },
     {
@@ -370,8 +231,8 @@
     "evidence": {
       "current_ability_and_age": 1959,
       "league_points_per_game": 169,
-      "draft_pick+league_points_per_game": 614,
-      "draft_pick": 524,
+      "draft_pick+league_points_per_game": 615,
+      "draft_pick": 523,
       "draft_pick+goalie_save_percentage": 37,
       "published_source_rank+league_points_per_game": 22,
       "published_source_rank": 11,
@@ -379,34 +240,34 @@
     }
   },
   "playersByLeague": {
-    "NHL": 806,
+    "NHL": 807,
     "AHL": 861,
-    "ECHL": 764,
-    "NCAA": 300,
+    "ECHL": 765,
+    "NCAA": 302,
     "LIIGA": 48,
     "ALLSVENSKAN": 19,
     "OTHER": 20,
-    "OHL": 97,
-    "WHL": 90,
-    "MHL": 30,
+    "OHL": 98,
+    "WHL": 91,
+    "MHL": 31,
     "SHL": 41,
-    "KHL": 54,
-    "VHL": 28,
-    "QMJHL": 33,
+    "KHL": 55,
+    "VHL": 30,
+    "QMJHL": 34,
     "CHL-QMJHL": 14,
     "CHL-OHL": 2,
-    "UNKNOWN": 34,
-    "NL": 7,
+    "NL": 8,
     "RETIRED": 2,
     "USHL": 24,
     "EUROPE": 37,
+    "UNKNOWN": 21,
     "OJHL": 1,
     "DEL": 5,
     "USNTDP": 9,
     "HSA": 1,
     "USPORTS": 1,
     "SL": 1,
-    "CZECH": 7,
+    "CZECH": 8,
     "CHL-WHL": 1,
     "BCHL": 1,
     "SLOVAK": 1,

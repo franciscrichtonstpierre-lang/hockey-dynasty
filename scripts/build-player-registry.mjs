@@ -77,7 +77,7 @@ for (const code of codes) {
         if (!id || !name) continue;
         add({
           id: `nhl:${id}`, name, firstName: str(p.firstName?.default || p.firstName), lastName: str(p.lastName?.default || p.lastName),
-          position: group === "goalies" ? "G" : group === "defensemen" ? "D" : "F",
+          position: group === "goalies" ? "G" : group === "defensemen" ? "D" : "F", nhlRosterVerified: true,
           detailedPosition: detailedPos(p), currentLeague: "NHL", currentTeam: code, nhlRightsTeam: code,
           birthDate: str(p.birthDate), nationality: str(p.birthCountry), shootsCatches: str(p.shootsCatches),
           heightCm: Number.isFinite(Number(p.heightInCentimeters)) ? Number(p.heightInCentimeters) : null,
@@ -103,7 +103,7 @@ for (const code of codes) {
       add({
         id: `ahl:${sourceId}`, name, firstName: str(first(p.first_name,p.firstName)),
         lastName: str(first(p.last_name,p.lastName)), position: posGroup(p), detailedPosition: detailedPos(p),
-        currentLeague: "AHL", currentTeam: data.ahlName || ahlByCode.get(code) || null, nhlRightsTeam: null,
+        currentLeague: "AHL", currentTeam: data.ahlName || ahlByCode.get(code) || null, ahlRosterVerified: true, nhlRightsTeam: null,
         birthDate: str(first(p.birthdate,p.birthDate)), shootsCatches: str(first(p.shoots,p.catches,p.shootsCatches)),
         sweaterNumber: Number.isFinite(Number(first(p.tp_jersey_number,p.jersey_number,p.sweater_number))) ? Number(first(p.tp_jersey_number,p.jersey_number,p.sweater_number)) : null,
         nhlPlayerId: Number.isFinite(Number(first(p.nhl_player_id,p.nhlPlayerId))) ? Number(first(p.nhl_player_id,p.nhlPlayerId)) : null,
@@ -130,7 +130,7 @@ try {
         add({
           id: `echl:${sourceId}`, name, firstName: str(first(p.first_name,p.firstName)),
           lastName: str(first(p.last_name,p.lastName)), position: posGroup(p), detailedPosition: detailedPos(p),
-          currentLeague: "ECHL", currentTeam: data.teamName || data.team_name || null,
+          currentLeague: "ECHL", currentTeam: data.teamName || data.team_name || null, echlRosterVerified: true,
           nhlRightsTeam: echlTeamNames.get(nameKey(data.teamName || data.team_name || ""))?.nhlCode || null,
           ahlAffiliationTeam: echlTeamNames.get(nameKey(data.teamName || data.team_name || ""))?.ahlName || null,
           affiliationSource: "https://echl.com/teams/nhl-ahl-affiliations",
@@ -824,6 +824,20 @@ for(const p of records.values()){
  }
 }
 console.log(`Registry current-team league reconciliation: ${teamLeagueCorrections} records corrected from exact club-name matches.`);
+
+// Organization prospect snapshots can list an NHL rights club as "current team".
+ // Unless the player is present on an official NHL roster or a verified AHL/ECHL roster,
+ // keep the current playing league unknown instead of treating NHL rights as NHL participation.
+let rightsOnlyLeagueUnknown = 0;
+for(const p of records.values()){
+ if(p.currentLeague==="NHL"&&!p.nhlRosterVerified&&!p.ahlRosterVerified&&!p.echlRosterVerified&&/hockeyinsights\.ca\/team-pipeline/i.test(p.source||"")){
+  p.currentLeague="UNKNOWN";
+  p.currentTeam=null;
+  p.leagueResolution="organization_rights_snapshot_not_current_league";
+  rightsOnlyLeagueUnknown++;
+ }
+}
+console.log(`Organization-only NHL rights snapshots kept out of current NHL rosters: ${rightsOnlyLeagueUnknown}.`);
 
 // Collapse same-person records that appear in both NHL and AHL snapshots.
 const samePerson = new Map();

@@ -81,6 +81,7 @@ const potential = {
   sourceReviewed: players.filter(p => p.potentialStatus === "scouting_source_reviewed_estimate").length,
   provisional: players.filter(p => p.potentialStatus === "provisional_model_estimate").length,
   reviewRequired: players.filter(p => p.potentialReviewRequired === true).length,
+  sourceReferences: players.reduce((sum, p) => sum + (Number(p.potentialEvidenceSourceCount) || 0), 0),
   methods: {},
   confidence: {},
   evidence: {}

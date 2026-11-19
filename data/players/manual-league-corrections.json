@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "season": "2026-2027",
-  "verifiedAt": "2026-11-05",
+  "verifiedAt": "2026-11-19",
   "notes": "Source-backed corrections for legacy prospect records whose current league/team fields were missing in older organization lists. These entries do not infer NHL rights unless a source explicitly identifies the rights holder. Birth-date-only corrections are applied by exact player name when unambiguous; they do not infer league, current team, or NHL rights. Additional 2026-27 current-team corrections added from official NCAA, NHL affiliate and AHL roster sources.",
   "players": [
     {
@@ -327,8 +327,13 @@
     {
       "name": "Dmitriy Simashev",
       "birthDate": "2005-02-04",
-      "source": "https://www.nhlpa.com/player/17062/dmitriy-simashev/",
-      "note": "Date de naissance vérifiée à partir de la source indiquée; correction appliquée au registre central sans déduire le club actuel ni les droits NHL."
+      "source": "https://www.hockey-reference.com/players/s/simasdm01.html",
+      "note": "Statistiques NHL 2026-27 : équipe Utah.",
+      "playerId": "prospect:UTA:dmitriy-simashev",
+      "position": "D",
+      "nhlRightsTeam": "UTA",
+      "currentLeague": "NHL",
+      "currentTeam": "UTA"
     },
     {
       "name": "Eddie Genborg",
@@ -369,8 +374,12 @@
     {
       "name": "Jakub Rychlovsky",
       "birthDate": "2001-08-07",
-      "source": "https://media.d3.nhle.com/image/private/t_document/prd/pc8ojjstmo83amxkeeww.pdf",
-      "note": "Date de naissance vérifiée à partir de la source indiquée; correction appliquée au registre central sans déduire le club actuel ni les droits NHL."
+      "source": "https://www.hokej.cz/hrac/jakub-rychlovsky/53011",
+      "note": "Profil et statistiques Tipsport Extraliga 2026-27 : Bílí Tygři Liberec.",
+      "playerId": "pipeline:DET:jakub-rychlovsky",
+      "position": "F",
+      "currentLeague": "CZECH",
+      "currentTeam": "Bílí Tygři Liberec"
     },
     {
       "name": "James van Riemsdyk",
@@ -444,8 +453,13 @@
     {
       "name": "Maxwell Crozier",
       "birthDate": "2000-04-19",
-      "source": "https://records.nhl.com/tbl/overview/roster",
-      "note": "Date de naissance vérifiée à partir de la source indiquée; correction appliquée au registre central sans déduire le club actuel ni les droits NHL."
+      "source": "https://www.hockey-reference.com/players/c/crozima01.html",
+      "note": "Statistiques NHL 2026-27 : Tampa Bay Lightning.",
+      "playerId": "pipeline:TBL:maxwell-crozier",
+      "position": "D",
+      "nhlRightsTeam": "TBL",
+      "currentLeague": "NHL",
+      "currentTeam": "TBL"
     },
     {
       "name": "Patrik Laine",
@@ -1222,11 +1236,17 @@
       "currentLeague": "SHL"
     },
     {
-      "playerId": "REG-prospect-TOR-alexander-plesovskikh",
+      "playerId": "prospect:TOR:alexander-plesovskikh",
       "name": "Alexander Plesovskikh",
       "birthDate": "2006-08-01",
       "sourceUrl": "https://www.nhl.com/mapleleafs/player/alexander-plesovskikh-8485050/bio",
-      "verifiedAt": "2026-11-01"
+      "verifiedAt": "2026-11-01",
+      "position": "F",
+      "nhlRightsTeam": "TOR",
+      "currentLeague": "MHL",
+      "currentTeam": "MHK Spartak Moskva",
+      "source": "https://www.eliteprospects.com/player/797774/alexander-plesovskikh",
+      "note": "Profil Elite Prospects 2026-27 : MHK Spartak Moskva, MHL."
     },
     {
       "playerId": "FA-fa-2026-alexander-radulov",
@@ -4850,6 +4870,314 @@
       "source": "https://insidetherink.com/stats/nhl/teams/mtl/pipeline/",
       "note": "Pipeline Montréal 2026-27 : Khimik Voskresensk, VHL.",
       "playerId": "nhl:8484424"
+    },
+    {
+      "name": "Alexander Zharovsky",
+      "playerId": "nhl:8485562",
+      "birthDate": "2007-02-22",
+      "position": "F",
+      "nhlRightsTeam": "MTL",
+      "currentLeague": "KHL",
+      "currentTeam": "Salavat Yulaev Ufa",
+      "source": "https://www.eliteprospects.com/player/690135/alexander-zharovsky",
+      "note": "Profil Elite Prospects 2026-27 : Salavat Yulaev Ufa, KHL."
+    },
+    {
+      "name": "Bode Laylin",
+      "playerId": "prospect:CGY:bode-laylin",
+      "birthDate": "2007-11-17",
+      "position": "D",
+      "nhlRightsTeam": "CGY",
+      "currentLeague": "WHL",
+      "currentTeam": "Calgary Hitmen",
+      "source": "https://chl.ca/whl-hitmen/article/trade-calgaryhitmen-acquire-bodelaylin/",
+      "note": "Annonce officielle des Hitmen du 8 octobre 2026 : acquis d'Everett; fiche statistique 2026-27 en WHL."
+    },
+    {
+      "name": "Carlos Handel",
+      "playerId": "nhl:8485434",
+      "birthDate": "2007-03-31",
+      "position": "D",
+      "nhlRightsTeam": "MTL",
+      "currentLeague": "DEL",
+      "currentTeam": "Kölner Haie",
+      "source": "https://www.eliteprospects.com/player/872615/carlos-handel",
+      "note": "Profil vérifié Elite Prospects 2026-27 : Kölner Haie, DEL."
+    },
+    {
+      "name": "Carter Sanderson",
+      "playerId": "nhl:8485642",
+      "birthDate": "2007-09-12",
+      "position": "F",
+      "nhlRightsTeam": "PIT",
+      "currentLeague": "WHL",
+      "currentTeam": "Calgary Hitmen",
+      "source": "https://chl.ca/whl/article/calgary-hitmen-sign-penguins-prospect-carter-sanderson-to-a-whl-scholarship-and-development-agreement/",
+      "note": "Annonce officielle WHL du 2 juillet 2026 : signé par les Calgary Hitmen."
+    },
+    {
+      "name": "Cullen McCrate",
+      "playerId": "prospect:BOS:cullen-mccrate",
+      "birthDate": "2007-04-18",
+      "position": "D",
+      "nhlRightsTeam": "BOS",
+      "currentLeague": "OHL",
+      "currentTeam": "Brantford Bulldogs",
+      "source": "https://www.juniorpuck.ca/en/leaders/ohl/2026-27/debuts",
+      "note": "Registre des débuts OHL 2026-27 : Brantford Bulldogs."
+    },
+    {
+      "name": "David Rozsival",
+      "playerId": "nhl:8485633",
+      "birthDate": "2007-06-01",
+      "position": "F",
+      "nhlRightsTeam": "NJD",
+      "currentLeague": "NCAA",
+      "currentTeam": "University of St. Thomas",
+      "source": "https://tommiesports.com/sports/mhockey/roster/david-rozs-val/12114",
+      "note": "Effectif officiel 2026-27 de l'Université St. Thomas."
+    },
+    {
+      "name": "Denis Gabdrakhmanov",
+      "playerId": "nhl:8485094",
+      "birthDate": "2005-06-22",
+      "position": "G",
+      "nhlRightsTeam": "FLA",
+      "currentLeague": "VHL",
+      "currentTeam": "Dynamo-Altay Barnaul",
+      "source": "https://www.eliteprospects.com/team/3549/dynamo-altay-barnaul",
+      "note": "Effectif VHL 2026-27 de Dynamo-Altay Barnaul."
+    },
+    {
+      "name": "Dmitri Buchelnikov",
+      "playerId": "nhl:8483667",
+      "birthDate": "2003-09-06",
+      "position": "F",
+      "nhlRightsTeam": "STL",
+      "currentLeague": "KHL",
+      "currentTeam": "CSKA Moskva",
+      "source": "https://www.eliteprospects.com/player/698717/dmitri-buchelnikov",
+      "note": "Profil Elite Prospects 2026-27 : CSKA Moskva, KHL."
+    },
+    {
+      "name": "Egor Surin",
+      "playerId": "nhl:8484993",
+      "birthDate": "2006-08-01",
+      "position": "F",
+      "nhlRightsTeam": "NSH",
+      "currentLeague": "KHL",
+      "currentTeam": "Lokomotiv Yaroslavl",
+      "source": "https://www.eliteprospects.com/player/835458/yegor-surin",
+      "note": "Profil Elite Prospects 2026-27 : Lokomotiv Yaroslavl, KHL."
+    },
+    {
+      "name": "Egor Zavragin",
+      "playerId": "nhl:8484398",
+      "birthDate": "2005-08-23",
+      "position": "G",
+      "nhlRightsTeam": "PHI",
+      "currentLeague": "KHL",
+      "currentTeam": "Metallurg Magnitogorsk",
+      "source": "https://www.eliteprospects.com/player/709146/yegor-zavragin",
+      "note": "Profil Elite Prospects 2026-27 : Metallurg Magnitogorsk, KHL."
+    },
+    {
+      "name": "Filip Novak",
+      "playerId": "prospect:CBJ:filip-novak",
+      "birthDate": "2008-03-07",
+      "position": "F",
+      "nhlRightsTeam": "CBJ",
+      "currentLeague": "WHL",
+      "currentTeam": "Victoria Royals",
+      "source": "https://chl.ca/whl/article/royals-sign-blue-jackets-prospect-filip-novak-to-whl-scholarship-and-development-agreement/",
+      "note": "Annonce officielle WHL du 21 juillet 2026 : signé par les Victoria Royals."
+    },
+    {
+      "name": "Gabriel Chiarot",
+      "playerId": "prospect:VAN:gabriel-chiarot",
+      "birthDate": "2006-09-17",
+      "position": "F",
+      "nhlRightsTeam": "VAN",
+      "currentLeague": "OHL",
+      "currentTeam": "Kitchener Rangers",
+      "source": "https://chl.ca/ohl-rangers/article/gabriel-chiarot-returns-to-kitchener-from-ahl-abbotsford/",
+      "note": "Annonce officielle des Rangers du 9 novembre 2026 : retour à Kitchener depuis Abbotsford."
+    },
+    {
+      "name": "Ilya Kanarsky",
+      "playerId": "nhl:8485656",
+      "birthDate": "2004-12-06",
+      "position": "G",
+      "nhlRightsTeam": "CHI",
+      "currentLeague": "VHL",
+      "currentTeam": "AKM Tula Region",
+      "source": "https://www.vhlru.ru/en/players/39809/games/",
+      "note": "Profil officiel VHL 2026-27 : gardien d'AKM Tula Region."
+    },
+    {
+      "name": "Ivan Patrikhayev",
+      "playerId": "nhl:8486321",
+      "birthDate": "2006-02-03",
+      "position": "D",
+      "nhlRightsTeam": "NYR",
+      "currentLeague": "KHL",
+      "currentTeam": "CSKA Moskva",
+      "source": "https://www.eliteprospects.com/player/835563/ivan-patrikhayev",
+      "note": "Profil Elite Prospects 2026-27 : CSKA Moskva, KHL."
+    },
+    {
+      "name": "Jacob Cloutier",
+      "playerId": "prospect:WPG:jacob-cloutier",
+      "birthDate": "2007-03-22",
+      "position": "F",
+      "nhlRightsTeam": "WPG",
+      "currentLeague": "OHL",
+      "currentTeam": "Saginaw Spirit",
+      "source": "https://www.juniorpuck.ca/en/players/ohl-8990",
+      "note": "Profil JuniorPuck 2026-27 : Saginaw Spirit, OHL."
+    },
+    {
+      "name": "Jakub Milota",
+      "playerId": "nhl:8485011",
+      "birthDate": "2006-04-14",
+      "position": "G",
+      "nhlRightsTeam": "NSH",
+      "currentLeague": "NCAA",
+      "currentTeam": "Ohio State University",
+      "source": "https://ohiostatebuckeyes.com/sports/mens-ice-hockey/roster/jakub-milota/13678",
+      "note": "Effectif officiel Ohio State 2026-27 : gardien recrue."
+    },
+    {
+      "name": "Jean-Samuel Daigneault",
+      "playerId": "prospect:MTL:jean-samuel-daigneault",
+      "birthDate": "2008-02-15",
+      "position": "D",
+      "nhlRightsTeam": "MTL",
+      "currentLeague": "OHL",
+      "currentTeam": "North Bay Battalion",
+      "source": "https://chl.ca/ohl-bulldogs/article/bulldogs-acquire-draft-selections-from-battalion-for-daigneault/",
+      "note": "Transaction officielle du 9 octobre 2026 : Daigneault quitte Brantford pour North Bay."
+    },
+    {
+      "name": "Joshua Ravensbergen",
+      "playerId": "prospect:SJS:joshua-ravensbergen",
+      "birthDate": "2006-11-27",
+      "position": "G",
+      "nhlRightsTeam": "SJS",
+      "currentLeague": "NCAA",
+      "currentTeam": "Michigan State University",
+      "source": "https://www.hockeyeastonline.com/players/career/128328",
+      "note": "Statistiques Hockey East 2026-27 : Michigan State."
+    },
+    {
+      "name": "Jaxon Cover",
+      "playerId": "nhl:8486031",
+      "birthDate": "2008-02-13",
+      "position": "F",
+      "nhlRightsTeam": "OTT",
+      "currentLeague": "OHL",
+      "currentTeam": "London Knights",
+      "source": "https://chl.ca/ohl/players/9333/game_by_game/",
+      "note": "Profil et statistiques officiels OHL 2026-27 : London Knights."
+    },
+    {
+      "name": "Matvei Korotky",
+      "playerId": "nhl:8485104",
+      "birthDate": "2005-12-23",
+      "position": "F",
+      "nhlRightsTeam": "STL",
+      "currentLeague": "VHL",
+      "currentTeam": "SKA-VMF St. Petersburg",
+      "source": "https://www.eliteprospects.com/player/803120/matvei-korotky",
+      "note": "Profil Elite Prospects 2026-27 : SKA-VMF St. Petersburg, VHL."
+    },
+    {
+      "name": "Melvin Strahl",
+      "playerId": "nhl:8484441",
+      "birthDate": "2005-03-18",
+      "position": "G",
+      "nhlRightsTeam": "CBJ",
+      "currentLeague": "NCAA",
+      "currentTeam": "University of Minnesota",
+      "source": "https://gophersports.com/sports/mens-ice-hockey/roster/melvin-strahl/24099",
+      "note": "Effectif officiel Minnesota 2026-27."
+    },
+    {
+      "name": "Mikkel Eriksen",
+      "playerId": "nhl:8485596",
+      "birthDate": "2007-09-13",
+      "position": "F",
+      "nhlRightsTeam": "NYR",
+      "currentLeague": "ALLSVENSKAN",
+      "currentTeam": "Mora IK",
+      "source": "https://www.farjestadbk.se/article/bm2atlr-23h01/view",
+      "note": "Annonce officielle Färjestad du 22 septembre 2026 : prêt à Mora IK en HockeyAllsvenskan."
+    },
+    {
+      "name": "Mikhail Gulyayev",
+      "playerId": "nhl:8484389",
+      "birthDate": "2005-04-26",
+      "position": "D",
+      "nhlRightsTeam": "COL",
+      "currentLeague": "KHL",
+      "currentTeam": "Avangard Omsk",
+      "source": "https://www.eliteprospects.com/player/700461/mikhail-gulyayev",
+      "note": "Profil Elite Prospects 2026-27 : Avangard Omsk, KHL."
+    },
+    {
+      "name": "Nikita Guslistov",
+      "playerId": "nhl:8482917",
+      "birthDate": "2002-05-30",
+      "position": "F",
+      "nhlRightsTeam": "CAR",
+      "currentLeague": "VHL",
+      "currentTeam": "Zauralye Kurgan",
+      "source": "https://www.vhlru.ru/en/players/33536/",
+      "note": "Profil et statistiques officiels VHL 2026-27 : Zauralye."
+    },
+    {
+      "name": "Noel Pakarinen",
+      "playerId": "prospect:VGK:noel-pakarinen",
+      "birthDate": "2008-07-09",
+      "position": "F",
+      "nhlRightsTeam": "VGK",
+      "currentLeague": "WHL",
+      "currentTeam": "Penticton Vees",
+      "source": "https://chl.ca/whl/article/golden-knights-prospect-noel-pakarinen-signs-whl-scholarship-and-development-agreement-with-vees/",
+      "note": "Annonce officielle WHL du 7 juillet 2026 : signé par les Penticton Vees."
+    },
+    {
+      "name": "Prokhor Poltapov",
+      "playerId": "nhl:8482769",
+      "birthDate": "2003-02-01",
+      "position": "F",
+      "nhlRightsTeam": "BUF",
+      "currentLeague": "KHL",
+      "currentTeam": "CSKA Moskva",
+      "source": "https://puckpedia.com/player/PROKHOR-POLTAPOV",
+      "note": "Statistiques de saison 2026-27 : CSKA Moskva, KHL."
+    },
+    {
+      "name": "Maksim Sokolovskii",
+      "playerId": "pipeline:PHI:maksim-sokolovskii",
+      "birthDate": "2008-07-12",
+      "position": "D",
+      "nhlRightsTeam": "PHI",
+      "currentLeague": "OHL",
+      "currentTeam": "London Knights",
+      "source": "https://chl.ca/ohl/article/2026-27-season-preview-london-knights/",
+      "note": "Aperçu officiel OHL 2026-27 : Sokolovskii revient avec les London Knights."
+    },
+    {
+      "name": "Maksim Berezkin",
+      "playerId": "nhl:8482202",
+      "birthDate": "2001-10-12",
+      "position": "F",
+      "nhlRightsTeam": "EDM",
+      "currentLeague": "KHL",
+      "currentTeam": "Lokomotiv Yaroslavl",
+      "source": "https://www.eliteprospects.com/player/514147/maxim-beryozkin",
+      "note": "Profil Elite Prospects 2026-27 : Lokomotiv Yaroslavl, KHL."
     }
   ],
   "sourceNote": "Manual corrections are source-linked and do not infer NHL rights without a verified rights holder. Current club assignments, league labels, physical profile fields and expired-rights clearances reconciled on 2026-11-01."

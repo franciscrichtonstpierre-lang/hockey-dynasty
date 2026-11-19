@@ -69,7 +69,7 @@ for(const p of skaters){
   FI:fightingMajors>0?clamp(20+Math.min(79,fightingMajors*12)):10,
   SH:clamp(30+goal*47+shot*12+point*5),
   PL:clamp(34+point*34+assist*14+powerPlay*6+shortHanded*2),
-  ST:clamp(38+toi*23+hit*8+(d?5:0)),
+  ST:clamp(35+takeaway*20+giveaway*20+assist*15+point*10), // Stickhandling proxy: puck control, retention and playmaking; not speed, hits or ice time.
   CH:clamp(35+hit*30+takeaway*15+plus*8+(d?4:0)),
   PO:clamp(38+takeaway*22+giveaway*16+block*12+plus*5),
   HI:clamp(35+hit*34+block*20+toi*6),

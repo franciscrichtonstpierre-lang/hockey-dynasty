@@ -41,7 +41,15 @@ test("source-verified league corrections are reflected in the registry", () => {
     ["Alexander Rykov","KHL","Traktor Chelyabinsk"],
     ["Vladimir Grudinin","KHL","Severstal Cherepovets"],
     ["Timur Mukhanov","VHL","Dizel Penza"],
-    ["Egor Velmakin","ECHL","Greensboro Gargoyles"]
+    ["Egor Velmakin","ECHL","Greensboro Gargoyles"],
+    ["Bogdan Konyushkov","KHL","Torpedo Nizhny Novgorod"],
+    ["Daniil Sobolev","KHL","Spartak Moskva"],
+    ["Dmitri Kostenko","KHL","Amur Khabarovsk"],
+    ["Makar Khanin","VHL","Khimik Voskresensk"],
+    ["John Mooney","NCAA","University of Minnesota"],
+    ["Mikus Vecvanags","BCHL","Victoria Grizzlies"],
+    ["Yevgeni Volokhin","VHL","Khimik Voskresensk"],
+    ["Antoine Keller","NL","HC Ajoie"]
   ];
   for (const [name,league,team] of expected) {
     const player = byName.get(name);

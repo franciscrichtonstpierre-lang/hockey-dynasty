@@ -310,7 +310,7 @@ export function estimatePlayerRatings(player, statRow, statIndex, existingRating
     CH:clamp(isGoalie ? 35 + goalieWorkload * 48 : overall + (defense - 0.5) * 18 + (position === "D" ? 4 : -1)),
     PO:clamp(isGoalie ? 35 + goalieGaa * 48 : overall + (defense - 0.5) * 16),
     HI:clamp(isGoalie ? 35 + goalieShutouts * 48 : overall + (sizeScore - 0.5) * 24 + (position === "D" ? 4 : 0)),
-    SK:clamp(isGoalie ? 35 + goalieWorkload * 44 : overall + (points - 0.5) * 10 - (sizeScore - 0.5) * 5),
+    SK:clamp(isGoalie ? 35 + goalieWorkload * 44 : directSkatingRating > 0 ? directSkatingRating : overall + 4 + (points - 0.5) * 4),
     EN:clamp(isGoalie ? 35 + goalieWorkload * 48 : overall + (durability - 0.5) * 14),
     PE:clamp(isGoalie ? 58 : 25 + discipline * 65),
     FA:clamp(isGoalie ? 35 + goalieWins * 44 : overall + (isForward ? 1 : position === "D" ? -3 : 0) + (position === "F" && player?.detailedPosition === "C" ? 4 : 0)),

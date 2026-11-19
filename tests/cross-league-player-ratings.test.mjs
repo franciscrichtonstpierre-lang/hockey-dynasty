@@ -121,6 +121,26 @@ test("league-stat estimates are individualized, complete, bounded, and provenanc
   assert.notEqual(high.overall, low.overall);
 });
 
+test("league strength is reflected in the shared OA scale, not hidden by within-league percentiles", () => {
+  const makeRows = () => [
+    { player_id:1, name:"League Star", position:"F", games_played:30, goals:20, assists:20, points:40, shots:100, plus_minus:12, penalty_minutes:8 },
+    { player_id:2, name:"League Regular", position:"F", games_played:30, goals:10, assists:10, points:20, shots:60, plus_minus:0, penalty_minutes:20 },
+    { player_id:3, name:"League Depth", position:"F", games_played:30, goals:1, assists:2, points:3, shots:20, plus_minus:-15, penalty_minutes:70 }
+  ];
+  const evaluate = league => {
+    const rows = makeRows();
+    const index = createLeagueStatIndex({ league, source:"official league stats", season:"2026-2027", skaters:rows, goalies:[] });
+    return estimatePlayerRatings({ name:"League Star", currentLeague:league, position:"F", age:20 }, rows[0], index).overall;
+  };
+  const nhl = evaluate("NHL");
+  const ahl = evaluate("AHL");
+  const ohl = evaluate("OHL");
+  assert.ok(nhl > ahl, `NHL star OA ${nhl} should exceed same-percentile AHL star OA ${ahl}`);
+  assert.ok(ahl > ohl, `AHL star OA ${ahl} should exceed same-percentile OHL star OA ${ohl}`);
+  assert.ok(ahl <= 80, `AHL rating must remain within the calibrated league ceiling, got ${ahl}`);
+  assert.ok(ohl <= 70, `Major-junior rating must remain within the calibrated league ceiling, got ${ohl}`);
+});
+
 test("a profile-only estimate is explicitly marked very low confidence", () => {
   const result = estimatePlayerRatings({ name:"Unscouted Profile", currentLeague:"EUROPE", position:"D", age:20, source:"https://club.example/roster" });
   assert.deepEqual(Object.keys(result.attributes), RATING_ATTRIBUTES);

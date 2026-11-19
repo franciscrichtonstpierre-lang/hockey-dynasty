@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "season": "2026-2027",
-  "generatedAt": "2026-11-19T04:50:23.370Z",
+  "generatedAt": "2026-11-19T04:52:09.557Z",
   "playerCount": 3342,
   "leagueCorrections": {
-    "applied": 158,
+    "applied": 180,
     "protectedRoster": 24,
     "ambiguous": 0,
     "missing": 2,
-    "unresolved": 65
+    "unresolved": 34
   },
   "unresolvedLeaguePlayers": [
     {
@@ -32,26 +32,6 @@
       "reason": "organization_name_only_not_current_team"
     },
     {
-      "id": "nhl:8483721",
-      "name": "Artem Barabosha",
-      "position": "D",
-      "birthDate": "2004-03-18",
-      "age": 22,
-      "rightsTeam": "NJD",
-      "source": "https://api-web.nhle.com/v1/prospects/NJD",
-      "reason": "organization_name_only_not_current_team"
-    },
-    {
-      "id": "prospect:DET:beckham-edwards",
-      "name": "Beckham Edwards",
-      "position": "F",
-      "birthDate": "2008-01-06",
-      "age": 18,
-      "rightsTeam": "DET",
-      "source": "https://www.nhl.com/redwings/news/red-wings-release-2026-nhl-prospect-tournament-roster-and-schedule; https://thehockeywriters.com/red-wings-prospect-rankings-summer-2026/; https://www.nhl.com/news/detroit-red-wings-top-prospects-for-2026-27-season-32-in-32",
-      "reason": "organization_name_only_not_current_team"
-    },
-    {
       "id": "pipeline:NSH:brett-murray",
       "name": "Brett Murray",
       "position": "G",
@@ -62,16 +42,6 @@
       "reason": "nhl_rights_without_current_nhl_roster_membership"
     },
     {
-      "id": "nhl:8485218",
-      "name": "Bryce Pickford",
-      "position": "D",
-      "birthDate": "2006-04-02",
-      "age": 20,
-      "rightsTeam": "MTL",
-      "source": "https://api-web.nhle.com/v1/prospects/MTL",
-      "reason": "organization_name_only_not_current_team"
-    },
-    {
       "id": "prospect:NSH:cameron-reid",
       "name": "Cameron Reid",
       "position": "D",
@@ -79,16 +49,6 @@
       "age": 19,
       "rightsTeam": "NSH",
       "source": "https://hockeyinsights.ca/team-pipeline/nashville-predators/",
-      "reason": "organization_name_only_not_current_team"
-    },
-    {
-      "id": "prospect:DAL:cameron-schmidt",
-      "name": "Cameron Schmidt",
-      "position": "F",
-      "birthDate": "2007-01-19",
-      "age": 19,
-      "rightsTeam": "DAL",
-      "source": "https://hockeyinsights.ca/team-pipeline/dallas-stars/",
       "reason": "organization_name_only_not_current_team"
     },
     {
@@ -102,46 +62,6 @@
       "reason": "organization_name_only_not_current_team"
     },
     {
-      "id": "nhl:8486037",
-      "name": "Colin Fitzgerald",
-      "position": "F",
-      "birthDate": "2008-04-01",
-      "age": 18,
-      "rightsTeam": "STL",
-      "source": "https://api-web.nhle.com/v1/prospects/STL",
-      "reason": "organization_name_only_not_current_team"
-    },
-    {
-      "id": "prospect:TOR:cooper-williams",
-      "name": "Cooper Williams",
-      "position": "F",
-      "birthDate": "2008-02-18",
-      "age": 18,
-      "rightsTeam": "TOR",
-      "source": "https://hockeyinsights.ca/team-pipeline/toronto-maple-leafs/",
-      "reason": "organization_name_only_not_current_team"
-    },
-    {
-      "id": "nhl:8484465",
-      "name": "Daniil Karpovich",
-      "position": "D",
-      "birthDate": "2004-12-06",
-      "age": 21,
-      "rightsTeam": "NJD",
-      "source": "https://api-web.nhle.com/v1/prospects/NJD",
-      "reason": "organization_name_only_not_current_team"
-    },
-    {
-      "id": "nhl:8483689",
-      "name": "Daniil Orlov",
-      "position": "D",
-      "birthDate": "2003-12-21",
-      "age": 22,
-      "rightsTeam": "NJD",
-      "source": "https://api-web.nhle.com/v1/prospects/NJD",
-      "reason": "organization_name_only_not_current_team"
-    },
-    {
       "id": "nhl:8485621",
       "name": "Dmitri Isayev",
       "position": "F",
@@ -149,16 +69,6 @@
       "age": 19,
       "rightsTeam": "OTT",
       "source": "https://api-web.nhle.com/v1/prospects/OTT",
-      "reason": "organization_name_only_not_current_team"
-    },
-    {
-      "id": "nhl:8483722",
-      "name": "Eli Barnett",
-      "position": "D",
-      "birthDate": "2003-09-16",
-      "age": 22,
-      "rightsTeam": "SJS",
-      "source": "https://api-web.nhle.com/v1/prospects/SJS",
       "reason": "organization_name_only_not_current_team"
     },
     {
@@ -202,16 +112,6 @@
       "reason": "organization_name_only_not_current_team"
     },
     {
-      "id": "prospect:BOS:jacob-vandeven",
-      "name": "Jacob Vandeven",
-      "position": "D",
-      "birthDate": "2008-03-03",
-      "age": 18,
-      "rightsTeam": "BOS",
-      "source": "https://hockeyinsights.ca/team-pipeline/boston-bruins/",
-      "reason": "organization_name_only_not_current_team"
-    },
-    {
       "id": "prospect:SJS:jake-gustafson",
       "name": "Jake Gustafson",
       "position": "F",
@@ -220,26 +120,6 @@
       "rightsTeam": "SJS",
       "source": "https://hockeyinsights.ca/team-pipeline/san-jose-sharks/",
       "reason": "organization_name_only_not_current_team"
-    },
-    {
-      "id": "nhl:8484473",
-      "name": "Janne Peltonen",
-      "position": "D",
-      "birthDate": "2005-03-22",
-      "age": 21,
-      "rightsTeam": "CHI",
-      "source": "https://api-web.nhle.com/v1/prospects/CHI",
-      "reason": "organization_name_only_not_current_team"
-    },
-    {
-      "id": "pipeline:VGK:jonas-rondbjerg",
-      "name": "Jonas Rondbjerg",
-      "position": "F",
-      "birthDate": "1999-03-31",
-      "age": 27,
-      "rightsTeam": null,
-      "source": "Own pick",
-      "reason": "nhl_rights_without_current_nhl_roster_membership"
     },
     {
       "id": "pipeline:PIT:joseph-masonius",
@@ -292,16 +172,6 @@
       "reason": "organization_name_only_not_current_team"
     },
     {
-      "id": "pipeline:VAN:mackenzie-maceachern",
-      "name": "Mackenzie MacEachern",
-      "position": "F",
-      "birthDate": "1994-03-09",
-      "age": 32,
-      "rightsTeam": null,
-      "source": "Drafted by STL",
-      "reason": "nhl_rights_without_current_nhl_roster_membership"
-    },
-    {
       "id": "nhl:8485353",
       "name": "Mason West",
       "position": "F",
@@ -309,16 +179,6 @@
       "age": 19,
       "rightsTeam": "CHI",
       "source": "https://api-web.nhle.com/v1/prospects/CHI",
-      "reason": "organization_name_only_not_current_team"
-    },
-    {
-      "id": "nhl:8485609",
-      "name": "Maxim Agafonov",
-      "position": "D",
-      "birthDate": "2007-04-10",
-      "age": 19,
-      "rightsTeam": "SEA",
-      "source": "https://api-web.nhle.com/v1/prospects/SEA",
       "reason": "organization_name_only_not_current_team"
     },
     {
@@ -332,76 +192,6 @@
       "reason": "organization_name_only_not_current_team"
     },
     {
-      "id": "nhl:8485618",
-      "name": "Mikhail Fyodorov",
-      "position": "F",
-      "birthDate": "2006-12-01",
-      "age": 19,
-      "rightsTeam": "STL",
-      "source": "https://api-web.nhle.com/v1/prospects/STL",
-      "reason": "organization_name_only_not_current_team"
-    },
-    {
-      "id": "nhl:8485106",
-      "name": "Miroslav Satan",
-      "position": "F",
-      "birthDate": "2006-03-02",
-      "age": 20,
-      "rightsTeam": "WSH",
-      "source": "https://api-web.nhle.com/v1/prospects/WSH",
-      "reason": "organization_name_only_not_current_team"
-    },
-    {
-      "id": "nhl:8484431",
-      "name": "Nikita Ishimnikov",
-      "position": "D",
-      "birthDate": "2005-04-21",
-      "age": 21,
-      "rightsTeam": "COL",
-      "source": "https://api-web.nhle.com/v1/prospects/COL",
-      "reason": "organization_name_only_not_current_team"
-    },
-    {
-      "id": "nhl:8483734",
-      "name": "Nikita Yevseyev",
-      "position": "D",
-      "birthDate": "2004-05-10",
-      "age": 22,
-      "rightsTeam": "EDM",
-      "source": "https://api-web.nhle.com/v1/prospects/EDM",
-      "reason": "organization_name_only_not_current_team"
-    },
-    {
-      "id": "prospect:BUF:norwin-panocha",
-      "name": "Norwin Panocha",
-      "position": "D",
-      "birthDate": "2005-02-24",
-      "age": 21,
-      "rightsTeam": "BUF",
-      "source": "https://www.hockeyscout.dev/prospects/BUF",
-      "reason": "organization_name_only_not_current_team"
-    },
-    {
-      "id": "nhl:8484168",
-      "name": "Oscar Fisker Molgaard",
-      "position": "F",
-      "birthDate": "2005-02-18",
-      "age": 21,
-      "rightsTeam": "SEA",
-      "source": "https://api-web.nhle.com/v1/prospects/SEA",
-      "reason": "nhl_rights_without_current_nhl_roster_membership"
-    },
-    {
-      "id": "prospect:TBL:roman-luttsev",
-      "name": "Roman Luttsev",
-      "position": "F",
-      "birthDate": "2006-04-01",
-      "age": 20,
-      "rightsTeam": "TBL",
-      "source": "https://hockeyinsights.ca/team-pipeline/tampa-bay-lightning/",
-      "reason": "organization_name_only_not_current_team"
-    },
-    {
       "id": "prospect:CAR:roman-shokhrin",
       "name": "Roman Shokhrin",
       "position": "D",
@@ -409,16 +199,6 @@
       "age": 20,
       "rightsTeam": "CAR",
       "source": "https://hockeyinsights.ca/team-pipeline/carolina-hurricanes/",
-      "reason": "organization_name_only_not_current_team"
-    },
-    {
-      "id": "pipeline:DAL:ryan-brown",
-      "name": "Ryan Brown",
-      "position": "D",
-      "birthDate": null,
-      "age": 51,
-      "rightsTeam": null,
-      "source": "Own pick",
       "reason": "organization_name_only_not_current_team"
     },
     {
@@ -439,46 +219,6 @@
       "age": 26,
       "rightsTeam": null,
       "source": "Own pick",
-      "reason": "organization_name_only_not_current_team"
-    },
-    {
-      "id": "prospect:CAR:ryder-fetterolf",
-      "name": "Ryder Fetterolf",
-      "position": "G",
-      "birthDate": "2008-01-05",
-      "age": 18,
-      "rightsTeam": "CAR",
-      "source": "https://hockeyinsights.ca/team-pipeline/carolina-hurricanes/",
-      "reason": "organization_name_only_not_current_team"
-    },
-    {
-      "id": "nhl:8483429",
-      "name": "Seamus Casey",
-      "position": "D",
-      "birthDate": "2004-01-08",
-      "age": 22,
-      "rightsTeam": "NJD",
-      "source": "https://api-web.nhle.com/v1/prospects/NJD",
-      "reason": "nhl_rights_without_current_nhl_roster_membership"
-    },
-    {
-      "id": "prospect:DAL:sebastian-bradshaw",
-      "name": "Sebastian Bradshaw",
-      "position": "F",
-      "birthDate": "2005-05-26",
-      "age": 21,
-      "rightsTeam": "DAL",
-      "source": "https://hockeyinsights.ca/team-pipeline/dallas-stars/",
-      "reason": "organization_name_only_not_current_team"
-    },
-    {
-      "id": "nhl:8483738",
-      "name": "Sergei Ivanov",
-      "position": "G",
-      "birthDate": "2004-04-03",
-      "age": 22,
-      "rightsTeam": "CBJ",
-      "source": "https://api-web.nhle.com/v1/prospects/CBJ",
       "reason": "organization_name_only_not_current_team"
     },
     {
@@ -592,26 +332,6 @@
       "reason": "organization_name_only_not_current_team"
     },
     {
-      "id": "nhl:8485022",
-      "name": "Viktor Norringer",
-      "position": "F",
-      "birthDate": "2006-08-31",
-      "age": 20,
-      "rightsTeam": "NSH",
-      "source": "https://api-web.nhle.com/v1/prospects/NSH",
-      "reason": "organization_name_only_not_current_team"
-    },
-    {
-      "id": "prospect:LAK:vojtech-cihar",
-      "name": "Vojtech Cihar",
-      "position": "F",
-      "birthDate": "2007-03-29",
-      "age": 19,
-      "rightsTeam": "LAK",
-      "source": "https://hockeyinsights.ca/team-pipeline/los-angeles-kings/",
-      "reason": "organization_name_only_not_current_team"
-    },
-    {
       "id": "nhl:8483746",
       "name": "Vyacheslav Buteyets",
       "position": "G",
@@ -619,36 +339,6 @@
       "age": null,
       "rightsTeam": null,
       "source": "https://api-web.nhle.com/v1/prospects/ANA",
-      "reason": "organization_name_only_not_current_team"
-    },
-    {
-      "id": "nhl:8485566",
-      "name": "Will Reynolds",
-      "position": "D",
-      "birthDate": "2007-08-11",
-      "age": 19,
-      "rightsTeam": "SEA",
-      "source": "https://api-web.nhle.com/v1/prospects/SEA",
-      "reason": "organization_name_only_not_current_team"
-    },
-    {
-      "id": "nhl:8486330",
-      "name": "William Tomko",
-      "position": "F",
-      "birthDate": "2006-10-17",
-      "age": 19,
-      "rightsTeam": "SEA",
-      "source": "https://api-web.nhle.com/v1/prospects/SEA",
-      "reason": "organization_name_only_not_current_team"
-    },
-    {
-      "id": "prospect:TOR:wyatt-schingoethe",
-      "name": "Wyatt Schingoethe",
-      "position": "F",
-      "birthDate": "2002-08-03",
-      "age": 24,
-      "rightsTeam": "TOR",
-      "source": "https://hockeyinsights.ca/team-pipeline/toronto-maple-leafs/",
       "reason": "organization_name_only_not_current_team"
     },
     {
@@ -672,16 +362,16 @@
       "manual_source_review_2026-11-04": 319
     },
     "confidence": {
-      "very_low": 1952,
-      "low": 1194,
+      "very_low": 1951,
+      "low": 1195,
       "medium": 137,
       "high": 59
     },
     "evidence": {
-      "current_ability_and_age": 1960,
-      "league_points_per_game": 168,
-      "draft_pick+league_points_per_game": 609,
-      "draft_pick": 529,
+      "current_ability_and_age": 1959,
+      "league_points_per_game": 169,
+      "draft_pick+league_points_per_game": 614,
+      "draft_pick": 524,
       "draft_pick+goalie_save_percentage": 37,
       "published_source_rank+league_points_per_game": 22,
       "published_source_rank": 11,
@@ -689,37 +379,40 @@
     }
   },
   "playersByLeague": {
-    "NHL": 805,
-    "AHL": 856,
+    "NHL": 806,
+    "AHL": 861,
     "ECHL": 764,
-    "NCAA": 295,
+    "NCAA": 300,
     "LIIGA": 48,
-    "ALLSVENSKAN": 18,
+    "ALLSVENSKAN": 19,
     "OTHER": 20,
-    "OHL": 94,
-    "WHL": 87,
-    "MHL": 29,
+    "OHL": 97,
+    "WHL": 90,
+    "MHL": 30,
     "SHL": 41,
-    "KHL": 50,
-    "VHL": 25,
-    "QMJHL": 32,
+    "KHL": 54,
+    "VHL": 28,
+    "QMJHL": 33,
     "CHL-QMJHL": 14,
     "CHL-OHL": 2,
-    "UNKNOWN": 65,
+    "UNKNOWN": 34,
     "NL": 7,
     "RETIRED": 2,
     "USHL": 24,
     "EUROPE": 37,
     "OJHL": 1,
-    "DEL": 4,
+    "DEL": 5,
     "USNTDP": 9,
     "HSA": 1,
+    "USPORTS": 1,
     "SL": 1,
     "CZECH": 7,
     "CHL-WHL": 1,
     "BCHL": 1,
+    "SLOVAK": 1,
     "NORWAY": 1,
-    "U20 NATIONELL": 1
+    "U20 NATIONELL": 1,
+    "GERMANY3": 1
   },
   "policy": "Only source-backed corrections are applied. Verified roster memberships are protected. Unresolved players remain UNKNOWN; provisional potential remains clearly distinguished from source-reviewed scouting estimates."
 }

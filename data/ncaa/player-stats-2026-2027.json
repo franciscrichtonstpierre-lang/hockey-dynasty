@@ -3,7 +3,7 @@
   "league": "NCAA",
   "season": "2026-2027",
   "source": "https://www.collegehockeyinc.com/conferences/national/natplayer27.php",
-  "syncedAt": "2026-11-19T04:49:28.788Z",
+  "syncedAt": "2026-11-19T04:51:19.220Z",
   "counts": {
     "skaters": 1440,
     "goalies": 0
@@ -426,19 +426,6 @@
       "plus_minus": 0
     },
     {
-      "player_id": "ncaa:matous-kucharcik",
-      "name": "Matous Kucharcik",
-      "position": "F",
-      "team_name": "Miami",
-      "games_played": 12,
-      "goals": 3,
-      "assists": 10,
-      "points": 13,
-      "penalty_minutes": 25,
-      "shots": 38,
-      "plus_minus": 5
-    },
-    {
       "player_id": "ncaa:tobias-ohman",
       "name": "Tobias Ohman",
       "position": "F",
@@ -533,14 +520,14 @@
       "player_id": "ncaa:cole-mckinney",
       "name": "Cole McKinney",
       "position": "F",
-      "team_name": "Michigan",
-      "games_played": 11,
-      "goals": 6,
-      "assists": 7,
+      "team_name": "Miami",
+      "games_played": 12,
+      "goals": 3,
+      "assists": 10,
       "points": 13,
-      "penalty_minutes": 12,
-      "shots": 25,
-      "plus_minus": 9
+      "penalty_minutes": 25,
+      "shots": 38,
+      "plus_minus": 5
     },
     {
       "player_id": "ncaa:sixten-jennersjo",
@@ -840,32 +827,6 @@
       "penalty_minutes": 2,
       "shots": 41,
       "plus_minus": 0
-    },
-    {
-      "player_id": "ncaa:cole-reschny",
-      "name": "Cole Reschny",
-      "position": "F",
-      "team_name": "North Dakota",
-      "games_played": 11,
-      "goals": 6,
-      "assists": 5,
-      "points": 11,
-      "penalty_minutes": 6,
-      "shots": 28,
-      "plus_minus": -1
-    },
-    {
-      "player_id": "ncaa:nick-moldenhauer",
-      "name": "Nick Moldenhauer",
-      "position": "F",
-      "team_name": "Michigan",
-      "games_played": 11,
-      "goals": 2,
-      "assists": 9,
-      "points": 11,
-      "penalty_minutes": 0,
-      "shots": 16,
-      "plus_minus": 8
     },
     {
       "player_id": "ncaa:zaccharya-wisdom",
@@ -1193,19 +1154,6 @@
       "plus_minus": -1
     },
     {
-      "player_id": "ncaa:amine-hajibi",
-      "name": "Amine Hajibi",
-      "position": "F",
-      "team_name": "Northeastern",
-      "games_played": 8,
-      "goals": 3,
-      "assists": 7,
-      "points": 10,
-      "penalty_minutes": 6,
-      "shots": 19,
-      "plus_minus": 5
-    },
-    {
       "player_id": "ncaa:jacob-mathieu",
       "name": "Jacob Mathieu",
       "position": "F",
@@ -1271,32 +1219,6 @@
       "plus_minus": 2
     },
     {
-      "player_id": "ncaa:kieran-cebrian",
-      "name": "Kieran Cebrian",
-      "position": "F",
-      "team_name": "Denver",
-      "games_played": 12,
-      "goals": 4,
-      "assists": 5,
-      "points": 9,
-      "penalty_minutes": 6,
-      "shots": 16,
-      "plus_minus": 7
-    },
-    {
-      "player_id": "ncaa:nace-langus",
-      "name": "Nace Langus",
-      "position": "F",
-      "team_name": "Augustana",
-      "games_played": 12,
-      "goals": 5,
-      "assists": 4,
-      "points": 9,
-      "penalty_minutes": 4,
-      "shots": 25,
-      "plus_minus": 9
-    },
-    {
       "player_id": "ncaa:ethan-zielke",
       "name": "Ethan Zielke",
       "position": "F",
@@ -1336,6 +1258,19 @@
       "plus_minus": -5
     },
     {
+      "player_id": "ncaa:jacob-maillet",
+      "name": "Jacob Maillet",
+      "position": "F",
+      "team_name": "Niagara",
+      "games_played": 12,
+      "goals": 2,
+      "assists": 7,
+      "points": 9,
+      "penalty_minutes": 6,
+      "shots": 21,
+      "plus_minus": 3
+    },
+    {
       "player_id": "ncaa:jeremy-loranger",
       "name": "Jeremy Loranger",
       "position": "F",
@@ -1349,17 +1284,264 @@
       "plus_minus": -9
     },
     {
-      "player_id": "ncaa:jacob-maillet",
-      "name": "Jacob Maillet",
+      "player_id": "ncaa:jack-pridham",
+      "name": "Jack Pridham",
       "position": "F",
-      "team_name": "Niagara",
+      "team_name": "Denver",
       "games_played": 12,
       "goals": 2,
       "assists": 7,
       "points": 9,
+      "penalty_minutes": 4,
+      "shots": 38,
+      "plus_minus": 0
+    },
+    {
+      "player_id": "ncaa:ethan-gardula",
+      "name": "Ethan Gardula",
+      "position": "F",
+      "team_name": "Connecticut",
+      "games_played": 12,
+      "goals": 3,
+      "assists": 6,
+      "points": 9,
       "penalty_minutes": 6,
-      "shots": 21,
+      "shots": 22,
+      "plus_minus": -3
+    },
+    {
+      "player_id": "ncaa:karter-mcnarland",
+      "name": "Karter McNarland",
+      "position": "F",
+      "team_name": "Alaska-Anchorage",
+      "games_played": 12,
+      "goals": 1,
+      "assists": 8,
+      "points": 9,
+      "penalty_minutes": 14,
+      "shots": 16,
+      "plus_minus": -15
+    },
+    {
+      "player_id": "ncaa:caleb-malhotra",
+      "name": "Caleb Malhotra",
+      "position": "F",
+      "team_name": "Boston University",
+      "games_played": 12,
+      "goals": 3,
+      "assists": 6,
+      "points": 9,
+      "penalty_minutes": 8,
+      "shots": 29,
+      "plus_minus": 7
+    },
+    {
+      "player_id": "ncaa:jack-stockfish",
+      "name": "Jack Stockfish",
+      "position": "F",
+      "team_name": "Quinnipiac",
+      "games_played": 12,
+      "goals": 6,
+      "assists": 3,
+      "points": 9,
+      "penalty_minutes": 8,
+      "shots": 32,
       "plus_minus": 3
+    },
+    {
+      "player_id": "ncaa:tanner-klimpke",
+      "name": "Tanner Klimpke",
+      "position": "F",
+      "team_name": "Maine",
+      "games_played": 12,
+      "goals": 5,
+      "assists": 4,
+      "points": 9,
+      "penalty_minutes": 2,
+      "shots": 33,
+      "plus_minus": 4
+    },
+    {
+      "player_id": "ncaa:owen-beckner",
+      "name": "Owen Beckner",
+      "position": "F",
+      "team_name": "Colorado College",
+      "games_played": 12,
+      "goals": 6,
+      "assists": 3,
+      "points": 9,
+      "penalty_minutes": 2,
+      "shots": 20,
+      "plus_minus": 6
+    },
+    {
+      "player_id": "ncaa:alexandre-blais",
+      "name": "Alexandre Blais",
+      "position": "F",
+      "team_name": "Connecticut",
+      "games_played": 12,
+      "goals": 0,
+      "assists": 9,
+      "points": 9,
+      "penalty_minutes": 10,
+      "shots": 33,
+      "plus_minus": -5
+    },
+    {
+      "player_id": "ncaa:heath-nelson",
+      "name": "Heath Nelson",
+      "position": "F",
+      "team_name": "Augustana",
+      "games_played": 12,
+      "goals": 3,
+      "assists": 6,
+      "points": 9,
+      "penalty_minutes": 0,
+      "shots": 22,
+      "plus_minus": 5
+    },
+    {
+      "player_id": "ncaa:caden-brown",
+      "name": "Caden Brown",
+      "position": "F",
+      "team_name": "Lindenwood",
+      "games_played": 12,
+      "goals": 3,
+      "assists": 6,
+      "points": 9,
+      "penalty_minutes": 6,
+      "shots": 31,
+      "plus_minus": -6
+    },
+    {
+      "player_id": "ncaa:jack-murtagh",
+      "name": "Jack Murtagh",
+      "position": "F",
+      "team_name": "Boston University",
+      "games_played": 12,
+      "goals": 3,
+      "assists": 6,
+      "points": 9,
+      "penalty_minutes": 8,
+      "shots": 26,
+      "plus_minus": 4
+    },
+    {
+      "player_id": "ncaa:matthew-van-blaricom",
+      "name": "Matthew Van Blaricom",
+      "position": "F",
+      "team_name": "Michigan Tech",
+      "games_played": 12,
+      "goals": 5,
+      "assists": 4,
+      "points": 9,
+      "penalty_minutes": 4,
+      "shots": 37,
+      "plus_minus": 11
+    },
+    {
+      "player_id": "ncaa:kazimier-sobieski",
+      "name": "Kazimier Sobieski",
+      "position": "D",
+      "team_name": "RPI",
+      "games_played": 12,
+      "goals": 5,
+      "assists": 4,
+      "points": 9,
+      "penalty_minutes": 10,
+      "shots": 35,
+      "plus_minus": 0
+    },
+    {
+      "player_id": "ncaa:kieran-cebrian",
+      "name": "Kieran Cebrian",
+      "position": "F",
+      "team_name": "Denver",
+      "games_played": 12,
+      "goals": 4,
+      "assists": 5,
+      "points": 9,
+      "penalty_minutes": 6,
+      "shots": 16,
+      "plus_minus": 7
+    },
+    {
+      "player_id": "ncaa:nace-langus",
+      "name": "Nace Langus",
+      "position": "F",
+      "team_name": "Augustana",
+      "games_played": 12,
+      "goals": 5,
+      "assists": 4,
+      "points": 9,
+      "penalty_minutes": 4,
+      "shots": 25,
+      "plus_minus": 9
+    },
+    {
+      "player_id": "ncaa:carmelo-crandell",
+      "name": "Carmelo Crandell",
+      "position": "F",
+      "team_name": "Colorado College",
+      "games_played": 11,
+      "goals": 5,
+      "assists": 4,
+      "points": 9,
+      "penalty_minutes": 0,
+      "shots": 22,
+      "plus_minus": 3
+    },
+    {
+      "player_id": "ncaa:gavin-lindberg",
+      "name": "Gavin Lindberg",
+      "position": "F",
+      "team_name": "North Dakota",
+      "games_played": 11,
+      "goals": 1,
+      "assists": 8,
+      "points": 9,
+      "penalty_minutes": 0,
+      "shots": 21,
+      "plus_minus": 4
+    },
+    {
+      "player_id": "ncaa:mirko-buttazzoni",
+      "name": "Mirko Buttazzoni",
+      "position": "F",
+      "team_name": "Sacred Heart",
+      "games_played": 11,
+      "goals": 2,
+      "assists": 7,
+      "points": 9,
+      "penalty_minutes": 21,
+      "shots": 11,
+      "plus_minus": -2
+    },
+    {
+      "player_id": "ncaa:tyler-dunbar",
+      "name": "Tyler Dunbar",
+      "position": "D",
+      "team_name": "Union",
+      "games_played": 11,
+      "goals": 6,
+      "assists": 3,
+      "points": 9,
+      "penalty_minutes": 8,
+      "shots": 55,
+      "plus_minus": 6
+    },
+    {
+      "player_id": "ncaa:seamus-powell",
+      "name": "Seamus Powell",
+      "position": "D",
+      "team_name": "Merrimack",
+      "games_played": 11,
+      "goals": 2,
+      "assists": 7,
+      "points": 9,
+      "penalty_minutes": 0,
+      "shots": 16,
+      "plus_minus": -2
     },
     {
       "player_id": "ncaa:jack-pridham",
@@ -1635,19 +1817,6 @@
       "plus_minus": 8
     },
     {
-      "player_id": "ncaa:oliver-peer",
-      "name": "Oliver Peer",
-      "position": "F",
-      "team_name": "Bemidji State",
-      "games_played": 11,
-      "goals": 3,
-      "assists": 6,
-      "points": 9,
-      "penalty_minutes": 6,
-      "shots": 29,
-      "plus_minus": 2
-    },
-    {
       "player_id": "ncaa:ryder-ritchie",
       "name": "Ryder Ritchie",
       "position": "F",
@@ -1659,6 +1828,19 @@
       "penalty_minutes": 4,
       "shots": 31,
       "plus_minus": -3
+    },
+    {
+      "player_id": "ncaa:oliver-peer",
+      "name": "Oliver Peer",
+      "position": "F",
+      "team_name": "Bemidji State",
+      "games_played": 11,
+      "goals": 3,
+      "assists": 6,
+      "points": 9,
+      "penalty_minutes": 6,
+      "shots": 29,
+      "plus_minus": 2
     },
     {
       "player_id": "ncaa:will-zellers",
@@ -1737,6 +1919,19 @@
       "penalty_minutes": 43,
       "shots": 18,
       "plus_minus": 5
+    },
+    {
+      "player_id": "ncaa:logan-hensler",
+      "name": "Logan Hensler",
+      "position": "D",
+      "team_name": "Wisconsin",
+      "games_played": 10,
+      "goals": 2,
+      "assists": 7,
+      "points": 9,
+      "penalty_minutes": 0,
+      "shots": 21,
+      "plus_minus": 2
     },
     {
       "player_id": "ncaa:logan-hensler",
@@ -1856,19 +2051,6 @@
       "plus_minus": 2
     },
     {
-      "player_id": "ncaa:jiri-klima",
-      "name": "Jiri Klima",
-      "position": "F",
-      "team_name": "Bemidji State",
-      "games_played": 10,
-      "goals": 7,
-      "assists": 2,
-      "points": 9,
-      "penalty_minutes": 0,
-      "shots": 34,
-      "plus_minus": 0
-    },
-    {
       "player_id": "ncaa:jack-beck",
       "name": "Jack Beck",
       "position": "F",
@@ -1882,17 +2064,17 @@
       "plus_minus": -3
     },
     {
-      "player_id": "ncaa:jake-karabela",
-      "name": "Jake Karabela",
+      "player_id": "ncaa:jiri-klima",
+      "name": "Jiri Klima",
       "position": "F",
-      "team_name": "Ohio State",
+      "team_name": "Bemidji State",
       "games_played": 10,
-      "goals": 4,
-      "assists": 5,
+      "goals": 7,
+      "assists": 2,
       "points": 9,
-      "penalty_minutes": 8,
-      "shots": 32,
-      "plus_minus": 2
+      "penalty_minutes": 0,
+      "shots": 34,
+      "plus_minus": 0
     },
     {
       "player_id": "ncaa:billy-renfrew",
@@ -1971,19 +2153,6 @@
       "penalty_minutes": 2,
       "shots": 43,
       "plus_minus": -4
-    },
-    {
-      "player_id": "ncaa:kale-dach",
-      "name": "Kale Dach",
-      "position": "F",
-      "team_name": "Penn State",
-      "games_played": 12,
-      "goals": 2,
-      "assists": 6,
-      "points": 8,
-      "penalty_minutes": 4,
-      "shots": 19,
-      "plus_minus": -1
     },
     {
       "player_id": "ncaa:christian-catalano",
@@ -2142,19 +2311,6 @@
       "plus_minus": 1
     },
     {
-      "player_id": "ncaa:aaron-schwartz",
-      "name": "Aaron Schwartz",
-      "position": "F",
-      "team_name": "Quinnipiac",
-      "games_played": 12,
-      "goals": 1,
-      "assists": 7,
-      "points": 8,
-      "penalty_minutes": 4,
-      "shots": 23,
-      "plus_minus": 5
-    },
-    {
       "player_id": "ncaa:jack-harvey",
       "name": "Jack Harvey",
       "position": "F",
@@ -2168,30 +2324,30 @@
       "plus_minus": 6
     },
     {
-      "player_id": "ncaa:callum-arnott",
-      "name": "Callum Arnott",
+      "player_id": "ncaa:aaron-schwartz",
+      "name": "Aaron Schwartz",
       "position": "F",
-      "team_name": "Minnesota-Duluth",
-      "games_played": 11,
-      "goals": 4,
-      "assists": 4,
+      "team_name": "Quinnipiac",
+      "games_played": 12,
+      "goals": 1,
+      "assists": 7,
       "points": 8,
-      "penalty_minutes": 2,
-      "shots": 36,
+      "penalty_minutes": 4,
+      "shots": 23,
       "plus_minus": 5
     },
     {
-      "player_id": "ncaa:ty-henricks",
-      "name": "Ty Henricks",
+      "player_id": "ncaa:kale-dach",
+      "name": "Kale Dach",
       "position": "F",
-      "team_name": "Western Michigan",
-      "games_played": 11,
-      "goals": 4,
-      "assists": 4,
+      "team_name": "Penn State",
+      "games_played": 12,
+      "goals": 2,
+      "assists": 6,
       "points": 8,
-      "penalty_minutes": 2,
-      "shots": 27,
-      "plus_minus": 4
+      "penalty_minutes": 4,
+      "shots": 19,
+      "plus_minus": -1
     },
     {
       "player_id": "ncaa:nathan-king",
@@ -2246,19 +2402,6 @@
       "plus_minus": 4
     },
     {
-      "player_id": "ncaa:max-namestnikov",
-      "name": "Max Namestnikov",
-      "position": "F",
-      "team_name": "Bemidji State",
-      "games_played": 11,
-      "goals": 3,
-      "assists": 5,
-      "points": 8,
-      "penalty_minutes": 17,
-      "shots": 23,
-      "plus_minus": 3
-    },
-    {
       "player_id": "ncaa:bruce-mcdonald",
       "name": "Bruce McDonald",
       "position": "F",
@@ -2283,6 +2426,19 @@
       "penalty_minutes": 8,
       "shots": 25,
       "plus_minus": 7
+    },
+    {
+      "player_id": "ncaa:max-namestnikov",
+      "name": "Max Namestnikov",
+      "position": "F",
+      "team_name": "Bemidji State",
+      "games_played": 11,
+      "goals": 3,
+      "assists": 5,
+      "points": 8,
+      "penalty_minutes": 17,
+      "shots": 23,
+      "plus_minus": 3
     },
     {
       "player_id": "ncaa:l-p-fontaine",
@@ -2311,19 +2467,6 @@
       "plus_minus": 2
     },
     {
-      "player_id": "ncaa:noah-quinn",
-      "name": "Noah Quinn",
-      "position": "F",
-      "team_name": "Canisius",
-      "games_played": 11,
-      "goals": 4,
-      "assists": 4,
-      "points": 8,
-      "penalty_minutes": 4,
-      "shots": 22,
-      "plus_minus": -3
-    },
-    {
       "player_id": "ncaa:ethan-burroughs",
       "name": "Ethan Burroughs",
       "position": "F",
@@ -2335,6 +2478,19 @@
       "penalty_minutes": 6,
       "shots": 28,
       "plus_minus": -1
+    },
+    {
+      "player_id": "ncaa:noah-quinn",
+      "name": "Noah Quinn",
+      "position": "F",
+      "team_name": "Canisius",
+      "games_played": 11,
+      "goals": 4,
+      "assists": 4,
+      "points": 8,
+      "penalty_minutes": 4,
+      "shots": 22,
+      "plus_minus": -3
     },
     {
       "player_id": "ncaa:jack-richard",
@@ -2363,19 +2519,6 @@
       "plus_minus": 3
     },
     {
-      "player_id": "ncaa:dylan-kinch",
-      "name": "Dylan Kinch",
-      "position": "F",
-      "team_name": "Long Island",
-      "games_played": 11,
-      "goals": 2,
-      "assists": 6,
-      "points": 8,
-      "penalty_minutes": 0,
-      "shots": 23,
-      "plus_minus": -5
-    },
-    {
       "player_id": "ncaa:adam-raesler",
       "name": "Adam Raesler",
       "position": "F",
@@ -2389,29 +2532,42 @@
       "plus_minus": 1
     },
     {
-      "player_id": "ncaa:billy-batten",
-      "name": "Billy Batten",
+      "player_id": "ncaa:dylan-kinch",
+      "name": "Dylan Kinch",
       "position": "F",
-      "team_name": "Army",
-      "games_played": 10,
+      "team_name": "Long Island",
+      "games_played": 11,
       "goals": 2,
       "assists": 6,
       "points": 8,
       "penalty_minutes": 0,
-      "shots": 21,
-      "plus_minus": 7
+      "shots": 23,
+      "plus_minus": -5
     },
     {
-      "player_id": "ncaa:quinn-mantei",
-      "name": "Quinn Mantei",
-      "position": "D",
-      "team_name": "Providence",
-      "games_played": 10,
-      "goals": 1,
-      "assists": 7,
+      "player_id": "ncaa:ty-henricks",
+      "name": "Ty Henricks",
+      "position": "F",
+      "team_name": "Western Michigan",
+      "games_played": 11,
+      "goals": 4,
+      "assists": 4,
       "points": 8,
       "penalty_minutes": 2,
-      "shots": 18,
+      "shots": 27,
+      "plus_minus": 4
+    },
+    {
+      "player_id": "ncaa:callum-arnott",
+      "name": "Callum Arnott",
+      "position": "F",
+      "team_name": "Minnesota-Duluth",
+      "games_played": 11,
+      "goals": 4,
+      "assists": 4,
+      "points": 8,
+      "penalty_minutes": 2,
+      "shots": 36,
       "plus_minus": 5
     },
     {
@@ -2471,129 +2627,38 @@
       "name": "Michael Bevilacqua",
       "position": "D",
       "team_name": "Lindenwood",
-      "games_played": 10,
-      "goals": 1,
-      "assists": 7,
-      "points": 8,
-      "penalty_minutes": 0,
-      "shots": 25,
-      "plus_minus": -2
-    },
-    {
-      "player_id": "ncaa:oscar-hemming",
-      "name": "Oscar Hemming",
-      "position": "F",
-      "team_name": "Boston College",
-      "games_played": 10,
-      "goals": 3,
-      "assists": 5,
-      "points": 8,
-      "penalty_minutes": 10,
-      "shots": 27,
-      "plus_minus": 6
-    },
-    {
-      "player_id": "ncaa:casper-nassen",
-      "name": "Casper Nassen",
-      "position": "F",
-      "team_name": "Lake Superior",
-      "games_played": 10,
-      "goals": 4,
-      "assists": 4,
-      "points": 8,
-      "penalty_minutes": 0,
-      "shots": 19,
-      "plus_minus": -6
-    },
-    {
-      "player_id": "ncaa:ben-ivey",
-      "name": "Ben Ivey",
-      "position": "F",
-      "team_name": "Army",
-      "games_played": 10,
-      "goals": 1,
-      "assists": 7,
-      "points": 8,
-      "penalty_minutes": 6,
-      "shots": 31,
-      "plus_minus": 3
-    },
-    {
-      "player_id": "ncaa:calem-mangone",
-      "name": "Calem Mangone",
-      "position": "F",
-      "team_name": "Lake Superior",
-      "games_played": 10,
-      "goals": 3,
-      "assists": 5,
-      "points": 8,
-      "penalty_minutes": 12,
-      "shots": 18,
-      "plus_minus": -4
-    },
-    {
-      "player_id": "ncaa:oliver-tulk",
-      "name": "Oliver Tulk",
-      "position": "F",
-      "team_name": "Wisconsin",
-      "games_played": 10,
-      "goals": 2,
-      "assists": 6,
-      "points": 8,
-      "penalty_minutes": 14,
-      "shots": 26,
-      "plus_minus": 7
-    },
-    {
-      "player_id": "ncaa:nik-hong",
-      "name": "Nik Hong",
-      "position": "F",
-      "team_name": "Army",
-      "games_played": 10,
-      "goals": 3,
-      "assists": 5,
-      "points": 8,
-      "penalty_minutes": 4,
-      "shots": 22,
-      "plus_minus": 4
-    },
-    {
-      "player_id": "ncaa:parker-berge",
-      "name": "Parker Berge",
-      "position": "D",
-      "team_name": "Omaha",
-      "games_played": 10,
-      "goals": 2,
-      "assists": 6,
-      "points": 8,
-      "penalty_minutes": 2,
-      "shots": 19,
-      "plus_minus": 3
-    },
-    {
-      "player_id": "ncaa:nathan-pilling",
-      "name": "Nathan Pilling",
-      "position": "F",
-      "team_name": "St. Thomas",
-      "games_played": 10,
+      "games_played": 11,
       "goals": 5,
       "assists": 3,
       "points": 8,
-      "penalty_minutes": 29,
+      "penalty_minutes": 4,
       "shots": 36,
       "plus_minus": 1
     },
     {
-      "player_id": "ncaa:will-elger",
-      "name": "Will Elger",
+      "player_id": "ncaa:billy-batten",
+      "name": "Billy Batten",
       "position": "F",
+      "team_name": "Army",
+      "games_played": 10,
+      "goals": 2,
+      "assists": 6,
+      "points": 8,
+      "penalty_minutes": 0,
+      "shots": 21,
+      "plus_minus": 7
+    },
+    {
+      "player_id": "ncaa:quinn-mantei",
+      "name": "Quinn Mantei",
+      "position": "D",
       "team_name": "Providence",
       "games_played": 10,
-      "goals": 3,
-      "assists": 5,
+      "goals": 1,
+      "assists": 7,
       "points": 8,
       "penalty_minutes": 2,
-      "shots": 26,
+      "shots": 18,
       "plus_minus": 5
     },
     {
@@ -2714,32 +2779,6 @@
       "plus_minus": -2
     },
     {
-      "player_id": "ncaa:colton-roberts",
-      "name": "Colton Roberts",
-      "position": "D",
-      "team_name": "Colorado College",
-      "games_played": 12,
-      "goals": 4,
-      "assists": 3,
-      "points": 7,
-      "penalty_minutes": 10,
-      "shots": 19,
-      "plus_minus": 9
-    },
-    {
-      "player_id": "ncaa:tye-spencer",
-      "name": "Tye Spencer",
-      "position": "F",
-      "team_name": "Alaska-Anchorage",
-      "games_played": 12,
-      "goals": 3,
-      "assists": 4,
-      "points": 7,
-      "penalty_minutes": 6,
-      "shots": 15,
-      "plus_minus": -6
-    },
-    {
       "player_id": "ncaa:brady-arneson",
       "name": "Brady Arneson",
       "position": "F",
@@ -2764,6 +2803,32 @@
       "penalty_minutes": 2,
       "shots": 32,
       "plus_minus": 1
+    },
+    {
+      "player_id": "ncaa:colton-roberts",
+      "name": "Colton Roberts",
+      "position": "D",
+      "team_name": "Colorado College",
+      "games_played": 12,
+      "goals": 4,
+      "assists": 3,
+      "points": 7,
+      "penalty_minutes": 10,
+      "shots": 19,
+      "plus_minus": 9
+    },
+    {
+      "player_id": "ncaa:tye-spencer",
+      "name": "Tye Spencer",
+      "position": "F",
+      "team_name": "Alaska-Anchorage",
+      "games_played": 12,
+      "goals": 3,
+      "assists": 4,
+      "points": 7,
+      "penalty_minutes": 6,
+      "shots": 15,
+      "plus_minus": -6
     },
     {
       "player_id": "ncaa:andrew-strathmann",
@@ -2909,19 +2974,6 @@
       "plus_minus": -7
     },
     {
-      "player_id": "ncaa:tanner-henricks",
-      "name": "Tanner Henricks",
-      "position": "D",
-      "team_name": "Minnesota",
-      "games_played": 12,
-      "goals": 2,
-      "assists": 5,
-      "points": 7,
-      "penalty_minutes": 0,
-      "shots": 17,
-      "plus_minus": 7
-    },
-    {
       "player_id": "ncaa:nolan-cunningham",
       "name": "Nolan Cunningham",
       "position": "D",
@@ -2935,17 +2987,17 @@
       "plus_minus": 2
     },
     {
-      "player_id": "ncaa:conner-de-haro",
-      "name": "Conner de Haro",
+      "player_id": "ncaa:tanner-henricks",
+      "name": "Tanner Henricks",
       "position": "D",
-      "team_name": "New Hampshire",
+      "team_name": "Minnesota",
       "games_played": 12,
-      "goals": 0,
-      "assists": 7,
+      "goals": 2,
+      "assists": 5,
       "points": 7,
-      "penalty_minutes": 2,
-      "shots": 20,
-      "plus_minus": -2
+      "penalty_minutes": 0,
+      "shots": 17,
+      "plus_minus": 7
     },
     {
       "player_id": "ncaa:brandon-whynott",
@@ -2961,6 +3013,19 @@
       "plus_minus": 5
     },
     {
+      "player_id": "ncaa:conner-de-haro",
+      "name": "Conner de Haro",
+      "position": "D",
+      "team_name": "New Hampshire",
+      "games_played": 12,
+      "goals": 0,
+      "assists": 7,
+      "points": 7,
+      "penalty_minutes": 2,
+      "shots": 20,
+      "plus_minus": -2
+    },
+    {
       "player_id": "ncaa:landon-fandel",
       "name": "Landon Fandel",
       "position": "D",
@@ -2974,19 +3039,6 @@
       "plus_minus": 4
     },
     {
-      "player_id": "ncaa:ethan-warrener",
-      "name": "Ethan Warrener",
-      "position": "D",
-      "team_name": "Alaska-Anchorage",
-      "games_played": 12,
-      "goals": 5,
-      "assists": 2,
-      "points": 7,
-      "penalty_minutes": 8,
-      "shots": 21,
-      "plus_minus": -13
-    },
-    {
       "player_id": "ncaa:breck-mckinley",
       "name": "Breck McKinley",
       "position": "D",
@@ -2998,6 +3050,19 @@
       "penalty_minutes": 4,
       "shots": 16,
       "plus_minus": -2
+    },
+    {
+      "player_id": "ncaa:ethan-warrener",
+      "name": "Ethan Warrener",
+      "position": "D",
+      "team_name": "Alaska-Anchorage",
+      "games_played": 12,
+      "goals": 5,
+      "assists": 2,
+      "points": 7,
+      "penalty_minutes": 8,
+      "shots": 21,
+      "plus_minus": -13
     },
     {
       "player_id": "ncaa:haoxi-simon-wang",
@@ -3024,19 +3089,6 @@
       "penalty_minutes": 19,
       "shots": 26,
       "plus_minus": -5
-    },
-    {
-      "player_id": "ncaa:ethan-wolthers",
-      "name": "Ethan Wolthers",
-      "position": "F",
-      "team_name": "Canisius",
-      "games_played": 11,
-      "goals": 1,
-      "assists": 6,
-      "points": 7,
-      "penalty_minutes": 2,
-      "shots": 17,
-      "plus_minus": 0
     },
     {
       "player_id": "ncaa:aiden-vanrooyan",
@@ -3247,6 +3299,19 @@
       "plus_minus": -2
     },
     {
+      "player_id": "ncaa:ethan-wolthers",
+      "name": "Ethan Wolthers",
+      "position": "F",
+      "team_name": "Canisius",
+      "games_played": 11,
+      "goals": 1,
+      "assists": 6,
+      "points": 7,
+      "penalty_minutes": 2,
+      "shots": 17,
+      "plus_minus": 0
+    },
+    {
       "player_id": "ncaa:andrew-centrella",
       "name": "Andrew Centrella",
       "position": "D",
@@ -3273,19 +3338,6 @@
       "plus_minus": 3
     },
     {
-      "player_id": "ncaa:gavin-o-connell",
-      "name": "Gavin O'Connell",
-      "position": "F",
-      "team_name": "Michigan State",
-      "games_played": 10,
-      "goals": 2,
-      "assists": 5,
-      "points": 7,
-      "penalty_minutes": 8,
-      "shots": 23,
-      "plus_minus": 4
-    },
-    {
       "player_id": "ncaa:daniel-shlaine",
       "name": "Daniel Shlaine",
       "position": "F",
@@ -3297,6 +3349,19 @@
       "penalty_minutes": 4,
       "shots": 18,
       "plus_minus": 6
+    },
+    {
+      "player_id": "ncaa:gavin-o-connell",
+      "name": "Gavin O'Connell",
+      "position": "F",
+      "team_name": "Michigan State",
+      "games_played": 10,
+      "goals": 2,
+      "assists": 5,
+      "points": 7,
+      "penalty_minutes": 8,
+      "shots": 23,
+      "plus_minus": 4
     },
     {
       "player_id": "ncaa:cade-christenson",
@@ -3572,58 +3637,6 @@
       "plus_minus": -3
     },
     {
-      "player_id": "ncaa:ethan-whitcomb",
-      "name": "Ethan Whitcomb",
-      "position": "F",
-      "team_name": "Connecticut",
-      "games_played": 12,
-      "goals": 3,
-      "assists": 3,
-      "points": 6,
-      "penalty_minutes": 21,
-      "shots": 27,
-      "plus_minus": -2
-    },
-    {
-      "player_id": "ncaa:jordan-gavin",
-      "name": "Jordan Gavin",
-      "position": "F",
-      "team_name": "RPI",
-      "games_played": 12,
-      "goals": 3,
-      "assists": 3,
-      "points": 6,
-      "penalty_minutes": 0,
-      "shots": 17,
-      "plus_minus": -1
-    },
-    {
-      "player_id": "ncaa:jake-delaney",
-      "name": "Jake Delaney",
-      "position": "D",
-      "team_name": "Lindenwood",
-      "games_played": 12,
-      "goals": 2,
-      "assists": 4,
-      "points": 6,
-      "penalty_minutes": 6,
-      "shots": 21,
-      "plus_minus": -2
-    },
-    {
-      "player_id": "ncaa:jalen-bianchet",
-      "name": "Jalen Bianchet",
-      "position": "F",
-      "team_name": "Alaska-Anchorage",
-      "games_played": 12,
-      "goals": 1,
-      "assists": 5,
-      "points": 6,
-      "penalty_minutes": 0,
-      "shots": 17,
-      "plus_minus": -5
-    },
-    {
       "player_id": "ncaa:dane-dowiak",
       "name": "Dane Dowiak",
       "position": "F",
@@ -3650,6 +3663,19 @@
       "plus_minus": 4
     },
     {
+      "player_id": "ncaa:jalen-bianchet",
+      "name": "Jalen Bianchet",
+      "position": "F",
+      "team_name": "Alaska-Anchorage",
+      "games_played": 12,
+      "goals": 1,
+      "assists": 5,
+      "points": 6,
+      "penalty_minutes": 0,
+      "shots": 17,
+      "plus_minus": -5
+    },
+    {
       "player_id": "ncaa:emmanuel-vermette",
       "name": "Emmanuel Vermette",
       "position": "F",
@@ -3663,19 +3689,6 @@
       "plus_minus": -4
     },
     {
-      "player_id": "ncaa:austin-burnevik",
-      "name": "Austin Burnevik",
-      "position": "F",
-      "team_name": "Minnesota",
-      "games_played": 12,
-      "goals": 0,
-      "assists": 6,
-      "points": 6,
-      "penalty_minutes": 2,
-      "shots": 26,
-      "plus_minus": -7
-    },
-    {
       "player_id": "ncaa:filip-sitar",
       "name": "Filip Sitar",
       "position": "F",
@@ -3687,6 +3700,19 @@
       "penalty_minutes": 2,
       "shots": 25,
       "plus_minus": -3
+    },
+    {
+      "player_id": "ncaa:austin-burnevik",
+      "name": "Austin Burnevik",
+      "position": "F",
+      "team_name": "Minnesota",
+      "games_played": 12,
+      "goals": 0,
+      "assists": 6,
+      "points": 6,
+      "penalty_minutes": 2,
+      "shots": 26,
+      "plus_minus": -7
     },
     {
       "player_id": "ncaa:ben-merrill",
@@ -3793,19 +3819,6 @@
       "plus_minus": 6
     },
     {
-      "player_id": "ncaa:connor-hvidston",
-      "name": "Connor Hvidston",
-      "position": "F",
-      "team_name": "Colorado College",
-      "games_played": 12,
-      "goals": 4,
-      "assists": 2,
-      "points": 6,
-      "penalty_minutes": 2,
-      "shots": 20,
-      "plus_minus": 0
-    },
-    {
       "player_id": "ncaa:easton-wainwright",
       "name": "Easton Wainwright",
       "position": "F",
@@ -3816,6 +3829,19 @@
       "points": 6,
       "penalty_minutes": 6,
       "shots": 18,
+      "plus_minus": 0
+    },
+    {
+      "player_id": "ncaa:connor-hvidston",
+      "name": "Connor Hvidston",
+      "position": "F",
+      "team_name": "Colorado College",
+      "games_played": 12,
+      "goals": 4,
+      "assists": 2,
+      "points": 6,
+      "penalty_minutes": 2,
+      "shots": 20,
       "plus_minus": 0
     },
     {
@@ -4087,6 +4113,45 @@
       "goals": 3,
       "assists": 3,
       "points": 6,
+      "penalty_minutes": 21,
+      "shots": 27,
+      "plus_minus": -2
+    },
+    {
+      "player_id": "ncaa:jake-delaney",
+      "name": "Jake Delaney",
+      "position": "D",
+      "team_name": "Lindenwood",
+      "games_played": 12,
+      "goals": 2,
+      "assists": 4,
+      "points": 6,
+      "penalty_minutes": 6,
+      "shots": 21,
+      "plus_minus": -2
+    },
+    {
+      "player_id": "ncaa:brody-mortensen",
+      "name": "Brody Mortensen",
+      "position": "D",
+      "team_name": "Lindenwood",
+      "games_played": 11,
+      "goals": 0,
+      "assists": 6,
+      "points": 6,
+      "penalty_minutes": 8,
+      "shots": 19,
+      "plus_minus": 2
+    },
+    {
+      "player_id": "ncaa:luca-leighton",
+      "name": "Luca Leighton",
+      "position": "F",
+      "team_name": "Long Island",
+      "games_played": 11,
+      "goals": 3,
+      "assists": 3,
+      "points": 6,
       "penalty_minutes": 8,
       "shots": 19,
       "plus_minus": -5
@@ -4196,19 +4261,6 @@
       "plus_minus": 6
     },
     {
-      "player_id": "ncaa:isaac-lambert",
-      "name": "Isaac Lambert",
-      "position": "F",
-      "team_name": "Long Island",
-      "games_played": 11,
-      "goals": 2,
-      "assists": 4,
-      "points": 6,
-      "penalty_minutes": 14,
-      "shots": 24,
-      "plus_minus": -2
-    },
-    {
       "player_id": "ncaa:ryan-macpherson",
       "name": "Ryan MacPherson",
       "position": "F",
@@ -4220,6 +4272,32 @@
       "penalty_minutes": 4,
       "shots": 13,
       "plus_minus": -2
+    },
+    {
+      "player_id": "ncaa:henry-mews",
+      "name": "Henry Mews",
+      "position": "D",
+      "team_name": "Michigan",
+      "games_played": 11,
+      "goals": 0,
+      "assists": 6,
+      "points": 6,
+      "penalty_minutes": 2,
+      "shots": 10,
+      "plus_minus": 4
+    },
+    {
+      "player_id": "ncaa:kaden-shahan",
+      "name": "Kaden Shahan",
+      "position": "F",
+      "team_name": "Connecticut",
+      "games_played": 11,
+      "goals": 6,
+      "assists": 0,
+      "points": 6,
+      "penalty_minutes": 0,
+      "shots": 20,
+      "plus_minus": -7
     },
     {
       "player_id": "ncaa:henry-mews",
@@ -4261,6 +4339,19 @@
       "plus_minus": 1
     },
     {
+      "player_id": "ncaa:isaac-lambert",
+      "name": "Isaac Lambert",
+      "position": "F",
+      "team_name": "Long Island",
+      "games_played": 11,
+      "goals": 2,
+      "assists": 4,
+      "points": 6,
+      "penalty_minutes": 14,
+      "shots": 24,
+      "plus_minus": -2
+    },
+    {
       "player_id": "ncaa:will-vote",
       "name": "Will Vote",
       "position": "F",
@@ -4283,8 +4374,8 @@
       "assists": 3,
       "points": 6,
       "penalty_minutes": 0,
-      "shots": 32,
-      "plus_minus": 2
+      "shots": 22,
+      "plus_minus": -1
     },
     {
       "player_id": "ncaa:max-montes",
@@ -4443,19 +4534,6 @@
       "plus_minus": 0
     },
     {
-      "player_id": "ncaa:tanner-adams",
-      "name": "Tanner Adams",
-      "position": "F",
-      "team_name": "Providence",
-      "games_played": 10,
-      "goals": 0,
-      "assists": 6,
-      "points": 6,
-      "penalty_minutes": 0,
-      "shots": 21,
-      "plus_minus": 4
-    },
-    {
       "player_id": "ncaa:landon-hafele",
       "name": "Landon Hafele",
       "position": "F",
@@ -4467,6 +4545,19 @@
       "penalty_minutes": 9,
       "shots": 13,
       "plus_minus": -4
+    },
+    {
+      "player_id": "ncaa:tanner-adams",
+      "name": "Tanner Adams",
+      "position": "F",
+      "team_name": "Providence",
+      "games_played": 10,
+      "goals": 0,
+      "assists": 6,
+      "points": 6,
+      "penalty_minutes": 0,
+      "shots": 21,
+      "plus_minus": 4
     },
     {
       "player_id": "ncaa:andrew-leblanc",
@@ -4493,6 +4584,19 @@
       "penalty_minutes": 2,
       "shots": 14,
       "plus_minus": 0
+    },
+    {
+      "player_id": "ncaa:maxime-pellerin",
+      "name": "Maxime Pellerin",
+      "position": "F",
+      "team_name": "Omaha",
+      "games_played": 10,
+      "goals": 3,
+      "assists": 3,
+      "points": 6,
+      "penalty_minutes": 0,
+      "shots": 32,
+      "plus_minus": 2
     },
     {
       "player_id": "ncaa:dominik-rymon",
@@ -4573,19 +4677,6 @@
       "plus_minus": 1
     },
     {
-      "player_id": "ncaa:conrad-fondrk",
-      "name": "Conrad Fondrk",
-      "position": "F",
-      "team_name": "Boston University",
-      "games_played": 7,
-      "goals": 2,
-      "assists": 4,
-      "points": 6,
-      "penalty_minutes": 2,
-      "shots": 14,
-      "plus_minus": 3
-    },
-    {
       "player_id": "ncaa:mick-thompson",
       "name": "Mick Thompson",
       "position": "F",
@@ -4602,27 +4693,27 @@
       "player_id": "ncaa:sam-stitz",
       "name": "Sam Stitz",
       "position": "F",
-      "team_name": "Air Force",
+      "team_name": "Omaha",
+      "games_played": 8,
+      "goals": 4,
+      "assists": 2,
+      "points": 6,
+      "penalty_minutes": 6,
+      "shots": 18,
+      "plus_minus": 1
+    },
+    {
+      "player_id": "ncaa:conrad-fondrk",
+      "name": "Conrad Fondrk",
+      "position": "F",
+      "team_name": "Boston University",
       "games_played": 7,
       "goals": 2,
       "assists": 4,
       "points": 6,
-      "penalty_minutes": 0,
-      "shots": 12,
-      "plus_minus": -2
-    },
-    {
-      "player_id": "ncaa:aidan-lane",
-      "name": "Aidan Lane",
-      "position": "F",
-      "team_name": "Harvard",
-      "games_played": 7,
-      "goals": 5,
-      "assists": 1,
-      "points": 6,
-      "penalty_minutes": 4,
-      "shots": 18,
-      "plus_minus": 1
+      "penalty_minutes": 2,
+      "shots": 14,
+      "plus_minus": 3
     },
     {
       "player_id": "ncaa:gunnar-thoreson",
@@ -4649,19 +4740,6 @@
       "penalty_minutes": 4,
       "shots": 11,
       "plus_minus": -2
-    },
-    {
-      "player_id": "ncaa:connor-welsh",
-      "name": "Connor Welsh",
-      "position": "F",
-      "team_name": "Holy Cross",
-      "games_played": 14,
-      "goals": 2,
-      "assists": 3,
-      "points": 5,
-      "penalty_minutes": 6,
-      "shots": 14,
-      "plus_minus": 6
     },
     {
       "player_id": "ncaa:victor-plante",
@@ -4703,6 +4781,19 @@
       "plus_minus": 0
     },
     {
+      "player_id": "ncaa:connor-welsh",
+      "name": "Connor Welsh",
+      "position": "F",
+      "team_name": "Holy Cross",
+      "games_played": 14,
+      "goals": 2,
+      "assists": 3,
+      "points": 5,
+      "penalty_minutes": 6,
+      "shots": 14,
+      "plus_minus": 6
+    },
+    {
       "player_id": "ncaa:barrett-hall",
       "name": "Barrett Hall",
       "position": "F",
@@ -4713,45 +4804,6 @@
       "points": 5,
       "penalty_minutes": 12,
       "shots": 31,
-      "plus_minus": 0
-    },
-    {
-      "player_id": "ncaa:malte-vass",
-      "name": "Malte Vass",
-      "position": "D",
-      "team_name": "New Hampshire",
-      "games_played": 12,
-      "goals": 1,
-      "assists": 4,
-      "points": 5,
-      "penalty_minutes": 0,
-      "shots": 18,
-      "plus_minus": 3
-    },
-    {
-      "player_id": "ncaa:matthew-buckley",
-      "name": "Matthew Buckley",
-      "position": "F",
-      "team_name": "RPI",
-      "games_played": 12,
-      "goals": 0,
-      "assists": 5,
-      "points": 5,
-      "penalty_minutes": 6,
-      "shots": 21,
-      "plus_minus": 5
-    },
-    {
-      "player_id": "ncaa:libor-nemec",
-      "name": "Libor Nemec",
-      "position": "F",
-      "team_name": "Mass.-Lowell",
-      "games_played": 12,
-      "goals": 3,
-      "assists": 2,
-      "points": 5,
-      "penalty_minutes": 4,
-      "shots": 27,
       "plus_minus": 0
     },
     {
@@ -4781,6 +4833,19 @@
       "plus_minus": 2
     },
     {
+      "player_id": "ncaa:libor-nemec",
+      "name": "Libor Nemec",
+      "position": "F",
+      "team_name": "Mass.-Lowell",
+      "games_played": 12,
+      "goals": 3,
+      "assists": 2,
+      "points": 5,
+      "penalty_minutes": 4,
+      "shots": 27,
+      "plus_minus": 0
+    },
+    {
       "player_id": "ncaa:shea-busch",
       "name": "Shea Busch",
       "position": "F",
@@ -4807,19 +4872,6 @@
       "plus_minus": 2
     },
     {
-      "player_id": "ncaa:jan-golicic",
-      "name": "Jan Golicic",
-      "position": "D",
-      "team_name": "Quinnipiac",
-      "games_played": 12,
-      "goals": 2,
-      "assists": 3,
-      "points": 5,
-      "penalty_minutes": 12,
-      "shots": 11,
-      "plus_minus": 5
-    },
-    {
       "player_id": "ncaa:reese-laubach",
       "name": "Reese Laubach",
       "position": "F",
@@ -4844,6 +4896,19 @@
       "penalty_minutes": 10,
       "shots": 8,
       "plus_minus": 0
+    },
+    {
+      "player_id": "ncaa:jan-golicic",
+      "name": "Jan Golicic",
+      "position": "D",
+      "team_name": "Quinnipiac",
+      "games_played": 12,
+      "goals": 2,
+      "assists": 3,
+      "points": 5,
+      "penalty_minutes": 12,
+      "shots": 11,
+      "plus_minus": 5
     },
     {
       "player_id": "ncaa:mason-zebeski",
@@ -4937,19 +5002,6 @@
       "plus_minus": -5
     },
     {
-      "player_id": "ncaa:kolin-sisson",
-      "name": "Kolin Sisson",
-      "position": "F",
-      "team_name": "Mass.-Lowell",
-      "games_played": 12,
-      "goals": 1,
-      "assists": 4,
-      "points": 5,
-      "penalty_minutes": 2,
-      "shots": 15,
-      "plus_minus": 1
-    },
-    {
       "player_id": "ncaa:owen-dubois",
       "name": "Owen Dubois",
       "position": "F",
@@ -4961,6 +5013,19 @@
       "penalty_minutes": 4,
       "shots": 9,
       "plus_minus": 4
+    },
+    {
+      "player_id": "ncaa:kolin-sisson",
+      "name": "Kolin Sisson",
+      "position": "F",
+      "team_name": "Mass.-Lowell",
+      "games_played": 12,
+      "goals": 1,
+      "assists": 4,
+      "points": 5,
+      "penalty_minutes": 2,
+      "shots": 15,
+      "plus_minus": 1
     },
     {
       "player_id": "ncaa:vitaly-levyy",
@@ -5041,19 +5106,6 @@
       "plus_minus": 3
     },
     {
-      "player_id": "ncaa:ryan-abraham",
-      "name": "Ryan Abraham",
-      "position": "F",
-      "team_name": "Lindenwood",
-      "games_played": 12,
-      "goals": 1,
-      "assists": 4,
-      "points": 5,
-      "penalty_minutes": 6,
-      "shots": 33,
-      "plus_minus": -3
-    },
-    {
       "player_id": "ncaa:joey-delgreco",
       "name": "Joey DelGreco",
       "position": "F",
@@ -5067,17 +5119,17 @@
       "plus_minus": 3
     },
     {
-      "player_id": "ncaa:chris-delaney",
-      "name": "Chris Delaney",
+      "player_id": "ncaa:ryan-abraham",
+      "name": "Ryan Abraham",
       "position": "F",
-      "team_name": "Mass.-Lowell",
+      "team_name": "Lindenwood",
       "games_played": 12,
-      "goals": 0,
-      "assists": 5,
+      "goals": 1,
+      "assists": 4,
       "points": 5,
       "penalty_minutes": 6,
-      "shots": 17,
-      "plus_minus": -9
+      "shots": 33,
+      "plus_minus": -3
     },
     {
       "player_id": "ncaa:christian-kim",
@@ -5091,6 +5143,19 @@
       "penalty_minutes": 8,
       "shots": 22,
       "plus_minus": -2
+    },
+    {
+      "player_id": "ncaa:chris-delaney",
+      "name": "Chris Delaney",
+      "position": "F",
+      "team_name": "Mass.-Lowell",
+      "games_played": 12,
+      "goals": 0,
+      "assists": 5,
+      "points": 5,
+      "penalty_minutes": 6,
+      "shots": 17,
+      "plus_minus": -9
     },
     {
       "player_id": "ncaa:matthew-mania",
@@ -5119,19 +5184,6 @@
       "plus_minus": 0
     },
     {
-      "player_id": "ncaa:ethan-neutens",
-      "name": "Ethan Neutens",
-      "position": "F",
-      "team_name": "Alaska-Anchorage",
-      "games_played": 12,
-      "goals": 2,
-      "assists": 3,
-      "points": 5,
-      "penalty_minutes": 14,
-      "shots": 16,
-      "plus_minus": -8
-    },
-    {
       "player_id": "ncaa:chase-lapinta",
       "name": "Chase LaPinta",
       "position": "F",
@@ -5145,6 +5197,19 @@
       "plus_minus": -1
     },
     {
+      "player_id": "ncaa:ethan-neutens",
+      "name": "Ethan Neutens",
+      "position": "F",
+      "team_name": "Alaska-Anchorage",
+      "games_played": 12,
+      "goals": 2,
+      "assists": 3,
+      "points": 5,
+      "penalty_minutes": 14,
+      "shots": 16,
+      "plus_minus": -8
+    },
+    {
       "player_id": "ncaa:kellan-hjartarson",
       "name": "Kellan Hjartarson",
       "position": "F",
@@ -5155,6 +5220,19 @@
       "points": 5,
       "penalty_minutes": 6,
       "shots": 16,
+      "plus_minus": -1
+    },
+    {
+      "player_id": "ncaa:sammy-nelson",
+      "name": "Sammy Nelson",
+      "position": "F",
+      "team_name": "Notre Dame",
+      "games_played": 12,
+      "goals": 3,
+      "assists": 2,
+      "points": 5,
+      "penalty_minutes": 14,
+      "shots": 31,
       "plus_minus": -1
     },
     {
@@ -5171,19 +5249,6 @@
       "plus_minus": 5
     },
     {
-      "player_id": "ncaa:sammy-nelson",
-      "name": "Sammy Nelson",
-      "position": "F",
-      "team_name": "Notre Dame",
-      "games_played": 12,
-      "goals": 3,
-      "assists": 2,
-      "points": 5,
-      "penalty_minutes": 14,
-      "shots": 31,
-      "plus_minus": -1
-    },
-    {
       "player_id": "ncaa:ryan-philbrick",
       "name": "Ryan Philbrick",
       "position": "D",
@@ -5195,19 +5260,6 @@
       "penalty_minutes": 5,
       "shots": 10,
       "plus_minus": 0
-    },
-    {
-      "player_id": "ncaa:tanner-ludtke",
-      "name": "Tanner Ludtke",
-      "position": "F",
-      "team_name": "Minnesota",
-      "games_played": 12,
-      "goals": 1,
-      "assists": 4,
-      "points": 5,
-      "penalty_minutes": 8,
-      "shots": 20,
-      "plus_minus": 2
     },
     {
       "player_id": "ncaa:james-duerr",
@@ -5223,6 +5275,19 @@
       "plus_minus": -4
     },
     {
+      "player_id": "ncaa:tanner-ludtke",
+      "name": "Tanner Ludtke",
+      "position": "F",
+      "team_name": "Minnesota",
+      "games_played": 12,
+      "goals": 1,
+      "assists": 4,
+      "points": 5,
+      "penalty_minutes": 8,
+      "shots": 20,
+      "plus_minus": 2
+    },
+    {
       "player_id": "ncaa:fisher-scott",
       "name": "Fisher Scott",
       "position": "D",
@@ -5234,19 +5299,6 @@
       "penalty_minutes": 4,
       "shots": 20,
       "plus_minus": 5
-    },
-    {
-      "player_id": "ncaa:brooks-cullen",
-      "name": "Brooks Cullen",
-      "position": "F",
-      "team_name": "Minnesota",
-      "games_played": 12,
-      "goals": 1,
-      "assists": 4,
-      "points": 5,
-      "penalty_minutes": 2,
-      "shots": 10,
-      "plus_minus": 3
     },
     {
       "player_id": "ncaa:nick-de-angelis",
@@ -5275,6 +5327,19 @@
       "plus_minus": 1
     },
     {
+      "player_id": "ncaa:brooks-cullen",
+      "name": "Brooks Cullen",
+      "position": "F",
+      "team_name": "Minnesota",
+      "games_played": 12,
+      "goals": 1,
+      "assists": 4,
+      "points": 5,
+      "penalty_minutes": 2,
+      "shots": 10,
+      "plus_minus": 3
+    },
+    {
       "player_id": "ncaa:david-helledy",
       "name": "David Helledy",
       "position": "D",
@@ -5288,30 +5353,30 @@
       "plus_minus": 2
     },
     {
-      "player_id": "ncaa:felix-gagnon",
-      "name": "Felix Gagnon",
-      "position": "F",
-      "team_name": "New Hampshire",
+      "player_id": "ncaa:max-burkholder",
+      "name": "Max Burkholder",
+      "position": "D",
+      "team_name": "Colorado College",
       "games_played": 12,
-      "goals": 2,
-      "assists": 3,
-      "points": 5,
-      "penalty_minutes": 4,
-      "shots": 19,
-      "plus_minus": -4
-    },
-    {
-      "player_id": "ncaa:casey-mutryn",
-      "name": "Casey Mutryn",
-      "position": "F",
-      "team_name": "Boston College",
-      "games_played": 11,
       "goals": 1,
       "assists": 4,
       "points": 5,
-      "penalty_minutes": 8,
-      "shots": 23,
-      "plus_minus": -2
+      "penalty_minutes": 2,
+      "shots": 14,
+      "plus_minus": 1
+    },
+    {
+      "player_id": "ncaa:matthew-buckley",
+      "name": "Matthew Buckley",
+      "position": "F",
+      "team_name": "New Hampshire",
+      "games_played": 12,
+      "goals": 1,
+      "assists": 4,
+      "points": 5,
+      "penalty_minutes": 0,
+      "shots": 18,
+      "plus_minus": 3
     },
     {
       "player_id": "ncaa:jake-leblanc",
@@ -5522,19 +5587,6 @@
       "plus_minus": 2
     },
     {
-      "player_id": "ncaa:maxon-vig",
-      "name": "Maxon Vig",
-      "position": "D",
-      "team_name": "Bemidji State",
-      "games_played": 11,
-      "goals": 1,
-      "assists": 4,
-      "points": 5,
-      "penalty_minutes": 4,
-      "shots": 16,
-      "plus_minus": -2
-    },
-    {
       "player_id": "ncaa:tyler-mackenzie",
       "name": "Tyler MacKenzie",
       "position": "F",
@@ -5546,6 +5598,19 @@
       "penalty_minutes": 2,
       "shots": 13,
       "plus_minus": 5
+    },
+    {
+      "player_id": "ncaa:maxon-vig",
+      "name": "Maxon Vig",
+      "position": "D",
+      "team_name": "Bemidji State",
+      "games_played": 11,
+      "goals": 1,
+      "assists": 4,
+      "points": 5,
+      "penalty_minutes": 4,
+      "shots": 16,
+      "plus_minus": -2
     },
     {
       "player_id": "ncaa:keaton-verhoeff",
@@ -5561,17 +5626,30 @@
       "plus_minus": -2
     },
     {
-      "player_id": "ncaa:mael-lavigne",
-      "name": "Maël Lavigne",
+      "player_id": "ncaa:casey-mutryn",
+      "name": "Casey Mutryn",
       "position": "F",
-      "team_name": "Omaha",
-      "games_played": 10,
-      "goals": 2,
-      "assists": 3,
+      "team_name": "Boston College",
+      "games_played": 11,
+      "goals": 1,
+      "assists": 4,
       "points": 5,
-      "penalty_minutes": 18,
-      "shots": 10,
-      "plus_minus": 1
+      "penalty_minutes": 8,
+      "shots": 23,
+      "plus_minus": -2
+    },
+    {
+      "player_id": "ncaa:anthony-menghini",
+      "name": "Anthony Menghini",
+      "position": "F",
+      "team_name": "North Dakota",
+      "games_played": 10,
+      "goals": 4,
+      "assists": 1,
+      "points": 5,
+      "penalty_minutes": 2,
+      "shots": 11,
+      "plus_minus": 4
     },
     {
       "player_id": "ncaa:cayden-lindstrom",
@@ -5600,19 +5678,6 @@
       "plus_minus": -6
     },
     {
-      "player_id": "ncaa:anthony-menghini",
-      "name": "Anthony Menghini",
-      "position": "F",
-      "team_name": "North Dakota",
-      "games_played": 10,
-      "goals": 4,
-      "assists": 1,
-      "points": 5,
-      "penalty_minutes": 2,
-      "shots": 11,
-      "plus_minus": 4
-    },
-    {
       "player_id": "ncaa:rylen-roersma",
       "name": "Rylen Roersma",
       "position": "F",
@@ -5624,19 +5689,6 @@
       "penalty_minutes": 8,
       "shots": 13,
       "plus_minus": -2
-    },
-    {
-      "player_id": "ncaa:jaden-dyke",
-      "name": "Jaden Dyke",
-      "position": "F",
-      "team_name": "Long Island",
-      "games_played": 10,
-      "goals": 2,
-      "assists": 3,
-      "points": 5,
-      "penalty_minutes": 0,
-      "shots": 16,
-      "plus_minus": -6
     },
     {
       "player_id": "ncaa:owen-mehlenbacher",
@@ -5652,6 +5704,19 @@
       "plus_minus": -4
     },
     {
+      "player_id": "ncaa:jaden-dyke",
+      "name": "Jaden Dyke",
+      "position": "F",
+      "team_name": "Long Island",
+      "games_played": 10,
+      "goals": 2,
+      "assists": 3,
+      "points": 5,
+      "penalty_minutes": 0,
+      "shots": 16,
+      "plus_minus": -6
+    },
+    {
       "player_id": "ncaa:nathan-behm",
       "name": "Nathan Behm",
       "position": "F",
@@ -5663,6 +5728,266 @@
       "penalty_minutes": 4,
       "shots": 33,
       "plus_minus": -7
+    },
+    {
+      "player_id": "ncaa:joel-plante",
+      "name": "Joel Plante",
+      "position": "F",
+      "team_name": "Omaha",
+      "games_played": 10,
+      "goals": 3,
+      "assists": 2,
+      "points": 5,
+      "penalty_minutes": 2,
+      "shots": 13,
+      "plus_minus": 0
+    },
+    {
+      "player_id": "ncaa:alix-durocher",
+      "name": "Alix Durocher",
+      "position": "F",
+      "team_name": "Niagara",
+      "games_played": 10,
+      "goals": 1,
+      "assists": 4,
+      "points": 5,
+      "penalty_minutes": 2,
+      "shots": 8,
+      "plus_minus": -3
+    },
+    {
+      "player_id": "ncaa:rhys-wallin",
+      "name": "Rhys Wallin",
+      "position": "F",
+      "team_name": "Army",
+      "games_played": 10,
+      "goals": 5,
+      "assists": 0,
+      "points": 5,
+      "penalty_minutes": 2,
+      "shots": 22,
+      "plus_minus": 0
+    },
+    {
+      "player_id": "ncaa:justin-stupka",
+      "name": "Justin Stupka",
+      "position": "F",
+      "team_name": "Ferris State",
+      "games_played": 10,
+      "goals": 2,
+      "assists": 3,
+      "points": 5,
+      "penalty_minutes": 2,
+      "shots": 19,
+      "plus_minus": -3
+    },
+    {
+      "player_id": "ncaa:nathan-mcbrayer",
+      "name": "Nathan McBrayer",
+      "position": "D",
+      "team_name": "Ohio State",
+      "games_played": 10,
+      "goals": 0,
+      "assists": 5,
+      "points": 5,
+      "penalty_minutes": 6,
+      "shots": 15,
+      "plus_minus": 5
+    },
+    {
+      "player_id": "ncaa:william-smith",
+      "name": "William Smith",
+      "position": "D",
+      "team_name": "Ohio State",
+      "games_played": 10,
+      "goals": 0,
+      "assists": 5,
+      "points": 5,
+      "penalty_minutes": 2,
+      "shots": 14,
+      "plus_minus": -3
+    },
+    {
+      "player_id": "ncaa:tomas-machu",
+      "name": "Tomas Machu",
+      "position": "D",
+      "team_name": "Providence",
+      "games_played": 10,
+      "goals": 2,
+      "assists": 3,
+      "points": 5,
+      "penalty_minutes": 6,
+      "shots": 14,
+      "plus_minus": 12
+    },
+    {
+      "player_id": "ncaa:marc-lajoie",
+      "name": "Marc Lajoie",
+      "position": "D",
+      "team_name": "Omaha",
+      "games_played": 10,
+      "goals": 1,
+      "assists": 4,
+      "points": 5,
+      "penalty_minutes": 10,
+      "shots": 11,
+      "plus_minus": -1
+    },
+    {
+      "player_id": "ncaa:connor-davis",
+      "name": "Connor Davis",
+      "position": "F",
+      "team_name": "North Dakota",
+      "games_played": 10,
+      "goals": 1,
+      "assists": 4,
+      "points": 5,
+      "penalty_minutes": 2,
+      "shots": 19,
+      "plus_minus": 1
+    },
+    {
+      "player_id": "ncaa:kyle-smolen",
+      "name": "Kyle Smolen",
+      "position": "F",
+      "team_name": "Arizona State",
+      "games_played": 10,
+      "goals": 4,
+      "assists": 1,
+      "points": 5,
+      "penalty_minutes": 8,
+      "shots": 24,
+      "plus_minus": 0
+    },
+    {
+      "player_id": "ncaa:rylan-brown",
+      "name": "Rylan Brown",
+      "position": "D",
+      "team_name": "Arizona State",
+      "games_played": 10,
+      "goals": 0,
+      "assists": 5,
+      "points": 5,
+      "penalty_minutes": 4,
+      "shots": 13,
+      "plus_minus": 0
+    },
+    {
+      "player_id": "ncaa:nathan-mackie",
+      "name": "Nathan Mackie",
+      "position": "F",
+      "team_name": "Ferris State",
+      "games_played": 10,
+      "goals": 4,
+      "assists": 1,
+      "points": 5,
+      "penalty_minutes": 14,
+      "shots": 29,
+      "plus_minus": -5
+    },
+    {
+      "player_id": "ncaa:troy-pelton",
+      "name": "Troy Pelton",
+      "position": "F",
+      "team_name": "Union",
+      "games_played": 10,
+      "goals": 0,
+      "assists": 5,
+      "points": 5,
+      "penalty_minutes": 15,
+      "shots": 10,
+      "plus_minus": 2
+    },
+    {
+      "player_id": "ncaa:jakub-altrichter",
+      "name": "Jakub Altrichter",
+      "position": "F",
+      "team_name": "St. Thomas",
+      "games_played": 10,
+      "goals": 2,
+      "assists": 3,
+      "points": 5,
+      "penalty_minutes": 11,
+      "shots": 19,
+      "plus_minus": 3
+    },
+    {
+      "player_id": "ncaa:alfred-lindberg",
+      "name": "Alfred Lindberg",
+      "position": "F",
+      "team_name": "RPI",
+      "games_played": 10,
+      "goals": 2,
+      "assists": 3,
+      "points": 5,
+      "penalty_minutes": 4,
+      "shots": 7,
+      "plus_minus": 2
+    },
+    {
+      "player_id": "ncaa:trevor-wong",
+      "name": "Trevor Wong",
+      "position": "F",
+      "team_name": "Omaha",
+      "games_played": 10,
+      "goals": 0,
+      "assists": 5,
+      "points": 5,
+      "penalty_minutes": 20,
+      "shots": 13,
+      "plus_minus": 3
+    },
+    {
+      "player_id": "ncaa:ryan-botterill",
+      "name": "Ryan Botterill",
+      "position": "F",
+      "team_name": "Wisconsin",
+      "games_played": 10,
+      "goals": 3,
+      "assists": 2,
+      "points": 5,
+      "penalty_minutes": 0,
+      "shots": 26,
+      "plus_minus": 6
+    },
+    {
+      "player_id": "ncaa:mael-lavigne",
+      "name": "Maël Lavigne",
+      "position": "F",
+      "team_name": "Omaha",
+      "games_played": 10,
+      "goals": 2,
+      "assists": 3,
+      "points": 5,
+      "penalty_minutes": 18,
+      "shots": 10,
+      "plus_minus": 1
+    },
+    {
+      "player_id": "ncaa:david-green",
+      "name": "David Green",
+      "position": "D",
+      "team_name": "Merrimack",
+      "games_played": 9,
+      "goals": 2,
+      "assists": 3,
+      "points": 5,
+      "penalty_minutes": 2,
+      "shots": 11,
+      "plus_minus": 5
+    },
+    {
+      "player_id": "ncaa:nathan-leek",
+      "name": "Nathan Leek",
+      "position": "F",
+      "team_name": "Ferris State",
+      "games_played": 9,
+      "goals": 2,
+      "assists": 3,
+      "points": 5,
+      "penalty_minutes": 12,
+      "shots": 19,
+      "plus_minus": -6
     },
     {
       "player_id": "ncaa:joel-plante",
@@ -6289,84 +6614,6 @@
       "plus_minus": -1
     },
     {
-      "player_id": "ncaa:andon-cerbone",
-      "name": "Andon Cerbone",
-      "position": "F",
-      "team_name": "Quinnipiac",
-      "games_played": 12,
-      "goals": 3,
-      "assists": 1,
-      "points": 4,
-      "penalty_minutes": 6,
-      "shots": 23,
-      "plus_minus": 3
-    },
-    {
-      "player_id": "ncaa:jake-peterson",
-      "name": "Jake Peterson",
-      "position": "D",
-      "team_name": "Air Force",
-      "games_played": 12,
-      "goals": 1,
-      "assists": 3,
-      "points": 4,
-      "penalty_minutes": 6,
-      "shots": 18,
-      "plus_minus": 0
-    },
-    {
-      "player_id": "ncaa:michael-cicek",
-      "name": "Michael Cicek",
-      "position": "F",
-      "team_name": "Michigan Tech",
-      "games_played": 12,
-      "goals": 1,
-      "assists": 3,
-      "points": 4,
-      "penalty_minutes": 0,
-      "shots": 10,
-      "plus_minus": 1
-    },
-    {
-      "player_id": "ncaa:noah-dziver",
-      "name": "Noah Dziver",
-      "position": "F",
-      "team_name": "Lindenwood",
-      "games_played": 12,
-      "goals": 3,
-      "assists": 1,
-      "points": 4,
-      "penalty_minutes": 4,
-      "shots": 20,
-      "plus_minus": -4
-    },
-    {
-      "player_id": "ncaa:zach-wigle",
-      "name": "Zach Wigle",
-      "position": "F",
-      "team_name": "RIT",
-      "games_played": 12,
-      "goals": 1,
-      "assists": 3,
-      "points": 4,
-      "penalty_minutes": 2,
-      "shots": 30,
-      "plus_minus": -3
-    },
-    {
-      "player_id": "ncaa:jack-hillier",
-      "name": "Jack Hillier",
-      "position": "F",
-      "team_name": "Sacred Heart",
-      "games_played": 12,
-      "goals": 0,
-      "assists": 4,
-      "points": 4,
-      "penalty_minutes": 2,
-      "shots": 14,
-      "plus_minus": -1
-    },
-    {
       "player_id": "ncaa:zach-olsen",
       "name": "Zach Olsen",
       "position": "F",
@@ -6640,19 +6887,6 @@
       "plus_minus": -2
     },
     {
-      "player_id": "ncaa:blake-bechen",
-      "name": "Blake Bechen",
-      "position": "F",
-      "team_name": "Minnesota-Duluth",
-      "games_played": 12,
-      "goals": 1,
-      "assists": 3,
-      "points": 4,
-      "penalty_minutes": 6,
-      "shots": 13,
-      "plus_minus": -1
-    },
-    {
       "player_id": "ncaa:nick-roukounakis",
       "name": "Nick Roukounakis",
       "position": "F",
@@ -6679,6 +6913,19 @@
       "plus_minus": 4
     },
     {
+      "player_id": "ncaa:blake-bechen",
+      "name": "Blake Bechen",
+      "position": "F",
+      "team_name": "Minnesota-Duluth",
+      "games_played": 12,
+      "goals": 1,
+      "assists": 3,
+      "points": 4,
+      "penalty_minutes": 6,
+      "shots": 13,
+      "plus_minus": -1
+    },
+    {
       "player_id": "ncaa:ty-gagno",
       "name": "Ty Gagno",
       "position": "F",
@@ -6703,6 +6950,19 @@
       "penalty_minutes": 2,
       "shots": 15,
       "plus_minus": -3
+    },
+    {
+      "player_id": "ncaa:loic-usereau",
+      "name": "Loic Usereau",
+      "position": "D",
+      "team_name": "Maine",
+      "games_played": 12,
+      "goals": 3,
+      "assists": 1,
+      "points": 4,
+      "penalty_minutes": 2,
+      "shots": 19,
+      "plus_minus": 3
     },
     {
       "player_id": "ncaa:andrew-kuzma",
@@ -6770,19 +7030,6 @@
       "plus_minus": 3
     },
     {
-      "player_id": "ncaa:tomas-mrsic",
-      "name": "Tomas Mrsic",
-      "position": "F",
-      "team_name": "Colorado College",
-      "games_played": 12,
-      "goals": 0,
-      "assists": 4,
-      "points": 4,
-      "penalty_minutes": 0,
-      "shots": 16,
-      "plus_minus": 3
-    },
-    {
       "player_id": "ncaa:maxwell-chakrabarti",
       "name": "Maxwell Chakrabarti",
       "position": "D",
@@ -6796,6 +7043,32 @@
       "plus_minus": 3
     },
     {
+      "player_id": "ncaa:tomas-mrsic",
+      "name": "Tomas Mrsic",
+      "position": "F",
+      "team_name": "Colorado College",
+      "games_played": 12,
+      "goals": 0,
+      "assists": 4,
+      "points": 4,
+      "penalty_minutes": 0,
+      "shots": 16,
+      "plus_minus": 3
+    },
+    {
+      "player_id": "ncaa:jake-peterson",
+      "name": "Jake Peterson",
+      "position": "D",
+      "team_name": "Air Force",
+      "games_played": 12,
+      "goals": 1,
+      "assists": 3,
+      "points": 4,
+      "penalty_minutes": 6,
+      "shots": 18,
+      "plus_minus": 0
+    },
+    {
       "player_id": "ncaa:misha-volotovskii",
       "name": "Misha Volotovskii",
       "position": "F",
@@ -6803,6 +7076,32 @@
       "games_played": 11,
       "goals": 3,
       "assists": 1,
+      "points": 4,
+      "penalty_minutes": 4,
+      "shots": 20,
+      "plus_minus": -4
+    },
+    {
+      "player_id": "ncaa:andon-cerbone",
+      "name": "Andon Cerbone",
+      "position": "F",
+      "team_name": "Quinnipiac",
+      "games_played": 12,
+      "goals": 3,
+      "assists": 1,
+      "points": 4,
+      "penalty_minutes": 6,
+      "shots": 23,
+      "plus_minus": 3
+    },
+    {
+      "player_id": "ncaa:zach-wigle",
+      "name": "Zach Wigle",
+      "position": "F",
+      "team_name": "RIT",
+      "games_played": 12,
+      "goals": 1,
+      "assists": 3,
       "points": 4,
       "penalty_minutes": 2,
       "shots": 17,
@@ -6926,6 +7225,19 @@
       "plus_minus": -3
     },
     {
+      "player_id": "ncaa:ryan-zaremba",
+      "name": "Ryan Zaremba",
+      "position": "F",
+      "team_name": "Minnesota-Duluth",
+      "games_played": 11,
+      "goals": 2,
+      "assists": 2,
+      "points": 4,
+      "penalty_minutes": 8,
+      "shots": 11,
+      "plus_minus": 4
+    },
+    {
       "player_id": "ncaa:kristian-kostadinski",
       "name": "Kristian Kostadinski",
       "position": "D",
@@ -6939,17 +7251,17 @@
       "plus_minus": 0
     },
     {
-      "player_id": "ncaa:ryan-zaremba",
-      "name": "Ryan Zaremba",
+      "player_id": "ncaa:peter-kramer",
+      "name": "Peter Kramer",
       "position": "F",
-      "team_name": "Minnesota-Duluth",
+      "team_name": "Bentley",
       "games_played": 11,
-      "goals": 2,
-      "assists": 2,
+      "goals": 1,
+      "assists": 3,
       "points": 4,
-      "penalty_minutes": 8,
-      "shots": 11,
-      "plus_minus": 4
+      "penalty_minutes": 4,
+      "shots": 14,
+      "plus_minus": 1
     },
     {
       "player_id": "ncaa:jimmy-goffredo",
@@ -6963,45 +7275,6 @@
       "penalty_minutes": 4,
       "shots": 26,
       "plus_minus": -3
-    },
-    {
-      "player_id": "ncaa:ryan-zaremba",
-      "name": "Ryan Zaremba",
-      "position": "F",
-      "team_name": "Minnesota-Duluth",
-      "games_played": 11,
-      "goals": 2,
-      "assists": 2,
-      "points": 4,
-      "penalty_minutes": 8,
-      "shots": 11,
-      "plus_minus": 4
-    },
-    {
-      "player_id": "ncaa:adam-valentini",
-      "name": "Adam Valentini",
-      "position": "F",
-      "team_name": "Michigan",
-      "games_played": 11,
-      "goals": 2,
-      "assists": 2,
-      "points": 4,
-      "penalty_minutes": 2,
-      "shots": 27,
-      "plus_minus": 6
-    },
-    {
-      "player_id": "ncaa:peter-kramer",
-      "name": "Peter Kramer",
-      "position": "F",
-      "team_name": "Bentley",
-      "games_played": 11,
-      "goals": 1,
-      "assists": 3,
-      "points": 4,
-      "penalty_minutes": 4,
-      "shots": 14,
-      "plus_minus": 1
     },
     {
       "player_id": "ncaa:michael-neumeier",
@@ -7028,6 +7301,19 @@
       "penalty_minutes": 4,
       "shots": 21,
       "plus_minus": -3
+    },
+    {
+      "player_id": "ncaa:adam-valentini",
+      "name": "Adam Valentini",
+      "position": "F",
+      "team_name": "Michigan",
+      "games_played": 11,
+      "goals": 2,
+      "assists": 2,
+      "points": 4,
+      "penalty_minutes": 2,
+      "shots": 27,
+      "plus_minus": 6
     },
     {
       "player_id": "ncaa:garrett-szydlowski",
@@ -7108,32 +7394,6 @@
       "plus_minus": -4
     },
     {
-      "player_id": "ncaa:david-rozsival",
-      "name": "David Rozsival",
-      "position": "F",
-      "team_name": "St. Thomas",
-      "games_played": 10,
-      "goals": 1,
-      "assists": 3,
-      "points": 4,
-      "penalty_minutes": 0,
-      "shots": 16,
-      "plus_minus": -1
-    },
-    {
-      "player_id": "ncaa:chase-jette",
-      "name": "Chase Jette",
-      "position": "F",
-      "team_name": "Wisconsin",
-      "games_played": 10,
-      "goals": 1,
-      "assists": 3,
-      "points": 4,
-      "penalty_minutes": 6,
-      "shots": 15,
-      "plus_minus": 1
-    },
-    {
       "player_id": "ncaa:will-tomko",
       "name": "Will Tomko",
       "position": "F",
@@ -7199,17 +7459,17 @@
       "plus_minus": -1
     },
     {
-      "player_id": "ncaa:walter-zacher",
-      "name": "Walter Zacher",
+      "player_id": "ncaa:maxwell-martin",
+      "name": "Maxwell Martin",
       "position": "F",
-      "team_name": "Canisius",
+      "team_name": "Bowling Green",
       "games_played": 10,
       "goals": 2,
       "assists": 2,
       "points": 4,
       "penalty_minutes": 4,
-      "shots": 28,
-      "plus_minus": 1
+      "shots": 23,
+      "plus_minus": 4
     },
     {
       "player_id": "ncaa:jared-mangan",
@@ -7236,19 +7496,6 @@
       "penalty_minutes": 0,
       "shots": 14,
       "plus_minus": 2
-    },
-    {
-      "player_id": "ncaa:maxwell-martin",
-      "name": "Maxwell Martin",
-      "position": "F",
-      "team_name": "Bowling Green",
-      "games_played": 10,
-      "goals": 2,
-      "assists": 2,
-      "points": 4,
-      "penalty_minutes": 4,
-      "shots": 23,
-      "plus_minus": 4
     },
     {
       "player_id": "ncaa:brandt-dubey",
@@ -7316,6 +7563,19 @@
       "plus_minus": 0
     },
     {
+      "player_id": "ncaa:sam-deckhut",
+      "name": "Sam Deckhut",
+      "position": "F",
+      "team_name": "Ohio State",
+      "games_played": 10,
+      "goals": 2,
+      "assists": 2,
+      "points": 4,
+      "penalty_minutes": 15,
+      "shots": 8,
+      "plus_minus": 3
+    },
+    {
       "player_id": "ncaa:vincent-desjardins",
       "name": "Vincent Desjardins",
       "position": "F",
@@ -7327,6 +7587,19 @@
       "penalty_minutes": 4,
       "shots": 21,
       "plus_minus": -3
+    },
+    {
+      "player_id": "ncaa:lj-mooney",
+      "name": "LJ Mooney",
+      "position": "F",
+      "team_name": "Minnesota",
+      "games_played": 10,
+      "goals": 1,
+      "assists": 3,
+      "points": 4,
+      "penalty_minutes": 7,
+      "shots": 20,
+      "plus_minus": 1
     },
     {
       "player_id": "ncaa:thomas-bleyl",
@@ -7353,19 +7626,6 @@
       "penalty_minutes": 9,
       "shots": 10,
       "plus_minus": -7
-    },
-    {
-      "player_id": "ncaa:lj-mooney",
-      "name": "LJ Mooney",
-      "position": "F",
-      "team_name": "Minnesota",
-      "games_played": 10,
-      "goals": 1,
-      "assists": 3,
-      "points": 4,
-      "penalty_minutes": 7,
-      "shots": 20,
-      "plus_minus": 1
     },
     {
       "player_id": "ncaa:peter-cisar",
@@ -7407,19 +7667,6 @@
       "plus_minus": 2
     },
     {
-      "player_id": "ncaa:hayden-reid",
-      "name": "Hayden Reid",
-      "position": "F",
-      "team_name": "Clarkson",
-      "games_played": 10,
-      "goals": 3,
-      "assists": 1,
-      "points": 4,
-      "penalty_minutes": 17,
-      "shots": 21,
-      "plus_minus": 2
-    },
-    {
       "player_id": "ncaa:finn-brink",
       "name": "Finn Brink",
       "position": "F",
@@ -7431,6 +7678,19 @@
       "penalty_minutes": 10,
       "shots": 16,
       "plus_minus": 3
+    },
+    {
+      "player_id": "ncaa:hayden-reid",
+      "name": "Hayden Reid",
+      "position": "F",
+      "team_name": "Clarkson",
+      "games_played": 10,
+      "goals": 3,
+      "assists": 1,
+      "points": 4,
+      "penalty_minutes": 17,
+      "shots": 21,
+      "plus_minus": 2
     },
     {
       "player_id": "ncaa:hagen-burrows",
@@ -7524,6 +7784,32 @@
       "plus_minus": 0
     },
     {
+      "player_id": "ncaa:cade-littler",
+      "name": "Cade Littler",
+      "position": "F",
+      "team_name": "Arizona State",
+      "games_played": 9,
+      "goals": 1,
+      "assists": 3,
+      "points": 4,
+      "penalty_minutes": 0,
+      "shots": 12,
+      "plus_minus": -6
+    },
+    {
+      "player_id": "ncaa:gavin-ewles",
+      "name": "Gavin Ewles",
+      "position": "D",
+      "team_name": "Robert Morris",
+      "games_played": 9,
+      "goals": 1,
+      "assists": 3,
+      "points": 4,
+      "penalty_minutes": 4,
+      "shots": 8,
+      "plus_minus": 0
+    },
+    {
       "player_id": "ncaa:liam-fitzpatrick",
       "name": "Liam Fitzpatrick",
       "position": "F",
@@ -7537,19 +7823,6 @@
       "plus_minus": -4
     },
     {
-      "player_id": "ncaa:owen-pitters",
-      "name": "Owen Pitters",
-      "position": "F",
-      "team_name": "Northern Michigan",
-      "games_played": 9,
-      "goals": 1,
-      "assists": 3,
-      "points": 4,
-      "penalty_minutes": 0,
-      "shots": 11,
-      "plus_minus": -3
-    },
-    {
       "player_id": "ncaa:brent-solomon",
       "name": "Brent Solomon",
       "position": "F",
@@ -7561,6 +7834,19 @@
       "penalty_minutes": 17,
       "shots": 32,
       "plus_minus": 4
+    },
+    {
+      "player_id": "ncaa:owen-pitters",
+      "name": "Owen Pitters",
+      "position": "F",
+      "team_name": "Northern Michigan",
+      "games_played": 9,
+      "goals": 1,
+      "assists": 3,
+      "points": 4,
+      "penalty_minutes": 0,
+      "shots": 11,
+      "plus_minus": -3
     },
     {
       "player_id": "ncaa:alex-mercier",
@@ -7618,14 +7904,14 @@
       "player_id": "ncaa:carter-batchelder",
       "name": "Carter Batchelder",
       "position": "F",
-      "team_name": "Lake Superior",
-      "games_played": 8,
-      "goals": 4,
-      "assists": 0,
+      "team_name": "Michigan Tech",
+      "games_played": 9,
+      "goals": 2,
+      "assists": 2,
       "points": 4,
-      "penalty_minutes": 2,
-      "shots": 16,
-      "plus_minus": -1
+      "penalty_minutes": 0,
+      "shots": 22,
+      "plus_minus": -2
     },
     {
       "player_id": "ncaa:jack-mesic",
@@ -7732,6 +8018,32 @@
       "plus_minus": -5
     },
     {
+      "player_id": "ncaa:cole-lonsdale",
+      "name": "Cole Lonsdale",
+      "position": "F",
+      "team_name": "Mass.-Lowell",
+      "games_played": 7,
+      "goals": 2,
+      "assists": 2,
+      "points": 4,
+      "penalty_minutes": 2,
+      "shots": 9,
+      "plus_minus": -4
+    },
+    {
+      "player_id": "ncaa:heikki-ruohonen",
+      "name": "Heikki Ruohonen",
+      "position": "F",
+      "team_name": "Harvard",
+      "games_played": 7,
+      "goals": 1,
+      "assists": 3,
+      "points": 4,
+      "penalty_minutes": 12,
+      "shots": 20,
+      "plus_minus": -5
+    },
+    {
       "player_id": "ncaa:donato-bracco",
       "name": "Donato Bracco",
       "position": "D",
@@ -7761,10 +8073,10 @@
       "player_id": "ncaa:matthew-romer",
       "name": "Matthew Romer",
       "position": "F",
-      "team_name": "Lake Superior",
-      "games_played": 8,
-      "goals": 4,
-      "assists": 0,
+      "team_name": "Stonehill",
+      "games_played": 7,
+      "goals": 2,
+      "assists": 2,
       "points": 4,
       "penalty_minutes": 2,
       "shots": 19,
@@ -7940,32 +8252,6 @@
       "plus_minus": 4
     },
     {
-      "player_id": "ncaa:marshall-finnie",
-      "name": "Marshall Finnie",
-      "position": "F",
-      "team_name": "Niagara",
-      "games_played": 12,
-      "goals": 1,
-      "assists": 2,
-      "points": 3,
-      "penalty_minutes": 29,
-      "shots": 31,
-      "plus_minus": -6
-    },
-    {
-      "player_id": "ncaa:julian-demiglio",
-      "name": "Julian Demiglio",
-      "position": "F",
-      "team_name": "RIT",
-      "games_played": 12,
-      "goals": 2,
-      "assists": 1,
-      "points": 3,
-      "penalty_minutes": 10,
-      "shots": 22,
-      "plus_minus": -4
-    },
-    {
       "player_id": "ncaa:jp-steele",
       "name": "JP Steele",
       "position": "D",
@@ -8070,19 +8356,6 @@
       "plus_minus": -2
     },
     {
-      "player_id": "ncaa:aaron-pionk",
-      "name": "Aaron Pionk",
-      "position": "D",
-      "team_name": "Minnesota-Duluth",
-      "games_played": 12,
-      "goals": 1,
-      "assists": 2,
-      "points": 3,
-      "penalty_minutes": 6,
-      "shots": 16,
-      "plus_minus": 3
-    },
-    {
       "player_id": "ncaa:william-belle",
       "name": "William Belle",
       "position": "F",
@@ -8125,27 +8398,14 @@
       "player_id": "ncaa:ethan-elias",
       "name": "Ethan Elias",
       "position": "D",
-      "team_name": "Lindenwood",
+      "team_name": "Minnesota-Duluth",
       "games_played": 12,
       "goals": 1,
       "assists": 2,
       "points": 3,
-      "penalty_minutes": 8,
-      "shots": 14,
-      "plus_minus": -3
-    },
-    {
-      "player_id": "ncaa:alex-carr",
-      "name": "Alex Carr",
-      "position": "D",
-      "team_name": "New Hampshire",
-      "games_played": 12,
-      "goals": 0,
-      "assists": 3,
-      "points": 3,
       "penalty_minutes": 6,
-      "shots": 24,
-      "plus_minus": 0
+      "shots": 16,
+      "plus_minus": 3
     },
     {
       "player_id": "ncaa:ethan-elias",
@@ -8159,6 +8419,19 @@
       "penalty_minutes": 6,
       "shots": 6,
       "plus_minus": -1
+    },
+    {
+      "player_id": "ncaa:alex-carr",
+      "name": "Alex Carr",
+      "position": "D",
+      "team_name": "New Hampshire",
+      "games_played": 12,
+      "goals": 0,
+      "assists": 3,
+      "points": 3,
+      "penalty_minutes": 6,
+      "shots": 24,
+      "plus_minus": 0
     },
     {
       "player_id": "ncaa:matthew-lansing",
@@ -8187,19 +8460,6 @@
       "plus_minus": -2
     },
     {
-      "player_id": "ncaa:graham-sward",
-      "name": "Graham Sward",
-      "position": "D",
-      "team_name": "Quinnipiac",
-      "games_played": 12,
-      "goals": 2,
-      "assists": 1,
-      "points": 3,
-      "penalty_minutes": 8,
-      "shots": 12,
-      "plus_minus": 9
-    },
-    {
       "player_id": "ncaa:jack-dalton",
       "name": "Jack Dalton",
       "position": "D",
@@ -8224,6 +8484,19 @@
       "penalty_minutes": 0,
       "shots": 23,
       "plus_minus": 1
+    },
+    {
+      "player_id": "ncaa:graham-sward",
+      "name": "Graham Sward",
+      "position": "D",
+      "team_name": "Quinnipiac",
+      "games_played": 12,
+      "goals": 2,
+      "assists": 1,
+      "points": 3,
+      "penalty_minutes": 8,
+      "shots": 12,
+      "plus_minus": 9
     },
     {
       "player_id": "ncaa:maxim-muranov",
@@ -8278,32 +8551,6 @@
       "plus_minus": -2
     },
     {
-      "player_id": "ncaa:ty-halaburda",
-      "name": "Ty Halaburda",
-      "position": "F",
-      "team_name": "Colorado College",
-      "games_played": 12,
-      "goals": 0,
-      "assists": 3,
-      "points": 3,
-      "penalty_minutes": 4,
-      "shots": 15,
-      "plus_minus": 0
-    },
-    {
-      "player_id": "ncaa:cooper-anderson",
-      "name": "Cooper Anderson",
-      "position": "D",
-      "team_name": "Alaska-Anchorage",
-      "games_played": 12,
-      "goals": 2,
-      "assists": 1,
-      "points": 3,
-      "penalty_minutes": 10,
-      "shots": 17,
-      "plus_minus": -10
-    },
-    {
       "player_id": "ncaa:kevin-scott",
       "name": "Kevin Scott",
       "position": "D",
@@ -8328,6 +8575,32 @@
       "penalty_minutes": 12,
       "shots": 6,
       "plus_minus": 2
+    },
+    {
+      "player_id": "ncaa:ty-halaburda",
+      "name": "Ty Halaburda",
+      "position": "F",
+      "team_name": "Colorado College",
+      "games_played": 12,
+      "goals": 0,
+      "assists": 3,
+      "points": 3,
+      "penalty_minutes": 4,
+      "shots": 15,
+      "plus_minus": 0
+    },
+    {
+      "player_id": "ncaa:cooper-anderson",
+      "name": "Cooper Anderson",
+      "position": "D",
+      "team_name": "Alaska-Anchorage",
+      "games_played": 12,
+      "goals": 2,
+      "assists": 1,
+      "points": 3,
+      "penalty_minutes": 10,
+      "shots": 17,
+      "plus_minus": -10
     },
     {
       "player_id": "ncaa:gavin-cornforth",
@@ -8382,95 +8655,43 @@
       "plus_minus": -14
     },
     {
-      "player_id": "ncaa:will-skahan",
-      "name": "Will Skahan",
-      "position": "D",
-      "team_name": "Minnesota State",
+      "player_id": "ncaa:marshall-finnie",
+      "name": "Marshall Finnie",
+      "position": "F",
+      "team_name": "Niagara",
       "games_played": 12,
-      "goals": 0,
-      "assists": 3,
+      "goals": 1,
+      "assists": 2,
       "points": 3,
-      "penalty_minutes": 8,
-      "shots": 20,
+      "penalty_minutes": 29,
+      "shots": 31,
+      "plus_minus": -6
+    },
+    {
+      "player_id": "ncaa:julian-demiglio",
+      "name": "Julian Demiglio",
+      "position": "F",
+      "team_name": "RIT",
+      "games_played": 12,
+      "goals": 2,
+      "assists": 1,
+      "points": 3,
+      "penalty_minutes": 10,
+      "shots": 22,
       "plus_minus": -4
     },
     {
-      "player_id": "ncaa:jasper-kuhta",
-      "name": "Jasper Kuhta",
+      "player_id": "ncaa:rylan-gould",
+      "name": "Rylan Gould",
       "position": "F",
-      "team_name": "Massachusetts",
+      "team_name": "Bemidji State",
       "games_played": 11,
-      "goals": 0,
-      "assists": 3,
+      "goals": 2,
+      "assists": 1,
       "points": 3,
       "penalty_minutes": 6,
-      "shots": 14,
-      "plus_minus": -4
-    },
-    {
-      "player_id": "ncaa:reid-varkonyi",
-      "name": "Reid Varkonyi",
-      "position": "F",
-      "team_name": "Denver",
-      "games_played": 11,
-      "goals": 0,
-      "assists": 3,
-      "points": 3,
-      "penalty_minutes": 2,
-      "shots": 3,
-      "plus_minus": 4
-    },
-    {
-      "player_id": "ncaa:seth-constance",
-      "name": "Seth Constance",
-      "position": "D",
-      "team_name": "Colorado College",
-      "games_played": 11,
-      "goals": 1,
-      "assists": 2,
-      "points": 3,
-      "penalty_minutes": 0,
-      "shots": 8,
-      "plus_minus": 2
-    },
-    {
-      "player_id": "ncaa:george-krotiris",
-      "name": "George Krotiris",
-      "position": "F",
-      "team_name": "Robert Morris",
-      "games_played": 11,
-      "goals": 3,
-      "assists": 0,
-      "points": 3,
-      "penalty_minutes": 4,
-      "shots": 23,
-      "plus_minus": -2
-    },
-    {
-      "player_id": "ncaa:bradley-walker",
-      "name": "Bradley Walker",
-      "position": "F",
-      "team_name": "Miami",
-      "games_played": 11,
-      "goals": 1,
-      "assists": 2,
-      "points": 3,
-      "penalty_minutes": 4,
-      "shots": 8,
-      "plus_minus": 0
-    },
-    {
-      "player_id": "ncaa:ephram-mcnutt",
-      "name": "Ephram McNutt",
-      "position": "D",
-      "team_name": "Bentley",
-      "games_played": 11,
-      "goals": 1,
-      "assists": 2,
-      "points": 3,
-      "penalty_minutes": 2,
-      "shots": 10,
-      "plus_minus": 4
+      "shots": 12,
+      "plus_minus": -8
     },
     {
       "player_id": "ncaa:rylan-gould",
@@ -8616,17 +8837,82 @@
       "plus_minus": -4
     },
     {
-      "player_id": "ncaa:ryan-kusler",
-      "name": "Ryan Kusler",
+      "player_id": "ncaa:jasper-kuhta",
+      "name": "Jasper Kuhta",
       "position": "F",
-      "team_name": "Ferris State",
-      "games_played": 10,
+      "team_name": "Massachusetts",
+      "games_played": 11,
+      "goals": 0,
+      "assists": 3,
+      "points": 3,
+      "penalty_minutes": 6,
+      "shots": 14,
+      "plus_minus": -4
+    },
+    {
+      "player_id": "ncaa:reid-varkonyi",
+      "name": "Reid Varkonyi",
+      "position": "F",
+      "team_name": "Denver",
+      "games_played": 11,
+      "goals": 0,
+      "assists": 3,
+      "points": 3,
+      "penalty_minutes": 2,
+      "shots": 3,
+      "plus_minus": 4
+    },
+    {
+      "player_id": "ncaa:seth-constance",
+      "name": "Seth Constance",
+      "position": "D",
+      "team_name": "Colorado College",
+      "games_played": 11,
+      "goals": 1,
+      "assists": 2,
+      "points": 3,
+      "penalty_minutes": 0,
+      "shots": 8,
+      "plus_minus": 2
+    },
+    {
+      "player_id": "ncaa:george-krotiris",
+      "name": "George Krotiris",
+      "position": "F",
+      "team_name": "Robert Morris",
+      "games_played": 11,
+      "goals": 3,
+      "assists": 0,
+      "points": 3,
+      "penalty_minutes": 4,
+      "shots": 23,
+      "plus_minus": -2
+    },
+    {
+      "player_id": "ncaa:bradley-walker",
+      "name": "Bradley Walker",
+      "position": "F",
+      "team_name": "Miami",
+      "games_played": 11,
       "goals": 1,
       "assists": 2,
       "points": 3,
       "penalty_minutes": 4,
-      "shots": 18,
-      "plus_minus": -6
+      "shots": 8,
+      "plus_minus": 0
+    },
+    {
+      "player_id": "ncaa:ephram-mcnutt",
+      "name": "Ephram McNutt",
+      "position": "D",
+      "team_name": "Bentley",
+      "games_played": 11,
+      "goals": 1,
+      "assists": 2,
+      "points": 3,
+      "penalty_minutes": 2,
+      "shots": 10,
+      "plus_minus": 4
     },
     {
       "player_id": "ncaa:nathan-rickey",
@@ -8733,19 +9019,6 @@
       "plus_minus": -1
     },
     {
-      "player_id": "ncaa:tyson-galloway",
-      "name": "Tyson Galloway",
-      "position": "D",
-      "team_name": "Lake Superior",
-      "games_played": 10,
-      "goals": 0,
-      "assists": 3,
-      "points": 3,
-      "penalty_minutes": 2,
-      "shots": 6,
-      "plus_minus": 2
-    },
-    {
       "player_id": "ncaa:blake-zielinski",
       "name": "Blake Zielinski",
       "position": "F",
@@ -8772,6 +9045,19 @@
       "plus_minus": 2
     },
     {
+      "player_id": "ncaa:tyson-galloway",
+      "name": "Tyson Galloway",
+      "position": "D",
+      "team_name": "Lake Superior",
+      "games_played": 10,
+      "goals": 0,
+      "assists": 3,
+      "points": 3,
+      "penalty_minutes": 2,
+      "shots": 6,
+      "plus_minus": 2
+    },
+    {
       "player_id": "ncaa:brayden-dube",
       "name": "Brayden Dube",
       "position": "F",
@@ -8783,19 +9069,6 @@
       "penalty_minutes": 21,
       "shots": 15,
       "plus_minus": -2
-    },
-    {
-      "player_id": "ncaa:anthony-allain-samake",
-      "name": "Anthony Allain Samake",
-      "position": "D",
-      "team_name": "Connecticut",
-      "games_played": 10,
-      "goals": 1,
-      "assists": 2,
-      "points": 3,
-      "penalty_minutes": 4,
-      "shots": 9,
-      "plus_minus": 2
     },
     {
       "player_id": "ncaa:adyn-merrick",
@@ -8822,6 +9095,19 @@
       "penalty_minutes": 0,
       "shots": 11,
       "plus_minus": 1
+    },
+    {
+      "player_id": "ncaa:anthony-allain-samake",
+      "name": "Anthony Allain Samake",
+      "position": "D",
+      "team_name": "Connecticut",
+      "games_played": 10,
+      "goals": 1,
+      "assists": 2,
+      "points": 3,
+      "penalty_minutes": 4,
+      "shots": 9,
+      "plus_minus": 2
     },
     {
       "player_id": "ncaa:giovanni-morneau",
@@ -8863,19 +9149,6 @@
       "plus_minus": -1
     },
     {
-      "player_id": "ncaa:tate-pritchard",
-      "name": "Tate Pritchard",
-      "position": "F",
-      "team_name": "Minnesota",
-      "games_played": 10,
-      "goals": 1,
-      "assists": 2,
-      "points": 3,
-      "penalty_minutes": 15,
-      "shots": 13,
-      "plus_minus": -4
-    },
-    {
       "player_id": "ncaa:cole-brown",
       "name": "Cole Brown",
       "position": "F",
@@ -8887,6 +9160,19 @@
       "penalty_minutes": 6,
       "shots": 13,
       "plus_minus": -6
+    },
+    {
+      "player_id": "ncaa:tate-pritchard",
+      "name": "Tate Pritchard",
+      "position": "F",
+      "team_name": "Minnesota",
+      "games_played": 10,
+      "goals": 1,
+      "assists": 2,
+      "points": 3,
+      "penalty_minutes": 15,
+      "shots": 13,
+      "plus_minus": -4
     },
     {
       "player_id": "ncaa:aiden-westin",
@@ -8928,19 +9214,6 @@
       "plus_minus": -3
     },
     {
-      "player_id": "ncaa:cole-miller",
-      "name": "Cole Miller",
-      "position": "F",
-      "team_name": "Canisius",
-      "games_played": 5,
-      "goals": 0,
-      "assists": 1,
-      "points": 1,
-      "penalty_minutes": 0,
-      "shots": 3,
-      "plus_minus": -4
-    },
-    {
       "player_id": "ncaa:brandon-svoboda",
       "name": "Brandon Svoboda",
       "position": "F",
@@ -8952,6 +9225,19 @@
       "penalty_minutes": 2,
       "shots": 10,
       "plus_minus": 2
+    },
+    {
+      "player_id": "ncaa:cole-miller",
+      "name": "Cole Miller",
+      "position": "F",
+      "team_name": "Canisius",
+      "games_played": 5,
+      "goals": 0,
+      "assists": 1,
+      "points": 1,
+      "penalty_minutes": 0,
+      "shots": 3,
+      "plus_minus": -4
     },
     {
       "player_id": "ncaa:joey-potter",
@@ -9019,45 +9305,6 @@
       "plus_minus": 4
     },
     {
-      "player_id": "ncaa:adam-pietila",
-      "name": "Adam Pietila",
-      "position": "F",
-      "team_name": "St. Cloud State",
-      "games_played": 10,
-      "goals": 2,
-      "assists": 1,
-      "points": 3,
-      "penalty_minutes": 14,
-      "shots": 23,
-      "plus_minus": -6
-    },
-    {
-      "player_id": "ncaa:cooper-conway",
-      "name": "Cooper Conway",
-      "position": "F",
-      "team_name": "Holy Cross",
-      "games_played": 10,
-      "goals": 1,
-      "assists": 2,
-      "points": 3,
-      "penalty_minutes": 6,
-      "shots": 6,
-      "plus_minus": 0
-    },
-    {
-      "player_id": "ncaa:shane-vansaghi",
-      "name": "Shane Vansaghi",
-      "position": "F",
-      "team_name": "Michigan State",
-      "games_played": 10,
-      "goals": 3,
-      "assists": 0,
-      "points": 3,
-      "penalty_minutes": 30,
-      "shots": 18,
-      "plus_minus": 4
-    },
-    {
       "player_id": "ncaa:ryan-kusler",
       "name": "Ryan Kusler",
       "position": "F",
@@ -9071,68 +9318,55 @@
       "plus_minus": -6
     },
     {
-      "player_id": "ncaa:nathan-rickey",
-      "name": "Nathan Rickey",
-      "position": "D",
-      "team_name": "Alaska",
-      "games_played": 10,
-      "goals": 1,
-      "assists": 2,
-      "points": 3,
-      "penalty_minutes": 4,
-      "shots": 26,
-      "plus_minus": -10
-    },
-    {
-      "player_id": "ncaa:james-hong",
-      "name": "James Hong",
+      "player_id": "ncaa:adam-pietila",
+      "name": "Adam Pietila",
       "position": "F",
-      "team_name": "Ohio State",
-      "games_played": 10,
-      "goals": 2,
-      "assists": 1,
+      "team_name": "Wisconsin",
+      "games_played": 9,
+      "goals": 0,
+      "assists": 3,
       "points": 3,
-      "penalty_minutes": 6,
-      "shots": 10,
-      "plus_minus": -2
-    },
-    {
-      "player_id": "ncaa:trent-wilson",
-      "name": "Trent Wilson",
-      "position": "F",
-      "team_name": "Robert Morris",
-      "games_played": 10,
-      "goals": 1,
-      "assists": 2,
-      "points": 3,
-      "penalty_minutes": 2,
-      "shots": 7,
-      "plus_minus": -3
-    },
-    {
-      "player_id": "ncaa:ethan-belchetz",
-      "name": "Ethan Belchetz",
-      "position": "F",
-      "team_name": "Michigan State",
-      "games_played": 10,
-      "goals": 2,
-      "assists": 1,
-      "points": 3,
-      "penalty_minutes": 2,
-      "shots": 21,
+      "penalty_minutes": 21,
+      "shots": 20,
       "plus_minus": 2
     },
     {
-      "player_id": "ncaa:richard-baran",
-      "name": "Richard Baran",
+      "player_id": "ncaa:nate-tivey",
+      "name": "Nate Tivey",
       "position": "D",
-      "team_name": "Arizona State",
-      "games_played": 10,
+      "team_name": "Quinnipiac",
+      "games_played": 9,
+      "goals": 0,
+      "assists": 3,
+      "points": 3,
+      "penalty_minutes": 2,
+      "shots": 15,
+      "plus_minus": 9
+    },
+    {
+      "player_id": "ncaa:braden-blace",
+      "name": "Braden Blace",
+      "position": "D",
+      "team_name": "Quinnipiac",
+      "games_played": 9,
       "goals": 2,
       "assists": 1,
       "points": 3,
+      "penalty_minutes": 2,
+      "shots": 9,
+      "plus_minus": 5
+    },
+    {
+      "player_id": "ncaa:nolan-seed",
+      "name": "Nolan Seed",
+      "position": "D",
+      "team_name": "Lake Superior",
+      "games_played": 9,
+      "goals": 1,
+      "assists": 2,
+      "points": 3,
       "penalty_minutes": 8,
-      "shots": 22,
+      "shots": 18,
       "plus_minus": 1
     },
     {
@@ -9264,19 +9498,6 @@
       "penalty_minutes": 6,
       "shots": 13,
       "plus_minus": -3
-    },
-    {
-      "player_id": "ncaa:noah-laberge",
-      "name": "Noah Laberge",
-      "position": "D",
-      "team_name": "Northeastern",
-      "games_played": 8,
-      "goals": 1,
-      "assists": 2,
-      "points": 3,
-      "penalty_minutes": 2,
-      "shots": 11,
-      "plus_minus": 2
     },
     {
       "player_id": "ncaa:viktor-norringer",
@@ -9470,8 +9691,8 @@
       "assists": 2,
       "points": 3,
       "penalty_minutes": 2,
-      "shots": 5,
-      "plus_minus": -3
+      "shots": 11,
+      "plus_minus": 2
     },
     {
       "player_id": "ncaa:ben-macdonald",
@@ -9498,19 +9719,6 @@
       "penalty_minutes": 0,
       "shots": 9,
       "plus_minus": 1
-    },
-    {
-      "player_id": "ncaa:mael-st-denis",
-      "name": "Mael St-denis",
-      "position": "F",
-      "team_name": "Clarkson",
-      "games_played": 8,
-      "goals": 1,
-      "assists": 2,
-      "points": 3,
-      "penalty_minutes": 10,
-      "shots": 13,
-      "plus_minus": 2
     },
     {
       "player_id": "ncaa:alex-huang",
@@ -9600,6 +9808,19 @@
       "assists": 2,
       "points": 3,
       "penalty_minutes": 2,
+      "shots": 5,
+      "plus_minus": -3
+    },
+    {
+      "player_id": "ncaa:chase-ramsay",
+      "name": "Chase Ramsay",
+      "position": "D",
+      "team_name": "Sacred Heart",
+      "games_played": 6,
+      "goals": 1,
+      "assists": 2,
+      "points": 3,
+      "penalty_minutes": 2,
       "shots": 4,
       "plus_minus": 2
     },
@@ -9641,6 +9862,19 @@
       "penalty_minutes": 0,
       "shots": 8,
       "plus_minus": 0
+    },
+    {
+      "player_id": "ncaa:brett-hyland",
+      "name": "Brett Hyland",
+      "position": "F",
+      "team_name": "Omaha",
+      "games_played": 6,
+      "goals": 0,
+      "assists": 3,
+      "points": 3,
+      "penalty_minutes": 2,
+      "shots": 7,
+      "plus_minus": 2
     },
     {
       "player_id": "ncaa:chase-stefanek",
@@ -9851,19 +10085,6 @@
       "plus_minus": 1
     },
     {
-      "player_id": "ncaa:sawyer-scholl",
-      "name": "Sawyer Scholl",
-      "position": "F",
-      "team_name": "Minnesota State",
-      "games_played": 12,
-      "goals": 2,
-      "assists": 0,
-      "points": 2,
-      "penalty_minutes": 8,
-      "shots": 10,
-      "plus_minus": -5
-    },
-    {
       "player_id": "ncaa:braden-fischer",
       "name": "Braden Fischer",
       "position": "F",
@@ -9968,19 +10189,6 @@
       "plus_minus": -1
     },
     {
-      "player_id": "ncaa:jacob-newcombe",
-      "name": "Jacob Newcombe",
-      "position": "F",
-      "team_name": "New Hampshire",
-      "games_played": 12,
-      "goals": 0,
-      "assists": 2,
-      "points": 2,
-      "penalty_minutes": 4,
-      "shots": 26,
-      "plus_minus": -5
-    },
-    {
       "player_id": "ncaa:marton-nemes",
       "name": "Marton Nemes",
       "position": "F",
@@ -10009,6 +10217,19 @@
     {
       "player_id": "ncaa:jacob-newcombe",
       "name": "Jacob Newcombe",
+      "position": "F",
+      "team_name": "New Hampshire",
+      "games_played": 12,
+      "goals": 0,
+      "assists": 2,
+      "points": 2,
+      "penalty_minutes": 4,
+      "shots": 26,
+      "plus_minus": -5
+    },
+    {
+      "player_id": "ncaa:martins-lavins",
+      "name": "Martins Lavins",
       "position": "F",
       "team_name": "New Hampshire",
       "games_played": 12,
@@ -10085,19 +10306,6 @@
       "plus_minus": 7
     },
     {
-      "player_id": "ncaa:lucas-brenton",
-      "name": "Lucas Brenton",
-      "position": "D",
-      "team_name": "Michigan Tech",
-      "games_played": 12,
-      "goals": 0,
-      "assists": 2,
-      "points": 2,
-      "penalty_minutes": 8,
-      "shots": 5,
-      "plus_minus": 6
-    },
-    {
       "player_id": "ncaa:noah-houle",
       "name": "Noah Houle",
       "position": "D",
@@ -10109,6 +10317,19 @@
       "penalty_minutes": 10,
       "shots": 12,
       "plus_minus": -5
+    },
+    {
+      "player_id": "ncaa:lucas-brenton",
+      "name": "Lucas Brenton",
+      "position": "D",
+      "team_name": "Michigan Tech",
+      "games_played": 12,
+      "goals": 0,
+      "assists": 2,
+      "points": 2,
+      "penalty_minutes": 8,
+      "shots": 5,
+      "plus_minus": 6
     },
     {
       "player_id": "ncaa:ross-roloson",
@@ -10150,32 +10371,6 @@
       "plus_minus": -3
     },
     {
-      "player_id": "ncaa:john-babcock",
-      "name": "John Babcock",
-      "position": "D",
-      "team_name": "Robert Morris",
-      "games_played": 11,
-      "goals": 0,
-      "assists": 2,
-      "points": 2,
-      "penalty_minutes": 14,
-      "shots": 18,
-      "plus_minus": -3
-    },
-    {
-      "player_id": "ncaa:jaedon-kerr",
-      "name": "Jaedon Kerr",
-      "position": "D",
-      "team_name": "Notre Dame",
-      "games_played": 11,
-      "goals": 0,
-      "assists": 2,
-      "points": 2,
-      "penalty_minutes": 21,
-      "shots": 13,
-      "plus_minus": 1
-    },
-    {
       "player_id": "ncaa:brennan-faulkner",
       "name": "Brennan Faulkner",
       "position": "F",
@@ -10215,19 +10410,6 @@
       "plus_minus": -1
     },
     {
-      "player_id": "ncaa:landan-resendes",
-      "name": "Landan Resendes",
-      "position": "F",
-      "team_name": "Boston College",
-      "games_played": 11,
-      "goals": 1,
-      "assists": 1,
-      "points": 2,
-      "penalty_minutes": 4,
-      "shots": 17,
-      "plus_minus": -2
-    },
-    {
       "player_id": "ncaa:gunnar-vandamme",
       "name": "Gunnar VanDamme",
       "position": "D",
@@ -10239,6 +10421,19 @@
       "penalty_minutes": 2,
       "shots": 18,
       "plus_minus": -3
+    },
+    {
+      "player_id": "ncaa:landan-resendes",
+      "name": "Landan Resendes",
+      "position": "F",
+      "team_name": "Boston College",
+      "games_played": 11,
+      "goals": 1,
+      "assists": 1,
+      "points": 2,
+      "penalty_minutes": 4,
+      "shots": 17,
+      "plus_minus": -2
     },
     {
       "player_id": "ncaa:jason-gallucci",
@@ -10306,19 +10501,6 @@
       "plus_minus": 8
     },
     {
-      "player_id": "ncaa:finn-loftus",
-      "name": "Finn Loftus",
-      "position": "D",
-      "team_name": "Minnesota",
-      "games_played": 11,
-      "goals": 0,
-      "assists": 2,
-      "points": 2,
-      "penalty_minutes": 0,
-      "shots": 3,
-      "plus_minus": 0
-    },
-    {
       "player_id": "ncaa:shaun-mcewen",
       "name": "Shaun McEwen",
       "position": "D",
@@ -10330,6 +10512,19 @@
       "penalty_minutes": 20,
       "shots": 15,
       "plus_minus": 3
+    },
+    {
+      "player_id": "ncaa:finn-loftus",
+      "name": "Finn Loftus",
+      "position": "D",
+      "team_name": "Minnesota",
+      "games_played": 11,
+      "goals": 0,
+      "assists": 2,
+      "points": 2,
+      "penalty_minutes": 0,
+      "shots": 3,
+      "plus_minus": 0
     },
     {
       "player_id": "ncaa:jack-henry",
@@ -10449,19 +10644,6 @@
       "plus_minus": 0
     },
     {
-      "player_id": "ncaa:carter-patterson",
-      "name": "Carter Patterson",
-      "position": "D",
-      "team_name": "Canisius",
-      "games_played": 11,
-      "goals": 1,
-      "assists": 1,
-      "points": 2,
-      "penalty_minutes": 4,
-      "shots": 6,
-      "plus_minus": 0
-    },
-    {
       "player_id": "ncaa:luke-malboeuf",
       "name": "Luke Malboeuf",
       "position": "D",
@@ -10473,6 +10655,19 @@
       "penalty_minutes": 17,
       "shots": 7,
       "plus_minus": 4
+    },
+    {
+      "player_id": "ncaa:carter-patterson",
+      "name": "Carter Patterson",
+      "position": "D",
+      "team_name": "Canisius",
+      "games_played": 11,
+      "goals": 1,
+      "assists": 1,
+      "points": 2,
+      "penalty_minutes": 4,
+      "shots": 6,
+      "plus_minus": 0
     },
     {
       "player_id": "ncaa:samuel-rousseau",
@@ -10553,19 +10748,6 @@
       "plus_minus": 6
     },
     {
-      "player_id": "ncaa:sean-kilcullen",
-      "name": "Sean Kilcullen",
-      "position": "D",
-      "team_name": "Mass.-Lowell",
-      "games_played": 11,
-      "goals": 0,
-      "assists": 2,
-      "points": 2,
-      "penalty_minutes": 12,
-      "shots": 10,
-      "plus_minus": -5
-    },
-    {
       "player_id": "ncaa:cole-davis",
       "name": "Cole Davis",
       "position": "F",
@@ -10579,23 +10761,140 @@
       "plus_minus": -8
     },
     {
-      "player_id": "ncaa:hunter-ramos",
-      "name": "Hunter Ramos",
+      "player_id": "ncaa:sean-kilcullen",
+      "name": "Sean Kilcullen",
+      "position": "D",
+      "team_name": "Mass.-Lowell",
+      "games_played": 11,
+      "goals": 0,
+      "assists": 2,
+      "points": 2,
+      "penalty_minutes": 12,
+      "shots": 10,
+      "plus_minus": -5
+    },
+    {
+      "player_id": "ncaa:john-babcock",
+      "name": "John Babcock",
+      "position": "D",
+      "team_name": "Robert Morris",
+      "games_played": 11,
+      "goals": 0,
+      "assists": 2,
+      "points": 2,
+      "penalty_minutes": 14,
+      "shots": 18,
+      "plus_minus": -3
+    },
+    {
+      "player_id": "ncaa:liam-hupka",
+      "name": "Liam Hupka",
+      "position": "D",
+      "team_name": "Minnesota State",
+      "games_played": 11,
+      "goals": 0,
+      "assists": 2,
+      "points": 2,
+      "penalty_minutes": 4,
+      "shots": 5,
+      "plus_minus": -3
+    },
+    {
+      "player_id": "ncaa:jaedon-kerr",
+      "name": "Jaedon Kerr",
+      "position": "D",
+      "team_name": "Notre Dame",
+      "games_played": 11,
+      "goals": 0,
+      "assists": 2,
+      "points": 2,
+      "penalty_minutes": 21,
+      "shots": 13,
+      "plus_minus": 1
+    },
+    {
+      "player_id": "ncaa:akseli-pulkkanen",
+      "name": "Akseli Pulkkanen",
       "position": "F",
-      "team_name": "Lake Superior",
+      "team_name": "Ferris State",
       "games_played": 10,
       "goals": 1,
       "assists": 1,
       "points": 2,
-      "penalty_minutes": 10,
-      "shots": 25,
+      "penalty_minutes": 0,
+      "shots": 15,
+      "plus_minus": -3
+    },
+    {
+      "player_id": "ncaa:gavin-garry",
+      "name": "Gavin Garry",
+      "position": "F",
+      "team_name": "Union",
+      "games_played": 10,
+      "goals": 2,
+      "assists": 0,
+      "points": 2,
+      "penalty_minutes": 2,
+      "shots": 21,
+      "plus_minus": 3
+    },
+    {
+      "player_id": "ncaa:samo-meritahti",
+      "name": "Samo Meritähti",
+      "position": "D",
+      "team_name": "Augustana",
+      "games_played": 10,
+      "goals": 0,
+      "assists": 2,
+      "points": 2,
+      "penalty_minutes": 6,
+      "shots": 11,
+      "plus_minus": 2
+    },
+    {
+      "player_id": "ncaa:william-sharpe",
+      "name": "William Sharpe",
+      "position": "D",
+      "team_name": "St. Cloud State",
+      "games_played": 10,
+      "goals": 1,
+      "assists": 1,
+      "points": 2,
+      "penalty_minutes": 6,
+      "shots": 11,
       "plus_minus": -6
     },
     {
-      "player_id": "ncaa:nicholas-johnson",
-      "name": "Nicholas Johnson",
-      "position": "F",
-      "team_name": "Ferris State",
+      "player_id": "ncaa:aiden-ziprick",
+      "name": "Aiden Ziprick",
+      "position": "D",
+      "team_name": "Bemidji State",
+      "games_played": 10,
+      "goals": 1,
+      "assists": 1,
+      "points": 2,
+      "penalty_minutes": 0,
+      "shots": 14,
+      "plus_minus": 0
+    },
+    {
+      "player_id": "ncaa:aiden-celebrini",
+      "name": "Aiden Celebrini",
+      "position": "D",
+      "team_name": "Boston University",
+      "games_played": 10,
+      "goals": 0,
+      "assists": 2,
+      "points": 2,
+      "penalty_minutes": 4,
+      "shots": 19,
+      "plus_minus": -1
+    },
+    {
+      "player_id": "ncaa:nate-benoit",
+      "name": "Nate Benoit",
+      "position": "D",
+      "team_name": "Long Island",
       "games_played": 10,
       "goals": 0,
       "assists": 2,
@@ -10709,17 +11008,17 @@
       "plus_minus": -4
     },
     {
-      "player_id": "ncaa:aiden-celebrini",
-      "name": "Aiden Celebrini",
-      "position": "D",
-      "team_name": "Boston University",
+      "player_id": "ncaa:jacob-fletcher",
+      "name": "Jacob Fletcher",
+      "position": "F",
+      "team_name": "Augustana",
       "games_played": 10,
-      "goals": 0,
-      "assists": 2,
+      "goals": 1,
+      "assists": 1,
       "points": 2,
-      "penalty_minutes": 4,
-      "shots": 19,
-      "plus_minus": -1
+      "penalty_minutes": 6,
+      "shots": 14,
+      "plus_minus": 3
     },
     {
       "player_id": "ncaa:nate-benoit",
@@ -10748,32 +11047,6 @@
       "plus_minus": -3
     },
     {
-      "player_id": "ncaa:jacob-fletcher",
-      "name": "Jacob Fletcher",
-      "position": "F",
-      "team_name": "Augustana",
-      "games_played": 10,
-      "goals": 1,
-      "assists": 1,
-      "points": 2,
-      "penalty_minutes": 6,
-      "shots": 14,
-      "plus_minus": 3
-    },
-    {
-      "player_id": "ncaa:spencer-sova",
-      "name": "Spencer Sova",
-      "position": "D",
-      "team_name": "Omaha",
-      "games_played": 10,
-      "goals": 0,
-      "assists": 2,
-      "points": 2,
-      "penalty_minutes": 2,
-      "shots": 14,
-      "plus_minus": -1
-    },
-    {
       "player_id": "ncaa:ryan-williams",
       "name": "Ryan Williams",
       "position": "D",
@@ -10800,19 +11073,6 @@
       "plus_minus": 4
     },
     {
-      "player_id": "ncaa:markus-loponen",
-      "name": "Markus Loponen",
-      "position": "F",
-      "team_name": "Lake Superior",
-      "games_played": 10,
-      "goals": 2,
-      "assists": 0,
-      "points": 2,
-      "penalty_minutes": 4,
-      "shots": 11,
-      "plus_minus": -4
-    },
-    {
       "player_id": "ncaa:girts-silkalns",
       "name": "Girts Silkalns",
       "position": "F",
@@ -10837,6 +11097,19 @@
       "penalty_minutes": 10,
       "shots": 15,
       "plus_minus": -1
+    },
+    {
+      "player_id": "ncaa:markus-loponen",
+      "name": "Markus Loponen",
+      "position": "F",
+      "team_name": "Lake Superior",
+      "games_played": 10,
+      "goals": 2,
+      "assists": 0,
+      "points": 2,
+      "penalty_minutes": 4,
+      "shots": 11,
+      "plus_minus": -4
     },
     {
       "player_id": "ncaa:graham-gamache",
@@ -10891,19 +11164,6 @@
       "plus_minus": 3
     },
     {
-      "player_id": "ncaa:luke-helgeson",
-      "name": "Luke Helgeson",
-      "position": "D",
-      "team_name": "Alaska-Anchorage",
-      "games_played": 10,
-      "goals": 1,
-      "assists": 1,
-      "points": 2,
-      "penalty_minutes": 21,
-      "shots": 16,
-      "plus_minus": 0
-    },
-    {
       "player_id": "ncaa:lirim-amidovski",
       "name": "Lirim Amidovski",
       "position": "F",
@@ -10915,6 +11175,19 @@
       "penalty_minutes": 8,
       "shots": 10,
       "plus_minus": -4
+    },
+    {
+      "player_id": "ncaa:luke-helgeson",
+      "name": "Luke Helgeson",
+      "position": "D",
+      "team_name": "Alaska-Anchorage",
+      "games_played": 10,
+      "goals": 1,
+      "assists": 1,
+      "points": 2,
+      "penalty_minutes": 21,
+      "shots": 16,
+      "plus_minus": 0
     },
     {
       "player_id": "ncaa:vincent-salice",
@@ -10959,27 +11232,14 @@
       "player_id": "ncaa:cole-christian",
       "name": "Cole Christian",
       "position": "F",
-      "team_name": "Air Force",
+      "team_name": "Alaska",
       "games_played": 10,
-      "goals": 1,
-      "assists": 1,
+      "goals": 2,
+      "assists": 0,
       "points": 2,
-      "penalty_minutes": 0,
-      "shots": 12,
-      "plus_minus": 1
-    },
-    {
-      "player_id": "ncaa:urban-podrekar",
-      "name": "Urban Podrekar",
-      "position": "D",
-      "team_name": "Ferris State",
-      "games_played": 10,
-      "goals": 0,
-      "assists": 2,
-      "points": 2,
-      "penalty_minutes": 8,
-      "shots": 11,
-      "plus_minus": -6
+      "penalty_minutes": 4,
+      "shots": 14,
+      "plus_minus": -8
     },
     {
       "player_id": "ncaa:patrick-geary",
@@ -11021,6 +11281,19 @@
       "plus_minus": -8
     },
     {
+      "player_id": "ncaa:myles-hilman",
+      "name": "Myles Hilman",
+      "position": "F",
+      "team_name": "Omaha",
+      "games_played": 10,
+      "goals": 1,
+      "assists": 1,
+      "points": 2,
+      "penalty_minutes": 2,
+      "shots": 8,
+      "plus_minus": -2
+    },
+    {
       "player_id": "ncaa:fin-williams",
       "name": "Fin Williams",
       "position": "F",
@@ -11060,17 +11333,43 @@
       "plus_minus": 6
     },
     {
-      "player_id": "ncaa:lukas-klemm",
-      "name": "Lukas Klemm",
-      "position": "D",
-      "team_name": "Alaska",
+      "player_id": "ncaa:nicholas-johnson",
+      "name": "Nicholas Johnson",
+      "position": "F",
+      "team_name": "Providence",
       "games_played": 9,
       "goals": 1,
       "assists": 1,
       "points": 2,
-      "penalty_minutes": 2,
-      "shots": 9,
-      "plus_minus": -4
+      "penalty_minutes": 18,
+      "shots": 12,
+      "plus_minus": 0
+    },
+    {
+      "player_id": "ncaa:hunter-ramos",
+      "name": "Hunter Ramos",
+      "position": "F",
+      "team_name": "Lake Superior",
+      "games_played": 10,
+      "goals": 1,
+      "assists": 1,
+      "points": 2,
+      "penalty_minutes": 10,
+      "shots": 25,
+      "plus_minus": -6
+    },
+    {
+      "player_id": "ncaa:shea-van-olm",
+      "name": "Shea Van Olm",
+      "position": "F",
+      "team_name": "Penn State",
+      "games_played": 10,
+      "goals": 0,
+      "assists": 2,
+      "points": 2,
+      "penalty_minutes": 4,
+      "shots": 21,
+      "plus_minus": -5
     },
     {
       "player_id": "ncaa:thomas-vandenberg",
@@ -11281,19 +11580,6 @@
       "plus_minus": 0
     },
     {
-      "player_id": "ncaa:will-dawson",
-      "name": "Will Dawson",
-      "position": "F",
-      "team_name": "Bemidji State",
-      "games_played": 9,
-      "goals": 1,
-      "assists": 1,
-      "points": 2,
-      "penalty_minutes": 2,
-      "shots": 6,
-      "plus_minus": 2
-    },
-    {
       "player_id": "ncaa:max-strand",
       "name": "Max Strand",
       "position": "F",
@@ -11305,6 +11591,19 @@
       "penalty_minutes": 0,
       "shots": 5,
       "plus_minus": 0
+    },
+    {
+      "player_id": "ncaa:will-dawson",
+      "name": "Will Dawson",
+      "position": "F",
+      "team_name": "Bemidji State",
+      "games_played": 9,
+      "goals": 1,
+      "assists": 1,
+      "points": 2,
+      "penalty_minutes": 2,
+      "shots": 6,
+      "plus_minus": 2
     },
     {
       "player_id": "ncaa:brock-reinhart",
@@ -11372,17 +11671,17 @@
       "plus_minus": 1
     },
     {
-      "player_id": "ncaa:samuel-boisvert",
-      "name": "Samuel Boisvert",
-      "position": "F",
-      "team_name": "Alaska-Anchorage",
-      "games_played": 8,
-      "goals": 0,
-      "assists": 2,
+      "player_id": "ncaa:lukas-klemm",
+      "name": "Lukas Klemm",
+      "position": "D",
+      "team_name": "Alaska",
+      "games_played": 9,
+      "goals": 1,
+      "assists": 1,
       "points": 2,
-      "penalty_minutes": 4,
-      "shots": 7,
-      "plus_minus": -3
+      "penalty_minutes": 2,
+      "shots": 9,
+      "plus_minus": -4
     },
     {
       "player_id": "ncaa:timmy-runtso",
@@ -11408,19 +11707,6 @@
       "points": 2,
       "penalty_minutes": 2,
       "shots": 8,
-      "plus_minus": 1
-    },
-    {
-      "player_id": "ncaa:tyson-doucette",
-      "name": "Tyson Doucette",
-      "position": "F",
-      "team_name": "Colgate",
-      "games_played": 8,
-      "goals": 1,
-      "assists": 1,
-      "points": 2,
-      "penalty_minutes": 2,
-      "shots": 6,
       "plus_minus": 1
     },
     {
@@ -11450,6 +11736,19 @@
       "plus_minus": 5
     },
     {
+      "player_id": "ncaa:tyson-doucette",
+      "name": "Tyson Doucette",
+      "position": "F",
+      "team_name": "Colgate",
+      "games_played": 8,
+      "goals": 1,
+      "assists": 1,
+      "points": 2,
+      "penalty_minutes": 2,
+      "shots": 6,
+      "plus_minus": 1
+    },
+    {
       "player_id": "ncaa:tarin-smith",
       "name": "Tarin Smith",
       "position": "D",
@@ -11463,19 +11762,6 @@
       "plus_minus": -2
     },
     {
-      "player_id": "ncaa:simon-pier-brunet",
-      "name": "Simon-Pier Brunet",
-      "position": "D",
-      "team_name": "Merrimack",
-      "games_played": 8,
-      "goals": 1,
-      "assists": 1,
-      "points": 2,
-      "penalty_minutes": 6,
-      "shots": 6,
-      "plus_minus": 3
-    },
-    {
       "player_id": "ncaa:jayden-davis",
       "name": "Jayden Davis",
       "position": "F",
@@ -11487,6 +11773,19 @@
       "penalty_minutes": 0,
       "shots": 9,
       "plus_minus": 2
+    },
+    {
+      "player_id": "ncaa:simon-pier-brunet",
+      "name": "Simon-Pier Brunet",
+      "position": "D",
+      "team_name": "Merrimack",
+      "games_played": 8,
+      "goals": 1,
+      "assists": 1,
+      "points": 2,
+      "penalty_minutes": 6,
+      "shots": 6,
+      "plus_minus": 3
     },
     {
       "player_id": "ncaa:kade-kohanski",
@@ -11604,6 +11903,19 @@
       "penalty_minutes": 4,
       "shots": 6,
       "plus_minus": -4
+    },
+    {
+      "player_id": "ncaa:oliver-genest",
+      "name": "Oliver Genest",
+      "position": "F",
+      "team_name": "Alaska-Anchorage",
+      "games_played": 8,
+      "goals": 0,
+      "assists": 2,
+      "points": 2,
+      "penalty_minutes": 4,
+      "shots": 7,
+      "plus_minus": -3
     },
     {
       "player_id": "ncaa:oliver-genest",
@@ -11775,19 +12087,6 @@
       "plus_minus": 3
     },
     {
-      "player_id": "ncaa:maxime-lavoie",
-      "name": "Maxime Lavoie",
-      "position": "D",
-      "team_name": "Princeton",
-      "games_played": 6,
-      "goals": 0,
-      "assists": 2,
-      "points": 2,
-      "penalty_minutes": 4,
-      "shots": 2,
-      "plus_minus": -2
-    },
-    {
       "player_id": "ncaa:misha-danylov",
       "name": "Misha Danylov",
       "position": "F",
@@ -11801,10 +12100,23 @@
       "plus_minus": -2
     },
     {
-      "player_id": "ncaa:misha-danylov",
-      "name": "Misha Danylov",
+      "player_id": "ncaa:maxime-lavoie",
+      "name": "Maxime Lavoie",
+      "position": "D",
+      "team_name": "Princeton",
+      "games_played": 6,
+      "goals": 0,
+      "assists": 2,
+      "points": 2,
+      "penalty_minutes": 4,
+      "shots": 2,
+      "plus_minus": -2
+    },
+    {
+      "player_id": "ncaa:michael-young",
+      "name": "Michael Young",
       "position": "F",
-      "team_name": "Alaska",
+      "team_name": "Princeton",
       "games_played": 6,
       "goals": 0,
       "assists": 2,
@@ -11812,19 +12124,6 @@
       "penalty_minutes": 2,
       "shots": 5,
       "plus_minus": -3
-    },
-    {
-      "player_id": "ncaa:malcolm-green",
-      "name": "Malcolm Green",
-      "position": "F",
-      "team_name": "Princeton",
-      "games_played": 6,
-      "goals": 2,
-      "assists": 0,
-      "points": 2,
-      "penalty_minutes": 4,
-      "shots": 12,
-      "plus_minus": -1
     },
     {
       "player_id": "ncaa:charlie-morrison",
@@ -11850,6 +12149,19 @@
       "points": 2,
       "penalty_minutes": 4,
       "shots": 9,
+      "plus_minus": -1
+    },
+    {
+      "player_id": "ncaa:malcolm-green",
+      "name": "Malcolm Green",
+      "position": "F",
+      "team_name": "Princeton",
+      "games_played": 6,
+      "goals": 2,
+      "assists": 0,
+      "points": 2,
+      "penalty_minutes": 4,
+      "shots": 12,
       "plus_minus": -1
     },
     {
@@ -11942,32 +12254,6 @@
       "penalty_minutes": 2,
       "shots": 12,
       "plus_minus": -1
-    },
-    {
-      "player_id": "ncaa:justin-kerr",
-      "name": "Justin Kerr",
-      "position": "F",
-      "team_name": "Massachusetts",
-      "games_played": 5,
-      "goals": 0,
-      "assists": 2,
-      "points": 2,
-      "penalty_minutes": 4,
-      "shots": 12,
-      "plus_minus": 3
-    },
-    {
-      "player_id": "ncaa:kevin-fitzgerald",
-      "name": "Kevin Fitzgerald",
-      "position": "D",
-      "team_name": "Brown",
-      "games_played": 5,
-      "goals": 0,
-      "assists": 2,
-      "points": 2,
-      "penalty_minutes": 6,
-      "shots": 9,
-      "plus_minus": 4
     },
     {
       "player_id": "ncaa:iisai-pesonen",
@@ -12139,6 +12425,32 @@
       "plus_minus": 0
     },
     {
+      "player_id": "ncaa:kevin-fitzgerald",
+      "name": "Kevin Fitzgerald",
+      "position": "D",
+      "team_name": "Brown",
+      "games_played": 5,
+      "goals": 0,
+      "assists": 2,
+      "points": 2,
+      "penalty_minutes": 6,
+      "shots": 9,
+      "plus_minus": 4
+    },
+    {
+      "player_id": "ncaa:justin-kerr",
+      "name": "Justin Kerr",
+      "position": "F",
+      "team_name": "Massachusetts",
+      "games_played": 5,
+      "goals": 0,
+      "assists": 2,
+      "points": 2,
+      "penalty_minutes": 4,
+      "shots": 12,
+      "plus_minus": 3
+    },
+    {
       "player_id": "ncaa:coco-armstrong",
       "name": "Coco Armstrong",
       "position": "F",
@@ -12163,6 +12475,19 @@
       "penalty_minutes": 0,
       "shots": 6,
       "plus_minus": 3
+    },
+    {
+      "player_id": "ncaa:xavier-veilleux",
+      "name": "Xavier Veilleux",
+      "position": "D",
+      "team_name": "Cornell",
+      "games_played": 4,
+      "goals": 0,
+      "assists": 2,
+      "points": 2,
+      "penalty_minutes": 2,
+      "shots": 9,
+      "plus_minus": 1
     },
     {
       "player_id": "ncaa:xavier-veilleux",
@@ -12280,32 +12605,6 @@
       "penalty_minutes": 0,
       "shots": 2,
       "plus_minus": 0
-    },
-    {
-      "player_id": "ncaa:luke-pakulak",
-      "name": "Luke Pakulak",
-      "position": "F",
-      "team_name": "Colgate",
-      "games_played": 12,
-      "goals": 0,
-      "assists": 1,
-      "points": 1,
-      "penalty_minutes": 8,
-      "shots": 6,
-      "plus_minus": 0
-    },
-    {
-      "player_id": "ncaa:danny-klaers",
-      "name": "Danny Klaers",
-      "position": "D",
-      "team_name": "Notre Dame",
-      "games_played": 12,
-      "goals": 0,
-      "assists": 1,
-      "points": 1,
-      "penalty_minutes": 2,
-      "shots": 7,
-      "plus_minus": -1
     },
     {
       "player_id": "ncaa:brett-merner",
@@ -12480,7 +12779,33 @@
       "player_id": "ncaa:joe-gramer",
       "name": "Joe Gramer",
       "position": "D",
-      "team_name": "Bemidji State",
+      "team_name": "Notre Dame",
+      "games_played": 12,
+      "goals": 0,
+      "assists": 1,
+      "points": 1,
+      "penalty_minutes": 2,
+      "shots": 7,
+      "plus_minus": -1
+    },
+    {
+      "player_id": "ncaa:jack-malinski",
+      "name": "Jack Malinski",
+      "position": "D",
+      "team_name": "Vermont",
+      "games_played": 11,
+      "goals": 0,
+      "assists": 1,
+      "points": 1,
+      "penalty_minutes": 6,
+      "shots": 10,
+      "plus_minus": -3
+    },
+    {
+      "player_id": "ncaa:landen-hilditch",
+      "name": "Landen Hilditch",
+      "position": "D",
+      "team_name": "RPI",
       "games_played": 11,
       "goals": 0,
       "assists": 1,
@@ -12542,19 +12867,6 @@
       "plus_minus": -4
     },
     {
-      "player_id": "ncaa:luca-d-amato",
-      "name": "Luca D'Amato",
-      "position": "D",
-      "team_name": "Bemidji State",
-      "games_played": 11,
-      "goals": 0,
-      "assists": 1,
-      "points": 1,
-      "penalty_minutes": 8,
-      "shots": 5,
-      "plus_minus": -2
-    },
-    {
       "player_id": "ncaa:brendan-dunphy",
       "name": "Brendan Dunphy",
       "position": "D",
@@ -12566,6 +12878,19 @@
       "penalty_minutes": 8,
       "shots": 9,
       "plus_minus": -18
+    },
+    {
+      "player_id": "ncaa:luca-d-amato",
+      "name": "Luca D'Amato",
+      "position": "D",
+      "team_name": "Bemidji State",
+      "games_played": 11,
+      "goals": 0,
+      "assists": 1,
+      "points": 1,
+      "penalty_minutes": 8,
+      "shots": 5,
+      "plus_minus": -2
     },
     {
       "player_id": "ncaa:nathan-delladonna",
@@ -12711,17 +13036,17 @@
       "plus_minus": 0
     },
     {
-      "player_id": "ncaa:william-samuelsson",
-      "name": "William Samuelsson",
-      "position": "F",
-      "team_name": "Lake Superior",
-      "games_played": 10,
-      "goals": 1,
-      "assists": 0,
+      "player_id": "ncaa:joe-gramer",
+      "name": "Joe Gramer",
+      "position": "D",
+      "team_name": "Bemidji State",
+      "games_played": 11,
+      "goals": 0,
+      "assists": 1,
       "points": 1,
       "penalty_minutes": 4,
-      "shots": 13,
-      "plus_minus": -5
+      "shots": 10,
+      "plus_minus": -1
     },
     {
       "player_id": "ncaa:luka-sukovic",
@@ -12735,6 +13060,19 @@
       "penalty_minutes": 4,
       "shots": 12,
       "plus_minus": 3
+    },
+    {
+      "player_id": "ncaa:william-samuelsson",
+      "name": "William Samuelsson",
+      "position": "F",
+      "team_name": "Lake Superior",
+      "games_played": 10,
+      "goals": 1,
+      "assists": 0,
+      "points": 1,
+      "penalty_minutes": 4,
+      "shots": 13,
+      "plus_minus": -5
     },
     {
       "player_id": "ncaa:colton-jamieson",
@@ -12789,19 +13127,6 @@
       "plus_minus": 0
     },
     {
-      "player_id": "ncaa:tory-lund",
-      "name": "Tory Lund",
-      "position": "F",
-      "team_name": "Bemidji State",
-      "games_played": 10,
-      "goals": 1,
-      "assists": 0,
-      "points": 1,
-      "penalty_minutes": 2,
-      "shots": 8,
-      "plus_minus": -6
-    },
-    {
       "player_id": "ncaa:garrett-lindberg",
       "name": "Garrett Lindberg",
       "position": "D",
@@ -12813,6 +13138,19 @@
       "penalty_minutes": 4,
       "shots": 3,
       "plus_minus": -3
+    },
+    {
+      "player_id": "ncaa:tory-lund",
+      "name": "Tory Lund",
+      "position": "F",
+      "team_name": "Bemidji State",
+      "games_played": 10,
+      "goals": 1,
+      "assists": 0,
+      "points": 1,
+      "penalty_minutes": 2,
+      "shots": 8,
+      "plus_minus": -6
     },
     {
       "player_id": "ncaa:sean-barnhill",
@@ -12880,19 +13218,6 @@
       "plus_minus": -6
     },
     {
-      "player_id": "ncaa:mateo-mrsic",
-      "name": "Mateo Mrsic",
-      "position": "F",
-      "team_name": "Colorado College",
-      "games_played": 10,
-      "goals": 0,
-      "assists": 1,
-      "points": 1,
-      "penalty_minutes": 0,
-      "shots": 4,
-      "plus_minus": -1
-    },
-    {
       "player_id": "ncaa:luke-schairer",
       "name": "Luke Schairer",
       "position": "D",
@@ -12906,6 +13231,19 @@
       "plus_minus": -2
     },
     {
+      "player_id": "ncaa:mateo-mrsic",
+      "name": "Mateo Mrsic",
+      "position": "F",
+      "team_name": "Colorado College",
+      "games_played": 10,
+      "goals": 0,
+      "assists": 1,
+      "points": 1,
+      "penalty_minutes": 0,
+      "shots": 4,
+      "plus_minus": -1
+    },
+    {
       "player_id": "ncaa:chris-able",
       "name": "Chris Able",
       "position": "D",
@@ -12917,6 +13255,19 @@
       "penalty_minutes": 0,
       "shots": 8,
       "plus_minus": 5
+    },
+    {
+      "player_id": "ncaa:reilley-kotai",
+      "name": "Reilley Kotai",
+      "position": "F",
+      "team_name": "Northern Michigan",
+      "games_played": 10,
+      "goals": 0,
+      "assists": 1,
+      "points": 1,
+      "penalty_minutes": 25,
+      "shots": 19,
+      "plus_minus": -2
     },
     {
       "player_id": "ncaa:mason-west",
@@ -12945,17 +13296,17 @@
       "plus_minus": -2
     },
     {
-      "player_id": "ncaa:reilley-kotai",
-      "name": "Reilley Kotai",
-      "position": "F",
-      "team_name": "Northern Michigan",
+      "player_id": "ncaa:bryce-ingles",
+      "name": "Bryce Ingles",
+      "position": "D",
+      "team_name": "Ohio State",
       "games_played": 10,
-      "goals": 0,
-      "assists": 1,
+      "goals": 1,
+      "assists": 0,
       "points": 1,
-      "penalty_minutes": 25,
-      "shots": 19,
-      "plus_minus": -2
+      "penalty_minutes": 2,
+      "shots": 18,
+      "plus_minus": -4
     },
     {
       "player_id": "ncaa:mason-poolman",
@@ -12969,19 +13320,6 @@
       "penalty_minutes": 2,
       "shots": 13,
       "plus_minus": -1
-    },
-    {
-      "player_id": "ncaa:bryce-ingles",
-      "name": "Bryce Ingles",
-      "position": "D",
-      "team_name": "Ohio State",
-      "games_played": 10,
-      "goals": 1,
-      "assists": 0,
-      "points": 1,
-      "penalty_minutes": 2,
-      "shots": 18,
-      "plus_minus": -4
     },
     {
       "player_id": "ncaa:teddy-mallgrave",
@@ -13062,6 +13400,19 @@
       "plus_minus": 1
     },
     {
+      "player_id": "ncaa:charles-banquier",
+      "name": "Charles Banquier",
+      "position": "D",
+      "team_name": "Stonehill",
+      "games_played": 9,
+      "goals": 0,
+      "assists": 1,
+      "points": 1,
+      "penalty_minutes": 6,
+      "shots": 6,
+      "plus_minus": -4
+    },
+    {
       "player_id": "ncaa:john-whipple",
       "name": "John Whipple",
       "position": "D",
@@ -13088,19 +13439,6 @@
       "plus_minus": -6
     },
     {
-      "player_id": "ncaa:charles-banquier",
-      "name": "Charles Banquier",
-      "position": "D",
-      "team_name": "Stonehill",
-      "games_played": 9,
-      "goals": 0,
-      "assists": 1,
-      "points": 1,
-      "penalty_minutes": 6,
-      "shots": 6,
-      "plus_minus": -4
-    },
-    {
       "player_id": "ncaa:dj-hart",
       "name": "DJ Hart",
       "position": "D",
@@ -13114,19 +13452,6 @@
       "plus_minus": -3
     },
     {
-      "player_id": "ncaa:vann-yuhas",
-      "name": "Vann Yuhas",
-      "position": "F",
-      "team_name": "Bemidji State",
-      "games_played": 9,
-      "goals": 0,
-      "assists": 1,
-      "points": 1,
-      "penalty_minutes": 0,
-      "shots": 10,
-      "plus_minus": -4
-    },
-    {
       "player_id": "ncaa:ray-murakami",
       "name": "Ray Murakami",
       "position": "D",
@@ -13138,6 +13463,19 @@
       "penalty_minutes": 0,
       "shots": 7,
       "plus_minus": 1
+    },
+    {
+      "player_id": "ncaa:vann-yuhas",
+      "name": "Vann Yuhas",
+      "position": "F",
+      "team_name": "Bemidji State",
+      "games_played": 9,
+      "goals": 0,
+      "assists": 1,
+      "points": 1,
+      "penalty_minutes": 0,
+      "shots": 10,
+      "plus_minus": -4
     },
     {
       "player_id": "ncaa:donovan-mccoy",
@@ -13179,19 +13517,6 @@
       "plus_minus": -2
     },
     {
-      "player_id": "ncaa:mason-lebel",
-      "name": "Mason LeBel",
-      "position": "F",
-      "team_name": "Minnesota State",
-      "games_played": 9,
-      "goals": 0,
-      "assists": 1,
-      "points": 1,
-      "penalty_minutes": 0,
-      "shots": 11,
-      "plus_minus": 0
-    },
-    {
       "player_id": "ncaa:gavin-garland",
       "name": "Gavin Garland",
       "position": "F",
@@ -13203,6 +13528,19 @@
       "penalty_minutes": 4,
       "shots": 13,
       "plus_minus": -2
+    },
+    {
+      "player_id": "ncaa:mason-lebel",
+      "name": "Mason LeBel",
+      "position": "F",
+      "team_name": "Minnesota State",
+      "games_played": 9,
+      "goals": 0,
+      "assists": 1,
+      "points": 1,
+      "penalty_minutes": 0,
+      "shots": 11,
+      "plus_minus": 0
     },
     {
       "player_id": "ncaa:ben-anderson",
@@ -13244,19 +13582,6 @@
       "plus_minus": -2
     },
     {
-      "player_id": "ncaa:eetu-orpana",
-      "name": "Eetu Orpana",
-      "position": "F",
-      "team_name": "Wisconsin",
-      "games_played": 8,
-      "goals": 1,
-      "assists": 0,
-      "points": 1,
-      "penalty_minutes": 0,
-      "shots": 10,
-      "plus_minus": 2
-    },
-    {
       "player_id": "ncaa:matteo-michels",
       "name": "Matteo Michels",
       "position": "F",
@@ -13268,6 +13593,19 @@
       "penalty_minutes": 0,
       "shots": 8,
       "plus_minus": -2
+    },
+    {
+      "player_id": "ncaa:eetu-orpana",
+      "name": "Eetu Orpana",
+      "position": "F",
+      "team_name": "Wisconsin",
+      "games_played": 8,
+      "goals": 1,
+      "assists": 0,
+      "points": 1,
+      "penalty_minutes": 0,
+      "shots": 10,
+      "plus_minus": 2
     },
     {
       "player_id": "ncaa:felix-plamondon",
@@ -13335,6 +13673,19 @@
       "plus_minus": 1
     },
     {
+      "player_id": "ncaa:leo-gruba",
+      "name": "Leo Gruba",
+      "position": "D",
+      "team_name": "Notre Dame",
+      "games_played": 8,
+      "goals": 0,
+      "assists": 1,
+      "points": 1,
+      "penalty_minutes": 27,
+      "shots": 9,
+      "plus_minus": -6
+    },
+    {
       "player_id": "ncaa:carson-reed",
       "name": "Carson Reed",
       "position": "D",
@@ -13359,19 +13710,6 @@
       "penalty_minutes": 21,
       "shots": 7,
       "plus_minus": -3
-    },
-    {
-      "player_id": "ncaa:leo-gruba",
-      "name": "Leo Gruba",
-      "position": "D",
-      "team_name": "Notre Dame",
-      "games_played": 8,
-      "goals": 0,
-      "assists": 1,
-      "points": 1,
-      "penalty_minutes": 27,
-      "shots": 9,
-      "plus_minus": -6
     },
     {
       "player_id": "ncaa:everett-baldwin",
@@ -13400,19 +13738,6 @@
       "plus_minus": -1
     },
     {
-      "player_id": "ncaa:elliot-gulley",
-      "name": "Elliot Gulley",
-      "position": "F",
-      "team_name": "Union",
-      "games_played": 8,
-      "goals": 0,
-      "assists": 1,
-      "points": 1,
-      "penalty_minutes": 2,
-      "shots": 3,
-      "plus_minus": -7
-    },
-    {
       "player_id": "ncaa:noah-roberts",
       "name": "Noah Roberts",
       "position": "D",
@@ -13424,6 +13749,19 @@
       "penalty_minutes": 21,
       "shots": 6,
       "plus_minus": -2
+    },
+    {
+      "player_id": "ncaa:elliot-gulley",
+      "name": "Elliot Gulley",
+      "position": "F",
+      "team_name": "Union",
+      "games_played": 8,
+      "goals": 0,
+      "assists": 1,
+      "points": 1,
+      "penalty_minutes": 2,
+      "shots": 3,
+      "plus_minus": -7
     },
     {
       "player_id": "ncaa:eli-sebastian",
@@ -13474,19 +13812,6 @@
       "assists": 1,
       "points": 1,
       "penalty_minutes": 2,
-      "shots": 5,
-      "plus_minus": -1
-    },
-    {
-      "player_id": "ncaa:lucas-st-louis",
-      "name": "Lucas St. Louis",
-      "position": "D",
-      "team_name": "Harvard",
-      "games_played": 7,
-      "goals": 0,
-      "assists": 1,
-      "points": 1,
-      "penalty_minutes": 8,
       "shots": 5,
       "plus_minus": -1
     },
@@ -13556,19 +13881,6 @@
       "plus_minus": 1
     },
     {
-      "player_id": "ncaa:cam-johnson",
-      "name": "Cam Johnson",
-      "position": "F",
-      "team_name": "Harvard",
-      "games_played": 7,
-      "goals": 0,
-      "assists": 1,
-      "points": 1,
-      "penalty_minutes": 4,
-      "shots": 7,
-      "plus_minus": -4
-    },
-    {
       "player_id": "ncaa:thomas-verdon",
       "name": "Thomas Verdon",
       "position": "F",
@@ -13580,6 +13892,19 @@
       "penalty_minutes": 0,
       "shots": 2,
       "plus_minus": 0
+    },
+    {
+      "player_id": "ncaa:cam-johnson",
+      "name": "Cam Johnson",
+      "position": "F",
+      "team_name": "Harvard",
+      "games_played": 7,
+      "goals": 1,
+      "assists": 0,
+      "points": 1,
+      "penalty_minutes": 0,
+      "shots": 7,
+      "plus_minus": -1
     },
     {
       "player_id": "ncaa:luca-primerano",
@@ -13725,43 +14050,17 @@
       "plus_minus": 0
     },
     {
-      "player_id": "ncaa:landon-mackie",
-      "name": "Landon Mackie",
-      "position": "F",
-      "team_name": "Stonehill",
-      "games_played": 6,
-      "goals": 0,
-      "assists": 1,
-      "points": 1,
-      "penalty_minutes": 2,
-      "shots": 3,
-      "plus_minus": -1
-    },
-    {
-      "player_id": "ncaa:connor-jalbert",
-      "name": "Connor Jalbert",
-      "position": "F",
-      "team_name": "Army",
-      "games_played": 6,
-      "goals": 0,
-      "assists": 1,
-      "points": 1,
-      "penalty_minutes": 0,
-      "shots": 4,
-      "plus_minus": 1
-    },
-    {
-      "player_id": "ncaa:christopher-reiniger",
-      "name": "Christopher Reiniger",
+      "player_id": "ncaa:lucas-st-louis",
+      "name": "Lucas St. Louis",
       "position": "D",
-      "team_name": "Princeton",
-      "games_played": 6,
+      "team_name": "Harvard",
+      "games_played": 7,
       "goals": 0,
       "assists": 1,
       "points": 1,
-      "penalty_minutes": 0,
-      "shots": 11,
-      "plus_minus": -3
+      "penalty_minutes": 8,
+      "shots": 5,
+      "plus_minus": -1
     },
     {
       "player_id": "ncaa:grant-young",
@@ -13775,6 +14074,19 @@
       "penalty_minutes": 0,
       "shots": 2,
       "plus_minus": 2
+    },
+    {
+      "player_id": "ncaa:christopher-reiniger",
+      "name": "Christopher Reiniger",
+      "position": "D",
+      "team_name": "Princeton",
+      "games_played": 6,
+      "goals": 0,
+      "assists": 1,
+      "points": 1,
+      "penalty_minutes": 0,
+      "shots": 11,
+      "plus_minus": -3
     },
     {
       "player_id": "ncaa:joshua-karnish",
@@ -13829,6 +14141,19 @@
       "plus_minus": -1
     },
     {
+      "player_id": "ncaa:sam-huck",
+      "name": "Sam Huck",
+      "position": "F",
+      "team_name": "Western Michigan",
+      "games_played": 6,
+      "goals": 1,
+      "assists": 0,
+      "points": 1,
+      "penalty_minutes": 0,
+      "shots": 7,
+      "plus_minus": -1
+    },
+    {
       "player_id": "ncaa:tate-taylor",
       "name": "Tate Taylor",
       "position": "D",
@@ -13855,16 +14180,16 @@
       "plus_minus": 0
     },
     {
-      "player_id": "ncaa:sam-huck",
-      "name": "Sam Huck",
+      "player_id": "ncaa:gio-digiulian",
+      "name": "Gio DiGiulian",
       "position": "F",
-      "team_name": "Western Michigan",
+      "team_name": "Cornell",
       "games_played": 6,
       "goals": 1,
       "assists": 0,
       "points": 1,
-      "penalty_minutes": 0,
-      "shots": 7,
+      "penalty_minutes": 4,
+      "shots": 9,
       "plus_minus": -1
     },
     {
@@ -13878,19 +14203,6 @@
       "points": 1,
       "penalty_minutes": 0,
       "shots": 7,
-      "plus_minus": -1
-    },
-    {
-      "player_id": "ncaa:gio-digiulian",
-      "name": "Gio DiGiulian",
-      "position": "F",
-      "team_name": "Cornell",
-      "games_played": 6,
-      "goals": 1,
-      "assists": 0,
-      "points": 1,
-      "penalty_minutes": 4,
-      "shots": 9,
       "plus_minus": -1
     },
     {
@@ -13920,19 +14232,6 @@
       "plus_minus": -1
     },
     {
-      "player_id": "ncaa:isaac-johnson",
-      "name": "Isaac Johnson",
-      "position": "F",
-      "team_name": "Bemidji State",
-      "games_played": 6,
-      "goals": 0,
-      "assists": 1,
-      "points": 1,
-      "penalty_minutes": 0,
-      "shots": 5,
-      "plus_minus": 0
-    },
-    {
       "player_id": "ncaa:mazden-leslie",
       "name": "Mazden Leslie",
       "position": "D",
@@ -13944,6 +14243,19 @@
       "penalty_minutes": 2,
       "shots": 5,
       "plus_minus": 1
+    },
+    {
+      "player_id": "ncaa:isaac-johnson",
+      "name": "Isaac Johnson",
+      "position": "F",
+      "team_name": "Bemidji State",
+      "games_played": 6,
+      "goals": 0,
+      "assists": 1,
+      "points": 1,
+      "penalty_minutes": 0,
+      "shots": 5,
+      "plus_minus": 0
     },
     {
       "player_id": "ncaa:brady-birnie",
@@ -14024,19 +14336,6 @@
       "plus_minus": -3
     },
     {
-      "player_id": "ncaa:ian-devlin",
-      "name": "Ian Devlin",
-      "position": "D",
-      "team_name": "Princeton",
-      "games_played": 6,
-      "goals": 0,
-      "assists": 1,
-      "points": 1,
-      "penalty_minutes": 4,
-      "shots": 9,
-      "plus_minus": 0
-    },
-    {
       "player_id": "ncaa:vladislav-lukashevich",
       "name": "Vladislav Lukashevich",
       "position": "D",
@@ -14048,6 +14347,19 @@
       "penalty_minutes": 4,
       "shots": 8,
       "plus_minus": 2
+    },
+    {
+      "player_id": "ncaa:ian-devlin",
+      "name": "Ian Devlin",
+      "position": "D",
+      "team_name": "Princeton",
+      "games_played": 6,
+      "goals": 0,
+      "assists": 1,
+      "points": 1,
+      "penalty_minutes": 4,
+      "shots": 9,
+      "plus_minus": 0
     },
     {
       "player_id": "ncaa:jacob-gudelj",
@@ -14076,19 +14388,6 @@
       "plus_minus": 0
     },
     {
-      "player_id": "ncaa:sam-kappell",
-      "name": "Sam Kappell",
-      "position": "F",
-      "team_name": "Minnesota State",
-      "games_played": 6,
-      "goals": 1,
-      "assists": 0,
-      "points": 1,
-      "penalty_minutes": 2,
-      "shots": 5,
-      "plus_minus": 0
-    },
-    {
       "player_id": "ncaa:christian-maro",
       "name": "Christian Maro",
       "position": "F",
@@ -14100,6 +14399,19 @@
       "penalty_minutes": 8,
       "shots": 4,
       "plus_minus": 1
+    },
+    {
+      "player_id": "ncaa:sam-kappell",
+      "name": "Sam Kappell",
+      "position": "F",
+      "team_name": "Minnesota State",
+      "games_played": 6,
+      "goals": 1,
+      "assists": 0,
+      "points": 1,
+      "penalty_minutes": 2,
+      "shots": 5,
+      "plus_minus": 0
     },
     {
       "player_id": "ncaa:michael-phelan",
@@ -14141,29 +14453,29 @@
       "plus_minus": 3
     },
     {
-      "player_id": "ncaa:rowan-calvert",
-      "name": "Rowan Calvert",
+      "player_id": "ncaa:landon-mackie",
+      "name": "Landon Mackie",
       "position": "F",
-      "team_name": "Maine",
-      "games_played": 5,
-      "goals": 1,
-      "assists": 0,
-      "points": 1,
-      "penalty_minutes": 0,
-      "shots": 3,
-      "plus_minus": 0
-    },
-    {
-      "player_id": "ncaa:andy-reist",
-      "name": "Andy Reist",
-      "position": "F",
-      "team_name": "Niagara",
-      "games_played": 5,
+      "team_name": "Stonehill",
+      "games_played": 6,
       "goals": 0,
       "assists": 1,
       "points": 1,
-      "penalty_minutes": 4,
-      "shots": 7,
+      "penalty_minutes": 2,
+      "shots": 3,
+      "plus_minus": -1
+    },
+    {
+      "player_id": "ncaa:connor-jalbert",
+      "name": "Connor Jalbert",
+      "position": "F",
+      "team_name": "Army",
+      "games_played": 6,
+      "goals": 0,
+      "assists": 1,
+      "points": 1,
+      "penalty_minutes": 0,
+      "shots": 4,
       "plus_minus": 1
     },
     {
@@ -14197,6 +14509,19 @@
       "name": "Brian Lonergan",
       "position": "D",
       "team_name": "Brown",
+      "games_played": 5,
+      "goals": 1,
+      "assists": 0,
+      "points": 1,
+      "penalty_minutes": 0,
+      "shots": 3,
+      "plus_minus": 0
+    },
+    {
+      "player_id": "ncaa:andy-reist",
+      "name": "Andy Reist",
+      "position": "F",
+      "team_name": "Niagara",
       "games_played": 5,
       "goals": 0,
       "assists": 1,
@@ -14336,19 +14661,6 @@
       "plus_minus": -1
     },
     {
-      "player_id": "ncaa:sean-keohane",
-      "name": "Sean Keohane",
-      "position": "D",
-      "team_name": "Harvard",
-      "games_played": 5,
-      "goals": 0,
-      "assists": 1,
-      "points": 1,
-      "penalty_minutes": 6,
-      "shots": 3,
-      "plus_minus": 2
-    },
-    {
       "player_id": "ncaa:aidan-park",
       "name": "Aidan Park",
       "position": "F",
@@ -14360,6 +14672,19 @@
       "penalty_minutes": 2,
       "shots": 6,
       "plus_minus": 3
+    },
+    {
+      "player_id": "ncaa:sean-keohane",
+      "name": "Sean Keohane",
+      "position": "D",
+      "team_name": "Harvard",
+      "games_played": 5,
+      "goals": 0,
+      "assists": 1,
+      "points": 1,
+      "penalty_minutes": 6,
+      "shots": 3,
+      "plus_minus": 2
     },
     {
       "player_id": "ncaa:reegan-hiscock",
@@ -14456,66 +14781,27 @@
       "player_id": "ncaa:owen-drury",
       "name": "Owen Drury",
       "position": "F",
-      "team_name": "Stonehill",
-      "games_played": 4,
-      "goals": 0,
-      "assists": 1,
+      "team_name": "Maine",
+      "games_played": 5,
+      "goals": 1,
+      "assists": 0,
       "points": 1,
-      "penalty_minutes": 2,
-      "shots": 4,
-      "plus_minus": 1
-    },
-    {
-      "player_id": "ncaa:garrett-frazer",
-      "name": "Garrett Frazer",
-      "position": "D",
-      "team_name": "St. Cloud State",
-      "games_played": 4,
-      "goals": 0,
-      "assists": 1,
-      "points": 1,
-      "penalty_minutes": 2,
-      "shots": 2,
+      "penalty_minutes": 0,
+      "shots": 3,
       "plus_minus": 0
     },
     {
-      "player_id": "ncaa:owen-drury",
-      "name": "Owen Drury",
+      "player_id": "ncaa:andy-reist",
+      "name": "Andy Reist",
       "position": "F",
-      "team_name": "Stonehill",
-      "games_played": 4,
+      "team_name": "Niagara",
+      "games_played": 5,
       "goals": 0,
       "assists": 1,
       "points": 1,
-      "penalty_minutes": 2,
-      "shots": 4,
+      "penalty_minutes": 4,
+      "shots": 7,
       "plus_minus": 1
-    },
-    {
-      "player_id": "ncaa:dario-beljo",
-      "name": "Dario Beljo",
-      "position": "F",
-      "team_name": "Robert Morris",
-      "games_played": 4,
-      "goals": 0,
-      "assists": 1,
-      "points": 1,
-      "penalty_minutes": 6,
-      "shots": 0,
-      "plus_minus": 0
-    },
-    {
-      "player_id": "ncaa:kevin-anderson",
-      "name": "Kevin Anderson",
-      "position": "F",
-      "team_name": "St. Thomas",
-      "games_played": 4,
-      "goals": 0,
-      "assists": 1,
-      "points": 1,
-      "penalty_minutes": 6,
-      "shots": 14,
-      "plus_minus": -4
     },
     {
       "player_id": "ncaa:adam-zlnka",
@@ -14529,6 +14815,19 @@
       "penalty_minutes": 4,
       "shots": 4,
       "plus_minus": 2
+    },
+    {
+      "player_id": "ncaa:kevin-anderson",
+      "name": "Kevin Anderson",
+      "position": "F",
+      "team_name": "St. Thomas",
+      "games_played": 4,
+      "goals": 0,
+      "assists": 1,
+      "points": 1,
+      "penalty_minutes": 6,
+      "shots": 14,
+      "plus_minus": -4
     },
     {
       "player_id": "ncaa:adam-marshall",
@@ -14555,6 +14854,136 @@
       "penalty_minutes": 0,
       "shots": 1,
       "plus_minus": 0
+    },
+    {
+      "player_id": "ncaa:alex-pineau",
+      "name": "Alex Pineau",
+      "position": "D",
+      "team_name": "Northeastern",
+      "games_played": 4,
+      "goals": 0,
+      "assists": 1,
+      "points": 1,
+      "penalty_minutes": 4,
+      "shots": 3,
+      "plus_minus": 4
+    },
+    {
+      "player_id": "ncaa:noah-jones",
+      "name": "Noah Jones",
+      "position": "D",
+      "team_name": "Northeastern",
+      "games_played": 4,
+      "goals": 1,
+      "assists": 0,
+      "points": 1,
+      "penalty_minutes": 2,
+      "shots": 4,
+      "plus_minus": 1
+    },
+    {
+      "player_id": "ncaa:zachary-benayon",
+      "name": "Zachary Benayon",
+      "position": "F",
+      "team_name": "Long Island",
+      "games_played": 4,
+      "goals": 1,
+      "assists": 0,
+      "points": 1,
+      "penalty_minutes": 0,
+      "shots": 2,
+      "plus_minus": -1
+    },
+    {
+      "player_id": "ncaa:james-fisher",
+      "name": "James Fisher",
+      "position": "F",
+      "team_name": "St. Lawrence",
+      "games_played": 4,
+      "goals": 1,
+      "assists": 0,
+      "points": 1,
+      "penalty_minutes": 17,
+      "shots": 1,
+      "plus_minus": 0
+    },
+    {
+      "player_id": "ncaa:anthony-dowd",
+      "name": "Anthony Dowd",
+      "position": "D",
+      "team_name": "Mass.-Lowell",
+      "games_played": 4,
+      "goals": 0,
+      "assists": 1,
+      "points": 1,
+      "penalty_minutes": 0,
+      "shots": 8,
+      "plus_minus": -3
+    },
+    {
+      "player_id": "ncaa:cade-de-st-hubert",
+      "name": "Cade De St. Hubert",
+      "position": "F",
+      "team_name": "Army",
+      "games_played": 4,
+      "goals": 0,
+      "assists": 1,
+      "points": 1,
+      "penalty_minutes": 0,
+      "shots": 4,
+      "plus_minus": 1
+    },
+    {
+      "player_id": "ncaa:owen-drury",
+      "name": "Owen Drury",
+      "position": "F",
+      "team_name": "Stonehill",
+      "games_played": 4,
+      "goals": 0,
+      "assists": 1,
+      "points": 1,
+      "penalty_minutes": 2,
+      "shots": 4,
+      "plus_minus": 1
+    },
+    {
+      "player_id": "ncaa:garrett-frazer",
+      "name": "Garrett Frazer",
+      "position": "D",
+      "team_name": "St. Cloud State",
+      "games_played": 4,
+      "goals": 0,
+      "assists": 1,
+      "points": 1,
+      "penalty_minutes": 2,
+      "shots": 2,
+      "plus_minus": 0
+    },
+    {
+      "player_id": "ncaa:dario-beljo",
+      "name": "Dario Beljo",
+      "position": "F",
+      "team_name": "Robert Morris",
+      "games_played": 4,
+      "goals": 0,
+      "assists": 1,
+      "points": 1,
+      "penalty_minutes": 6,
+      "shots": 0,
+      "plus_minus": 0
+    },
+    {
+      "player_id": "ncaa:david-elmy",
+      "name": "David Elmy",
+      "position": "F",
+      "team_name": "Canisius",
+      "games_played": 3,
+      "goals": 1,
+      "assists": 0,
+      "points": 1,
+      "penalty_minutes": 2,
+      "shots": 3,
+      "plus_minus": -1
     },
     {
       "player_id": "ncaa:alex-pineau",
@@ -14726,17 +15155,17 @@
       "plus_minus": 1
     },
     {
-      "player_id": "ncaa:brock-souch",
-      "name": "Brock Souch",
+      "player_id": "ncaa:ihnat-pazii",
+      "name": "Ihnat Pazii",
       "position": "F",
-      "team_name": "St. Cloud State",
+      "team_name": "St. Lawrence",
       "games_played": 3,
       "goals": 1,
       "assists": 0,
       "points": 1,
-      "penalty_minutes": 4,
-      "shots": 8,
-      "plus_minus": -4
+      "penalty_minutes": 2,
+      "shots": 3,
+      "plus_minus": 0
     },
     {
       "player_id": "ncaa:jakub-hes",
@@ -14765,17 +15194,17 @@
       "plus_minus": 1
     },
     {
-      "player_id": "ncaa:ihnat-pazii",
-      "name": "Ihnat Pazii",
+      "player_id": "ncaa:reid-daavettila",
+      "name": "Reid Daavettila",
       "position": "F",
-      "team_name": "St. Lawrence",
+      "team_name": "Michigan Tech",
       "games_played": 3,
       "goals": 1,
       "assists": 0,
       "points": 1,
-      "penalty_minutes": 2,
-      "shots": 3,
-      "plus_minus": 0
+      "penalty_minutes": 0,
+      "shots": 4,
+      "plus_minus": 2
     },
     {
       "player_id": "ncaa:alex-calbeck",
@@ -14788,19 +15217,6 @@
       "points": 1,
       "penalty_minutes": 0,
       "shots": 2,
-      "plus_minus": 2
-    },
-    {
-      "player_id": "ncaa:reid-daavettila",
-      "name": "Reid Daavettila",
-      "position": "F",
-      "team_name": "Michigan Tech",
-      "games_played": 3,
-      "goals": 1,
-      "assists": 0,
-      "points": 1,
-      "penalty_minutes": 0,
-      "shots": 4,
       "plus_minus": 2
     },
     {
@@ -14892,6 +15308,19 @@
       "points": 1,
       "penalty_minutes": 0,
       "shots": 1,
+      "plus_minus": 1
+    },
+    {
+      "player_id": "ncaa:jesse-allecia",
+      "name": "Jesse Allecia",
+      "position": "F",
+      "team_name": "Dartmouth",
+      "games_played": 2,
+      "goals": 0,
+      "assists": 1,
+      "points": 1,
+      "penalty_minutes": 0,
+      "shots": 1,
       "plus_minus": 0
     },
     {
@@ -14971,19 +15400,6 @@
       "penalty_minutes": 2,
       "shots": 3,
       "plus_minus": -1
-    },
-    {
-      "player_id": "ncaa:chase-pirtle",
-      "name": "Chase Pirtle",
-      "position": "F",
-      "team_name": "Cornell",
-      "games_played": 1,
-      "goals": 0,
-      "assists": 1,
-      "points": 1,
-      "penalty_minutes": 0,
-      "shots": 0,
-      "plus_minus": 0
     },
     {
       "player_id": "ncaa:erick-comstock",
@@ -15142,19 +15558,6 @@
       "plus_minus": -3
     },
     {
-      "player_id": "ncaa:gus-thorp",
-      "name": "Gus Thorp",
-      "position": "D",
-      "team_name": "Minnesota State",
-      "games_played": 12,
-      "goals": 0,
-      "assists": 0,
-      "points": 0,
-      "penalty_minutes": 6,
-      "shots": 5,
-      "plus_minus": 2
-    },
-    {
       "player_id": "ncaa:calvin-beard",
       "name": "Calvin Beard",
       "position": "D",
@@ -15165,6 +15568,19 @@
       "points": 0,
       "penalty_minutes": 0,
       "shots": 20,
+      "plus_minus": 2
+    },
+    {
+      "player_id": "ncaa:gus-thorp",
+      "name": "Gus Thorp",
+      "position": "D",
+      "team_name": "Minnesota State",
+      "games_played": 12,
+      "goals": 0,
+      "assists": 0,
+      "points": 0,
+      "penalty_minutes": 6,
+      "shots": 5,
       "plus_minus": 2
     },
     {
@@ -16000,19 +16416,6 @@
       "plus_minus": -3
     },
     {
-      "player_id": "ncaa:cam-kungle",
-      "name": "Cam Kungle",
-      "position": "D",
-      "team_name": "Merrimack",
-      "games_played": 7,
-      "goals": 0,
-      "assists": 0,
-      "points": 0,
-      "penalty_minutes": 6,
-      "shots": 7,
-      "plus_minus": -3
-    },
-    {
       "player_id": "ncaa:trent-ballentyne",
       "name": "Trent Ballentyne",
       "position": "D",
@@ -16130,19 +16533,6 @@
       "plus_minus": -2
     },
     {
-      "player_id": "ncaa:michael-callow",
-      "name": "Michael Callow",
-      "position": "F",
-      "team_name": "Harvard",
-      "games_played": 7,
-      "goals": 0,
-      "assists": 0,
-      "points": 0,
-      "penalty_minutes": 6,
-      "shots": 14,
-      "plus_minus": 2
-    },
-    {
       "player_id": "ncaa:martin-masa",
       "name": "Martin Masa",
       "position": "D",
@@ -16160,6 +16550,32 @@
       "name": "Ludvig Lafton",
       "position": "D",
       "team_name": "Maine",
+      "games_played": 7,
+      "goals": 0,
+      "assists": 0,
+      "points": 0,
+      "penalty_minutes": 2,
+      "shots": 4,
+      "plus_minus": 0
+    },
+    {
+      "player_id": "ncaa:michael-callow",
+      "name": "Michael Callow",
+      "position": "F",
+      "team_name": "Harvard",
+      "games_played": 7,
+      "goals": 0,
+      "assists": 0,
+      "points": 0,
+      "penalty_minutes": 6,
+      "shots": 14,
+      "plus_minus": 2
+    },
+    {
+      "player_id": "ncaa:john-hirschfeld",
+      "name": "John Hirschfeld",
+      "position": "F",
+      "team_name": "St. Cloud State",
       "games_played": 7,
       "goals": 0,
       "assists": 0,
@@ -16281,9 +16697,35 @@
       "goals": 0,
       "assists": 0,
       "points": 0,
+      "penalty_minutes": 6,
+      "shots": 7,
+      "plus_minus": -3
+    },
+    {
+      "player_id": "ncaa:ollie-chessler",
+      "name": "Ollie Chessler",
+      "position": "D",
+      "team_name": "Union",
+      "games_played": 6,
+      "goals": 0,
+      "assists": 0,
+      "points": 0,
       "penalty_minutes": 2,
       "shots": 0,
       "plus_minus": -2
+    },
+    {
+      "player_id": "ncaa:drew-sutton",
+      "name": "Drew Sutton",
+      "position": "F",
+      "team_name": "Union",
+      "games_played": 6,
+      "goals": 0,
+      "assists": 0,
+      "points": 0,
+      "penalty_minutes": 0,
+      "shots": 5,
+      "plus_minus": 2
     },
     {
       "player_id": "ncaa:ryan-sullivan",
@@ -16347,20 +16789,46 @@
       "assists": 0,
       "points": 0,
       "penalty_minutes": 0,
-      "shots": 12,
-      "plus_minus": -1
+      "shots": 3,
+      "plus_minus": -3
     },
     {
-      "player_id": "ncaa:jack-reimann",
-      "name": "Jack Reimann",
+      "player_id": "ncaa:george-poirier",
+      "name": "George Poirier",
       "position": "F",
-      "team_name": "St. Cloud State",
-      "games_played": 6,
+      "team_name": "Brown",
+      "games_played": 5,
+      "goals": 0,
+      "assists": 0,
+      "points": 0,
+      "penalty_minutes": 4,
+      "shots": 5,
+      "plus_minus": 0
+    },
+    {
+      "player_id": "ncaa:mike-cataldo",
+      "name": "Mike Cataldo",
+      "position": "F",
+      "team_name": "Brown",
+      "games_played": 5,
+      "goals": 0,
+      "assists": 0,
+      "points": 0,
+      "penalty_minutes": 0,
+      "shots": 5,
+      "plus_minus": 0
+    },
+    {
+      "player_id": "ncaa:william-bishop",
+      "name": "William Bishop",
+      "position": "D",
+      "team_name": "St. Lawrence",
+      "games_played": 5,
       "goals": 0,
       "assists": 0,
       "points": 0,
       "penalty_minutes": 2,
-      "shots": 9,
+      "shots": 2,
       "plus_minus": -1
     },
     {
@@ -16546,19 +17014,6 @@
       "plus_minus": -1
     },
     {
-      "player_id": "ncaa:jackson-nevers",
-      "name": "Jackson Nevers",
-      "position": "F",
-      "team_name": "Minnesota",
-      "games_played": 6,
-      "goals": 0,
-      "assists": 0,
-      "points": 0,
-      "penalty_minutes": 2,
-      "shots": 2,
-      "plus_minus": -3
-    },
-    {
       "player_id": "ncaa:nolan-flynn",
       "name": "Nolan Flynn",
       "position": "F",
@@ -16570,6 +17025,19 @@
       "penalty_minutes": 2,
       "shots": 4,
       "plus_minus": 0
+    },
+    {
+      "player_id": "ncaa:jackson-nevers",
+      "name": "Jackson Nevers",
+      "position": "F",
+      "team_name": "Minnesota",
+      "games_played": 6,
+      "goals": 0,
+      "assists": 0,
+      "points": 0,
+      "penalty_minutes": 2,
+      "shots": 2,
+      "plus_minus": -3
     },
     {
       "player_id": "ncaa:andrew-oneill",
@@ -16648,19 +17116,6 @@
       "penalty_minutes": 0,
       "shots": 3,
       "plus_minus": -3
-    },
-    {
-      "player_id": "ncaa:george-poirier",
-      "name": "George Poirier",
-      "position": "F",
-      "team_name": "Brown",
-      "games_played": 5,
-      "goals": 0,
-      "assists": 0,
-      "points": 0,
-      "penalty_minutes": 4,
-      "shots": 5,
-      "plus_minus": 0
     },
     {
       "player_id": "ncaa:mike-cataldo",
@@ -16754,19 +17209,6 @@
       "plus_minus": -1
     },
     {
-      "player_id": "ncaa:porter-byrd-leitner",
-      "name": "Porter Byrd-Leitner",
-      "position": "F",
-      "team_name": "Colgate",
-      "games_played": 5,
-      "goals": 0,
-      "assists": 0,
-      "points": 0,
-      "penalty_minutes": 0,
-      "shots": 3,
-      "plus_minus": -1
-    },
-    {
       "player_id": "ncaa:matthew-virgilio",
       "name": "Matthew Virgilio",
       "position": "D",
@@ -16776,6 +17218,19 @@
       "assists": 0,
       "points": 0,
       "penalty_minutes": 2,
+      "shots": 3,
+      "plus_minus": -1
+    },
+    {
+      "player_id": "ncaa:porter-byrd-leitner",
+      "name": "Porter Byrd-Leitner",
+      "position": "F",
+      "team_name": "Colgate",
+      "games_played": 5,
+      "goals": 0,
+      "assists": 0,
+      "points": 0,
+      "penalty_minutes": 0,
       "shots": 3,
       "plus_minus": -1
     },
@@ -16936,30 +17391,17 @@
       "plus_minus": 0
     },
     {
-      "player_id": "ncaa:chris-romaine",
-      "name": "Chris Romaine",
-      "position": "D",
-      "team_name": "Maine",
-      "games_played": 4,
-      "goals": 0,
-      "assists": 0,
-      "points": 0,
-      "penalty_minutes": 0,
-      "shots": 6,
-      "plus_minus": -1
-    },
-    {
-      "player_id": "ncaa:niall-crocker",
-      "name": "Niall Crocker",
+      "player_id": "ncaa:george-poirier",
+      "name": "George Poirier",
       "position": "F",
-      "team_name": "Ohio State",
-      "games_played": 4,
+      "team_name": "Merrimack",
+      "games_played": 5,
       "goals": 0,
       "assists": 0,
       "points": 0,
-      "penalty_minutes": 0,
-      "shots": 1,
-      "plus_minus": -2
+      "penalty_minutes": 2,
+      "shots": 10,
+      "plus_minus": 0
     },
     {
       "player_id": "ncaa:jackson-potulny",
@@ -16986,6 +17428,19 @@
       "penalty_minutes": 0,
       "shots": 2,
       "plus_minus": 2
+    },
+    {
+      "player_id": "ncaa:niall-crocker",
+      "name": "Niall Crocker",
+      "position": "F",
+      "team_name": "Ohio State",
+      "games_played": 4,
+      "goals": 0,
+      "assists": 0,
+      "points": 0,
+      "penalty_minutes": 0,
+      "shots": 1,
+      "plus_minus": -2
     },
     {
       "player_id": "ncaa:matthew-biotti",
@@ -17235,17 +17690,17 @@
       "plus_minus": 0
     },
     {
-      "player_id": "ncaa:brady-schultz",
-      "name": "Brady Schultz",
-      "position": "D",
-      "team_name": "St. Lawrence",
+      "player_id": "ncaa:andrew-clarke",
+      "name": "Andrew Clarke",
+      "position": "F",
+      "team_name": "Dartmouth",
       "games_played": 4,
       "goals": 0,
       "assists": 0,
       "points": 0,
       "penalty_minutes": 2,
-      "shots": 2,
-      "plus_minus": 0
+      "shots": 6,
+      "plus_minus": 2
     },
     {
       "player_id": "ncaa:andrew-clarke",
@@ -17272,6 +17727,19 @@
       "penalty_minutes": 0,
       "shots": 3,
       "plus_minus": 0
+    },
+    {
+      "player_id": "ncaa:brady-schultz",
+      "name": "Brady Schultz",
+      "position": "D",
+      "team_name": "Quinnipiac",
+      "games_played": 4,
+      "goals": 0,
+      "assists": 0,
+      "points": 0,
+      "penalty_minutes": 0,
+      "shots": 3,
+      "plus_minus": 1
     },
     {
       "player_id": "ncaa:sam-frandina",
@@ -17313,19 +17781,6 @@
       "plus_minus": 0
     },
     {
-      "player_id": "ncaa:adam-barone",
-      "name": "Adam Barone",
-      "position": "D",
-      "team_name": "Boston University",
-      "games_played": 4,
-      "goals": 0,
-      "assists": 0,
-      "points": 0,
-      "penalty_minutes": 0,
-      "shots": 1,
-      "plus_minus": -2
-    },
-    {
       "player_id": "ncaa:kyle-powers",
       "name": "Kyle Powers",
       "position": "F",
@@ -17350,6 +17805,19 @@
       "penalty_minutes": 0,
       "shots": 2,
       "plus_minus": -1
+    },
+    {
+      "player_id": "ncaa:adam-barone",
+      "name": "Adam Barone",
+      "position": "D",
+      "team_name": "Boston University",
+      "games_played": 4,
+      "goals": 0,
+      "assists": 0,
+      "points": 0,
+      "penalty_minutes": 0,
+      "shots": 1,
+      "plus_minus": -2
     },
     {
       "player_id": "ncaa:michael-emerson",
@@ -17404,10 +17872,36 @@
       "plus_minus": -1
     },
     {
-      "player_id": "ncaa:charlie-arend",
-      "name": "Charlie Arend",
+      "player_id": "ncaa:chris-romaine",
+      "name": "Chris Romaine",
+      "position": "D",
+      "team_name": "Maine",
+      "games_played": 4,
+      "goals": 0,
+      "assists": 0,
+      "points": 0,
+      "penalty_minutes": 0,
+      "shots": 6,
+      "plus_minus": -1
+    },
+    {
+      "player_id": "ncaa:brock-jones",
+      "name": "Brock Jones",
       "position": "F",
-      "team_name": "Cornell",
+      "team_name": "Army",
+      "games_played": 3,
+      "goals": 0,
+      "assists": 0,
+      "points": 0,
+      "penalty_minutes": 2,
+      "shots": 4,
+      "plus_minus": 1
+    },
+    {
+      "player_id": "ncaa:charlie-pardue",
+      "name": "Charlie Pardue",
+      "position": "F",
+      "team_name": "Northeastern",
       "games_played": 3,
       "goals": 0,
       "assists": 0,
@@ -17417,56 +17911,147 @@
       "plus_minus": 0
     },
     {
-      "player_id": "ncaa:gavin-uhlenkamp",
-      "name": "Gavin Uhlenkamp",
+      "player_id": "ncaa:grant-denuccio",
+      "name": "Grant DeNuccio",
       "position": "F",
-      "team_name": "Wisconsin",
+      "team_name": "Air Force",
+      "games_played": 3,
+      "goals": 0,
+      "assists": 0,
+      "points": 0,
+      "penalty_minutes": 17,
+      "shots": 3,
+      "plus_minus": 0
+    },
+    {
+      "player_id": "ncaa:hadley-hudak",
+      "name": "Hadley Hudak",
+      "position": "F",
+      "team_name": "Lake Superior",
       "games_played": 3,
       "goals": 0,
       "assists": 0,
       "points": 0,
       "penalty_minutes": 0,
-      "shots": 3,
+      "shots": 0,
       "plus_minus": 0
     },
     {
-      "player_id": "ncaa:jan-olenginski",
-      "name": "Jan Olenginski",
+      "player_id": "ncaa:louie-wehmann",
+      "name": "Louie Wehmann",
+      "position": "F",
+      "team_name": "Cornell",
+      "games_played": 3,
+      "goals": 0,
+      "assists": 0,
+      "points": 0,
+      "penalty_minutes": 0,
+      "shots": 0,
+      "plus_minus": -3
+    },
+    {
+      "player_id": "ncaa:andrew-dellasalla",
+      "name": "Andrew DellaSalla",
+      "position": "F",
+      "team_name": "Holy Cross",
+      "games_played": 3,
+      "goals": 0,
+      "assists": 0,
+      "points": 0,
+      "penalty_minutes": 0,
+      "shots": 0,
+      "plus_minus": -1
+    },
+    {
+      "player_id": "ncaa:sam-groebner",
+      "name": "Sam Groebner",
       "position": "D",
-      "team_name": "St. Lawrence",
+      "team_name": "St. Thomas",
       "games_played": 3,
       "goals": 0,
       "assists": 0,
       "points": 0,
       "penalty_minutes": 0,
-      "shots": 3,
+      "shots": 0,
       "plus_minus": 0
     },
     {
-      "player_id": "ncaa:adam-parsons",
-      "name": "Adam Parsons",
-      "position": "F",
-      "team_name": "Alaska-Anchorage",
+      "player_id": "ncaa:jon-bell",
+      "name": "Jon Bell",
+      "position": "D",
+      "team_name": "Army",
+      "games_played": 3,
+      "goals": 0,
+      "assists": 0,
+      "points": 0,
+      "penalty_minutes": 2,
+      "shots": 0,
+      "plus_minus": 0
+    },
+    {
+      "player_id": "ncaa:hughie-hooker",
+      "name": "Hughie Hooker",
+      "position": "D",
+      "team_name": "Yale",
+      "games_played": 3,
+      "goals": 0,
+      "assists": 0,
+      "points": 0,
+      "penalty_minutes": 0,
+      "shots": 0,
+      "plus_minus": 0
+    },
+    {
+      "player_id": "ncaa:joe-blackley",
+      "name": "Joe Blackley",
+      "position": "D",
+      "team_name": "Yale",
+      "games_played": 3,
+      "goals": 0,
+      "assists": 0,
+      "points": 0,
+      "penalty_minutes": 0,
+      "shots": 1,
+      "plus_minus": -2
+    },
+    {
+      "player_id": "ncaa:logan-heroux",
+      "name": "Logan Heroux",
+      "position": "D",
+      "team_name": "RPI",
       "games_played": 3,
       "goals": 0,
       "assists": 0,
       "points": 0,
       "penalty_minutes": 2,
       "shots": 2,
-      "plus_minus": 0
+      "plus_minus": -1
     },
     {
-      "player_id": "ncaa:joe-messina",
-      "name": "Joe Messina",
+      "player_id": "ncaa:jake-lammens",
+      "name": "Jake Lammens",
       "position": "D",
-      "team_name": "Canisius",
+      "team_name": "St. Lawrence",
       "games_played": 3,
       "goals": 0,
       "assists": 0,
       "points": 0,
       "penalty_minutes": 2,
       "shots": 1,
-      "plus_minus": -2
+      "plus_minus": -3
+    },
+    {
+      "player_id": "ncaa:teddy-merrill",
+      "name": "Teddy Merrill",
+      "position": "F",
+      "team_name": "Arizona State",
+      "games_played": 3,
+      "goals": 0,
+      "assists": 0,
+      "points": 0,
+      "penalty_minutes": 0,
+      "shots": 2,
+      "plus_minus": 2
     },
     {
       "player_id": "ncaa:brock-jones",
@@ -17846,19 +18431,6 @@
       "plus_minus": -1
     },
     {
-      "player_id": "ncaa:anthony-yu",
-      "name": "Anthony Yu",
-      "position": "F",
-      "team_name": "Air Force",
-      "games_played": 3,
-      "goals": 0,
-      "assists": 0,
-      "points": 0,
-      "penalty_minutes": 0,
-      "shots": 0,
-      "plus_minus": -1
-    },
-    {
       "player_id": "ncaa:niko-tsakumis",
       "name": "Niko Tsakumis",
       "position": "D",
@@ -17870,6 +18442,19 @@
       "penalty_minutes": 0,
       "shots": 1,
       "plus_minus": -5
+    },
+    {
+      "player_id": "ncaa:anthony-yu",
+      "name": "Anthony Yu",
+      "position": "F",
+      "team_name": "Air Force",
+      "games_played": 3,
+      "goals": 0,
+      "assists": 0,
+      "points": 0,
+      "penalty_minutes": 0,
+      "shots": 0,
+      "plus_minus": -1
     },
     {
       "player_id": "ncaa:alexi-sylvestre",
@@ -17924,17 +18509,69 @@
       "plus_minus": -1
     },
     {
-      "player_id": "ncaa:jakub-kopecky",
-      "name": "Jakub Kopecky",
-      "position": "F",
+      "player_id": "ncaa:jan-olenginski",
+      "name": "Jan Olenginski",
+      "position": "D",
       "team_name": "St. Lawrence",
-      "games_played": 2,
+      "games_played": 3,
       "goals": 0,
       "assists": 0,
       "points": 0,
       "penalty_minutes": 0,
-      "shots": 1,
+      "shots": 3,
       "plus_minus": 0
+    },
+    {
+      "player_id": "ncaa:adam-parsons",
+      "name": "Adam Parsons",
+      "position": "F",
+      "team_name": "Alaska-Anchorage",
+      "games_played": 3,
+      "goals": 0,
+      "assists": 0,
+      "points": 0,
+      "penalty_minutes": 2,
+      "shots": 2,
+      "plus_minus": 0
+    },
+    {
+      "player_id": "ncaa:charlie-arend",
+      "name": "Charlie Arend",
+      "position": "F",
+      "team_name": "Cornell",
+      "games_played": 3,
+      "goals": 0,
+      "assists": 0,
+      "points": 0,
+      "penalty_minutes": 0,
+      "shots": 0,
+      "plus_minus": 0
+    },
+    {
+      "player_id": "ncaa:gavin-uhlenkamp",
+      "name": "Gavin Uhlenkamp",
+      "position": "F",
+      "team_name": "Wisconsin",
+      "games_played": 3,
+      "goals": 0,
+      "assists": 0,
+      "points": 0,
+      "penalty_minutes": 0,
+      "shots": 3,
+      "plus_minus": 0
+    },
+    {
+      "player_id": "ncaa:joe-messina",
+      "name": "Joe Messina",
+      "position": "D",
+      "team_name": "Canisius",
+      "games_played": 3,
+      "goals": 0,
+      "assists": 0,
+      "points": 0,
+      "penalty_minutes": 2,
+      "shots": 1,
+      "plus_minus": -2
     },
     {
       "player_id": "ncaa:owen-forester",
@@ -17947,19 +18584,6 @@
       "points": 0,
       "penalty_minutes": 2,
       "shots": 4,
-      "plus_minus": 0
-    },
-    {
-      "player_id": "ncaa:brady-omalley",
-      "name": "Brady OMalley",
-      "position": "D",
-      "team_name": "Union",
-      "games_played": 2,
-      "goals": 0,
-      "assists": 0,
-      "points": 0,
-      "penalty_minutes": 0,
-      "shots": 0,
       "plus_minus": 0
     },
     {
@@ -18024,6 +18648,19 @@
       "assists": 0,
       "points": 0,
       "penalty_minutes": 4,
+      "shots": 0,
+      "plus_minus": 0
+    },
+    {
+      "player_id": "ncaa:brady-omalley",
+      "name": "Brady OMalley",
+      "position": "D",
+      "team_name": "Union",
+      "games_played": 2,
+      "goals": 0,
+      "assists": 0,
+      "points": 0,
+      "penalty_minutes": 0,
       "shots": 0,
       "plus_minus": 0
     },
@@ -18119,19 +18756,6 @@
       "plus_minus": -2
     },
     {
-      "player_id": "ncaa:jack-sparkes",
-      "name": "Jack Sparkes",
-      "position": "D",
-      "team_name": "Clarkson",
-      "games_played": 2,
-      "goals": 0,
-      "assists": 0,
-      "points": 0,
-      "penalty_minutes": 4,
-      "shots": 1,
-      "plus_minus": -1
-    },
-    {
       "player_id": "ncaa:jake-toll",
       "name": "Jake Toll",
       "position": "D",
@@ -18143,6 +18767,19 @@
       "penalty_minutes": 0,
       "shots": 0,
       "plus_minus": 0
+    },
+    {
+      "player_id": "ncaa:jack-sparkes",
+      "name": "Jack Sparkes",
+      "position": "D",
+      "team_name": "Clarkson",
+      "games_played": 2,
+      "goals": 0,
+      "assists": 0,
+      "points": 0,
+      "penalty_minutes": 4,
+      "shots": 1,
+      "plus_minus": -1
     },
     {
       "player_id": "ncaa:jack-rosensteel",
@@ -18379,32 +19016,6 @@
       "plus_minus": -1
     },
     {
-      "player_id": "ncaa:donovan-hamilton",
-      "name": "Donovan Hamilton",
-      "position": "D",
-      "team_name": "Cornell",
-      "games_played": 2,
-      "goals": 0,
-      "assists": 0,
-      "points": 0,
-      "penalty_minutes": 0,
-      "shots": 0,
-      "plus_minus": -2
-    },
-    {
-      "player_id": "ncaa:niko-rexine",
-      "name": "Niko Rexine",
-      "position": "F",
-      "team_name": "Colgate",
-      "games_played": 2,
-      "goals": 0,
-      "assists": 0,
-      "points": 0,
-      "penalty_minutes": 0,
-      "shots": 0,
-      "plus_minus": -1
-    },
-    {
       "player_id": "ncaa:ryan-flaherty",
       "name": "Ryan Flaherty",
       "position": "F",
@@ -18431,6 +19042,32 @@
       "plus_minus": -3
     },
     {
+      "player_id": "ncaa:donovan-hamilton",
+      "name": "Donovan Hamilton",
+      "position": "D",
+      "team_name": "Cornell",
+      "games_played": 2,
+      "goals": 0,
+      "assists": 0,
+      "points": 0,
+      "penalty_minutes": 0,
+      "shots": 0,
+      "plus_minus": -2
+    },
+    {
+      "player_id": "ncaa:niko-rexine",
+      "name": "Niko Rexine",
+      "position": "F",
+      "team_name": "Colgate",
+      "games_played": 2,
+      "goals": 0,
+      "assists": 0,
+      "points": 0,
+      "penalty_minutes": 0,
+      "shots": 0,
+      "plus_minus": -1
+    },
+    {
       "player_id": "ncaa:tanner-duncan",
       "name": "Tanner Duncan",
       "position": "F",
@@ -18444,10 +19081,10 @@
       "plus_minus": -1
     },
     {
-      "player_id": "ncaa:wilson-dahlheimer",
-      "name": "Wilson Dahlheimer",
-      "position": "F",
-      "team_name": "Lake Superior",
+      "player_id": "ncaa:william-troutwine",
+      "name": "William Troutwine",
+      "position": "D",
+      "team_name": "Holy Cross",
       "games_played": 2,
       "goals": 0,
       "assists": 0,
@@ -18457,10 +19094,10 @@
       "plus_minus": 0
     },
     {
-      "player_id": "ncaa:william-troutwine",
-      "name": "William Troutwine",
-      "position": "D",
-      "team_name": "Holy Cross",
+      "player_id": "ncaa:wilson-dahlheimer",
+      "name": "Wilson Dahlheimer",
+      "position": "F",
+      "team_name": "Lake Superior",
       "games_played": 2,
       "goals": 0,
       "assists": 0,
@@ -18519,6 +19156,19 @@
       "points": 0,
       "penalty_minutes": 0,
       "shots": 3,
+      "plus_minus": 0
+    },
+    {
+      "player_id": "ncaa:braden-keeble",
+      "name": "Braden Keeble",
+      "position": "F",
+      "team_name": "St. Lawrence",
+      "games_played": 2,
+      "goals": 0,
+      "assists": 0,
+      "points": 0,
+      "penalty_minutes": 0,
+      "shots": 1,
       "plus_minus": 0
     },
     {
@@ -18600,19 +19250,6 @@
       "plus_minus": -1
     },
     {
-      "player_id": "ncaa:jarrod-smith",
-      "name": "Jarrod Smith",
-      "position": "F",
-      "team_name": "Holy Cross",
-      "games_played": 1,
-      "goals": 0,
-      "assists": 0,
-      "points": 0,
-      "penalty_minutes": 0,
-      "shots": 0,
-      "plus_minus": 0
-    },
-    {
       "player_id": "ncaa:alex-rybakov",
       "name": "Alex Rybakov",
       "position": "D",
@@ -18650,6 +19287,19 @@
       "penalty_minutes": 0,
       "shots": 1,
       "plus_minus": -1
+    },
+    {
+      "player_id": "ncaa:jarrod-smith",
+      "name": "Jarrod Smith",
+      "position": "F",
+      "team_name": "Holy Cross",
+      "games_played": 1,
+      "goals": 0,
+      "assists": 0,
+      "points": 0,
+      "penalty_minutes": 0,
+      "shots": 0,
+      "plus_minus": 0
     },
     {
       "player_id": "ncaa:max-dirracolo",
@@ -18730,19 +19380,6 @@
       "plus_minus": 0
     },
     {
-      "player_id": "ncaa:peter-forgione",
-      "name": "Peter Forgione",
-      "position": "D",
-      "team_name": "Vermont",
-      "games_played": 1,
-      "goals": 0,
-      "assists": 0,
-      "points": 0,
-      "penalty_minutes": 0,
-      "shots": 0,
-      "plus_minus": 0
-    },
-    {
       "player_id": "ncaa:keaton-peters",
       "name": "Keaton Peters",
       "position": "F",
@@ -18756,10 +19393,10 @@
       "plus_minus": 0
     },
     {
-      "player_id": "ncaa:nolan-joyce",
-      "name": "Nolan Joyce",
+      "player_id": "ncaa:peter-forgione",
+      "name": "Peter Forgione",
       "position": "D",
-      "team_name": "Boston College",
+      "team_name": "Vermont",
       "games_played": 1,
       "goals": 0,
       "assists": 0,
@@ -18782,10 +19419,23 @@
       "plus_minus": 0
     },
     {
-      "player_id": "ncaa:john-stout",
-      "name": "John Stout",
+      "player_id": "ncaa:nolan-joyce",
+      "name": "Nolan Joyce",
       "position": "D",
-      "team_name": "Wisconsin",
+      "team_name": "Boston College",
+      "games_played": 1,
+      "goals": 0,
+      "assists": 0,
+      "points": 0,
+      "penalty_minutes": 0,
+      "shots": 0,
+      "plus_minus": 0
+    },
+    {
+      "player_id": "ncaa:diego-johnson",
+      "name": "Diego Johnson",
+      "position": "F",
+      "team_name": "Michigan State",
       "games_played": 1,
       "goals": 0,
       "assists": 0,
@@ -18821,19 +19471,6 @@
       "plus_minus": 0
     },
     {
-      "player_id": "ncaa:timmy-delay",
-      "name": "Timmy Delay",
-      "position": "F",
-      "team_name": "Boston College",
-      "games_played": 1,
-      "goals": 0,
-      "assists": 0,
-      "points": 0,
-      "penalty_minutes": 0,
-      "shots": 0,
-      "plus_minus": 0
-    },
-    {
       "player_id": "ncaa:jeff-hutchinson",
       "name": "Jeff Hutchinson",
       "position": "D",
@@ -18845,6 +19482,19 @@
       "penalty_minutes": 0,
       "shots": 0,
       "plus_minus": -1
+    },
+    {
+      "player_id": "ncaa:timmy-delay",
+      "name": "Timmy Delay",
+      "position": "F",
+      "team_name": "Boston College",
+      "games_played": 1,
+      "goals": 0,
+      "assists": 0,
+      "points": 0,
+      "penalty_minutes": 0,
+      "shots": 0,
+      "plus_minus": 0
     }
   ],
   "goalies": [],

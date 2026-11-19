@@ -4,7 +4,7 @@
   "season": "2026-2027",
   "seasonId": "78",
   "source": "Official ECHL HockeyTech / LeagueStat public player statistics feed",
-  "syncedAt": "2026-11-19T04:49:25.244Z",
+  "syncedAt": "2026-11-19T04:51:14.981Z",
   "endpoints": {
     "skaters": "https://lscluster.hockeytech.com/feed/index.php?feed=statviewfeed&key=2c2b89ea7345cae8&client_code=echl&league_id=1&site_id=0&lang=en&view=players&season=78&team=all&limit=1000",
     "goalies": "https://lscluster.hockeytech.com/feed/index.php?feed=statviewfeed&key=2c2b89ea7345cae8&client_code=echl&league_id=1&site_id=0&lang=en&view=players&season=78&team=all&limit=1000&position=goalies"
@@ -422,7 +422,7 @@
       "team_name": "Idaho Steelheads",
       "games_played": "11",
       "goals": "4",
-      "shots": "42",
+      "shots": "43",
       "assists": "9",
       "points": "13",
       "points_per_game": "1.18",
@@ -750,27 +750,6 @@
       "team_code": null
     },
     {
-      "player_id": "9019",
-      "name": "Kale Howarth",
-      "active": "1",
-      "position": "F",
-      "rookie": "0",
-      "team_name": "Idaho Steelheads",
-      "games_played": "10",
-      "goals": "5",
-      "shots": "38",
-      "assists": "6",
-      "points": "11",
-      "points_per_game": "1.10",
-      "plus_minus": "1",
-      "penalty_minutes": "6",
-      "penalty_minutes_per_game": "0.60",
-      "power_play_goals": "2",
-      "short_handed_goals": "0",
-      "rank": 36,
-      "team_code": null
-    },
-    {
       "player_id": "10082",
       "name": "Tyler Weiss",
       "active": "1",
@@ -787,6 +766,27 @@
       "penalty_minutes": "8",
       "penalty_minutes_per_game": "0.80",
       "power_play_goals": "3",
+      "short_handed_goals": "0",
+      "rank": 36,
+      "team_code": null
+    },
+    {
+      "player_id": "9019",
+      "name": "Kale Howarth",
+      "active": "1",
+      "position": "F",
+      "rookie": "0",
+      "team_name": "Idaho Steelheads",
+      "games_played": "11",
+      "goals": "5",
+      "shots": "38",
+      "assists": "6",
+      "points": "11",
+      "points_per_game": "1.00",
+      "plus_minus": "1",
+      "penalty_minutes": "6",
+      "penalty_minutes_per_game": "0.55",
+      "power_play_goals": "2",
       "short_handed_goals": "0",
       "rank": 37,
       "team_code": null
@@ -2010,27 +2010,6 @@
       "team_code": null
     },
     {
-      "player_id": "10769",
-      "name": "Antonio Venuto",
-      "active": "1",
-      "position": "F",
-      "rookie": "0",
-      "team_name": "Maine Mariners",
-      "games_played": "9",
-      "goals": "4",
-      "shots": "26",
-      "assists": "4",
-      "points": "8",
-      "points_per_game": "0.89",
-      "plus_minus": "4",
-      "penalty_minutes": "4",
-      "penalty_minutes_per_game": "0.44",
-      "power_play_goals": "1",
-      "short_handed_goals": "0",
-      "rank": 96,
-      "team_code": null
-    },
-    {
       "player_id": "10976",
       "name": "Jeremy Michel",
       "active": "1",
@@ -2048,6 +2027,27 @@
       "penalty_minutes_per_game": "0.20",
       "power_play_goals": "0",
       "short_handed_goals": "2",
+      "rank": 96,
+      "team_code": null
+    },
+    {
+      "player_id": "10769",
+      "name": "Antonio Venuto",
+      "active": "1",
+      "position": "F",
+      "rookie": "0",
+      "team_name": "Maine Mariners",
+      "games_played": "10",
+      "goals": "4",
+      "shots": "29",
+      "assists": "4",
+      "points": "8",
+      "points_per_game": "0.80",
+      "plus_minus": "4",
+      "penalty_minutes": "4",
+      "penalty_minutes_per_game": "0.40",
+      "power_play_goals": "1",
+      "short_handed_goals": "0",
       "rank": 97,
       "team_code": null
     },
@@ -3425,7 +3425,7 @@
       "team_name": "Idaho Steelheads",
       "games_played": "11",
       "goals": "3",
-      "shots": "33",
+      "shots": "34",
       "assists": "3",
       "points": "6",
       "points_per_game": "0.55",
@@ -5664,27 +5664,6 @@
       "team_code": null
     },
     {
-      "player_id": "10891",
-      "name": "Nick Portz",
-      "active": "1",
-      "position": "F",
-      "rookie": "0",
-      "team_name": "Idaho Steelheads",
-      "games_played": "10",
-      "goals": "3",
-      "shots": "13",
-      "assists": "1",
-      "points": "4",
-      "points_per_game": "0.40",
-      "plus_minus": "0",
-      "penalty_minutes": "7",
-      "penalty_minutes_per_game": "0.70",
-      "power_play_goals": "0",
-      "short_handed_goals": "0",
-      "rank": 270,
-      "team_code": null
-    },
-    {
       "player_id": "10312",
       "name": "Dustin Manz",
       "active": "1",
@@ -5702,7 +5681,7 @@
       "penalty_minutes_per_game": "0.18",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 271,
+      "rank": 270,
       "team_code": null
     },
     {
@@ -5721,6 +5700,27 @@
       "plus_minus": "1",
       "penalty_minutes": "2",
       "penalty_minutes_per_game": "0.18",
+      "power_play_goals": "0",
+      "short_handed_goals": "0",
+      "rank": 271,
+      "team_code": null
+    },
+    {
+      "player_id": "10891",
+      "name": "Nick Portz",
+      "active": "1",
+      "position": "F",
+      "rookie": "0",
+      "team_name": "Idaho Steelheads",
+      "games_played": "11",
+      "goals": "3",
+      "shots": "14",
+      "assists": "1",
+      "points": "4",
+      "points_per_game": "0.36",
+      "plus_minus": "0",
+      "penalty_minutes": "7",
+      "penalty_minutes_per_game": "0.64",
       "power_play_goals": "0",
       "short_handed_goals": "0",
       "rank": 272,
@@ -7583,7 +7583,7 @@
       "team_name": "Maine Mariners",
       "games_played": "10",
       "goals": "1",
-      "shots": "18",
+      "shots": "20",
       "assists": "2",
       "points": "3",
       "points_per_game": "0.30",
@@ -8835,27 +8835,6 @@
       "team_code": null
     },
     {
-      "player_id": "10736",
-      "name": "Jack Works",
-      "active": "1",
-      "position": "F",
-      "rookie": "0",
-      "team_name": "Maine Mariners",
-      "games_played": "7",
-      "goals": "1",
-      "shots": "10",
-      "assists": "1",
-      "points": "2",
-      "points_per_game": "0.29",
-      "plus_minus": "-2",
-      "penalty_minutes": "0",
-      "penalty_minutes_per_game": "0.00",
-      "power_play_goals": "0",
-      "short_handed_goals": "0",
-      "rank": 421,
-      "team_code": null
-    },
-    {
       "player_id": "11288",
       "name": "Josh Zary",
       "active": "1",
@@ -8873,7 +8852,7 @@
       "penalty_minutes_per_game": "0.71",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 422,
+      "rank": 421,
       "team_code": null
     },
     {
@@ -8894,7 +8873,7 @@
       "penalty_minutes_per_game": "0.50",
       "power_play_goals": "1",
       "short_handed_goals": "0",
-      "rank": 423,
+      "rank": 422,
       "team_code": null
     },
     {
@@ -8915,7 +8894,7 @@
       "penalty_minutes_per_game": "0.75",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 424,
+      "rank": 423,
       "team_code": null
     },
     {
@@ -8935,6 +8914,27 @@
       "penalty_minutes": "0",
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "1",
+      "short_handed_goals": "0",
+      "rank": 424,
+      "team_code": null
+    },
+    {
+      "player_id": "10736",
+      "name": "Jack Works",
+      "active": "1",
+      "position": "F",
+      "rookie": "0",
+      "team_name": "Maine Mariners",
+      "games_played": "8",
+      "goals": "1",
+      "shots": "15",
+      "assists": "1",
+      "points": "2",
+      "points_per_game": "0.25",
+      "plus_minus": "-2",
+      "penalty_minutes": "0",
+      "penalty_minutes_per_game": "0.00",
+      "power_play_goals": "0",
       "short_handed_goals": "0",
       "rank": 425,
       "team_code": null
@@ -12069,27 +12069,6 @@
       "team_code": null
     },
     {
-      "player_id": "11401",
-      "name": "Dylan MacKinnon",
-      "active": "1",
-      "position": "D",
-      "rookie": "1",
-      "team_name": "Maine Mariners",
-      "games_played": "7",
-      "goals": "0",
-      "shots": "6",
-      "assists": "1",
-      "points": "1",
-      "points_per_game": "0.14",
-      "plus_minus": "1",
-      "penalty_minutes": "12",
-      "penalty_minutes_per_game": "1.71",
-      "power_play_goals": "0",
-      "short_handed_goals": "0",
-      "rank": 575,
-      "team_code": null
-    },
-    {
       "player_id": "11530",
       "name": "Dalton Norris",
       "active": "1",
@@ -12107,7 +12086,7 @@
       "penalty_minutes_per_game": "0.86",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 576,
+      "rank": 575,
       "team_code": null
     },
     {
@@ -12128,7 +12107,7 @@
       "penalty_minutes_per_game": "3.14",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 577,
+      "rank": 576,
       "team_code": null
     },
     {
@@ -12149,7 +12128,7 @@
       "penalty_minutes_per_game": "2.71",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 578,
+      "rank": 577,
       "team_code": null
     },
     {
@@ -12170,7 +12149,7 @@
       "penalty_minutes_per_game": "0.50",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 579,
+      "rank": 578,
       "team_code": null
     },
     {
@@ -12191,7 +12170,7 @@
       "penalty_minutes_per_game": "1.13",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 580,
+      "rank": 579,
       "team_code": null
     },
     {
@@ -12212,7 +12191,7 @@
       "penalty_minutes_per_game": "0.25",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 581,
+      "rank": 580,
       "team_code": null
     },
     {
@@ -12231,6 +12210,27 @@
       "plus_minus": "-5",
       "penalty_minutes": "2",
       "penalty_minutes_per_game": "0.25",
+      "power_play_goals": "0",
+      "short_handed_goals": "0",
+      "rank": 581,
+      "team_code": null
+    },
+    {
+      "player_id": "11401",
+      "name": "Dylan MacKinnon",
+      "active": "1",
+      "position": "D",
+      "rookie": "1",
+      "team_name": "Maine Mariners",
+      "games_played": "8",
+      "goals": "0",
+      "shots": "6",
+      "assists": "1",
+      "points": "1",
+      "points_per_game": "0.13",
+      "plus_minus": "1",
+      "penalty_minutes": "12",
+      "penalty_minutes_per_game": "1.50",
       "power_play_goals": "0",
       "short_handed_goals": "0",
       "rank": 582,
@@ -12594,27 +12594,6 @@
       "team_code": null
     },
     {
-      "player_id": "11481",
-      "name": "Niilopekka Muhonen",
-      "active": "1",
-      "position": "D",
-      "rookie": "0",
-      "team_name": "Idaho Steelheads",
-      "games_played": "10",
-      "goals": "0",
-      "shots": "7",
-      "assists": "1",
-      "points": "1",
-      "points_per_game": "0.10",
-      "plus_minus": "2",
-      "penalty_minutes": "16",
-      "penalty_minutes_per_game": "1.60",
-      "power_play_goals": "0",
-      "short_handed_goals": "0",
-      "rank": 600,
-      "team_code": null
-    },
-    {
       "player_id": "10027",
       "name": "Riley Piercey",
       "active": "1",
@@ -12632,7 +12611,7 @@
       "penalty_minutes_per_game": "0.40",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 601,
+      "rank": 600,
       "team_code": null
     },
     {
@@ -12653,7 +12632,7 @@
       "penalty_minutes_per_game": "0.40",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 602,
+      "rank": 601,
       "team_code": null
     },
     {
@@ -12674,7 +12653,7 @@
       "penalty_minutes_per_game": "1.60",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 603,
+      "rank": 602,
       "team_code": null
     },
     {
@@ -12695,7 +12674,7 @@
       "penalty_minutes_per_game": "0.20",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 604,
+      "rank": 603,
       "team_code": null
     },
     {
@@ -12716,7 +12695,7 @@
       "penalty_minutes_per_game": "0.82",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 605,
+      "rank": 604,
       "team_code": null
     },
     {
@@ -12737,7 +12716,7 @@
       "penalty_minutes_per_game": "0.91",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 606,
+      "rank": 605,
       "team_code": null
     },
     {
@@ -12758,7 +12737,7 @@
       "penalty_minutes_per_game": "1.09",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 607,
+      "rank": 606,
       "team_code": null
     },
     {
@@ -12770,7 +12749,7 @@
       "team_name": "Idaho Steelheads",
       "games_played": "11",
       "goals": "0",
-      "shots": "9",
+      "shots": "11",
       "assists": "1",
       "points": "1",
       "points_per_game": "0.09",
@@ -12779,7 +12758,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 608,
+      "rank": 607,
       "team_code": null
     },
     {
@@ -12800,7 +12779,7 @@
       "penalty_minutes_per_game": "0.18",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 609,
+      "rank": 608,
       "team_code": null
     },
     {
@@ -12821,7 +12800,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 610,
+      "rank": 609,
       "team_code": null
     },
     {
@@ -12842,7 +12821,7 @@
       "penalty_minutes_per_game": "0.18",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 611,
+      "rank": 610,
       "team_code": null
     },
     {
@@ -12861,6 +12840,27 @@
       "plus_minus": "-5",
       "penalty_minutes": "0",
       "penalty_minutes_per_game": "0.00",
+      "power_play_goals": "0",
+      "short_handed_goals": "0",
+      "rank": 611,
+      "team_code": null
+    },
+    {
+      "player_id": "11481",
+      "name": "Niilopekka Muhonen",
+      "active": "1",
+      "position": "D",
+      "rookie": "0",
+      "team_name": "Idaho Steelheads",
+      "games_played": "11",
+      "goals": "0",
+      "shots": "7",
+      "assists": "1",
+      "points": "1",
+      "points_per_game": "0.09",
+      "plus_minus": "2",
+      "penalty_minutes": "16",
+      "penalty_minutes_per_game": "1.45",
       "power_play_goals": "0",
       "short_handed_goals": "0",
       "rank": 612,
@@ -13434,27 +13434,6 @@
       "team_code": null
     },
     {
-      "player_id": "10875",
-      "name": "Grant Silianoff",
-      "active": "1",
-      "position": "F",
-      "rookie": "0",
-      "team_name": "Idaho Steelheads",
-      "games_played": "1",
-      "goals": "0",
-      "shots": "2",
-      "assists": "0",
-      "points": "0",
-      "points_per_game": "0.00",
-      "plus_minus": "0",
-      "penalty_minutes": "0",
-      "penalty_minutes_per_game": "0.00",
-      "power_play_goals": "0",
-      "short_handed_goals": "0",
-      "rank": 640,
-      "team_code": null
-    },
-    {
       "player_id": "10520",
       "name": "Jackson Stewart",
       "active": "1",
@@ -13472,7 +13451,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 641,
+      "rank": 640,
       "team_code": null
     },
     {
@@ -13493,7 +13472,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 642,
+      "rank": 641,
       "team_code": null
     },
     {
@@ -13514,7 +13493,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 643,
+      "rank": 642,
       "team_code": null
     },
     {
@@ -13535,7 +13514,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 644,
+      "rank": 643,
       "team_code": null
     },
     {
@@ -13556,7 +13535,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 645,
+      "rank": 644,
       "team_code": null
     },
     {
@@ -13577,7 +13556,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 646,
+      "rank": 645,
       "team_code": null
     },
     {
@@ -13598,7 +13577,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 647,
+      "rank": 646,
       "team_code": null
     },
     {
@@ -13619,7 +13598,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 648,
+      "rank": 647,
       "team_code": null
     },
     {
@@ -13640,7 +13619,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 649,
+      "rank": 648,
       "team_code": null
     },
     {
@@ -13661,7 +13640,7 @@
       "penalty_minutes_per_game": "3.50",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 650,
+      "rank": 649,
       "team_code": null
     },
     {
@@ -13682,7 +13661,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 651,
+      "rank": 650,
       "team_code": null
     },
     {
@@ -13703,7 +13682,7 @@
       "penalty_minutes_per_game": "2.50",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 652,
+      "rank": 651,
       "team_code": null
     },
     {
@@ -13724,7 +13703,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 653,
+      "rank": 652,
       "team_code": null
     },
     {
@@ -13745,7 +13724,7 @@
       "penalty_minutes_per_game": "3.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 654,
+      "rank": 653,
       "team_code": null
     },
     {
@@ -13766,7 +13745,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 655,
+      "rank": 654,
       "team_code": null
     },
     {
@@ -13787,7 +13766,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 656,
+      "rank": 655,
       "team_code": null
     },
     {
@@ -13808,7 +13787,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 657,
+      "rank": 656,
       "team_code": null
     },
     {
@@ -13829,7 +13808,7 @@
       "penalty_minutes_per_game": "1.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 658,
+      "rank": 657,
       "team_code": null
     },
     {
@@ -13850,7 +13829,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 659,
+      "rank": 658,
       "team_code": null
     },
     {
@@ -13871,7 +13850,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 660,
+      "rank": 659,
       "team_code": null
     },
     {
@@ -13892,7 +13871,7 @@
       "penalty_minutes_per_game": "4.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 661,
+      "rank": 660,
       "team_code": null
     },
     {
@@ -13913,7 +13892,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 662,
+      "rank": 661,
       "team_code": null
     },
     {
@@ -13934,7 +13913,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 663,
+      "rank": 662,
       "team_code": null
     },
     {
@@ -13955,7 +13934,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 664,
+      "rank": 663,
       "team_code": null
     },
     {
@@ -13976,7 +13955,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 665,
+      "rank": 664,
       "team_code": null
     },
     {
@@ -13995,6 +13974,27 @@
       "plus_minus": "-3",
       "penalty_minutes": "7",
       "penalty_minutes_per_game": "3.50",
+      "power_play_goals": "0",
+      "short_handed_goals": "0",
+      "rank": 665,
+      "team_code": null
+    },
+    {
+      "player_id": "10875",
+      "name": "Grant Silianoff",
+      "active": "1",
+      "position": "F",
+      "rookie": "0",
+      "team_name": "Idaho Steelheads",
+      "games_played": "2",
+      "goals": "0",
+      "shots": "2",
+      "assists": "0",
+      "points": "0",
+      "points_per_game": "0.00",
+      "plus_minus": "0",
+      "penalty_minutes": "0",
+      "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
       "rank": 666,
@@ -14106,27 +14106,6 @@
       "team_code": null
     },
     {
-      "player_id": "11075",
-      "name": "Arno Tiefensee",
-      "active": "1",
-      "position": "G",
-      "rookie": "0",
-      "team_name": "Idaho Steelheads",
-      "games_played": "2",
-      "goals": "0",
-      "shots": "0",
-      "assists": "0",
-      "points": "0",
-      "points_per_game": "0.00",
-      "plus_minus": "0",
-      "penalty_minutes": "0",
-      "penalty_minutes_per_game": "0.00",
-      "power_play_goals": "0",
-      "short_handed_goals": "0",
-      "rank": 672,
-      "team_code": null
-    },
-    {
       "player_id": "9952",
       "name": "C.J. Valerian",
       "active": "0",
@@ -14144,7 +14123,7 @@
       "penalty_minutes_per_game": "2.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 673,
+      "rank": 672,
       "team_code": null
     },
     {
@@ -14165,7 +14144,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 674,
+      "rank": 673,
       "team_code": null
     },
     {
@@ -14186,7 +14165,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 675,
+      "rank": 674,
       "team_code": null
     },
     {
@@ -14207,7 +14186,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 676,
+      "rank": 675,
       "team_code": null
     },
     {
@@ -14228,7 +14207,7 @@
       "penalty_minutes_per_game": "8.67",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 677,
+      "rank": 676,
       "team_code": null
     },
     {
@@ -14249,7 +14228,7 @@
       "penalty_minutes_per_game": "0.67",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 678,
+      "rank": 677,
       "team_code": null
     },
     {
@@ -14270,7 +14249,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 679,
+      "rank": 678,
       "team_code": null
     },
     {
@@ -14291,7 +14270,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 680,
+      "rank": 679,
       "team_code": null
     },
     {
@@ -14312,7 +14291,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 681,
+      "rank": 680,
       "team_code": null
     },
     {
@@ -14333,7 +14312,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 682,
+      "rank": 681,
       "team_code": null
     },
     {
@@ -14354,7 +14333,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 683,
+      "rank": 682,
       "team_code": null
     },
     {
@@ -14375,7 +14354,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 684,
+      "rank": 683,
       "team_code": null
     },
     {
@@ -14396,7 +14375,7 @@
       "penalty_minutes_per_game": "2.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 685,
+      "rank": 684,
       "team_code": null
     },
     {
@@ -14417,7 +14396,7 @@
       "penalty_minutes_per_game": "2.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 686,
+      "rank": 685,
       "team_code": null
     },
     {
@@ -14438,7 +14417,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 687,
+      "rank": 686,
       "team_code": null
     },
     {
@@ -14459,7 +14438,7 @@
       "penalty_minutes_per_game": "2.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 688,
+      "rank": 687,
       "team_code": null
     },
     {
@@ -14480,7 +14459,7 @@
       "penalty_minutes_per_game": "0.67",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 689,
+      "rank": 688,
       "team_code": null
     },
     {
@@ -14501,7 +14480,7 @@
       "penalty_minutes_per_game": "7.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 690,
+      "rank": 689,
       "team_code": null
     },
     {
@@ -14522,7 +14501,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 691,
+      "rank": 690,
       "team_code": null
     },
     {
@@ -14543,7 +14522,7 @@
       "penalty_minutes_per_game": "0.67",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 692,
+      "rank": 691,
       "team_code": null
     },
     {
@@ -14564,7 +14543,7 @@
       "penalty_minutes_per_game": "0.67",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 693,
+      "rank": 692,
       "team_code": null
     },
     {
@@ -14585,7 +14564,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 694,
+      "rank": 693,
       "team_code": null
     },
     {
@@ -14606,7 +14585,7 @@
       "penalty_minutes_per_game": "1.33",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 695,
+      "rank": 694,
       "team_code": null
     },
     {
@@ -14627,7 +14606,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 696,
+      "rank": 695,
       "team_code": null
     },
     {
@@ -14648,7 +14627,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 697,
+      "rank": 696,
       "team_code": null
     },
     {
@@ -14669,7 +14648,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 698,
+      "rank": 697,
       "team_code": null
     },
     {
@@ -14690,7 +14669,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 699,
+      "rank": 698,
       "team_code": null
     },
     {
@@ -14711,7 +14690,7 @@
       "penalty_minutes_per_game": "0.67",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 700,
+      "rank": 699,
       "team_code": null
     },
     {
@@ -14732,7 +14711,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 701,
+      "rank": 700,
       "team_code": null
     },
     {
@@ -14753,12 +14732,33 @@
       "penalty_minutes_per_game": "0.67",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 702,
+      "rank": 701,
       "team_code": null
     },
     {
       "player_id": "10178",
       "name": "Anson Thornton",
+      "active": "1",
+      "position": "G",
+      "rookie": "0",
+      "team_name": "Idaho Steelheads",
+      "games_played": "3",
+      "goals": "0",
+      "shots": "0",
+      "assists": "0",
+      "points": "0",
+      "points_per_game": "0.00",
+      "plus_minus": "0",
+      "penalty_minutes": "0",
+      "penalty_minutes_per_game": "0.00",
+      "power_play_goals": "0",
+      "short_handed_goals": "0",
+      "rank": 702,
+      "team_code": null
+    },
+    {
+      "player_id": "11075",
+      "name": "Arno Tiefensee",
       "active": "1",
       "position": "G",
       "rookie": "0",
@@ -14870,7 +14870,7 @@
       "team_name": "Idaho Steelheads",
       "games_played": "4",
       "goals": "0",
-      "shots": "5",
+      "shots": "6",
       "assists": "0",
       "points": "0",
       "points_per_game": "0.00",
@@ -15744,27 +15744,6 @@
       "team_code": null
     },
     {
-      "player_id": "9458",
-      "name": "Luke Cavallin",
-      "active": "1",
-      "position": "G",
-      "rookie": "0",
-      "team_name": "Maine Mariners",
-      "games_played": "6",
-      "goals": "0",
-      "shots": "0",
-      "assists": "0",
-      "points": "0",
-      "points_per_game": "0.00",
-      "plus_minus": "0",
-      "penalty_minutes": "2",
-      "penalty_minutes_per_game": "0.33",
-      "power_play_goals": "0",
-      "short_handed_goals": "0",
-      "rank": 750,
-      "team_code": null
-    },
-    {
       "player_id": "11102",
       "name": "Aaron Chiarot",
       "active": "1",
@@ -15782,7 +15761,7 @@
       "penalty_minutes_per_game": "2.33",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 751,
+      "rank": 750,
       "team_code": null
     },
     {
@@ -15803,7 +15782,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 752,
+      "rank": 751,
       "team_code": null
     },
     {
@@ -15824,7 +15803,7 @@
       "penalty_minutes_per_game": "0.67",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 753,
+      "rank": 752,
       "team_code": null
     },
     {
@@ -15845,7 +15824,7 @@
       "penalty_minutes_per_game": "0.33",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 754,
+      "rank": 753,
       "team_code": null
     },
     {
@@ -15866,7 +15845,7 @@
       "penalty_minutes_per_game": "1.83",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 755,
+      "rank": 754,
       "team_code": null
     },
     {
@@ -15887,7 +15866,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 756,
+      "rank": 755,
       "team_code": null
     },
     {
@@ -15908,7 +15887,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 757,
+      "rank": 756,
       "team_code": null
     },
     {
@@ -15929,7 +15908,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 758,
+      "rank": 757,
       "team_code": null
     },
     {
@@ -15950,7 +15929,7 @@
       "penalty_minutes_per_game": "1.67",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 759,
+      "rank": 758,
       "team_code": null
     },
     {
@@ -15971,7 +15950,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 760,
+      "rank": 759,
       "team_code": null
     },
     {
@@ -15992,7 +15971,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 761,
+      "rank": 760,
       "team_code": null
     },
     {
@@ -16013,7 +15992,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 762,
+      "rank": 761,
       "team_code": null
     },
     {
@@ -16034,7 +16013,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 763,
+      "rank": 762,
       "team_code": null
     },
     {
@@ -16055,7 +16034,7 @@
       "penalty_minutes_per_game": "1.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 764,
+      "rank": 763,
       "team_code": null
     },
     {
@@ -16076,7 +16055,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 765,
+      "rank": 764,
       "team_code": null
     },
     {
@@ -16097,7 +16076,7 @@
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
-      "rank": 766,
+      "rank": 765,
       "team_code": null
     },
     {
@@ -16116,6 +16095,27 @@
       "plus_minus": "-7",
       "penalty_minutes": "0",
       "penalty_minutes_per_game": "0.00",
+      "power_play_goals": "0",
+      "short_handed_goals": "0",
+      "rank": 766,
+      "team_code": null
+    },
+    {
+      "player_id": "9458",
+      "name": "Luke Cavallin",
+      "active": "1",
+      "position": "G",
+      "rookie": "0",
+      "team_name": "Maine Mariners",
+      "games_played": "7",
+      "goals": "0",
+      "shots": "0",
+      "assists": "0",
+      "points": "0",
+      "points_per_game": "0.00",
+      "plus_minus": "0",
+      "penalty_minutes": "2",
+      "penalty_minutes_per_game": "0.29",
       "power_play_goals": "0",
       "short_handed_goals": "0",
       "rank": 767,
@@ -17265,25 +17265,6 @@
       "rank": 7
     },
     {
-      "player_id": "9458",
-      "rookie": "0",
-      "name": "Luke Cavallin",
-      "active": "1",
-      "team_code": "MNE",
-      "games_played": "7",
-      "minutes_played": 380,
-      "shots": "163",
-      "save_percentage": "0.933",
-      "goals_against": "11",
-      "shutouts": "2",
-      "wins": "4",
-      "losses": "2",
-      "ot_losses": "0",
-      "shootout_losses": "0",
-      "goals_against_average": "1.74",
-      "rank": 8
-    },
-    {
       "player_id": "9506",
       "rookie": "0",
       "name": "Garin Bjorklund",
@@ -17300,7 +17281,7 @@
       "ot_losses": "0",
       "shootout_losses": "0",
       "goals_against_average": "1.77",
-      "rank": 9
+      "rank": 8
     },
     {
       "player_id": "11367",
@@ -17319,7 +17300,7 @@
       "ot_losses": "0",
       "shootout_losses": "0",
       "goals_against_average": "1.80",
-      "rank": 10
+      "rank": 9
     },
     {
       "player_id": "6784",
@@ -17338,7 +17319,7 @@
       "ot_losses": "0",
       "shootout_losses": "1",
       "goals_against_average": "1.86",
-      "rank": 11
+      "rank": 10
     },
     {
       "player_id": "10871",
@@ -17357,7 +17338,7 @@
       "ot_losses": "0",
       "shootout_losses": "0",
       "goals_against_average": "1.89",
-      "rank": 12
+      "rank": 11
     },
     {
       "player_id": "9140",
@@ -17376,7 +17357,7 @@
       "ot_losses": "0",
       "shootout_losses": "0",
       "goals_against_average": "1.92",
-      "rank": 13
+      "rank": 12
     },
     {
       "player_id": "11588",
@@ -17395,7 +17376,7 @@
       "ot_losses": "0",
       "shootout_losses": "0",
       "goals_against_average": "2.02",
-      "rank": 14
+      "rank": 13
     },
     {
       "player_id": "10515",
@@ -17414,7 +17395,7 @@
       "ot_losses": "0",
       "shootout_losses": "0",
       "goals_against_average": "2.03",
-      "rank": 15
+      "rank": 14
     },
     {
       "player_id": "9941",
@@ -17433,7 +17414,7 @@
       "ot_losses": "0",
       "shootout_losses": "0",
       "goals_against_average": "2.07",
-      "rank": 16
+      "rank": 15
     },
     {
       "player_id": "11589",
@@ -17452,7 +17433,7 @@
       "ot_losses": "0",
       "shootout_losses": "0",
       "goals_against_average": "2.11",
-      "rank": 17
+      "rank": 16
     },
     {
       "player_id": "11068",
@@ -17471,7 +17452,7 @@
       "ot_losses": "0",
       "shootout_losses": "0",
       "goals_against_average": "2.11",
-      "rank": 18
+      "rank": 17
     },
     {
       "player_id": "11513",
@@ -17490,7 +17471,7 @@
       "ot_losses": "2",
       "shootout_losses": "0",
       "goals_against_average": "2.14",
-      "rank": 19
+      "rank": 18
     },
     {
       "player_id": "10559",
@@ -17509,7 +17490,7 @@
       "ot_losses": "0",
       "shootout_losses": "0",
       "goals_against_average": "2.15",
-      "rank": 20
+      "rank": 19
     },
     {
       "player_id": "11023",
@@ -17528,7 +17509,7 @@
       "ot_losses": "0",
       "shootout_losses": "0",
       "goals_against_average": "2.19",
-      "rank": 21
+      "rank": 20
     },
     {
       "player_id": "11551",
@@ -17547,7 +17528,7 @@
       "ot_losses": "0",
       "shootout_losses": "0",
       "goals_against_average": "2.20",
-      "rank": 22
+      "rank": 21
     },
     {
       "player_id": "10070",
@@ -17566,7 +17547,7 @@
       "ot_losses": "0",
       "shootout_losses": "0",
       "goals_against_average": "2.20",
-      "rank": 23
+      "rank": 22
     },
     {
       "player_id": "9959",
@@ -17585,6 +17566,25 @@
       "ot_losses": "0",
       "shootout_losses": "0",
       "goals_against_average": "2.24",
+      "rank": 23
+    },
+    {
+      "player_id": "9458",
+      "rookie": "0",
+      "name": "Luke Cavallin",
+      "active": "1",
+      "team_code": "MNE",
+      "games_played": "7",
+      "minutes_played": 420,
+      "shots": "193",
+      "save_percentage": "0.917",
+      "goals_against": "16",
+      "shutouts": "2",
+      "wins": "4",
+      "losses": "3",
+      "ot_losses": "0",
+      "shootout_losses": "0",
+      "goals_against_average": "2.29",
       "rank": 24
     },
     {
@@ -17607,6 +17607,25 @@
       "rank": 25
     },
     {
+      "player_id": "11075",
+      "rookie": "0",
+      "name": "Arno Tiefensee",
+      "active": "1",
+      "team_code": "IDH",
+      "games_played": "3",
+      "minutes_played": 182,
+      "shots": "96",
+      "save_percentage": "0.927",
+      "goals_against": "7",
+      "shutouts": "1",
+      "wins": "2",
+      "losses": "0",
+      "ot_losses": "1",
+      "shootout_losses": "0",
+      "goals_against_average": "2.30",
+      "rank": 26
+    },
+    {
       "player_id": "11491",
       "rookie": "1",
       "name": "Christian Cicigoi",
@@ -17623,7 +17642,7 @@
       "ot_losses": "1",
       "shootout_losses": "0",
       "goals_against_average": "2.32",
-      "rank": 26
+      "rank": 27
     },
     {
       "player_id": "8222",
@@ -17642,7 +17661,7 @@
       "ot_losses": "0",
       "shootout_losses": "1",
       "goals_against_average": "2.32",
-      "rank": 27
+      "rank": 28
     },
     {
       "player_id": "9520",
@@ -17661,7 +17680,7 @@
       "ot_losses": "1",
       "shootout_losses": "1",
       "goals_against_average": "2.35",
-      "rank": 28
+      "rank": 29
     },
     {
       "player_id": "7046",
@@ -17680,7 +17699,7 @@
       "ot_losses": "0",
       "shootout_losses": "0",
       "goals_against_average": "2.35",
-      "rank": 29
+      "rank": 30
     },
     {
       "player_id": "10569",
@@ -17699,7 +17718,7 @@
       "ot_losses": "1",
       "shootout_losses": "1",
       "goals_against_average": "2.39",
-      "rank": 30
+      "rank": 31
     },
     {
       "player_id": "9560",
@@ -17718,7 +17737,7 @@
       "ot_losses": "2",
       "shootout_losses": "0",
       "goals_against_average": "2.41",
-      "rank": 31
+      "rank": 32
     },
     {
       "player_id": "11531",
@@ -17737,7 +17756,7 @@
       "ot_losses": "0",
       "shootout_losses": "1",
       "goals_against_average": "2.42",
-      "rank": 32
+      "rank": 33
     },
     {
       "player_id": "11121",
@@ -17756,7 +17775,7 @@
       "ot_losses": "2",
       "shootout_losses": "0",
       "goals_against_average": "2.47",
-      "rank": 33
+      "rank": 34
     },
     {
       "player_id": "8268",
@@ -17775,7 +17794,7 @@
       "ot_losses": "1",
       "shootout_losses": "0",
       "goals_against_average": "2.49",
-      "rank": 34
+      "rank": 35
     },
     {
       "player_id": "7469",
@@ -17794,7 +17813,7 @@
       "ot_losses": "0",
       "shootout_losses": "0",
       "goals_against_average": "2.55",
-      "rank": 35
+      "rank": 36
     },
     {
       "player_id": "10973",
@@ -17813,7 +17832,7 @@
       "ot_losses": "0",
       "shootout_losses": "0",
       "goals_against_average": "2.64",
-      "rank": 36
+      "rank": 37
     },
     {
       "player_id": "10857",
@@ -17832,7 +17851,7 @@
       "ot_losses": "1",
       "shootout_losses": "1",
       "goals_against_average": "2.70",
-      "rank": 37
+      "rank": 38
     },
     {
       "player_id": "11338",
@@ -17851,7 +17870,7 @@
       "ot_losses": "0",
       "shootout_losses": "0",
       "goals_against_average": "2.71",
-      "rank": 38
+      "rank": 39
     },
     {
       "player_id": "11410",
@@ -17870,7 +17889,7 @@
       "ot_losses": "0",
       "shootout_losses": "0",
       "goals_against_average": "2.75",
-      "rank": 39
+      "rank": 40
     },
     {
       "player_id": "8832",
@@ -17889,7 +17908,7 @@
       "ot_losses": "2",
       "shootout_losses": "0",
       "goals_against_average": "2.81",
-      "rank": 40
+      "rank": 41
     },
     {
       "player_id": "9709",
@@ -17908,7 +17927,7 @@
       "ot_losses": "0",
       "shootout_losses": "0",
       "goals_against_average": "2.83",
-      "rank": 41
+      "rank": 42
     },
     {
       "player_id": "10155",
@@ -17927,7 +17946,7 @@
       "ot_losses": "0",
       "shootout_losses": "0",
       "goals_against_average": "2.84",
-      "rank": 42
+      "rank": 43
     },
     {
       "player_id": "11575",
@@ -17946,7 +17965,7 @@
       "ot_losses": "1",
       "shootout_losses": "0",
       "goals_against_average": "2.86",
-      "rank": 43
+      "rank": 44
     },
     {
       "player_id": "11455",
@@ -17965,7 +17984,7 @@
       "ot_losses": "0",
       "shootout_losses": "0",
       "goals_against_average": "2.87",
-      "rank": 44
+      "rank": 45
     },
     {
       "player_id": "11500",
@@ -17984,7 +18003,7 @@
       "ot_losses": "2",
       "shootout_losses": "0",
       "goals_against_average": "2.89",
-      "rank": 45
+      "rank": 46
     },
     {
       "player_id": "10768",
@@ -18003,25 +18022,6 @@
       "ot_losses": "1",
       "shootout_losses": "0",
       "goals_against_average": "2.93",
-      "rank": 46
-    },
-    {
-      "player_id": "11075",
-      "rookie": "0",
-      "name": "Arno Tiefensee",
-      "active": "1",
-      "team_code": "IDH",
-      "games_played": "3",
-      "minutes_played": 142,
-      "shots": "68",
-      "save_percentage": "0.897",
-      "goals_against": "7",
-      "shutouts": "0",
-      "wins": "1",
-      "losses": "0",
-      "ot_losses": "1",
-      "shootout_losses": "0",
-      "goals_against_average": "2.95",
       "rank": 47
     },
     {

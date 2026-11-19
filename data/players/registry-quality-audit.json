@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "season": "2026-2027",
-  "generatedAt": "2026-11-19T04:57:18.449Z",
+  "generatedAt": "2026-11-19T04:59:09.620Z",
   "playerCount": 3342,
   "leagueCorrections": {
-    "applied": 198,
+    "applied": 199,
     "protectedRoster": 22,
     "ambiguous": 0,
     "missing": 2,
-    "unresolved": 15,
+    "unresolved": 12,
     "unresolvedWithExactCorrection": 0
   },
   "unresolvedLeaguePlayers": [
@@ -30,16 +30,6 @@
       "age": 19,
       "rightsTeam": "NSH",
       "source": "https://hockeyinsights.ca/team-pipeline/nashville-predators/",
-      "reason": "organization_name_only_not_current_team"
-    },
-    {
-      "id": "prospect:ANA:ethan-bowen",
-      "name": "Ethan Bowen",
-      "position": "F",
-      "birthDate": "2002-05-14",
-      "age": 24,
-      "rightsTeam": "ANA",
-      "source": "https://hockeyinsights.ca/team-pipeline/anaheim-ducks/",
       "reason": "organization_name_only_not_current_team"
     },
     {
@@ -80,16 +70,6 @@
       "age": 22,
       "rightsTeam": "DAL",
       "source": "https://hockeyinsights.ca/team-pipeline/dallas-stars/",
-      "reason": "organization_name_only_not_current_team"
-    },
-    {
-      "id": "prospect:CAR:roman-shokhrin",
-      "name": "Roman Shokhrin",
-      "position": "D",
-      "birthDate": "2006-02-19",
-      "age": 20,
-      "rightsTeam": "CAR",
-      "source": "https://hockeyinsights.ca/team-pipeline/carolina-hurricanes/",
       "reason": "organization_name_only_not_current_team"
     },
     {
@@ -143,16 +123,6 @@
       "reason": "organization_name_only_not_current_team"
     },
     {
-      "id": "nhl:8482908",
-      "name": "Viktor Hurtig",
-      "position": "D",
-      "birthDate": "2002-04-28",
-      "age": 24,
-      "rightsTeam": "NJD",
-      "source": "https://api-web.nhle.com/v1/prospects/NJD",
-      "reason": "organization_name_only_not_current_team"
-    },
-    {
       "id": "prospect:CAR:yegor-naumov",
       "name": "Yegor Naumov",
       "position": "G",
@@ -201,27 +171,27 @@
     "OTHER": 20,
     "OHL": 98,
     "WHL": 91,
-    "MHL": 32,
+    "MHL": 31,
     "SHL": 42,
-    "KHL": 56,
-    "VHL": 30,
+    "KHL": 57,
+    "VHL": 31,
     "QMJHL": 34,
     "CHL-QMJHL": 14,
     "CHL-OHL": 2,
     "NL": 8,
-    "RETIRED": 2,
+    "RETIRED": 3,
     "USHL": 24,
     "EUROPE": 37,
-    "UNKNOWN": 15,
+    "UNKNOWN": 12,
     "OJHL": 1,
     "DEL": 6,
     "USNTDP": 9,
     "HSA": 1,
     "USPORTS": 1,
     "SL": 1,
+    "BCHL": 2,
     "CZECH": 8,
     "CHL-WHL": 1,
-    "BCHL": 1,
     "SLOVAK": 2,
     "NORWAY": 1,
     "U20 NATIONELL": 2,

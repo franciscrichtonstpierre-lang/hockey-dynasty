@@ -36,7 +36,11 @@ for (const correction of corrections.players || []) {
   if (matches.length !== 1) { ambiguous++; continue; }
   const player = matches[0];
   // A verified NHL/AHL/ECHL roster feed outranks a manual prospect correction.
-  if (player.nhlRosterVerified || player.ahlRosterVerified || player.echlRosterVerified) {
+  const verifiedRosterForCurrentLeague =
+    (player.currentLeague === "NHL" && player.nhlRosterVerified) ||
+    (player.currentLeague === "AHL" && player.ahlRosterVerified) ||
+    (player.currentLeague === "ECHL" && player.echlRosterVerified);
+  if (verifiedRosterForCurrentLeague) {
     protectedRoster++;
     continue;
   }
@@ -56,6 +60,12 @@ for (const correction of corrections.players || []) {
 }
 const players = registry.players || [];
 const unknown = players.filter(player => player.currentLeague === "UNKNOWN" || !player.currentLeague);
+const unresolvedWithExactCorrection = unknown.filter(player =>
+  (corrections.players || []).some(correction =>
+    correction.playerId && String(correction.playerId) === String(player.id) &&
+    correction.currentLeague && /^https?:\/\//.test(correction.source || "")
+  )
+);
 for (const player of unknown) {
   player.currentTeam = null;
   player.leagueResolution ||= "unresolved_no_verified_current_roster_source";
@@ -96,7 +106,7 @@ const audit = {
   season: registry.season || "2026-2027",
   generatedAt: new Date().toISOString(),
   playerCount: players.length,
-  leagueCorrections: { applied, protectedRoster, ambiguous, missing, unresolved: unknown.length },
+  leagueCorrections: { applied, protectedRoster, ambiguous, missing, unresolved: unknown.length, unresolvedWithExactCorrection: unresolvedWithExactCorrection.length },
   unresolvedLeaguePlayers: unresolvedNames,
   potentialCoverage: potential,
   playersByLeague: byLeague,
@@ -104,6 +114,9 @@ const audit = {
 };
 await writeFile("data/players/registry-quality-audit.json", JSON.stringify(audit, null, 2) + "\n", "utf8");
 console.log("POST-RATINGS SOURCE RECONCILIATION: " + JSON.stringify(audit.leagueCorrections));
+if (unresolvedWithExactCorrection.length) {
+  throw new Error("Source-backed manual league corrections were left unresolved: " + unresolvedWithExactCorrection.map(p => p.name).join(", "));
+}
 console.log("POTENTIAL COVERAGE AUDIT: " + JSON.stringify(audit.potentialCoverage));
 console.log("LEAGUE COUNTS: " + JSON.stringify(byLeague));
 if (potential.provisional + potential.sourceReviewed !== players.length) {

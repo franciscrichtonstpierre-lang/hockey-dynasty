@@ -119,6 +119,8 @@ test("league-stat estimates are individualized, complete, bounded, and provenanc
   }
   assert.notDeepEqual(high.attributes, low.attributes);
   assert.notEqual(high.overall, low.overall);
+  assert.ok(high.attributes.PE > low.attributes.PE, "lower penalty rate must produce a higher discipline/PE rating");
+  assert.ok(high.attributes.PE - low.attributes.PE >= 15, "PE must have meaningful separation between disciplined and penalty-prone players");
 });
 
 test("league strength is reflected in the shared OA scale, not hidden by within-league percentiles", () => {

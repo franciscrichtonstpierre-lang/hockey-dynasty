@@ -175,6 +175,9 @@ for (const player of registry.players || []) {
     ? "oa_floor_invariant_correction_2026-11-05; requires_source_review"
     : "manual_source_review_2026-11-04";
   player.potentialSource = override.source;
+  player.potentialEvidence = floorAdjusted
+    ? "source_reviewed_value_floor_adjusted_requires_recheck"
+    : "published_scouting_sources";
   player.potentialConfidence = floorAdjusted ? "low" : (override.confidence || "medium");
   player.potentialRationale = floorAdjusted
     ? `${override.rationale} Floor-adjusted to current OA ${potentialFloor}; this correction requires a fresh source review.`

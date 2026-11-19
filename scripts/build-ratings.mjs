@@ -38,7 +38,7 @@ const blendRows=(currentRows,previousRows,fields)=>{
   }
   const plusRate=(row,games)=>games>0?n(row,"plusMinus")/Math.sqrt(games):0;
   blended.plusMinus=((plusRate(cur,cg)*currentWeight+plusRate(prev,pg)*previousWeight)/totalWeight)*10;
-  const toiRate=(row,games)=>games>0?toiSeconds(row):0;
+  const toiRate=(row,games)=>{const value=row?.timeOnIcePerGame??row?.avgToi??row?.timeOnIce;if(games<=0)return 0;if(typeof value==="string"&&value.includes(":")){const parts=value.split(":").map(Number);return parts.length===2?parts[0]*60+parts[1]:parts[0]*3600+parts[1]*60+parts[2]}return n(row,"timeOnIcePerGame","avgToi","timeOnIce")};
   blended.timeOnIcePerGame=(toiRate(cur,cg)*currentWeight+toiRate(prev,pg)*previousWeight)/totalWeight;
   blended.fightingMajors=n(cur,"fightingMajors","fightingMajorCount","fightMajors","fights")+n(prev,"fightingMajors","fightingMajorCount","fightMajors","fights");
   blended._evidenceGames=cg+Math.min(pg,82)*0.5;
@@ -63,7 +63,7 @@ const faceoffs=blendFaceoffs(faceoffRes.data||[],previousFaceoffRes.data||[]);
 
 const biosRes=await get("https://api.nhle.com/stats/rest/en/skater/bios?isAggregate=true&isGame=false&cayenneExp="+exp+"&limit=-1");
 const bios=new Map((biosRes.data||[]).map(p=>[String(p.playerId),p]));
-const faceoffs=new Map((faceoffRes.data||[]).map(p=>[String(p.playerId),p]));
+
 const goalieBiosRes=await get("https://api.nhle.com/stats/rest/en/goalie/bios?isAggregate=true&isGame=false&cayenneExp="+exp+"&limit=-1").catch(()=>({data:[]}));
 const goalieBios=new Map((goalieBiosRes.data||[]).map(p=>[String(p.playerId),p]));
 const pct=(values,v)=>{const a=values.filter(Number.isFinite).sort((x,y)=>x-y);if(!a.length)return .5;let lo=0,hi=a.length;while(lo<hi){const m=(lo+hi)>>1;if(a[m]<=v)lo=m+1;else hi=m}return lo/a.length};
@@ -121,7 +121,7 @@ for(const p of skaters){
   SK:clamp(42+toi*15+shot*12+point*8),
   EN:clamp(38+toi*24+sample(p)*12),
   PE:clamp(40+discipline*18+plus*8+takeaway*6),
-  FA:pos==="C"?clamp(42+pct((faceoffRes.data||[]).map(x=>n(x,"faceoffWinPct","faceoffWinPctg")),n(faceoffs.get(id),"faceoffWinPct","faceoffWinPctg"))*35):50,
+  FA:pos==="C"?clamp(42+pct([...faceoffs.values()].map(x=>n(x,"faceoffWinPct","faceoffWinPctg")),n(faceoffs.get(id),"faceoffWinPct","faceoffWinPctg"))*35):50,
   LE:clamp(38+toi*17+plus*10+powerPlay*5+shortHanded*3),
   SR:clamp(36+point*22+goal*18+shot*14+powerPlay*4),
   OFF:off,DEF:def,OA:oa
@@ -131,7 +131,7 @@ for(const p of skaters){
  a.DEF=clamp((a.CH+a.PO+a.HI)/3);
  const oaKeys=["SH","PL","ST","CH","PO","HI","SK","EN","PE","FA","LE","SR","OFF","DEF"];
  a.OA=clamp(oaKeys.reduce((sum,key)=>sum+a[key],0)/oaKeys.length);
- playerMetadata[id]={source:"NHL Stats REST regular-season player statistics",status:"sample_adjusted_statistical_estimate",confidence:"low",sampleConfidence:games(p)>=55?"high":games(p)>=20?"medium":"low",sampleSize:n(p,"_currentGames")>0?n(p,"_currentGames"):n(p,"_previousGames")>0?n(p,"_previousGames"):null,fightingMajors,ratedAttributes:Object.keys(players[id]).filter(key=>players[id][key]!=null),modeledAttributes:Object.keys(players[id]).filter(key=>players[id][key]==null),method:"nhl_season_statistics_percentile_model_v1",evidence:"nhl_player_statistics",position:pos,season:previousSeason+"+"+season};
+ playerMetadata[id]={source:"NHL Stats REST regular-season player statistics; 60% current season + 40% previous season",status:"two_season_weighted_statistical_estimate",confidence:"low",sampleConfidence:n(p,"_evidenceGames")>=55?"high":n(p,"_evidenceGames")>=25?"medium":"low",sampleSize:n(p,"_currentGames")>0?n(p,"_currentGames"):n(p,"_previousGames")>0?n(p,"_previousGames"):null,fightingMajors,ratedAttributes:Object.keys(players[id]).filter(key=>players[id][key]!=null),modeledAttributes:Object.keys(players[id]).filter(key=>players[id][key]==null),method:"nhl_two_season_weighted_percentile_model_v2",evidence:"nhl_player_statistics",position:pos,season:previousSeason+"+"+season};
 }
 for(const p of goalies){
  const id=String(p.playerId||"");if(!id)continue;
@@ -144,7 +144,7 @@ for(const p of goalies){
  const oaKeys=[sh,pl,st,ch,po,hi,clamp(ov-3),ov,ov,clamp(ov-5),ov,ov,off,def];
  const oa=clamp(oaKeys.reduce((sum,value)=>sum+value,0)/oaKeys.length);
  players[id]={FI:10,SH:sh,PL:pl,ST:st,CH:ch,PO:po,HI:hi,SK:clamp(ov-3),EN:ov,PE:ov,FA:clamp(ov-5),LE:ov,SR:ov,OFF:off,DEF:def,OA:oa};
- playerMetadata[id]={source:"NHL Stats REST regular-season goalie statistics",status:"sample_adjusted_statistical_estimate",confidence:"low",sampleConfidence:games(p)>=35?"high":games(p)>=15?"medium":"low",sampleSize:n(p,"_currentGames")>0?n(p,"_currentGames"):n(p,"_previousGames")>0?n(p,"_previousGames"):null,ratedAttributes:Object.keys(players[id]).filter(key=>players[id][key]!=null),modeledAttributes:Object.keys(players[id]).filter(key=>players[id][key]==null),method:"nhl_season_statistics_percentile_model_v1",evidence:"nhl_player_statistics",position:"G",season};
+ playerMetadata[id]={source:"NHL Stats REST regular-season goalie statistics; 60% current season + 40% previous season",status:"sample_adjusted_statistical_estimate",confidence:"low",sampleConfidence:n(p,"_evidenceGames")>=55?"high":n(p,"_evidenceGames")>=25?"medium":"low",sampleSize:n(p,"_currentGames")>0?n(p,"_currentGames"):n(p,"_previousGames")>0?n(p,"_previousGames"):null,ratedAttributes:Object.keys(players[id]).filter(key=>players[id][key]!=null),modeledAttributes:Object.keys(players[id]).filter(key=>players[id][key]==null),method:"nhl_season_statistics_percentile_model_v1",evidence:"nhl_player_statistics",position:"G",season};
 }
 if(Object.keys(players).length<450)throw Error("Too few ratings generated: "+Object.keys(players).length);
 await mkdir("data",{recursive:true});

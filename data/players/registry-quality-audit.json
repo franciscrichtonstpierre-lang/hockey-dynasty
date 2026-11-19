@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "season": "2026-2027",
-  "generatedAt": "2026-11-19T05:04:19.898Z",
+  "generatedAt": "2026-11-19T05:06:07.415Z",
   "playerCount": 3342,
   "leagueCorrections": {
     "applied": 200,
     "protectedRoster": 22,
     "ambiguous": 0,
     "missing": 2,
-    "unresolved": 9,
+    "unresolved": 7,
     "unresolvedWithExactCorrection": 0
   },
   "unresolvedLeaguePlayers": [
@@ -43,16 +43,6 @@
       "reason": "organization_name_only_not_current_team"
     },
     {
-      "id": "pipeline:DAL:ryan-brown",
-      "name": "Ryan Brown",
-      "position": "D",
-      "birthDate": null,
-      "age": 51,
-      "rightsTeam": null,
-      "source": "Own pick",
-      "reason": "organization_name_only_not_current_team"
-    },
-    {
       "id": "pipeline:PIT:ryan-segalla",
       "name": "Ryan Segalla",
       "position": "D",
@@ -70,16 +60,6 @@
       "age": 26,
       "rightsTeam": null,
       "source": "Own pick",
-      "reason": "organization_name_only_not_current_team"
-    },
-    {
-      "id": "prospect:MTL:ty-smilanic",
-      "name": "Ty Smilanic",
-      "position": "F",
-      "birthDate": "2002-01-20",
-      "age": 24,
-      "rightsTeam": "MTL",
-      "source": "https://hockeyinsights.ca/team-pipeline/montreal-canadiens/",
       "reason": "organization_name_only_not_current_team"
     },
     {
@@ -122,9 +102,9 @@
     "evidence": {
       "current_ability_and_age": 1951,
       "league_points_per_game": 165,
-      "draft_pick+league_points_per_game": 448,
+      "draft_pick+league_points_per_game": 449,
       "published_scouting_sources": 319,
-      "draft_pick": 407,
+      "draft_pick": 406,
       "published_source_rank+league_points_per_game": 22,
       "published_source_rank": 11,
       "draft_pick+goalie_save_percentage": 13,
@@ -139,7 +119,7 @@
     "LIIGA": 48,
     "ALLSVENSKAN": 19,
     "OTHER": 20,
-    "OHL": 98,
+    "OHL": 99,
     "WHL": 91,
     "MHL": 31,
     "SHL": 42,
@@ -150,7 +130,7 @@
     "CHL-OHL": 2,
     "POLAND": 1,
     "NL": 8,
-    "RETIRED": 3,
+    "RETIRED": 4,
     "USHL": 24,
     "EUROPE": 37,
     "OJHL": 1,
@@ -160,7 +140,7 @@
     "USPORTS": 1,
     "SL": 1,
     "BCHL": 2,
-    "UNKNOWN": 9,
+    "UNKNOWN": 7,
     "CZECH": 8,
     "CHL-WHL": 1,
     "SLOVAK": 2,

@@ -89,6 +89,7 @@ for (const player of players) {
   byLeague[league] = (byLeague[league] || 0) + 1;
 }
 registry.counts = byLeague;
+registry.leagues = [...new Set([...(registry.leagues || []), ...Object.keys(byLeague)])].sort();
 await writeFile("data/players/registry.json", JSON.stringify(registry, null, 2) + "\n", "utf8");
 const audit = {
   schemaVersion: 1,

@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "season": "2026-2027",
-  "generatedAt": "2026-11-19T04:54:00.822Z",
+  "generatedAt": "2026-11-19T04:55:41.311Z",
   "playerCount": 3342,
   "leagueCorrections": {
-    "applied": 194,
+    "applied": 198,
     "protectedRoster": 22,
     "ambiguous": 0,
     "missing": 2,
-    "unresolved": 21,
+    "unresolved": 15,
     "unresolvedWithExactCorrection": 0
   },
   "unresolvedLeaguePlayers": [
@@ -73,16 +73,6 @@
       "reason": "organization_name_only_not_current_team"
     },
     {
-      "id": "nhl:8483434",
-      "name": "Kirill Dolzhenkov",
-      "position": "F",
-      "birthDate": "2004-04-20",
-      "age": 22,
-      "rightsTeam": "CBJ",
-      "source": "https://api-web.nhle.com/v1/prospects/CBJ",
-      "reason": "organization_name_only_not_current_team"
-    },
-    {
       "id": "prospect:DAL:maxim-mayorov",
       "name": "Maxim Mayorov",
       "position": "G",
@@ -103,6 +93,16 @@
       "reason": "organization_name_only_not_current_team"
     },
     {
+      "id": "pipeline:DAL:ryan-brown",
+      "name": "Ryan Brown",
+      "position": "D",
+      "birthDate": null,
+      "age": 51,
+      "rightsTeam": null,
+      "source": "Own pick",
+      "reason": "organization_name_only_not_current_team"
+    },
+    {
       "id": "pipeline:PIT:ryan-segalla",
       "name": "Ryan Segalla",
       "position": "D",
@@ -120,56 +120,6 @@
       "age": 26,
       "rightsTeam": null,
       "source": "Own pick",
-      "reason": "organization_name_only_not_current_team"
-    },
-    {
-      "id": "nhl:8485651",
-      "name": "Sigge Holmgren",
-      "position": "D",
-      "birthDate": "2007-01-10",
-      "age": 19,
-      "rightsTeam": "NJD",
-      "source": "https://api-web.nhle.com/v1/prospects/NJD",
-      "reason": "organization_name_only_not_current_team"
-    },
-    {
-      "id": "nhl:8484841",
-      "name": "Simon Zether",
-      "position": "F",
-      "birthDate": "2005-10-18",
-      "age": 20,
-      "rightsTeam": "FLA",
-      "source": "https://api-web.nhle.com/v1/prospects/FLA",
-      "reason": "organization_name_only_not_current_team"
-    },
-    {
-      "id": "prospect:CAR:timur-kol",
-      "name": "Timur Kol",
-      "position": "D",
-      "birthDate": "2006-08-23",
-      "age": 20,
-      "rightsTeam": "CAR",
-      "source": "https://hockeyinsights.ca/team-pipeline/carolina-hurricanes/",
-      "reason": "organization_name_only_not_current_team"
-    },
-    {
-      "id": "prospect:LAK:tobias-krestan",
-      "name": "Tobias Krestan",
-      "position": "F",
-      "birthDate": "2008-01-04",
-      "age": 18,
-      "rightsTeam": "LAK",
-      "source": "https://hockeyinsights.ca/team-pipeline/los-angeles-kings/",
-      "reason": "organization_name_only_not_current_team"
-    },
-    {
-      "id": "nhl:8486232",
-      "name": "Tomas Chrenko",
-      "position": "F",
-      "birthDate": "2007-11-02",
-      "age": 18,
-      "rightsTeam": "NYR",
-      "source": "https://api-web.nhle.com/v1/prospects/NYR",
       "reason": "organization_name_only_not_current_team"
     },
     {
@@ -249,9 +199,9 @@
     "OTHER": 20,
     "OHL": 98,
     "WHL": 91,
-    "MHL": 31,
-    "SHL": 41,
-    "KHL": 55,
+    "MHL": 32,
+    "SHL": 42,
+    "KHL": 56,
     "VHL": 30,
     "QMJHL": 34,
     "CHL-QMJHL": 14,
@@ -260,9 +210,9 @@
     "RETIRED": 2,
     "USHL": 24,
     "EUROPE": 37,
-    "UNKNOWN": 21,
+    "UNKNOWN": 15,
     "OJHL": 1,
-    "DEL": 5,
+    "DEL": 6,
     "USNTDP": 9,
     "HSA": 1,
     "USPORTS": 1,
@@ -270,9 +220,9 @@
     "CZECH": 8,
     "CHL-WHL": 1,
     "BCHL": 1,
-    "SLOVAK": 1,
+    "SLOVAK": 2,
     "NORWAY": 1,
-    "U20 NATIONELL": 1,
+    "U20 NATIONELL": 2,
     "GERMANY3": 1
   },
   "policy": "Only source-backed corrections are applied. Verified roster memberships are protected. Unresolved players remain UNKNOWN; provisional potential remains clearly distinguished from source-reviewed scouting estimates."

@@ -4,7 +4,7 @@
   "season": "2026-2027",
   "seasonId": "94",
   "source": "Official AHL HockeyTech public player statistics feed",
-  "syncedAt": "2026-11-19T02:44:30.599Z",
+  "syncedAt": "2026-11-19T02:46:09.416Z",
   "endpoints": {
     "skaters": "https://lscluster.hockeytech.com/feed/index.php?feed=statviewfeed&key=ccb91f29d6744675&client_code=ahl&league_id=4&site_id=3&lang=en&view=players&season=94&team=all&limit=1000",
     "goalies": "https://lscluster.hockeytech.com/feed/index.php?feed=statviewfeed&key=ccb91f29d6744675&client_code=ahl&league_id=4&site_id=3&lang=en&view=players&season=94&team=all&limit=1000&position=goalies"
@@ -2673,7 +2673,7 @@
       "team_code": "MB",
       "games_played": "19",
       "goals": "4",
-      "shots": "46",
+      "shots": "47",
       "assists": "7",
       "points": "11",
       "points_per_game": "0.58",
@@ -2937,7 +2937,7 @@
       "team_code": "GR",
       "games_played": "18",
       "goals": "2",
-      "shots": "23",
+      "shots": "24",
       "assists": "9",
       "points": "11",
       "points_per_game": "0.61",
@@ -4017,7 +4017,7 @@
       "team_code": "MB",
       "games_played": "19",
       "goals": "3",
-      "shots": "38",
+      "shots": "40",
       "assists": "6",
       "points": "9",
       "points_per_game": "0.47",
@@ -5025,7 +5025,7 @@
       "team_code": "MB",
       "games_played": "19",
       "goals": "2",
-      "shots": "27",
+      "shots": "29",
       "assists": "6",
       "points": "8",
       "points_per_game": "0.42",
@@ -5169,7 +5169,7 @@
       "team_code": "GR",
       "games_played": "18",
       "goals": "0",
-      "shots": "18",
+      "shots": "19",
       "assists": "8",
       "points": "8",
       "points_per_game": "0.44",
@@ -12985,30 +12985,6 @@
       "rank": 535
     },
     {
-      "player_id": "9347",
-      "name": "Michael Milne",
-      "active": "1",
-      "position": "F",
-      "rookie": "0",
-      "team_code": "MB",
-      "games_played": "3",
-      "goals": "1",
-      "shots": "4",
-      "assists": "1",
-      "points": "2",
-      "points_per_game": "0.67",
-      "plus_minus": "1",
-      "penalty_minutes": "0",
-      "penalty_minutes_per_game": "0.00",
-      "power_play_goals": "0",
-      "short_handed_goals": "0",
-      "shootout_goals": "0",
-      "shootout_attempts": "0",
-      "shootout_winning_goals": "0",
-      "shootout_percentage": "0.0",
-      "rank": 536
-    },
-    {
       "player_id": "6840",
       "name": "Mitchell Vande Sompel",
       "active": "1",
@@ -13022,6 +12998,30 @@
       "points": "2",
       "points_per_game": "0.67",
       "plus_minus": "-1",
+      "penalty_minutes": "0",
+      "penalty_minutes_per_game": "0.00",
+      "power_play_goals": "0",
+      "short_handed_goals": "0",
+      "shootout_goals": "0",
+      "shootout_attempts": "0",
+      "shootout_winning_goals": "0",
+      "shootout_percentage": "0.0",
+      "rank": 536
+    },
+    {
+      "player_id": "9347",
+      "name": "Michael Milne",
+      "active": "1",
+      "position": "F",
+      "rookie": "0",
+      "team_code": "MB",
+      "games_played": "4",
+      "goals": "1",
+      "shots": "8",
+      "assists": "1",
+      "points": "2",
+      "points_per_game": "0.50",
+      "plus_minus": "1",
       "penalty_minutes": "0",
       "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
@@ -15057,7 +15057,7 @@
       "team_code": "MB",
       "games_played": "8",
       "goals": "1",
-      "shots": "8",
+      "shots": "10",
       "assists": "0",
       "points": "1",
       "points_per_game": "0.13",
@@ -16393,30 +16393,6 @@
       "rank": 677
     },
     {
-      "player_id": "11026",
-      "name": "Trey Augustine",
-      "active": "1",
-      "position": "G",
-      "rookie": "1",
-      "team_code": "GR",
-      "games_played": "9",
-      "goals": "0",
-      "shots": "0",
-      "assists": "1",
-      "points": "1",
-      "points_per_game": "0.11",
-      "plus_minus": "0",
-      "penalty_minutes": "0",
-      "penalty_minutes_per_game": "0.00",
-      "power_play_goals": "0",
-      "short_handed_goals": "0",
-      "shootout_goals": "0",
-      "shootout_attempts": "0",
-      "shootout_winning_goals": "0",
-      "shootout_percentage": "0.0",
-      "rank": 678
-    },
-    {
       "player_id": "10451",
       "name": "Justin Ertel",
       "active": "1",
@@ -16438,7 +16414,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 679
+      "rank": 678
     },
     {
       "player_id": "10967",
@@ -16462,7 +16438,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 680
+      "rank": 679
     },
     {
       "player_id": "10944",
@@ -16486,7 +16462,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 681
+      "rank": 680
     },
     {
       "player_id": "10000",
@@ -16510,7 +16486,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 682
+      "rank": 681
     },
     {
       "player_id": "8484",
@@ -16534,7 +16510,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 683
+      "rank": 682
     },
     {
       "player_id": "9078",
@@ -16552,6 +16528,30 @@
       "plus_minus": "-1",
       "penalty_minutes": "4",
       "penalty_minutes_per_game": "0.44",
+      "power_play_goals": "0",
+      "short_handed_goals": "0",
+      "shootout_goals": "0",
+      "shootout_attempts": "0",
+      "shootout_winning_goals": "0",
+      "shootout_percentage": "0.0",
+      "rank": 683
+    },
+    {
+      "player_id": "11026",
+      "name": "Trey Augustine",
+      "active": "1",
+      "position": "G",
+      "rookie": "1",
+      "team_code": "GR",
+      "games_played": "10",
+      "goals": "0",
+      "shots": "0",
+      "assists": "1",
+      "points": "1",
+      "points_per_game": "0.10",
+      "plus_minus": "0",
+      "penalty_minutes": "0",
+      "penalty_minutes_per_game": "0.00",
       "power_play_goals": "0",
       "short_handed_goals": "0",
       "shootout_goals": "0",
@@ -17001,7 +17001,7 @@
       "team_code": "MB",
       "games_played": "14",
       "goals": "0",
-      "shots": "14",
+      "shots": "15",
       "assists": "1",
       "points": "1",
       "points_per_game": "0.07",
@@ -21145,30 +21145,6 @@
       "rank": 875
     },
     {
-      "player_id": "10447",
-      "name": "Domenic DiVincentiis",
-      "active": "1",
-      "position": "G",
-      "rookie": "0",
-      "team_code": "MB",
-      "games_played": "9",
-      "goals": "0",
-      "shots": "0",
-      "assists": "0",
-      "points": "0",
-      "points_per_game": "0.00",
-      "plus_minus": "0",
-      "penalty_minutes": "0",
-      "penalty_minutes_per_game": "0.00",
-      "power_play_goals": "0",
-      "short_handed_goals": "0",
-      "shootout_goals": "0",
-      "shootout_attempts": "0",
-      "shootout_winning_goals": "0",
-      "shootout_percentage": "0.0",
-      "rank": 876
-    },
-    {
       "player_id": "5475",
       "name": "Mason Geertsen",
       "active": "1",
@@ -21190,7 +21166,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 877
+      "rank": 876
     },
     {
       "player_id": "10573",
@@ -21214,7 +21190,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 878
+      "rank": 877
     },
     {
       "player_id": "11033",
@@ -21238,7 +21214,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 879
+      "rank": 878
     },
     {
       "player_id": "7179",
@@ -21262,7 +21238,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 880
+      "rank": 879
     },
     {
       "player_id": "10092",
@@ -21286,7 +21262,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 881
+      "rank": 880
     },
     {
       "player_id": "9215",
@@ -21310,7 +21286,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 882
+      "rank": 881
     },
     {
       "player_id": "10460",
@@ -21334,7 +21310,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 883
+      "rank": 882
     },
     {
       "player_id": "9102",
@@ -21358,7 +21334,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 884
+      "rank": 883
     },
     {
       "player_id": "10207",
@@ -21382,7 +21358,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 885
+      "rank": 884
     },
     {
       "player_id": "7645",
@@ -21406,7 +21382,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 886
+      "rank": 885
     },
     {
       "player_id": "6869",
@@ -21430,7 +21406,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 887
+      "rank": 886
     },
     {
       "player_id": "10305",
@@ -21454,7 +21430,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 888
+      "rank": 887
     },
     {
       "player_id": "7785",
@@ -21478,7 +21454,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 889
+      "rank": 888
     },
     {
       "player_id": "11193",
@@ -21502,7 +21478,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 890
+      "rank": 889
     },
     {
       "player_id": "9142",
@@ -21526,7 +21502,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 891
+      "rank": 890
     },
     {
       "player_id": "5507",
@@ -21535,6 +21511,30 @@
       "position": "G",
       "rookie": "0",
       "team_code": "SJ",
+      "games_played": "10",
+      "goals": "0",
+      "shots": "0",
+      "assists": "0",
+      "points": "0",
+      "points_per_game": "0.00",
+      "plus_minus": "0",
+      "penalty_minutes": "0",
+      "penalty_minutes_per_game": "0.00",
+      "power_play_goals": "0",
+      "short_handed_goals": "0",
+      "shootout_goals": "0",
+      "shootout_attempts": "0",
+      "shootout_winning_goals": "0",
+      "shootout_percentage": "0.0",
+      "rank": 891
+    },
+    {
+      "player_id": "10447",
+      "name": "Domenic DiVincentiis",
+      "active": "1",
+      "position": "G",
+      "rookie": "0",
+      "team_code": "MB",
       "games_played": "10",
       "goals": "0",
       "shots": "0",
@@ -21673,30 +21673,6 @@
       "rank": 897
     },
     {
-      "player_id": "9571",
-      "name": "Ronnie Attard",
-      "active": "1",
-      "position": "D",
-      "rookie": "0",
-      "team_code": "GR",
-      "games_played": "11",
-      "goals": "0",
-      "shots": "14",
-      "assists": "0",
-      "points": "0",
-      "points_per_game": "0.00",
-      "plus_minus": "2",
-      "penalty_minutes": "10",
-      "penalty_minutes_per_game": "0.91",
-      "power_play_goals": "0",
-      "short_handed_goals": "0",
-      "shootout_goals": "0",
-      "shootout_attempts": "0",
-      "shootout_winning_goals": "0",
-      "shootout_percentage": "0.0",
-      "rank": 898
-    },
-    {
       "player_id": "10531",
       "name": "Lukas Fischer",
       "active": "1",
@@ -21718,7 +21694,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 899
+      "rank": 898
     },
     {
       "player_id": "11011",
@@ -21742,7 +21718,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 900
+      "rank": 899
     },
     {
       "player_id": "11118",
@@ -21766,7 +21742,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 901
+      "rank": 900
     },
     {
       "player_id": "5929",
@@ -21790,7 +21766,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 902
+      "rank": 901
     },
     {
       "player_id": "9983",
@@ -21814,7 +21790,7 @@
       "shootout_attempts": "0",
       "shootout_winning_goals": "0",
       "shootout_percentage": "0.0",
-      "rank": 903
+      "rank": 902
     },
     {
       "player_id": "5862",
@@ -21832,6 +21808,30 @@
       "plus_minus": "0",
       "penalty_minutes": "4",
       "penalty_minutes_per_game": "0.36",
+      "power_play_goals": "0",
+      "short_handed_goals": "0",
+      "shootout_goals": "0",
+      "shootout_attempts": "0",
+      "shootout_winning_goals": "0",
+      "shootout_percentage": "0.0",
+      "rank": 903
+    },
+    {
+      "player_id": "9571",
+      "name": "Ronnie Attard",
+      "active": "1",
+      "position": "D",
+      "rookie": "0",
+      "team_code": "GR",
+      "games_played": "12",
+      "goals": "0",
+      "shots": "16",
+      "assists": "0",
+      "points": "0",
+      "points_per_game": "0.00",
+      "plus_minus": "2",
+      "penalty_minutes": "10",
+      "penalty_minutes_per_game": "0.83",
       "power_play_goals": "0",
       "short_handed_goals": "0",
       "shootout_goals": "0",
@@ -22431,31 +22431,6 @@
       "rank": 12
     },
     {
-      "player_id": "10447",
-      "rookie": "0",
-      "name": "Domenic DiVincentiis",
-      "active": "1",
-      "team_code": "MB",
-      "games_played": "10",
-      "minutes_played": "558:55",
-      "saves": "257",
-      "shots": "275",
-      "save_percentage": "0.935",
-      "goals_against": "18",
-      "shutouts": "2",
-      "wins": "5",
-      "losses": "4",
-      "ot_losses": "0",
-      "shootout_goals_against": "0",
-      "shootout_attempts": "2",
-      "goals": "0",
-      "assists": "0",
-      "penalty_minutes": "0",
-      "shootout_percentage": "1.000",
-      "goals_against_average": "1.93",
-      "rank": 13
-    },
-    {
       "player_id": "10498",
       "rookie": "1",
       "name": "Damian Clara",
@@ -22478,7 +22453,7 @@
       "penalty_minutes": "0",
       "shootout_percentage": "1.000",
       "goals_against_average": "1.96",
-      "rank": 14
+      "rank": 13
     },
     {
       "player_id": "10570",
@@ -22503,7 +22478,7 @@
       "penalty_minutes": "10",
       "shootout_percentage": "0.667",
       "goals_against_average": "1.99",
-      "rank": 15
+      "rank": 14
     },
     {
       "player_id": "10204",
@@ -22528,7 +22503,7 @@
       "penalty_minutes": "0",
       "shootout_percentage": "0.000",
       "goals_against_average": "1.99",
-      "rank": 16
+      "rank": 15
     },
     {
       "player_id": "9139",
@@ -22553,7 +22528,7 @@
       "penalty_minutes": "0",
       "shootout_percentage": "0.000",
       "goals_against_average": "2.00",
-      "rank": 17
+      "rank": 16
     },
     {
       "player_id": "7343",
@@ -22578,7 +22553,7 @@
       "penalty_minutes": "0",
       "shootout_percentage": "0.000",
       "goals_against_average": "2.01",
-      "rank": 18
+      "rank": 17
     },
     {
       "player_id": "10802",
@@ -22603,7 +22578,7 @@
       "penalty_minutes": "0",
       "shootout_percentage": "0.000",
       "goals_against_average": "2.03",
-      "rank": 19
+      "rank": 18
     },
     {
       "player_id": "7784",
@@ -22628,32 +22603,7 @@
       "penalty_minutes": "0",
       "shootout_percentage": "0.000",
       "goals_against_average": "2.14",
-      "rank": 20
-    },
-    {
-      "player_id": "11026",
-      "rookie": "1",
-      "name": "Trey Augustine",
-      "active": "1",
-      "team_code": "GR",
-      "games_played": "10",
-      "minutes_played": "524:54",
-      "saves": "220",
-      "shots": "239",
-      "save_percentage": "0.921",
-      "goals_against": "19",
-      "shutouts": "1",
-      "wins": "5",
-      "losses": "1",
-      "ot_losses": "2",
-      "shootout_goals_against": "1",
-      "shootout_attempts": "2",
-      "goals": "0",
-      "assists": "1",
-      "penalty_minutes": "0",
-      "shootout_percentage": "0.500",
-      "goals_against_average": "2.17",
-      "rank": 21
+      "rank": 19
     },
     {
       "player_id": "10873",
@@ -22678,7 +22628,7 @@
       "penalty_minutes": "0",
       "shootout_percentage": "0.000",
       "goals_against_average": "2.22",
-      "rank": 22
+      "rank": 20
     },
     {
       "player_id": "7692",
@@ -22703,7 +22653,7 @@
       "penalty_minutes": "0",
       "shootout_percentage": "0.500",
       "goals_against_average": "2.24",
-      "rank": 23
+      "rank": 21
     },
     {
       "player_id": "6948",
@@ -22728,7 +22678,7 @@
       "penalty_minutes": "0",
       "shootout_percentage": "0.500",
       "goals_against_average": "2.26",
-      "rank": 24
+      "rank": 22
     },
     {
       "player_id": "6479",
@@ -22753,7 +22703,7 @@
       "penalty_minutes": "2",
       "shootout_percentage": "0.000",
       "goals_against_average": "2.27",
-      "rank": 25
+      "rank": 23
     },
     {
       "player_id": "9106",
@@ -22778,7 +22728,7 @@
       "penalty_minutes": "2",
       "shootout_percentage": "0.000",
       "goals_against_average": "2.29",
-      "rank": 26
+      "rank": 24
     },
     {
       "player_id": "7179",
@@ -22803,7 +22753,7 @@
       "penalty_minutes": "2",
       "shootout_percentage": "0.000",
       "goals_against_average": "2.32",
-      "rank": 27
+      "rank": 25
     },
     {
       "player_id": "7645",
@@ -22828,7 +22778,32 @@
       "penalty_minutes": "2",
       "shootout_percentage": "0.667",
       "goals_against_average": "2.33",
-      "rank": 28
+      "rank": 26
+    },
+    {
+      "player_id": "11026",
+      "rookie": "1",
+      "name": "Trey Augustine",
+      "active": "1",
+      "team_code": "GR",
+      "games_played": "10",
+      "minutes_played": "564:54",
+      "saves": "254",
+      "shots": "276",
+      "save_percentage": "0.920",
+      "goals_against": "22",
+      "shutouts": "1",
+      "wins": "6",
+      "losses": "1",
+      "ot_losses": "2",
+      "shootout_goals_against": "1",
+      "shootout_attempts": "2",
+      "goals": "0",
+      "assists": "1",
+      "penalty_minutes": "0",
+      "shootout_percentage": "0.500",
+      "goals_against_average": "2.34",
+      "rank": 27
     },
     {
       "player_id": "10454",
@@ -22853,7 +22828,7 @@
       "penalty_minutes": "0",
       "shootout_percentage": "0.636",
       "goals_against_average": "2.34",
-      "rank": 29
+      "rank": 28
     },
     {
       "player_id": "9373",
@@ -22878,7 +22853,7 @@
       "penalty_minutes": "0",
       "shootout_percentage": "0.000",
       "goals_against_average": "2.36",
-      "rank": 30
+      "rank": 29
     },
     {
       "player_id": "9391",
@@ -22903,6 +22878,31 @@
       "penalty_minutes": "0",
       "shootout_percentage": "0.000",
       "goals_against_average": "2.36",
+      "rank": 30
+    },
+    {
+      "player_id": "10447",
+      "rookie": "0",
+      "name": "Domenic DiVincentiis",
+      "active": "1",
+      "team_code": "MB",
+      "games_played": "10",
+      "minutes_played": "598:55",
+      "saves": "290",
+      "shots": "314",
+      "save_percentage": "0.924",
+      "goals_against": "24",
+      "shutouts": "2",
+      "wins": "5",
+      "losses": "5",
+      "ot_losses": "0",
+      "shootout_goals_against": "0",
+      "shootout_attempts": "2",
+      "goals": "0",
+      "assists": "0",
+      "penalty_minutes": "0",
+      "shootout_percentage": "1.000",
+      "goals_against_average": "2.40",
       "rank": 31
     },
     {

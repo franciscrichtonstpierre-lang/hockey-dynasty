@@ -273,7 +273,7 @@ export function estimatePlayerRatings(player, statRow, statIndex, existingRating
     FI:clamp(directFightRating > 0 ? directFightRating : fightCount > 0 ? 20 + Math.min(79, fightCount * 12) : 10),
     SH:clamp(isGoalie ? 35 + goalieSave * 48 : overall + (goals - 0.5) * 22 + (isForward ? 3 : position === "D" ? -5 : 0)),
     PL:clamp(isGoalie ? 35 + goalieGaa * 45 : overall + (assists - 0.5) * 22 + (isForward ? 2 : position === "D" ? -2 : 0)),
-    ST:clamp(isGoalie ? 35 + goalieSave * 42 : overall + (sizeScore - 0.5) * 22 + (position === "D" ? 3 : 0)),
+    ST:clamp(isGoalie ? 35 + goalieSave * 42 : overall + (assists - 0.5) * 18 + (points - 0.5) * 10 + (shots - 0.5) * 4), // Stickhandling proxy from puck skill/creation, never body size.
     CH:clamp(isGoalie ? 35 + goalieWorkload * 48 : overall + (defense - 0.5) * 18 + (position === "D" ? 4 : -1)),
     PO:clamp(isGoalie ? 35 + goalieGaa * 48 : overall + (defense - 0.5) * 16),
     HI:clamp(isGoalie ? 35 + goalieShutouts * 48 : overall + (sizeScore - 0.5) * 24 + (position === "D" ? 4 : 0)),

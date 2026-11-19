@@ -55,7 +55,8 @@ test("source-verified league corrections are reflected in the registry", () => {
     ["John Mooney","NCAA","University of Minnesota"],
     ["Mikus Vecvanags","BCHL","Victoria Grizzlies"],
     ["Yevgeni Volokhin","VHL","Khimik Voskresensk"],
-    ["Antoine Keller","NL","HC Ajoie"]
+    ["Antoine Keller","NL","HC Ajoie"],
+    ["Viktor Hurtig","RETIRED",null]
   ];
   for (const [name,league,team] of expected) {
     const player = byName.get(name);

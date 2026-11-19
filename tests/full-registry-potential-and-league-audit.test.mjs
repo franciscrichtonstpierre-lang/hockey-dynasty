@@ -57,6 +57,7 @@ test("source-verified league corrections are reflected in the registry", () => {
     ["Yevgeni Volokhin","VHL","Khimik Voskresensk"],
     ["Antoine Keller","NL","HC Ajoie"],
     ["Brett Murray","KHL","Shanghai Dragons"],
+    ["Jack Smith","NCAA","Minnesota State University (Mankato)"],
     ["Cameron Reid","NCAA","University of Michigan"],
     ["Ethan Bowen","BCHL",null],
     ["Roman Shokhrin","VHL","Molot Perm"],

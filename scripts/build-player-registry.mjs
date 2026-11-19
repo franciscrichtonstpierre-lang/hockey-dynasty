@@ -885,6 +885,7 @@ console.log(`Merged ${identityDuplicatesMerged} duplicate identity records using
 let nonRosterNhlReclassified=0;
 for(const p of records.values()){
  if(p.currentLeague!=="NHL"||p.nhlRosterVerified)continue;
+ if(p.leagueResolution==="manual_source_verified"&&p.currentLeagueSource)continue;
  if(p.ahlRosterVerified){p.currentLeague="AHL";continue;}
  if(p.echlRosterVerified){p.currentLeague="ECHL";continue;}
  p.currentLeague="UNKNOWN";

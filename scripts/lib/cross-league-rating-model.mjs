@@ -203,7 +203,37 @@ function statsProfile(player, row, index) {
   const gamesPct = centered(percentile(distributions.games, games), sampleWeight);
   const attack = 0.48 * pointPct + 0.28 * goalPct + 0.24 * assistPct;
   const defense = 0.55 * plusPct + 0.25 * gamesPct + 0.2 * disciplinePct;
-  const statOverall = clamp(40 + (attack * 0.64 + defense * 0.36) * 40 + (LEAGUE_BASE[index.league] ?? 55) * 0.18);
+  // Translate performance onto a shared NHL-scale ability ladder. Percentiles are
+  // calculated within each league, but they must not give an AHL/junior leader
+  // an NHL-star overall merely for dominating weaker competition.
+  const LEAGUE_RATING_CURVES = {
+    NHL:{base:76,spread:34,min:55,max:98},
+    AHL:{base:64,spread:24,min:48,max:80},
+    ECHL:{base:51,spread:20,min:38,max:66},
+    NCAA:{base:60,spread:22,min:45,max:76},
+    OHL:{base:52,spread:20,min:39,max:70},
+    WHL:{base:52,spread:20,min:39,max:70},
+    QMJHL:{base:52,spread:20,min:39,max:70},
+    USHL:{base:50,spread:19,min:38,max:68},
+    KHL:{base:70,spread:26,min:54,max:90},
+    SHL:{base:66,spread:23,min:50,max:84},
+    LIIGA:{base:65,spread:23,min:49,max:83},
+    ALLSVENSKAN:{base:59,spread:21,min:44,max:77},
+    DEL:{base:62,spread:22,min:47,max:80},
+    NL:{base:64,spread:22,min:48,max:82},
+    VHL:{base:58,spread:20,min:43,max:76},
+    MHL:{base:50,spread:18,min:38,max:66},
+    "U20 NATIONELL":{base:51,spread:19,min:38,max:68},
+    EUROPE:{base:58,spread:20,min:43,max:76},
+    CZECH:{base:61,spread:22,min:46,max:80},
+    NORWAY:{base:56,spread:19,min:42,max:73},
+    OTHER:{base:50,spread:18,min:35,max:68},
+    UNKNOWN:{base:48,spread:16,min:35,max:64}
+  };
+  const curve = LEAGUE_RATING_CURVES[index.league] || LEAGUE_RATING_CURVES[leagueKey(index.league)] || LEAGUE_RATING_CURVES.OTHER;
+  const relativePerformance = attack * 0.64 + defense * 0.36;
+  const statOverall = Math.max(curve.min, Math.min(curve.max,
+    Math.round(curve.base + (relativePerformance - 0.5) * curve.spread)));
   return { goalie:false, games, sampleWeight, score:statOverall, goals:goalPct, assists:assistPct, points:pointPct, shots:shotPct, plusMinus:plusPct, discipline:disciplinePct, durability:gamesPct, attack, defense };
 }
 

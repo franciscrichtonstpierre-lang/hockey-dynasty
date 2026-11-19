@@ -792,6 +792,39 @@ try{
  console.log("Future draft Elite Prospects biography enrichment: "+futureDraftBioApplied+" records updated; "+futureDraftBioAmbiguous+" ambiguous matches.");
 }catch(error){console.warn("Future draft biography enrichment skipped: "+error.message);}
 
+// Reconcile explicit club names before identity merging. A prospect pipeline may
+// label an NHL organization while listing the player's actual AHL/ECHL club.
+const nhlTeamNames = {
+ ANA:"Anaheim Ducks",BOS:"Boston Bruins",BUF:"Buffalo Sabres",CGY:"Calgary Flames",
+ CAR:"Carolina Hurricanes",CHI:"Chicago Blackhawks",COL:"Colorado Avalanche",CBJ:"Columbus Blue Jackets",
+ DAL:"Dallas Stars",DET:"Detroit Red Wings",EDM:"Edmonton Oilers",FLA:"Florida Panthers",
+ LAK:"Los Angeles Kings",MIN:"Minnesota Wild",MTL:"Montreal Canadiens",NSH:"Nashville Predators",
+ NJD:"New Jersey Devils",NYI:"New York Islanders",NYR:"New York Rangers",OTT:"Ottawa Senators",
+ PHI:"Philadelphia Flyers",PIT:"Pittsburgh Penguins",SJS:"San Jose Sharks",SEA:"Seattle Kraken",
+ STL:"St. Louis Blues",TBL:"Tampa Bay Lightning",TOR:"Toronto Maple Leafs",UTA:"Utah Mammoth",
+ VAN:"Vancouver Canucks",VGK:"Vegas Golden Knights",WSH:"Washington Capitals",WPG:"Winnipeg Jets"
+};
+const nhlCodeByTeamName = new Map(Object.entries(nhlTeamNames).map(([code,name])=>[nameKey(name),code]));
+const ahlNameByKey = new Map(affiliations.filter(t=>t.ahlName).map(t=>[nameKey(t.ahlName),t.ahlName]));
+const echlNameByKey = new Map(echlAffiliations.filter(t=>t.echlName).map(t=>[nameKey(t.echlName),t.echlName]));
+let teamLeagueCorrections = 0;
+for(const p of records.values()){
+ const key=nameKey(p.currentTeam);
+ if(!key)continue;
+ if(ahlNameByKey.has(key)){
+  if(p.currentLeague!=="AHL"||p.currentTeam!==ahlNameByKey.get(key))teamLeagueCorrections++;
+  p.currentLeague="AHL";p.currentTeam=ahlNameByKey.get(key);p.leagueResolution="explicit_current_team_name";
+ }else if(echlNameByKey.has(key)){
+  if(p.currentLeague!=="ECHL"||p.currentTeam!==echlNameByKey.get(key))teamLeagueCorrections++;
+  p.currentLeague="ECHL";p.currentTeam=echlNameByKey.get(key);p.leagueResolution="explicit_current_team_name";
+ }else if(nhlCodeByTeamName.has(key)){
+  const code=nhlCodeByTeamName.get(key);
+  if(p.currentLeague!=="NHL"||p.currentTeam!==code)teamLeagueCorrections++;
+  p.currentLeague="NHL";p.currentTeam=code;p.leagueResolution="explicit_current_team_name";
+ }
+}
+console.log(`Registry current-team league reconciliation: ${teamLeagueCorrections} records corrected from exact club-name matches.`);
+
 // Collapse same-person records that appear in both NHL and AHL snapshots.
 const samePerson = new Map();
 for (const p of records.values()) {

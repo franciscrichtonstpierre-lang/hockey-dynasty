@@ -1,20 +1,8 @@
-name: Refresh player ratings
+name: Refresh player ratings (requires approved data rights)
 on:
-  push:
-    paths:
-      - "scripts/build-ratings.mjs"
-      - "scripts/apply-player-ratings.mjs"
-      - "scripts/lib/cross-league-rating-model.mjs"
-      - "scripts/lib/advanced-player-rating-model.mjs"
-      - "scripts/lib/player-ratings.mjs"
-      - "scripts/export-registry-index.mjs"
-      - "data/europe/**"
-      - "data/ratings-calibration-overrides.json"
-      - "tests/**"
-      - ".github/workflows/refresh-ratings.yml"
+  # Manual only. build-ratings.mjs checks the central rights registry and blocks
+  # the legacy NHL Stats REST source until a free commercial grant is verified.
   workflow_dispatch:
-  schedule:
-    - cron: "17 8 * * *"
 permissions:
   contents: write
 concurrency:

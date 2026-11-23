@@ -12,7 +12,7 @@ test("advanced evidence importer creates within-cohort percentiles with provenan
   try {
     const input = join(dir, "input.json"), output = join(dir, "out.json");
     await writeFile(input, JSON.stringify({
-      source:{name:"Test source",datasetId:"test-fixture",url:"https://example.org/data",checkedAt:"2026-11-15T12:00:00Z",season:"2025-2026",licenseStatus:"approved",licenseId:"TEST-COMMERCIAL-001",permissions:{commercialGameUse:true,derivedOutputs:true,displayInGame:true},thirdPartyRightsVerified:true,paid:false,licenseVerifiedAt:"2026-11-15T12:00:00Z"},
+      source:{name:"Test source",datasetId:"test-fixture",url:"https://example.org/data",checkedAt:"2026-11-15T12:00:00Z",season:"2025-2026",licenseStatus:"approved",licenseId:"TEST-COMMERCIAL-001",permissions:{commercialGameUse:true,derivedOutputs:true,displayInGame:true,retentionAllowed:true},thirdPartyRightsVerified:true,attributionRequired:false,attributionSatisfied:true,shareAlikeRequired:false,shareAlikeCompliant:true,paid:false,licenseVerifiedAt:"2026-11-15T12:00:00Z"},
       rows:[
         {playerId:"p1",position:"F",league:"NHL",season:"2025-2026",gamesPlayed:50,usageCohort:"all",metrics:{ixgPer60:1,topSpeed:30}},
         {playerId:"p2",position:"F",league:"NHL",season:"2025-2026",gamesPlayed:50,usageCohort:"all",metrics:{ixgPer60:2,topSpeed:32}},

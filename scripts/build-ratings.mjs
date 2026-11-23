@@ -1,5 +1,10 @@
-// Build league-wide game attributes from NHL Stats REST player-level reports.
-import {writeFile,mkdir} from "node:fs/promises";
+// Legacy development-only builder. NHL Stats REST is not cleared for commercial use.
+import {readFile,writeFile,mkdir} from "node:fs/promises";
+import {assertCommercialExportAllowed} from "./lib/data-rights-gate.mjs";
+const rightsRegistry=JSON.parse(await readFile(new URL("../data/data-source-rights-registry.json",import.meta.url),"utf8"));
+const sourceRights=rightsRegistry.datasets?.nhl_stats_rest_2025_2026;
+if(!sourceRights)throw Error("Missing NHL Stats REST source-rights record; refusing ratings build.");
+assertCommercialExportAllowed(sourceRights,"NHL Stats REST ratings build");
 const codes=["ANA","BOS","BUF","CGY","CAR","CHI","COL","CBJ","DAL","DET","EDM","FLA","LAK","MIN","MTL","NSH","NJD","NYI","NYR","OTT","PHI","PIT","SJS","SEA","STL","TBL","TOR","UTA","VAN","VGK","WSH","WPG"];
 const season=process.env.NHL_RATING_SEASON||"20252026";
 const clamp=(n,a=0,b=99)=>Math.max(a,Math.min(b,Math.round(Number.isFinite(n)?n:a)));

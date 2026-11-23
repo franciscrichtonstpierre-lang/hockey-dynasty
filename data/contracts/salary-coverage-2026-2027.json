@@ -1,38 +1,230 @@
 {
   "season": "2026-2027",
-  "generatedAt": "2026-11-16T10:20:22.914Z",
+  "generatedAt": "2026-11-23T09:43:01.034Z",
   "nhl": {
-    "total": 800,
-    "salaryPresent": 800,
-    "verifiedSalaryPresent": 800,
+    "total": 817,
+    "salaryPresent": 804,
+    "verifiedSalaryPresent": 804,
     "salaryBasisCounts": {
-      "verified_nhl_base_salary": 800
+      "verified_nhl_base_salary": 804,
+      "salary_not_verified": 13
     },
-    "capHitPresent": 800,
-    "verifiedCapHitPresent": 800,
+    "capHitPresent": 803,
+    "verifiedCapHitPresent": 803,
     "capHitBasisCounts": {
       "verified_manual_override": 151,
-      "verified_season_cap_hit": 428,
+      "verified_season_cap_hit": 429,
       "verified_puckpedia_season_cap_hit": 141,
+      "missing_basis": 14,
       "verified_puckpedia_cap_hit": 71,
-      "verified_contract_total_divided_by_term": 9
+      "verified_contract_total_divided_by_term": 11
     },
-    "missingSalary": [],
-    "missingCapHit": [],
+    "missingSalary": [
+      {
+        "playerId": 8479591,
+        "name": "Michael Eyssimont",
+        "teamCode": "BOS",
+        "capHitUsd": null,
+        "salaryBasis": "salary_not_verified"
+      },
+      {
+        "playerId": 8481167,
+        "name": "Brayden Pachal",
+        "teamCode": "CGY",
+        "capHitUsd": null,
+        "salaryBasis": "salary_not_verified"
+      },
+      {
+        "playerId": 8482942,
+        "name": "Alex Gagne",
+        "teamCode": "COL",
+        "capHitUsd": null,
+        "salaryBasis": "salary_not_verified"
+      },
+      {
+        "playerId": 8478904,
+        "name": "Steven Lorentz",
+        "teamCode": "CBJ",
+        "capHitUsd": 1350000,
+        "salaryBasis": "salary_not_verified"
+      },
+      {
+        "playerId": 8480806,
+        "name": "Isac Lundeström",
+        "teamCode": "CBJ",
+        "capHitUsd": null,
+        "salaryBasis": "salary_not_verified"
+      },
+      {
+        "playerId": 8484987,
+        "name": "Anton Silaev",
+        "teamCode": "NJD",
+        "capHitUsd": null,
+        "salaryBasis": "salary_not_verified"
+      },
+      {
+        "playerId": 8477018,
+        "name": "Ben Hutton",
+        "teamCode": "NYI",
+        "capHitUsd": null,
+        "salaryBasis": "salary_not_verified"
+      },
+      {
+        "playerId": 8478446,
+        "name": "Glenn Gawdin",
+        "teamCode": "NYR",
+        "capHitUsd": 875000,
+        "salaryBasis": "salary_not_verified"
+      },
+      {
+        "playerId": 8482733,
+        "name": "Logan Mailloux",
+        "teamCode": "STL",
+        "capHitUsd": 850000,
+        "salaryBasis": "salary_not_verified"
+      },
+      {
+        "playerId": 8484770,
+        "name": "Sam O'Reilly",
+        "teamCode": "TBL",
+        "capHitUsd": null,
+        "salaryBasis": "salary_not_verified"
+      },
+      {
+        "playerId": 8481827,
+        "name": "Ben McCartney",
+        "teamCode": "UTA",
+        "capHitUsd": null,
+        "salaryBasis": "salary_not_verified"
+      },
+      {
+        "playerId": 8485010,
+        "name": "Gregor Biber",
+        "teamCode": "UTA",
+        "capHitUsd": null,
+        "salaryBasis": "salary_not_verified"
+      },
+      {
+        "playerId": 8481708,
+        "name": "Zac Jones",
+        "teamCode": "UTA",
+        "capHitUsd": null,
+        "salaryBasis": "salary_not_verified"
+      }
+    ],
+    "missingCapHit": [
+      {
+        "playerId": 8479591,
+        "name": "Michael Eyssimont",
+        "teamCode": "BOS",
+        "salaryUsd": null
+      },
+      {
+        "playerId": 8481167,
+        "name": "Brayden Pachal",
+        "teamCode": "CGY",
+        "salaryUsd": null
+      },
+      {
+        "playerId": 8482942,
+        "name": "Alex Gagne",
+        "teamCode": "COL",
+        "salaryUsd": null
+      },
+      {
+        "playerId": 8480806,
+        "name": "Isac Lundeström",
+        "teamCode": "CBJ",
+        "salaryUsd": null
+      },
+      {
+        "playerId": 8477335,
+        "name": "Kyle Burroughs",
+        "teamCode": "DAL",
+        "salaryUsd": 850000
+      },
+      {
+        "playerId": 8482132,
+        "name": "Brett Berard",
+        "teamCode": "MTL",
+        "salaryUsd": 850000
+      },
+      {
+        "playerId": 8484987,
+        "name": "Anton Silaev",
+        "teamCode": "NJD",
+        "salaryUsd": null
+      },
+      {
+        "playerId": 8477018,
+        "name": "Ben Hutton",
+        "teamCode": "NYI",
+        "salaryUsd": null
+      },
+      {
+        "playerId": 8481517,
+        "name": "Brett Leason",
+        "teamCode": "SJS",
+        "salaryUsd": 850000
+      },
+      {
+        "playerId": 8484770,
+        "name": "Sam O'Reilly",
+        "teamCode": "TBL",
+        "salaryUsd": null
+      },
+      {
+        "playerId": 8482525,
+        "name": "Ryan Tverberg",
+        "teamCode": "TOR",
+        "salaryUsd": 850000
+      },
+      {
+        "playerId": 8481827,
+        "name": "Ben McCartney",
+        "teamCode": "UTA",
+        "salaryUsd": null
+      },
+      {
+        "playerId": 8485010,
+        "name": "Gregor Biber",
+        "teamCode": "UTA",
+        "salaryUsd": null
+      },
+      {
+        "playerId": 8481708,
+        "name": "Zac Jones",
+        "teamCode": "UTA",
+        "salaryUsd": null
+      }
+    ],
     "byTeam": {
       "ANA": {
-        "players": 27,
-        "salaryPresent": 27,
-        "capHitPresent": 27,
+        "players": 26,
+        "salaryPresent": 26,
+        "capHitPresent": 26,
         "missingSalary": [],
         "missingCapHit": []
       },
       "BOS": {
-        "players": 23,
+        "players": 24,
         "salaryPresent": 23,
         "capHitPresent": 23,
-        "missingSalary": [],
-        "missingCapHit": []
+        "missingSalary": [
+          {
+            "playerId": 8479591,
+            "name": "Michael Eyssimont",
+            "capHitUsd": null,
+            "salaryBasis": "salary_not_verified"
+          }
+        ],
+        "missingCapHit": [
+          {
+            "playerId": 8479591,
+            "name": "Michael Eyssimont",
+            "salaryUsd": null
+          }
+        ]
       },
       "BUF": {
         "players": 25,
@@ -42,25 +234,57 @@
         "missingCapHit": []
       },
       "CAR": {
-        "players": 24,
-        "salaryPresent": 24,
-        "capHitPresent": 24,
+        "players": 23,
+        "salaryPresent": 23,
+        "capHitPresent": 23,
         "missingSalary": [],
         "missingCapHit": []
       },
       "CBJ": {
-        "players": 22,
-        "salaryPresent": 22,
-        "capHitPresent": 22,
-        "missingSalary": [],
-        "missingCapHit": []
+        "players": 25,
+        "salaryPresent": 23,
+        "capHitPresent": 24,
+        "missingSalary": [
+          {
+            "playerId": 8478904,
+            "name": "Steven Lorentz",
+            "capHitUsd": 1350000,
+            "salaryBasis": "salary_not_verified"
+          },
+          {
+            "playerId": 8480806,
+            "name": "Isac Lundeström",
+            "capHitUsd": null,
+            "salaryBasis": "salary_not_verified"
+          }
+        ],
+        "missingCapHit": [
+          {
+            "playerId": 8480806,
+            "name": "Isac Lundeström",
+            "salaryUsd": null
+          }
+        ]
       },
       "CGY": {
-        "players": 27,
-        "salaryPresent": 27,
-        "capHitPresent": 27,
-        "missingSalary": [],
-        "missingCapHit": []
+        "players": 26,
+        "salaryPresent": 25,
+        "capHitPresent": 25,
+        "missingSalary": [
+          {
+            "playerId": 8481167,
+            "name": "Brayden Pachal",
+            "capHitUsd": null,
+            "salaryBasis": "salary_not_verified"
+          }
+        ],
+        "missingCapHit": [
+          {
+            "playerId": 8481167,
+            "name": "Brayden Pachal",
+            "salaryUsd": null
+          }
+        ]
       },
       "CHI": {
         "players": 25,
@@ -70,30 +294,49 @@
         "missingCapHit": []
       },
       "COL": {
-        "players": 23,
-        "salaryPresent": 23,
-        "capHitPresent": 23,
-        "missingSalary": [],
-        "missingCapHit": []
+        "players": 26,
+        "salaryPresent": 25,
+        "capHitPresent": 25,
+        "missingSalary": [
+          {
+            "playerId": 8482942,
+            "name": "Alex Gagne",
+            "capHitUsd": null,
+            "salaryBasis": "salary_not_verified"
+          }
+        ],
+        "missingCapHit": [
+          {
+            "playerId": 8482942,
+            "name": "Alex Gagne",
+            "salaryUsd": null
+          }
+        ]
       },
       "DAL": {
-        "players": 24,
-        "salaryPresent": 24,
+        "players": 25,
+        "salaryPresent": 25,
         "capHitPresent": 24,
         "missingSalary": [],
-        "missingCapHit": []
+        "missingCapHit": [
+          {
+            "playerId": 8477335,
+            "name": "Kyle Burroughs",
+            "salaryUsd": 850000
+          }
+        ]
       },
       "DET": {
-        "players": 26,
-        "salaryPresent": 26,
-        "capHitPresent": 26,
+        "players": 25,
+        "salaryPresent": 25,
+        "capHitPresent": 25,
         "missingSalary": [],
         "missingCapHit": []
       },
       "EDM": {
-        "players": 29,
-        "salaryPresent": 29,
-        "capHitPresent": 29,
+        "players": 28,
+        "salaryPresent": 28,
+        "capHitPresent": 28,
         "missingSalary": [],
         "missingCapHit": []
       },
@@ -112,25 +355,44 @@
         "missingCapHit": []
       },
       "MIN": {
-        "players": 27,
-        "salaryPresent": 27,
-        "capHitPresent": 27,
+        "players": 26,
+        "salaryPresent": 26,
+        "capHitPresent": 26,
         "missingSalary": [],
         "missingCapHit": []
       },
       "MTL": {
-        "players": 25,
-        "salaryPresent": 25,
-        "capHitPresent": 25,
+        "players": 27,
+        "salaryPresent": 27,
+        "capHitPresent": 26,
         "missingSalary": [],
-        "missingCapHit": []
+        "missingCapHit": [
+          {
+            "playerId": 8482132,
+            "name": "Brett Berard",
+            "salaryUsd": 850000
+          }
+        ]
       },
       "NJD": {
-        "players": 23,
+        "players": 24,
         "salaryPresent": 23,
         "capHitPresent": 23,
-        "missingSalary": [],
-        "missingCapHit": []
+        "missingSalary": [
+          {
+            "playerId": 8484987,
+            "name": "Anton Silaev",
+            "capHitUsd": null,
+            "salaryBasis": "salary_not_verified"
+          }
+        ],
+        "missingCapHit": [
+          {
+            "playerId": 8484987,
+            "name": "Anton Silaev",
+            "salaryUsd": null
+          }
+        ]
       },
       "NSH": {
         "players": 24,
@@ -140,23 +402,43 @@
         "missingCapHit": []
       },
       "NYI": {
-        "players": 24,
+        "players": 25,
         "salaryPresent": 24,
         "capHitPresent": 24,
-        "missingSalary": [],
-        "missingCapHit": []
+        "missingSalary": [
+          {
+            "playerId": 8477018,
+            "name": "Ben Hutton",
+            "capHitUsd": null,
+            "salaryBasis": "salary_not_verified"
+          }
+        ],
+        "missingCapHit": [
+          {
+            "playerId": 8477018,
+            "name": "Ben Hutton",
+            "salaryUsd": null
+          }
+        ]
       },
       "NYR": {
-        "players": 27,
+        "players": 28,
         "salaryPresent": 27,
-        "capHitPresent": 27,
-        "missingSalary": [],
+        "capHitPresent": 28,
+        "missingSalary": [
+          {
+            "playerId": 8478446,
+            "name": "Glenn Gawdin",
+            "capHitUsd": 875000,
+            "salaryBasis": "salary_not_verified"
+          }
+        ],
         "missingCapHit": []
       },
       "OTT": {
-        "players": 24,
-        "salaryPresent": 24,
-        "capHitPresent": 24,
+        "players": 23,
+        "salaryPresent": 23,
+        "capHitPresent": 23,
         "missingSalary": [],
         "missingCapHit": []
       },
@@ -168,9 +450,9 @@
         "missingCapHit": []
       },
       "PIT": {
-        "players": 26,
-        "salaryPresent": 26,
-        "capHitPresent": 26,
+        "players": 25,
+        "salaryPresent": 25,
+        "capHitPresent": 25,
         "missingSalary": [],
         "missingCapHit": []
       },
@@ -184,37 +466,104 @@
       "SJS": {
         "players": 25,
         "salaryPresent": 25,
-        "capHitPresent": 25,
+        "capHitPresent": 24,
         "missingSalary": [],
-        "missingCapHit": []
+        "missingCapHit": [
+          {
+            "playerId": 8481517,
+            "name": "Brett Leason",
+            "salaryUsd": 850000
+          }
+        ]
       },
       "STL": {
-        "players": 25,
+        "players": 26,
         "salaryPresent": 25,
-        "capHitPresent": 25,
-        "missingSalary": [],
+        "capHitPresent": 26,
+        "missingSalary": [
+          {
+            "playerId": 8482733,
+            "name": "Logan Mailloux",
+            "capHitUsd": 850000,
+            "salaryBasis": "salary_not_verified"
+          }
+        ],
         "missingCapHit": []
       },
       "TBL": {
-        "players": 24,
+        "players": 25,
         "salaryPresent": 24,
         "capHitPresent": 24,
-        "missingSalary": [],
-        "missingCapHit": []
+        "missingSalary": [
+          {
+            "playerId": 8484770,
+            "name": "Sam O'Reilly",
+            "capHitUsd": null,
+            "salaryBasis": "salary_not_verified"
+          }
+        ],
+        "missingCapHit": [
+          {
+            "playerId": 8484770,
+            "name": "Sam O'Reilly",
+            "salaryUsd": null
+          }
+        ]
       },
       "TOR": {
-        "players": 28,
-        "salaryPresent": 28,
-        "capHitPresent": 28,
+        "players": 31,
+        "salaryPresent": 31,
+        "capHitPresent": 30,
         "missingSalary": [],
-        "missingCapHit": []
+        "missingCapHit": [
+          {
+            "playerId": 8482525,
+            "name": "Ryan Tverberg",
+            "salaryUsd": 850000
+          }
+        ]
       },
       "UTA": {
-        "players": 23,
-        "salaryPresent": 23,
-        "capHitPresent": 23,
-        "missingSalary": [],
-        "missingCapHit": []
+        "players": 28,
+        "salaryPresent": 25,
+        "capHitPresent": 25,
+        "missingSalary": [
+          {
+            "playerId": 8481827,
+            "name": "Ben McCartney",
+            "capHitUsd": null,
+            "salaryBasis": "salary_not_verified"
+          },
+          {
+            "playerId": 8485010,
+            "name": "Gregor Biber",
+            "capHitUsd": null,
+            "salaryBasis": "salary_not_verified"
+          },
+          {
+            "playerId": 8481708,
+            "name": "Zac Jones",
+            "capHitUsd": null,
+            "salaryBasis": "salary_not_verified"
+          }
+        ],
+        "missingCapHit": [
+          {
+            "playerId": 8481827,
+            "name": "Ben McCartney",
+            "salaryUsd": null
+          },
+          {
+            "playerId": 8485010,
+            "name": "Gregor Biber",
+            "salaryUsd": null
+          },
+          {
+            "playerId": 8481708,
+            "name": "Zac Jones",
+            "salaryUsd": null
+          }
+        ]
       },
       "VAN": {
         "players": 25,
@@ -231,26 +580,40 @@
         "missingCapHit": []
       },
       "WPG": {
-        "players": 24,
-        "salaryPresent": 24,
-        "capHitPresent": 24,
+        "players": 25,
+        "salaryPresent": 25,
+        "capHitPresent": 25,
         "missingSalary": [],
         "missingCapHit": []
       },
       "WSH": {
-        "players": 25,
-        "salaryPresent": 25,
-        "capHitPresent": 25,
+        "players": 26,
+        "salaryPresent": 26,
+        "capHitPresent": 26,
         "missingSalary": [],
         "missingCapHit": []
       }
     }
   },
   "organization": {
-    "total": 2562,
-    "matchedContracts": 445,
-    "salaryPresent": 427,
+    "total": 2549,
+    "matchedContracts": 441,
+    "salaryPresent": 421,
     "matchedMissingSalary": [
+      {
+        "playerId": 8484790,
+        "name": "Adam Jiricek",
+        "teamCode": "STL",
+        "currentLeague": "AHL",
+        "contract": "manual-adam-jiricek-2024-2027"
+      },
+      {
+        "playerId": 0,
+        "name": "Ben Jones",
+        "teamCode": "CGY",
+        "currentLeague": "AHL",
+        "contract": "manual-ben-jones-2026-2027"
+      },
       {
         "playerId": 0,
         "name": "Calle Odelius",
@@ -274,17 +637,24 @@
       },
       {
         "playerId": 0,
+        "name": "Donovan Sebrango",
+        "teamCode": "FLA",
+        "currentLeague": "AHL",
+        "contract": "8482131|FLA|2026-07"
+      },
+      {
+        "playerId": 8483510,
+        "name": "Elias Salomonsson",
+        "teamCode": null,
+        "currentLeague": "AHL",
+        "contract": "8483510|WPG|2022-07"
+      },
+      {
+        "playerId": 0,
         "name": "Gavin McCarthy",
         "teamCode": "BUF",
         "currentLeague": "AHL",
         "contract": "gavin mccarthy|BUF|2026-03"
-      },
-      {
-        "playerId": 0,
-        "name": "Gregor Biber",
-        "teamCode": "UTA",
-        "currentLeague": "AHL",
-        "contract": "8485010|UTA|2026-05"
       },
       {
         "playerId": 0,
@@ -305,14 +675,7 @@
         "name": "Joshua Brown",
         "teamCode": "EDM",
         "currentLeague": "AHL",
-        "contract": "joshua brown|EDM|2024-07"
-      },
-      {
-        "playerId": 8482733,
-        "name": "Logan Mailloux",
-        "teamCode": "STL",
-        "currentLeague": "AHL",
-        "contract": "8482733|STL|2026-01"
+        "contract": "8477384|EDM|2024-07"
       },
       {
         "playerId": 0,
@@ -326,7 +689,21 @@
         "name": "Mads Sogaard",
         "teamCode": "TBL",
         "currentLeague": "AHL",
-        "contract": "mads sogaard|TBL|2026-07"
+        "contract": "8481544|TBL|2026-07"
+      },
+      {
+        "playerId": 0,
+        "name": "Miko Matikka",
+        "teamCode": "UTA",
+        "currentLeague": "ECHL",
+        "contract": "miko matikka|UTA|2024-07"
+      },
+      {
+        "playerId": 0,
+        "name": "Nikita Prishchepov",
+        "teamCode": "COL",
+        "currentLeague": "AHL",
+        "contract": "8485105|COL|2024-10"
       },
       {
         "playerId": 0,
@@ -340,20 +717,13 @@
         "name": "Quinton Burns",
         "teamCode": "STL",
         "currentLeague": "AHL",
-        "contract": "8484151|STL|2024-08"
-      },
-      {
-        "playerId": 0,
-        "name": "Sam O'Reilly",
-        "teamCode": "TBL",
-        "currentLeague": "AHL",
-        "contract": "8484770|EDM|2024-10"
+        "contract": "manual-quinton-burns-2024-2027"
       },
       {
         "playerId": 0,
         "name": "Scott Ratzlaff",
         "teamCode": "BUF",
-        "currentLeague": "AHL",
+        "currentLeague": "ECHL",
         "contract": "scott ratzlaff|BUF|2024-10"
       },
       {
@@ -383,6 +753,13 @@
         "teamCode": "BUF",
         "currentLeague": "AHL",
         "contract": "topias leinonen|BUF|2025-03"
+      },
+      {
+        "playerId": 0,
+        "name": "Victor Mancini",
+        "teamCode": "VAN",
+        "currentLeague": "AHL",
+        "contract": "8483768|VAN|2026-03"
       }
     ]
   }

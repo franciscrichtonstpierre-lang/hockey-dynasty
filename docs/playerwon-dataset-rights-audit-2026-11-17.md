@@ -62,3 +62,29 @@ Une approbation du site entier ne doit jamais être propagée à toutes les lign
 - Données intégrées aux ratings/OA de production : aucune.
 - Autorisation tierce confirmée pour ces jeux NHL : aucune.
 - Dépense engagée : 0 $.
+
+
+## Mise à jour hebdomadaire — 2026-11-23
+
+### État des pages et exports
+
+- La politique Data Use & Citation est toujours affichée comme mise à jour le 2026-11-13; aucun changement de permission n'a été observé depuis la dernière revue.
+- Les pages avancées continuent d'exposer des tableaux xG/xGA/xGD et des exports CSV pour les analyses joueurs, gardiens et équipes. Les pages actuelles couvrent la saison 2026-27 en cours, mais leur présence ne prouve pas une couverture complète des rosters ou des espoirs.
+- La page xG distingue les sorties du modèle V1 PlayerWON des événements de tirs sous-jacents. Le calcul xG est original à PlayerWON, mais les événements, identifiants et contextes de tirs proviennent des flux NHL.
+- La politique permet le téléchargement, l'analyse, l'adaptation et le partage des jeux de données créés par PlayerWON et de ses analyses originales pour l'analyse commerciale; elle ne concède pas les droits des sources tierces. Elle demande de conserver une copie du téléchargement utilisé pour l'analyse, mais ne décrit pas explicitement une rétention longue durée dans un jeu commercial.
+- Les exports CSV sont une voie de téléchargement publiée. Aucune permission générale d'automatisation, d'accès API ou de scraping des pages de prévisualisation n'a été confirmée. L'accès automatisé ne doit pas être ajouté au pipeline.
+
+### Décision actualisée par famille
+
+| Famille | Décision au 2026-11-23 | Motif |
+|---|---|---|
+| Statistiques joueurs/gardiens, équipes et matchs | BLOQUÉ | Champs de flux NHL; droits amont non accordés |
+| Tirs et événements bruts | BLOQUÉ | Événements et identifiants NHL; la permission PlayerWON ne couvre pas les tiers |
+| xG/xGA/xGD originaux PlayerWON | EN ATTENTE | L'analyse originale est couverte par la politique PlayerWON, mais les entrées NHL, la rétention produit et l'attribution dans le jeu ne sont pas toutes confirmées |
+| GSAx / finishing-above-xG | EN ATTENTE | Dérivés de l'xG PlayerWON et des résultats NHL; les droits amont restent à résoudre |
+| Shifts et play-by-play | BLOQUÉ | Données événementielles et de présence issues des flux NHL |
+| Availability | EXCLU | Non requis pour le snapshot initial et droits tiers non validés |
+
+### Conséquence pour Hockey Dynasty
+
+Aucun fichier PlayerWON n'a été téléchargé ou importé. Aucun rating, OFF, DEF, OA ou potentiel n'a été recalculé à partir de PlayerWON. Le modèle xG propriétaire, le GSAx propriétaire et les métriques d'impact de type RAPM/GAR ne doivent pas être entraînés sur ces événements tant que les droits de la source amont ne sont pas explicitement établis par des conditions gratuites publiées.

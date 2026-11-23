@@ -6,9 +6,11 @@ on:
     paths:
       - "scripts/lib/data-rights-gate.mjs"
       - "scripts/import-advanced-evidence.mjs"
+      - "scripts/build-ratings.mjs"
       - "data/data-source-rights-registry.json"
       - "tests/data-rights-gate.test.mjs"
       - "tests/import-advanced-evidence.test.mjs"
+      - "tests/build-ratings-rights.test.mjs"
   pull_request:
     branches: [main]
     paths:
@@ -30,4 +32,4 @@ jobs:
         with:
           node-version: 22
       - name: Test commercial data rights gate and importer
-        run: node --test tests/data-rights-gate.test.mjs tests/import-advanced-evidence.test.mjs
+        run: node --test tests/data-rights-gate.test.mjs tests/import-advanced-evidence.test.mjs tests/build-ratings-rights.test.mjs

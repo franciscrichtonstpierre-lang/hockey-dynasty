@@ -1,6 +1,6 @@
 // Build normalized, provenance-aware advanced evidence from locally supplied source exports.
 // No network scraping, credentials, paywall bypass, or production writes.
-// Input is JSON: { source:{name,url,checkedAt,licenseStatus,season}, rows:[...] }.
+// Input is JSON: { source:{name,url,checkedAt,licenseStatus,season,permissions:{commercialGameUse,derivedOutputs,displayInGame,retentionAllowed},attributionRequired,attributionSatisfied,shareAlikeRequired,shareAlikeCompliant}, rows:[...] }.
 // Each row has playerId, position, league, season, gamesPlayed, usageCohort and metrics.
 // Metrics use the canonical keys consumed by advanced-player-rating-model.mjs.
 
@@ -49,7 +49,12 @@ assertCommercialExportAllowed({
   commercialUseAllowed: source.permissions?.commercialGameUse,
   derivedUseAllowed: source.permissions?.derivedOutputs,
   displayApproved: source.permissions?.displayInGame,
+  retentionAllowed: source.permissions?.retentionAllowed,
   thirdPartyRightsVerified: source.thirdPartyRightsVerified,
+  attributionRequired: source.attributionRequired,
+  attributionSatisfied: source.attributionSatisfied,
+  shareAlikeRequired: source.shareAlikeRequired,
+  shareAlikeCompliant: source.shareAlikeCompliant,
   paid: source.paid === true || source.requiresPayment === true
 }, "advanced evidence import");
 if (!Array.isArray(sourceDoc.rows) || !sourceDoc.rows.length) throw new Error("No source rows supplied.");
@@ -130,7 +135,7 @@ for (const [cohort, cohortRows] of groups) {
       playerId:String(row.playerId), position:row.position, league:row.league, season:row.season,
       usageCohort:row.usageCohort || "all", gamesPlayed:Number.isFinite(row.gamesPlayed)?row.gamesPlayed:null,
       sources:[source.name],
-      sourceObservations:[{sourceName:source.name,sourceUrl:source.url,checkedAt:source.checkedAt,season:String(row.season),licenseStatus:source.licenseStatus,licenseId:source.licenseId,commercialGameUse:source.permissions.commercialGameUse,derivedOutputs:source.permissions.derivedOutputs,licenseVerifiedAt:source.licenseVerifiedAt,licenseExpiresAt:source.licenseExpiresAt||null,displayInGame:source.permissions?.displayInGame===true,thirdPartyRightsVerified:source.thirdPartyRightsVerified===true,paid:source.paid===true||source.requiresPayment===true}],
+      sourceObservations:[{sourceName:source.name,sourceUrl:source.url,checkedAt:source.checkedAt,season:String(row.season),licenseStatus:source.licenseStatus,licenseId:source.licenseId,commercialGameUse:source.permissions.commercialGameUse,derivedOutputs:source.permissions.derivedOutputs,licenseVerifiedAt:source.licenseVerifiedAt,licenseExpiresAt:source.licenseExpiresAt||null,displayInGame:source.permissions?.displayInGame===true,retentionAllowed:source.permissions?.retentionAllowed===true,thirdPartyRightsVerified:source.thirdPartyRightsVerified===true,attributionRequired:source.attributionRequired,attributionSatisfied:source.attributionSatisfied===true,shareAlikeRequired:source.shareAlikeRequired,shareAlikeCompliant:source.shareAlikeCompliant===true,paid:source.paid===true||source.requiresPayment===true}],
       sourceMetricCount:0
     };
     for (const [rawKey, percentileKey] of Object.entries(metricMap)) {

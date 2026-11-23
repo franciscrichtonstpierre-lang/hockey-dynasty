@@ -1,6 +1,6 @@
 # Hockey Dynasty — stratégie de données gratuites uniquement
 
-**Vérification documentaire : 16 novembre 2026**  
+**Vérification documentaire initiale : 16 novembre 2026 — dernière revue : 23 novembre 2026**  
 **Branche de travail visée :** `ratings/gm-connected-methodology-v1`  
 **Politique :** aucun abonnement, achat de données, essai payant, devis payant ni frais de licence. Ne pas contacter les fournisseurs pour solliciter une offre payante. Une source gratuite n'est retenue pour une sortie commerciale que si les droits publiés couvrent explicitement cet usage ou si la donnée est sous une licence libre compatible.
 
@@ -200,3 +200,62 @@ Aucun fichier PlayerWON ou NHL EDGE n'a été téléchargé/importé à cette é
 ## Audit PlayerWON par dataset — 2026-11-17
 
 Le rapport `docs/playerwon-dataset-rights-audit-2026-11-17.md` détaille les colonnes, leur provenance connue et les raisons du blocage. Le registre `data/data-source-rights-registry.json` contient maintenant des décisions au niveau de chaque dataset PlayerWON NHL (joueurs, gardiens, équipes, matchs, tirs, play-by-play, shifts et disponibilité). Tous restent bloqués ou exclus tant que les droits commerciaux des sources tierces ne sont pas établis. L'importateur vérifie désormais l'identifiant exact du dataset dans ce registre central : un manifeste local qui prétend être approuvé ne peut pas contourner une décision centrale `blocked`.
+
+
+## Vérification hebdomadaire — 23 novembre 2026
+
+### Changements depuis la revue du 17 novembre
+
+- La branche `ratings/gm-connected-methodology-v1` n'avait reçu aucun nouveau commit depuis le 17 novembre avant cette revue. Les anciens résultats de ratings et les contrats n'ont pas été modifiés par cet audit.
+- Une source historique intéressante a été retrouvée : Hockey Databank v13.0, avec fichiers CSV publics et un avis qui autorise expressément un produit commercial à condition d'afficher une attribution complète et un avertissement d'exactitude. Le jeu est toutefois arrêté à la saison 2017-18; les droits de conservation à long terme et la provenance de certaines sources de compilation doivent être validés avant stockage de production.
+- Wikidata confirme que toutes ses données structurées sont sous CC0. C'est une source commercialement réutilisable pour l'identité et les métadonnées biographiques, mais pas une source de statistiques de performance ni un registre complet des espoirs. L'API et les dumps sont gratuits; respecter le User-Agent, les requêtes sérielles, le cache et `maxlag`.
+- Wikipedia confirme CC BY-SA 4.0 (et GFDL pour la plupart du texte). L'usage commercial est permis, mais les adaptations partagées doivent rester sous CC BY-SA 4.0 ou une licence compatible, avec attribution et indication des modifications. Cette contrainte peut toucher les tableaux dérivés et les ratings distribués; aucun import avant décision sur le share-alike.
+- fastRhockey confirme MIT pour le code. Le dépôt `sportsdataverse-data` déclare CC BY 4.0 pour ses données, mais les releases NHL identifient `api-web.nhle.com` comme source amont. Le release `nhl_pbp_full` couvre 18 saisons (2010-2027), environ 8,8 Go, avec les fichiers 2027 actualisés le 23 novembre à 08:03 UTC. La licence CC BY 4.0 du dépôt ne neutralise pas les conditions NHL : le contenu NHL reste exclu de la version commerciale.
+- La release `nhl_xg_models` de SportsDataverse apparaît dans les releases « unattributed », sans producteur public. Sa provenance, ses poids et les droits de ses données d'entraînement ne sont pas établis; ne pas copier ces modèles.
+- Big Data Cup 2026 fournit bien événements, shifts et tracking de joueurs issus de vidéo, mais le fichier juridique Stathletes limite les recherches issues du jeu de données à un usage non lucratif. Source exclue pour le jeu commercial, y compris pour entraîner xG/GSAx/RAPM.
+- SCORE publie un CSV de 160 573 tirs NHL 2021-22 avec coordonnées, angle, distance et issue. La page ne publie pas de licence de réutilisation; les données proviennent de `hockeyR`/NHL. Source exclue.
+- Ice Hockey API offre une clé gratuite à 50 appels/jour et 10/minute. Ses conditions permettent d'afficher les résultats de l'API dans ses propres applications, mais interdisent la redistribution en masse et la reconstruction d'une base concurrente. Les conditions ne confirment pas clairement l'usage commercial ni la conservation longue durée; la grille de plans exclut les lineups, statistiques joueurs/gardiens et play-by-play du plan gratuit. Source non approuvée pour les ratings.
+- La politique PlayerWON demeure celle du 13 novembre 2026; aucun changement de droit publié n'a été trouvé. Les tableaux xG/xGA/xGD et exports CSV sont visibles, mais les événements/identifiants sous-jacents proviennent des flux NHL. L'autorisation PlayerWON ne couvre que les droits qu'il contrôle; la conservation de production et l'automatisation ne sont pas suffisamment explicites. Tous les datasets NHL restent bloqués.
+- MoneyPuck reste non commercial/journalisme ponctuel seulement. Evolving Hockey reste personnel seulement et interdit les bots/copies automatiques. EliteProspects affiche un plan commercial à 990 $ US/an; il est exclu. Les conditions NHL consultées restent limitées à l'usage privé non commercial et interdisent la création de dérivés. Aucun changement gratuit commercial complet confirmé pour Sportradar, Stats Perform ou HockeyTech.
+
+### Matrice de décision mise à jour
+
+| Source | Accès / export | Code / données | Commercial gratuit et droits nécessaires | Statut |
+|---|---|---|---|---|
+| Wikidata | API et dumps publics | Données structurées CC0 | Oui : commercial, dérivés, affichage et conservation; attribution non obligatoire | **GRATUIT COMMERCIAL CONFIRMÉ**, métadonnées seulement; couverture à auditer |
+| Hockey Databank v13.0 | CSV publics via GitHub | Avis d'utilisation propre au projet | Produit commercial explicitement permis; attribution exacte obligatoire; conservation et provenance détaillée à confirmer; pas de redistribution brute | **INCERTAIN / candidat historique**, bloqué avant import |
+| Wikipedia | MediaWiki API et dumps | CC BY-SA 4.0 / GFDL selon le contenu | Commercial permis; attribution, historique des modifications et share-alike requis pour les adaptations partagées | **INCERTAIN / conditionnel**, pas de ratings propriétaires avant décision |
+| PlayerWON NHL | CSV publics | Analyses originales PlayerWON; champs bruts d'origine mixte | Permission commerciale pour les contenus contrôlés par PlayerWON; droits NHL, rétention de produit et automatisation non confirmés | **INCERTAIN**, tous les datasets NHL bloqués |
+| fastRhockey (code) | Dépôt et package publics | MIT pour le code | Code réutilisable commercialement; aucune licence globale sur les données des API | **CONFIRMÉ POUR LE CODE SEULEMENT** |
+| SportsDataverse NHL releases | Releases CSV/Parquet/RDS | CC BY 4.0 déclaré pour les données du dépôt; NHL API en amont | Les conditions NHL restent non commerciales; aucun droit commercial sur les données NHL | **NON COMMERCIAL / EXCLU** |
+| Ice Hockey API (clé gratuite) | 50 appels/jour, 10/minute | Conditions propres au service | Affichage dans ses applications permis; commercial et rétention non explicites; redistribution en masse interdite | **INCERTAIN**, pas de données joueurs dans le plan gratuit |
+| Big Data Cup 2026 / Stathletes | Releases GitHub | Accord Stathletes | Recherche publique autorisée seulement si non lucrative | **NON COMMERCIAL / EXCLU** |
+| SCORE — tirs NHL 2021-22 | CSV public, 160 573 tirs | Licence de données absente; source hockeyR/NHL | Aucun droit commercial/stockage/dérivé confirmé | **EXCLU** |
+| OpenSport hockey.db | Fichiers texte publics | Domaine public déclaré | Droits publics confirmés, mais le fichier examiné est un calendrier 2015-16 | **CONFIRMÉ POUR FIXTURE HISTORIQUE SEULEMENT** |
+| ehlersio/nhl-contracts | Dépôt public | CC0 pour les données déclarées | Source déjà utilisée dans le pipeline des contrats | **DÉJÀ TRAITÉ**; ne pas rouvrir le chantier contrats |
+
+### Faisabilité des métriques avancées
+
+- **xG Hockey Dynasty :** aucun jeu de tirs avec coordonnées, contexte et issues n'est actuellement approuvé pour l'entraînement commercial. Hockey Databank fournit des totaux saisonniers, pas des événements de tirs. SCORE et Big Data Cup ont les champs utiles mais ne sont pas autorisés commercialement; PlayerWON et SportsDataverse restent liés aux flux NHL.
+- **GSAx Hockey Dynasty :** nécessite un xG propriétaire entraîné sur des tirs autorisés, ainsi que les résultats de tirs/arrêts autorisés. Aucun couple de données autorisé n'est confirmé.
+- **RAPM/GAR-like :** nécessite des événements par joueur, shifts, temps de glace et présences sur la glace. Les jeux les plus riches repérés (SportsDataverse NHL, PlayerWON, Big Data Cup) sont bloqués ou non commerciaux. Aucun calcul de production ne doit être lancé à partir de ces sources.
+- Ne copier aucun coefficient, modèle, table ou score de MoneyPuck ou Evolving Hockey. Le code MIT de fastRhockey peut servir d'outil ou de référence, mais pas ses données NHL ni ses poids de modèles non attribués.
+
+### Décision et prochaines étapes gratuites
+
+1. Wikidata est le seul nouvel apport approuvé par licence pour l'identité et les métadonnées; auditer sa couverture avant d'écrire un importeur.
+2. Garder Hockey Databank en attente jusqu'à clarification/documentation de la rétention et de la provenance, puis prévoir l'attribution complète dans l'interface si retenu.
+3. Décider si une couche de données et des dérivés CC BY-SA sont acceptables avant toute utilisation de tables Wikipedia.
+4. Garder PlayerWON, NHL/EDGE, SportsDataverse NHL, SCORE, Big Data Cup, MoneyPuck et Evolving Hockey hors du pipeline commercial tant que les droits publiés ne changent pas explicitement.
+5. Continuer la recherche de données événementielles et de shifts réellement libres commercialement; aucun modèle xG/GSAx/RAPM ne peut être entraîné pour la production avec les sources actuellement approuvées.
+
+Aucun CSV n'a été importé, aucune cote/OA n'a été modifiée, aucun droit nouveau n'a été accordé, aucun fournisseur n'a été contacté, aucune donnée n'a été scrapée et aucune dépense n'a été engagée. Les contrats et cap hits déjà terminés restent intacts.
+
+### Renforcement du garde-fou des droits — 23 novembre 2026
+
+Le garde-fou commercial vérifie maintenant aussi :
+- le droit explicite de conserver/stocker les données;
+- la présence et l'implémentation de l'attribution obligatoire;
+- la conformité share-alike lorsqu'une licence l'exige.
+
+Un dataset dont la conservation est inconnue, dont le crédit n'est pas encore affiché ou dont le share-alike n'est pas traité reste bloqué. Wikidata CC0 est approuvé pour un futur import de métadonnées; aucun import n'a été effectué pendant cette revue.

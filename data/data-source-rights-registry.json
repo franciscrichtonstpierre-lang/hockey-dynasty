@@ -291,6 +291,27 @@
       "automatedAccessAllowed": "A public CSV download is linked, but no reuse license or automated access grant is published.",
       "status": "prohibited",
       "notes": "Contains 160,573 shot records for 2021-22 with x/y, distance, angle and outcome. Technically suitable for an xG prototype, but not legally cleared for commercial use."
+    },
+    "nhl_stats_rest": {
+      "provider": "National Hockey League Stats REST API",
+      "sourceUrl": "https://api.nhle.com/stats/rest/en/skater/summary",
+      "sourceCheckedAt": "2026-11-23",
+      "license": "NHL Terms of Service last updated 2025-10-29; Services/content are for private non-commercial use and may not be distributed, modified or used to create derivative works",
+      "commercialUseAllowed": false,
+      "redistributionAllowed": false,
+      "attributionRequired": null,
+      "attributionSatisfied": false,
+      "thirdPartyOrigin": "NHL-owned stats and player records served by api.nhle.com/stats/rest",
+      "datasetLevelReviewRequired": true,
+      "derivedUseAllowed": false,
+      "displayApproved": false,
+      "retentionAllowed": false,
+      "shareAlikeRequired": false,
+      "shareAlikeCompliant": true,
+      "retentionRule": "No commercial storage, retention, display or derivative use is authorized by the published NHL terms reviewed.",
+      "automatedAccessAllowed": "Public API endpoint; public access is not commercial permission. Do not run automated imports into the commercial game.",
+      "status": "prohibited",
+      "notes": "Existing data/ratings.json was generated from NHL Stats REST for 2025-26 and is a development-only snapshot. Do not refresh or ship it commercially until a free commercial data license is published."
     }
   },
   "datasets": {
@@ -627,6 +648,25 @@
       "shareAlikeCompliant": true,
       "reason": "PlayerWON policy covers its original analytics for free commercial analysis/adaptation/sharing, but its xG is calculated from NHL shot events. The policy does not grant upstream NHL rights, and long-term game retention is not explicit. Keep blocked pending source-level rights and attribution.",
       "decision": "pending"
+    },
+    "nhl_stats_rest_2025_2026": {
+      "provider": "nhl_stats_rest",
+      "dataset": "NHL Stats REST 2025-26 regular-season skater/goalie/faceoff statistics used by the legacy ratings builder",
+      "url": "https://api.nhle.com/stats/rest/en/skater/summary",
+      "status": "prohibited",
+      "commercialUseAllowed": false,
+      "derivedUseAllowed": false,
+      "displayApproved": false,
+      "retentionAllowed": false,
+      "thirdPartyRightsVerified": false,
+      "paid": false,
+      "redistributionAllowed": false,
+      "attributionRequired": null,
+      "attributionSatisfied": false,
+      "shareAlikeRequired": false,
+      "shareAlikeCompliant": true,
+      "reason": "The NHL Terms of Service restrict the Services and content to private non-commercial use and prohibit distribution, modification and derivative works. The existing ratings snapshot is not cleared for commercial release.",
+      "decision": "excluded"
     }
   }
 }

@@ -259,3 +259,16 @@ Le garde-fou commercial vérifie maintenant aussi :
 - la conformité share-alike lorsqu'une licence l'exige.
 
 Un dataset dont la conservation est inconnue, dont le crédit n'est pas encore affiché ou dont le share-alike n'est pas traité reste bloqué. Wikidata CC0 est approuvé pour un futur import de métadonnées; aucun import n'a été effectué pendant cette revue.
+
+
+### Blocage du snapshot NHL Stats REST — 23 novembre 2026
+
+Le fichier existant `data/ratings.json` porte explicitement la source « NHL Stats REST regular-season statistics » pour 2025-26. Les conditions NHL consultées ne permettent pas de traiter ces données comme une source commerciale. Le fichier n'a pas été supprimé ni recalculé; il reste un snapshot de développement non autorisé pour une sortie commerciale.
+
+Pour éviter toute nouvelle ingestion non autorisée :
+- le registre contient maintenant `nhl_stats_rest_2025_2026` avec le statut `prohibited`;
+- `scripts/build-ratings.mjs` vérifie le registre avant tout appel réseau et bloque ce dataset;
+- `.github/workflows/refresh-ratings.yml` est passé en déclenchement manuel seulement; la planification quotidienne et le déclenchement sur push sont suspendus tant qu'aucune source gratuite commerciale n'est approuvée;
+- le dernier essai automatique avait échoué avant l'écriture des fichiers parce que l'API ne retournait que 100 patineurs et 98 gardiens; aucun rating n'a été remplacé.
+
+Le snapshot existant peut rester utile au développement local, mais il ne doit pas être expédié dans une version commerciale. Le pipeline ne pourra reprendre qu'avec une source qui passe le garde-fou complet.

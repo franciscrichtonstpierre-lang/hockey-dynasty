@@ -297,7 +297,7 @@ Précision de licence fastRhockey : le package déclare MIT pour le code; le fic
 
 ### Résultat des contrôles automatisés — 23 novembre 2026
 
-La suite `Data rights gate tests` a réussi sur le commit `95ea841c55662cff5b8b11dd28e0df32da812f84`, y compris les tests de conservation, d'attribution, de share-alike, du blocage NHL Stats REST et du précontrôle multi-ligues. Le commit documentaire final est `dbfb5e4daafbaea2d656ba31fbc11bc5cc6105f2`. La tête de `main` est restée `f762b504004c6ffbd8b88c25075b9d88bf872157`; aucun commit de données n'a été publié sur `main`.
+La suite `Data rights gate tests` a réussi sur le commit `6a70c6e537e237d395d60949a930bade6bc14b58` (run GitHub Actions `45294478923`), y compris les tests de conservation, d'attribution, de share-alike, du blocage NHL Stats REST et du précontrôle multi-ligues. La tête de `main` est restée `f762b504004c6ffbd8b88c25075b9d88bf872157`; aucun commit de données n'a été publié sur `main`.
 
 
 ### Vérification des fournisseurs sous contrat — 23 novembre 2026

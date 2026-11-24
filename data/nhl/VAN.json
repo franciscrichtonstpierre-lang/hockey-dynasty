@@ -313,31 +313,6 @@
         "default": "Feldkirch"
       },
       "birthCountry": "AUT"
-    },
-    {
-      "id": 8484136,
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/VAN/8484136.png",
-      "firstName": {
-        "default": "Max"
-      },
-      "lastName": {
-        "default": "Sasson"
-      },
-      "sweaterNumber": 63,
-      "positionCode": "C",
-      "shootsCatches": "L",
-      "heightInInches": 73,
-      "weightInPounds": 181,
-      "heightInCentimeters": 185,
-      "weightInKilograms": 82,
-      "birthDate": "2000-09-05",
-      "birthCity": {
-        "default": "Birmingham"
-      },
-      "birthCountry": "USA",
-      "birthStateProvince": {
-        "default": "MI"
-      }
     }
   ],
   "defensemen": [
@@ -618,5 +593,7 @@
   ],
   "_sourceSeason": "20262027",
   "_sourceUrl": "https://api-web.nhle.com/v1/roster/VAN/20262027",
-  "_syncedAt": "2026-11-19T09:29:25.103Z"
+  "_syncedAt": "2026-11-19T09:29:25.103Z",
+  "_transactionOverlayAppliedAt": "2026-11-23",
+  "_transactionOverlaySource": "NHL official 2026-11-20 Max Sasson trade"
 }

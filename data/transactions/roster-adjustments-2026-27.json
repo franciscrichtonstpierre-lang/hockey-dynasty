@@ -9,7 +9,8 @@
     "Existing Dynasty saves are never rewritten by this base-data overlay.",
     "Michael Hage remains an NCAA player at Michigan; only his NHL signing rights move to Detroit.",
     "Top-10 conditions: if Montreal's 2027 first is top 10 after the 2027 lottery, Montreal retains it and transfers its own unprotected 2028 first; same rule for the 2029/2030 firsts.",
-    "NHL roster/prospect data source terms remain subject to the project's commercial data-rights gate; this transaction overlay does not grant reuse rights."
+    "NHL roster/prospect data source terms remain subject to the project's commercial data-rights gate; this transaction overlay does not grant reuse rights.",
+    "Max Sasson moved from Vancouver to the New York Rangers on 2026-11-20; this roster overlay is reapplied after each NHL roster sync."
   ],
   "playerMoves": [
     {
@@ -40,6 +41,13 @@
       "to": "DET",
       "rosterStatus": "NCAA",
       "rightsOnly": true
+    },
+    {
+      "player": "Max Sasson",
+      "nhlPlayerId": 8484136,
+      "from": "VAN",
+      "to": "NYR",
+      "rosterStatus": "NHL"
     }
   ],
   "playerSnapshots": {
@@ -116,6 +124,31 @@
       "birthCountry": "CAN",
       "birthStateProvince": {
         "default": "AB"
+      }
+    },
+    "8484136": {
+      "id": 8484136,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/NYR/8484136.png",
+      "firstName": {
+        "default": "Max"
+      },
+      "lastName": {
+        "default": "Sasson"
+      },
+      "sweaterNumber": 63,
+      "positionCode": "C",
+      "shootsCatches": "L",
+      "heightInInches": 73,
+      "weightInPounds": 181,
+      "heightInCentimeters": 185,
+      "weightInKilograms": 82,
+      "birthDate": "2000-09-05",
+      "birthCity": {
+        "default": "Birmingham"
+      },
+      "birthCountry": "USA",
+      "birthStateProvince": {
+        "default": "MI"
       }
     },
     "8484799": {

@@ -1,11 +1,28 @@
 {
   "schemaVersion": 1,
   "season": "2026-2027",
-  "asOf": "2026-11-17",
+  "asOf": "2026-11-23",
   "scope": "official_nhl_trade_tracker",
   "sourceName": "NHL.com — 2026-27 NHL Trade Tracker",
   "source": "https://www.nhl.com/news/2026-27-nhl-trades",
   "records": [
+    {
+      "id": "nhl-2026-27-trade-029",
+      "date": "2026-11-22",
+      "type": "Échange",
+      "players": [
+        "Dylan Larkin",
+        "Kirby Dach",
+        "Samuel Montembeault",
+        "Michael Hage (droits de signature)"
+      ],
+      "fromTeam": "Detroit Red Wings",
+      "toTeam": "Montréal Canadiens",
+      "summary": "Montréal acquiert Dylan Larkin, le choix de 3e ronde de Detroit en 2027 et le choix de 2e ronde de Detroit en 2028. Detroit acquiert Kirby Dach, Samuel Montembeault, les droits de signature de Michael Hage, le choix de 2e ronde de Montréal en 2027, le choix de 4e ronde de Montréal en 2028 et les choix conditionnels de 1re ronde de Montréal en 2027 et 2029. Si le choix de Montréal en 2027 est top 10 après la loterie, Montréal le conserve et transfère son choix 2028 non protégé; même mécanisme pour 2029 avec le choix 2030.",
+      "source": "https://www.nhl.com/news/canadiens-acquire-forward-dylan-larkin-from-the-detroit-red-wings",
+      "sourceName": "NHL.com — communiqué officiel des Canadiens",
+      "appliesToDynasty": false
+    },
     {
       "id": "nhl-2026-27-trade-001",
       "date": "2026-11-16",

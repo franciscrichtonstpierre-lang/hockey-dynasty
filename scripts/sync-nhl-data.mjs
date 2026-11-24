@@ -3,6 +3,7 @@
 // Source: NHL Web API. N'écrase jamais un fichier avec une réponse vide/invalide.
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname } from "node:path";
+import { applyRosterAdjustments, applyProspectRightsAdjustments } from "./lib/roster-adjustments.mjs";
 
 const season = process.env.UHM_SEASON || "20262027";
 const teams = ["ANA","BOS","BUF","CGY","CAR","CHI","COL","CBJ","DAL","DET","EDM","FLA","LAK","MIN","MTL","NSH","NJD","NYI","NYR","OTT","PHI","PIT","SJS","SEA","STL","TBL","TOR","UTA","VAN","VGK","WSH","WPG"];
@@ -125,3 +126,17 @@ await Promise.all(Array.from({length:4}, async () => {
     await syncTeam(teams[index]);
   }
 }));
+async function applyTransactionOverlay() {
+ const adjustments=JSON.parse(await readFile("data/transactions/roster-adjustments-2026-27.json","utf8"));
+ const rosterCodes=[...new Set((adjustments.playerMoves||[]).filter(m=>!m.rightsOnly).flatMap(m=>[m.from,m.to]))];
+ const rosters={};for(const code of rosterCodes)rosters[code]=JSON.parse(await readFile(`data/nhl/${code}.json`,"utf8"));
+ applyRosterAdjustments(rosters,adjustments);
+ for(const [code,data] of Object.entries(rosters)){data._transactionOverlayAppliedAt=adjustments.updatedAt;await writeValidated(`data/nhl/${code}.json`,data,d=>["forwards","defensemen","goalies"].every(k=>Array.isArray(d[k])));}
+ const codes=[...new Set((adjustments.playerMoves||[]).filter(m=>m.rightsOnly).flatMap(m=>[m.from,m.to]))];
+ const files={};for(const code of codes)files[code]=JSON.parse(await readFile(`data/prospects/${code}.json`,"utf8"));
+ applyProspectRightsAdjustments(files,adjustments);
+ for(const [code,data] of Object.entries(files)){data._rightsOverlayAppliedAt=adjustments.updatedAt;await writeValidated(`data/prospects/${code}.json`,data,d=>Array.isArray(d.prospects)&&d.prospects.length>0);}
+ console.log("OK transaction overlay: NHL rosters and prospect rights");
+}
+await applyTransactionOverlay();
+

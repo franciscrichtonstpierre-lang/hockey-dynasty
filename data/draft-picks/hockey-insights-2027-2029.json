@@ -183,7 +183,16 @@
       "source": "https://www.nhl.com/news/2026-27-nhl-trades",
       "snapshotDate": "2026-11-23",
       "sourceType": "NHL official transaction",
-      "verificationNote": "Choix conditionnel inclus dans l'échange Larkin du 22-11-2026; exclu du registre jouable jusqu'à clarification des conditions. Source NHL officielle."
+      "verificationNote": "Montréal transfère son propre choix de 1re ronde 2027. Si ce choix est dans le top 10 après les résultats de la loterie 2027, Montréal le conserve et transfère son propre choix de 1re ronde 2028 à Detroit, sans protection.",
+      "conditions": "Montréal transfère son propre choix de 1re ronde 2027. Si ce choix est dans le top 10 après les résultats de la loterie 2027, Montréal le conserve et transfère son propre choix de 1re ronde 2028 à Detroit, sans protection.",
+      "fallback": {
+        "year": 2028,
+        "round": 1,
+        "originalOwner": "MTL",
+        "to": "DET",
+        "conditional": true,
+        "protection": "aucune si activé"
+      }
     },
     {
       "year": 2027,
@@ -5559,7 +5568,16 @@
       "source": "https://www.nhl.com/news/2026-27-nhl-trades",
       "snapshotDate": "2026-11-23",
       "sourceType": "NHL official transaction",
-      "verificationNote": "Choix conditionnel inclus dans l'échange Larkin du 22-11-2026; exclu du registre jouable jusqu'à clarification des conditions. Source NHL officielle."
+      "verificationNote": "Montréal transfère son propre choix de 1re ronde 2029. Si ce choix est dans le top 10 après les résultats de la loterie 2029, Montréal le conserve et transfère son propre choix de 1re ronde 2030 à Detroit, sans protection.",
+      "conditions": "Montréal transfère son propre choix de 1re ronde 2029. Si ce choix est dans le top 10 après les résultats de la loterie 2029, Montréal le conserve et transfère son propre choix de 1re ronde 2030 à Detroit, sans protection.",
+      "fallback": {
+        "year": 2030,
+        "round": 1,
+        "originalOwner": "MTL",
+        "to": "DET",
+        "conditional": true,
+        "protection": "aucune si activé"
+      }
     },
     {
       "year": 2029,

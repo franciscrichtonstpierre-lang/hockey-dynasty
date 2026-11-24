@@ -3,7 +3,7 @@
   "source": "https://www.nhl.com/redwings/news/red-wings-release-2026-nhl-prospect-tournament-roster-and-schedule; https://thehockeywriters.com/red-wings-prospect-rankings-summer-2026/; https://www.nhl.com/news/detroit-red-wings-top-prospects-for-2026-27-season-32-in-32",
   "sourceType": "Liste publique secondaire vérifiée manuellement — joueurs identifiés par nom, position, ligue et choix de repêchage lorsque publiés",
   "syncedUTC": "2026-10-30T20:00:00-04:00",
-  "count": 35,
+  "count": 36,
   "prospects": [
     {
       "firstName": {
@@ -511,11 +511,42 @@
       "draftYear": 2025,
       "draftRound": 6,
       "draftOverall": 172
+    },
+    {
+      "id": 8484799,
+      "headshot": "https://assets.nhle.com/mugs/nhl/latest/8484799.png",
+      "firstName": {
+        "default": "Michael"
+      },
+      "lastName": {
+        "default": "Hage"
+      },
+      "positionCode": "C",
+      "shootsCatches": "R",
+      "heightInInches": 73,
+      "weightInPounds": 187,
+      "heightInCentimeters": 185,
+      "weightInKilograms": 85,
+      "birthDate": "2006-04-14",
+      "birthCity": {
+        "default": "Oakville"
+      },
+      "birthCountry": "CAN",
+      "birthStateProvince": {
+        "default": "Ontario"
+      },
+      "positionGroup": "forwards",
+      "currentLeague": "NCAA",
+      "currentTeam": "Michigan",
+      "rightsTeamCode": "DET",
+      "nhlRightsTeamCode": "DET",
+      "rightsTransferredDate": "2026-11-22"
     }
   ],
   "dataNotes": [
     "Remplacement du résultat vide de l'API NHL par une liste secondaire composée des espoirs classés à l'été 2026 et de joueurs du tournoi des espoirs officiel de Detroit.",
     "La liste couvre les espoirs identifiés par les sources, mais ne garantit pas chaque joueur dont les droits appartiennent encore à Detroit.",
-    "Les identifiants NHL, dates de naissance, tailles, poids, droits contractuels et notes de jeu ne sont pas ajoutés lorsqu'ils ne sont pas confirmés. Les joueurs sans données de repêchage confirmées conservent ces champs absents."
+    "Les identifiants NHL, dates de naissance, tailles, poids, droits contractuels et notes de jeu ne sont pas ajoutés lorsqu'ils ne sont pas confirmés. Les joueurs sans données de repêchage confirmées conservent ces champs absents.",
+    "Michael Hage is listed here because Detroit acquired his NHL signing rights on 2026-11-22; he remains an NCAA player at Michigan."
   ]
 }

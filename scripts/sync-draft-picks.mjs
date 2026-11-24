@@ -152,6 +152,12 @@ try {
   const officialTradeOverrides=new Map([
     ["2027-2-TOR",{owner:"CBJ",note:"2026-09-28 : Toronto a cédé son choix de 2e ronde 2027 à Columbus."}],
     ["2027-2-MTL",{owner:"NSH",note:"2026-10-09 : Montréal a cédé son choix de 2e ronde 2027 à Nashville."}],
+    ["2027-2-VGK",{owner:"ANA",note:"Chaîne vérifiée : Vegas -> Nashville -> Montréal (2026-10-09), Montréal -> Detroit (2026-11-22), Detroit -> Anaheim dans l'échange de choix du 2026-11-22."}],
+    ["2027-2-ANA",{owner:"MTL",note:"Anaheim cède son propre choix de 2e ronde 2027 à Montréal contre le choix Detroit 2028 reçu dans l'échange Larkin."}],
+    ["2028-2-DET",{owner:"ANA",note:"Detroit cède son choix de 2e ronde 2028 à Montréal dans l'échange Larkin; Montréal le transfère ensuite à Anaheim le 2026-11-22."}],
+    ["2027-3-DET",{owner:"MTL",note:"Choix de 3e ronde 2027 de Detroit transféré à Montréal dans l'échange Larkin du 2026-11-22."}],
+    ["2028-4-MTL",{owner:"DET",note:"Choix de 4e ronde 2028 de Montréal transféré à Detroit dans l'échange Larkin du 2026-11-22."}],
+    ["2029-4-NYR",{owner:"VAN",note:"Choix de 4e ronde 2029 des Rangers transféré à Vancouver contre Max Sasson le 2026-11-20."}],
     ["2029-2-WPG",{owner:"NJD",note:"2026-10-23 : Winnipeg a cédé son choix de 2e ronde 2029 au New Jersey."}],
     ["2027-7-WPG",{owner:"NJD",note:"2026-10-23 : Winnipeg a cédé son choix de 7e ronde 2027 au New Jersey."}]
   ]);
@@ -267,7 +273,7 @@ for (const [pickId, resolution] of manualOwnerResolutions) {
 }
 
 const excludedPickSlots = [
-  "2027-R1-COL","2027-R1-VGK",
+  "2027-R1-COL","2027-R1-VGK","2027-R1-MTL","2029-R1-MTL",
   "2027-R2-COL","2027-R2-CBJ","2027-R2-MIN","2027-R2-WPG",
   "2027-R3-TOR","2027-R3-UTA",
   "2028-R1-COL","2028-R1-DAL","2028-R1-FLA","2028-R1-NYR","2028-R1-TOR",

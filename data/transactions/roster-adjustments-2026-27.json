@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "season": "2026-2027",
+  "effectiveDate": "2026-11-22",
+  "updatedAt": "2026-11-23",
+  "source": "https://www.nhl.com/news/2026-27-nhl-trades",
+  "notes": [
+    "Transaction applied to the initial 2026-27 master rosters because no Dynasty save has started.",
+    "Michael Hage remains an NCAA player; only his NHL signing rights move to Detroit. He is not added to the NHL active roster.",
+    "Conditional 2027 and 2029 Montreal first-round picks are not playable assets until their conditions are clarified.",
+    "The NHL-sourced roster files retain their existing upstream rights limitations; this edit does not grant commercial reuse rights."
+  ],
+  "playerMoves": [
+    {
+      "player": "Dylan Larkin",
+      "nhlPlayerId": 8478009,
+      "from": "DET",
+      "to": "MTL",
+      "rosterStatus": "NHL"
+    },
+    {
+      "player": "Kirby Dach",
+      "nhlPlayerId": 8481523,
+      "from": "MTL",
+      "to": "DET",
+      "rosterStatus": "NHL"
+    },
+    {
+      "player": "Samuel Montembeault",
+      "nhlPlayerId": 8478470,
+      "from": "MTL",
+      "to": "DET",
+      "rosterStatus": "NHL"
+    },
+    {
+      "player": "Michael Hage",
+      "from": "MTL",
+      "to": "DET",
+      "rosterStatus": "NCAA",
+      "rightsOnly": true
+    }
+  ],
+  "pickMoves": [
+    {
+      "year": 2027,
+      "round": 3,
+      "from": "DET",
+      "to": "MTL",
+      "conditional": false
+    },
+    {
+      "year": 2028,
+      "round": 2,
+      "from": "DET",
+      "to": "MTL",
+      "conditional": false
+    },
+    {
+      "year": 2027,
+      "round": 2,
+      "from": "MTL",
+      "to": "DET",
+      "conditional": false
+    },
+    {
+      "year": 2028,
+      "round": 4,
+      "from": "MTL",
+      "to": "DET",
+      "conditional": false
+    },
+    {
+      "year": 2027,
+      "round": 1,
+      "from": "MTL",
+      "to": "DET",
+      "conditional": true
+    },
+    {
+      "year": 2029,
+      "round": 1,
+      "from": "MTL",
+      "to": "DET",
+      "conditional": true
+    }
+  ]
+}

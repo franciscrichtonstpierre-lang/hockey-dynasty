@@ -171,6 +171,17 @@ jobs:
       - name: Exporter le registre complet pour la recherche du jeu
         if: always()
         run: node scripts/export-registry-index.mjs
+      - name: Bloquer la publication si Dylan Larkin manque du registre visible
+        if: always()
+        run: |
+          node --input-type=module <<'NODE'
+          import { readFile } from "node:fs/promises";
+          const lookup = JSON.parse(await readFile("data/players/registry-index/ratings-lookup.json", "utf8"));
+          const manifest = JSON.parse(await readFile("data/players/registry-index/manifest.json", "utf8"));
+          const larkin = lookup.players.find(p => Number(p.nhlPlayerId) === 8477946);
+          if (!larkin) throw new Error("Dylan Larkin (NHL ID 8477946) absent du registre visible après export.");
+          console.log("OK Dylan Larkin présent dans l'index du jeu:", larkin.name, larkin.currentTeam, "joueurs:", manifest.playerCount);
+          NODE
       - name: Vérifier la syntaxe de l’importateur EHM 2026-2027
         run: node --check scripts/import-ehm-ratings.mjs
       - name: Tester le modèle partagé et les données de toutes les ligues

@@ -294,3 +294,7 @@ Ce verrouillage ne supprime pas les fichiers déjà présents et ne modifie aucu
 La page de crédits de The Ice Edge décrit une chaîne historique utile : Hockey Databank pour 1917-18 à 2017-18, tables d'équipes et de carrières Wikipedia pour 2018-19 onward, et Wikidata CC0 pour les identifiants. Elle indique aussi que la saison en cours 2026-27 est alimentée par le flux public NHL, malgré une phrase générale sur l'absence de données NHL.com. Cette contradiction confirme que The Ice Edge doit rester une simple carte de provenance, pas une source à copier ni à scraper. Aucun export CSV/API public de cette compilation n'a été confirmé.
 
 Précision de licence fastRhockey : le package déclare MIT pour le code; le fichier LICENSE du dépôt ne contient que l'identité du titulaire, tandis que la métadonnée du package déclare MIT + file LICENSE. Même si le code est réutilisable, cela ne concède aucun droit sur les données NHL ou les API tierces.
+
+### Résultat des contrôles automatisés — 23 novembre 2026
+
+La suite `Data rights gate tests` a réussi sur le commit `95ea841c55662cff5b8b11dd28e0df32da812f84`, y compris les tests de conservation, d'attribution, de share-alike, du blocage NHL Stats REST et du précontrôle multi-ligues. Le commit documentaire final est `dbfb5e4daafbaea2d656ba31fbc11bc5cc6105f2`. La tête de `main` est restée `f762b504004c6ffbd8b88c25075b9d88bf872157`; aucun commit de données n'a été publié sur `main`.

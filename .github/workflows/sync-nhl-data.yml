@@ -1,56 +1,12 @@
-name: Synchroniser les données LNH
+name: Synchroniser les données multi-ligues (droits commerciaux requis)
 
 on:
-  push:
-    paths:
-      - ".github/workflows/sync-nhl-data.yml"
-      - "scripts/sync-ahl-data.mjs"
-      - "scripts/sync-ahl-player-stats.mjs"
-      - "scripts/sync-cross-league-player-stats.mjs"
-      - "scripts/sync-ncaa-player-stats.mjs"
-      - "scripts/sync-european-player-stats.mjs"
-      - "scripts/sync-prior-season-player-stats.mjs"
-      - "scripts/lib/european-stat-feed.mjs"
-      - "scripts/lib/ncaa-stat-feed.mjs"
-      - "data/ncaa/**"
-      - "data/europe/**"
-      - "scripts/apply-player-ratings.mjs"
-      - "scripts/build-ratings.mjs"
-      - "scripts/lib/player-ratings.mjs"
-      - "scripts/export-registry-index.mjs"
-      - "scripts/sync-echl-data.mjs"
-      - "scripts/enrich-echl-bios.mjs"
-      - "scripts/enrich-junior-bios.mjs"
-      - "scripts/enrich-ncaa-bios.mjs"
-      - "scripts/enrich-future-draft-bios.mjs"
-      - "scripts/sync-nhl-data.mjs"
-      - "scripts/build-player-registry.mjs"
-      - "scripts/enrich-nhl-player-bios.mjs"
-      - "scripts/sync-future-draft-prospects.mjs"
-      - "scripts/sync-draft-picks.mjs"
-      - "scripts/validate-database.mjs"
-      - "scripts/check-inline-js.mjs"
-      - "data/ahl/teams.json"
-      - "data/prospects/**"
-      - "data/prospects-supplemental/**"
-      - "data/future-draft-prospects/**"
-      - "data/draft-picks/**"
-      - "data/coaches/**"
-      - "data/players/manual-league-corrections.json"
-      - "data/potential-scouting-overrides.json"
-      - "data/contracts/manual-overrides-2026-2027.json"
-      - "tests/potential-scouting-overrides.test.mjs"
-      - "tests/contract-salary-estimate.test.mjs"
-      - "data/junior/**"
-      - "data/free-agents/2026-2027.json"
   workflow_dispatch:
     inputs:
       season:
         description: "Saison au format AAAABBBB"
         required: true
         default: "20262027"
-  schedule:
-    - cron: "23 8 * * *"
 
 permissions:
   contents: write
@@ -58,7 +14,7 @@ permissions:
 # Prevent overlapping sync jobs from racing while committing generated data.
 concurrency:
   group: hockey-dynasty-data-sync-${{ github.ref }}
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   sync:
@@ -71,6 +27,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "22"
+      - name: Vérifier les droits commerciaux de toutes les sources
+        run: node scripts/check-sync-source-rights.mjs
       - name: Synchroniser effectifs et espoirs LNH
         continue-on-error: true
         env:
@@ -82,75 +40,71 @@ jobs:
           UHM_AHL_SEASON_ID: "94"
         run: node scripts/sync-ahl-data.mjs
       - name: Synchroniser les statistiques individuelles LAH
-        if: always()
+        if: success()
         env:
           UHM_AHL_SEASON_ID: "94"
         run: node scripts/sync-ahl-player-stats.mjs
       - name: Ajouter les statistiques AHL et ECHL 2025-26 comme solution de repli
-        if: always()
+        if: success()
         continue-on-error: true
         run: node scripts/sync-prior-season-player-stats.mjs
       - name: Synchroniser les 30 effectifs ECHL
-        if: always()
+        if: success()
         continue-on-error: true
         env:
           UHM_ECHL_SEASON_ID: "78"
         run: node scripts/sync-echl-data.mjs
       - name: Compléter les biographies et dates de naissance ECHL
-        if: always()
+        if: success()
         continue-on-error: true
         env:
           UHM_ECHL_SEASON_ID: "78"
         run: node scripts/enrich-echl-bios.mjs
       - name: Compléter les biographies OHL, WHL, QMJHL et USHL
-        if: always()
+        if: success()
         continue-on-error: true
         run: node scripts/enrich-junior-bios.mjs
       - name: Synchroniser les statistiques ECHL et junior
-        if: always()
+        if: success()
         run: node scripts/sync-cross-league-player-stats.mjs
       - name: Synchroniser les espoirs des repêchages 2027–2029
-        if: always()
+        if: success()
         continue-on-error: true
         run: node scripts/sync-future-draft-prospects.mjs
       - name: Synchroniser les statistiques individuelles NCAA
-        if: always()
+        if: success()
         run: node scripts/sync-ncaa-player-stats.mjs
       - name: Vérifier la syntaxe du connecteur européen
-        if: always()
+        if: success()
         run: node --check scripts/sync-european-player-stats.mjs
       - name: Synchroniser les statistiques européennes SHL et Liiga
-        if: always()
+        if: success()
         continue-on-error: true
         run: node scripts/sync-european-player-stats.mjs
       - name: Compléter les biographies NCAA 2026-27
-        if: always()
+        if: success()
         continue-on-error: true
         run: node scripts/enrich-ncaa-bios.mjs
       - name: Compléter les dates des futurs espoirs 2027-2029
-        if: always()
+        if: success()
         continue-on-error: true
         run: node scripts/enrich-future-draft-bios.mjs
       - name: Construire le registre central des joueurs
-        if: always()
+        if: success()
         run: node scripts/build-player-registry.mjs
       - name: Compléter les dates de naissance depuis l’API NHL
-        if: always()
+        if: success()
         continue-on-error: true
         run: node scripts/enrich-nhl-player-bios.mjs
-      - name: Importer les contrats, salaires et clauses vérifiés
-        if: always()
-        continue-on-error: true
-        run: node scripts/sync-contracts.mjs
       - name: Synchroniser les propriétaires des choix de repêchage
-        if: always()
+        if: success()
         continue-on-error: true
         run: node scripts/sync-draft-picks.mjs
       - name: Compléter les cotes des joueurs de toutes les ligues
-        if: always()
+        if: success()
         run: node scripts/apply-player-ratings.mjs
       - name: Exporter le registre complet pour la recherche du jeu
-        if: always()
+        if: success()
         run: node scripts/export-registry-index.mjs
       - name: Tester le modèle partagé et les données de toutes les ligues
         run: node --test tests/*.test.mjs

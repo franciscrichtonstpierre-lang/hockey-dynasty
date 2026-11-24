@@ -307,3 +307,8 @@ La suite `Data rights gate tests` a réussi sur le commit `95ea841c55662cff5b8b1
 - **HockeyTech/LeagueStat :** les feeds AHL/ECHL/junior sont techniquement accessibles, mais aucun grant commercial gratuit complet (stockage, calcul dérivé, affichage et conservation) n'a été trouvé.
 
 Ces trois fournisseurs restent hors du pipeline zéro dollar; aucune demande de prix, aucun contact et aucun essai n'ont été faits.
+
+### Détail des sources de prospects — 23 novembre 2026
+
+- **EliteProspects :** l'Explorer gratuit est destiné aux tests/prototypes; le plan personnel est non commercial; l'accès API commercial commence à 990 $ US/an (hors options). Exclu, aucun essai ou devis demandé.
+- **Draft Prospects Hockey** et **RinkCentral :** pages publiques consultables, mais aucune licence gratuite publiée couvrant l'usage commercial, les ratings dérivés, l'affichage dans le jeu et la conservation. Statut review_required; aucune extraction automatisée.

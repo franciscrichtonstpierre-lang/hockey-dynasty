@@ -459,7 +459,8 @@
       "automatedAccessAllowed": "Addendum prohibits robots/spiders or automated devices to monitor/copy content; no automated import.",
       "status": "prohibited",
       "notes": "The current 2025 addendum explicitly excludes simulated video games/electronic gaming, derivative data points without written approval, and league/team/player marks. Not usable for Hockey Dynasty.",
-      "thirdPartyRightsVerified": false
+      "thirdPartyRightsVerified": false,
+      "paid": null
     },
     "statsperform_hockey": {
       "provider": "Stats Perform sports data",
@@ -481,7 +482,8 @@
       "automatedAccessAllowed": "No free API/data automation license confirmed.",
       "status": "prohibited",
       "notes": "The current December 2025 MLA has fees and Work Orders, prohibits derivative works and model training absent express authorization, and restricts bulk download, archival files and distribution. No zero-cost commercial license.",
-      "thirdPartyRightsVerified": false
+      "thirdPartyRightsVerified": false,
+      "paid": true
     }
   },
   "datasets": {
@@ -1019,7 +1021,7 @@
       "displayApproved": false,
       "retentionAllowed": false,
       "thirdPartyRightsVerified": false,
-      "paid": false,
+      "paid": null,
       "redistributionAllowed": false,
       "attributionRequired": true,
       "attributionSatisfied": false,
@@ -1038,7 +1040,7 @@
       "displayApproved": false,
       "retentionAllowed": false,
       "thirdPartyRightsVerified": false,
-      "paid": false,
+      "paid": true,
       "redistributionAllowed": false,
       "attributionRequired": null,
       "attributionSatisfied": false,

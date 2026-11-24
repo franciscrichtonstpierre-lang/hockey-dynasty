@@ -1,0 +1,6 @@
+import test from "node:test";
+import assert from "node:assert/strict";
+import { applyRosterAdjustments, applyProspectRightsAdjustments } from "../scripts/lib/roster-adjustments.mjs";
+const p=(id,positionCode)=>({id,positionCode});
+test("moves traded NHL players without duplicates",()=>{const r={MTL:{forwards:[p(1,"C"),p(2,"C")],defensemen:[],goalies:[p(3,"G")]},DET:{forwards:[],defensemen:[],goalies:[]}};applyRosterAdjustments(r,{playerMoves:[{nhlPlayerId:1,to:"MTL"},{nhlPlayerId:2,to:"DET"},{nhlPlayerId:3,to:"DET"}],playerSnapshots:{"1":p(1,"C"),"2":p(2,"C"),"3":p(3,"G")}});assert.deepEqual(r.MTL.forwards.map(x=>x.id),[1]);assert.deepEqual(r.DET.forwards.map(x=>x.id),[2]);assert.deepEqual(r.DET.goalies.map(x=>x.id),[3]);});
+test("moves NCAA signing rights but preserves college team",()=>{const f={MTL:{prospects:[{id:9,currentLeague:"NCAA",currentTeam:"Michigan"}],count:1},DET:{prospects:[],count:0}};applyProspectRightsAdjustments(f,{effectiveDate:"2026-11-22",playerMoves:[{nhlPlayerId:9,from:"MTL",to:"DET",rightsOnly:true}],playerSnapshots:{"9":{id:9,currentLeague:"NCAA",currentTeam:"Michigan"}}});assert.equal(f.MTL.prospects.length,0);assert.equal(f.DET.prospects[0].rightsTeamCode,"DET");assert.equal(f.DET.prospects[0].currentTeam,"Michigan");});

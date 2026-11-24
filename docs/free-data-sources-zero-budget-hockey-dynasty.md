@@ -302,8 +302,8 @@ La suite `Data rights gate tests` a réussi sur le commit `95ea841c55662cff5b8b1
 
 ### Vérification des fournisseurs sous contrat — 23 novembre 2026
 
-- **Sportradar NHL :** l'addendum NHL fait partie d'un accord client/order form; il limite l'utilisation à l'affichage de données destinées aux consommateurs, interdit la redistribution des données sources, les dérivés et les robots, et prévoit le retour ou la destruction des données à la fin de l'accord. Aucun accès commercial gratuit n'est publié.
-- **Stats Perform :** le Master Licence Agreement limite la redistribution et les bases comparatives/searchables multi-saisons sauf autorisation écrite; les droits, la rétention et les usages sont liés au contrat/work order. Aucun droit commercial gratuit n'est publié.
+- **Sportradar NHL :** l'Official Media Data Addendum du 25 août 2025 limite les données officielles à l'éditorial et à l'usage non commercial. Il exclut explicitement les jeux vidéo/simulations électroniques, interdit les nouveaux points de données dérivés sans autorisation écrite et ne concède pas les marques des ligues/équipes/joueurs. Exclusion directe pour Hockey Dynasty.
+- **Stats Perform :** le Master License Agreement de décembre 2025 fonctionne par Work Order avec frais; il interdit les dérivés et l'entraînement ML/IA sans autorisation expresse, ainsi que les téléchargements massifs/archives et la redistribution. Aucun droit commercial gratuit.
 - **HockeyTech/LeagueStat :** les feeds AHL/ECHL/junior sont techniquement accessibles, mais aucun grant commercial gratuit complet (stockage, calcul dérivé, affichage et conservation) n'a été trouvé.
 
 Ces trois fournisseurs restent hors du pipeline zéro dollar; aucune demande de prix, aucun contact et aucun essai n'ont été faits.

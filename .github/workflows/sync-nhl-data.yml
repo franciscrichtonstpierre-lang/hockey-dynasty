@@ -158,6 +158,8 @@ jobs:
         run: node scripts/sync-draft-picks.mjs
       - name: Construire les cotes NHL depuis les statistiques de la saison courante
         if: always()
+        # Les statistiques partielles ne doivent pas bloquer la publication du registre : le script refuse déjà de remplacer les cotes existantes si l'échantillon est incomplet.
+        continue-on-error: true
         timeout-minutes: 5
         env:
           NHL_RATING_SEASON: ${{ inputs.season || '20262027' }}

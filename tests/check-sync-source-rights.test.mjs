@@ -9,4 +9,7 @@ test("bulk multi-league sync is blocked before fetching unapproved feeds", () =>
   assert.match(run.stderr, /nhl_public_api_rosters_2026_2027/);
   assert.match(run.stderr, /ahl_hockeytech_rosters_stats_2026_2027/);
   assert.match(run.stderr, /future_draft_prospect_pages_2027_2029/);
+  assert.match(run.stderr, /ncaa_collegehockeyinc_player_stats_2026_2027/);
+  assert.match(run.stderr, /european_league_player_stats_2026_2027/);
+  assert.match(run.stderr, /draft_pick_ownership_nhl_sources_2026_2027/);
 });

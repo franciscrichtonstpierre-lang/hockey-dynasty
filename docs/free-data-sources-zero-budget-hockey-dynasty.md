@@ -272,3 +272,19 @@ Pour éviter toute nouvelle ingestion non autorisée :
 - le dernier essai automatique avait échoué avant l'écriture des fichiers parce que l'API ne retournait que 100 patineurs et 98 gardiens; aucun rating n'a été remplacé.
 
 Le snapshot existant peut rester utile au développement local, mais il ne doit pas être expédié dans une version commerciale. Le pipeline ne pourra reprendre qu'avec une source qui passe le garde-fou complet.
+
+
+### Suspension préventive de la synchronisation multi-ligues — 23 novembre 2026
+
+L'ancien workflow `.github/workflows/sync-nhl-data.yml` était déclenché sur push et chaque jour. Il téléchargeait des données NHL, AHL, ECHL, junior, NCAA et européennes, puis publiait sur `main`. Les scripts montrent notamment NHL Web API, HockeyTech/LeagueStat, College Hockey Inc, College Hockey News, SHL, Liiga, HockeyAllsvenskan, EliteProspects, Draft Prospects Hockey et RinkCentral. Les droits commerciaux gratuits ne sont pas confirmés pour ces flux.
+
+Un run déjà commencé le 23 novembre a terminé les téléchargements dans son runner, mais le test global a échoué sur l'override de potentiel `nhl:8484799`. L'étape de publication a été ignorée; aucun fichier de données n'a été poussé sur `main`.
+
+Mesures appliquées :
+- le workflow multi-ligues est maintenant manuel seulement; son déclenchement quotidien et les déclenchements sur push sont retirés;
+- une vérification centrale des droits précède tout téléchargement et bloque tant que chaque source de ligue n'a pas un statut commercial confirmé, avec droits de calcul, affichage, conservation, provenance, attribution et share-alike vérifiés;
+- les étapes suivantes utilisent `if: success()`, donc aucune synchronisation ne démarre si le contrôle échoue;
+- l'étape de synchronisation des contrats a été retirée de ce workflow : contrats, salaires et cap hits sont déjà terminés et ne sont pas à refaire;
+- la synchronisation des choix de repêchage reste bloquée avec les autres sources NHL tant que ses droits ne sont pas confirmés.
+
+Ce verrouillage ne supprime pas les fichiers déjà présents et ne modifie aucun rating; il empêche leur actualisation/publication par les sources non autorisées.

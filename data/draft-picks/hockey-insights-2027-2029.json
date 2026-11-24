@@ -177,13 +177,22 @@
       "year": 2027,
       "round": 1,
       "originalOwner": "MTL",
-      "currentOwner": "MTL",
-      "conditional": false,
+      "currentOwner": null,
+      "conditional": true,
       "conflict": false,
-      "source": "https://hockeyinsights.ca/data/team_prospects_2026_index.json?v=20260807-season",
-      "snapshotDate": "2026-09-28",
-      "sourceType": "Hockey Insights team_prospects_2026_index.json / PuckPedia snapshot",
-      "verificationNote": "Propriétaire du snapshot PuckPedia du 2026-09-28; confirmation avec les transactions plus récentes requise."
+      "source": "https://www.nhl.com/news/2026-27-nhl-trades",
+      "snapshotDate": "2026-11-23",
+      "sourceType": "NHL official transaction",
+      "verificationNote": "Montréal transfère son propre choix de 1re ronde 2027. Si ce choix est dans le top 10 après les résultats de la loterie 2027, Montréal le conserve et transfère son propre choix de 1re ronde 2028 à Detroit, sans protection.",
+      "conditions": "Montréal transfère son propre choix de 1re ronde 2027. Si ce choix est dans le top 10 après les résultats de la loterie 2027, Montréal le conserve et transfère son propre choix de 1re ronde 2028 à Detroit, sans protection.",
+      "fallback": {
+        "year": 2028,
+        "round": 1,
+        "originalOwner": "MTL",
+        "to": "DET",
+        "conditional": true,
+        "protection": "aucune si activé"
+      }
     },
     {
       "year": 2027,
@@ -561,13 +570,13 @@
       "year": 2027,
       "round": 2,
       "originalOwner": "MTL",
-      "currentOwner": "MTL",
+      "currentOwner": "DET",
       "conditional": false,
       "conflict": false,
-      "source": "https://hockeyinsights.ca/data/team_prospects_2026_index.json?v=20260807-season",
-      "snapshotDate": "2026-09-28",
-      "sourceType": "Hockey Insights team_prospects_2026_index.json / PuckPedia snapshot",
-      "verificationNote": "Propriétaire du snapshot PuckPedia du 2026-09-28; confirmation avec les transactions plus récentes requise."
+      "source": "https://www.nhl.com/news/2026-27-nhl-trades",
+      "snapshotDate": "2026-11-23",
+      "sourceType": "NHL official transaction",
+      "verificationNote": "Transféré de MTL à DET dans l'échange Larkin du 22-11-2026. Source NHL officielle."
     },
     {
       "year": 2027,
@@ -885,13 +894,13 @@
       "year": 2027,
       "round": 3,
       "originalOwner": "DET",
-      "currentOwner": "DET",
+      "currentOwner": "MTL",
       "conditional": false,
       "conflict": false,
-      "source": "https://hockeyinsights.ca/data/team_prospects_2026_index.json?v=20260807-season",
-      "snapshotDate": "2026-09-28",
-      "sourceType": "Hockey Insights team_prospects_2026_index.json / PuckPedia snapshot",
-      "verificationNote": "Propriétaire du snapshot PuckPedia du 2026-09-28; confirmation avec les transactions plus récentes requise."
+      "source": "https://www.nhl.com/news/2026-27-nhl-trades",
+      "snapshotDate": "2026-11-23",
+      "sourceType": "NHL official transaction",
+      "verificationNote": "Transféré de DET à MTL dans l'échange Larkin du 22-11-2026. Source NHL officielle."
     },
     {
       "year": 2027,
@@ -3189,13 +3198,13 @@
       "year": 2028,
       "round": 2,
       "originalOwner": "DET",
-      "currentOwner": "DET",
+      "currentOwner": "MTL",
       "conditional": false,
       "conflict": false,
-      "source": "https://hockeyinsights.ca/data/team_prospects_2026_index.json?v=20260807-season",
-      "snapshotDate": "2026-09-28",
-      "sourceType": "Hockey Insights team_prospects_2026_index.json / PuckPedia snapshot",
-      "verificationNote": "Propriétaire du snapshot PuckPedia du 2026-09-28; confirmation avec les transactions plus récentes requise."
+      "source": "https://www.nhl.com/news/2026-27-nhl-trades",
+      "snapshotDate": "2026-11-23",
+      "sourceType": "NHL official transaction",
+      "verificationNote": "Transféré de DET à MTL dans l'échange Larkin du 22-11-2026. Source NHL officielle."
     },
     {
       "year": 2028,
@@ -4017,13 +4026,13 @@
       "year": 2028,
       "round": 4,
       "originalOwner": "MTL",
-      "currentOwner": "MTL",
+      "currentOwner": "DET",
       "conditional": false,
       "conflict": false,
-      "source": "https://hockeyinsights.ca/data/team_prospects_2026_index.json?v=20260807-season",
-      "snapshotDate": "2026-09-28",
-      "sourceType": "Hockey Insights team_prospects_2026_index.json / PuckPedia snapshot",
-      "verificationNote": "Propriétaire du snapshot PuckPedia du 2026-09-28; confirmation avec les transactions plus récentes requise."
+      "source": "https://www.nhl.com/news/2026-27-nhl-trades",
+      "snapshotDate": "2026-11-23",
+      "sourceType": "NHL official transaction",
+      "verificationNote": "Transféré de MTL à DET dans l'échange Larkin du 22-11-2026. Source NHL officielle."
     },
     {
       "year": 2028,
@@ -5553,13 +5562,22 @@
       "year": 2029,
       "round": 1,
       "originalOwner": "MTL",
-      "currentOwner": "MTL",
-      "conditional": false,
+      "currentOwner": null,
+      "conditional": true,
       "conflict": false,
-      "source": "https://hockeyinsights.ca/data/team_prospects_2026_index.json?v=20260807-season",
-      "snapshotDate": "2026-09-28",
-      "sourceType": "Hockey Insights team_prospects_2026_index.json / PuckPedia snapshot",
-      "verificationNote": "Propriétaire du snapshot PuckPedia du 2026-09-28; confirmation avec les transactions plus récentes requise."
+      "source": "https://www.nhl.com/news/2026-27-nhl-trades",
+      "snapshotDate": "2026-11-23",
+      "sourceType": "NHL official transaction",
+      "verificationNote": "Montréal transfère son propre choix de 1re ronde 2029. Si ce choix est dans le top 10 après les résultats de la loterie 2029, Montréal le conserve et transfère son propre choix de 1re ronde 2030 à Detroit, sans protection.",
+      "conditions": "Montréal transfère son propre choix de 1re ronde 2029. Si ce choix est dans le top 10 après les résultats de la loterie 2029, Montréal le conserve et transfère son propre choix de 1re ronde 2030 à Detroit, sans protection.",
+      "fallback": {
+        "year": 2030,
+        "round": 1,
+        "originalOwner": "MTL",
+        "to": "DET",
+        "conditional": true,
+        "protection": "aucune si activé"
+      }
     },
     {
       "year": 2029,
@@ -8073,6 +8091,7 @@
   "notes": [
     "PuckPedia-backed snapshot is dated 2026-09-28 and may miss later trades.",
     "Rows from this source remain provisional until reconciled with current NHL transactions.",
-    "Conditional picks are excluded from the playable ledger."
+    "Conditional picks are excluded from the playable ledger.",
+    "Trade Larkin (2026-11-22) and conditional top-10 first-round terms verified against NHL club releases."
   ]
 }

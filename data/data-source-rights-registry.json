@@ -227,7 +227,7 @@
       "retentionRule": "No commercial storage or retention right established from the upstream NHL terms; exclude from production.",
       "automatedAccessAllowed": "Release assets are publicly downloadable, but public GitHub access and CC BY 4.0 cannot override upstream NHL restrictions. No commercial automated ingestion.",
       "status": "prohibited",
-      "notes": "CC BY 4.0 may cover SportsDataverse-controlled material but does not grant rights to NHL-owned upstream content. NHL Terms of Service restrict the Services and content to private non-commercial use and prohibit derivatives. The nhl_xg_models tag is listed as an unattributed release with no public producer; do not use its weights."
+      "notes": "The NHL PBP release identifies api-web.nhle.com as upstream. The separate nhl_xg_models release describes XGBoost artifacts produced by fastRhockey-nhl-data and trained from NHL play-by-play; this is better model provenance than the README summary suggested, but the upstream NHL data rights still block commercial use. Do not use the release weights."
     },
     "ice_hockey_api": {
       "provider": "Ice Hockey API / DeveloperData.net",
@@ -684,11 +684,11 @@
       "provider": "sportsdataverse_data",
       "dataset": "Unattributed nhl_xg_models release",
       "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nhl_xg_models",
-      "status": "review_required",
-      "commercialUseAllowed": null,
-      "derivedUseAllowed": null,
-      "displayApproved": null,
-      "retentionAllowed": null,
+      "status": "prohibited",
+      "commercialUseAllowed": false,
+      "derivedUseAllowed": false,
+      "displayApproved": false,
+      "retentionAllowed": false,
       "thirdPartyRightsVerified": false,
       "paid": false,
       "redistributionAllowed": null,
@@ -696,8 +696,8 @@
       "attributionSatisfied": false,
       "shareAlikeRequired": null,
       "shareAlikeCompliant": false,
-      "reason": "The release is listed as unattributed with no public producer; model provenance, weights license, training data rights and commercial use are not established. Do not copy model weights.",
-      "decision": "pending"
+      "reason": "The release contains XGBoost expected-goals artifacts with three strength-state models and identifies fastRhockey-nhl-data as producer; the model is trained from NHL play-by-play. The upstream NHL terms do not authorize commercial derivative use, so the weights and outputs are excluded despite public download.",
+      "decision": "excluded"
     },
     "ice_hockey_api_free_scores": {
       "provider": "ice_hockey_api",

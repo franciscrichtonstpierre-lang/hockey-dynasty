@@ -531,6 +531,30 @@
       }
     },
     {
+      "id": 8483510,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/WPG/8483510.png",
+      "firstName": {
+        "default": "Elias"
+      },
+      "lastName": {
+        "default": "Salomonsson"
+      },
+      "sweaterNumber": 57,
+      "positionCode": "D",
+      "shootsCatches": "R",
+      "heightInInches": 72,
+      "weightInPounds": 172,
+      "heightInCentimeters": 183,
+      "weightInKilograms": 78,
+      "birthDate": "2004-08-31",
+      "birthCity": {
+        "default": "Skelleftea",
+        "fi": "Skellefteå",
+        "sv": "Skellefteå"
+      },
+      "birthCountry": "SWE"
+    },
+    {
       "id": 8480049,
       "headshot": "https://assets.nhle.com/mugs/nhl/20262027/WPG/8480049.png",
       "firstName": {
@@ -633,34 +657,9 @@
       "birthStateProvince": {
         "default": "AB"
       }
-    },
-    {
-      "id": 8483532,
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/WPG/8483532.png",
-      "firstName": {
-        "default": "Clay"
-      },
-      "lastName": {
-        "default": "Stevenson"
-      },
-      "sweaterNumber": 33,
-      "positionCode": "G",
-      "shootsCatches": "L",
-      "heightInInches": 76,
-      "weightInPounds": 195,
-      "heightInCentimeters": 193,
-      "weightInKilograms": 88,
-      "birthDate": "1999-03-03",
-      "birthCity": {
-        "default": "Drayton Valley"
-      },
-      "birthCountry": "CAN",
-      "birthStateProvince": {
-        "default": "AB"
-      }
     }
   ],
   "_sourceSeason": "20262027",
   "_sourceUrl": "https://api-web.nhle.com/v1/roster/WPG/20262027",
-  "_syncedAt": "2026-11-19T09:29:25.156Z"
+  "_syncedAt": "2026-11-24T03:56:36.199Z"
 }

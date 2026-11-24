@@ -176,31 +176,6 @@
       }
     },
     {
-      "id": 8478904,
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CBJ/8478904.png",
-      "firstName": {
-        "default": "Steven"
-      },
-      "lastName": {
-        "default": "Lorentz"
-      },
-      "sweaterNumber": 18,
-      "positionCode": "C",
-      "shootsCatches": "L",
-      "heightInInches": 76,
-      "weightInPounds": 219,
-      "heightInCentimeters": 193,
-      "weightInKilograms": 99,
-      "birthDate": "1996-04-13",
-      "birthCity": {
-        "default": "Kitchener"
-      },
-      "birthCountry": "CAN",
-      "birthStateProvince": {
-        "default": "ON"
-      }
-    },
-    {
       "id": 8480806,
       "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CBJ/8480806.png",
       "firstName": {
@@ -305,6 +280,33 @@
       "birthStateProvince": {
         "default": "MS"
       }
+    },
+    {
+      "id": 8482451,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CBJ/8482451.png",
+      "firstName": {
+        "default": "Mikael"
+      },
+      "lastName": {
+        "default": "Pyyhtia",
+        "cs": "Pyyhtiä",
+        "fi": "Pyyhtiä",
+        "sk": "Pyyhtiä",
+        "sv": "Pyyhtiä"
+      },
+      "sweaterNumber": 82,
+      "positionCode": "L",
+      "shootsCatches": "L",
+      "heightInInches": 72,
+      "weightInPounds": 177,
+      "heightInCentimeters": 183,
+      "weightInKilograms": 80,
+      "birthDate": "2001-12-17",
+      "birthCity": {
+        "default": "Turku",
+        "sv": "Åbo"
+      },
+      "birthCountry": "FIN"
     },
     {
       "id": 8482705,
@@ -613,5 +615,5 @@
   ],
   "_sourceSeason": "20262027",
   "_sourceUrl": "https://api-web.nhle.com/v1/roster/CBJ/20262027",
-  "_syncedAt": "2026-11-19T09:29:21.615Z"
+  "_syncedAt": "2026-11-24T03:56:32.613Z"
 }

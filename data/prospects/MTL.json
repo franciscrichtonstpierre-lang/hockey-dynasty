@@ -2,8 +2,8 @@
   "teamCode": "MTL",
   "source": "https://api-web.nhle.com/v1/prospects/MTL",
   "sourceType": "NHL Web API + source-labelled supplemental pipeline",
-  "syncedUTC": "2026-11-19T09:29:23.152Z",
-  "count": 50,
+  "syncedUTC": "2026-11-24T03:56:34.182Z",
+  "count": 51,
   "prospects": [
     {
       "id": 8483424,
@@ -899,6 +899,21 @@
       "positionGroup": "goalies"
     },
     {
+      "fullName": "Michael Hage",
+      "positionCode": "C",
+      "age": 20,
+      "currentLeague": "NCAA",
+      "currentTeam": null,
+      "nhlRightsTeam": "MTL",
+      "draftYear": 2024,
+      "draftRound": 1,
+      "draftOverall": 21,
+      "rightsStatus": "secondary_snapshot_recheck_required",
+      "source": "https://hockeyinsights.ca/team-pipeline/montreal-canadiens/",
+      "sourceUpdatedAt": "2026-09-28",
+      "verificationStatus": "secondary_snapshot_recheck_required"
+    },
+    {
       "fullName": "Gleb Pugachyov",
       "positionCode": "RW",
       "age": 18,
@@ -1113,5 +1128,6 @@
     "NHL API rows are retained as the primary source.",
     "Supplemental pipeline rows carry their own source and snapshot date and may be stale; verify current league and NHL rights before final release.",
     "Game ratings and potential are not inferred from age, draft slot or external prospect rank."
-  ]
+  ],
+  "_rightsOverlayAppliedAt": "2026-11-23"
 }

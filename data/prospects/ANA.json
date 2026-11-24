@@ -2,7 +2,7 @@
   "teamCode": "ANA",
   "source": "https://api-web.nhle.com/v1/prospects/ANA",
   "sourceType": "NHL Web API + source-labelled supplemental pipeline",
-  "syncedUTC": "2026-11-19T09:29:21.379Z",
+  "syncedUTC": "2026-11-24T03:56:32.307Z",
   "count": 50,
   "prospects": [
     {
@@ -627,29 +627,6 @@
       "positionGroup": "defensemen"
     },
     {
-      "id": 8484859,
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/ANA/8484859.png",
-      "firstName": {
-        "default": "Stian"
-      },
-      "lastName": {
-        "default": "Solberg"
-      },
-      "sweaterNumber": 50,
-      "positionCode": "D",
-      "shootsCatches": "L",
-      "heightInInches": 74,
-      "weightInPounds": 204,
-      "heightInCentimeters": 188,
-      "weightInKilograms": 93,
-      "birthDate": "2005-12-29",
-      "birthCity": {
-        "default": "Oslo"
-      },
-      "birthCountry": "NOR",
-      "positionGroup": "defensemen"
-    },
-    {
       "id": 8485090,
       "headshot": "https://assets.nhle.com/mugs/nhl/latest/8485090.png",
       "firstName": {
@@ -811,6 +788,21 @@
       "draftYear": 2026,
       "draftRound": 1,
       "draftOverall": 15,
+      "rightsStatus": "secondary_snapshot_recheck_required",
+      "source": "https://hockeyinsights.ca/team-pipeline/anaheim-ducks/",
+      "sourceUpdatedAt": "2026-09-28",
+      "verificationStatus": "secondary_snapshot_recheck_required"
+    },
+    {
+      "fullName": "Stian Solberg",
+      "positionCode": "D",
+      "age": 20,
+      "currentLeague": "AHL",
+      "currentTeam": null,
+      "nhlRightsTeam": "ANA",
+      "draftYear": 2024,
+      "draftRound": 1,
+      "draftOverall": 23,
       "rightsStatus": "secondary_snapshot_recheck_required",
       "source": "https://hockeyinsights.ca/team-pipeline/anaheim-ducks/",
       "sourceUpdatedAt": "2026-09-28",

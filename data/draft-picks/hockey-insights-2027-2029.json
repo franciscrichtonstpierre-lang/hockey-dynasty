@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "source": "Hockey Insights team_prospects_2026_index.json / PuckPedia",
-  "snapshotDate": "2026-11-23",
+  "snapshotDate": "2026-09-28",
   "pagesFetched": 32,
   "totalPages": 32,
   "picks": [
@@ -177,22 +177,13 @@
       "year": 2027,
       "round": 1,
       "originalOwner": "MTL",
-      "currentOwner": null,
-      "conditional": true,
+      "currentOwner": "MTL",
+      "conditional": false,
       "conflict": false,
-      "source": "https://www.nhl.com/redwings/news/red-wings-acquire-michael-hage-kirby-dach-samuel-montembeault-conditional-first-round-selection-and-second-round-pick-in-2027-nhl-entry-draft-conditional-first-round-pick-in-2029-nhl-entry-draft-and-fourth-round-pick-in-2028-nhl-entry-draft-from-montreal-canadiens-in-exchange-for-dylan-larkin-third-round-pick-in-2027-nhl-entry-draft-and-second-round-pick-in-2028-nhl-entry-draft",
-      "snapshotDate": "2026-11-23",
-      "sourceType": "NHL official transaction",
-      "verificationNote": "Top-10 après la loterie 2027 : Montréal conserve le 1er 2027 et transfère son propre 1er 2028 non protégé.",
-      "conditions": "Montréal transfère son propre choix de 1re ronde 2027. Si ce choix est dans le top 10 après les résultats de la loterie 2027, Montréal le conserve et transfère son propre choix de 1re ronde 2028 à Detroit, sans protection.",
-      "fallback": {
-        "year": 2028,
-        "round": 1,
-        "originalOwner": "MTL",
-        "to": "DET",
-        "conditional": true,
-        "protection": "aucune si activé"
-      }
+      "source": "https://hockeyinsights.ca/data/team_prospects_2026_index.json?v=20260807-season",
+      "snapshotDate": "2026-09-28",
+      "sourceType": "Hockey Insights team_prospects_2026_index.json / PuckPedia snapshot",
+      "verificationNote": "Propriétaire du snapshot PuckPedia du 2026-09-28; confirmation avec les transactions plus récentes requise."
     },
     {
       "year": 2027,
@@ -402,13 +393,13 @@
       "year": 2027,
       "round": 2,
       "originalOwner": "ANA",
-      "currentOwner": "MTL",
+      "currentOwner": "ANA",
       "conditional": false,
       "conflict": false,
-      "source": "https://www.nhl.com/news/2026-27-nhl-trades",
-      "snapshotDate": "2026-11-23",
-      "sourceType": "Official NHL transaction tracker plus official team releases",
-      "verificationNote": "Anaheim 2027 R2 transferred to Montréal in the 2026-11-22 follow-up pick swap."
+      "source": "https://hockeyinsights.ca/data/team_prospects_2026_index.json?v=20260807-season",
+      "snapshotDate": "2026-09-28",
+      "sourceType": "Hockey Insights team_prospects_2026_index.json / PuckPedia snapshot",
+      "verificationNote": "Propriétaire du snapshot PuckPedia du 2026-09-28; confirmation avec les transactions plus récentes requise."
     },
     {
       "year": 2027,
@@ -510,13 +501,13 @@
       "year": 2027,
       "round": 2,
       "originalOwner": "DET",
-      "currentOwner": "DET",
+      "currentOwner": "ANA",
       "conditional": false,
       "conflict": false,
-      "source": "https://www.nhl.com/news/2026-27-nhl-trades",
-      "snapshotDate": "2026-11-23",
-      "sourceType": "Official NHL transaction tracker plus official team releases",
-      "verificationNote": "Detroit retains its own 2027 second-round pick."
+      "source": "https://hockeyinsights.ca/data/team_prospects_2026_index.json?v=20260807-season",
+      "snapshotDate": "2026-09-28",
+      "sourceType": "Hockey Insights team_prospects_2026_index.json / PuckPedia snapshot",
+      "verificationNote": "Propriétaire du snapshot PuckPedia du 2026-09-28; confirmation avec les transactions plus récentes requise."
     },
     {
       "year": 2027,
@@ -570,13 +561,13 @@
       "year": 2027,
       "round": 2,
       "originalOwner": "MTL",
-      "currentOwner": "NSH",
+      "currentOwner": "MTL",
       "conditional": false,
       "conflict": false,
-      "source": "https://www.nhl.com/news/2026-27-nhl-trades",
-      "snapshotDate": "2026-11-23",
-      "sourceType": "Official NHL transaction tracker plus official team releases",
-      "verificationNote": "Montreal's own 2027 R2 was already transferred to Nashville on 2026-10-09; it is not the 2027 R2 sent to Detroit in the Larkin deal."
+      "source": "https://hockeyinsights.ca/data/team_prospects_2026_index.json?v=20260807-season",
+      "snapshotDate": "2026-09-28",
+      "sourceType": "Hockey Insights team_prospects_2026_index.json / PuckPedia snapshot",
+      "verificationNote": "Propriétaire du snapshot PuckPedia du 2026-09-28; confirmation avec les transactions plus récentes requise."
     },
     {
       "year": 2027,
@@ -750,13 +741,13 @@
       "year": 2027,
       "round": 2,
       "originalOwner": "VGK",
-      "currentOwner": "ANA",
-      "conditional": false,
+      "currentOwner": null,
+      "conditional": true,
       "conflict": false,
-      "source": "https://www.nhl.com/news/2026-27-nhl-trades",
-      "snapshotDate": "2026-11-23",
-      "sourceType": "Official NHL transaction tracker plus official team releases",
-      "verificationNote": "VGK 2027 R2: Nashville -> Montréal (2026-10-09), Montréal -> Detroit (Larkin, 2026-11-22), Detroit -> Anaheim (pick swap, 2026-11-22)."
+      "source": "https://hockeyinsights.ca/data/team_prospects_2026_index.json?v=20260807-season",
+      "snapshotDate": "2026-09-28",
+      "sourceType": "Hockey Insights team_prospects_2026_index.json / PuckPedia snapshot",
+      "verificationNote": "La source signale une condition; ce choix est exclu du registre jouable."
     },
     {
       "year": 2027,
@@ -894,13 +885,13 @@
       "year": 2027,
       "round": 3,
       "originalOwner": "DET",
-      "currentOwner": "MTL",
+      "currentOwner": "DET",
       "conditional": false,
       "conflict": false,
-      "source": "https://www.nhl.com/news/2026-27-nhl-trades",
-      "snapshotDate": "2026-11-23",
-      "sourceType": "Official NHL transaction tracker plus official team releases",
-      "verificationNote": "Detroit 2027 R3 transferred to Montreal in the Larkin trade."
+      "source": "https://hockeyinsights.ca/data/team_prospects_2026_index.json?v=20260807-season",
+      "snapshotDate": "2026-09-28",
+      "sourceType": "Hockey Insights team_prospects_2026_index.json / PuckPedia snapshot",
+      "verificationNote": "Propriétaire du snapshot PuckPedia du 2026-09-28; confirmation avec les transactions plus récentes requise."
     },
     {
       "year": 2027,
@@ -3198,13 +3189,13 @@
       "year": 2028,
       "round": 2,
       "originalOwner": "DET",
-      "currentOwner": "ANA",
+      "currentOwner": "DET",
       "conditional": false,
       "conflict": false,
-      "source": "https://www.nhl.com/news/2026-27-nhl-trades",
-      "snapshotDate": "2026-11-23",
-      "sourceType": "Official NHL transaction tracker plus official team releases",
-      "verificationNote": "Detroit 2028 R2 transferred to Montréal in the Larkin trade, then to Anaheim in the 2026-11-22 pick swap."
+      "source": "https://hockeyinsights.ca/data/team_prospects_2026_index.json?v=20260807-season",
+      "snapshotDate": "2026-09-28",
+      "sourceType": "Hockey Insights team_prospects_2026_index.json / PuckPedia snapshot",
+      "verificationNote": "Propriétaire du snapshot PuckPedia du 2026-09-28; confirmation avec les transactions plus récentes requise."
     },
     {
       "year": 2028,
@@ -4026,13 +4017,13 @@
       "year": 2028,
       "round": 4,
       "originalOwner": "MTL",
-      "currentOwner": "DET",
+      "currentOwner": "MTL",
       "conditional": false,
       "conflict": false,
-      "source": "https://www.nhl.com/news/2026-27-nhl-trades",
-      "snapshotDate": "2026-11-23",
-      "sourceType": "Official NHL transaction tracker plus official team releases",
-      "verificationNote": "Montreal 2028 R4 transferred to Detroit in the Larkin trade."
+      "source": "https://hockeyinsights.ca/data/team_prospects_2026_index.json?v=20260807-season",
+      "snapshotDate": "2026-09-28",
+      "sourceType": "Hockey Insights team_prospects_2026_index.json / PuckPedia snapshot",
+      "verificationNote": "Propriétaire du snapshot PuckPedia du 2026-09-28; confirmation avec les transactions plus récentes requise."
     },
     {
       "year": 2028,
@@ -5562,22 +5553,13 @@
       "year": 2029,
       "round": 1,
       "originalOwner": "MTL",
-      "currentOwner": null,
-      "conditional": true,
+      "currentOwner": "MTL",
+      "conditional": false,
       "conflict": false,
-      "source": "https://www.nhl.com/redwings/news/red-wings-acquire-michael-hage-kirby-dach-samuel-montembeault-conditional-first-round-selection-and-second-round-pick-in-2027-nhl-entry-draft-conditional-first-round-pick-in-2029-nhl-entry-draft-and-fourth-round-pick-in-2028-nhl-entry-draft-from-montreal-canadiens-in-exchange-for-dylan-larkin-third-round-pick-in-2027-nhl-entry-draft-and-second-round-pick-in-2028-nhl-entry-draft",
-      "snapshotDate": "2026-11-23",
-      "sourceType": "NHL official transaction",
-      "verificationNote": "Top-10 après la loterie 2029 : Montréal conserve le 1er 2029 et transfère son propre 1er 2030 non protégé.",
-      "conditions": "Montréal transfère son propre choix de 1re ronde 2029. Si ce choix est dans le top 10 après les résultats de la loterie 2029, Montréal le conserve et transfère son propre choix de 1re ronde 2030 à Detroit, sans protection.",
-      "fallback": {
-        "year": 2030,
-        "round": 1,
-        "originalOwner": "MTL",
-        "to": "DET",
-        "conditional": true,
-        "protection": "aucune si activé"
-      }
+      "source": "https://hockeyinsights.ca/data/team_prospects_2026_index.json?v=20260807-season",
+      "snapshotDate": "2026-09-28",
+      "sourceType": "Hockey Insights team_prospects_2026_index.json / PuckPedia snapshot",
+      "verificationNote": "Propriétaire du snapshot PuckPedia du 2026-09-28; confirmation avec les transactions plus récentes requise."
     },
     {
       "year": 2029,
@@ -6771,13 +6753,13 @@
       "year": 2029,
       "round": 4,
       "originalOwner": "NYR",
-      "currentOwner": "VAN",
+      "currentOwner": "NYR",
       "conditional": false,
       "conflict": false,
-      "source": "https://www.nhl.com/news/2026-27-nhl-trades",
-      "snapshotDate": "2026-11-23",
-      "sourceType": "Official NHL transaction tracker plus official team releases",
-      "verificationNote": "New York 2029 R4 transferred to Vancouver for Max Sasson on 2026-11-20."
+      "source": "https://hockeyinsights.ca/data/team_prospects_2026_index.json?v=20260807-season",
+      "snapshotDate": "2026-09-28",
+      "sourceType": "Hockey Insights team_prospects_2026_index.json / PuckPedia snapshot",
+      "verificationNote": "Propriétaire du snapshot PuckPedia du 2026-09-28; confirmation avec les transactions plus récentes requise."
     },
     {
       "year": 2029,
@@ -8091,8 +8073,6 @@
   "notes": [
     "PuckPedia-backed snapshot is dated 2026-09-28 and may miss later trades.",
     "Rows from this source remain provisional until reconciled with current NHL transactions.",
-    "Conditional picks are excluded from the playable ledger.",
-    "Trade Larkin (2026-11-22) and conditional top-10 first-round terms verified against NHL club releases.",
-    "Corrected final pick ownership after the 2026-11-22 Larkin trade and same-day Anaheim pick swap; the Vegas 2027 second-round pick is distinct from Montreal's own 2027 second-round pick, already held by Nashville."
+    "Conditional picks are excluded from the playable ledger."
   ]
 }

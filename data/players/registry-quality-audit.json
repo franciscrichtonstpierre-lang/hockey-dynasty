@@ -1,17 +1,77 @@
 {
   "schemaVersion": 1,
   "season": "2026-2027",
-  "generatedAt": "2026-11-19T09:30:52.128Z",
-  "playerCount": 3341,
+  "generatedAt": "2026-11-24T03:57:51.371Z",
+  "playerCount": 3347,
   "leagueCorrections": {
-    "applied": 200,
-    "protectedRoster": 22,
+    "applied": 197,
+    "protectedRoster": 25,
     "ambiguous": 0,
     "missing": 2,
-    "unresolved": 7,
+    "unresolved": 17,
     "unresolvedWithExactCorrection": 0
   },
   "unresolvedLeaguePlayers": [
+    {
+      "id": "prospect:LAK:adam-goljer",
+      "name": "Adam Goljer",
+      "position": "D",
+      "birthDate": "2008-06-07",
+      "age": 18,
+      "rightsTeam": "LAK",
+      "source": "https://hockeyinsights.ca/team-pipeline/los-angeles-kings/",
+      "reason": "organization_name_only_not_current_team"
+    },
+    {
+      "id": "prospect:VAN:aku-koskenvuo",
+      "name": "Aku Koskenvuo",
+      "position": "G",
+      "birthDate": "2003-02-26",
+      "age": 23,
+      "rightsTeam": "VAN",
+      "source": "https://hockeyinsights.ca/team-pipeline/vancouver-canucks/; https://www.nhl.com/news/topic/32-in-32/vancouver-canucks-top-prospects-for-2026-27-season-32-in-32",
+      "reason": "organization_name_only_not_current_team"
+    },
+    {
+      "id": "prospect:SJS:alexander-karmanov",
+      "name": "Alexander Karmanov",
+      "position": "D",
+      "birthDate": "2008-03-22",
+      "age": 18,
+      "rightsTeam": "SJS",
+      "source": "https://hockeyinsights.ca/team-pipeline/san-jose-sharks/",
+      "reason": "organization_name_only_not_current_team"
+    },
+    {
+      "id": "nhl:8485710",
+      "name": "Andre Mondoux",
+      "position": "D",
+      "birthDate": "2007-03-16",
+      "age": 19,
+      "rightsTeam": "NYR",
+      "source": "https://api-web.nhle.com/v1/prospects/NYR",
+      "reason": "organization_name_only_not_current_team"
+    },
+    {
+      "id": "nhl:8486116",
+      "name": "Cole Zurawski",
+      "position": "F",
+      "birthDate": "2008-02-06",
+      "age": 18,
+      "rightsTeam": "FLA",
+      "source": "https://api-web.nhle.com/v1/prospects/FLA",
+      "reason": "organization_name_only_not_current_team"
+    },
+    {
+      "id": "nhl:8486271",
+      "name": "Finn Kearns",
+      "position": "D",
+      "birthDate": "2008-06-08",
+      "age": 18,
+      "rightsTeam": "SEA",
+      "source": "https://api-web.nhle.com/v1/prospects/SEA",
+      "reason": "organization_name_only_not_current_team"
+    },
     {
       "id": "pipeline:CAR:jacob-kucharski",
       "name": "Jacob Kucharski",
@@ -20,6 +80,16 @@
       "age": 27,
       "rightsTeam": null,
       "source": "Own pick",
+      "reason": "organization_name_only_not_current_team"
+    },
+    {
+      "id": "prospect:LAK:jan-chovan",
+      "name": "Jan Chovan",
+      "position": "F",
+      "birthDate": "2007-01-09",
+      "age": 19,
+      "rightsTeam": "LAK",
+      "source": "https://hockeyinsights.ca/team-pipeline/los-angeles-kings/",
       "reason": "organization_name_only_not_current_team"
     },
     {
@@ -43,6 +113,16 @@
       "reason": "organization_name_only_not_current_team"
     },
     {
+      "id": "prospect:COL:ondrej-ruml",
+      "name": "Ondrej Ruml",
+      "position": "D",
+      "birthDate": "2008-03-25",
+      "age": 18,
+      "rightsTeam": "COL",
+      "source": "https://hockeyinsights.ca/team-pipeline/colorado-avalanche/",
+      "reason": "organization_name_only_not_current_team"
+    },
+    {
       "id": "pipeline:PIT:ryan-segalla",
       "name": "Ryan Segalla",
       "position": "D",
@@ -63,6 +143,16 @@
       "reason": "organization_name_only_not_current_team"
     },
     {
+      "id": "nhl:8486247",
+      "name": "Spencer Bowes",
+      "position": "F",
+      "birthDate": "2007-09-19",
+      "age": 18,
+      "rightsTeam": "NYR",
+      "source": "https://api-web.nhle.com/v1/prospects/NYR",
+      "reason": "organization_name_only_not_current_team"
+    },
+    {
       "id": "pipeline:EDM:ty-taylor",
       "name": "Ty Taylor",
       "position": "G",
@@ -70,6 +160,16 @@
       "age": 27,
       "rightsTeam": null,
       "source": "Drafted by TBL",
+      "reason": "organization_name_only_not_current_team"
+    },
+    {
+      "id": "nhl:8486166",
+      "name": "Viking Gustafsson Nyberg",
+      "position": "D",
+      "birthDate": "2003-09-21",
+      "age": 22,
+      "rightsTeam": "MIN",
+      "source": "https://api-web.nhle.com/v1/prospects/MIN",
       "reason": "organization_name_only_not_current_team"
     },
     {
@@ -84,42 +184,43 @@
     }
   ],
   "potentialCoverage": {
-    "total": 3341,
+    "total": 3347,
     "sourceReviewed": 319,
-    "provisional": 3022,
-    "reviewRequired": 3022,
+    "provisional": 3028,
+    "reviewRequired": 3028,
     "sourceReferences": 456,
     "methods": {
-      "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified": 3022,
+      "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified": 3028,
       "manual_source_review_2026-11-04": 319
     },
     "confidence": {
-      "very_low": 1951,
-      "low": 1194,
+      "very_low": 1940,
+      "low": 1211,
       "medium": 137,
       "high": 59
     },
     "evidence": {
-      "current_ability_and_age": 1951,
-      "league_points_per_game": 165,
-      "draft_pick+league_points_per_game": 449,
+      "current_ability_and_age": 1940,
+      "league_points_per_game": 181,
+      "draft_pick+league_points_per_game": 458,
       "published_scouting_sources": 319,
-      "draft_pick": 405,
+      "draft_pick": 393,
       "published_source_rank+league_points_per_game": 22,
       "published_source_rank": 11,
-      "draft_pick+goalie_save_percentage": 13,
-      "goalie_save_percentage": 6
+      "draft_pick+goalie_save_percentage": 16,
+      "goalie_save_percentage": 7
     }
   },
   "playersByLeague": {
-    "NHL": 805,
-    "AHL": 861,
+    "NHL": 807,
+    "AHL": 863,
     "ECHL": 765,
     "NCAA": 304,
     "LIIGA": 48,
     "ALLSVENSKAN": 19,
     "OTHER": 20,
-    "OHL": 99,
+    "UNKNOWN": 17,
+    "OHL": 91,
     "WHL": 91,
     "MHL": 31,
     "SHL": 42,
@@ -140,7 +241,6 @@
     "USPORTS": 1,
     "SL": 1,
     "BCHL": 2,
-    "UNKNOWN": 7,
     "CZECH": 8,
     "CHL-WHL": 1,
     "SLOVAK": 2,

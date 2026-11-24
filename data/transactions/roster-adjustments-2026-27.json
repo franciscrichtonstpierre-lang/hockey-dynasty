@@ -7,7 +7,7 @@
   "notes": [
     "Transaction applied to the initial 2026-27 master rosters because no Dynasty save has started.",
     "Michael Hage remains an NCAA player; only his NHL signing rights move to Detroit. He is not added to the NHL active roster.",
-    "Conditional 2027 and 2029 Montreal first-round picks are not playable assets until their conditions are clarified.",
+    "Conditions officielles : le 1er choix MTL 2027 devient un 1er choix MTL 2028 non protégé si le choix 2027 est top 10 après loterie; le 1er choix MTL 2029 devient un 1er choix MTL 2030 non protégé si le choix 2029 est top 10 après loterie.",
     "The NHL-sourced roster files retain their existing upstream rights limitations; this edit does not grant commercial reuse rights."
   ],
   "playerMoves": [
@@ -83,5 +83,15 @@
       "to": "DET",
       "conditional": true
     }
-  ]
+  ],
+  "conditionalPickTerms": {
+    "pick2027": {
+      "if": "Top 10 après la loterie 2027",
+      "then": "Montréal conserve son choix 2027 et transfère son propre choix 2028 à Detroit, sans protection."
+    },
+    "pick2029": {
+      "if": "Top 10 après la loterie 2029",
+      "then": "Montréal conserve son choix 2029 et transfère son propre choix 2030 à Detroit, sans protection."
+    }
+  }
 }

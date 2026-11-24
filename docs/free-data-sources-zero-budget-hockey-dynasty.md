@@ -298,3 +298,12 @@ Précision de licence fastRhockey : le package déclare MIT pour le code; le fic
 ### Résultat des contrôles automatisés — 23 novembre 2026
 
 La suite `Data rights gate tests` a réussi sur le commit `95ea841c55662cff5b8b11dd28e0df32da812f84`, y compris les tests de conservation, d'attribution, de share-alike, du blocage NHL Stats REST et du précontrôle multi-ligues. Le commit documentaire final est `dbfb5e4daafbaea2d656ba31fbc11bc5cc6105f2`. La tête de `main` est restée `f762b504004c6ffbd8b88c25075b9d88bf872157`; aucun commit de données n'a été publié sur `main`.
+
+
+### Vérification des fournisseurs sous contrat — 23 novembre 2026
+
+- **Sportradar NHL :** l'addendum NHL fait partie d'un accord client/order form; il limite l'utilisation à l'affichage de données destinées aux consommateurs, interdit la redistribution des données sources, les dérivés et les robots, et prévoit le retour ou la destruction des données à la fin de l'accord. Aucun accès commercial gratuit n'est publié.
+- **Stats Perform :** le Master Licence Agreement limite la redistribution et les bases comparatives/searchables multi-saisons sauf autorisation écrite; les droits, la rétention et les usages sont liés au contrat/work order. Aucun droit commercial gratuit n'est publié.
+- **HockeyTech/LeagueStat :** les feeds AHL/ECHL/junior sont techniquement accessibles, mais aucun grant commercial gratuit complet (stockage, calcul dérivé, affichage et conservation) n'a été trouvé.
+
+Ces trois fournisseurs restent hors du pipeline zéro dollar; aucune demande de prix, aucun contact et aucun essai n'ont été faits.

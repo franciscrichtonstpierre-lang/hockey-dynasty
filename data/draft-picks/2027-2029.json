@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "seasonContext": "2026-2027",
   "status": "complete",
-  "lastVerifiedAt": "2026-11-01",
+  "lastVerifiedAt": "2026-11-23T00:00:00Z",
   "years": [
     2027,
     2028,
@@ -197,13 +197,13 @@
       "year": 2027,
       "round": 1,
       "originalTeam": "MTL",
-      "currentOwner": "MTL",
-      "status": "active",
-      "verified": true,
+      "currentOwner": null,
+      "status": "excluded",
+      "verified": false,
       "acquiredVia": null,
-      "source": "https://hockeyinsights.ca/data/team_prospects_2026_index.json?v=20260807-season | https://www.nhl.com/news/topic/trade-coverage/2026-27-nhl-trades",
-      "sourceUpdatedAt": "2026-10-31T02:31:26.946Z",
-      "verificationNote": "Propriétaire du snapshot PuckPedia du 2026-09-28 recoupé avec le suivi officiel des transactions NHL jusqu'au 2026-10-30; les échanges postérieurs au snapshot ont été appliqués."
+      "source": "https://www.nhl.com/redwings/news/red-wings-acquire-michael-hage-kirby-dach-samuel-montembeault-conditional-first-round-selection-and-second-round-pick-in-2027-nhl-entry-draft-conditional-first-round-pick-in-2029-nhl-entry-draft-and-fourth-round-pick-in-2028-nhl-entry-draft-from-montreal-canadiens-in-exchange-for-dylan-larkin-third-round-pick-in-2027-nhl-entry-draft-and-second-round-pick-in-2028-nhl-entry-draft",
+      "sourceUpdatedAt": "2026-11-23T00:00:00Z",
+      "verificationNote": "Choix conditionnel top-10 exclu des actifs jouables; termes exacts conservés dans data/transactions/roster-adjustments-2026-27.json."
     },
     {
       "pickId": "2027-R1-NSH",
@@ -431,13 +431,13 @@
       "year": 2027,
       "round": 2,
       "originalTeam": "ANA",
-      "currentOwner": "ANA",
+      "currentOwner": "MTL",
       "status": "active",
       "verified": true,
-      "acquiredVia": null,
-      "source": "https://hockeyinsights.ca/data/team_prospects_2026_index.json?v=20260807-season | https://www.nhl.com/news/topic/trade-coverage/2026-27-nhl-trades",
-      "sourceUpdatedAt": "2026-10-31T02:31:26.946Z",
-      "verificationNote": "Propriétaire du snapshot PuckPedia du 2026-09-28 recoupé avec le suivi officiel des transactions NHL jusqu'au 2026-10-30; les échanges postérieurs au snapshot ont été appliqués."
+      "acquiredVia": "2026-11-22 : Anaheim transfère son choix de 2e ronde 2027 à Montréal en échange du choix de 2e ronde Detroit 2028.",
+      "source": "https://www.nhl.com/news/larkin-to-make-montreal-canadiens-debut-tonight-against-kings-after-red-wings-trade",
+      "sourceUpdatedAt": "2026-11-23T00:00:00Z",
+      "verificationNote": "Propriétaire final vérifié avec les communiqués officiels NHL/club et la chaîne de transactions datée du 2026-11-22."
     },
     {
       "pickId": "2027-R2-BOS",
@@ -806,12 +806,13 @@
       "year": 2027,
       "round": 2,
       "originalTeam": "VGK",
-      "currentOwner": "MTL",
+      "currentOwner": "ANA",
       "status": "active",
       "verified": true,
-      "acquiredVia": "Échange Jayden Struble; choix de Vegas (2026-10-09)",
-      "source": "https://www.prosportstransactions.com/hockey/DraftTrades/Years/2027.htm",
-      "sourceUpdatedAt": "2026-10-30"
+      "acquiredVia": "2026-11-22 : Vegas 2027 R2 transféré à Montréal via Nashville (Jayden Struble), puis à Detroit dans l'échange Larkin, puis à Anaheim dans l'échange de choix subséquent.",
+      "source": "https://www.nhl.com/news/larkin-to-make-montreal-canadiens-debut-tonight-against-kings-after-red-wings-trade",
+      "sourceUpdatedAt": "2026-11-23T00:00:00Z",
+      "verificationNote": "Propriétaire final vérifié avec les communiqués officiels NHL/club et la chaîne de transactions datée du 2026-11-22."
     },
     {
       "pickId": "2027-R2-WSH",
@@ -961,13 +962,13 @@
       "year": 2027,
       "round": 3,
       "originalTeam": "DET",
-      "currentOwner": "DET",
+      "currentOwner": "MTL",
       "status": "active",
       "verified": true,
-      "acquiredVia": null,
-      "source": "https://hockeyinsights.ca/data/team_prospects_2026_index.json?v=20260807-season | https://www.nhl.com/news/topic/trade-coverage/2026-27-nhl-trades",
-      "sourceUpdatedAt": "2026-10-31T02:31:26.946Z",
-      "verificationNote": "Propriétaire du snapshot PuckPedia du 2026-09-28 recoupé avec le suivi officiel des transactions NHL jusqu'au 2026-10-30; les échanges postérieurs au snapshot ont été appliqués."
+      "acquiredVia": "2026-11-22 : Detroit transfère son choix de 3e ronde 2027 à Montréal dans l'échange Larkin.",
+      "source": "https://www.nhl.com/news/larkin-to-make-montreal-canadiens-debut-tonight-against-kings-after-red-wings-trade",
+      "sourceUpdatedAt": "2026-11-23T00:00:00Z",
+      "verificationNote": "Propriétaire final vérifié avec les communiqués officiels NHL/club et la chaîne de transactions datée du 2026-11-22."
     },
     {
       "pickId": "2027-R3-EDM",
@@ -3453,13 +3454,13 @@
       "year": 2028,
       "round": 2,
       "originalTeam": "DET",
-      "currentOwner": "DET",
+      "currentOwner": "ANA",
       "status": "active",
       "verified": true,
-      "acquiredVia": null,
-      "source": "https://hockeyinsights.ca/data/team_prospects_2026_index.json?v=20260807-season | https://www.nhl.com/news/topic/trade-coverage/2026-27-nhl-trades",
-      "sourceUpdatedAt": "2026-10-31T02:31:26.946Z",
-      "verificationNote": "Propriétaire du snapshot PuckPedia du 2026-09-28 recoupé avec le suivi officiel des transactions NHL jusqu'au 2026-10-30; les échanges postérieurs au snapshot ont été appliqués."
+      "acquiredVia": "2026-11-22 : Detroit transfère son choix de 2e ronde 2028 à Montréal dans l'échange Larkin; Montréal le cède ensuite à Anaheim contre le choix Anaheim 2027 R2.",
+      "source": "https://www.nhl.com/news/larkin-to-make-montreal-canadiens-debut-tonight-against-kings-after-red-wings-trade",
+      "sourceUpdatedAt": "2026-11-23T00:00:00Z",
+      "verificationNote": "Propriétaire final vérifié avec les communiqués officiels NHL/club et la chaîne de transactions datée du 2026-11-22."
     },
     {
       "pickId": "2028-R2-EDM",
@@ -4347,13 +4348,13 @@
       "year": 2028,
       "round": 4,
       "originalTeam": "MTL",
-      "currentOwner": "MTL",
+      "currentOwner": "DET",
       "status": "active",
       "verified": true,
-      "acquiredVia": null,
-      "source": "https://hockeyinsights.ca/data/team_prospects_2026_index.json?v=20260807-season | https://www.nhl.com/news/topic/trade-coverage/2026-27-nhl-trades",
-      "sourceUpdatedAt": "2026-10-31T02:31:26.946Z",
-      "verificationNote": "Propriétaire du snapshot PuckPedia du 2026-09-28 recoupé avec le suivi officiel des transactions NHL jusqu'au 2026-10-30; les échanges postérieurs au snapshot ont été appliqués."
+      "acquiredVia": "2026-11-22 : Montréal transfère son choix de 4e ronde 2028 à Detroit dans l'échange Larkin.",
+      "source": "https://www.nhl.com/news/larkin-to-make-montreal-canadiens-debut-tonight-against-kings-after-red-wings-trade",
+      "sourceUpdatedAt": "2026-11-23T00:00:00Z",
+      "verificationNote": "Propriétaire final vérifié avec les communiqués officiels NHL/club et la chaîne de transactions datée du 2026-11-22."
     },
     {
       "pickId": "2028-R4-NSH",
@@ -6010,13 +6011,13 @@
       "year": 2029,
       "round": 1,
       "originalTeam": "MTL",
-      "currentOwner": "MTL",
-      "status": "active",
-      "verified": true,
+      "currentOwner": null,
+      "status": "excluded",
+      "verified": false,
       "acquiredVia": null,
-      "source": "https://hockeyinsights.ca/data/team_prospects_2026_index.json?v=20260807-season | https://www.nhl.com/news/topic/trade-coverage/2026-27-nhl-trades",
-      "sourceUpdatedAt": "2026-10-31T02:31:26.946Z",
-      "verificationNote": "Propriétaire du snapshot PuckPedia du 2026-09-28 recoupé avec le suivi officiel des transactions NHL jusqu'au 2026-10-30; les échanges postérieurs au snapshot ont été appliqués."
+      "source": "https://www.nhl.com/redwings/news/red-wings-acquire-michael-hage-kirby-dach-samuel-montembeault-conditional-first-round-selection-and-second-round-pick-in-2027-nhl-entry-draft-conditional-first-round-pick-in-2029-nhl-entry-draft-and-fourth-round-pick-in-2028-nhl-entry-draft-from-montreal-canadiens-in-exchange-for-dylan-larkin-third-round-pick-in-2027-nhl-entry-draft-and-second-round-pick-in-2028-nhl-entry-draft",
+      "sourceUpdatedAt": "2026-11-23T00:00:00Z",
+      "verificationNote": "Choix conditionnel top-10 exclu des actifs jouables; termes exacts conservés dans data/transactions/roster-adjustments-2026-27.json."
     },
     {
       "pickId": "2029-R1-NSH",
@@ -7307,13 +7308,13 @@
       "year": 2029,
       "round": 4,
       "originalTeam": "NYR",
-      "currentOwner": "NYR",
+      "currentOwner": "VAN",
       "status": "active",
       "verified": true,
-      "acquiredVia": null,
-      "source": "https://hockeyinsights.ca/data/team_prospects_2026_index.json?v=20260807-season | https://www.nhl.com/news/topic/trade-coverage/2026-27-nhl-trades",
-      "sourceUpdatedAt": "2026-10-31T02:31:26.946Z",
-      "verificationNote": "Propriétaire du snapshot PuckPedia du 2026-09-28 recoupé avec le suivi officiel des transactions NHL jusqu'au 2026-10-30; les échanges postérieurs au snapshot ont été appliqués."
+      "acquiredVia": "2026-11-20 : New York transfère son choix de 4e ronde 2029 à Vancouver contre Max Sasson.",
+      "source": "https://www.nhl.com/canucks/news/canucks-acquire-4th-round-pick-in-2029-from-the-new-york-rangers",
+      "sourceUpdatedAt": "2026-11-23T00:00:00Z",
+      "verificationNote": "Propriétaire final vérifié avec les communiqués officiels NHL/club et la chaîne de transactions datée du 2026-11-22."
     },
     {
       "pickId": "2029-R4-OTT",
@@ -8785,10 +8786,10 @@
     "snapshotVerifiedOwners": 0,
     "tradeOverridesApplied": 4,
     "provisionalOwners": 0,
-    "excludedSlots": 17,
+    "excludedSlots": 19,
     "unresolved": 0,
-    "activeVerified": 655,
-    "manualOwnerResolutions": 8,
+    "activeVerified": 653,
+    "manualOwnerResolutions": 14,
     "errors": [
       "ANA: aucune ligne de choix reconnue dans https://www.nhl.com/ducks/team/future-draft-picks",
       "BOS: aucune ligne de choix reconnue dans https://www.nhl.com/bruins/team/future-draft-picks",

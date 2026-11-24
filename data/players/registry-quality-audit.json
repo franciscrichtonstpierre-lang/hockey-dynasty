@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "season": "2026-2027",
-  "generatedAt": "2026-11-24T03:57:51.371Z",
-  "playerCount": 3347,
+  "generatedAt": "2026-11-24T09:36:23.976Z",
+  "playerCount": 3348,
   "leagueCorrections": {
     "applied": 197,
     "protectedRoster": 25,
@@ -184,24 +184,24 @@
     }
   ],
   "potentialCoverage": {
-    "total": 3347,
+    "total": 3348,
     "sourceReviewed": 319,
-    "provisional": 3028,
-    "reviewRequired": 3028,
+    "provisional": 3029,
+    "reviewRequired": 3029,
     "sourceReferences": 456,
     "methods": {
-      "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified": 3028,
+      "age_curve_current_ability_draft_rank_and_league_production_projection_v5; provisional_not_source_verified": 3029,
       "manual_source_review_2026-11-04": 319
     },
     "confidence": {
       "very_low": 1940,
-      "low": 1211,
+      "low": 1212,
       "medium": 137,
       "high": 59
     },
     "evidence": {
       "current_ability_and_age": 1940,
-      "league_points_per_game": 181,
+      "league_points_per_game": 182,
       "draft_pick+league_points_per_game": 458,
       "published_scouting_sources": 319,
       "draft_pick": 393,
@@ -213,7 +213,7 @@
   },
   "playersByLeague": {
     "NHL": 807,
-    "AHL": 863,
+    "AHL": 864,
     "ECHL": 765,
     "NCAA": 304,
     "LIIGA": 48,

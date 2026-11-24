@@ -1,0 +1,70 @@
+name: Validate NHL transaction overlays
+on:
+  pull_request:
+    paths:
+      - "data/nhl/MTL.json"
+      - "data/nhl/DET.json"
+      - "data/prospects/MTL.json"
+      - "data/prospects/DET.json"
+      - "data/contracts/db-sync/NHL-MTL.json"
+      - "data/contracts/db-sync/NHL-DET.json"
+      - "data/draft-picks/hockey-insights-2027-2029.json"
+      - "data/transactions/**"
+      - "scripts/lib/roster-adjustments.mjs"
+      - "scripts/sync-nhl-data.mjs"
+      - "tests/roster-adjustments.test.mjs"
+      - ".github/workflows/roster-adjustments-tests.yml"
+  push:
+    paths:
+      - "data/nhl/MTL.json"
+      - "data/nhl/DET.json"
+      - "data/prospects/MTL.json"
+      - "data/prospects/DET.json"
+      - "data/contracts/db-sync/NHL-MTL.json"
+      - "data/contracts/db-sync/NHL-DET.json"
+      - "data/draft-picks/hockey-insights-2027-2029.json"
+      - "data/transactions/**"
+      - "scripts/lib/roster-adjustments.mjs"
+      - "scripts/sync-nhl-data.mjs"
+      - "tests/roster-adjustments.test.mjs"
+      - ".github/workflows/roster-adjustments-tests.yml"
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Check sync script syntax
+        run: node --check scripts/sync-nhl-data.mjs
+      - name: Test transaction overlay helpers
+        run: node --test tests/roster-adjustments.test.mjs
+      - name: Validate transaction data and team assignments
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          const read = p => JSON.parse(fs.readFileSync(p, 'utf8'));
+          const mtl = read('data/nhl/MTL.json');
+          const det = read('data/nhl/DET.json');
+          const hMtl = read('data/prospects/MTL.json');
+          const hDet = read('data/prospects/DET.json');
+          const cMtl = read('data/contracts/db-sync/NHL-MTL.json');
+          const cDet = read('data/contracts/db-sync/NHL-DET.json');
+          const picks = read('data/draft-picks/hockey-insights-2027-2029.json');
+          const history = read('data/transactions/real-history-2026-27.json');
+          const all = o => [...o.forwards, ...o.defensemen, ...o.goalies];
+          const has = (o,id) => all(o).some(p => p.id === id);
+          if (!has(mtl,8477946) || has(det,8477946)) throw new Error('Dylan Larkin roster assignment invalid');
+          if (has(mtl,8481523) || !has(det,8481523)) throw new Error('Kirby Dach roster assignment invalid');
+          if (has(mtl,8478470) || !has(det,8478470)) throw new Error('Samuel Montembeault roster assignment invalid');
+          if (hMtl.prospects.some(p => p.id === 8484799) || !hDet.prospects.some(p => p.id === 8484799 && p.rightsTeamCode === 'DET' && p.currentTeam === 'Michigan')) throw new Error('Michael Hage rights assignment invalid');
+          if (!cMtl.players.some(p => p.playerId === 8477946 && p.teamCode === 'MTL')) throw new Error('Larkin contract missing');
+          if (!cDet.players.some(p => p.playerId === 8481523 && p.teamCode === 'DET') || !cDet.players.some(p => p.playerId === 8478470 && p.teamCode === 'DET')) throw new Error('Detroit acquired contracts missing');
+          if (!history.records.some(r => r.id === 'nhl-2026-27-trade-029')) throw new Error('Real trade history record missing');
+          const pick = (year,round,owner) => picks.picks.find(p => p.year===year && p.round===round && p.originalOwner==='MTL');
+          if (pick(2027,2)?.currentOwner !== 'DET' || pick(2028,4)?.currentOwner !== 'DET') throw new Error('Montreal pick transfers invalid');
+          console.log('Trade data integrity checks passed');
+          NODE

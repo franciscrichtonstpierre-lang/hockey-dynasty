@@ -4,10 +4,14 @@ on:
     paths:
       - "data/nhl/MTL.json"
       - "data/nhl/DET.json"
+      - "data/nhl/NYR.json"
+      - "data/nhl/VAN.json"
       - "data/prospects/MTL.json"
       - "data/prospects/DET.json"
       - "data/contracts/db-sync/NHL-MTL.json"
       - "data/contracts/db-sync/NHL-DET.json"
+      - "data/contracts/db-sync/NHL-NYR.json"
+      - "data/contracts/db-sync/NHL-VAN.json"
       - "data/draft-picks/**"
       - "scripts/sync-draft-picks.mjs"
       - "data/transactions/**"
@@ -53,10 +57,14 @@ jobs:
           const read = p => JSON.parse(fs.readFileSync(p, 'utf8'));
           const mtl = read('data/nhl/MTL.json');
           const det = read('data/nhl/DET.json');
+          const nyr = read('data/nhl/NYR.json');
+          const van = read('data/nhl/VAN.json');
           const hMtl = read('data/prospects/MTL.json');
           const hDet = read('data/prospects/DET.json');
           const cMtl = read('data/contracts/db-sync/NHL-MTL.json');
           const cDet = read('data/contracts/db-sync/NHL-DET.json');
+          const cNyr = read('data/contracts/db-sync/NHL-NYR.json');
+          const cVan = read('data/contracts/db-sync/NHL-VAN.json');
           const picks = read('data/draft-picks/hockey-insights-2027-2029.json');
           const ledger = read('data/draft-picks/2027-2029.json');
           const history = read('data/transactions/real-history-2026-27.json');

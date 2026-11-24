@@ -41,7 +41,6 @@ test("source-verified league corrections are reflected in the registry", () => {
     ["Adam Gajan","ECHL","Indy Fuel"],
     ["Adam Jecho","AHL","Springfield Thunderbirds"],
     ["Adam Novotny","OHL","Peterborough Petes"],
-    ["Calum Ritchie","NHL","NYI"],
     ["Alexander Pelevin","VHL","Dizel Penza"],
     ["Alexander Perevalov","VHL","Metallurg Novokuznetsk"],
     ["Alexander Rykov","KHL","Traktor Chelyabinsk"],
@@ -67,6 +66,11 @@ test("source-verified league corrections are reflected in the registry", () => {
     ["Timur Kol","KHL","Neftekhimik Nizhnekamsk"],
     ["Viktor Hurtig","RETIRED",null]
   ];
+  const calum = byName.get("Calum Ritchie");
+  assert.ok(calum, "missing registry player Calum Ritchie");
+  assert.equal(calum.currentLeague, "AHL", "active verified AHL roster takes precedence over the stale opening-night NHL snapshot");
+  assert.equal(calum.ahlRosterVerified, true, "Calum Ritchie must be backed by the active AHL roster feed");
+  assert.ok(calum.currentTeam, "Calum Ritchie must retain his verified current AHL team");
   for (const [name,league,team] of expected) {
     const player = byName.get(name);
     assert.ok(player, `missing registry player ${name}`);

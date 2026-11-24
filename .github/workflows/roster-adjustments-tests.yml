@@ -8,7 +8,8 @@ on:
       - "data/prospects/DET.json"
       - "data/contracts/db-sync/NHL-MTL.json"
       - "data/contracts/db-sync/NHL-DET.json"
-      - "data/draft-picks/hockey-insights-2027-2029.json"
+      - "data/draft-picks/**"
+      - "scripts/sync-draft-picks.mjs"
       - "data/transactions/**"
       - "scripts/lib/roster-adjustments.mjs"
       - "scripts/sync-nhl-data.mjs"
@@ -22,7 +23,8 @@ on:
       - "data/prospects/DET.json"
       - "data/contracts/db-sync/NHL-MTL.json"
       - "data/contracts/db-sync/NHL-DET.json"
-      - "data/draft-picks/hockey-insights-2027-2029.json"
+      - "data/draft-picks/**"
+      - "scripts/sync-draft-picks.mjs"
       - "data/transactions/**"
       - "scripts/lib/roster-adjustments.mjs"
       - "scripts/sync-nhl-data.mjs"
@@ -39,7 +41,9 @@ jobs:
         with:
           node-version: 22
       - name: Check sync script syntax
-        run: node --check scripts/sync-nhl-data.mjs
+        run: |
+          node --check scripts/sync-nhl-data.mjs
+          node --check scripts/sync-draft-picks.mjs
       - name: Test transaction overlay helpers
         run: node --test tests/roster-adjustments.test.mjs
       - name: Validate transaction data and team assignments
@@ -54,6 +58,7 @@ jobs:
           const cMtl = read('data/contracts/db-sync/NHL-MTL.json');
           const cDet = read('data/contracts/db-sync/NHL-DET.json');
           const picks = read('data/draft-picks/hockey-insights-2027-2029.json');
+          const ledger = read('data/draft-picks/2027-2029.json');
           const history = read('data/transactions/real-history-2026-27.json');
           const all = o => [...o.forwards, ...o.defensemen, ...o.goalies];
           const has = (o,id) => all(o).some(p => p.id === id);
@@ -63,8 +68,16 @@ jobs:
           if (hMtl.prospects.some(p => p.id === 8484799) || !hDet.prospects.some(p => p.id === 8484799 && p.rightsTeamCode === 'DET' && p.currentTeam === 'Michigan')) throw new Error('Michael Hage rights assignment invalid');
           if (!cMtl.players.some(p => p.playerId === 8477946 && p.teamCode === 'MTL')) throw new Error('Larkin contract missing');
           if (!cDet.players.some(p => p.playerId === 8481523 && p.teamCode === 'DET') || !cDet.players.some(p => p.playerId === 8478470 && p.teamCode === 'DET')) throw new Error('Detroit acquired contracts missing');
-          if (!history.records.some(r => r.id === 'nhl-2026-27-trade-029')) throw new Error('Real trade history record missing');
-          const pick = (year,round,owner) => picks.picks.find(p => p.year===year && p.round===round && p.originalOwner==='MTL');
-          if (pick(2027,2)?.currentOwner !== 'DET' || pick(2028,4)?.currentOwner !== 'DET') throw new Error('Montreal pick transfers invalid');
+          for (const id of ['nhl-2026-27-trade-029','nhl-2026-27-trade-030','nhl-2026-27-trade-031']) if (!history.records.some(r => r.id === id)) throw new Error('Real trade history record missing: '+id);
+          const snapshotPick = (year,round,owner) => picks.picks.find(p => p.year===year && p.round===round && p.originalOwner===owner);
+          const ledgerPick = id => ledger.picks.find(p => p.pickId===id);
+          const expected = [
+            ['2027-R2-VGK','ANA'], ['2027-R2-ANA','MTL'], ['2028-R2-DET','ANA'],
+            ['2027-R3-DET','MTL'], ['2028-R4-MTL','DET'], ['2029-R4-NYR','VAN'],
+            ['2027-R2-MTL','NSH']
+          ];
+          for (const [id,owner] of expected) if (ledgerPick(id)?.currentOwner !== owner) throw new Error('Final pick owner incorrect: '+id);
+          for (const [year,round,original,owner] of [[2027,2,'VGK','ANA'],[2027,2,'ANA','MTL'],[2028,2,'DET','ANA'],[2027,3,'DET','MTL'],[2028,4,'MTL','DET'],[2029,4,'NYR','VAN']]) if (snapshotPick(year,round,original)?.currentOwner !== owner) throw new Error('Snapshot pick owner incorrect: '+year+' R'+round+' '+original);
+          for (const year of [2027,2029]) if (ledgerPick(year+'-R1-MTL')?.status !== 'excluded' || ledgerPick(year+'-R1-MTL')?.currentOwner !== null) throw new Error('Conditional Montreal first should not be a playable asset');
           console.log('Trade data integrity checks passed');
           NODE

@@ -57,10 +57,15 @@ const add = p => {
     const old = records.get(p.id);
     // Prefer the current roster record over a prospect-list record, while retaining known bio fields.
     const incoming = Object.fromEntries(Object.entries(p).filter(([,v]) => v != null && v !== ""));
-    const preserveRoster = Boolean(old.nhlRosterVerified || old.ahlRosterVerified || old.echlRosterVerified) || (["NHL","AHL"].includes(old.currentLeague) && !["NHL","AHL"].includes(p.currentLeague));
+    // A current verified AHL roster must supersede an older NHL opening-night roster snapshot.
+    const incomingVerifiedAhl = p.ahlRosterVerified === true && p.currentLeague === "AHL";
+    const incomingVerifiedNhl = p.nhlRosterVerified === true && p.currentLeague === "NHL";
+    const preserveRoster = !incomingVerifiedAhl && (Boolean(old.nhlRosterVerified || old.ahlRosterVerified || old.echlRosterVerified) || (["NHL","AHL"].includes(old.currentLeague) && !["NHL","AHL"].includes(p.currentLeague)));
     records.set(p.id, {
       ...old, ...incoming,
       ...(preserveRoster ? { currentLeague: old.currentLeague, currentTeam: old.currentTeam, nhlRightsTeam: old.nhlRightsTeam || p.nhlRightsTeam, position: old.position, detailedPosition: old.detailedPosition, nhlRosterVerified:old.nhlRosterVerified, ahlRosterVerified:old.ahlRosterVerified, echlRosterVerified:old.echlRosterVerified } : {}),
+      ...(incomingVerifiedAhl ? { currentLeague:"AHL", currentTeam:p.currentTeam, nhlRosterVerified:false, ahlRosterVerified:true } : {}),
+      ...(incomingVerifiedNhl ? { currentLeague:"NHL", currentTeam:p.currentTeam, nhlRosterVerified:true, ahlRosterVerified:false } : {}),
       attributes: p.ratingStatus === "sample_adjusted_statistical_estimate" ? p.attributes : old.attributes || p.attributes
     });
   }

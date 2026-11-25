@@ -6226,7 +6226,7 @@
     {
       "playerId": 8482465,
       "name": "Rémi Poirier",
-      "teamCode": "NJD",
+      "teamCode": "WSH",
       "position": "G",
       "contractStatus": "MATCHED_MANUAL_SOURCE",
       "contract": {
@@ -6282,14 +6282,16 @@
         "capHitUsd": 850000,
         "capHitBasis": "verified_puckpedia_season_cap_hit",
         "minorsSalaryUsd": 135000,
-        "oneWay": false
+        "oneWay": false,
+        "seasonKey": "2026-2027",
+        "aavUsd": 850000,
+        "totalSalaryUsd": 850000
       },
       "simulationSalaryUsd": 850000,
       "simulationSalaryStatus": "source_verified_manual_override",
       "simulationSalaryMethod": "PuckPedia 2026-27 base salary, minors salary and cap hit; current NHL rights confirmed by Nov 1 2026 trade",
       "sourceDataset": "manual_verified_contract_override",
-      "license": "source-linked",
-      "scope": "ORGANIZATION_ONLY"
+      "license": "source-linked"
     },
     {
       "playerId": 8484154,
@@ -10295,16 +10297,19 @@
         "capHitUsd": 972500,
         "baseSalaryUsd": 855000,
         "performanceBonusUsd": 500000,
-        "totalSalaryUsd": 855000,
+        "totalSalaryUsd": 950000,
         "minorsSalaryUsd": 82500,
-        "oneWay": false
+        "oneWay": false,
+        "season": "2026-27",
+        "aavUsd": 1472500,
+        "signingBonusUsd": 95000,
+        "capHitBasis": "verified_puckpedia_season_cap_hit"
       },
       "simulationSalaryUsd": 972500,
       "simulationSalaryStatus": "source_verified_manual_override",
       "simulationSalaryMethod": "PuckPedia 2026-27 base salary and cap hit; signing bonus excluded",
       "sourceDataset": "manual_verified_contract_override",
-      "license": "source-linked",
-      "scope": "ORGANIZATION_ONLY"
+      "license": "source-linked"
     },
     {
       "playerId": 8485383,
@@ -11090,10 +11095,15 @@
       "season": {
         "seasonKey": "2026-2027",
         "baseSalaryUsd": 877500,
-        "capHitUsd": 975000,
+        "capHitUsd": 953750,
         "capHitBasis": "verified_puckpedia_season_cap_hit",
         "minorsSalaryUsd": 85000,
-        "oneWay": false
+        "oneWay": false,
+        "season": "2026-27",
+        "aavUsd": 1553750,
+        "performanceBonusUsd": 600000,
+        "signingBonusUsd": 97500,
+        "totalSalaryUsd": 975000
       },
       "salarySource": {
         "publisher": "PuckPedia",
@@ -11113,8 +11123,7 @@
             "url": "https://puckpedia.com/player/konsta-helenius"
           }
         ]
-      },
-      "scope": "ORGANIZATION_ONLY"
+      }
     },
     {
       "playerId": 8482896,
@@ -16584,8 +16593,14 @@
         "baseSalaryUsd": 855000,
         "minorsSalaryUsd": 82500,
         "capHitUsd": 950000,
-        "capHitBasis": "verified_puckpedia_cap_hit",
-        "baseSalaryBasis": "verified_puckpedia_base_salary"
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "baseSalaryBasis": "verified_puckpedia_base_salary",
+        "season": "2026-27",
+        "aavUsd": 1450000,
+        "performanceBonusUsd": 500000,
+        "signingBonusUsd": 95000,
+        "totalSalaryUsd": 950000,
+        "oneWay": false
       },
       "salarySource": {
         "publisher": "PuckPedia",
@@ -16607,8 +16622,7 @@
       },
       "salaryVerificationStatus": "SOURCE_VERIFIED",
       "capHitVerificationStatus": "SOURCE_VERIFIED",
-      "sourceDataset": "manual_puckpedia_contract_override",
-      "scope": "ORGANIZATION_ONLY"
+      "sourceDataset": "manual_puckpedia_contract_override"
     },
     {
       "playerId": 8483430,
@@ -16818,7 +16832,7 @@
       "scope": "ORGANIZATION_ONLY"
     },
     {
-      "playerId": 0,
+      "playerId": 8486052,
       "name": "Nikita Klepov",
       "teamCode": "ANA",
       "season": {
@@ -16826,8 +16840,14 @@
         "baseSalaryUsd": 922500,
         "minorsSalaryUsd": 87500,
         "capHitUsd": 1075000,
-        "capHitBasis": "verified_puckpedia_cap_hit",
-        "baseSalaryBasis": "verified_puckpedia_base_salary"
+        "capHitBasis": "verified_puckpedia_season_cap_hit",
+        "baseSalaryBasis": "verified_puckpedia_base_salary",
+        "season": "2026-27",
+        "aavUsd": 1575000,
+        "performanceBonusUsd": 500000,
+        "signingBonusUsd": 102500,
+        "totalSalaryUsd": 1025000,
+        "oneWay": false
       },
       "salarySource": {
         "publisher": "PuckPedia",
@@ -16849,8 +16869,7 @@
       },
       "salaryVerificationStatus": "SOURCE_VERIFIED",
       "capHitVerificationStatus": "SOURCE_VERIFIED",
-      "sourceDataset": "manual_puckpedia_contract_override",
-      "scope": "ORGANIZATION_ONLY"
+      "sourceDataset": "manual_puckpedia_contract_override"
     },
     {
       "playerId": 8484767,
@@ -17548,11 +17567,13 @@
         "capHitBasis": "verified_puckpedia_season_cap_hit",
         "baseSalaryUsd": 1500000,
         "minorsSalaryUsd": 1500000,
-        "oneWay": true
+        "oneWay": true,
+        "season": "2026-27",
+        "aavUsd": 1500000,
+        "totalSalaryUsd": 1500000
       },
       "sourceDataset": "manual_verified_contract_override",
-      "license": "source-linked",
-      "scope": "ORGANIZATION_ONLY"
+      "license": "source-linked"
     },
     {
       "playerId": 8480001,
@@ -17684,6 +17705,566 @@
         "field": "AAV excluding signing bonus"
       },
       "capHitVerificationStatus": "SOURCE_VERIFIED",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8478502,
+      "name": "Dennis Gilbert",
+      "teamCode": "BUF",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8478502|BUF|2026-07",
+        "signingTeam": "BUF",
+        "signedAt": "2026-07-01",
+        "type": "standard",
+        "termYears": 1,
+        "startSeason": "2026-27",
+        "endSeason": "2026-27",
+        "expiryStatus": "UFA",
+        "boughtOut": false,
+        "oneWay": true,
+        "totalUsd": 850000,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "sources": [
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/dennis-gilbert"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "seasonKey": "2026-2027",
+        "capHitUsd": 850000,
+        "aavUsd": 850000,
+        "baseSalaryUsd": 850000,
+        "totalSalaryUsd": 850000,
+        "minorsSalaryUsd": 850000,
+        "oneWay": true,
+        "capHitBasis": "verified_puckpedia_season_cap_hit"
+      },
+      "simulationSalaryUsd": 850000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 season cap hit; base salary retained separately",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8481572,
+      "name": "Ville Heinola",
+      "teamCode": "VGK",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8481572|VGK|2026-07",
+        "signingTeam": "VGK",
+        "signedAt": "2026-07-01",
+        "type": "standard",
+        "termYears": 1,
+        "startSeason": "2026-27",
+        "endSeason": "2026-27",
+        "expiryStatus": "UFA-G6",
+        "boughtOut": false,
+        "oneWay": true,
+        "totalUsd": 850000,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "sources": [
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/ville-heinola"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "seasonKey": "2026-2027",
+        "capHitUsd": 850000,
+        "aavUsd": 850000,
+        "baseSalaryUsd": 850000,
+        "totalSalaryUsd": 850000,
+        "minorsSalaryUsd": 850000,
+        "oneWay": true,
+        "capHitBasis": "verified_puckpedia_season_cap_hit"
+      },
+      "simulationSalaryUsd": 850000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 season cap hit; base salary retained separately",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8482766,
+      "name": "William Stromgren",
+      "teamCode": "CGY",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8482766|CGY|2026-07",
+        "signingTeam": "CGY",
+        "signedAt": "2026-07-01",
+        "type": "standard",
+        "termYears": 1,
+        "startSeason": "2026-27",
+        "endSeason": "2026-27",
+        "expiryStatus": "RFA",
+        "boughtOut": false,
+        "oneWay": false,
+        "totalUsd": 850000,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "sources": [
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/william-stromgren"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "seasonKey": "2026-2027",
+        "capHitUsd": 850000,
+        "aavUsd": 850000,
+        "baseSalaryUsd": 850000,
+        "totalSalaryUsd": 850000,
+        "minorsSalaryUsd": 110000,
+        "oneWay": false,
+        "capHitBasis": "verified_puckpedia_season_cap_hit"
+      },
+      "simulationSalaryUsd": 850000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 season cap hit; base salary retained separately",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8484821,
+      "name": "Sam Morton",
+      "teamCode": "CGY",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8484821|CGY|2026-07",
+        "signingTeam": "CGY",
+        "signedAt": "2026-06-25",
+        "type": "standard",
+        "termYears": 1,
+        "startSeason": "2026-27",
+        "endSeason": "2026-27",
+        "expiryStatus": "UFA",
+        "boughtOut": false,
+        "oneWay": false,
+        "totalUsd": 850000,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "sources": [
+          {
+            "publisher": "PuckPedia",
+            "url": "https://www.nhlsharps.com/player/sam-morton-8484821"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "seasonKey": "2026-2027",
+        "capHitUsd": 850000,
+        "aavUsd": 850000,
+        "baseSalaryUsd": 850000,
+        "totalSalaryUsd": 850000,
+        "minorsSalaryUsd": 200000,
+        "oneWay": false,
+        "capHitBasis": "verified_puckpedia_season_cap_hit"
+      },
+      "simulationSalaryUsd": 850000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 season cap hit; base salary retained separately",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8477335,
+      "name": "Kyle Burroughs",
+      "teamCode": "DAL",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8477335|DAL|2026-07",
+        "signingTeam": "DAL",
+        "signedAt": "2026-07-06",
+        "type": "standard",
+        "termYears": 1,
+        "startSeason": "2026-27",
+        "endSeason": "2026-27",
+        "expiryStatus": "UFA",
+        "boughtOut": false,
+        "oneWay": false,
+        "totalUsd": 850000,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "sources": [
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/kyle-burroughs"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "seasonKey": "2026-2027",
+        "capHitUsd": 850000,
+        "aavUsd": 850000,
+        "baseSalaryUsd": 850000,
+        "totalSalaryUsd": 850000,
+        "minorsSalaryUsd": 450000,
+        "oneWay": false,
+        "capHitBasis": "verified_puckpedia_season_cap_hit"
+      },
+      "simulationSalaryUsd": 850000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 season cap hit; base salary retained separately",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8477035,
+      "name": "Matt Tomkins",
+      "teamCode": "EDM",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8477035|EDM|2026-07",
+        "signingTeam": "EDM",
+        "signedAt": "2025-07-01",
+        "type": "standard",
+        "termYears": 2,
+        "startSeason": "2025-26",
+        "endSeason": "2026-27",
+        "expiryStatus": "UFA",
+        "boughtOut": false,
+        "oneWay": false,
+        "totalUsd": 1700000,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "sources": [
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/matt-tomkins"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "seasonKey": "2026-2027",
+        "capHitUsd": 850000,
+        "aavUsd": 850000,
+        "baseSalaryUsd": 850000,
+        "totalSalaryUsd": 850000,
+        "minorsSalaryUsd": 400000,
+        "oneWay": false,
+        "capHitBasis": "verified_puckpedia_season_cap_hit"
+      },
+      "simulationSalaryUsd": 850000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 season cap hit; base salary retained separately",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8484900,
+      "name": "Cooper Black",
+      "teamCode": "FLA",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8484900|FLA|2026-07",
+        "signingTeam": "FLA",
+        "signedAt": "2026-06-08",
+        "type": "standard",
+        "termYears": 2,
+        "startSeason": "2026-27",
+        "endSeason": "2027-28",
+        "expiryStatus": "UFA",
+        "boughtOut": false,
+        "oneWay": false,
+        "totalUsd": 1750000,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "sources": [
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/cooper-black"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "seasonKey": "2026-2027",
+        "capHitUsd": 875000,
+        "aavUsd": 875000,
+        "baseSalaryUsd": 850000,
+        "totalSalaryUsd": 850000,
+        "minorsSalaryUsd": 250000,
+        "oneWay": false,
+        "capHitBasis": "verified_puckpedia_season_cap_hit"
+      },
+      "simulationSalaryUsd": 875000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 season cap hit; base salary retained separately",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8481577,
+      "name": "Philip Tomasino",
+      "teamCode": "OTT",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8481577|OTT|2026-07",
+        "signingTeam": "OTT",
+        "signedAt": "2026-07-01",
+        "type": "standard",
+        "termYears": 1,
+        "startSeason": "2026-27",
+        "endSeason": "2026-27",
+        "expiryStatus": "RFA",
+        "boughtOut": false,
+        "oneWay": false,
+        "totalUsd": 900000,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "sources": [
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/philip-tomasino"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "seasonKey": "2026-2027",
+        "capHitUsd": 900000,
+        "aavUsd": 900000,
+        "baseSalaryUsd": 900000,
+        "totalSalaryUsd": 900000,
+        "minorsSalaryUsd": 600000,
+        "oneWay": false,
+        "capHitBasis": "verified_puckpedia_season_cap_hit"
+      },
+      "simulationSalaryUsd": 900000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 season cap hit; base salary retained separately",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8482674,
+      "name": "Tyler Boucher",
+      "teamCode": "OTT",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8482674|OTT|2026-07",
+        "signingTeam": "OTT",
+        "signedAt": "2026-07-10",
+        "type": "standard",
+        "termYears": 1,
+        "startSeason": "2026-27",
+        "endSeason": "2026-27",
+        "expiryStatus": "RFA",
+        "boughtOut": false,
+        "oneWay": false,
+        "totalUsd": 850000,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "sources": [
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/tyler-boucher"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "seasonKey": "2026-2027",
+        "capHitUsd": 850000,
+        "aavUsd": 850000,
+        "baseSalaryUsd": 850000,
+        "totalSalaryUsd": 850000,
+        "minorsSalaryUsd": 90000,
+        "oneWay": false,
+        "capHitBasis": "verified_puckpedia_season_cap_hit"
+      },
+      "simulationSalaryUsd": 850000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 season cap hit; base salary retained separately",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8482866,
+      "name": "Ville Ottavainen",
+      "teamCode": "SEA",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8482866|SEA|2026-07",
+        "signingTeam": "SEA",
+        "signedAt": "2026-07-10",
+        "type": "standard",
+        "termYears": 1,
+        "startSeason": "2026-27",
+        "endSeason": "2026-27",
+        "expiryStatus": "RFA",
+        "boughtOut": false,
+        "oneWay": false,
+        "totalUsd": 850000,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "sources": [
+          {
+            "publisher": "PuckPedia",
+            "url": "https://www.nhl.com/kraken/news/seattle-kraken-sign-goaltender-victor-ostman-and-defenseman-ville-ottavainen-to-one-year-deals"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "seasonKey": "2026-2027",
+        "capHitUsd": 850000,
+        "aavUsd": 850000,
+        "baseSalaryUsd": 850000,
+        "totalSalaryUsd": 850000,
+        "minorsSalaryUsd": 150000,
+        "oneWay": false,
+        "capHitBasis": "verified_puckpedia_season_cap_hit"
+      },
+      "simulationSalaryUsd": 850000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 season cap hit; base salary retained separately",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked",
+      "scope": "ORGANIZATION_ONLY"
+    },
+    {
+      "playerId": 8481517,
+      "name": "Brett Leason",
+      "teamCode": "SJS",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8481517|SJS|2026-07",
+        "signingTeam": "SJS",
+        "signedAt": "2026-07-02",
+        "type": "standard",
+        "termYears": 1,
+        "startSeason": "2026-27",
+        "endSeason": "2026-27",
+        "expiryStatus": "UFA",
+        "boughtOut": false,
+        "oneWay": false,
+        "totalUsd": 850000,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "sources": [
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/brett-leason"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "seasonKey": "2026-2027",
+        "capHitUsd": 850000,
+        "aavUsd": 850000,
+        "baseSalaryUsd": 850000,
+        "totalSalaryUsd": 850000,
+        "minorsSalaryUsd": 425000,
+        "oneWay": false,
+        "capHitBasis": "verified_puckpedia_season_cap_hit"
+      },
+      "simulationSalaryUsd": 850000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 season cap hit; base salary retained separately",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8482525,
+      "name": "Ryan Tverberg",
+      "teamCode": "TOR",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8482525|TOR|2026-07",
+        "signingTeam": "TOR",
+        "signedAt": "2026-07-04",
+        "type": "standard",
+        "termYears": 1,
+        "startSeason": "2026-27",
+        "endSeason": "2026-27",
+        "expiryStatus": "UFA-G6",
+        "boughtOut": false,
+        "oneWay": false,
+        "totalUsd": 850000,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "sources": [
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/ryan-tverberg"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "seasonKey": "2026-2027",
+        "capHitUsd": 850000,
+        "aavUsd": 850000,
+        "baseSalaryUsd": 850000,
+        "totalSalaryUsd": 850000,
+        "minorsSalaryUsd": 250000,
+        "oneWay": false,
+        "capHitBasis": "verified_puckpedia_season_cap_hit"
+      },
+      "simulationSalaryUsd": 850000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 season cap hit; base salary retained separately",
+      "sourceDataset": "manual_verified_contract_override",
+      "license": "source-linked"
+    },
+    {
+      "playerId": 8482141,
+      "name": "Lukas Cormier",
+      "teamCode": "VGK",
+      "position": "F",
+      "contractStatus": "MATCHED_MANUAL_SOURCE",
+      "contract": {
+        "contractKey": "8482141|VGK|2026-07",
+        "signingTeam": "VGK",
+        "signedAt": "2026-07-06",
+        "type": "standard",
+        "termYears": 1,
+        "startSeason": "2026-27",
+        "endSeason": "2026-27",
+        "expiryStatus": "UFA-G6",
+        "boughtOut": false,
+        "oneWay": false,
+        "totalUsd": 850000,
+        "confidenceTier": "SOURCE_VERIFIED",
+        "sources": [
+          {
+            "publisher": "PuckPedia",
+            "url": "https://puckpedia.com/player/lukas-cormier"
+          }
+        ]
+      },
+      "season": {
+        "season": "2026-27",
+        "seasonKey": "2026-2027",
+        "capHitUsd": 850000,
+        "aavUsd": 850000,
+        "baseSalaryUsd": 850000,
+        "totalSalaryUsd": 850000,
+        "minorsSalaryUsd": 225000,
+        "oneWay": false,
+        "capHitBasis": "verified_puckpedia_season_cap_hit"
+      },
+      "simulationSalaryUsd": 850000,
+      "simulationSalaryStatus": "source_verified_manual_override",
+      "simulationSalaryMethod": "PuckPedia 2026-27 season cap hit; base salary retained separately",
       "sourceDataset": "manual_verified_contract_override",
       "license": "source-linked"
     }

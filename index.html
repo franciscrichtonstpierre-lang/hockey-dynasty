@@ -849,7 +849,6 @@ function effectifPlayerName(p){const first=p.firstName?.default||p.firstName||p.
 function effectifNameKey(p){return effectifPlayerName(p).normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLocaleLowerCase("fr").replace(/[^a-z0-9]+/g," ").trim()}
 function effectifUniquePlayers(players,excluded=new Set()){const seenNames=new Set(),seenIds=new Set(),out=[];for(const p of players||[]){const name=effectifNameKey(p),id=String(p.id||p.playerId||p.player_id||"");if((name&&seenNames.has(name))||(id&&seenIds.has(id))||(name&&excluded.has(name)))continue;if(name)seenNames.add(name);if(id)seenIds.add(id);out.push(p)}return out}
 async function loadUhmContractSnapshotFromDatabase(){
- if(window.hdContractCache?.source==="supabase-game-contracts")return window.hdContractCache;
  if(!authClient)return window.hdContractCache||null;
  const rows=[];
  for(let offset=0;;offset+=1000){
@@ -862,7 +861,10 @@ async function loadUhmContractSnapshotFromDatabase(){
   const payload=r.payload&&typeof r.payload==="object"?r.payload:{};
   const rawSeason=Array.isArray(payload.season)?payload.season.find(x=>x&&typeof x==="object"):(payload.season||{});
   const contract=payload.contract&&typeof payload.contract==="object"?payload.contract:{};
-  const annualAmount=rawSeason.baseSalaryUsd??contract.nhlSalaryUsd??r.salary??null;const capAmount=r.cap_hit??rawSeason.capHitUsd??null;return {playerId:r.player_id,teamCode:r.team_code,nhlRightsTeam:r.team_code,verificationStatus:r.verification_status,verification_status:r.verification_status,contractStatus:payload.contractStatus||r.verification_status,sourceUrl:r.source_url,source_url:r.source_url,startSeason:r.start_season,endSeason:r.end_season,expiryStatus:r.expiry_status,salary:capAmount??r.salary,cap_hit:capAmount,payload,season:{...rawSeason,baseSalaryUsd:annualAmount,capHitUsd:capAmount},contract:{...contract,startSeason:contract.startSeason||r.start_season,endSeason:contract.endSeason||r.end_season,termYears:contract.termYears??null,nhlSalaryUsd:capAmount??contract.nhlSalaryUsd??annualAmount,capHitUsd:capAmount??contract.capHitUsd??null}};
+  const baseSalary=rawSeason.baseSalaryUsd??contract.nhlSalaryUsd??null;
+  const capHit=r.cap_hit??rawSeason.capHitUsd??contract.capHitUsd??null;
+  const simulationSalary=capHit??payload.simulationSalaryUsd??r.salary??baseSalary;
+  return {playerId:r.player_id,teamCode:r.team_code,nhlRightsTeam:r.team_code,verificationStatus:r.verification_status,verification_status:r.verification_status,contractStatus:payload.contractStatus||r.verification_status,sourceUrl:r.source_url,source_url:r.source_url,startSeason:r.start_season,endSeason:r.end_season,expiryStatus:r.expiry_status,salary:simulationSalary,simulationSalaryUsd:simulationSalary,cap_hit:capHit,payload,season:{...rawSeason,baseSalaryUsd:baseSalary,capHitUsd:capHit,simulationSalaryUsd:simulationSalary},contract:{...contract,startSeason:contract.startSeason||r.start_season,endSeason:contract.endSeason||r.end_season,termYears:contract.termYears??null,nhlSalaryUsd:contract.nhlSalaryUsd??baseSalary,capHitUsd:capHit}};
  });
  window.hdContractCache={season:"2026-2027",source:"supabase-game-contracts",players,organizationContracts:[]};
  contractSnapshotCache=new Map(players.map(p=>[String(p.playerId),p]));
